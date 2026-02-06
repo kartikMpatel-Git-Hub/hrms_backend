@@ -1,5 +1,47 @@
 [
   {
+    "ContainingType": "hrms.Controllers.AuthenticationController",
+    "Method": "Login",
+    "RelativePath": "Authentication/login",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "dto",
+        "Type": "hrms.Dto.Request.Authentication.LoginRequestDto",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "hrms.Controllers.AuthenticationController",
+    "Method": "Logout",
+    "RelativePath": "Authentication/logout",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "hrms.Controllers.AuthenticationController",
+    "Method": "Register",
+    "RelativePath": "Authentication/register",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "dto",
+        "Type": "hrms.Dto.Request.Authentication.RegisterRequestDto",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
     "ContainingType": "hrms.Controllers.WeatherForecastController",
     "Method": "Get",
     "RelativePath": "WeatherForecast",
