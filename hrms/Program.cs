@@ -4,7 +4,9 @@ using hrms.Repository;
 using hrms.Repository.impl;
 using hrms.Service;
 using hrms.Service.impl;
+using hrms.Utility;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
+using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.IdentityModel.Tokens;
 using System.Text;
@@ -22,11 +24,34 @@ builder.Services.AddControllers(options =>
 {
     options.Filters.Add<CustomExceptionFilterAttribute>();
 });
+
+builder.Services.Configure<ApiBehaviorOptions>(option =>
+{
+    option.InvalidModelStateResponseFactory = context =>
+    {
+        var error = context.ModelState
+        .Where(e => e.Value.Errors.Count > 0)
+        .Select(e => new
+        {
+            field = e.Key,
+            error = e.Value.Errors.Select(x => x.ErrorMessage)
+        });
+        return new BadRequestObjectResult(new
+        {
+            error = "Validation Failed",
+            details = error
+        });
+    };
+});
 // Learn more about configuring OpenAPI at https://aka.ms/aspnet/openapi
 builder.Services.AddOpenApi();
 builder.Services.AddSwaggerGen();
 builder.Services.AddScoped<IUserRepository, UserRepository>();
 builder.Services.AddScoped<IAuthenticationService, AuthenticationService>();
+builder.Services.AddScoped<IUserService, UserService>();
+builder.Services.AddScoped<IEmailService, EmailService>();
+builder.Services.AddAutoMapper(typeof(MappingProfile));
+builder.Services.Configure<EmailSettings>(builder.Configuration.GetSection("EmailSettings"));
 var jwtSettings = builder.Configuration.GetSection("Jwt");
 
 builder.Services.AddAuthentication(options =>

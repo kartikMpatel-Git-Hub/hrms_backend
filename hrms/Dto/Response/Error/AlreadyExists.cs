@@ -2,9 +2,9 @@
 {
     public class AlreadyExists
     {
-        public String message { get; set; }
-        public AlreadyExists(string message) {
-            this.message = message;
+        public String Message { get; set; }
+        public AlreadyExists(string Message) {
+            this.Message = Message;
         }
     }
 }

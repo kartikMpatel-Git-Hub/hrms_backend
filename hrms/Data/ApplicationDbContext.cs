@@ -8,37 +8,266 @@ namespace hrms.Data
         public ApplicationDbContext(DbContextOptions<ApplicationDbContext> options) : base(options)
         {}
         public DbSet<User> Users { get; set; }
+        public DbSet<Travel> travels { get; set; }
+        public DbSet<TravelDocument> travelDocuments { get; set; }
+        public DbSet<ExpenseCategory> expenseCategories { get; set; }
+        public DbSet<Expense> expenses { get; set; }
+        public DbSet<ExpenseProof> expenseProofs { get; set; }
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             base.OnModelCreating(modelBuilder);
 
             modelBuilder.Entity<User>(entity =>
             {
-                entity.Property(u => u.full_name)
+                entity.ToTable("users");
+
+                entity.HasKey(u => u.Id);
+
+                entity
+                    .Property(u => u.Id)
+                    .HasColumnName("pk_user_id");
+
+                entity.Property(u => u.FullName)
+                      .HasColumnName("full_name")
                       .IsRequired()
                       .HasMaxLength(150);
 
-                entity.Property(u => u.user_role)
+                entity.HasIndex(u => u.Email)
+                      .IsUnique();
+
+                entity.Property(u => u.Email)
+                      .HasColumnName("email")
+                      .IsRequired()
+                      .HasMaxLength(50);
+
+                entity.Property(u => u.HashPassword)
+                    .HasColumnName("password")
+                    .HasMaxLength(500);
+
+                entity.Property(u => u.Image)
+                    .HasColumnName("image_url")
+                    .HasMaxLength(500);
+
+                entity.Property(u => u.Role)
+                    .HasColumnName("user_role")
                     .HasConversion<String>()
-                    .HasMaxLength(20);
+                    .HasMaxLength(15);
 
-                entity.Property(u => u.email)
-                      .IsRequired()
-                      .HasMaxLength(150);
+                entity.Property(u => u.DateOfBirth)
+                    .IsRequired()
+                    .HasColumnName("date_of_birth");
 
-                entity.Property(u => u.hash_password)
-                      .IsRequired()
-                      .HasMaxLength(500);
+                entity.Property(u => u.DateOfJoin)
+                    .IsRequired()
+                    .HasColumnName("date_of_joining");
 
-                entity.Property(u => u.image_url)
-                      .IsRequired()
-                      .HasMaxLength(500);
-
-                entity.HasOne(u => u.manager)
+                entity.HasOne(u => u.Manager)
                       .WithMany(m => m.Employees)
-                      .HasForeignKey(u => u.manager_id)
+                      .HasConstraintName("fk_managaer_user_id")
+                      .HasForeignKey(u => u.ManagerId)
                       .OnDelete(DeleteBehavior.Restrict);
             });
+
+            modelBuilder.Entity<Travel>(entity =>
+            {
+                entity.ToTable("travels");
+
+                entity.HasKey(t => t.Id);
+
+                entity
+                    .Property(t => t.Id)
+                    .HasColumnName("pk_travel_id");
+
+                entity
+                    .Property(t => t.Title)
+                    .IsRequired()
+                    .HasMaxLength(50);
+
+                entity
+                    .Property(t => t.Desciption)
+                    .IsRequired()
+                    .HasMaxLength(300);
+
+                entity.Property(u => u.StartDate)
+                    .IsRequired()
+                    .HasColumnName("travel_start_date");
+
+                entity.Property(u => u.EndDate)
+                    .IsRequired()
+                    .HasColumnName("trael_end_date");
+
+                entity
+                    .Property(t => t.Location)
+                    .IsRequired()
+                    .HasMaxLength(50);
+
+                entity
+                    .Property(t => t.MaxAmountLimit)
+                    .IsRequired()
+                    .HasPrecision(10, 2)
+                    .HasColumnName("expense_max_amount_limit");
+
+                entity
+                    .HasOne(t => t.Creater)
+                    .WithMany()
+                    .HasConstraintName("fk_created_user_by")
+                    .HasForeignKey(u => u.CreatedBy)
+                    .OnDelete(DeleteBehavior.Restrict);
+
+            });
+
+            modelBuilder.Entity<TravelDocument>(entity =>
+            {
+                entity.ToTable("travel_documents");
+
+                entity.HasKey(td => td.Id);
+
+                entity
+                    .Property(td => td.Id)
+                    .HasColumnName("pk_travel_document_id");
+
+                entity
+                    .Property(td => td.DocumentUrl)
+                    .HasColumnName("document_url")
+                    .IsRequired()
+                    .HasMaxLength(400);
+
+                entity
+                    .Property(td => td.DocumentName)
+                    .HasColumnName("document_name")
+                    .IsRequired()
+                    .HasMaxLength(30);
+
+                entity
+                    .Property(td => td.DocumentType)
+                    .HasColumnName("document_type")
+                    .IsRequired()
+                    .HasMaxLength(50);
+
+                entity
+                    .HasOne(td => td.Travell)
+                    .WithMany()
+                    .HasConstraintName("fk_travel_document_id")
+                    .HasForeignKey(t => t.TravelId)
+                    .OnDelete(DeleteBehavior.Restrict);
+
+                entity
+                    .HasOne(td => td.Traveler)
+                    .WithMany()
+                    .HasConstraintName("fk_traveler_document_id")
+                    .HasForeignKey(u => u.TravelerId)
+                    .OnDelete(DeleteBehavior.Restrict);
+
+                entity
+                    .HasOne(td => td.Uploader)
+                    .WithMany()
+                    .HasConstraintName("fk_uploaded_document_by")
+                    .HasForeignKey(u => u.UploadedBy)
+                    .OnDelete(DeleteBehavior.Restrict);
+            });
+
+            modelBuilder.Entity<ExpenseCategory>(entity =>
+            {
+                entity.ToTable("expense_category");
+
+                entity.HasKey(ec => ec.Id);
+
+                entity
+                    .Property(ec => ec.Id)
+                    .HasColumnName("pk_expense_category_id");
+
+                entity
+                    .Property(ec => ec.Category)
+                    .IsRequired()
+                    .HasMaxLength(50);
+            });
+
+            modelBuilder.Entity<Expense>(entity =>
+            {
+                entity.ToTable("expenses");
+
+                entity.HasKey(e => e.Id);
+
+                entity
+                    .Property(e => e.Id)
+                    .HasColumnName("pk_expense_id");
+
+                entity
+                    .Property(e => e.Amount)
+                    .HasPrecision(10,2)
+                    .HasColumnName("expense_amount")
+                    .IsRequired();
+
+                entity
+                    .Property(e => e.Status)
+                    .HasConversion<String>()
+                    .IsRequired()
+                    .HasColumnName("status")
+                    .HasMaxLength(20);
+
+                entity
+                    .Property(e => e.Remarks)
+                    .HasColumnName("remarks")
+                    .HasMaxLength(100);
+
+                entity
+                    .HasOne(e => e.Travel)
+                    .WithMany()
+                    .HasForeignKey(t => t.TravelId)
+                    .HasConstraintName("fk_travel_expense_id")
+                    .OnDelete(DeleteBehavior.Restrict);
+
+                entity
+                    .HasOne(e => e.Traveler)
+                    .WithMany()
+                    .HasForeignKey(u => u.TravelerId)
+                    .HasConstraintName("fk_traveler_expense_id")
+                    .OnDelete(DeleteBehavior.Restrict);
+
+                entity
+                    .HasOne(e => e.Category)
+                    .WithMany()
+                    .HasForeignKey(c => c.CategoryId)
+                    .HasConstraintName("fk_category_expense_id")
+                    .OnDelete(DeleteBehavior.Restrict);
+            });
+
+            modelBuilder.Entity<ExpenseProof>(entity =>
+            {
+                entity.ToTable("expense_proof");
+
+                entity.HasKey(ep => ep.Id);
+
+                entity
+                    .Property(ep => ep.Id)
+                    .HasColumnName("pk_expense_proof_id");
+
+                entity
+                    .Property(ep => ep.ProofDocumentUrl)
+                    .IsRequired()
+                    .HasColumnName("proof_document_url")
+                    .HasMaxLength(500);
+
+                entity
+                    .Property(ep => ep.DocumentType)
+                    .IsRequired()
+                    .HasColumnName("expense_document_type")
+                    .HasMaxLength(50);
+
+                entity
+                    .Property(ep => ep.Remakrs)
+                    .HasColumnName("remarks")
+                    .HasMaxLength(200);
+
+                entity
+                    .HasOne(ep => ep.Expense)
+                    .WithMany()
+                    .HasForeignKey(e => e.ExpenseId)
+                    .HasConstraintName("fk_expense_proof_id")
+                    .OnDelete(DeleteBehavior.Restrict);
+            });
+
         }
+
     }
 }

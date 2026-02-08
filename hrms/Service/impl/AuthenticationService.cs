@@ -9,6 +9,7 @@ using System.IdentityModel.Tokens.Jwt;
 using System.Security.Claims;
 using System.Text;
 using System.Net;
+using Microsoft.EntityFrameworkCore.Query.SqlExpressions;
 
 namespace hrms.Service.impl
 {
@@ -17,25 +18,27 @@ namespace hrms.Service.impl
 
         public readonly IUserRepository _repo;
         private readonly IConfiguration _config;
+        private readonly IEmailService _email;
 
-        public AuthenticationService(IUserRepository repo, IConfiguration config)
+        public AuthenticationService(IUserRepository repo, IConfiguration config,IEmailService email)
         {
             _repo = repo;
             _config = config;
+            _email = email;
         }
         public async Task<string> Login(LoginRequestDto dto)
         {
-            User user = await _repo.GetByEmailAsync(dto.email);
+            User user = await _repo.GetByEmailAsync(dto.Email);
             if (user == null)
-                throw new NotFoundException($"user with email {dto.email} not found !",HttpStatusCode.NotFound);
+                throw new NotFoundCustomException($"user with email {dto.Email} not found !");
 
-            if (!PasswordHelper.Verify(dto.password, user.hash_password))
+            if (!PasswordHelper.Verify(dto.Password, user.HashPassword))
                 throw new InvalidOperationCustomException("Invalid Password !");
 
             var claims = new[]
             {
-                new Claim(ClaimTypes.Name, user.email),
-                new Claim(ClaimTypes.Role, user.user_role.ToString())
+                new Claim(ClaimTypes.Name, user.Email),
+                new Claim(ClaimTypes.Role, user.Role.ToString())
             };
 
             var key = new SymmetricSecurityKey(
@@ -56,53 +59,65 @@ namespace hrms.Service.impl
             return new JwtSecurityTokenHandler().WriteToken(token);
         }
 
+        
         public async Task RegisterNewUser(RegisterRequestDto dto)
         {
-            if (await _repo.ExistsByEmailAsync(dto.email))
-                throw new BadHttpRequestException($"User Exists With Email {dto.email}");
+            if (await _repo.ExistsByEmailAsync(dto.Email))
+                throw new ExistsCustomException($"User Exists With Email {dto.Email}");
 
             User user = CreateUser(dto).Result;
             await _repo.AddAsync(user);
             await _repo.SaveChangesAsync();
+            await _email.SendEmailAsync(dto.Email, "registration Confirmation", "<h1>Congratulations, Your have successfully complete Registration !</h1>");
         }
 
         private async Task<User> CreateUser(RegisterRequestDto dto)
         {
             var user = new User
             {
-                full_name = dto.full_name,
-                image_url = dto.image_url,
-                date_of_birth = dto.date_of_birth,
-                date_of_join = dto.date_of_join,
+                FullName = dto.FullName,
+                Email = dto.Email,
+                Image = dto.Image,
+                DateOfBirth= dto.DateOfBirth,
+                DateOfJoin = dto.DateOfJoin,
                 is_deleted = false,
                 created_at = DateTime.Now,
                 updated_at = DateTime.Now
             };
+            if(dto.Role != "ADMIN" && 
+                dto.Role != "MANAGER" && 
+                dto.Role != "EMPLOYEE" && 
+                dto.Role != "HR")
+            {
+                throw new NotFoundCustomException($"User Role {dto.Role} Not Exists !");
+            }
 
-            switch (dto.user_role)
+            switch (dto.Role)
             {
                 case "ADMIN":
-                    user.user_role = UserRole.ADMIN;
+                    user.Role = UserRole.ADMIN;
                     break;
                 case "MANAGER":
-                    user.user_role = UserRole.MANAGER;
+                    user.Role = UserRole.MANAGER;
                     break;
                 case "EMPLOYEE":
-                    user.user_role = UserRole.EMPLOYEE;
+                    user.Role = UserRole.EMPLOYEE;
                     break;
                 case "HR":
-                    user.user_role = UserRole.HR;
+                    user.Role = UserRole.HR;
                     break;
             }
 
-            if (dto.manage_id != null)
+            if (dto.ManagerId != null)
             {
-                User manager = await _repo.GetByIdAsync(dto.manage_id);
-                user.manager = manager;
-                user.manager_id = manager.Id;
+                User manager = await _repo.GetByIdAsync(dto.ManagerId);
+                if (manager == null)
+                    throw new NotFoundCustomException($"Manager With manager_id : {dto.ManagerId} Not Found !");
+                user.Manager = manager;
+                user.ManagerId = manager.Id;
             }
 
-            user.hash_password = PasswordHelper.HashPassword(dto.password);
+            user.HashPassword = PasswordHelper.HashPassword(dto.Password);
             return user;
         }
     }

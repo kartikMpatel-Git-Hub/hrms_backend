@@ -6,14 +6,14 @@ namespace hrms.CustomException
     {
         public HttpStatusCode StatusCode { get; }
 
-        protected BaseCustomException(String message,HttpStatusCode statusCode)
+        protected BaseCustomException(String message,HttpStatusCode statusCode) : base(message) 
         {
             this.StatusCode = statusCode;
         }
     }
-    public class NotFoundException : BaseCustomException
+    public class NotFoundCustomException : BaseCustomException
     {
-        public NotFoundException(String message, HttpStatusCode statusCode) : base(message, statusCode) { }
+        public NotFoundCustomException(String message) : base(message, HttpStatusCode.BadRequest) { }
     }
 
     public class InvalidOperationCustomException : BaseCustomException
@@ -23,5 +23,9 @@ namespace hrms.CustomException
     public class BadRequestCustomException : BaseCustomException
     {
         public BadRequestCustomException(String message) : base(message, HttpStatusCode.BadRequest) { }
+    }
+    public class ExistsCustomException : BaseCustomException
+    {
+        public ExistsCustomException(String message) : base(message, HttpStatusCode.BadRequest) { }
     }
 }

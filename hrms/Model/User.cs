@@ -7,21 +7,18 @@
         EMPLOYEE,
         ADMIN
     }
-    public class User
+    public class User : BaseEntity
     {
         public int Id { get; set; }
-        public String full_name { get; set; }
-        public String email { get; set; }
-        public String hash_password { get; set; }
-        public String image_url { get; set; }
-        public UserRole user_role { get; set; }
-        public DateOnly date_of_birth { get; set; }
-        public DateOnly date_of_join { get; set; }
-        public Boolean is_deleted { get; set; }
-        public DateTime created_at { get; set; }
-        public DateTime updated_at { get; set; }
-        public int? manager_id { get; set; }
-        public User manager { get; set; }
+        public String FullName { get; set; }
+        public String Email { get; set; }
+        public String HashPassword { get; set; }
+        public String Image { get; set; }
+        public UserRole Role { get; set; }
+        public DateOnly DateOfBirth { get; set; }
+        public DateOnly DateOfJoin { get; set; }
+        public int? ManagerId { get; set; }
+        public User Manager { get; set; }
         public ICollection<User> Employees { get; set; }
 
     }
