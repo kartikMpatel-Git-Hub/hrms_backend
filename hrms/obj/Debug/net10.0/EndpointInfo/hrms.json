@@ -79,6 +79,18 @@
         }
       }
     },
+    "/User": {
+      "get": {
+        "tags": [
+          "User"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
     "/WeatherForecast": {
       "get": {
         "tags": [
@@ -123,18 +135,28 @@
     "schemas": {
       "LoginRequestDto": {
         "type": "object",
+        "properties": {
+          "email": {
+            "type": "string",
+            "nullable": true
+          },
+          "password": {
+            "type": "string",
+            "nullable": true
+          }
+        },
         "additionalProperties": false
       },
       "RegisterRequestDto": {
         "required": [
           "email",
-          "full_name",
+          "fullName",
           "password",
-          "user_role"
+          "role"
         ],
         "type": "object",
         "properties": {
-          "full_name": {
+          "fullName": {
             "maxLength": 30,
             "minLength": 1,
             "type": "string"
@@ -148,23 +170,23 @@
             "minLength": 8,
             "type": "string"
           },
-          "image_url": {
+          "image": {
             "type": "string",
             "nullable": true
           },
-          "user_role": {
+          "role": {
             "minLength": 1,
             "type": "string"
           },
-          "date_of_birth": {
+          "dateOfBirth": {
             "type": "string",
             "format": "date"
           },
-          "date_of_join": {
+          "dateOfJoin": {
             "type": "string",
             "format": "date"
           },
-          "manage_id": {
+          "managerId": {
             "type": "integer",
             "format": "int32",
             "nullable": true
@@ -200,6 +222,9 @@
   "tags": [
     {
       "name": "Authentication"
+    },
+    {
+      "name": "User"
     },
     {
       "name": "WeatherForecast"

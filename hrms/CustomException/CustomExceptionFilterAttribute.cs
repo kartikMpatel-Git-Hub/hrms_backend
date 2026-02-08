@@ -18,8 +18,22 @@ namespace hrms.CustomException
         {
             HttpStatusCode statusCode = HttpStatusCode.InternalServerError;
             string message = "An internal server error occurred.";
+            Console.WriteLine("EXCEPTION HERE : " + context.Exception);
 
-            if (context.Exception is NotFoundException notFoundException)
+            if(context.Exception is AggregateException agr)
+            {
+                var flat = agr.Flatten();
+                if(flat.InnerExceptions.Count == 1)
+                {
+                    context.Exception = flat.InnerExceptions[0];
+                }
+                else
+                {
+                    context.Exception = flat;
+                }
+            }
+
+            if (context.Exception is NotFoundCustomException notFoundException)
             {
                 statusCode = notFoundException.StatusCode;
                 message = notFoundException.Message;
@@ -29,11 +43,16 @@ namespace hrms.CustomException
                 statusCode = invalidOperationException.StatusCode;
                 message = invalidOperationException.Message;
             }
+            else if (context.Exception is ExistsCustomException existsCustomException)
+            {
+                statusCode = existsCustomException.StatusCode;
+                message = existsCustomException.Message;
+            }
             _logger.LogError(context.Exception, "An unhandled exception occurred: {Message}", context.Exception.Message);
 
             var result = new ObjectResult(new
             {
-                error = new { message = message, details = context.Exception.Message }
+                error = new { details = message }
             })
             {
                 StatusCode = (int)statusCode

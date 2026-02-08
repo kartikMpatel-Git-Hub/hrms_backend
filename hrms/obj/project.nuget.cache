@@ -1,9 +1,11 @@
 {
   "version": 2,
-  "dgSpecHash": "1MZvffwVpsI=",
+  "dgSpecHash": "S9ZvD1nd00Y=",
   "success": true,
   "projectFilePath": "C:\\Internship\\Codes\\DontNet\\Assignment-1\\hrms\\hrms\\hrms.csproj",
   "expectedPackageFiles": [
+    "C:\\Users\\patelkar\\.nuget\\packages\\automapper\\12.0.1\\automapper.12.0.1.nupkg.sha512",
+    "C:\\Users\\patelkar\\.nuget\\packages\\automapper.extensions.microsoft.dependencyinjection\\12.0.1\\automapper.extensions.microsoft.dependencyinjection.12.0.1.nupkg.sha512",
     "C:\\Users\\patelkar\\.nuget\\packages\\azure.core\\1.50.0\\azure.core.1.50.0.nupkg.sha512",
     "C:\\Users\\patelkar\\.nuget\\packages\\azure.identity\\1.17.1\\azure.identity.1.17.1.nupkg.sha512",
     "C:\\Users\\patelkar\\.nuget\\packages\\humanizer.core\\2.14.1\\humanizer.core.2.14.1.nupkg.sha512",

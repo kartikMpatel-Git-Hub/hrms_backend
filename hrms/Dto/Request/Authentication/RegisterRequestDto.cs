@@ -6,21 +6,21 @@ namespace hrms.Dto.Request.Authentication
     {
         [Required]
         [MaxLength(30)]
-        public String full_name { get; set; }
+        public String FullName { get; set; }
 
-        [Required]
-        [EmailAddress]
-        public String email { get; set; }
+        [Required(ErrorMessage = "Email Is Required")]
+        [EmailAddress(ErrorMessage = "Enter Valid Email")]
+        public String Email { get; set; }
 
-        [Required]
-        [MinLength(8)]
-        public String password { get; set; }
-        public String image_url { get; set; }
+        [Required(ErrorMessage = "Password Is Required")]
+        [MinLength(8,ErrorMessage ="Password Must Contain Atlest 8 Character")]
+        public String Password { get; set; }
+        public String Image { get; set; }
 
-        [Required]
-        public String user_role { get; set; }
-        public DateOnly date_of_birth { get; set; }
-        public DateOnly date_of_join { get; set; }
-        public int? manage_id { get; set; }
+        [Required(ErrorMessage = "Role Is Required")]
+        public String Role { get; set; }
+        public DateOnly DateOfBirth { get; set; }
+        public DateOnly DateOfJoin { get; set; }
+        public int? ManagerId { get; set; }
     }
 }

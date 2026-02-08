@@ -42,6 +42,16 @@
     "ReturnTypes": []
   },
   {
+    "ContainingType": "hrms.Controllers.UserController",
+    "Method": "GetAll",
+    "RelativePath": "User",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
     "ContainingType": "hrms.Controllers.WeatherForecastController",
     "Method": "Get",
     "RelativePath": "WeatherForecast",
