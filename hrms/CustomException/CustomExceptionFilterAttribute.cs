@@ -1,7 +1,6 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Filters;
 using System.Net;
-using static hrms.CustomException.BaseCustomException;
 
 namespace hrms.CustomException
 {
@@ -47,6 +46,11 @@ namespace hrms.CustomException
             {
                 statusCode = existsCustomException.StatusCode;
                 message = existsCustomException.Message;
+            }
+            else if (context.Exception is UnauthorizedCustomException unauthorizedCustom)
+            {
+                statusCode = unauthorizedCustom.StatusCode;
+                message = unauthorizedCustom.Message;
             }
             _logger.LogError(context.Exception, "An unhandled exception occurred: {Message}", context.Exception.Message);
 

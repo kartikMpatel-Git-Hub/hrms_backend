@@ -8,9 +8,9 @@ namespace hrms.Dto.Response.User
         public String FullName { get; set; }
         public String Email { get; set; }
         public String Image { get; set; }
-        public UserRole Role { get; set; }
-        public DateOnly DateOfBirth { get; set; }
-        public DateOnly DateOfJoin { get; set; }
+        public String Role { get; set; }
+        public DateTime DateOfBirth { get; set; }
+        public DateTime DateOfJoin { get; set; }
         public int? ManagerId { get; set; }
     }
 }

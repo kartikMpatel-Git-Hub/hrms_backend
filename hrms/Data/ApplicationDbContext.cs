@@ -8,11 +8,14 @@ namespace hrms.Data
         public ApplicationDbContext(DbContextOptions<ApplicationDbContext> options) : base(options)
         {}
         public DbSet<User> Users { get; set; }
-        public DbSet<Travel> travels { get; set; }
-        public DbSet<TravelDocument> travelDocuments { get; set; }
-        public DbSet<ExpenseCategory> expenseCategories { get; set; }
-        public DbSet<Expense> expenses { get; set; }
-        public DbSet<ExpenseProof> expenseProofs { get; set; }
+        public DbSet<Travel> Travels { get; set; }
+        public DbSet<TravelDocument> TravelDocuments { get; set; }
+        public DbSet<ExpenseCategory> ExpenseCategories { get; set; }
+        public DbSet<Expense> Expenses { get; set; }
+        public DbSet<ExpenseProof> ExpenseProofs { get; set; }
+        public DbSet<Traveler> Travelers { get; set; }
+        public DbSet<Notification> Notifications { get; set; }
+        
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             base.OnModelCreating(modelBuilder);
@@ -81,11 +84,13 @@ namespace hrms.Data
                 entity
                     .Property(t => t.Title)
                     .IsRequired()
+                    .HasColumnName("title")
                     .HasMaxLength(50);
 
                 entity
                     .Property(t => t.Desciption)
                     .IsRequired()
+                    .HasColumnName("description")
                     .HasMaxLength(300);
 
                 entity.Property(u => u.StartDate)
@@ -99,6 +104,7 @@ namespace hrms.Data
                 entity
                     .Property(t => t.Location)
                     .IsRequired()
+                    .HasColumnName("location")
                     .HasMaxLength(50);
 
                 entity
@@ -114,6 +120,30 @@ namespace hrms.Data
                     .HasForeignKey(u => u.CreatedBy)
                     .OnDelete(DeleteBehavior.Restrict);
 
+            });
+
+            modelBuilder.Entity<Traveler>(entity =>
+            {
+                entity.ToTable("travelers");
+
+                entity.HasKey(t => t.Id);
+
+                entity
+                    .Property(t => t.Id)
+                    .HasColumnName("pk_traveler_id");
+
+                entity
+                    .HasOne(t => t.Travel)
+                    .WithMany(tr => tr.Travelers)
+                    .HasConstraintName("fk_traveler_treavel_id")
+                    .HasForeignKey(u => u.TravelId)
+                    .OnDelete(DeleteBehavior.Restrict);
+                entity
+                    .HasOne(t => t.Travelerr)
+                    .WithMany()
+                    .HasConstraintName("fk_traveler_user_id")
+                    .HasForeignKey(u => u.TravelerId)
+                    .OnDelete(DeleteBehavior.Restrict);
             });
 
             modelBuilder.Entity<TravelDocument>(entity =>
@@ -264,6 +294,46 @@ namespace hrms.Data
                     .WithMany()
                     .HasForeignKey(e => e.ExpenseId)
                     .HasConstraintName("fk_expense_proof_id")
+                    .OnDelete(DeleteBehavior.Restrict);
+            });
+
+            modelBuilder.Entity<Notification>(entity =>
+            {
+                entity.ToTable("notifications");
+
+                entity.HasKey(n => n.Id);
+
+                entity
+                    .Property(n => n.Id)
+                    .HasColumnName("pk_notification_id");
+
+                entity
+                    .Property(n => n.Title)
+                    .IsRequired()
+                    .HasColumnName("title")
+                    .HasMaxLength(50);
+
+                entity
+                    .Property(n => n.Description)
+                    .IsRequired()
+                    .HasColumnName("description")
+                    .HasMaxLength(500);
+
+                entity
+                    .Property(n => n.IsViewed)
+                    .IsRequired()
+                    .HasColumnName("is_viewed");
+
+                entity
+                    .Property(n => n.NotificationDate)
+                    .IsRequired()
+                    .HasColumnName("notification_date");
+
+                entity
+                    .HasOne(n => n.Notified)
+                    .WithMany()
+                    .HasForeignKey(n => n.NotifiedTo)
+                    .HasConstraintName("fk_notified_user_id")
                     .OnDelete(DeleteBehavior.Restrict);
             });
 

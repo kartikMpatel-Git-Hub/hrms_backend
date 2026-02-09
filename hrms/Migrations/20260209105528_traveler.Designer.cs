@@ -12,8 +12,8 @@ using hrms.Data;
 namespace hrms.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20260208114652_initial")]
-    partial class initial
+    [Migration("20260209105528_traveler")]
+    partial class traveler
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -154,30 +154,33 @@ namespace hrms.Migrations
                     b.Property<string>("Desciption")
                         .IsRequired()
                         .HasMaxLength(300)
-                        .HasColumnType("nvarchar(300)");
+                        .HasColumnType("nvarchar(300)")
+                        .HasColumnName("description");
 
-                    b.Property<DateOnly>("EndDate")
-                        .HasColumnType("date")
+                    b.Property<DateTime>("EndDate")
+                        .HasColumnType("datetime2")
                         .HasColumnName("trael_end_date");
 
                     b.Property<string>("Location")
                         .IsRequired()
                         .HasMaxLength(50)
-                        .HasColumnType("nvarchar(50)");
+                        .HasColumnType("nvarchar(50)")
+                        .HasColumnName("location");
 
                     b.Property<decimal>("MaxAmountLimit")
                         .HasPrecision(10, 2)
                         .HasColumnType("decimal(10,2)")
                         .HasColumnName("expense_max_amount_limit");
 
-                    b.Property<DateOnly>("StartDate")
-                        .HasColumnType("date")
+                    b.Property<DateTime>("StartDate")
+                        .HasColumnType("datetime2")
                         .HasColumnName("travel_start_date");
 
                     b.Property<string>("Title")
                         .IsRequired()
                         .HasMaxLength(50)
-                        .HasColumnType("nvarchar(50)");
+                        .HasColumnType("nvarchar(50)")
+                        .HasColumnName("title");
 
                     b.Property<DateTime>("created_at")
                         .HasColumnType("datetime2");
@@ -251,6 +254,33 @@ namespace hrms.Migrations
                     b.ToTable("travel_documents", (string)null);
                 });
 
+            modelBuilder.Entity("hrms.Model.Traveler", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .HasColumnName("pk_traveler_id");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+
+                    b.Property<int>("TravelId")
+                        .HasColumnType("int");
+
+                    b.Property<int>("TravelerId")
+                        .HasColumnType("int");
+
+                    b.Property<bool>("is_deletd")
+                        .HasColumnType("bit");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("TravelId");
+
+                    b.HasIndex("TravelerId");
+
+                    b.ToTable("travelers", (string)null);
+                });
+
             modelBuilder.Entity("hrms.Model.User", b =>
                 {
                     b.Property<int>("Id")
@@ -260,12 +290,12 @@ namespace hrms.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
 
-                    b.Property<DateOnly>("DateOfBirth")
-                        .HasColumnType("date")
+                    b.Property<DateTime>("DateOfBirth")
+                        .HasColumnType("datetime2")
                         .HasColumnName("date_of_birth");
 
-                    b.Property<DateOnly>("DateOfJoin")
-                        .HasColumnType("date")
+                    b.Property<DateTime>("DateOfJoin")
+                        .HasColumnType("datetime2")
                         .HasColumnName("date_of_joining");
 
                     b.Property<string>("Email")
@@ -402,6 +432,27 @@ namespace hrms.Migrations
                     b.Navigation("Travell");
 
                     b.Navigation("Uploader");
+                });
+
+            modelBuilder.Entity("hrms.Model.Traveler", b =>
+                {
+                    b.HasOne("hrms.Model.Travel", "Travel")
+                        .WithMany()
+                        .HasForeignKey("TravelId")
+                        .OnDelete(DeleteBehavior.Restrict)
+                        .IsRequired()
+                        .HasConstraintName("fk_traveler_treavel_id");
+
+                    b.HasOne("hrms.Model.User", "Travelerr")
+                        .WithMany()
+                        .HasForeignKey("TravelerId")
+                        .OnDelete(DeleteBehavior.Restrict)
+                        .IsRequired()
+                        .HasConstraintName("fk_traveler_user_id");
+
+                    b.Navigation("Travel");
+
+                    b.Navigation("Travelerr");
                 });
 
             modelBuilder.Entity("hrms.Model.User", b =>

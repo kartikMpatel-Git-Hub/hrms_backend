@@ -6,7 +6,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 namespace hrms.Migrations
 {
     /// <inheritdoc />
-    public partial class initial : Migration
+    public partial class traveler : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
@@ -36,8 +36,8 @@ namespace hrms.Migrations
                     password = table.Column<string>(type: "nvarchar(500)", maxLength: 500, nullable: false),
                     image_url = table.Column<string>(type: "nvarchar(500)", maxLength: 500, nullable: false),
                     user_role = table.Column<string>(type: "nvarchar(15)", maxLength: 15, nullable: false),
-                    date_of_birth = table.Column<DateOnly>(type: "date", nullable: false),
-                    date_of_joining = table.Column<DateOnly>(type: "date", nullable: false),
+                    date_of_birth = table.Column<DateTime>(type: "datetime2", nullable: false),
+                    date_of_joining = table.Column<DateTime>(type: "datetime2", nullable: false),
                     ManagerId = table.Column<int>(type: "int", nullable: true),
                     is_deleted = table.Column<bool>(type: "bit", nullable: false),
                     created_at = table.Column<DateTime>(type: "datetime2", nullable: false),
@@ -60,11 +60,11 @@ namespace hrms.Migrations
                 {
                     pk_travel_id = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
-                    Title = table.Column<string>(type: "nvarchar(50)", maxLength: 50, nullable: false),
-                    Desciption = table.Column<string>(type: "nvarchar(300)", maxLength: 300, nullable: false),
-                    travel_start_date = table.Column<DateOnly>(type: "date", nullable: false),
-                    trael_end_date = table.Column<DateOnly>(type: "date", nullable: false),
-                    Location = table.Column<string>(type: "nvarchar(50)", maxLength: 50, nullable: false),
+                    title = table.Column<string>(type: "nvarchar(50)", maxLength: 50, nullable: false),
+                    description = table.Column<string>(type: "nvarchar(300)", maxLength: 300, nullable: false),
+                    travel_start_date = table.Column<DateTime>(type: "datetime2", nullable: false),
+                    trael_end_date = table.Column<DateTime>(type: "datetime2", nullable: false),
+                    location = table.Column<string>(type: "nvarchar(50)", maxLength: 50, nullable: false),
                     CreatedBy = table.Column<int>(type: "int", nullable: false),
                     expense_max_amount_limit = table.Column<decimal>(type: "decimal(10,2)", precision: 10, scale: 2, nullable: false),
                     is_deleted = table.Column<bool>(type: "bit", nullable: false),
@@ -161,6 +161,33 @@ namespace hrms.Migrations
                 });
 
             migrationBuilder.CreateTable(
+                name: "travelers",
+                columns: table => new
+                {
+                    pk_traveler_id = table.Column<int>(type: "int", nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
+                    TravelId = table.Column<int>(type: "int", nullable: false),
+                    TravelerId = table.Column<int>(type: "int", nullable: false),
+                    is_deletd = table.Column<bool>(type: "bit", nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_travelers", x => x.pk_traveler_id);
+                    table.ForeignKey(
+                        name: "fk_traveler_treavel_id",
+                        column: x => x.TravelId,
+                        principalTable: "travels",
+                        principalColumn: "pk_travel_id",
+                        onDelete: ReferentialAction.Restrict);
+                    table.ForeignKey(
+                        name: "fk_traveler_user_id",
+                        column: x => x.TravelerId,
+                        principalTable: "users",
+                        principalColumn: "pk_user_id",
+                        onDelete: ReferentialAction.Restrict);
+                });
+
+            migrationBuilder.CreateTable(
                 name: "expense_proof",
                 columns: table => new
                 {
@@ -218,6 +245,16 @@ namespace hrms.Migrations
                 column: "UploadedBy");
 
             migrationBuilder.CreateIndex(
+                name: "IX_travelers_TravelerId",
+                table: "travelers",
+                column: "TravelerId");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_travelers_TravelId",
+                table: "travelers",
+                column: "TravelId");
+
+            migrationBuilder.CreateIndex(
                 name: "IX_travels_CreatedBy",
                 table: "travels",
                 column: "CreatedBy");
@@ -242,6 +279,9 @@ namespace hrms.Migrations
 
             migrationBuilder.DropTable(
                 name: "travel_documents");
+
+            migrationBuilder.DropTable(
+                name: "travelers");
 
             migrationBuilder.DropTable(
                 name: "expenses");

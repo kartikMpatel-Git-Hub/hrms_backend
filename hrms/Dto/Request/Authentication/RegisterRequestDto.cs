@@ -19,8 +19,8 @@ namespace hrms.Dto.Request.Authentication
 
         [Required(ErrorMessage = "Role Is Required")]
         public String Role { get; set; }
-        public DateOnly DateOfBirth { get; set; }
-        public DateOnly DateOfJoin { get; set; }
+        public DateTime DateOfBirth { get; set; }
+        public DateTime DateOfJoin { get; set; }
         public int? ManagerId { get; set; }
     }
 }

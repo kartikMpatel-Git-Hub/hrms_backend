@@ -15,8 +15,8 @@
         public String HashPassword { get; set; }
         public String Image { get; set; }
         public UserRole Role { get; set; }
-        public DateOnly DateOfBirth { get; set; }
-        public DateOnly DateOfJoin { get; set; }
+        public DateTime DateOfBirth { get; set; }
+        public DateTime DateOfJoin { get; set; }
         public int? ManagerId { get; set; }
         public User Manager { get; set; }
         public ICollection<User> Employees { get; set; }
