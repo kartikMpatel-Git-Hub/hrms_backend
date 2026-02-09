@@ -1,5 +1,7 @@
 ﻿using hrms.Dto.Request.Authentication;
+using hrms.Dto.Response.User;
 using hrms.Service;
+using Microsoft.AspNetCore.Http.HttpResults;
 using Microsoft.AspNetCore.Mvc;
 
 namespace hrms.Controllers
@@ -20,8 +22,8 @@ namespace hrms.Controllers
         public async Task<IActionResult> Register(RegisterRequestDto dto)
         {
 
-            await _service.RegisterNewUser(dto);
-            return Ok("User registered successfully");
+            UserResponseDto response = await _service.RegisterNewUser(dto);
+            return Ok(response);
         }
 
         [HttpPost("login")]

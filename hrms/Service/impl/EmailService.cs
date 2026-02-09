@@ -35,6 +35,7 @@ namespace hrms.Service.impl
             };
 
             await Client.SendMailAsync(message);
+            Console.WriteLine($"Email Delivered To {to}");
         }
     }
 }

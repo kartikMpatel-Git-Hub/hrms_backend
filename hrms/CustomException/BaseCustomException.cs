@@ -28,4 +28,9 @@ namespace hrms.CustomException
     {
         public ExistsCustomException(String message) : base(message, HttpStatusCode.BadRequest) { }
     }
+
+    public class UnauthorizedCustomException : BaseCustomException
+    {
+        public UnauthorizedCustomException(string message) : base(message, HttpStatusCode.Unauthorized) { }
+    }
 }
