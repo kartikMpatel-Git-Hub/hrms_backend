@@ -6,7 +6,6 @@ using hrms.Dto.Response.Expense;
 using hrms.Dto.Response.Expense.Category;
 using hrms.Dto.Response.Other;
 using hrms.Dto.Response.Travel;
-using hrms.Dto.Response.User;
 using hrms.Service;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
@@ -115,46 +114,7 @@ namespace hrms.Controllers
             return Ok($"Travel with Id : {Id} deleted Successfully !");
         }
 
-        [HttpPost("{TravelId}/document")]
-        public async Task<IActionResult> AddDocument(int? TravelId, IFormFile file)
-        {
-            if (file == null || file.Length == 0)
-                return BadRequest(new { message = "File Not Found !" });
-            Console.WriteLine(file.FileName);
-            return Ok(new { message = "Geted !" });
-        }
-
-        [HttpPost("{TravelId}/expense")]
-        public async Task<IActionResult> AddExpense(
-            int? TravelId, 
-            ExpenseCreateDto dto
-            //,List<IFormFile> files
-            )
-        {
-            List<IFormFile> files = new List<IFormFile>();
-            if (TravelId == null || dto == null 
-                //|| files == null || files.Count == 0
-                )
-            {
-                return BadRequest("Required Resource Not Found !");
-            }
-            var CurrentUser = User;
-            if (CurrentUser == null)
-                throw new UnauthorizedCustomException($"Unauthorized Access !");
-            int CurrentUserId = Int32.Parse(CurrentUser.FindFirst(ClaimTypes.PrimarySid)?.Value);
-            int Id = (int)TravelId;
-            ExpenseResponseDto respone = await _service.AddExpense(Id, CurrentUserId, dto,files);
-            return Ok(respone);
-        }
-
-        [HttpPost("expense/category")]
-        public async Task<IActionResult> AddCategory(ExpenseCategoryCreateDto? dto)
-        {
-            if (dto == null)
-                return BadRequest(new { message = "Category Not Found !" });
-            ExpenseCategoryResponseDto response = await _service.CreateExpenseCategory(dto);
-            return Ok(response);
-        }
+        
 
     }
 }

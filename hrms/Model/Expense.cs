@@ -20,5 +20,7 @@ namespace hrms.Model
         public ExpenseCategory Category { get; set; }
         public ExpenseStatus Status { get; set; }
         public string Remarks { get; set; }
+
+        public List<ExpenseProof> Proofs { get; set; } = new List<ExpenseProof>();
     }
 }

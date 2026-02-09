@@ -1,6 +1,7 @@
 ﻿using AutoMapper;
 using hrms.Dto.Response.Expense;
 using hrms.Dto.Response.Expense.Category;
+using hrms.Dto.Response.Expense.Proof;
 using hrms.Dto.Response.Other;
 using hrms.Dto.Response.Travel;
 using hrms.Dto.Response.Traveler;
@@ -21,6 +22,7 @@ namespace hrms.Utility
             CreateMap<Traveler, TravelerDto>();
             CreateMap<ExpenseCategory, ExpenseCategoryResponseDto>();
             CreateMap<Expense,ExpenseResponseDto>();
+            CreateMap<ExpenseProof, ExpenseProofResponseDto>();
 
             CreateMap(typeof(PagedReponseOffSet<>),typeof(PagedReponseDto<>));
         }

@@ -15,15 +15,6 @@ namespace hrms.Repository.impl
         {
             _db = db;
         }
-
-        public async Task<Expense> AddExpense(Expense expense)
-        {
-            var AddedEntity = await _db.AddAsync(expense);
-            await _db.SaveChangesAsync();
-            var AddedExpense = AddedEntity.Entity;
-            return AddedExpense;
-        }
-
         public async Task AddTraveler(Traveler traveler)
         {
             await _db.Travelers.AddAsync(traveler);
@@ -43,14 +34,6 @@ namespace hrms.Repository.impl
             
         }
 
-        public async Task<ExpenseCategory> CreateCategory(ExpenseCategory expenseCategory)
-        {
-            var AddedEntity = await _db.AddAsync(expenseCategory);
-            await _db.SaveChangesAsync();
-            var AddedCategory = AddedEntity.Entity;
-            return AddedCategory;
-        }
-
         public async Task<Travel> CreateTravel(Travel travel)
         {
             var AddedEntity = await _db.Travels.AddAsync(travel);
@@ -64,23 +47,6 @@ namespace hrms.Repository.impl
             Travel travel = await GetTravelById(TravelId);
             travel.is_deleted = true;
             await _db.SaveChangesAsync();
-        }
-
-        public async Task<bool> ExistExpenseCategory(string category)
-        {
-            ExpenseCategory expenseCategory =await _db.ExpenseCategories.FirstOrDefaultAsync((c)=>c.Category.ToLower().Trim()  == category.ToLower().Trim());
-            if(expenseCategory == null)
-                return false;
-            return true;
-        }
-
-        public async Task<ExpenseCategory> GetCategoryById(int categoryId)
-        {
-            ExpenseCategory category = await _db.ExpenseCategories
-                .FirstOrDefaultAsync((c) => c.Id == categoryId);
-            if (category == null)
-                throw new NotFoundCustomException($"Category With Id : {categoryId} Not Found !");
-            return category;
         }
 
         public async Task<Travel> GetTravelById(int TravelId)

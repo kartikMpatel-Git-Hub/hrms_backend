@@ -19,7 +19,6 @@ namespace hrms.Service
         Task RemoveTravel(int TravelId);
         Task<TravelResponseDto> UpdateTravelById(int TravelId,TravelUpdateDto dto);
         Task AddTraveler(int currentUserId, TravelerAddDto dto);
-        Task<ExpenseCategoryResponseDto> CreateExpenseCategory(ExpenseCategoryCreateDto dto);
-        Task<ExpenseResponseDto> AddExpense(int travelId, int currentUserId, ExpenseCreateDto dto, List<IFormFile> files);
+        
     }
 }
