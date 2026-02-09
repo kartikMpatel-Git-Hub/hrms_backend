@@ -126,45 +126,7 @@ namespace hrms.Service.impl
             return travel;
         }
 
-        public async Task<ExpenseCategoryResponseDto> CreateExpenseCategory(ExpenseCategoryCreateDto dto)
-        {
-            if (await _repository.ExistExpenseCategory(dto.Category)) {
-                throw new ExistsCustomException($"Category : {dto.Category} Already Exists !");
-            }
-            ExpenseCategory expenseCategory = new ExpenseCategory()
-            {
-                Category = dto.Category,
-                is_deleted = false
-            };
-            ExpenseCategory response =await _repository.CreateCategory(expenseCategory);
-            return _mapper.Map<ExpenseCategoryResponseDto>(response);
-        }
-
-        public async Task<ExpenseResponseDto> AddExpense(
-            int travelId, 
-            int currentUserId, 
-            ExpenseCreateDto dto, 
-            List<IFormFile> files
-            )
-        {
-            User employee = await _userService.GetEmployee(currentUserId);
-            Travel travel = await _repository.GetTravelById(travelId);
-            ExpenseCategory category = await _repository.GetCategoryById(dto.CategoryId);
-            Expense expense = new Expense()
-            {
-                TravelId = travel.Id,
-                Travel = travel,
-                TravelerId = employee.Id,
-                Traveler = employee,
-                Amount = dto.Amount,
-                CategoryId = category.Id,
-                Category = category,
-                Status = ExpenseStatus.PENDING,
-                Remarks = dto.Remarks != null ? dto.Remarks : "Expense Added !"
-            };
-            Expense AddedExpense = await _repository.AddExpense(expense);
-            return _mapper.Map<ExpenseResponseDto>(expense);
-        }
+        
 
         // media part is pending
 

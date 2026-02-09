@@ -111,9 +111,9 @@
     "ReturnTypes": []
   },
   {
-    "ContainingType": "hrms.Controllers.TravelController",
+    "ContainingType": "hrms.Controllers.ExpenseController",
     "Method": "AddDocument",
-    "RelativePath": "Travel/{TravelId}/document",
+    "RelativePath": "travel/{TravelId}/document",
     "HttpMethod": "POST",
     "IsController": true,
     "Order": 0,
@@ -132,9 +132,9 @@
     "ReturnTypes": []
   },
   {
-    "ContainingType": "hrms.Controllers.TravelController",
+    "ContainingType": "hrms.Controllers.ExpenseController",
     "Method": "AddExpense",
-    "RelativePath": "Travel/{TravelId}/expense",
+    "RelativePath": "travel/{TravelId}/expense",
     "HttpMethod": "POST",
     "IsController": true,
     "Order": 0,
@@ -145,9 +145,24 @@
         "IsRequired": true
       },
       {
-        "Name": "dto",
-        "Type": "hrms.Dto.Request.Expense.ExpenseCreateDto",
-        "IsRequired": true
+        "Name": "Amount",
+        "Type": "System.Decimal",
+        "IsRequired": false
+      },
+      {
+        "Name": "CategoryId",
+        "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
+        "Name": "Remarks",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "Proofs",
+        "Type": "System.Collections.Generic.List\u00601[[Microsoft.AspNetCore.Http.IFormFile, Microsoft.AspNetCore.Http.Features, Version=10.0.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60]]",
+        "IsRequired": false
       }
     ],
     "ReturnTypes": []
@@ -190,9 +205,9 @@
     "ReturnTypes": []
   },
   {
-    "ContainingType": "hrms.Controllers.TravelController",
+    "ContainingType": "hrms.Controllers.ExpenseController",
     "Method": "AddCategory",
-    "RelativePath": "Travel/expense/category",
+    "RelativePath": "travel/expense/category",
     "HttpMethod": "POST",
     "IsController": true,
     "Order": 0,

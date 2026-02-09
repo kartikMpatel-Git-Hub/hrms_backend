@@ -291,7 +291,7 @@ namespace hrms.Data
 
                 entity
                     .HasOne(ep => ep.Expense)
-                    .WithMany()
+                    .WithMany(e => e.Proofs)
                     .HasForeignKey(e => e.ExpenseId)
                     .HasConstraintName("fk_expense_proof_id")
                     .OnDelete(DeleteBehavior.Restrict);
