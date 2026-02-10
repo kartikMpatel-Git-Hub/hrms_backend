@@ -1,17 +1,15 @@
-﻿using Azure;
+﻿using AutoMapper;
+using hrms.CustomException;
 using hrms.Dto.Request.Authentication;
+using hrms.Dto.Response.Authentication;
+using hrms.Dto.Response.User;
 using hrms.Model;
 using hrms.Repository;
 using hrms.Utility;
-using hrms.CustomException;
 using Microsoft.IdentityModel.Tokens;
 using System.IdentityModel.Tokens.Jwt;
 using System.Security.Claims;
 using System.Text;
-using System.Net;
-using Microsoft.EntityFrameworkCore.Query.SqlExpressions;
-using AutoMapper;
-using hrms.Dto.Response.User;
 
 namespace hrms.Service.impl
 {
@@ -30,7 +28,7 @@ namespace hrms.Service.impl
             _config = config;
             _email = email;
         }
-        public async Task<string> Login(LoginRequestDto dto)
+        public async Task<LoginResponseDto> Login(LoginRequestDto dto)
         {
             User user = await _repo.GetByEmailAsync(dto.Email);
             if (user == null)
@@ -61,7 +59,14 @@ namespace hrms.Service.impl
 
             );
 
-            return new JwtSecurityTokenHandler().WriteToken(token);
+            string generatedToken = new JwtSecurityTokenHandler().WriteToken(token);
+            LoginResponseDto response = new LoginResponseDto()
+            {
+                email = user.Email,
+                role = user.Role.ToString(),
+                token = generatedToken
+            };
+            return response;
         }
 
         

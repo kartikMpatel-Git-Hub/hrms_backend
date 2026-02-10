@@ -26,18 +26,10 @@ namespace hrms.Controllers
             _cloudinary = cloudinary;
         }
 
-        [HttpPost("{TravelId}/document")]
-        public async Task<IActionResult> AddDocument(int? TravelId, IFormFile file)
-        {
-            if (file == null || file.Length == 0)
-                return BadRequest(new { message = "File Not Found !" });
-            Console.WriteLine(file.FileName);
-            var url = await _cloudinary.UploadAsync(file);
-            return Ok(new { url });
-        }
 
         [HttpPost("{TravelId}/expense")]
         [Consumes("multipart/form-data")]
+        [Authorize(Roles = "EMPLOYEE")]
         public async Task<IActionResult> AddExpense(
             int? TravelId,
             ExpenseCreateDto dto
@@ -61,13 +53,56 @@ namespace hrms.Controllers
             return Ok(respone);
         }
 
+
+        [HttpGet("{TravelId}/traveler/{TravelerId}/expense")]
+        public async Task<IActionResult> GetTravelTravelerExpense(
+            int? TravelId,
+            int? TravelerId
+            )
+        {
+            if (TravelId == null || TravelerId == null)
+                throw new NotFoundCustomException("Travel or Traveler Id not found !");
+            int travelId = (int)TravelId;
+            int travelerId = (int)TravelerId;
+            List<ExpenseResponseDto> respone = await _service.GetTravelTravelerExpense(travelId,travelerId);
+            return Ok(respone);
+        }
+
+
         [HttpPost("expense/category")]
+        [Authorize(Roles = "HR")]
         public async Task<IActionResult> AddCategory(ExpenseCategoryCreateDto? dto)
         {
             if (dto == null)
                 return BadRequest(new { message = "Category Not Found !" });
             ExpenseCategoryResponseDto response = await _service.CreateExpenseCategory(dto);
             return Ok(response);
+        }
+
+        [HttpGet("expense/category")]
+        public async Task<IActionResult> GetExpenseCategory()
+        {
+            List<ExpenseCategoryResponseDto> response = await _service.GetExpenseCategory();
+            return Ok(response);
+        }
+
+        
+        [HttpPatch("{Travelid}/traveler/{TravelerId}/expense/{ExpenseId}")]
+        [Authorize(Roles = "HR")]
+        public async Task<IActionResult> ChangeExpenseStatus(
+                int? TravelId,
+                int? TravelerId,
+                int? ExpenseId,
+               ExpenseStatusChangeDto dto
+            )
+        {
+            if (TravelId == null || TravelerId == null || ExpenseId == null)
+                throw new NotFoundCustomException("Travel or Traveler or Expense Id not found !");
+            int travelId = (int)TravelId;
+            int travelerId = (int)TravelerId;
+            int expenseId = (int)ExpenseId;
+            ExpenseResponseDto respone = await _service.ChangeExpenseStatus(travelId, travelerId,expenseId,dto);
+            return Ok(respone);
         }
     }
 }

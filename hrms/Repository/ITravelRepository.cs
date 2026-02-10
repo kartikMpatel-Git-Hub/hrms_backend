@@ -14,6 +14,9 @@ namespace hrms.Repository
         Task DeleteTravel(int TravelId);
         Task<PagedReponseOffSet<Travel>> GetTravelCreatedByHr(int HrId,int PageSize,int PageNumber);
         Task<Travel> GetTravelerByTravel(int travelId);
-        
+        Task<TravelDocument> AddTravelDocument(TravelDocument document);
+        Task<User> GetTravelerByTravelId(int travelId, int travelerId);
+        Task<List<TravelDocument>> GetTravelDocuments(int travelId, int travelerId);
+        Task<PagedReponseOffSet<Travel>> GetEmployeeTravels(int id, int pageSize, int pageNumber);
     }
 }

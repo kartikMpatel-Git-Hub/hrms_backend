@@ -10,7 +10,7 @@ namespace hrms.Dto.Response.Expense
         public int TravelerId { get; set; }
         public decimal Amount { get; set; }
         public int CategoryId { get; set; }
-        public ExpenseStatus Status { get; set; }
+        public string Status { get; set; }
         public string Remarks { get; set; }
         public List<ExpenseProofResponseDto> proofs { get; set; } = new List<ExpenseProofResponseDto>();
     }

@@ -9,5 +9,8 @@ namespace hrms.Service
     {
         Task<ExpenseCategoryResponseDto> CreateExpenseCategory(ExpenseCategoryCreateDto dto);
         Task<ExpenseResponseDto> AddExpense(int travelId, int currentUserId, ExpenseCreateDto dto, List<IFormFile> files);
+        Task<List<ExpenseCategoryResponseDto>> GetExpenseCategory();
+        Task<List<ExpenseResponseDto>> GetTravelTravelerExpense(int travelId, int travelerId);
+        Task<ExpenseResponseDto> ChangeExpenseStatus(int travelId, int travelerId, int expenseId,ExpenseStatusChangeDto dto);
     }
 }

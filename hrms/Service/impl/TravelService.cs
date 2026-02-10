@@ -1,12 +1,15 @@
 ﻿using AutoMapper;
+using CloudinaryDotNet;
 using hrms.CustomException;
 using hrms.Dto.Request.Category;
 using hrms.Dto.Request.Expense;
 using hrms.Dto.Request.Travel;
+using hrms.Dto.Request.Travel.Document;
 using hrms.Dto.Response.Expense;
 using hrms.Dto.Response.Expense.Category;
 using hrms.Dto.Response.Other;
 using hrms.Dto.Response.Travel;
+using hrms.Dto.Response.Travel.Document;
 using hrms.Dto.Response.User;
 using hrms.Model;
 using hrms.Repository;
@@ -20,13 +23,15 @@ namespace hrms.Service.impl
         private readonly IUserService _userService;
         private readonly IMapper _mapper;
         private readonly IEmailService _email;
+        private readonly ICloudinaryService _cloudinary;
 
-        public TravelService(IEmailService email, ITravelRepository repository,IMapper mapper,IUserService userService)
+        public TravelService(IEmailService email, ITravelRepository repository,IMapper mapper,IUserService userService, ICloudinaryService cloudinary)
         {
             _repository = repository;
             _userService = userService;
             _mapper = mapper;
             _email = email;
+            _cloudinary = cloudinary;
         }
 
         public async Task AddTraveler(int TreavelId, TravelerAddDto dto)
@@ -126,9 +131,44 @@ namespace hrms.Service.impl
             return travel;
         }
 
-        
+        public async Task<TravelDocumentResponseDto> AddTravelDocument(int travelId, int travelerId, int currentUserId, TravelDocumentCreateDto dto)
+        {
+            Travel travel = await _repository.GetTravelById(travelId);
+            User currentUser = await _userService.GetUserEntityById(currentUserId);
+            User traveler = currentUser.Id == travelerId ? currentUser : await _repository.GetTravelerByTravelId(travelId, travelerId);
 
-        // media part is pending
 
+            TravelDocument document = new TravelDocument()
+            {
+                TravelerId = traveler.Id,
+                Traveler = traveler,
+                TravelId = travel.Id,
+                Travell = travel,
+                UploadedBy = currentUser.Id,
+                Uploader = currentUser,
+                DocumentName = dto.DocumentName,
+                DocumentType = dto.Document.ContentType,
+                DocumentUrl = await _cloudinary.UploadAsync(dto.Document),
+                //created_at = DateTime.Now,
+                //updated_at = DateTime.Now,
+                //is_deleted = false
+            };
+            TravelDocument travelDocument = await _repository.AddTravelDocument(document);
+            return _mapper.Map<TravelDocumentResponseDto>(travelDocument);
+        }
+
+        public async Task<List<TravelDocumentResponseDto>> GetTravelDocument(int travelId, int travelerId)
+        {
+            List<TravelDocument> documents = await _repository.GetTravelDocuments(travelId, travelerId);
+            return _mapper.Map<List<TravelDocumentResponseDto>>(documents);
+        }
+
+        public async Task<PagedReponseDto<TravelResponseDto>> GetEmployeeTravels(int currentUserId, int pageSize, int pageNumber)
+        {
+            User employee = await _userService.GetEmployee(currentUserId);
+            PagedReponseOffSet<Travel> PageTravels = await _repository.GetEmployeeTravels(employee.Id, pageSize, pageNumber);
+            var Response = _mapper.Map<PagedReponseDto<TravelResponseDto>>(PageTravels);
+            return Response;
+        }
     }
 }

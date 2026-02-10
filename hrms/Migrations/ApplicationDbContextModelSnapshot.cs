@@ -267,17 +267,15 @@ namespace hrms.Migrations
                     b.Property<int>("TravelerId")
                         .HasColumnType("int");
 
+                    b.Property<DateTime>("UploadedAt")
+                        .HasColumnType("datetime2")
+                        .HasColumnName("uploaded_at");
+
                     b.Property<int>("UploadedBy")
                         .HasColumnType("int");
 
-                    b.Property<DateTime>("created_at")
-                        .HasColumnType("datetime2");
-
                     b.Property<bool>("is_deleted")
                         .HasColumnType("bit");
-
-                    b.Property<DateTime>("updated_at")
-                        .HasColumnType("datetime2");
 
                     b.HasKey("Id");
 
@@ -419,7 +417,7 @@ namespace hrms.Migrations
             modelBuilder.Entity("hrms.Model.ExpenseProof", b =>
                 {
                     b.HasOne("hrms.Model.Expense", "Expense")
-                        .WithMany()
+                        .WithMany("Proofs")
                         .HasForeignKey("ExpenseId")
                         .OnDelete(DeleteBehavior.Restrict)
                         .IsRequired()
@@ -512,6 +510,11 @@ namespace hrms.Migrations
                         .HasConstraintName("fk_managaer_user_id");
 
                     b.Navigation("Manager");
+                });
+
+            modelBuilder.Entity("hrms.Model.Expense", b =>
+                {
+                    b.Navigation("Proofs");
                 });
 
             modelBuilder.Entity("hrms.Model.Travel", b =>

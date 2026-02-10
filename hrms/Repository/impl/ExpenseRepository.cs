@@ -46,6 +46,25 @@ namespace hrms.Repository.impl
             return true;
         }
 
+        public async Task<List<ExpenseCategory>> GetAllExpenseCategory()
+        {
+            List<ExpenseCategory> categories
+                = await _db.ExpenseCategories.ToListAsync();
+            if (categories == null)
+                throw new NotFoundCustomException("Expense Category Not Found !");
+            return categories;
+        }
+
+        public async Task<List<Expense>> GetAllTravelTravelerExpense(int travelId, int travelerId)
+        {
+            List<Expense> expenses
+                = await _db.Expenses
+                .Where((e) => e.TravelId == travelId && e.TravelerId == travelerId)
+                .Include(e => e.Proofs)
+                .ToListAsync();
+            return expenses;
+        }
+
         public async Task<ExpenseCategory> GetCategoryById(int categoryId)
         {
             ExpenseCategory category = await _db.ExpenseCategories
@@ -55,5 +74,20 @@ namespace hrms.Repository.impl
             return category;
         }
 
+        public async Task<Expense> GetExpenseById(int expenseId)
+        {
+            Expense expense = await _db.Expenses
+                .FirstOrDefaultAsync((e) => e.Id == expenseId);
+            if (expense == null)
+                throw new NotFoundCustomException($"Expense With Id : {expenseId} Not Found !");
+            return expense;
+        }
+
+        public async Task<Expense> UpdateExpenseStatus(Expense expense)
+        {
+            var UpdatedEntity = _db.Update(expense);
+            await _db.SaveChangesAsync();
+            return UpdatedEntity.Entity;
+        }
     }
 }
