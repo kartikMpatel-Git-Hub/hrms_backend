@@ -6,7 +6,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 namespace hrms.Migrations
 {
     /// <inheritdoc />
-    public partial class traveler : Migration
+    public partial class initial : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
@@ -49,6 +49,29 @@ namespace hrms.Migrations
                     table.ForeignKey(
                         name: "fk_managaer_user_id",
                         column: x => x.ManagerId,
+                        principalTable: "users",
+                        principalColumn: "pk_user_id",
+                        onDelete: ReferentialAction.Restrict);
+                });
+
+            migrationBuilder.CreateTable(
+                name: "notifications",
+                columns: table => new
+                {
+                    pk_notification_id = table.Column<int>(type: "int", nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
+                    NotifiedTo = table.Column<int>(type: "int", nullable: false),
+                    title = table.Column<string>(type: "nvarchar(50)", maxLength: 50, nullable: false),
+                    description = table.Column<string>(type: "nvarchar(500)", maxLength: 500, nullable: false),
+                    is_viewed = table.Column<bool>(type: "bit", nullable: false),
+                    notification_date = table.Column<DateTime>(type: "datetime2", nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_notifications", x => x.pk_notification_id);
+                    table.ForeignKey(
+                        name: "fk_notified_user_id",
+                        column: x => x.NotifiedTo,
                         principalTable: "users",
                         principalColumn: "pk_user_id",
                         onDelete: ReferentialAction.Restrict);
@@ -133,9 +156,8 @@ namespace hrms.Migrations
                     document_name = table.Column<string>(type: "nvarchar(30)", maxLength: 30, nullable: false),
                     document_type = table.Column<string>(type: "nvarchar(50)", maxLength: 50, nullable: false),
                     UploadedBy = table.Column<int>(type: "int", nullable: false),
-                    is_deleted = table.Column<bool>(type: "bit", nullable: false),
-                    created_at = table.Column<DateTime>(type: "datetime2", nullable: false),
-                    updated_at = table.Column<DateTime>(type: "datetime2", nullable: false)
+                    uploaded_at = table.Column<DateTime>(type: "datetime2", nullable: false),
+                    is_deleted = table.Column<bool>(type: "bit", nullable: false)
                 },
                 constraints: table =>
                 {
@@ -230,6 +252,11 @@ namespace hrms.Migrations
                 column: "TravelId");
 
             migrationBuilder.CreateIndex(
+                name: "IX_notifications_NotifiedTo",
+                table: "notifications",
+                column: "NotifiedTo");
+
+            migrationBuilder.CreateIndex(
                 name: "IX_travel_documents_TravelerId",
                 table: "travel_documents",
                 column: "TravelerId");
@@ -276,6 +303,9 @@ namespace hrms.Migrations
         {
             migrationBuilder.DropTable(
                 name: "expense_proof");
+
+            migrationBuilder.DropTable(
+                name: "notifications");
 
             migrationBuilder.DropTable(
                 name: "travel_documents");

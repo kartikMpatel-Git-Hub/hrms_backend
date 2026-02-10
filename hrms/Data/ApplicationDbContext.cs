@@ -175,6 +175,11 @@ namespace hrms.Data
                     .HasMaxLength(50);
 
                 entity
+                    .Property(td => td.UploadedAt)
+                    .HasColumnName("uploaded_at")
+                    .IsRequired();
+
+                entity
                     .HasOne(td => td.Travell)
                     .WithMany()
                     .HasConstraintName("fk_travel_document_id")

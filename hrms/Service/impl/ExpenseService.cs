@@ -53,10 +53,10 @@ namespace hrms.Service.impl
             User employee = await _userService.GetEmployee(currentUserId);
             Travel travel = await _travelRepository.GetTravelById(travelId);
             ExpenseCategory category = await _repository.GetCategoryById(dto.CategoryId);
-            //if (travel.StartDate > DateTime.Now || travel.EndDate.AddDays(10) < DateTime.Now)
-            //{
-            //    throw new InvalidOperationCustomException("Expense can not add before trip start and after 10 days of completed trip !");
-            //}
+            if (travel.StartDate > DateTime.Now || travel.EndDate.AddDays(10) < DateTime.Now)
+            {
+                throw new InvalidOperationCustomException("Expense can not add before trip start and after 10 days of completed trip !");
+            }
             Expense expense = new Expense()
             {
                 TravelId = travel.Id,
@@ -85,8 +85,58 @@ namespace hrms.Service.impl
                 proofs.Add(await _repository.AddProof(proof));
             }
             AddedExpense.Proofs = proofs;
+            User hr = await _userService.GetUserEntityById(travel.CreatedBy);
 
+            await _email.SendEmailAsync(hr.Email, "Expense Added", $"""
+                Employee with email {employee.Email} added expense of Amount : {expense.Amount}
+                """);
             return _mapper.Map<ExpenseResponseDto>(AddedExpense);
+        }
+
+        public async Task<List<ExpenseCategoryResponseDto>> GetExpenseCategory()
+        {
+            List<ExpenseCategory> categories = await _repository.GetAllExpenseCategory();
+            return _mapper.Map<List<ExpenseCategoryResponseDto>>(categories);
+        }
+
+        public async Task<List<ExpenseResponseDto>> GetTravelTravelerExpense(int travelId, int travelerId)
+        {
+            List<Expense> expenses = await _repository.GetAllTravelTravelerExpense(travelId, travelerId);
+            return _mapper.Map<List<ExpenseResponseDto>>(expenses);
+        }
+
+        public async Task<ExpenseResponseDto> ChangeExpenseStatus(int travelId, int travelerId, int expenseId,ExpenseStatusChangeDto dto)
+        {
+            Expense expense = await _repository.GetExpenseById(expenseId);
+            if(dto.Status == ExpenseStatus.PENDING.ToString())
+            {
+                throw new InvalidOperationCustomException("updating Status Can not be Pending !");
+            }
+            if(expense.Status == ExpenseStatus.PENDING)
+            {
+                expense.Status = GetStatus(dto.Status);
+                expense.Remarks = dto.Remarks != null ? dto.Remarks : "";
+                expense.updated_at = DateTime.Now;
+            }
+            else
+            {
+                throw new InvalidOperationCustomException("Expense Review already given !");
+            }
+            Expense e = await _repository.UpdateExpenseStatus(expense);
+            return _mapper.Map<ExpenseResponseDto>(e);
+        }
+
+        private ExpenseStatus GetStatus(string status)
+        {
+            switch (status)
+            {
+                case "APPROVED":
+                    return ExpenseStatus.APPROVED;
+                case "REJECTED":
+                    return ExpenseStatus.REJECTED;
+                default:
+                    throw new NotFoundCustomException($"Expense status : {status} not found !");
+            }
         }
     }
 }

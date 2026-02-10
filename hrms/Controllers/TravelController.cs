@@ -1,15 +1,13 @@
 ﻿using hrms.CustomException;
-using hrms.Dto.Request.Category;
-using hrms.Dto.Request.Expense;
 using hrms.Dto.Request.Travel;
-using hrms.Dto.Response.Expense;
-using hrms.Dto.Response.Expense.Category;
+using hrms.Dto.Request.Travel.Document;
 using hrms.Dto.Response.Other;
 using hrms.Dto.Response.Travel;
+using hrms.Dto.Response.Travel.Document;
 using hrms.Service;
 using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Cors;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.AspNetCore.Mvc.Formatters;
 using System.Security.Claims;
 
 namespace hrms.Controllers
@@ -17,13 +15,16 @@ namespace hrms.Controllers
     [Route("[controller]")]
     [ApiController]
     [Authorize]
+    [EnableCors("MyAllowSpecificOrigins")]
     public class TravelController : Controller
     {
         private readonly ITravelService _service;
+        private readonly ICloudinaryService _cloudinary;
 
-        public TravelController(ITravelService service)
+        public TravelController(ITravelService service, ICloudinaryService cloudinary)
         {
             _service = service;
+            _cloudinary = cloudinary;
         }
 
         [HttpPost]
@@ -114,7 +115,60 @@ namespace hrms.Controllers
             return Ok($"Travel with Id : {Id} deleted Successfully !");
         }
 
-        
+        [Authorize(Roles = "HR,EMPLOYEE")]
+        [HttpPost("{TravelId}/traveler/{TravelerId}/document")]
+        public async Task<IActionResult> AddDocument(
+            int? TravelId,
+            int? TravelerId,
+            TravelDocumentCreateDto dto)
+        {
+
+            if (dto.Document == null)
+                return BadRequest(new { message = "Document Not Found !" });
+            if (TravelId == null)
+                return BadRequest(new { message = "Travel Id Not Found !" });
+            if (TravelerId == null)
+                return BadRequest(new { message = "Traveler Id Not Found !" });
+            int travelId = (int)TravelId;
+            int travelerId = (int)TravelerId;
+            var CurrentUser = User;
+            if (CurrentUser == null)
+                throw new UnauthorizedCustomException($"Unauthorized Access !");
+            int CurrentUserId = Int32.Parse(CurrentUser.FindFirst(ClaimTypes.PrimarySid)?.Value);
+            TravelDocumentResponseDto response = await _service.AddTravelDocument(travelId, travelerId, CurrentUserId, dto);
+            return Ok(response);
+        }
+
+
+        [HttpGet("{TravelId}/traveler/{TravelerId}/document")]
+        public async Task<IActionResult> GetTravelTravelerDocument(
+            int? TravelId,
+            int? TravelerId)
+        {
+            if (TravelId == null)
+                return BadRequest(new { message = "Travel Id Not Found !" });
+            if (TravelerId == null)
+                return BadRequest(new { message = "Traveler Id Not Found !" });
+            int travelId = (int)TravelId;
+            int travelerId = (int)TravelerId;
+            List<TravelDocumentResponseDto> response = await _service.GetTravelDocument(travelId, travelerId);
+            return Ok(response);
+        }
+
+        [HttpGet("employee")]
+        [Authorize(Roles = "EMPLOYEE")]
+        public async Task<IActionResult> GetMyTravelsForEmployee(int PageSize = 10, int PageNumber = 1)
+        {
+            Console.WriteLine("EMP");
+            if (PageNumber <= 0 || PageSize <= 0)
+                throw new InvalidOperationCustomException($"{nameof(PageNumber)} and {nameof(PageSize)} size must be greater than 0.");
+            var CurrentUser = User;
+            if (CurrentUser == null)
+                throw new UnauthorizedCustomException($"Unauthorized Access !");
+            int CurrentUserId = Int32.Parse(CurrentUser.FindFirst(ClaimTypes.PrimarySid)?.Value);
+            PagedReponseDto<TravelResponseDto> response = await _service.GetEmployeeTravels(CurrentUserId, PageSize, PageNumber);
+            return Ok(response);
+        }
 
     }
 }

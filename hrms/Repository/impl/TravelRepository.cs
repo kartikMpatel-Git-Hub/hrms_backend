@@ -15,6 +15,14 @@ namespace hrms.Repository.impl
         {
             _db = db;
         }
+
+        public async Task<TravelDocument> AddTravelDocument(TravelDocument document)
+        {
+            var AddedEntity = await _db.TravelDocuments.AddAsync(document);
+            await _db.SaveChangesAsync();
+            return AddedEntity.Entity;
+        }
+
         public async Task AddTraveler(Traveler traveler)
         {
             await _db.Travelers.AddAsync(traveler);
@@ -30,8 +38,6 @@ namespace hrms.Repository.impl
 
             await _db.Notifications.AddAsync(notification);
             await _db.SaveChangesAsync();
-
-            
         }
 
         public async Task<Travel> CreateTravel(Travel travel)
@@ -47,6 +53,24 @@ namespace hrms.Repository.impl
             Travel travel = await GetTravelById(TravelId);
             travel.is_deleted = true;
             await _db.SaveChangesAsync();
+        }
+
+        public async Task<PagedReponseOffSet<Travel>> GetEmployeeTravels(int id, int pageSize, int pageNumber)
+        {
+            var TotalRecords = await _db
+                .Travelers
+                .Where(tl => tl.TravelerId == id)
+                .Include(tl => tl.Travel)
+                .Select(tl => tl.Travel)
+                .CountAsync();
+            List<Travel> travels = await _db
+                .Travelers
+                .Where(tl => tl.TravelerId == id)
+                .Include(tl => tl.Travel)
+                .Select(tl => tl.Travel)
+                .ToListAsync();
+            PagedReponseOffSet<Travel> Response = new PagedReponseOffSet<Travel>(travels, pageNumber, pageSize, TotalRecords);
+            return Response;
         }
 
         public async Task<Travel> GetTravelById(int TravelId)
@@ -65,7 +89,7 @@ namespace hrms.Repository.impl
 
         public async Task<PagedReponseOffSet<Travel>> GetTravelCreatedByHr(int HrId,int PageSize,int PageNumber)
         {
-            var TotalRecords = await _db.Travels.Where(t => t.Id ==  HrId).CountAsync();
+            var TotalRecords = await _db.Travels.Where(t => t.CreatedBy ==  HrId).CountAsync();
             List<Travel> Travels = await _db.Travels
                 .OrderBy(t => t.Id)
                 .Where(t => t.CreatedBy ==  HrId)
@@ -76,10 +100,37 @@ namespace hrms.Repository.impl
             return Response;
         }
 
+        public async Task<List<TravelDocument>> GetTravelDocuments(int travelId, int travelerId)
+        {
+            List<TravelDocument> documents =
+                await _db.TravelDocuments.Where((td) => td.TravelId == travelId && td.TravelerId == travelerId).ToListAsync();
+            if (documents == null)
+                throw new NotFoundCustomException("Document not found !");
+            return documents;
+        }
+
         public async Task<Travel> GetTravelerByTravel(int travelId)
         {
             Travel travel = await GetTravelById(travelId);
             return travel;
+        }
+
+        public async Task<User> GetTravelerByTravelId(int travelId, int travelerId)
+        {
+            Traveler traveler = await _db.Travelers
+                .Where((t)=>t.TravelerId == travelerId && t.TravelId == travelId)
+                .FirstOrDefaultAsync();
+            
+            if(traveler == null)
+            {
+                throw new NotFoundCustomException($"Traveler with {travelerId} not asociate with travel {travelId}");
+            }
+
+            User user = traveler.Travelerr;
+            if (user == null)
+                throw new InvalidOperationCustomException("Failed To fetch traveler !");
+            return user;
+
         }
 
         public async Task<Travel> UpdateTravel(Travel travel)

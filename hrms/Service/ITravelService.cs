@@ -1,12 +1,8 @@
-﻿using hrms.Dto.Request.Category;
-using hrms.Dto.Request.Expense;
-using hrms.Dto.Request.Travel;
-using hrms.Dto.Response.Expense;
-using hrms.Dto.Response.Expense.Category;
+﻿using hrms.Dto.Request.Travel;
+using hrms.Dto.Request.Travel.Document;
 using hrms.Dto.Response.Other;
 using hrms.Dto.Response.Travel;
-using hrms.Dto.Response.User;
-using hrms.Model;
+using hrms.Dto.Response.Travel.Document;
 
 namespace hrms.Service
 {
@@ -19,6 +15,8 @@ namespace hrms.Service
         Task RemoveTravel(int TravelId);
         Task<TravelResponseDto> UpdateTravelById(int TravelId,TravelUpdateDto dto);
         Task AddTraveler(int currentUserId, TravelerAddDto dto);
-        
+        Task<TravelDocumentResponseDto> AddTravelDocument(int travelId, int travelerId, int currentUserId, TravelDocumentCreateDto dto);
+        Task<List<TravelDocumentResponseDto>> GetTravelDocument(int travelId, int travelerId);
+        Task<PagedReponseDto<TravelResponseDto>> GetEmployeeTravels(int currentUserId, int pageSize, int pageNumber);
     }
 }

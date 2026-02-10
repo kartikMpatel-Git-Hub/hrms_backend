@@ -12,8 +12,8 @@ using hrms.Data;
 namespace hrms.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20260209105528_traveler")]
-    partial class traveler
+    [Migration("20260210094307_initial")]
+    partial class initial
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -139,6 +139,45 @@ namespace hrms.Migrations
                     b.ToTable("expense_proof", (string)null);
                 });
 
+            modelBuilder.Entity("hrms.Model.Notification", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .HasColumnName("pk_notification_id");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+
+                    b.Property<string>("Description")
+                        .IsRequired()
+                        .HasMaxLength(500)
+                        .HasColumnType("nvarchar(500)")
+                        .HasColumnName("description");
+
+                    b.Property<bool>("IsViewed")
+                        .HasColumnType("bit")
+                        .HasColumnName("is_viewed");
+
+                    b.Property<DateTime>("NotificationDate")
+                        .HasColumnType("datetime2")
+                        .HasColumnName("notification_date");
+
+                    b.Property<int>("NotifiedTo")
+                        .HasColumnType("int");
+
+                    b.Property<string>("Title")
+                        .IsRequired()
+                        .HasMaxLength(50)
+                        .HasColumnType("nvarchar(50)")
+                        .HasColumnName("title");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("NotifiedTo");
+
+                    b.ToTable("notifications", (string)null);
+                });
+
             modelBuilder.Entity("hrms.Model.Travel", b =>
                 {
                     b.Property<int>("Id")
@@ -231,17 +270,15 @@ namespace hrms.Migrations
                     b.Property<int>("TravelerId")
                         .HasColumnType("int");
 
+                    b.Property<DateTime>("UploadedAt")
+                        .HasColumnType("datetime2")
+                        .HasColumnName("uploaded_at");
+
                     b.Property<int>("UploadedBy")
                         .HasColumnType("int");
 
-                    b.Property<DateTime>("created_at")
-                        .HasColumnType("datetime2");
-
                     b.Property<bool>("is_deleted")
                         .HasColumnType("bit");
-
-                    b.Property<DateTime>("updated_at")
-                        .HasColumnType("datetime2");
 
                     b.HasKey("Id");
 
@@ -383,13 +420,25 @@ namespace hrms.Migrations
             modelBuilder.Entity("hrms.Model.ExpenseProof", b =>
                 {
                     b.HasOne("hrms.Model.Expense", "Expense")
-                        .WithMany()
+                        .WithMany("Proofs")
                         .HasForeignKey("ExpenseId")
                         .OnDelete(DeleteBehavior.Restrict)
                         .IsRequired()
                         .HasConstraintName("fk_expense_proof_id");
 
                     b.Navigation("Expense");
+                });
+
+            modelBuilder.Entity("hrms.Model.Notification", b =>
+                {
+                    b.HasOne("hrms.Model.User", "Notified")
+                        .WithMany()
+                        .HasForeignKey("NotifiedTo")
+                        .OnDelete(DeleteBehavior.Restrict)
+                        .IsRequired()
+                        .HasConstraintName("fk_notified_user_id");
+
+                    b.Navigation("Notified");
                 });
 
             modelBuilder.Entity("hrms.Model.Travel", b =>
@@ -437,7 +486,7 @@ namespace hrms.Migrations
             modelBuilder.Entity("hrms.Model.Traveler", b =>
                 {
                     b.HasOne("hrms.Model.Travel", "Travel")
-                        .WithMany()
+                        .WithMany("Travelers")
                         .HasForeignKey("TravelId")
                         .OnDelete(DeleteBehavior.Restrict)
                         .IsRequired()
@@ -464,6 +513,16 @@ namespace hrms.Migrations
                         .HasConstraintName("fk_managaer_user_id");
 
                     b.Navigation("Manager");
+                });
+
+            modelBuilder.Entity("hrms.Model.Expense", b =>
+                {
+                    b.Navigation("Proofs");
+                });
+
+            modelBuilder.Entity("hrms.Model.Travel", b =>
+                {
+                    b.Navigation("Travelers");
                 });
 
             modelBuilder.Entity("hrms.Model.User", b =>
