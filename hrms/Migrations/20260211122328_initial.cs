@@ -12,6 +12,22 @@ namespace hrms.Migrations
         protected override void Up(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.CreateTable(
+                name: "departments",
+                columns: table => new
+                {
+                    pk_department_id = table.Column<int>(type: "int", nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
+                    DepartmentName = table.Column<string>(type: "nvarchar(30)", maxLength: 30, nullable: false),
+                    is_deleted = table.Column<bool>(type: "bit", nullable: false),
+                    created_at = table.Column<DateTime>(type: "datetime2", nullable: false),
+                    updated_at = table.Column<DateTime>(type: "datetime2", nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_departments", x => x.pk_department_id);
+                });
+
+            migrationBuilder.CreateTable(
                 name: "expense_category",
                 columns: table => new
                 {
@@ -39,6 +55,8 @@ namespace hrms.Migrations
                     date_of_birth = table.Column<DateTime>(type: "datetime2", nullable: false),
                     date_of_joining = table.Column<DateTime>(type: "datetime2", nullable: false),
                     ManagerId = table.Column<int>(type: "int", nullable: true),
+                    DepartmentId = table.Column<int>(type: "int", nullable: true),
+                    designation = table.Column<string>(type: "nvarchar(30)", maxLength: 30, nullable: false),
                     is_deleted = table.Column<bool>(type: "bit", nullable: false),
                     created_at = table.Column<DateTime>(type: "datetime2", nullable: false),
                     updated_at = table.Column<DateTime>(type: "datetime2", nullable: false)
@@ -46,6 +64,12 @@ namespace hrms.Migrations
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_users", x => x.pk_user_id);
+                    table.ForeignKey(
+                        name: "fk_department_id",
+                        column: x => x.DepartmentId,
+                        principalTable: "departments",
+                        principalColumn: "pk_department_id",
+                        onDelete: ReferentialAction.Restrict);
                     table.ForeignKey(
                         name: "fk_managaer_user_id",
                         column: x => x.ManagerId,
@@ -117,6 +141,7 @@ namespace hrms.Migrations
                     CategoryId = table.Column<int>(type: "int", nullable: false),
                     status = table.Column<string>(type: "nvarchar(20)", maxLength: 20, nullable: false),
                     remarks = table.Column<string>(type: "nvarchar(100)", maxLength: 100, nullable: false),
+                    details = table.Column<string>(type: "nvarchar(200)", maxLength: 200, nullable: false),
                     is_deleted = table.Column<bool>(type: "bit", nullable: false),
                     created_at = table.Column<DateTime>(type: "datetime2", nullable: false),
                     updated_at = table.Column<DateTime>(type: "datetime2", nullable: false)
@@ -287,6 +312,11 @@ namespace hrms.Migrations
                 column: "CreatedBy");
 
             migrationBuilder.CreateIndex(
+                name: "IX_users_DepartmentId",
+                table: "users",
+                column: "DepartmentId");
+
+            migrationBuilder.CreateIndex(
                 name: "IX_users_email",
                 table: "users",
                 column: "email",
@@ -324,6 +354,9 @@ namespace hrms.Migrations
 
             migrationBuilder.DropTable(
                 name: "users");
+
+            migrationBuilder.DropTable(
+                name: "departments");
         }
     }
 }

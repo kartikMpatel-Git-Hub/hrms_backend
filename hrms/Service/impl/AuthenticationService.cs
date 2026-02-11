@@ -20,13 +20,17 @@ namespace hrms.Service.impl
         private readonly IConfiguration _config;
         private readonly IEmailService _email;
         private readonly IMapper _mapper;
+        private readonly ICloudinaryService _cloudinary;
+        private readonly IDepartmentRepository _departmentRepo;
 
-        public AuthenticationService(IMapper mapper,IUserRepository repo, IConfiguration config,IEmailService email)
+        public AuthenticationService(IMapper mapper,IUserRepository repo, IConfiguration config,IEmailService email,ICloudinaryService cloudinary, IDepartmentRepository departmentRepo)
         {
             _mapper = mapper;
             _repo = repo;
             _config = config;
             _email = email;
+            _cloudinary = cloudinary;
+            _departmentRepo = departmentRepo;
         }
         public async Task<LoginResponseDto> Login(LoginRequestDto dto)
         {
@@ -87,10 +91,11 @@ namespace hrms.Service.impl
             {
                 FullName = dto.FullName,
                 Email = dto.Email,
-                Image = dto.Image,
+                Image = dto.Image != null ? await _cloudinary.UploadAsync(dto.Image) : "",
                 DateOfBirth= dto.DateOfBirth,
                 DateOfJoin = dto.DateOfJoin,
                 is_deleted = false,
+                Designation = dto.Designation,
                 created_at = DateTime.Now,
                 updated_at = DateTime.Now
             };
@@ -125,6 +130,13 @@ namespace hrms.Service.impl
                     throw new NotFoundCustomException($"Manager With manager_id : {dto.ManagerId} Not Found !");
                 user.Manager = manager;
                 user.ManagerId = manager.Id;
+            }
+
+            if (dto.DepartmentId != null)
+            {
+                Department department = await _departmentRepo.GetDepartmentById((int)dto.DepartmentId);
+                user.Department = department;
+                user.DepartmentId = department.Id;
             }
 
             user.HashPassword = PasswordHelper.HashPassword(dto.Password);

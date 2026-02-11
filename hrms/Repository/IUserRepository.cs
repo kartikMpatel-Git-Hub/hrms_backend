@@ -13,5 +13,7 @@ namespace hrms.Repository
         Task SaveChangesAsync();
         Task<User> GetManagerByIdAsync(int? managerId);
         Task<User> GetEmployeeById(int currentUserId);
+        Task<List<User>> GetEmployeesByName(string s);
+        Task<List<User>> GetAllEmployee(int v1, int v2);
     }
 }

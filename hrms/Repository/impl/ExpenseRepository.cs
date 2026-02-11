@@ -60,6 +60,7 @@ namespace hrms.Repository.impl
             List<Expense> expenses
                 = await _db.Expenses
                 .Where((e) => e.TravelId == travelId && e.TravelerId == travelerId)
+                .Include(e => e.Category)
                 .Include(e => e.Proofs)
                 .ToListAsync();
             return expenses;

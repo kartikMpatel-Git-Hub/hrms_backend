@@ -10,6 +10,7 @@ using hrms.Dto.Response.Expense.Category;
 using hrms.Dto.Response.Other;
 using hrms.Dto.Response.Travel;
 using hrms.Dto.Response.Travel.Document;
+using hrms.Dto.Response.Traveler;
 using hrms.Dto.Response.User;
 using hrms.Model;
 using hrms.Repository;
@@ -116,7 +117,7 @@ namespace hrms.Service.impl
             Travel travel = new Travel()
             {
                 Title = dto.Title,
-                Desciption = dto.Desciption,
+                Desciption = dto.Description,
                 StartDate = dto.StartDate,
                 EndDate = dto.EndDate,
                 Location = dto.Location,
@@ -169,6 +170,27 @@ namespace hrms.Service.impl
             PagedReponseOffSet<Travel> PageTravels = await _repository.GetEmployeeTravels(employee.Id, pageSize, pageNumber);
             var Response = _mapper.Map<PagedReponseDto<TravelResponseDto>>(PageTravels);
             return Response;
+        }
+
+        public async Task<TravelerDto> AddTraveler(int TravelId, int TravelerId)
+        {
+            Travel travel = await _repository.GetTravelById(TravelId);
+            if(await _repository.UserExistsInTravel(TravelId, TravelerId))
+            {
+                throw new ExistsCustomException("Traveler Already Exist in Travel !");
+            }
+            User traveler = await _userService.GetUserEntityById(TravelerId);
+            Traveler t = new Traveler()
+            {
+                TravelId = travel.Id,
+                Travel = travel,
+                TravelerId = traveler.Id,
+                Travelerr = traveler,
+                is_deletd = false
+            };
+            Traveler AddedTraveler = await _repository.AddTraveler(t);
+            await _email.SendEmailAsync(traveler.Email, "Your Traveling Booking !", $"Your Traveling is Booked from {travel.StartDate} to {travel.EndDate} for a {travel.Location}");
+            return _mapper.Map<TravelerDto>(AddedTraveler);
         }
     }
 }

@@ -37,5 +37,21 @@ namespace hrms.Controllers
             var user = await _service.GetUserById(UserId);
             return Ok(user);
         }
+
+        [HttpGet("search")]
+        [Authorize]
+        public async Task<IActionResult> GetEmployeesByName(string? key)
+        {
+            if (key == null)
+            {
+                List<UserResponseDto> e =
+                await _service.GetEmployees();
+                return Ok(e);
+            }
+            string s = key;
+            List<UserResponseDto> employees =
+                await _service.GetEmployeesByName(s);
+            return Ok(employees);
+        }
     }
 }

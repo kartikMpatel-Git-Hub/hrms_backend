@@ -7,6 +7,8 @@ namespace hrms.Data
     {
         public ApplicationDbContext(DbContextOptions<ApplicationDbContext> options) : base(options)
         {}
+
+        public DbSet<Department> Departments { get; set; }
         public DbSet<User> Users { get; set; }
         public DbSet<Travel> Travels { get; set; }
         public DbSet<TravelDocument> TravelDocuments { get; set; }
@@ -19,6 +21,23 @@ namespace hrms.Data
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             base.OnModelCreating(modelBuilder);
+
+
+            modelBuilder.Entity<Department>(entity =>
+            {
+                entity.ToTable("departments");
+
+                entity.HasKey(d => d.Id);
+
+                entity
+                    .Property(d => d.Id)
+                    .HasColumnName("pk_department_id");
+
+                entity
+                    .Property(d => d.DepartmentName)
+                    .IsRequired()
+                    .HasMaxLength(30);
+            });
 
             modelBuilder.Entity<User>(entity =>
             {
@@ -64,10 +83,20 @@ namespace hrms.Data
                     .IsRequired()
                     .HasColumnName("date_of_joining");
 
+                entity.Property(u => u.Designation)
+                    .HasColumnName("designation")
+                    .HasMaxLength(30);
+
                 entity.HasOne(u => u.Manager)
                       .WithMany(m => m.Employees)
                       .HasConstraintName("fk_managaer_user_id")
                       .HasForeignKey(u => u.ManagerId)
+                      .OnDelete(DeleteBehavior.Restrict);
+
+                entity.HasOne(u => u.Department)
+                      .WithMany()
+                      .HasConstraintName("fk_department_id")
+                      .HasForeignKey(u => u.DepartmentId)
                       .OnDelete(DeleteBehavior.Restrict);
             });
 
@@ -244,6 +273,11 @@ namespace hrms.Data
                     .Property(e => e.Remarks)
                     .HasColumnName("remarks")
                     .HasMaxLength(100);
+
+                entity
+                    .Property(e => e.Details)
+                    .HasColumnName("details")
+                    .HasMaxLength(200);
 
                 entity
                     .HasOne(e => e.Travel)

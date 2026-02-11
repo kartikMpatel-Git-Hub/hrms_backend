@@ -5,6 +5,7 @@ using hrms.Dto.Response.Travel;
 using hrms.Dto.Response.User;
 using hrms.Model;
 using hrms.Repository;
+using System.Threading.Tasks;
 
 namespace hrms.Service.impl
 {
@@ -42,6 +43,19 @@ namespace hrms.Service.impl
         {
             var response = await _repository.GetEmployeeById(currentUserId);
             return response;
+        }
+
+        public async Task<List<UserResponseDto>> GetEmployeesByName(string s)
+        {
+            List<User> employees = await _repository.GetEmployeesByName(s);
+            return _mapper.Map<List<UserResponseDto>>(employees);
+        }
+
+        public async Task<List<UserResponseDto>> GetEmployees()
+        {
+            List<User> employees = await _repository.GetAllEmployee(10,1);
+            
+            return _mapper.Map<List<UserResponseDto>>(employees);
         }
     }
 }

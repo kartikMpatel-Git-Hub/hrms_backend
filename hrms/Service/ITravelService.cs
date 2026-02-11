@@ -3,6 +3,7 @@ using hrms.Dto.Request.Travel.Document;
 using hrms.Dto.Response.Other;
 using hrms.Dto.Response.Travel;
 using hrms.Dto.Response.Travel.Document;
+using hrms.Dto.Response.Traveler;
 
 namespace hrms.Service
 {
@@ -18,5 +19,6 @@ namespace hrms.Service
         Task<TravelDocumentResponseDto> AddTravelDocument(int travelId, int travelerId, int currentUserId, TravelDocumentCreateDto dto);
         Task<List<TravelDocumentResponseDto>> GetTravelDocument(int travelId, int travelerId);
         Task<PagedReponseDto<TravelResponseDto>> GetEmployeeTravels(int currentUserId, int pageSize, int pageNumber);
+        Task<TravelerDto> AddTraveler(int travelId, int travelerId);
     }
 }

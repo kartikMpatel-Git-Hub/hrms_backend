@@ -23,9 +23,9 @@ namespace hrms.Repository.impl
             return AddedEntity.Entity;
         }
 
-        public async Task AddTraveler(Traveler traveler)
+        public async Task<Traveler> AddTraveler(Traveler traveler)
         {
-            await _db.Travelers.AddAsync(traveler);
+            var AddedEntity= await _db.Travelers.AddAsync(traveler);
             Notification notification = new Notification()
             {
                 NotifiedTo = traveler.TravelerId,
@@ -38,6 +38,7 @@ namespace hrms.Repository.impl
 
             await _db.Notifications.AddAsync(notification);
             await _db.SaveChangesAsync();
+            return AddedEntity.Entity;
         }
 
         public async Task<Travel> CreateTravel(Travel travel)

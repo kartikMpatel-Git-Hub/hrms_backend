@@ -12,7 +12,7 @@ namespace hrms.Dto.Request.Travel
 
         [Required(ErrorMessage = "Travel Description Required !")]
         [StringLength(300, MinimumLength = 20, ErrorMessage = "Description Must contain atlest 20 charatcer and atmost 300 character")]
-        public string Desciption { get; set; }
+        public string Description { get; set; }
 
         [Required(ErrorMessage = "Travel Start Date Required !")]
         //[CustomValidation(typeof(TravelCreateDto), nameof(ValidateFutureDate), ErrorMessage ="Start Date Can not be In Past !")]
@@ -28,20 +28,5 @@ namespace hrms.Dto.Request.Travel
 
         [Required(ErrorMessage = "Travel Max Amount Limit Per Day Required Required !")]
         public decimal MaxAmountLimit { get; set; }
-
-        private object ValidateFutureDate(object value, ValidationContext context)
-        {
-
-            if (value is DateTime date)
-            {
-                if (date <= DateTime.Now)
-                {
-                    return new ValidationResult("Travel date must be in the future.");
-                }
-            }
-
-            return ValidationResult.Success;
-
-        }
     }
 }

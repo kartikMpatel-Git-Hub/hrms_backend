@@ -1,5 +1,6 @@
 ﻿using AutoMapper;
 using CloudinaryDotNet.Actions;
+using hrms.Dto.Response.Department;
 using hrms.Dto.Response.Expense;
 using hrms.Dto.Response.Expense.Category;
 using hrms.Dto.Response.Expense.Proof;
@@ -15,6 +16,8 @@ namespace hrms.Utility
     public class MappingProfile : Profile
     {
         public MappingProfile() {
+
+            CreateMap<Department, DepartmentResponseDto>();
             CreateMap<User, UserResponseDto>()
                 .ForMember(
                 dest => dest.Role,
