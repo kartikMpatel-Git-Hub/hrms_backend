@@ -19,7 +19,11 @@
         public DateTime DateOfJoin { get; set; }
         public int? ManagerId { get; set; }
         public User Manager { get; set; }
+        public int? DepartmentId { get; set; }
+        public Department Department { get; set; }
+        public string Designation {  get; set; }
         public ICollection<User> Employees { get; set; }
+
 
     }
 }

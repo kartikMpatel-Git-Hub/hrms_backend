@@ -4,6 +4,7 @@ using hrms.Dto.Request.Travel.Document;
 using hrms.Dto.Response.Other;
 using hrms.Dto.Response.Travel;
 using hrms.Dto.Response.Travel.Document;
+using hrms.Dto.Response.Traveler;
 using hrms.Service;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Cors;
@@ -41,15 +42,30 @@ namespace hrms.Controllers
 
         [HttpPost("{TravelId}/travelers")]
         [Authorize(Roles = "HR")]
-        public async Task<IActionResult> AddTravelers(int? TravelId,TravelerAddDto Dto)
+        public async Task<IActionResult> AddTravelers(int? TravelId, TravelerAddDto Dto)
         {
-            if(TravelId == null || Dto == null)
+            if (TravelId == null || Dto == null)
             {
                 throw new NotFoundCustomException($"Travel Id or Request Body Not Found !");
             }
             int Id = (int)TravelId;
             await _service.AddTraveler(Id, Dto);
             return Ok("Traveler's Added Succesfully !");
+        }
+
+        [HttpPost("{TravelId}/travelers/{TravelerId}")]
+        [Authorize(Roles = "HR")]
+        public async Task<IActionResult> AddTraveler(int? TravelId,int? TravelerId )
+        {
+            if (TravelId == null || TravelerId == null)
+            {
+                throw new NotFoundCustomException($"Travel Id or Traveler Id Not Found !");
+            }
+            int travelId = (int)TravelId;
+            int travelerId = (int)TravelerId;
+            TravelerDto  response = await _service
+                .AddTraveler(travelId,travelerId);
+            return Ok(response);
         }
 
         [HttpPut("{TravelId}")]

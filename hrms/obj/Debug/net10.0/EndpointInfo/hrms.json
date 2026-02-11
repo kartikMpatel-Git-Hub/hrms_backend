@@ -10,21 +10,100 @@
         "tags": [
           "Authentication"
         ],
+        "parameters": [
+          {
+            "name": "FullName",
+            "in": "query",
+            "required": true,
+            "schema": {
+              "maxLength": 30,
+              "type": "string"
+            }
+          },
+          {
+            "name": "Email",
+            "in": "query",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "format": "email"
+            }
+          },
+          {
+            "name": "Password",
+            "in": "query",
+            "required": true,
+            "schema": {
+              "minLength": 8,
+              "type": "string"
+            }
+          },
+          {
+            "name": "Designation",
+            "in": "query",
+            "required": true,
+            "schema": {
+              "minLength": 2,
+              "type": "string"
+            }
+          },
+          {
+            "name": "Role",
+            "in": "query",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "DateOfBirth",
+            "in": "query",
+            "schema": {
+              "type": "string",
+              "format": "date-time"
+            }
+          },
+          {
+            "name": "DateOfJoin",
+            "in": "query",
+            "schema": {
+              "type": "string",
+              "format": "date-time"
+            }
+          },
+          {
+            "name": "ManagerId",
+            "in": "query",
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          },
+          {
+            "name": "DepartmentId",
+            "in": "query",
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
         "requestBody": {
           "content": {
-            "application/json": {
+            "multipart/form-data": {
               "schema": {
-                "$ref": "#/components/schemas/RegisterRequestDto"
-              }
-            },
-            "text/json": {
-              "schema": {
-                "$ref": "#/components/schemas/RegisterRequestDto"
-              }
-            },
-            "application/*+json": {
-              "schema": {
-                "$ref": "#/components/schemas/RegisterRequestDto"
+                "type": "object",
+                "properties": {
+                  "Image": {
+                    "type": "string",
+                    "format": "binary"
+                  }
+                }
+              },
+              "encoding": {
+                "Image": {
+                  "style": "form"
+                }
               }
             }
           }
@@ -79,6 +158,70 @@
         }
       }
     },
+    "/Department/{departmentId}": {
+      "get": {
+        "tags": [
+          "Department"
+        ],
+        "parameters": [
+          {
+            "name": "departmentId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/Department": {
+      "get": {
+        "tags": [
+          "Department"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      },
+      "post": {
+        "tags": [
+          "Department"
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/DepartmentCreateDto"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/DepartmentCreateDto"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/DepartmentCreateDto"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
     "/travel/{TravelId}/expense": {
       "post": {
         "tags": [
@@ -112,6 +255,13 @@
           },
           {
             "name": "Remarks",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "Details",
             "in": "query",
             "schema": {
               "type": "string"
@@ -360,6 +510,38 @@
         "parameters": [
           {
             "name": "TravelId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/Travel/{TravelId}/travelers/{TravelerId}": {
+      "post": {
+        "tags": [
+          "Travel"
+        ],
+        "parameters": [
+          {
+            "name": "TravelId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          },
+          {
+            "name": "TravelerId",
             "in": "path",
             "required": true,
             "schema": {
@@ -667,6 +849,27 @@
         }
       }
     },
+    "/User/search": {
+      "get": {
+        "tags": [
+          "User"
+        ],
+        "parameters": [
+          {
+            "name": "key",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
     "/WeatherForecast": {
       "get": {
         "tags": [
@@ -709,6 +912,19 @@
   },
   "components": {
     "schemas": {
+      "DepartmentCreateDto": {
+        "required": [
+          "departmentName"
+        ],
+        "type": "object",
+        "properties": {
+          "departmentName": {
+            "minLength": 2,
+            "type": "string"
+          }
+        },
+        "additionalProperties": false
+      },
       "ExpenseCategoryCreateDto": {
         "type": "object",
         "properties": {
@@ -747,56 +963,9 @@
         },
         "additionalProperties": false
       },
-      "RegisterRequestDto": {
-        "required": [
-          "email",
-          "fullName",
-          "password",
-          "role"
-        ],
-        "type": "object",
-        "properties": {
-          "fullName": {
-            "maxLength": 30,
-            "minLength": 1,
-            "type": "string"
-          },
-          "email": {
-            "minLength": 1,
-            "type": "string",
-            "format": "email"
-          },
-          "password": {
-            "minLength": 8,
-            "type": "string"
-          },
-          "image": {
-            "type": "string",
-            "nullable": true
-          },
-          "role": {
-            "minLength": 1,
-            "type": "string"
-          },
-          "dateOfBirth": {
-            "type": "string",
-            "format": "date-time"
-          },
-          "dateOfJoin": {
-            "type": "string",
-            "format": "date-time"
-          },
-          "managerId": {
-            "type": "integer",
-            "format": "int32",
-            "nullable": true
-          }
-        },
-        "additionalProperties": false
-      },
       "TravelCreateDto": {
         "required": [
-          "desciption",
+          "description",
           "endDate",
           "location",
           "maxAmountLimit",
@@ -810,7 +979,7 @@
             "minLength": 5,
             "type": "string"
           },
-          "desciption": {
+          "description": {
             "maxLength": 300,
             "minLength": 20,
             "type": "string"
@@ -916,6 +1085,9 @@
   "tags": [
     {
       "name": "Authentication"
+    },
+    {
+      "name": "Department"
     },
     {
       "name": "Expense"

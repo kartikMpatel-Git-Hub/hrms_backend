@@ -50,8 +50,16 @@ namespace hrms.Service.impl
             List<IFormFile> files
             )
         {
-            User employee = await _userService.GetEmployee(currentUserId);
+            if(!await _travelRepository.UserExistsInTravel(travelId,currentUserId))
+            {
+                throw new InvalidOperationCustomException($"Traveler : {currentUserId}Not Found With Travel : {travelId}");
+            }
             Travel travel = await _travelRepository.GetTravelById(travelId);
+            if(dto.Amount > travel.MaxAmountLimit)
+            {
+                throw new InvalidOperationCustomException($"Expense Amount can not exide {travel.MaxAmountLimit}");
+            }
+            User employee = await _userService.GetEmployee(currentUserId);
             ExpenseCategory category = await _repository.GetCategoryById(dto.CategoryId);
             if (travel.StartDate > DateTime.Now || travel.EndDate.AddDays(10) < DateTime.Now)
             {
@@ -67,7 +75,8 @@ namespace hrms.Service.impl
                 CategoryId = category.Id,
                 Category = category,
                 Status = ExpenseStatus.PENDING,
-                Remarks = dto.Remarks != null ? dto.Remarks : "Expense Added !"
+                Details = dto.Details != null ? dto.Details : "Expense Added !",
+                Remarks = dto.Remarks != null ? dto.Remarks : ""
             };
             Expense AddedExpense = await _repository.AddExpense(expense);
             

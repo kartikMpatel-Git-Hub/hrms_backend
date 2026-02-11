@@ -1,4 +1,5 @@
-﻿using hrms.Model;
+﻿using hrms.Dto.Response.Department;
+using hrms.Model;
 
 namespace hrms.Dto.Response.User
 {
@@ -12,5 +13,8 @@ namespace hrms.Dto.Response.User
         public DateTime DateOfBirth { get; set; }
         public DateTime DateOfJoin { get; set; }
         public int? ManagerId { get; set; }
+        public DepartmentResponseDto Department { get; set; }
+        public string Designation { get; set; }
+
     }
 }

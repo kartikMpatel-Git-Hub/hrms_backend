@@ -22,9 +22,9 @@ namespace hrms.Controllers
         }
 
         [HttpPost("register")]
+        [Consumes("multipart/form-data")]
         public async Task<IActionResult> Register(RegisterRequestDto dto)
         {
-
             UserResponseDto response = await _service.RegisterNewUser(dto);
             return Ok(response);
         }

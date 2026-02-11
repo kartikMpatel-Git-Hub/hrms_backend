@@ -46,6 +46,19 @@ namespace hrms.Repository.impl
             return Response;
         }
 
+        public async Task<List<User>> GetAllEmployee(int pageSize, int pageNumber)
+        {
+            var TotalRecords = await _context.Users.Where(u => !u.is_deleted).CountAsync();
+            Console.WriteLine($"Total User : {TotalRecords}");
+            List<User> users = await _context.Users
+                .OrderBy(u => u.Id)
+                .Where(u => !u.is_deleted && u.Role == UserRole.EMPLOYEE)
+                .Skip((pageNumber - 1) * pageSize)
+                .Take(pageSize)
+                .ToListAsync();
+            return users;
+        }
+
         public async Task<User> GetByEmailAsync(string email)
         {
             return await _context.Users.FirstOrDefaultAsync((u) => u.Email == email);
@@ -71,6 +84,17 @@ namespace hrms.Repository.impl
             if (user == null)
                 throw new NotFoundCustomException($"Employee With id : {employeeId} not found");
             return user;
+        }
+
+        public async Task<List<User>> GetEmployeesByName(string s)
+        {
+            List<User> employees 
+                = await _context.Users
+                .Where(u => u.FullName.Contains(s) 
+                && u.Role == UserRole.EMPLOYEE
+                && u.is_deleted == false)
+                .ToListAsync();
+            return employees;
         }
 
         public async Task<User> GetManagerByIdAsync(int? managerId)

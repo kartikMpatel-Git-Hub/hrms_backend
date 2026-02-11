@@ -8,7 +8,7 @@ namespace hrms.Repository
         Task<Travel> CreateTravel(Travel travel);
 
         Task<bool> UserExistsInTravel(int TravelId, int UserId);
-        Task AddTraveler(Traveler traveler);
+        Task<Traveler> AddTraveler(Traveler traveler);
         Task<Travel> UpdateTravel(Travel travel);
         Task<Travel> GetTravelById(int TravelId);
         Task DeleteTravel(int TravelId);
