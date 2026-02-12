@@ -97,6 +97,16 @@ namespace hrms.Repository.impl
             return employees;
         }
 
+        public async Task<User> GetHrById(int hrId)
+        {
+            User user = await _context.Users
+                .FirstOrDefaultAsync(
+                (u) => u.Id == hrId && u.Role == UserRole.HR);
+            if (user == null)
+                throw new NotFoundCustomException($"HR With id : {hrId} not found");
+            return user;
+        }
+
         public async Task<User> GetManagerByIdAsync(int? managerId)
         {
             if (managerId == null)

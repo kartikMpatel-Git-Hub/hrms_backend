@@ -129,6 +129,125 @@
     "ReturnTypes": []
   },
   {
+    "ContainingType": "hrms.Controllers.JobController",
+    "Method": "CreateJob",
+    "RelativePath": "Job",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "Title",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "JobRole",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "Place",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "Requirements",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "Jd",
+        "Type": "Microsoft.AspNetCore.Http.IFormFile",
+        "IsRequired": false
+      },
+      {
+        "Name": "CreatedBy",
+        "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
+        "Name": "ContactTo",
+        "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
+        "Name": "Reviewer",
+        "Type": "System.Collections.Generic.List\u00601[[System.Int32, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "hrms.Controllers.JobController",
+    "Method": "GetJobsCreatedByHr",
+    "RelativePath": "Job",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "pageNumber",
+        "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
+        "Name": "pageSize",
+        "Type": "System.Int32",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "hrms.Controllers.JobController",
+    "Method": "GetJobsReviewers",
+    "RelativePath": "Job/{jobId}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "jobId",
+        "Type": "System.Nullable\u00601[[System.Int32, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "hrms.Controllers.NotificationController",
+    "Method": "GetMyNotification",
+    "RelativePath": "Notification",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "pageNumber",
+        "Type": "System.Nullable\u00601[[System.Int32, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]",
+        "IsRequired": false
+      },
+      {
+        "Name": "pageSize",
+        "Type": "System.Nullable\u00601[[System.Int32, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "hrms.Controllers.NotificationController",
+    "Method": "GetMyNotificationCount",
+    "RelativePath": "Notification/count",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
     "ContainingType": "hrms.Controllers.TravelController",
     "Method": "CreateTravel",
     "RelativePath": "Travel",
@@ -231,9 +350,30 @@
         "IsRequired": false
       },
       {
+        "Name": "ExpenseDate",
+        "Type": "System.DateTime",
+        "IsRequired": false
+      },
+      {
         "Name": "Proofs",
         "Type": "System.Collections.Generic.List\u00601[[Microsoft.AspNetCore.Http.IFormFile, Microsoft.AspNetCore.Http.Features, Version=10.0.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60]]",
         "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "hrms.Controllers.ExpenseController",
+    "Method": "GetEmployeeExpense",
+    "RelativePath": "travel/{TravelId}/expense",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "TravelId",
+        "Type": "System.Nullable\u00601[[System.Int32, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]",
+        "IsRequired": true
       }
     ],
     "ReturnTypes": []

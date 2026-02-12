@@ -65,6 +65,8 @@ namespace hrms.Service.impl
             {
                 throw new InvalidOperationCustomException("Expense can not add before trip start and after 10 days of completed trip !");
             }
+            if (dto.ExpenseDate > travel.EndDate || dto.ExpenseDate < travel.StartDate)
+                throw new InvalidOperationCustomException("Invalid Expense Date. it must be between travel days !");
             Expense expense = new Expense()
             {
                 TravelId = travel.Id,
@@ -74,6 +76,7 @@ namespace hrms.Service.impl
                 Amount = dto.Amount,
                 CategoryId = category.Id,
                 Category = category,
+                ExpenseDate = dto.ExpenseDate,
                 Status = ExpenseStatus.PENDING,
                 Details = dto.Details != null ? dto.Details : "Expense Added !",
                 Remarks = dto.Remarks != null ? dto.Remarks : ""
@@ -89,7 +92,7 @@ namespace hrms.Service.impl
                     Expense = AddedExpense,
                     ProofDocumentUrl = await _cloudinary.UploadAsync(file),
                     DocumentType = file.ContentType,
-                    Remakrs = ""
+                    Remakrs = "",
                 };
                 proofs.Add(await _repository.AddProof(proof));
             }
