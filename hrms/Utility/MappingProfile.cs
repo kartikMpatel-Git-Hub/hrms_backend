@@ -4,6 +4,8 @@ using hrms.Dto.Response.Department;
 using hrms.Dto.Response.Expense;
 using hrms.Dto.Response.Expense.Category;
 using hrms.Dto.Response.Expense.Proof;
+using hrms.Dto.Response.Job;
+using hrms.Dto.Response.Notification;
 using hrms.Dto.Response.Other;
 using hrms.Dto.Response.Travel;
 using hrms.Dto.Response.Travel.Document;
@@ -32,6 +34,10 @@ namespace hrms.Utility
                 opt => opt.MapFrom(src => GetStatus(src.Status)));
             CreateMap<ExpenseProof, ExpenseProofResponseDto>();
             CreateMap<TravelDocument, TravelDocumentResponseDto>();
+            CreateMap<Notification, NotificationResponseDto>();
+            CreateMap<Job, JobResponseDto>();
+            CreateMap<Job, JobResponseWithReviewersDto>();
+            CreateMap<JobReviewer, JobReviewerResponseDto>();
 
             CreateMap(typeof(PagedReponseOffSet<>),typeof(PagedReponseDto<>));
         }

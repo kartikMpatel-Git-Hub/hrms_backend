@@ -73,6 +73,10 @@ namespace hrms.Migrations
                         .HasColumnType("nvarchar(200)")
                         .HasColumnName("details");
 
+                    b.Property<DateTime>("ExpenseDate")
+                        .HasColumnType("datetime2")
+                        .HasColumnName("expense_date");
+
                     b.Property<string>("Remarks")
                         .IsRequired()
                         .HasMaxLength(100)
@@ -168,6 +172,189 @@ namespace hrms.Migrations
                     b.HasIndex("ExpenseId");
 
                     b.ToTable("expense_proof", (string)null);
+                });
+
+            modelBuilder.Entity("hrms.Model.Job", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .HasColumnName("pk_job_id");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+
+                    b.Property<int>("ContactTo")
+                        .HasColumnType("int");
+
+                    b.Property<int>("CreatedBy")
+                        .HasColumnType("int");
+
+                    b.Property<bool>("IsActive")
+                        .HasColumnType("bit")
+                        .HasColumnName("is_active");
+
+                    b.Property<string>("JdUrl")
+                        .IsRequired()
+                        .HasMaxLength(500)
+                        .HasColumnType("nvarchar(500)")
+                        .HasColumnName("jd_url");
+
+                    b.Property<string>("JobRole")
+                        .IsRequired()
+                        .HasMaxLength(20)
+                        .HasColumnType("nvarchar(20)")
+                        .HasColumnName("job_role");
+
+                    b.Property<string>("Place")
+                        .IsRequired()
+                        .HasMaxLength(30)
+                        .HasColumnType("nvarchar(30)")
+                        .HasColumnName("place");
+
+                    b.Property<string>("Requirements")
+                        .IsRequired()
+                        .HasMaxLength(300)
+                        .HasColumnType("nvarchar(300)")
+                        .HasColumnName("requirements");
+
+                    b.Property<string>("Title")
+                        .IsRequired()
+                        .HasMaxLength(50)
+                        .HasColumnType("nvarchar(50)")
+                        .HasColumnName("title");
+
+                    b.Property<DateTime>("created_at")
+                        .HasColumnType("datetime2");
+
+                    b.Property<bool>("is_deleted")
+                        .HasColumnType("bit");
+
+                    b.Property<DateTime>("updated_at")
+                        .HasColumnType("datetime2");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("ContactTo");
+
+                    b.HasIndex("CreatedBy");
+
+                    b.ToTable("jobs", (string)null);
+                });
+
+            modelBuilder.Entity("hrms.Model.JobReferral", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .HasColumnName("pk_job_referral_id");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+
+                    b.Property<string>("CvUrl")
+                        .IsRequired()
+                        .HasMaxLength(500)
+                        .HasColumnType("nvarchar(500)")
+                        .HasColumnName("cv_url");
+
+                    b.Property<int>("JobId")
+                        .HasColumnType("int");
+
+                    b.Property<string>("Note")
+                        .IsRequired()
+                        .HasMaxLength(500)
+                        .HasColumnType("nvarchar(500)")
+                        .HasColumnName("note");
+
+                    b.Property<DateTime>("ReferedAt")
+                        .HasColumnType("datetime2")
+                        .HasColumnName("refered_at");
+
+                    b.Property<int>("ReferedBy")
+                        .HasColumnType("int");
+
+                    b.Property<string>("ReferedPersonEmail")
+                        .IsRequired()
+                        .HasMaxLength(50)
+                        .HasColumnType("nvarchar(50)")
+                        .HasColumnName("refered_person_email");
+
+                    b.Property<string>("ReferedPersonName")
+                        .IsRequired()
+                        .HasMaxLength(50)
+                        .HasColumnType("nvarchar(50)")
+                        .HasColumnName("refered_person_name");
+
+                    b.Property<bool>("is_deleted")
+                        .HasColumnType("bit");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("JobId");
+
+                    b.HasIndex("ReferedBy");
+
+                    b.ToTable("job_referrals", (string)null);
+                });
+
+            modelBuilder.Entity("hrms.Model.JobReviewer", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .HasColumnName("pk_job_reviewer_id");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+
+                    b.Property<int>("JobId")
+                        .HasColumnType("int");
+
+                    b.Property<int>("ReviewerId")
+                        .HasColumnType("int");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("JobId");
+
+                    b.HasIndex("ReviewerId");
+
+                    b.ToTable("job_reviewers", (string)null);
+                });
+
+            modelBuilder.Entity("hrms.Model.JobShared", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .HasColumnName("pk_job_shared_id");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+
+                    b.Property<int>("JobId")
+                        .HasColumnType("int");
+
+                    b.Property<DateTime>("SharedAt")
+                        .HasColumnType("datetime2");
+
+                    b.Property<int>("SharedBy")
+                        .HasColumnType("int")
+                        .HasColumnName("shared_at");
+
+                    b.Property<string>("SharedTo")
+                        .IsRequired()
+                        .HasMaxLength(50)
+                        .HasColumnType("nvarchar(50)")
+                        .HasColumnName("shared_to");
+
+                    b.Property<bool>("is_deleted")
+                        .HasColumnType("bit");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("JobId");
+
+                    b.HasIndex("SharedBy");
+
+                    b.ToTable("job_shared", (string)null);
                 });
 
             modelBuilder.Entity("hrms.Model.Notification", b =>
@@ -469,6 +656,90 @@ namespace hrms.Migrations
                         .HasConstraintName("fk_expense_proof_id");
 
                     b.Navigation("Expense");
+                });
+
+            modelBuilder.Entity("hrms.Model.Job", b =>
+                {
+                    b.HasOne("hrms.Model.User", "Contact")
+                        .WithMany()
+                        .HasForeignKey("ContactTo")
+                        .OnDelete(DeleteBehavior.Restrict)
+                        .IsRequired()
+                        .HasConstraintName("fk_job_contact_to_id");
+
+                    b.HasOne("hrms.Model.User", "Creater")
+                        .WithMany()
+                        .HasForeignKey("CreatedBy")
+                        .OnDelete(DeleteBehavior.Restrict)
+                        .IsRequired()
+                        .HasConstraintName("fk_job_creater_id");
+
+                    b.Navigation("Contact");
+
+                    b.Navigation("Creater");
+                });
+
+            modelBuilder.Entity("hrms.Model.JobReferral", b =>
+                {
+                    b.HasOne("hrms.Model.Job", "Job")
+                        .WithMany()
+                        .HasForeignKey("JobId")
+                        .OnDelete(DeleteBehavior.Restrict)
+                        .IsRequired()
+                        .HasConstraintName("fk_refere_job_id");
+
+                    b.HasOne("hrms.Model.User", "Referer")
+                        .WithMany()
+                        .HasForeignKey("ReferedBy")
+                        .OnDelete(DeleteBehavior.Restrict)
+                        .IsRequired()
+                        .HasConstraintName("fk_job_referer_id");
+
+                    b.Navigation("Job");
+
+                    b.Navigation("Referer");
+                });
+
+            modelBuilder.Entity("hrms.Model.JobReviewer", b =>
+                {
+                    b.HasOne("hrms.Model.Job", "Job")
+                        .WithMany()
+                        .HasForeignKey("JobId")
+                        .OnDelete(DeleteBehavior.Restrict)
+                        .IsRequired()
+                        .HasConstraintName("fk_job_id");
+
+                    b.HasOne("hrms.Model.User", "Reviewer")
+                        .WithMany()
+                        .HasForeignKey("ReviewerId")
+                        .OnDelete(DeleteBehavior.Restrict)
+                        .IsRequired()
+                        .HasConstraintName("fk_job_reviewer_id");
+
+                    b.Navigation("Job");
+
+                    b.Navigation("Reviewer");
+                });
+
+            modelBuilder.Entity("hrms.Model.JobShared", b =>
+                {
+                    b.HasOne("hrms.Model.Job", "Job")
+                        .WithMany()
+                        .HasForeignKey("JobId")
+                        .OnDelete(DeleteBehavior.Restrict)
+                        .IsRequired()
+                        .HasConstraintName("fk_job_shared_id");
+
+                    b.HasOne("hrms.Model.User", "Shared")
+                        .WithMany()
+                        .HasForeignKey("SharedBy")
+                        .OnDelete(DeleteBehavior.Restrict)
+                        .IsRequired()
+                        .HasConstraintName("fk_job_shared_user_id");
+
+                    b.Navigation("Job");
+
+                    b.Navigation("Shared");
                 });
 
             modelBuilder.Entity("hrms.Model.Notification", b =>

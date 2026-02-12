@@ -7,7 +7,6 @@ namespace hrms.Data
     {
         public ApplicationDbContext(DbContextOptions<ApplicationDbContext> options) : base(options)
         {}
-
         public DbSet<Department> Departments { get; set; }
         public DbSet<User> Users { get; set; }
         public DbSet<Travel> Travels { get; set; }
@@ -17,11 +16,14 @@ namespace hrms.Data
         public DbSet<ExpenseProof> ExpenseProofs { get; set; }
         public DbSet<Traveler> Travelers { get; set; }
         public DbSet<Notification> Notifications { get; set; }
+        public DbSet<Job> Jobs { get; set; }
+        public DbSet<JobReviewer> Reviewers { get; set; }
+        public DbSet<JobReferral> Referrals { get; set; }
+        public DbSet<JobShared> SharedJobs { get; set; }
         
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             base.OnModelCreating(modelBuilder);
-
 
             modelBuilder.Entity<Department>(entity =>
             {
@@ -280,6 +282,10 @@ namespace hrms.Data
                     .HasMaxLength(200);
 
                 entity
+                    .Property(e => e.ExpenseDate)
+                    .HasColumnName("expense_date");
+
+                entity
                     .HasOne(e => e.Travel)
                     .WithMany()
                     .HasForeignKey(t => t.TravelId)
@@ -373,6 +379,181 @@ namespace hrms.Data
                     .WithMany()
                     .HasForeignKey(n => n.NotifiedTo)
                     .HasConstraintName("fk_notified_user_id")
+                    .OnDelete(DeleteBehavior.Restrict);
+            });
+
+            modelBuilder.Entity<Job>(entity =>
+            {
+                entity.ToTable("jobs");
+
+                entity.HasKey(j => j.Id);
+
+                entity
+                    .Property(j => j.Id)
+                    .HasColumnName("pk_job_id");
+
+                entity
+                    .Property(j => j.Title)
+                    .IsRequired()
+                    .HasColumnName("title")
+                    .HasMaxLength(50);
+
+                entity
+                    .Property(j => j.JobRole)
+                    .IsRequired()
+                    .HasColumnName("job_role")
+                    .HasMaxLength(20);
+
+                entity
+                    .Property(j => j.Place)
+                    .IsRequired()
+                    .HasColumnName("place")
+                    .HasMaxLength(30);
+
+                entity
+                    .Property(j => j.Requirements)
+                    .IsRequired()
+                    .HasColumnName("requirements")
+                    .HasMaxLength(300);
+
+                entity
+                    .Property(j => j.JdUrl)
+                    .IsRequired()
+                    .HasColumnName("jd_url")
+                    .HasMaxLength(500);
+
+                entity
+                    .Property(j => j.IsActive)
+                    .IsRequired()
+                    .HasColumnName("is_active");
+
+                entity
+                    .HasOne(n => n.Creater)
+                    .WithMany()
+                    .HasForeignKey(n => n.CreatedBy)
+                    .HasConstraintName("fk_job_creater_id")
+                    .OnDelete(DeleteBehavior.Restrict);
+
+                entity
+                    .HasOne(n => n.Contact)
+                    .WithMany()
+                    .HasForeignKey(n => n.ContactTo)
+                    .HasConstraintName("fk_job_contact_to_id")
+                    .OnDelete(DeleteBehavior.Restrict);
+            });
+
+            modelBuilder.Entity<JobReviewer>(entity =>
+            {
+                entity.ToTable("job_reviewers");
+
+                entity.HasKey(jr => jr.Id);
+
+                entity
+                    .Property(jr => jr.Id)
+                    .HasColumnName("pk_job_reviewer_id");
+
+                entity
+                    .HasOne(n => n.Reviewer)
+                    .WithMany()
+                    .HasForeignKey(n => n.ReviewerId)
+                    .HasConstraintName("fk_job_reviewer_id")
+                    .OnDelete(DeleteBehavior.Restrict);
+
+                entity
+                    .HasOne(n => n.Job)
+                    .WithMany(j => j.Reviewers)
+                    .HasForeignKey(n => n.JobId)
+                    .HasConstraintName("fk_job_id")
+                    .OnDelete(DeleteBehavior.Restrict);
+            });
+
+            modelBuilder.Entity<JobReferral>(entity =>
+            {
+                entity.ToTable("job_referrals");
+
+                entity.HasKey(jr => jr.Id);
+
+                entity
+                    .Property(jr => jr.Id)
+                    .HasColumnName("pk_job_referral_id");
+
+                entity
+                    .Property(jr => jr.ReferedPersonName)
+                    .IsRequired()
+                    .HasColumnName("refered_person_name")
+                    .HasMaxLength(50);
+
+                entity
+                    .Property(jr => jr.ReferedPersonEmail)
+                    .IsRequired()
+                    .HasColumnName("refered_person_email")
+                    .HasMaxLength(50);
+
+                entity
+                    .Property(jr => jr.CvUrl)
+                    .IsRequired()
+                    .HasColumnName("cv_url")
+                    .HasMaxLength(500);
+
+                entity
+                    .Property(jr => jr.Note)
+                    .IsRequired()
+                    .HasColumnName("note")
+                    .HasMaxLength(500);
+
+                entity
+                    .Property(jr => jr.ReferedAt)
+                    .IsRequired()
+                    .HasColumnName("refered_at");
+
+                entity
+                    .HasOne(jr => jr.Referer)
+                    .WithMany()
+                    .HasForeignKey(jr => jr.ReferedBy)
+                    .HasConstraintName("fk_job_referer_id")
+                    .OnDelete(DeleteBehavior.Restrict);
+
+                entity
+                    .HasOne(jr => jr.Job)
+                    .WithMany()
+                    .HasForeignKey(jr => jr.JobId)
+                    .HasConstraintName("fk_refere_job_id")
+                    .OnDelete(DeleteBehavior.Restrict);
+            });
+
+            modelBuilder.Entity<JobShared>(entity =>
+            {
+                entity.ToTable("job_shared");
+
+                entity.HasKey(js => js.Id);
+
+                entity
+                    .Property(js => js.Id)
+                    .HasColumnName("pk_job_shared_id");
+
+                entity
+                    .Property(js => js.SharedTo)
+                    .IsRequired()
+                    .HasColumnName("shared_to")
+                    .HasMaxLength(50);
+
+                entity
+                    .Property(js => js.SharedBy)
+                    .IsRequired()
+                    .HasColumnName("shared_at");
+
+                entity
+                    .HasOne(js => js.Job)
+                    .WithMany()
+                    .HasForeignKey(jr => jr.JobId)
+                    .HasConstraintName("fk_job_shared_id")
+                    .OnDelete(DeleteBehavior.Restrict);
+
+                entity
+                    .HasOne(js => js.Shared)
+                    .WithMany()
+                    .HasForeignKey(jr => jr.SharedBy)
+                    .HasConstraintName("fk_job_shared_user_id")
                     .OnDelete(DeleteBehavior.Restrict);
             });
 

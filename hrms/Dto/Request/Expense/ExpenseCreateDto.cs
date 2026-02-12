@@ -8,6 +8,7 @@ namespace hrms.Dto.Request.Expense
         public int CategoryId { get; set; }
         public string? Remarks { get; set; }
         public string Details { get; set; }
+        public DateTime ExpenseDate { get; set; }
         public List<IFormFile> Proofs { get; set; }
     }
 }

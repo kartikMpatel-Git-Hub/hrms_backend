@@ -14,6 +14,7 @@ namespace hrms.Dto.Response.Expense
         public string Status { get; set; }
         public string Remarks { get; set; }
         public string Details { get; set; }
+        public DateTime ExpenseDate { get; set; }
         public List<ExpenseProofResponseDto> proofs { get; set; } = new List<ExpenseProofResponseDto>();
     }
 }

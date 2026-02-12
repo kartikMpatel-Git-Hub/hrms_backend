@@ -3,28 +3,200 @@
   "WorkspaceRootPath": "C:\\Internship\\Codes\\DontNet\\Assignment-1\\hrms\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Internship\\Codes\\DontNet\\Assignment-1\\hrms\\hrms\\Migrations\\20260211122328_initial.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:hrms\\Migrations\\20260211122328_initial.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{AB23E0BF-5829-AC0A-19B6-FD50EBF907C3}|hrms\\hrms.csproj|c:\\internship\\codes\\dontnet\\assignment-1\\hrms\\hrms\\model\\jobreviewer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{AB23E0BF-5829-AC0A-19B6-FD50EBF907C3}|hrms\\hrms.csproj|solutionrelative:hrms\\model\\jobreviewer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{AB23E0BF-5829-AC0A-19B6-FD50EBF907C3}|hrms\\hrms.csproj|c:\\internship\\codes\\dontnet\\assignment-1\\hrms\\hrms\\repository\\impl\\expenserepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{AB23E0BF-5829-AC0A-19B6-FD50EBF907C3}|hrms\\hrms.csproj|solutionrelative:hrms\\repository\\impl\\expenserepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{AB23E0BF-5829-AC0A-19B6-FD50EBF907C3}|hrms\\hrms.csproj|c:\\internship\\codes\\dontnet\\assignment-1\\hrms\\hrms\\dto\\response\\job\\jobreviewerresponsedto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{AB23E0BF-5829-AC0A-19B6-FD50EBF907C3}|hrms\\hrms.csproj|solutionrelative:hrms\\dto\\response\\job\\jobreviewerresponsedto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{AB23E0BF-5829-AC0A-19B6-FD50EBF907C3}|hrms\\hrms.csproj|c:\\internship\\codes\\dontnet\\assignment-1\\hrms\\hrms\\service\\impl\\expenseservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{AB23E0BF-5829-AC0A-19B6-FD50EBF907C3}|hrms\\hrms.csproj|solutionrelative:hrms\\service\\impl\\expenseservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{AB23E0BF-5829-AC0A-19B6-FD50EBF907C3}|hrms\\hrms.csproj|c:\\internship\\codes\\dontnet\\assignment-1\\hrms\\hrms\\dto\\response\\job\\jobresponsewithreviewersdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{AB23E0BF-5829-AC0A-19B6-FD50EBF907C3}|hrms\\hrms.csproj|solutionrelative:hrms\\dto\\response\\job\\jobresponsewithreviewersdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{AB23E0BF-5829-AC0A-19B6-FD50EBF907C3}|hrms\\hrms.csproj|c:\\internship\\codes\\dontnet\\assignment-1\\hrms\\hrms\\model\\job.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{AB23E0BF-5829-AC0A-19B6-FD50EBF907C3}|hrms\\hrms.csproj|solutionrelative:hrms\\model\\job.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{AB23E0BF-5829-AC0A-19B6-FD50EBF907C3}|hrms\\hrms.csproj|c:\\internship\\codes\\dontnet\\assignment-1\\hrms\\hrms\\dto\\response\\job\\jobresponsedto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{AB23E0BF-5829-AC0A-19B6-FD50EBF907C3}|hrms\\hrms.csproj|solutionrelative:hrms\\dto\\response\\job\\jobresponsedto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{AB23E0BF-5829-AC0A-19B6-FD50EBF907C3}|hrms\\hrms.csproj|c:\\internship\\codes\\dontnet\\assignment-1\\hrms\\hrms\\repository\\impl\\jobrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{AB23E0BF-5829-AC0A-19B6-FD50EBF907C3}|hrms\\hrms.csproj|solutionrelative:hrms\\repository\\impl\\jobrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{AB23E0BF-5829-AC0A-19B6-FD50EBF907C3}|hrms\\hrms.csproj|c:\\internship\\codes\\dontnet\\assignment-1\\hrms\\hrms\\repository\\impl\\travelrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{AB23E0BF-5829-AC0A-19B6-FD50EBF907C3}|hrms\\hrms.csproj|solutionrelative:hrms\\repository\\impl\\travelrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{AB23E0BF-5829-AC0A-19B6-FD50EBF907C3}|hrms\\hrms.csproj|c:\\internship\\codes\\dontnet\\assignment-1\\hrms\\hrms\\data\\applicationdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{AB23E0BF-5829-AC0A-19B6-FD50EBF907C3}|hrms\\hrms.csproj|solutionrelative:hrms\\data\\applicationdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{AB23E0BF-5829-AC0A-19B6-FD50EBF907C3}|hrms\\hrms.csproj|c:\\internship\\codes\\dontnet\\assignment-1\\hrms\\hrms\\dto\\response\\expense\\expenseresponsedto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{AB23E0BF-5829-AC0A-19B6-FD50EBF907C3}|hrms\\hrms.csproj|solutionrelative:hrms\\dto\\response\\expense\\expenseresponsedto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{AB23E0BF-5829-AC0A-19B6-FD50EBF907C3}|hrms\\hrms.csproj|c:\\internship\\codes\\dontnet\\assignment-1\\hrms\\hrms\\repository\\ijobrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{AB23E0BF-5829-AC0A-19B6-FD50EBF907C3}|hrms\\hrms.csproj|solutionrelative:hrms\\repository\\ijobrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{AB23E0BF-5829-AC0A-19B6-FD50EBF907C3}|hrms\\hrms.csproj|c:\\internship\\codes\\dontnet\\assignment-1\\hrms\\hrms\\service\\impl\\jobservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{AB23E0BF-5829-AC0A-19B6-FD50EBF907C3}|hrms\\hrms.csproj|solutionrelative:hrms\\service\\impl\\jobservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{AB23E0BF-5829-AC0A-19B6-FD50EBF907C3}|hrms\\hrms.csproj|c:\\internship\\codes\\dontnet\\assignment-1\\hrms\\hrms\\controllers\\jobcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{AB23E0BF-5829-AC0A-19B6-FD50EBF907C3}|hrms\\hrms.csproj|solutionrelative:hrms\\controllers\\jobcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{AB23E0BF-5829-AC0A-19B6-FD50EBF907C3}|hrms\\hrms.csproj|c:\\internship\\codes\\dontnet\\assignment-1\\hrms\\hrms\\service\\ijobservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{AB23E0BF-5829-AC0A-19B6-FD50EBF907C3}|hrms\\hrms.csproj|solutionrelative:hrms\\service\\ijobservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{AB23E0BF-5829-AC0A-19B6-FD50EBF907C3}|hrms\\hrms.csproj|c:\\internship\\codes\\dontnet\\assignment-1\\hrms\\hrms\\utility\\mappingprofile.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{AB23E0BF-5829-AC0A-19B6-FD50EBF907C3}|hrms\\hrms.csproj|solutionrelative:hrms\\utility\\mappingprofile.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{AB23E0BF-5829-AC0A-19B6-FD50EBF907C3}|hrms\\hrms.csproj|c:\\internship\\codes\\dontnet\\assignment-1\\hrms\\hrms\\dto\\request\\authentication\\registerrequestdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{AB23E0BF-5829-AC0A-19B6-FD50EBF907C3}|hrms\\hrms.csproj|solutionrelative:hrms\\dto\\request\\authentication\\registerrequestdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{AB23E0BF-5829-AC0A-19B6-FD50EBF907C3}|hrms\\hrms.csproj|c:\\internship\\codes\\dontnet\\assignment-1\\hrms\\hrms\\dto\\request\\job\\jobcreatedto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{AB23E0BF-5829-AC0A-19B6-FD50EBF907C3}|hrms\\hrms.csproj|solutionrelative:hrms\\dto\\request\\job\\jobcreatedto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{AB23E0BF-5829-AC0A-19B6-FD50EBF907C3}|hrms\\hrms.csproj|c:\\internship\\codes\\dontnet\\assignment-1\\hrms\\hrms\\controllers\\expensecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{AB23E0BF-5829-AC0A-19B6-FD50EBF907C3}|hrms\\hrms.csproj|solutionrelative:hrms\\controllers\\expensecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{AB23E0BF-5829-AC0A-19B6-FD50EBF907C3}|hrms\\hrms.csproj|c:\\internship\\codes\\dontnet\\assignment-1\\hrms\\hrms\\repository\\impl\\expenserepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{AB23E0BF-5829-AC0A-19B6-FD50EBF907C3}|hrms\\hrms.csproj|solutionrelative:hrms\\repository\\impl\\expenserepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{AB23E0BF-5829-AC0A-19B6-FD50EBF907C3}|hrms\\hrms.csproj|c:\\internship\\codes\\dontnet\\assignment-1\\hrms\\hrms\\dto\\response\\other\\pagedreponseoffset.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{AB23E0BF-5829-AC0A-19B6-FD50EBF907C3}|hrms\\hrms.csproj|solutionrelative:hrms\\dto\\response\\other\\pagedreponseoffset.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{AB23E0BF-5829-AC0A-19B6-FD50EBF907C3}|hrms\\hrms.csproj|c:\\internship\\codes\\dontnet\\assignment-1\\hrms\\hrms\\repository\\impl\\jobreviewerrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{AB23E0BF-5829-AC0A-19B6-FD50EBF907C3}|hrms\\hrms.csproj|solutionrelative:hrms\\repository\\impl\\jobreviewerrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{AB23E0BF-5829-AC0A-19B6-FD50EBF907C3}|hrms\\hrms.csproj|c:\\internship\\codes\\dontnet\\assignment-1\\hrms\\hrms\\service\\impl\\jobreviewerservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{AB23E0BF-5829-AC0A-19B6-FD50EBF907C3}|hrms\\hrms.csproj|solutionrelative:hrms\\service\\impl\\jobreviewerservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{AB23E0BF-5829-AC0A-19B6-FD50EBF907C3}|hrms\\hrms.csproj|c:\\internship\\codes\\dontnet\\assignment-1\\hrms\\hrms\\service\\ijobreviewerservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{AB23E0BF-5829-AC0A-19B6-FD50EBF907C3}|hrms\\hrms.csproj|solutionrelative:hrms\\service\\ijobreviewerservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{AB23E0BF-5829-AC0A-19B6-FD50EBF907C3}|hrms\\hrms.csproj|c:\\internship\\codes\\dontnet\\assignment-1\\hrms\\hrms\\repository\\ijobreviewerrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{AB23E0BF-5829-AC0A-19B6-FD50EBF907C3}|hrms\\hrms.csproj|solutionrelative:hrms\\repository\\ijobreviewerrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{AB23E0BF-5829-AC0A-19B6-FD50EBF907C3}|hrms\\hrms.csproj|c:\\internship\\codes\\dontnet\\assignment-1\\hrms\\hrms\\repository\\impl\\userrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{AB23E0BF-5829-AC0A-19B6-FD50EBF907C3}|hrms\\hrms.csproj|solutionrelative:hrms\\repository\\impl\\userrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{AB23E0BF-5829-AC0A-19B6-FD50EBF907C3}|hrms\\hrms.csproj|c:\\internship\\codes\\dontnet\\assignment-1\\hrms\\hrms\\repository\\iuserrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{AB23E0BF-5829-AC0A-19B6-FD50EBF907C3}|hrms\\hrms.csproj|solutionrelative:hrms\\repository\\iuserrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{AB23E0BF-5829-AC0A-19B6-FD50EBF907C3}|hrms\\hrms.csproj|c:\\internship\\codes\\dontnet\\assignment-1\\hrms\\hrms\\controllers\\departmentcontoller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{AB23E0BF-5829-AC0A-19B6-FD50EBF907C3}|hrms\\hrms.csproj|solutionrelative:hrms\\controllers\\departmentcontoller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{AB23E0BF-5829-AC0A-19B6-FD50EBF907C3}|hrms\\hrms.csproj|c:\\internship\\codes\\dontnet\\assignment-1\\hrms\\hrms\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{AB23E0BF-5829-AC0A-19B6-FD50EBF907C3}|hrms\\hrms.csproj|solutionrelative:hrms\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{AB23E0BF-5829-AC0A-19B6-FD50EBF907C3}|hrms\\hrms.csproj|c:\\internship\\codes\\dontnet\\assignment-1\\hrms\\hrms\\model\\user.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{AB23E0BF-5829-AC0A-19B6-FD50EBF907C3}|hrms\\hrms.csproj|solutionrelative:hrms\\model\\user.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{AB23E0BF-5829-AC0A-19B6-FD50EBF907C3}|hrms\\hrms.csproj|c:\\internship\\codes\\dontnet\\assignment-1\\hrms\\hrms\\model\\baseentity.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{AB23E0BF-5829-AC0A-19B6-FD50EBF907C3}|hrms\\hrms.csproj|solutionrelative:hrms\\model\\baseentity.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{AB23E0BF-5829-AC0A-19B6-FD50EBF907C3}|hrms\\hrms.csproj|c:\\internship\\codes\\dontnet\\assignment-1\\hrms\\hrms\\customexception\\basecustomexception.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{AB23E0BF-5829-AC0A-19B6-FD50EBF907C3}|hrms\\hrms.csproj|solutionrelative:hrms\\customexception\\basecustomexception.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{AB23E0BF-5829-AC0A-19B6-FD50EBF907C3}|hrms\\hrms.csproj|c:\\internship\\codes\\dontnet\\assignment-1\\hrms\\hrms\\customexception\\customexceptionfilterattribute.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{AB23E0BF-5829-AC0A-19B6-FD50EBF907C3}|hrms\\hrms.csproj|solutionrelative:hrms\\customexception\\customexceptionfilterattribute.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{AB23E0BF-5829-AC0A-19B6-FD50EBF907C3}|hrms\\hrms.csproj|c:\\internship\\codes\\dontnet\\assignment-1\\hrms\\hrms\\controllers\\travelcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{AB23E0BF-5829-AC0A-19B6-FD50EBF907C3}|hrms\\hrms.csproj|solutionrelative:hrms\\controllers\\travelcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{AB23E0BF-5829-AC0A-19B6-FD50EBF907C3}|hrms\\hrms.csproj|c:\\internship\\codes\\dontnet\\assignment-1\\hrms\\hrms\\controllers\\authenticationcontoller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{AB23E0BF-5829-AC0A-19B6-FD50EBF907C3}|hrms\\hrms.csproj|solutionrelative:hrms\\controllers\\authenticationcontoller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{AB23E0BF-5829-AC0A-19B6-FD50EBF907C3}|hrms\\hrms.csproj|c:\\internship\\codes\\dontnet\\assignment-1\\hrms\\hrms\\controllers\\notificationcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{AB23E0BF-5829-AC0A-19B6-FD50EBF907C3}|hrms\\hrms.csproj|solutionrelative:hrms\\controllers\\notificationcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{AB23E0BF-5829-AC0A-19B6-FD50EBF907C3}|hrms\\hrms.csproj|c:\\internship\\codes\\dontnet\\assignment-1\\hrms\\hrms\\model\\jobreferral.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{AB23E0BF-5829-AC0A-19B6-FD50EBF907C3}|hrms\\hrms.csproj|solutionrelative:hrms\\model\\jobreferral.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{AB23E0BF-5829-AC0A-19B6-FD50EBF907C3}|hrms\\hrms.csproj|c:\\internship\\codes\\dontnet\\assignment-1\\hrms\\hrms\\dto\\request\\expense\\expensecreatedto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{AB23E0BF-5829-AC0A-19B6-FD50EBF907C3}|hrms\\hrms.csproj|solutionrelative:hrms\\dto\\request\\expense\\expensecreatedto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{AB23E0BF-5829-AC0A-19B6-FD50EBF907C3}|hrms\\hrms.csproj|c:\\internship\\codes\\dontnet\\assignment-1\\hrms\\hrms\\model\\jobshared.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{AB23E0BF-5829-AC0A-19B6-FD50EBF907C3}|hrms\\hrms.csproj|solutionrelative:hrms\\model\\jobshared.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{AB23E0BF-5829-AC0A-19B6-FD50EBF907C3}|hrms\\hrms.csproj|c:\\internship\\codes\\dontnet\\assignment-1\\hrms\\hrms\\service\\impl\\expenseservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{AB23E0BF-5829-AC0A-19B6-FD50EBF907C3}|hrms\\hrms.csproj|solutionrelative:hrms\\service\\impl\\expenseservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{AB23E0BF-5829-AC0A-19B6-FD50EBF907C3}|hrms\\hrms.csproj|c:\\internship\\codes\\dontnet\\assignment-1\\hrms\\hrms\\repository\\impl\\notificationrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{AB23E0BF-5829-AC0A-19B6-FD50EBF907C3}|hrms\\hrms.csproj|solutionrelative:hrms\\repository\\impl\\notificationrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{AB23E0BF-5829-AC0A-19B6-FD50EBF907C3}|hrms\\hrms.csproj|c:\\internship\\codes\\dontnet\\assignment-1\\hrms\\hrms\\service\\impl\\notificationservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{AB23E0BF-5829-AC0A-19B6-FD50EBF907C3}|hrms\\hrms.csproj|solutionrelative:hrms\\service\\impl\\notificationservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{AB23E0BF-5829-AC0A-19B6-FD50EBF907C3}|hrms\\hrms.csproj|c:\\internship\\codes\\dontnet\\assignment-1\\hrms\\hrms\\service\\inotificationservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{AB23E0BF-5829-AC0A-19B6-FD50EBF907C3}|hrms\\hrms.csproj|solutionrelative:hrms\\service\\inotificationservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{AB23E0BF-5829-AC0A-19B6-FD50EBF907C3}|hrms\\hrms.csproj|c:\\internship\\codes\\dontnet\\assignment-1\\hrms\\hrms\\repository\\inotificationrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{AB23E0BF-5829-AC0A-19B6-FD50EBF907C3}|hrms\\hrms.csproj|solutionrelative:hrms\\repository\\inotificationrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{AB23E0BF-5829-AC0A-19B6-FD50EBF907C3}|hrms\\hrms.csproj|c:\\internship\\codes\\dontnet\\assignment-1\\hrms\\hrms\\model\\notification.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{AB23E0BF-5829-AC0A-19B6-FD50EBF907C3}|hrms\\hrms.csproj|solutionrelative:hrms\\model\\notification.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{AB23E0BF-5829-AC0A-19B6-FD50EBF907C3}|hrms\\hrms.csproj|c:\\internship\\codes\\dontnet\\assignment-1\\hrms\\hrms\\repository\\impl\\departmentrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{AB23E0BF-5829-AC0A-19B6-FD50EBF907C3}|hrms\\hrms.csproj|solutionrelative:hrms\\repository\\impl\\departmentrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{AB23E0BF-5829-AC0A-19B6-FD50EBF907C3}|hrms\\hrms.csproj|c:\\internship\\codes\\dontnet\\assignment-1\\hrms\\hrms\\dto\\response\\notification\\notificationresponsedto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{AB23E0BF-5829-AC0A-19B6-FD50EBF907C3}|hrms\\hrms.csproj|solutionrelative:hrms\\dto\\response\\notification\\notificationresponsedto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{AB23E0BF-5829-AC0A-19B6-FD50EBF907C3}|hrms\\hrms.csproj|c:\\internship\\codes\\dontnet\\assignment-1\\hrms\\hrms\\controllers\\usercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{AB23E0BF-5829-AC0A-19B6-FD50EBF907C3}|hrms\\hrms.csproj|solutionrelative:hrms\\controllers\\usercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{AB23E0BF-5829-AC0A-19B6-FD50EBF907C3}|hrms\\hrms.csproj|c:\\internship\\codes\\dontnet\\assignment-1\\hrms\\hrms\\dto\\response\\expense\\expenseresponsedto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{AB23E0BF-5829-AC0A-19B6-FD50EBF907C3}|hrms\\hrms.csproj|solutionrelative:hrms\\dto\\response\\expense\\expenseresponsedto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{AB23E0BF-5829-AC0A-19B6-FD50EBF907C3}|hrms\\hrms.csproj|c:\\internship\\codes\\dontnet\\assignment-1\\hrms\\hrms\\dto\\request\\expense\\expensestatuschangedto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{AB23E0BF-5829-AC0A-19B6-FD50EBF907C3}|hrms\\hrms.csproj|solutionrelative:hrms\\dto\\request\\expense\\expensestatuschangedto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{AB23E0BF-5829-AC0A-19B6-FD50EBF907C3}|hrms\\hrms.csproj|c:\\internship\\codes\\dontnet\\assignment-1\\hrms\\hrms\\model\\expense.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{AB23E0BF-5829-AC0A-19B6-FD50EBF907C3}|hrms\\hrms.csproj|solutionrelative:hrms\\model\\expense.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{AB23E0BF-5829-AC0A-19B6-FD50EBF907C3}|hrms\\hrms.csproj|c:\\internship\\codes\\dontnet\\assignment-1\\hrms\\hrms\\service\\iexpenseservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{AB23E0BF-5829-AC0A-19B6-FD50EBF907C3}|hrms\\hrms.csproj|solutionrelative:hrms\\service\\iexpenseservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{AB23E0BF-5829-AC0A-19B6-FD50EBF907C3}|hrms\\hrms.csproj|c:\\internship\\codes\\dontnet\\assignment-1\\hrms\\hrms\\dto\\request\\expense\\expenseproofcreatedto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -35,24 +207,8 @@
       "RelativeMoniker": "D:0:0:{AB23E0BF-5829-AC0A-19B6-FD50EBF907C3}|hrms\\hrms.csproj|solutionrelative:hrms\\dto\\request\\category\\expensecategorycreatedto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{AB23E0BF-5829-AC0A-19B6-FD50EBF907C3}|hrms\\hrms.csproj|c:\\internship\\codes\\dontnet\\assignment-1\\hrms\\hrms\\model\\expense.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{AB23E0BF-5829-AC0A-19B6-FD50EBF907C3}|hrms\\hrms.csproj|solutionrelative:hrms\\model\\expense.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{AB23E0BF-5829-AC0A-19B6-FD50EBF907C3}|hrms\\hrms.csproj|c:\\internship\\codes\\dontnet\\assignment-1\\hrms\\hrms\\controllers\\expensecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{AB23E0BF-5829-AC0A-19B6-FD50EBF907C3}|hrms\\hrms.csproj|solutionrelative:hrms\\controllers\\expensecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{AB23E0BF-5829-AC0A-19B6-FD50EBF907C3}|hrms\\hrms.csproj|c:\\internship\\codes\\dontnet\\assignment-1\\hrms\\hrms\\dto\\response\\expense\\category\\expensecategoryresponsedto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{AB23E0BF-5829-AC0A-19B6-FD50EBF907C3}|hrms\\hrms.csproj|solutionrelative:hrms\\dto\\response\\expense\\category\\expensecategoryresponsedto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{AB23E0BF-5829-AC0A-19B6-FD50EBF907C3}|hrms\\hrms.csproj|c:\\internship\\codes\\dontnet\\assignment-1\\hrms\\hrms\\service\\iexpenseservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{AB23E0BF-5829-AC0A-19B6-FD50EBF907C3}|hrms\\hrms.csproj|solutionrelative:hrms\\service\\iexpenseservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{AB23E0BF-5829-AC0A-19B6-FD50EBF907C3}|hrms\\hrms.csproj|c:\\internship\\codes\\dontnet\\assignment-1\\hrms\\hrms\\repository\\impl\\travelrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{AB23E0BF-5829-AC0A-19B6-FD50EBF907C3}|hrms\\hrms.csproj|solutionrelative:hrms\\repository\\impl\\travelrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{AB23E0BF-5829-AC0A-19B6-FD50EBF907C3}|hrms\\hrms.csproj|c:\\internship\\codes\\dontnet\\assignment-1\\hrms\\hrms\\repository\\itravelrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -67,10 +223,6 @@
       "RelativeMoniker": "D:0:0:{AB23E0BF-5829-AC0A-19B6-FD50EBF907C3}|hrms\\hrms.csproj|solutionrelative:hrms\\repository\\iexpenserepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{AB23E0BF-5829-AC0A-19B6-FD50EBF907C3}|hrms\\hrms.csproj|c:\\internship\\codes\\dontnet\\assignment-1\\hrms\\hrms\\repository\\impl\\departmentrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{AB23E0BF-5829-AC0A-19B6-FD50EBF907C3}|hrms\\hrms.csproj|solutionrelative:hrms\\repository\\impl\\departmentrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{AB23E0BF-5829-AC0A-19B6-FD50EBF907C3}|hrms\\hrms.csproj|c:\\internship\\codes\\dontnet\\assignment-1\\hrms\\hrms\\service\\impl\\departmentservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{AB23E0BF-5829-AC0A-19B6-FD50EBF907C3}|hrms\\hrms.csproj|solutionrelative:hrms\\service\\impl\\departmentservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
@@ -83,16 +235,8 @@
       "RelativeMoniker": "D:0:0:{AB23E0BF-5829-AC0A-19B6-FD50EBF907C3}|hrms\\hrms.csproj|solutionrelative:hrms\\dto\\request\\department\\departmentcreatedto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{AB23E0BF-5829-AC0A-19B6-FD50EBF907C3}|hrms\\hrms.csproj|c:\\internship\\codes\\dontnet\\assignment-1\\hrms\\hrms\\controllers\\departmentcontoller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{AB23E0BF-5829-AC0A-19B6-FD50EBF907C3}|hrms\\hrms.csproj|solutionrelative:hrms\\controllers\\departmentcontoller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{AB23E0BF-5829-AC0A-19B6-FD50EBF907C3}|hrms\\hrms.csproj|c:\\internship\\codes\\dontnet\\assignment-1\\hrms\\hrms\\service\\idepartmentservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{AB23E0BF-5829-AC0A-19B6-FD50EBF907C3}|hrms\\hrms.csproj|solutionrelative:hrms\\service\\idepartmentservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{AB23E0BF-5829-AC0A-19B6-FD50EBF907C3}|hrms\\hrms.csproj|c:\\internship\\codes\\dontnet\\assignment-1\\hrms\\hrms\\dto\\request\\authentication\\registerrequestdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{AB23E0BF-5829-AC0A-19B6-FD50EBF907C3}|hrms\\hrms.csproj|solutionrelative:hrms\\dto\\request\\authentication\\registerrequestdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Internship\\Codes\\DontNet\\Assignment-1\\hrms\\hrms\\Migrations\\20260211083043_initial.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -103,24 +247,8 @@
       "RelativeMoniker": "D:0:0:{AB23E0BF-5829-AC0A-19B6-FD50EBF907C3}|hrms\\hrms.csproj|solutionrelative:hrms\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{AB23E0BF-5829-AC0A-19B6-FD50EBF907C3}|hrms\\hrms.csproj|c:\\internship\\codes\\dontnet\\assignment-1\\hrms\\hrms\\utility\\mappingprofile.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{AB23E0BF-5829-AC0A-19B6-FD50EBF907C3}|hrms\\hrms.csproj|solutionrelative:hrms\\utility\\mappingprofile.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{AB23E0BF-5829-AC0A-19B6-FD50EBF907C3}|hrms\\hrms.csproj|c:\\internship\\codes\\dontnet\\assignment-1\\hrms\\hrms\\utility\\emailsettings.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{AB23E0BF-5829-AC0A-19B6-FD50EBF907C3}|hrms\\hrms.csproj|solutionrelative:hrms\\utility\\emailsettings.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{AB23E0BF-5829-AC0A-19B6-FD50EBF907C3}|hrms\\hrms.csproj|c:\\internship\\codes\\dontnet\\assignment-1\\hrms\\hrms\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{AB23E0BF-5829-AC0A-19B6-FD50EBF907C3}|hrms\\hrms.csproj|solutionrelative:hrms\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{AB23E0BF-5829-AC0A-19B6-FD50EBF907C3}|hrms\\hrms.csproj|c:\\internship\\codes\\dontnet\\assignment-1\\hrms\\hrms\\controllers\\travelcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{AB23E0BF-5829-AC0A-19B6-FD50EBF907C3}|hrms\\hrms.csproj|solutionrelative:hrms\\controllers\\travelcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{AB23E0BF-5829-AC0A-19B6-FD50EBF907C3}|hrms\\hrms.csproj|c:\\internship\\codes\\dontnet\\assignment-1\\hrms\\hrms\\controllers\\authenticationcontoller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{AB23E0BF-5829-AC0A-19B6-FD50EBF907C3}|hrms\\hrms.csproj|solutionrelative:hrms\\controllers\\authenticationcontoller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{AB23E0BF-5829-AC0A-19B6-FD50EBF907C3}|hrms\\hrms.csproj|c:\\internship\\codes\\dontnet\\assignment-1\\hrms\\hrms\\service\\impl\\userservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -139,28 +267,12 @@
       "RelativeMoniker": "D:0:0:{AB23E0BF-5829-AC0A-19B6-FD50EBF907C3}|hrms\\hrms.csproj|solutionrelative:hrms\\dto\\response\\user\\userresponsedto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{AB23E0BF-5829-AC0A-19B6-FD50EBF907C3}|hrms\\hrms.csproj|c:\\internship\\codes\\dontnet\\assignment-1\\hrms\\hrms\\controllers\\usercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{AB23E0BF-5829-AC0A-19B6-FD50EBF907C3}|hrms\\hrms.csproj|solutionrelative:hrms\\controllers\\usercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{AB23E0BF-5829-AC0A-19B6-FD50EBF907C3}|hrms\\hrms.csproj|c:\\internship\\codes\\dontnet\\assignment-1\\hrms\\hrms\\dto\\response\\department\\departmentresponsedto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{AB23E0BF-5829-AC0A-19B6-FD50EBF907C3}|hrms\\hrms.csproj|solutionrelative:hrms\\dto\\response\\department\\departmentresponsedto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{AB23E0BF-5829-AC0A-19B6-FD50EBF907C3}|hrms\\hrms.csproj|c:\\internship\\codes\\dontnet\\assignment-1\\hrms\\hrms\\model\\baseentity.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{AB23E0BF-5829-AC0A-19B6-FD50EBF907C3}|hrms\\hrms.csproj|solutionrelative:hrms\\model\\baseentity.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{AB23E0BF-5829-AC0A-19B6-FD50EBF907C3}|hrms\\hrms.csproj|c:\\internship\\codes\\dontnet\\assignment-1\\hrms\\hrms\\model\\user.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{AB23E0BF-5829-AC0A-19B6-FD50EBF907C3}|hrms\\hrms.csproj|solutionrelative:hrms\\model\\user.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{AB23E0BF-5829-AC0A-19B6-FD50EBF907C3}|hrms\\hrms.csproj|c:\\internship\\codes\\dontnet\\assignment-1\\hrms\\hrms\\service\\itravelservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{AB23E0BF-5829-AC0A-19B6-FD50EBF907C3}|hrms\\hrms.csproj|solutionrelative:hrms\\service\\itravelservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{AB23E0BF-5829-AC0A-19B6-FD50EBF907C3}|hrms\\hrms.csproj|c:\\internship\\codes\\dontnet\\assignment-1\\hrms\\hrms\\repository\\impl\\userrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{AB23E0BF-5829-AC0A-19B6-FD50EBF907C3}|hrms\\hrms.csproj|solutionrelative:hrms\\repository\\impl\\userrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{AB23E0BF-5829-AC0A-19B6-FD50EBF907C3}|hrms\\hrms.csproj|c:\\internship\\codes\\dontnet\\assignment-1\\hrms\\hrms\\dto\\response\\travel\\travelwithtravelerresponsedto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -169,10 +281,6 @@
     {
       "AbsoluteMoniker": "D:0:0:{AB23E0BF-5829-AC0A-19B6-FD50EBF907C3}|hrms\\hrms.csproj|c:\\internship\\codes\\dontnet\\assignment-1\\hrms\\hrms\\dto\\request\\travel\\traveleradddto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{AB23E0BF-5829-AC0A-19B6-FD50EBF907C3}|hrms\\hrms.csproj|solutionrelative:hrms\\dto\\request\\travel\\traveleradddto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{AB23E0BF-5829-AC0A-19B6-FD50EBF907C3}|hrms\\hrms.csproj|c:\\internship\\codes\\dontnet\\assignment-1\\hrms\\hrms\\repository\\iuserrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{AB23E0BF-5829-AC0A-19B6-FD50EBF907C3}|hrms\\hrms.csproj|solutionrelative:hrms\\repository\\iuserrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{AB23E0BF-5829-AC0A-19B6-FD50EBF907C3}|hrms\\hrms.csproj|c:\\internship\\codes\\dontnet\\assignment-1\\hrms\\hrms\\service\\iuserservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -189,10 +297,6 @@
     {
       "AbsoluteMoniker": "D:0:0:{AB23E0BF-5829-AC0A-19B6-FD50EBF907C3}|hrms\\hrms.csproj|c:\\internship\\codes\\dontnet\\assignment-1\\hrms\\hrms\\model\\traveler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{AB23E0BF-5829-AC0A-19B6-FD50EBF907C3}|hrms\\hrms.csproj|solutionrelative:hrms\\model\\traveler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{AB23E0BF-5829-AC0A-19B6-FD50EBF907C3}|hrms\\hrms.csproj|c:\\internship\\codes\\dontnet\\assignment-1\\hrms\\hrms\\dto\\request\\expense\\expensestatuschangedto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{AB23E0BF-5829-AC0A-19B6-FD50EBF907C3}|hrms\\hrms.csproj|solutionrelative:hrms\\dto\\request\\expense\\expensestatuschangedto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{AB23E0BF-5829-AC0A-19B6-FD50EBF907C3}|hrms\\hrms.csproj|c:\\internship\\codes\\dontnet\\assignment-1\\hrms\\hrms\\service\\iemailservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -255,10 +359,6 @@
       "RelativeMoniker": "D:0:0:{AB23E0BF-5829-AC0A-19B6-FD50EBF907C3}|hrms\\hrms.csproj|solutionrelative:hrms\\model\\expensecategory.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{AB23E0BF-5829-AC0A-19B6-FD50EBF907C3}|hrms\\hrms.csproj|c:\\internship\\codes\\dontnet\\assignment-1\\hrms\\hrms\\model\\notification.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{AB23E0BF-5829-AC0A-19B6-FD50EBF907C3}|hrms\\hrms.csproj|solutionrelative:hrms\\model\\notification.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{AB23E0BF-5829-AC0A-19B6-FD50EBF907C3}|hrms\\hrms.csproj|c:\\internship\\codes\\dontnet\\assignment-1\\hrms\\hrms\\dto\\response\\traveler\\travelerdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{AB23E0BF-5829-AC0A-19B6-FD50EBF907C3}|hrms\\hrms.csproj|solutionrelative:hrms\\dto\\response\\traveler\\travelerdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
@@ -275,20 +375,8 @@
       "RelativeMoniker": "D:0:0:{AB23E0BF-5829-AC0A-19B6-FD50EBF907C3}|hrms\\hrms.csproj|solutionrelative:hrms\\dto\\response\\other\\pagedreponsedto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{AB23E0BF-5829-AC0A-19B6-FD50EBF907C3}|hrms\\hrms.csproj|c:\\internship\\codes\\dontnet\\assignment-1\\hrms\\hrms\\dto\\response\\other\\pagedreponseoffset.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{AB23E0BF-5829-AC0A-19B6-FD50EBF907C3}|hrms\\hrms.csproj|solutionrelative:hrms\\dto\\response\\other\\pagedreponseoffset.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Internship\\Codes\\DontNet\\Assignment-1\\hrms\\hrms\\Migrations\\20260209104110_traveler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:hrms\\Migrations\\20260209104110_traveler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{AB23E0BF-5829-AC0A-19B6-FD50EBF907C3}|hrms\\hrms.csproj|c:\\internship\\codes\\dontnet\\assignment-1\\hrms\\hrms\\customexception\\customexceptionfilterattribute.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{AB23E0BF-5829-AC0A-19B6-FD50EBF907C3}|hrms\\hrms.csproj|solutionrelative:hrms\\customexception\\customexceptionfilterattribute.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{AB23E0BF-5829-AC0A-19B6-FD50EBF907C3}|hrms\\hrms.csproj|c:\\internship\\codes\\dontnet\\assignment-1\\hrms\\hrms\\customexception\\basecustomexception.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{AB23E0BF-5829-AC0A-19B6-FD50EBF907C3}|hrms\\hrms.csproj|solutionrelative:hrms\\customexception\\basecustomexception.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Internship\\Codes\\DontNet\\Assignment-1\\hrms\\hrms\\Migrations\\20260208114201_initial.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -321,6 +409,18 @@
     {
       "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Internship\\Codes\\DontNet\\Assignment-1\\hrms\\hrms\\Migrations\\20260206085719_InitialCreate.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:hrms\\Migrations\\20260206085719_InitialCreate.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{AB23E0BF-5829-AC0A-19B6-FD50EBF907C3}|hrms\\hrms.csproj|c:\\internship\\codes\\dontnet\\assignment-1\\hrms\\hrms\\migrations\\20260211122328_initial.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{AB23E0BF-5829-AC0A-19B6-FD50EBF907C3}|hrms\\hrms.csproj|solutionrelative:hrms\\migrations\\20260211122328_initial.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{AB23E0BF-5829-AC0A-19B6-FD50EBF907C3}|hrms\\hrms.csproj|c:\\internship\\codes\\dontnet\\assignment-1\\hrms\\hrms\\migrations\\20260212103843_job-module.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{AB23E0BF-5829-AC0A-19B6-FD50EBF907C3}|hrms\\hrms.csproj|solutionrelative:hrms\\migrations\\20260212103843_job-module.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{AB23E0BF-5829-AC0A-19B6-FD50EBF907C3}|hrms\\hrms.csproj|c:\\internship\\codes\\dontnet\\assignment-1\\hrms\\hrms\\migrations\\20260212063808_new-field.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{AB23E0BF-5829-AC0A-19B6-FD50EBF907C3}|hrms\\hrms.csproj|solutionrelative:hrms\\migrations\\20260212063808_new-field.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -330,7 +430,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 12,
+          "SelectedChildIndex": 15,
           "Children": [
             {
               "$type": "Bookmark",
@@ -382,169 +482,221 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "20260211122328_initial.cs",
-              "DocumentMoniker": "C:\\Internship\\Codes\\DontNet\\Assignment-1\\hrms\\hrms\\Migrations\\20260211122328_initial.cs",
-              "RelativeDocumentMoniker": "hrms\\Migrations\\20260211122328_initial.cs",
-              "ToolTip": "C:\\Internship\\Codes\\DontNet\\Assignment-1\\hrms\\hrms\\Migrations\\20260211122328_initial.cs",
-              "RelativeToolTip": "hrms\\Migrations\\20260211122328_initial.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "DocumentIndex": 3,
+              "Title": "Job.cs",
+              "DocumentMoniker": "C:\\Internship\\Codes\\DontNet\\Assignment-1\\hrms\\hrms\\Model\\Job.cs",
+              "RelativeDocumentMoniker": "hrms\\Model\\Job.cs",
+              "ToolTip": "C:\\Internship\\Codes\\DontNet\\Assignment-1\\hrms\\hrms\\Model\\Job.cs",
+              "RelativeToolTip": "hrms\\Model\\Job.cs",
+              "ViewState": "AgIAAAkAAAAAAAAAAAArwA8AAAAfAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-02-11T12:23:28.983Z",
+              "WhenOpened": "2026-02-12T09:36:51.682Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 4,
-              "Title": "ExpenseResponseDto.cs",
-              "DocumentMoniker": "C:\\Internship\\Codes\\DontNet\\Assignment-1\\hrms\\hrms\\Dto\\Response\\Expense\\ExpenseResponseDto.cs",
-              "RelativeDocumentMoniker": "hrms\\Dto\\Response\\Expense\\ExpenseResponseDto.cs",
-              "ToolTip": "C:\\Internship\\Codes\\DontNet\\Assignment-1\\hrms\\hrms\\Dto\\Response\\Expense\\ExpenseResponseDto.cs",
-              "RelativeToolTip": "hrms\\Dto\\Response\\Expense\\ExpenseResponseDto.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAuwA8AAAArAAAAAAAAAA==",
+              "Title": "JobResponseDto.cs",
+              "DocumentMoniker": "C:\\Internship\\Codes\\DontNet\\Assignment-1\\hrms\\hrms\\Dto\\Response\\Job\\JobResponseDto.cs",
+              "RelativeDocumentMoniker": "hrms\\Dto\\Response\\Job\\JobResponseDto.cs",
+              "ToolTip": "C:\\Internship\\Codes\\DontNet\\Assignment-1\\hrms\\hrms\\Dto\\Response\\Job\\JobResponseDto.cs",
+              "RelativeToolTip": "hrms\\Dto\\Response\\Job\\JobResponseDto.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAQAAAAIAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-02-09T13:37:35.285Z",
+              "WhenOpened": "2026-02-12T10:42:55.71Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 2,
+              "Title": "JobResponseWithReviewersDto.cs",
+              "DocumentMoniker": "C:\\Internship\\Codes\\DontNet\\Assignment-1\\hrms\\hrms\\Dto\\Response\\Job\\JobResponseWithReviewersDto.cs",
+              "RelativeDocumentMoniker": "hrms\\Dto\\Response\\Job\\JobResponseWithReviewersDto.cs",
+              "ToolTip": "C:\\Internship\\Codes\\DontNet\\Assignment-1\\hrms\\hrms\\Dto\\Response\\Job\\JobResponseWithReviewersDto.cs",
+              "RelativeToolTip": "hrms\\Dto\\Response\\Job\\JobResponseWithReviewersDto.cs",
+              "ViewState": "AgIAAAIAAAAAAAAAAAAxwA0AAAAqAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-02-12T12:52:37.873Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "JobReviewer.cs",
+              "DocumentMoniker": "C:\\Internship\\Codes\\DontNet\\Assignment-1\\hrms\\hrms\\Model\\JobReviewer.cs",
+              "RelativeDocumentMoniker": "hrms\\Model\\JobReviewer.cs",
+              "ToolTip": "C:\\Internship\\Codes\\DontNet\\Assignment-1\\hrms\\hrms\\Model\\JobReviewer.cs",
+              "RelativeToolTip": "hrms\\Model\\JobReviewer.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAuwAIAAAARAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-02-12T09:43:00.69Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "JobReviewerResponseDto.cs",
+              "DocumentMoniker": "C:\\Internship\\Codes\\DontNet\\Assignment-1\\hrms\\hrms\\Dto\\Response\\Job\\JobReviewerResponseDto.cs",
+              "RelativeDocumentMoniker": "hrms\\Dto\\Response\\Job\\JobReviewerResponseDto.cs",
+              "ToolTip": "C:\\Internship\\Codes\\DontNet\\Assignment-1\\hrms\\hrms\\Dto\\Response\\Job\\JobReviewerResponseDto.cs",
+              "RelativeToolTip": "hrms\\Dto\\Response\\Job\\JobReviewerResponseDto.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAuwAQAAAARAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-02-12T12:56:09.283Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "JobRepository.cs",
+              "DocumentMoniker": "C:\\Internship\\Codes\\DontNet\\Assignment-1\\hrms\\hrms\\Repository\\impl\\JobRepository.cs",
+              "RelativeDocumentMoniker": "hrms\\Repository\\impl\\JobRepository.cs",
+              "ToolTip": "C:\\Internship\\Codes\\DontNet\\Assignment-1\\hrms\\hrms\\Repository\\impl\\JobRepository.cs",
+              "RelativeToolTip": "hrms\\Repository\\impl\\JobRepository.cs",
+              "ViewState": "AgIAAA4AAAAAAAAAAAAuwB0AAAAzAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-02-12T10:49:31.886Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
               "Title": "ApplicationDbContext.cs",
               "DocumentMoniker": "C:\\Internship\\Codes\\DontNet\\Assignment-1\\hrms\\hrms\\Data\\ApplicationDbContext.cs",
               "RelativeDocumentMoniker": "hrms\\Data\\ApplicationDbContext.cs",
               "ToolTip": "C:\\Internship\\Codes\\DontNet\\Assignment-1\\hrms\\hrms\\Data\\ApplicationDbContext.cs",
               "RelativeToolTip": "hrms\\Data\\ApplicationDbContext.cs",
-              "ViewState": "AgIAAAMBAAAAAAAAAAAUwBcBAAAjAAAAAAAAAA==",
+              "ViewState": "AgIAAJcAAAAAAAAAAAAuwMsBAAA3AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-02-06T08:22:58.223Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
-              "Title": "ExpenseCategoryCreateDto.cs",
-              "DocumentMoniker": "C:\\Internship\\Codes\\DontNet\\Assignment-1\\hrms\\hrms\\Dto\\Request\\Category\\ExpenseCategoryCreateDto.cs",
-              "RelativeDocumentMoniker": "hrms\\Dto\\Request\\Category\\ExpenseCategoryCreateDto.cs",
-              "ToolTip": "C:\\Internship\\Codes\\DontNet\\Assignment-1\\hrms\\hrms\\Dto\\Request\\Category\\ExpenseCategoryCreateDto.cs",
-              "RelativeToolTip": "hrms\\Dto\\Request\\Category\\ExpenseCategoryCreateDto.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAQAAAAIAAAAAAAAAA==",
+              "DocumentIndex": 8,
+              "Title": "IJobRepository.cs",
+              "DocumentMoniker": "C:\\Internship\\Codes\\DontNet\\Assignment-1\\hrms\\hrms\\Repository\\IJobRepository.cs",
+              "RelativeDocumentMoniker": "hrms\\Repository\\IJobRepository.cs",
+              "ToolTip": "C:\\Internship\\Codes\\DontNet\\Assignment-1\\hrms\\hrms\\Repository\\IJobRepository.cs",
+              "RelativeToolTip": "hrms\\Repository\\IJobRepository.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAuwAgAAAASAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-02-09T13:04:18.844Z",
+              "WhenOpened": "2026-02-12T10:49:22.76Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "ExpenseCreateDto.cs",
-              "DocumentMoniker": "C:\\Internship\\Codes\\DontNet\\Assignment-1\\hrms\\hrms\\Dto\\Request\\Expense\\ExpenseCreateDto.cs",
-              "RelativeDocumentMoniker": "hrms\\Dto\\Request\\Expense\\ExpenseCreateDto.cs",
-              "ToolTip": "C:\\Internship\\Codes\\DontNet\\Assignment-1\\hrms\\hrms\\Dto\\Request\\Expense\\ExpenseCreateDto.cs",
-              "RelativeToolTip": "hrms\\Dto\\Request\\Expense\\ExpenseCreateDto.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAAIAAAAAAAAAA==",
+              "DocumentIndex": 9,
+              "Title": "JobService.cs",
+              "DocumentMoniker": "C:\\Internship\\Codes\\DontNet\\Assignment-1\\hrms\\hrms\\Service\\impl\\JobService.cs",
+              "RelativeDocumentMoniker": "hrms\\Service\\impl\\JobService.cs",
+              "ToolTip": "C:\\Internship\\Codes\\DontNet\\Assignment-1\\hrms\\hrms\\Service\\impl\\JobService.cs",
+              "RelativeToolTip": "hrms\\Service\\impl\\JobService.cs",
+              "ViewState": "AgIAACoAAAAAAAAAAAAYwDQAAAAyAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-02-09T13:02:16.325Z",
+              "WhenOpened": "2026-02-12T10:49:06.156Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "ExpenseService.cs",
-              "DocumentMoniker": "C:\\Internship\\Codes\\DontNet\\Assignment-1\\hrms\\hrms\\Service\\impl\\ExpenseService.cs",
-              "RelativeDocumentMoniker": "hrms\\Service\\impl\\ExpenseService.cs",
-              "ToolTip": "C:\\Internship\\Codes\\DontNet\\Assignment-1\\hrms\\hrms\\Service\\impl\\ExpenseService.cs",
-              "RelativeToolTip": "hrms\\Service\\impl\\ExpenseService.cs",
-              "ViewState": "AgIAADsAAAAAAAAAAAASwFEAAAAMAAAAAAAAAA==",
+              "DocumentIndex": 11,
+              "Title": "IJobService.cs",
+              "DocumentMoniker": "C:\\Internship\\Codes\\DontNet\\Assignment-1\\hrms\\hrms\\Service\\IJobService.cs",
+              "RelativeDocumentMoniker": "hrms\\Service\\IJobService.cs",
+              "ToolTip": "C:\\Internship\\Codes\\DontNet\\Assignment-1\\hrms\\hrms\\Service\\IJobService.cs",
+              "RelativeToolTip": "hrms\\Service\\IJobService.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAuwAkAAAAqAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-02-09T16:13:26.758Z",
+              "WhenOpened": "2026-02-12T10:48:58.661Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 6,
+              "Title": "TravelRepository.cs",
+              "DocumentMoniker": "C:\\Internship\\Codes\\DontNet\\Assignment-1\\hrms\\hrms\\Repository\\impl\\TravelRepository.cs",
+              "RelativeDocumentMoniker": "hrms\\Repository\\impl\\TravelRepository.cs",
+              "ToolTip": "C:\\Internship\\Codes\\DontNet\\Assignment-1\\hrms\\hrms\\Repository\\impl\\TravelRepository.cs",
+              "RelativeToolTip": "hrms\\Repository\\impl\\TravelRepository.cs",
+              "ViewState": "AgIAAEcAAAAAAAAAAAAswFMAAAAPAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-02-09T05:25:07.193Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "JobController.cs",
+              "DocumentMoniker": "C:\\Internship\\Codes\\DontNet\\Assignment-1\\hrms\\hrms\\Controllers\\JobController.cs",
+              "RelativeDocumentMoniker": "hrms\\Controllers\\JobController.cs",
+              "ToolTip": "C:\\Internship\\Codes\\DontNet\\Assignment-1\\hrms\\hrms\\Controllers\\JobController.cs",
+              "RelativeToolTip": "hrms\\Controllers\\JobController.cs",
+              "ViewState": "AgIAACQAAAAAAAAAAAAAwEIAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-02-12T10:44:59.549Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 12,
+              "Title": "MappingProfile.cs",
+              "DocumentMoniker": "C:\\Internship\\Codes\\DontNet\\Assignment-1\\hrms\\hrms\\Utility\\MappingProfile.cs",
+              "RelativeDocumentMoniker": "hrms\\Utility\\MappingProfile.cs",
+              "ToolTip": "C:\\Internship\\Codes\\DontNet\\Assignment-1\\hrms\\hrms\\Utility\\MappingProfile.cs",
+              "RelativeToolTip": "hrms\\Utility\\MappingProfile.cs",
+              "ViewState": "AgIAABIAAAAAAAAAAAAAwCYAAAA6AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-02-08T09:01:31.642Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 13,
+              "Title": "RegisterRequestDto.cs",
+              "DocumentMoniker": "C:\\Internship\\Codes\\DontNet\\Assignment-1\\hrms\\hrms\\Dto\\Request\\Authentication\\RegisterRequestDto.cs",
+              "RelativeDocumentMoniker": "hrms\\Dto\\Request\\Authentication\\RegisterRequestDto.cs",
+              "ToolTip": "C:\\Internship\\Codes\\DontNet\\Assignment-1\\hrms\\hrms\\Dto\\Request\\Authentication\\RegisterRequestDto.cs",
+              "RelativeToolTip": "hrms\\Dto\\Request\\Authentication\\RegisterRequestDto.cs",
+              "ViewState": "AgIAAAQAAAAAAAAAAAA8wBUAAAAhAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-02-06T09:16:45.724Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 16,
               "Title": "ExpenseRepository.cs",
               "DocumentMoniker": "C:\\Internship\\Codes\\DontNet\\Assignment-1\\hrms\\hrms\\Repository\\impl\\ExpenseRepository.cs",
               "RelativeDocumentMoniker": "hrms\\Repository\\impl\\ExpenseRepository.cs",
               "ToolTip": "C:\\Internship\\Codes\\DontNet\\Assignment-1\\hrms\\hrms\\Repository\\impl\\ExpenseRepository.cs",
               "RelativeToolTip": "hrms\\Repository\\impl\\ExpenseRepository.cs",
-              "ViewState": "AgIAAC0AAAAAAAAAAAAUwD8AAAAnAAAAAAAAAA==",
+              "ViewState": "AgIAAC8AAAAAAAAAAAAowD8AAAAnAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-02-09T16:15:58.679Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
-              "Title": "ExpenseProofCreateDto.cs",
-              "DocumentMoniker": "C:\\Internship\\Codes\\DontNet\\Assignment-1\\hrms\\hrms\\Dto\\Request\\Expense\\ExpenseProofCreateDto.cs",
-              "RelativeDocumentMoniker": "hrms\\Dto\\Request\\Expense\\ExpenseProofCreateDto.cs",
-              "ToolTip": "C:\\Internship\\Codes\\DontNet\\Assignment-1\\hrms\\hrms\\Dto\\Request\\Expense\\ExpenseProofCreateDto.cs",
-              "RelativeToolTip": "hrms\\Dto\\Request\\Expense\\ExpenseProofCreateDto.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "DocumentIndex": 17,
+              "Title": "PagedReponseOffSet.cs",
+              "DocumentMoniker": "C:\\Internship\\Codes\\DontNet\\Assignment-1\\hrms\\hrms\\Dto\\Response\\Other\\PagedReponseOffSet.cs",
+              "RelativeDocumentMoniker": "hrms\\Dto\\Response\\Other\\PagedReponseOffSet.cs",
+              "ToolTip": "C:\\Internship\\Codes\\DontNet\\Assignment-1\\hrms\\hrms\\Dto\\Response\\Other\\PagedReponseOffSet.cs",
+              "RelativeToolTip": "hrms\\Dto\\Response\\Other\\PagedReponseOffSet.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAAPAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-02-11T12:10:18.629Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 8,
-              "Title": "Expense.cs",
-              "DocumentMoniker": "C:\\Internship\\Codes\\DontNet\\Assignment-1\\hrms\\hrms\\Model\\Expense.cs",
-              "RelativeDocumentMoniker": "hrms\\Model\\Expense.cs",
-              "ToolTip": "C:\\Internship\\Codes\\DontNet\\Assignment-1\\hrms\\hrms\\Model\\Expense.cs",
-              "RelativeToolTip": "hrms\\Model\\Expense.cs",
-              "ViewState": "AgIAAAoAAAAAAAAAAAAzwBYAAAAIAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-02-08T10:01:28.982Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 10,
-              "Title": "ExpenseCategoryResponseDto.cs",
-              "DocumentMoniker": "C:\\Internship\\Codes\\DontNet\\Assignment-1\\hrms\\hrms\\Dto\\Response\\Expense\\Category\\ExpenseCategoryResponseDto.cs",
-              "RelativeDocumentMoniker": "hrms\\Dto\\Response\\Expense\\Category\\ExpenseCategoryResponseDto.cs",
-              "ToolTip": "C:\\Internship\\Codes\\DontNet\\Assignment-1\\hrms\\hrms\\Dto\\Response\\Expense\\Category\\ExpenseCategoryResponseDto.cs",
-              "RelativeToolTip": "hrms\\Dto\\Response\\Expense\\Category\\ExpenseCategoryResponseDto.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAIAAAARAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-02-09T13:07:39.506Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 11,
-              "Title": "IExpenseService.cs",
-              "DocumentMoniker": "C:\\Internship\\Codes\\DontNet\\Assignment-1\\hrms\\hrms\\Service\\IExpenseService.cs",
-              "RelativeDocumentMoniker": "hrms\\Service\\IExpenseService.cs",
-              "ToolTip": "C:\\Internship\\Codes\\DontNet\\Assignment-1\\hrms\\hrms\\Service\\IExpenseService.cs",
-              "RelativeToolTip": "hrms\\Service\\IExpenseService.cs",
-              "ViewState": "AgIAAAEAAAAAAAAAAAAhwA0AAAAhAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-02-09T16:12:50.673Z",
+              "WhenOpened": "2026-02-09T05:55:53.723Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 15,
-              "Title": "IExpenseRepository.cs",
-              "DocumentMoniker": "C:\\Internship\\Codes\\DontNet\\Assignment-1\\hrms\\hrms\\Repository\\IExpenseRepository.cs",
-              "RelativeDocumentMoniker": "hrms\\Repository\\IExpenseRepository.cs",
-              "ToolTip": "C:\\Internship\\Codes\\DontNet\\Assignment-1\\hrms\\hrms\\Repository\\IExpenseRepository.cs",
-              "RelativeToolTip": "hrms\\Repository\\IExpenseRepository.cs",
-              "ViewState": "AgIAAAIAAAAAAAAAAAAhwA8AAAAFAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-02-09T16:14:20.657Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 9,
               "Title": "ExpenseController.cs",
               "DocumentMoniker": "C:\\Internship\\Codes\\DontNet\\Assignment-1\\hrms\\hrms\\Controllers\\ExpenseController.cs",
               "RelativeDocumentMoniker": "hrms\\Controllers\\ExpenseController.cs",
               "ToolTip": "C:\\Internship\\Codes\\DontNet\\Assignment-1\\hrms\\hrms\\Controllers\\ExpenseController.cs",
               "RelativeToolTip": "hrms\\Controllers\\ExpenseController.cs",
-              "ViewState": "AgIAADMAAAAAAAAAAAAYwEIAAAAjAAAAAAAAAA==",
+              "ViewState": "AgIAABYAAAAAAAAAAAAzwB0AAAAoAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-02-09T16:37:20.762Z",
               "EditorCaption": ""
@@ -552,305 +704,115 @@
             {
               "$type": "Document",
               "DocumentIndex": 14,
-              "Title": "TravelService.cs",
-              "DocumentMoniker": "C:\\Internship\\Codes\\DontNet\\Assignment-1\\hrms\\hrms\\Service\\impl\\TravelService.cs",
-              "RelativeDocumentMoniker": "hrms\\Service\\impl\\TravelService.cs",
-              "ToolTip": "C:\\Internship\\Codes\\DontNet\\Assignment-1\\hrms\\hrms\\Service\\impl\\TravelService.cs",
-              "RelativeToolTip": "hrms\\Service\\impl\\TravelService.cs",
-              "ViewState": "AgIAAAYAAAAAAAAAAAAAACsAAAA4AAAAAAAAAA==",
+              "Title": "JobCreateDto.cs",
+              "DocumentMoniker": "C:\\Internship\\Codes\\DontNet\\Assignment-1\\hrms\\hrms\\Dto\\Request\\Job\\JobCreateDto.cs",
+              "RelativeDocumentMoniker": "hrms\\Dto\\Request\\Job\\JobCreateDto.cs",
+              "ToolTip": "C:\\Internship\\Codes\\DontNet\\Assignment-1\\hrms\\hrms\\Dto\\Request\\Job\\JobCreateDto.cs",
+              "RelativeToolTip": "hrms\\Dto\\Request\\Job\\JobCreateDto.cs",
+              "ViewState": "AgIAAAMAAAAAAAAAAAAuwAQAAAARAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-02-09T05:21:21.119Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 13,
-              "Title": "ITravelRepository.cs",
-              "DocumentMoniker": "C:\\Internship\\Codes\\DontNet\\Assignment-1\\hrms\\hrms\\Repository\\ITravelRepository.cs",
-              "RelativeDocumentMoniker": "hrms\\Repository\\ITravelRepository.cs",
-              "ToolTip": "C:\\Internship\\Codes\\DontNet\\Assignment-1\\hrms\\hrms\\Repository\\ITravelRepository.cs",
-              "RelativeToolTip": "hrms\\Repository\\ITravelRepository.cs",
-              "ViewState": "AgIAAAoAAAAAAAAAAAAQwBQAAAAFAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-02-09T05:22:02.272Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 12,
-              "Title": "TravelRepository.cs",
-              "DocumentMoniker": "C:\\Internship\\Codes\\DontNet\\Assignment-1\\hrms\\hrms\\Repository\\impl\\TravelRepository.cs",
-              "RelativeDocumentMoniker": "hrms\\Repository\\impl\\TravelRepository.cs",
-              "ToolTip": "C:\\Internship\\Codes\\DontNet\\Assignment-1\\hrms\\hrms\\Repository\\impl\\TravelRepository.cs",
-              "RelativeToolTip": "hrms\\Repository\\impl\\TravelRepository.cs",
-              "ViewState": "AgIAAHcAAAAAAAAAAAAcwAkAAAA1AAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-02-09T05:25:07.193Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 16,
-              "Title": "DepartmentRepository.cs",
-              "DocumentMoniker": "C:\\Internship\\Codes\\DontNet\\Assignment-1\\hrms\\hrms\\Repository\\impl\\DepartmentRepository.cs",
-              "RelativeDocumentMoniker": "hrms\\Repository\\impl\\DepartmentRepository.cs",
-              "ToolTip": "C:\\Internship\\Codes\\DontNet\\Assignment-1\\hrms\\hrms\\Repository\\impl\\DepartmentRepository.cs",
-              "RelativeToolTip": "hrms\\Repository\\impl\\DepartmentRepository.cs",
-              "ViewState": "AgIAACsAAAAAAAAAAAAUwDYAAAAlAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-02-11T07:32:01.419Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 17,
-              "Title": "DepartmentService.cs",
-              "DocumentMoniker": "C:\\Internship\\Codes\\DontNet\\Assignment-1\\hrms\\hrms\\Service\\impl\\DepartmentService.cs",
-              "RelativeDocumentMoniker": "hrms\\Service\\impl\\DepartmentService.cs",
-              "ToolTip": "C:\\Internship\\Codes\\DontNet\\Assignment-1\\hrms\\hrms\\Service\\impl\\DepartmentService.cs",
-              "RelativeToolTip": "hrms\\Service\\impl\\DepartmentService.cs",
-              "ViewState": "AgIAAAwAAAAAAAAAAAAAwBYAAAAPAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-02-11T07:45:06.043Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 19,
-              "Title": "DepartmentCreateDto.cs",
-              "DocumentMoniker": "C:\\Internship\\Codes\\DontNet\\Assignment-1\\hrms\\hrms\\Dto\\Request\\Department\\DepartmentCreateDto.cs",
-              "RelativeDocumentMoniker": "hrms\\Dto\\Request\\Department\\DepartmentCreateDto.cs",
-              "ToolTip": "C:\\Internship\\Codes\\DontNet\\Assignment-1\\hrms\\hrms\\Dto\\Request\\Department\\DepartmentCreateDto.cs",
-              "RelativeToolTip": "hrms\\Dto\\Request\\Department\\DepartmentCreateDto.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAABMAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-02-11T07:19:49.65Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 18,
-              "Title": "IDepartmentRepository.cs",
-              "DocumentMoniker": "C:\\Internship\\Codes\\DontNet\\Assignment-1\\hrms\\hrms\\Repository\\IDepartmentRepository.cs",
-              "RelativeDocumentMoniker": "hrms\\Repository\\IDepartmentRepository.cs",
-              "ToolTip": "C:\\Internship\\Codes\\DontNet\\Assignment-1\\hrms\\hrms\\Repository\\IDepartmentRepository.cs",
-              "RelativeToolTip": "hrms\\Repository\\IDepartmentRepository.cs",
-              "ViewState": "AgIAAAQAAAAAAAAAAAAnwA0AAAABAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-02-11T07:30:58.278Z",
+              "WhenOpened": "2026-02-12T10:40:42.957Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 20,
+              "Title": "IJobReviewerService.cs",
+              "DocumentMoniker": "C:\\Internship\\Codes\\DontNet\\Assignment-1\\hrms\\hrms\\Service\\IJobReviewerService.cs",
+              "RelativeDocumentMoniker": "hrms\\Service\\IJobReviewerService.cs",
+              "ToolTip": "C:\\Internship\\Codes\\DontNet\\Assignment-1\\hrms\\hrms\\Service\\IJobReviewerService.cs",
+              "RelativeToolTip": "hrms\\Service\\IJobReviewerService.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAuwAYAAAANAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-02-12T11:53:58.182Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 19,
+              "Title": "JobReviewerService.cs",
+              "DocumentMoniker": "C:\\Internship\\Codes\\DontNet\\Assignment-1\\hrms\\hrms\\Service\\impl\\JobReviewerService.cs",
+              "RelativeDocumentMoniker": "hrms\\Service\\impl\\JobReviewerService.cs",
+              "ToolTip": "C:\\Internship\\Codes\\DontNet\\Assignment-1\\hrms\\hrms\\Service\\impl\\JobReviewerService.cs",
+              "RelativeToolTip": "hrms\\Service\\impl\\JobReviewerService.cs",
+              "ViewState": "AgIAAAMAAAAAAAAAAAAAAA8AAAAJAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-02-12T11:54:11.803Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 18,
+              "Title": "JobReviewerRepository.cs",
+              "DocumentMoniker": "C:\\Internship\\Codes\\DontNet\\Assignment-1\\hrms\\hrms\\Repository\\impl\\JobReviewerRepository.cs",
+              "RelativeDocumentMoniker": "hrms\\Repository\\impl\\JobReviewerRepository.cs",
+              "ToolTip": "C:\\Internship\\Codes\\DontNet\\Assignment-1\\hrms\\hrms\\Repository\\impl\\JobReviewerRepository.cs",
+              "RelativeToolTip": "hrms\\Repository\\impl\\JobReviewerRepository.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAAIAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-02-12T11:54:47.438Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 21,
+              "Title": "IJobReviewerRepository.cs",
+              "DocumentMoniker": "C:\\Internship\\Codes\\DontNet\\Assignment-1\\hrms\\hrms\\Repository\\IJobReviewerRepository.cs",
+              "RelativeDocumentMoniker": "hrms\\Repository\\IJobReviewerRepository.cs",
+              "ToolTip": "C:\\Internship\\Codes\\DontNet\\Assignment-1\\hrms\\hrms\\Repository\\IJobReviewerRepository.cs",
+              "RelativeToolTip": "hrms\\Repository\\IJobReviewerRepository.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAuwAYAAAAvAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-02-12T11:54:31.192Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 22,
+              "Title": "UserRepository.cs",
+              "DocumentMoniker": "C:\\Internship\\Codes\\DontNet\\Assignment-1\\hrms\\hrms\\Repository\\impl\\UserRepository.cs",
+              "RelativeDocumentMoniker": "hrms\\Repository\\impl\\UserRepository.cs",
+              "ToolTip": "C:\\Internship\\Codes\\DontNet\\Assignment-1\\hrms\\hrms\\Repository\\impl\\UserRepository.cs",
+              "RelativeToolTip": "hrms\\Repository\\impl\\UserRepository.cs",
+              "ViewState": "AgIAAAYAAAAAAAAAAAAAAAwAAAAIAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-02-06T10:22:49.13Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 23,
+              "Title": "IUserRepository.cs",
+              "DocumentMoniker": "C:\\Internship\\Codes\\DontNet\\Assignment-1\\hrms\\hrms\\Repository\\IUserRepository.cs",
+              "RelativeDocumentMoniker": "hrms\\Repository\\IUserRepository.cs",
+              "ToolTip": "C:\\Internship\\Codes\\DontNet\\Assignment-1\\hrms\\hrms\\Repository\\IUserRepository.cs",
+              "RelativeToolTip": "hrms\\Repository\\IUserRepository.cs",
+              "ViewState": "AgIAAA0AAAAAAAAAAAA/wA8AAAAIAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-02-06T10:20:15.977Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 24,
               "Title": "DepartmentContoller.cs",
               "DocumentMoniker": "C:\\Internship\\Codes\\DontNet\\Assignment-1\\hrms\\hrms\\Controllers\\DepartmentContoller.cs",
               "RelativeDocumentMoniker": "hrms\\Controllers\\DepartmentContoller.cs",
               "ToolTip": "C:\\Internship\\Codes\\DontNet\\Assignment-1\\hrms\\hrms\\Controllers\\DepartmentContoller.cs",
               "RelativeToolTip": "hrms\\Controllers\\DepartmentContoller.cs",
-              "ViewState": "AgIAABgAAAAAAAAAAAAYwC4AAAAFAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABMAAAAcAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-02-11T07:43:34.767Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 21,
-              "Title": "IDepartmentService.cs",
-              "DocumentMoniker": "C:\\Internship\\Codes\\DontNet\\Assignment-1\\hrms\\hrms\\Service\\IDepartmentService.cs",
-              "RelativeDocumentMoniker": "hrms\\Service\\IDepartmentService.cs",
-              "ToolTip": "C:\\Internship\\Codes\\DontNet\\Assignment-1\\hrms\\hrms\\Service\\IDepartmentService.cs",
-              "RelativeToolTip": "hrms\\Service\\IDepartmentService.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAuwAoAAAARAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-02-11T07:44:44.124Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 22,
-              "Title": "RegisterRequestDto.cs",
-              "DocumentMoniker": "C:\\Internship\\Codes\\DontNet\\Assignment-1\\hrms\\hrms\\Dto\\Request\\Authentication\\RegisterRequestDto.cs",
-              "RelativeDocumentMoniker": "hrms\\Dto\\Request\\Authentication\\RegisterRequestDto.cs",
-              "ToolTip": "C:\\Internship\\Codes\\DontNet\\Assignment-1\\hrms\\hrms\\Dto\\Request\\Authentication\\RegisterRequestDto.cs",
-              "RelativeToolTip": "hrms\\Dto\\Request\\Authentication\\RegisterRequestDto.cs",
-              "ViewState": "AgIAABAAAAAAAAAAAAAQwBUAAAAhAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-02-06T09:16:45.724Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-02-11T07:43:34.767Z"
             },
             {
               "$type": "Document",
               "DocumentIndex": 25,
-              "Title": "MappingProfile.cs",
-              "DocumentMoniker": "C:\\Internship\\Codes\\DontNet\\Assignment-1\\hrms\\hrms\\Utility\\MappingProfile.cs",
-              "RelativeDocumentMoniker": "hrms\\Utility\\MappingProfile.cs",
-              "ToolTip": "C:\\Internship\\Codes\\DontNet\\Assignment-1\\hrms\\hrms\\Utility\\MappingProfile.cs",
-              "RelativeToolTip": "hrms\\Utility\\MappingProfile.cs",
-              "ViewState": "AgIAAAsAAAAAAAAAAAAYwBYAAAAiAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-02-08T09:01:31.642Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 23,
-              "Title": "20260211083043_initial.cs",
-              "DocumentMoniker": "C:\\Internship\\Codes\\DontNet\\Assignment-1\\hrms\\hrms\\Migrations\\20260211083043_initial.cs",
-              "RelativeDocumentMoniker": "hrms\\Migrations\\20260211083043_initial.cs",
-              "ToolTip": "C:\\Internship\\Codes\\DontNet\\Assignment-1\\hrms\\hrms\\Migrations\\20260211083043_initial.cs",
-              "RelativeToolTip": "hrms\\Migrations\\20260211083043_initial.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-02-11T08:30:43.827Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 26,
-              "Title": "EmailSettings.cs",
-              "DocumentMoniker": "C:\\Internship\\Codes\\DontNet\\Assignment-1\\hrms\\hrms\\Utility\\EmailSettings.cs",
-              "RelativeDocumentMoniker": "hrms\\Utility\\EmailSettings.cs",
-              "ToolTip": "C:\\Internship\\Codes\\DontNet\\Assignment-1\\hrms\\hrms\\Utility\\EmailSettings.cs",
-              "RelativeToolTip": "hrms\\Utility\\EmailSettings.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAAoAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-02-08T16:48:00.918Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 27,
               "Title": "Program.cs",
               "DocumentMoniker": "C:\\Internship\\Codes\\DontNet\\Assignment-1\\hrms\\hrms\\Program.cs",
               "RelativeDocumentMoniker": "hrms\\Program.cs",
               "ToolTip": "C:\\Internship\\Codes\\DontNet\\Assignment-1\\hrms\\hrms\\Program.cs",
               "RelativeToolTip": "hrms\\Program.cs",
-              "ViewState": "AgIAACwAAAAAAAAAAAAQwD4AAABBAAAAAAAAAA==",
+              "ViewState": "AgIAAFIAAAAAAAAAAAAQwEIAAAAzAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-02-05T17:33:30.338Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-02-05T17:33:30.338Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 24,
-              "Title": "appsettings.json",
-              "DocumentMoniker": "C:\\Internship\\Codes\\DontNet\\Assignment-1\\hrms\\hrms\\appsettings.json",
-              "RelativeDocumentMoniker": "hrms\\appsettings.json",
-              "ToolTip": "C:\\Internship\\Codes\\DontNet\\Assignment-1\\hrms\\hrms\\appsettings.json",
-              "RelativeToolTip": "hrms\\appsettings.json",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAABHAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
-              "WhenOpened": "2026-02-05T17:32:22.967Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 30,
-              "Title": "UserService.cs",
-              "DocumentMoniker": "C:\\Internship\\Codes\\DontNet\\Assignment-1\\hrms\\hrms\\Service\\impl\\UserService.cs",
-              "RelativeDocumentMoniker": "hrms\\Service\\impl\\UserService.cs",
-              "ToolTip": "C:\\Internship\\Codes\\DontNet\\Assignment-1\\hrms\\hrms\\Service\\impl\\UserService.cs",
-              "RelativeToolTip": "hrms\\Service\\impl\\UserService.cs",
-              "ViewState": "AgIAAAYAAAAAAAAAAAAAAAcAAAAdAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-02-08T09:04:34.282Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 31,
-              "Title": "AuthenticationService.cs",
-              "DocumentMoniker": "C:\\Internship\\Codes\\DontNet\\Assignment-1\\hrms\\hrms\\Service\\impl\\AuthenticationService.cs",
-              "RelativeDocumentMoniker": "hrms\\Service\\impl\\AuthenticationService.cs",
-              "ToolTip": "C:\\Internship\\Codes\\DontNet\\Assignment-1\\hrms\\hrms\\Service\\impl\\AuthenticationService.cs",
-              "RelativeToolTip": "hrms\\Service\\impl\\AuthenticationService.cs",
-              "ViewState": "AgIAAFIAAAAAAAAAAAAgwGQAAAAOAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-02-06T10:13:58.408Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 29,
-              "Title": "AuthenticationContoller.cs",
-              "DocumentMoniker": "C:\\Internship\\Codes\\DontNet\\Assignment-1\\hrms\\hrms\\Controllers\\AuthenticationContoller.cs",
-              "RelativeDocumentMoniker": "hrms\\Controllers\\AuthenticationContoller.cs",
-              "ToolTip": "C:\\Internship\\Codes\\DontNet\\Assignment-1\\hrms\\hrms\\Controllers\\AuthenticationContoller.cs",
-              "RelativeToolTip": "hrms\\Controllers\\AuthenticationContoller.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABsAAAAMAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-02-06T09:33:14.408Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 28,
-              "Title": "TravelController.cs",
-              "DocumentMoniker": "C:\\Internship\\Codes\\DontNet\\Assignment-1\\hrms\\hrms\\Controllers\\TravelController.cs",
-              "RelativeDocumentMoniker": "hrms\\Controllers\\TravelController.cs",
-              "ToolTip": "C:\\Internship\\Codes\\DontNet\\Assignment-1\\hrms\\hrms\\Controllers\\TravelController.cs",
-              "RelativeToolTip": "hrms\\Controllers\\TravelController.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA8AAAADAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-02-09T06:31:34.605Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 33,
-              "Title": "UserResponseDto.cs",
-              "DocumentMoniker": "C:\\Internship\\Codes\\DontNet\\Assignment-1\\hrms\\hrms\\Dto\\Response\\User\\UserResponseDto.cs",
-              "RelativeDocumentMoniker": "hrms\\Dto\\Response\\User\\UserResponseDto.cs",
-              "ToolTip": "C:\\Internship\\Codes\\DontNet\\Assignment-1\\hrms\\hrms\\Dto\\Response\\User\\UserResponseDto.cs",
-              "RelativeToolTip": "hrms\\Dto\\Response\\User\\UserResponseDto.cs",
-              "ViewState": "AgIAAAYAAAAAAAAAAAAAABEAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-02-08T08:18:19.572Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 34,
-              "Title": "UserController.cs",
-              "DocumentMoniker": "C:\\Internship\\Codes\\DontNet\\Assignment-1\\hrms\\hrms\\Controllers\\UserController.cs",
-              "RelativeDocumentMoniker": "hrms\\Controllers\\UserController.cs",
-              "ToolTip": "C:\\Internship\\Codes\\DontNet\\Assignment-1\\hrms\\hrms\\Controllers\\UserController.cs",
-              "RelativeToolTip": "hrms\\Controllers\\UserController.cs",
-              "ViewState": "AgIAABYAAAAAAAAAAAAQwBkAAAApAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-02-08T09:03:44.204Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 32,
-              "Title": "Department.cs",
-              "DocumentMoniker": "C:\\Internship\\Codes\\DontNet\\Assignment-1\\hrms\\hrms\\Model\\Department.cs",
-              "RelativeDocumentMoniker": "hrms\\Model\\Department.cs",
-              "ToolTip": "C:\\Internship\\Codes\\DontNet\\Assignment-1\\hrms\\hrms\\Model\\Department.cs",
-              "RelativeToolTip": "hrms\\Model\\Department.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAIAAAAoAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-02-11T07:12:21.849Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 35,
-              "Title": "DepartmentResponseDto.cs",
-              "DocumentMoniker": "C:\\Internship\\Codes\\DontNet\\Assignment-1\\hrms\\hrms\\Dto\\Response\\Department\\DepartmentResponseDto.cs",
-              "RelativeDocumentMoniker": "hrms\\Dto\\Response\\Department\\DepartmentResponseDto.cs",
-              "ToolTip": "C:\\Internship\\Codes\\DontNet\\Assignment-1\\hrms\\hrms\\Dto\\Response\\Department\\DepartmentResponseDto.cs",
-              "RelativeToolTip": "hrms\\Dto\\Response\\Department\\DepartmentResponseDto.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAUAAAAyAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-02-11T07:21:07.774Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 36,
+              "DocumentIndex": 27,
               "Title": "BaseEntity.cs",
               "DocumentMoniker": "C:\\Internship\\Codes\\DontNet\\Assignment-1\\hrms\\hrms\\Model\\BaseEntity.cs",
               "RelativeDocumentMoniker": "hrms\\Model\\BaseEntity.cs",
@@ -858,140 +820,275 @@
               "RelativeToolTip": "hrms\\Model\\BaseEntity.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAIAAAARAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-02-08T09:50:49.296Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-02-08T09:50:49.296Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 37,
+              "DocumentIndex": 26,
               "Title": "User.cs",
               "DocumentMoniker": "C:\\Internship\\Codes\\DontNet\\Assignment-1\\hrms\\hrms\\Model\\User.cs",
               "RelativeDocumentMoniker": "hrms\\Model\\User.cs",
               "ToolTip": "C:\\Internship\\Codes\\DontNet\\Assignment-1\\hrms\\hrms\\Model\\User.cs",
               "RelativeToolTip": "hrms\\Model\\User.cs",
-              "ViewState": "AgIAAA0AAAAAAAAAAAA5wBcAAAAIAAAAAAAAAA==",
+              "ViewState": "AgIAAAkAAAAAAAAAAAAuwAkAAAAiAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-02-06T08:23:44.753Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-02-06T08:23:44.753Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 38,
-              "Title": "ITravelService.cs",
-              "DocumentMoniker": "C:\\Internship\\Codes\\DontNet\\Assignment-1\\hrms\\hrms\\Service\\ITravelService.cs",
-              "RelativeDocumentMoniker": "hrms\\Service\\ITravelService.cs",
-              "ToolTip": "C:\\Internship\\Codes\\DontNet\\Assignment-1\\hrms\\hrms\\Service\\ITravelService.cs",
-              "RelativeToolTip": "hrms\\Service\\ITravelService.cs",
-              "ViewState": "AgIAABAAAAAAAAAAAIA+wBUAAAAaAAAAAAAAAA==",
+              "DocumentIndex": 28,
+              "Title": "BaseCustomException.cs",
+              "DocumentMoniker": "C:\\Internship\\Codes\\DontNet\\Assignment-1\\hrms\\hrms\\CustomException\\BaseCustomException.cs",
+              "RelativeDocumentMoniker": "hrms\\CustomException\\BaseCustomException.cs",
+              "ToolTip": "C:\\Internship\\Codes\\DontNet\\Assignment-1\\hrms\\hrms\\CustomException\\BaseCustomException.cs",
+              "RelativeToolTip": "hrms\\CustomException\\BaseCustomException.cs",
+              "ViewState": "AgIAABAAAAAAAAAAAAAUwCEAAABrAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-02-09T04:40:46.14Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-02-06T09:19:43.589Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 29,
+              "Title": "CustomExceptionFilterAttribute.cs",
+              "DocumentMoniker": "C:\\Internship\\Codes\\DontNet\\Assignment-1\\hrms\\hrms\\CustomException\\CustomExceptionFilterAttribute.cs",
+              "RelativeDocumentMoniker": "hrms\\CustomException\\CustomExceptionFilterAttribute.cs",
+              "ToolTip": "C:\\Internship\\Codes\\DontNet\\Assignment-1\\hrms\\hrms\\CustomException\\CustomExceptionFilterAttribute.cs",
+              "RelativeToolTip": "hrms\\CustomException\\CustomExceptionFilterAttribute.cs",
+              "ViewState": "AgIAAC4AAAAAAAAAAAAYwAMAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-02-06T09:25:56.796Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 30,
+              "Title": "TravelController.cs",
+              "DocumentMoniker": "C:\\Internship\\Codes\\DontNet\\Assignment-1\\hrms\\hrms\\Controllers\\TravelController.cs",
+              "RelativeDocumentMoniker": "hrms\\Controllers\\TravelController.cs",
+              "ToolTip": "C:\\Internship\\Codes\\DontNet\\Assignment-1\\hrms\\hrms\\Controllers\\TravelController.cs",
+              "RelativeToolTip": "hrms\\Controllers\\TravelController.cs",
+              "ViewState": "AgIAABsAAAAAAAAAAAAQwLIAAAAxAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-02-09T06:31:34.605Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 31,
+              "Title": "AuthenticationContoller.cs",
+              "DocumentMoniker": "C:\\Internship\\Codes\\DontNet\\Assignment-1\\hrms\\hrms\\Controllers\\AuthenticationContoller.cs",
+              "RelativeDocumentMoniker": "hrms\\Controllers\\AuthenticationContoller.cs",
+              "ToolTip": "C:\\Internship\\Codes\\DontNet\\Assignment-1\\hrms\\hrms\\Controllers\\AuthenticationContoller.cs",
+              "RelativeToolTip": "hrms\\Controllers\\AuthenticationContoller.cs",
+              "ViewState": "AgIAACAAAAAAAAAAAAA3wCgAAAAvAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-02-06T09:33:14.408Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 33,
+              "Title": "JobReferral.cs",
+              "DocumentMoniker": "C:\\Internship\\Codes\\DontNet\\Assignment-1\\hrms\\hrms\\Model\\JobReferral.cs",
+              "RelativeDocumentMoniker": "hrms\\Model\\JobReferral.cs",
+              "ToolTip": "C:\\Internship\\Codes\\DontNet\\Assignment-1\\hrms\\hrms\\Model\\JobReferral.cs",
+              "RelativeToolTip": "hrms\\Model\\JobReferral.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAAmAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-02-12T09:46:08.294Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 32,
+              "Title": "NotificationController.cs",
+              "DocumentMoniker": "C:\\Internship\\Codes\\DontNet\\Assignment-1\\hrms\\hrms\\Controllers\\NotificationController.cs",
+              "RelativeDocumentMoniker": "hrms\\Controllers\\NotificationController.cs",
+              "ToolTip": "C:\\Internship\\Codes\\DontNet\\Assignment-1\\hrms\\hrms\\Controllers\\NotificationController.cs",
+              "RelativeToolTip": "hrms\\Controllers\\NotificationController.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAC8AAAAbAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-02-12T07:27:28.56Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 103,
+              "Title": "20260212103843_job-module.cs",
+              "DocumentMoniker": "C:\\Internship\\Codes\\DontNet\\Assignment-1\\hrms\\hrms\\Migrations\\20260212103843_job-module.cs",
+              "RelativeDocumentMoniker": "hrms\\Migrations\\20260212103843_job-module.cs",
+              "ToolTip": "C:\\Internship\\Codes\\DontNet\\Assignment-1\\hrms\\hrms\\Migrations\\20260212103843_job-module.cs",
+              "RelativeToolTip": "hrms\\Migrations\\20260212103843_job-module.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAAaAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-02-12T10:38:43.879Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 35,
+              "Title": "JobShared.cs",
+              "DocumentMoniker": "C:\\Internship\\Codes\\DontNet\\Assignment-1\\hrms\\hrms\\Model\\JobShared.cs",
+              "RelativeDocumentMoniker": "hrms\\Model\\JobShared.cs",
+              "ToolTip": "C:\\Internship\\Codes\\DontNet\\Assignment-1\\hrms\\hrms\\Model\\JobShared.cs",
+              "RelativeToolTip": "hrms\\Model\\JobShared.cs",
+              "ViewState": "AgIAAAMAAAAAAAAAAAAAAAkAAAAlAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-02-12T09:50:37.498Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 34,
+              "Title": "ExpenseCreateDto.cs",
+              "DocumentMoniker": "C:\\Internship\\Codes\\DontNet\\Assignment-1\\hrms\\hrms\\Dto\\Request\\Expense\\ExpenseCreateDto.cs",
+              "RelativeDocumentMoniker": "hrms\\Dto\\Request\\Expense\\ExpenseCreateDto.cs",
+              "ToolTip": "C:\\Internship\\Codes\\DontNet\\Assignment-1\\hrms\\hrms\\Dto\\Request\\Expense\\ExpenseCreateDto.cs",
+              "RelativeToolTip": "hrms\\Dto\\Request\\Expense\\ExpenseCreateDto.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAArAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-02-09T13:02:16.325Z"
             },
             {
               "$type": "Document",
               "DocumentIndex": 39,
-              "Title": "UserRepository.cs",
-              "DocumentMoniker": "C:\\Internship\\Codes\\DontNet\\Assignment-1\\hrms\\hrms\\Repository\\impl\\UserRepository.cs",
-              "RelativeDocumentMoniker": "hrms\\Repository\\impl\\UserRepository.cs",
-              "ToolTip": "C:\\Internship\\Codes\\DontNet\\Assignment-1\\hrms\\hrms\\Repository\\impl\\UserRepository.cs",
-              "RelativeToolTip": "hrms\\Repository\\impl\\UserRepository.cs",
-              "ViewState": "AgIAACwAAAAAAAAAAAAkwDsAAAAJAAAAAAAAAA==",
+              "Title": "INotificationService.cs",
+              "DocumentMoniker": "C:\\Internship\\Codes\\DontNet\\Assignment-1\\hrms\\hrms\\Service\\INotificationService.cs",
+              "RelativeDocumentMoniker": "hrms\\Service\\INotificationService.cs",
+              "ToolTip": "C:\\Internship\\Codes\\DontNet\\Assignment-1\\hrms\\hrms\\Service\\INotificationService.cs",
+              "RelativeToolTip": "hrms\\Service\\INotificationService.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAuwAgAAAARAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-02-06T10:22:49.13Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-02-12T08:00:54.761Z"
             },
             {
               "$type": "Document",
               "DocumentIndex": 40,
-              "Title": "TravelWithTravelerResponseDto.cs",
-              "DocumentMoniker": "C:\\Internship\\Codes\\DontNet\\Assignment-1\\hrms\\hrms\\Dto\\Response\\Travel\\TravelWithTravelerResponseDto.cs",
-              "RelativeDocumentMoniker": "hrms\\Dto\\Response\\Travel\\TravelWithTravelerResponseDto.cs",
-              "ToolTip": "C:\\Internship\\Codes\\DontNet\\Assignment-1\\hrms\\hrms\\Dto\\Response\\Travel\\TravelWithTravelerResponseDto.cs",
-              "RelativeToolTip": "hrms\\Dto\\Response\\Travel\\TravelWithTravelerResponseDto.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAswA4AAABTAAAAAAAAAA==",
+              "Title": "INotificationRepository.cs",
+              "DocumentMoniker": "C:\\Internship\\Codes\\DontNet\\Assignment-1\\hrms\\hrms\\Repository\\INotificationRepository.cs",
+              "RelativeDocumentMoniker": "hrms\\Repository\\INotificationRepository.cs",
+              "ToolTip": "C:\\Internship\\Codes\\DontNet\\Assignment-1\\hrms\\hrms\\Repository\\INotificationRepository.cs",
+              "RelativeToolTip": "hrms\\Repository\\INotificationRepository.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAuwAgAAAAtAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-02-09T11:57:47.138Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-02-12T08:07:13.558Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 36,
+              "Title": "ExpenseService.cs",
+              "DocumentMoniker": "C:\\Internship\\Codes\\DontNet\\Assignment-1\\hrms\\hrms\\Service\\impl\\ExpenseService.cs",
+              "RelativeDocumentMoniker": "hrms\\Service\\impl\\ExpenseService.cs",
+              "ToolTip": "C:\\Internship\\Codes\\DontNet\\Assignment-1\\hrms\\hrms\\Service\\impl\\ExpenseService.cs",
+              "RelativeToolTip": "hrms\\Service\\impl\\ExpenseService.cs",
+              "ViewState": "AgIAADcAAAAAAAAAAAAIwDkAAAAyAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-02-09T16:13:26.758Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 37,
+              "Title": "NotificationRepository.cs",
+              "DocumentMoniker": "C:\\Internship\\Codes\\DontNet\\Assignment-1\\hrms\\hrms\\Repository\\impl\\NotificationRepository.cs",
+              "RelativeDocumentMoniker": "hrms\\Repository\\impl\\NotificationRepository.cs",
+              "ToolTip": "C:\\Internship\\Codes\\DontNet\\Assignment-1\\hrms\\hrms\\Repository\\impl\\NotificationRepository.cs",
+              "RelativeToolTip": "hrms\\Repository\\impl\\NotificationRepository.cs",
+              "ViewState": "AgIAAB8AAAAAAAAAAAAgwCkAAAApAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-02-12T08:12:38.498Z"
             },
             {
               "$type": "Document",
               "DocumentIndex": 41,
-              "Title": "TravelerAddDto.cs",
-              "DocumentMoniker": "C:\\Internship\\Codes\\DontNet\\Assignment-1\\hrms\\hrms\\Dto\\Request\\Travel\\TravelerAddDto.cs",
-              "RelativeDocumentMoniker": "hrms\\Dto\\Request\\Travel\\TravelerAddDto.cs",
-              "ToolTip": "C:\\Internship\\Codes\\DontNet\\Assignment-1\\hrms\\hrms\\Dto\\Request\\Travel\\TravelerAddDto.cs",
-              "RelativeToolTip": "hrms\\Dto\\Request\\Travel\\TravelerAddDto.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAIAAAARAAAAAAAAAA==",
+              "Title": "Notification.cs",
+              "DocumentMoniker": "C:\\Internship\\Codes\\DontNet\\Assignment-1\\hrms\\hrms\\Model\\Notification.cs",
+              "RelativeDocumentMoniker": "hrms\\Model\\Notification.cs",
+              "ToolTip": "C:\\Internship\\Codes\\DontNet\\Assignment-1\\hrms\\hrms\\Model\\Notification.cs",
+              "RelativeToolTip": "hrms\\Model\\Notification.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAuwAIAAAARAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-02-09T09:10:28.798Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-02-09T12:11:59.608Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 38,
+              "Title": "NotificationService.cs",
+              "DocumentMoniker": "C:\\Internship\\Codes\\DontNet\\Assignment-1\\hrms\\hrms\\Service\\impl\\NotificationService.cs",
+              "RelativeDocumentMoniker": "hrms\\Service\\impl\\NotificationService.cs",
+              "ToolTip": "C:\\Internship\\Codes\\DontNet\\Assignment-1\\hrms\\hrms\\Service\\impl\\NotificationService.cs",
+              "RelativeToolTip": "hrms\\Service\\impl\\NotificationService.cs",
+              "ViewState": "AgIAAAsAAAAAAAAAAAAAwBoAAAA6AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-02-12T08:06:20.534Z"
             },
             {
               "$type": "Document",
               "DocumentIndex": 42,
-              "Title": "IUserRepository.cs",
-              "DocumentMoniker": "C:\\Internship\\Codes\\DontNet\\Assignment-1\\hrms\\hrms\\Repository\\IUserRepository.cs",
-              "RelativeDocumentMoniker": "hrms\\Repository\\IUserRepository.cs",
-              "ToolTip": "C:\\Internship\\Codes\\DontNet\\Assignment-1\\hrms\\hrms\\Repository\\IUserRepository.cs",
-              "RelativeToolTip": "hrms\\Repository\\IUserRepository.cs",
-              "ViewState": "AgIAAAMAAAAAAAAAAAAhwBAAAAAZAAAAAAAAAA==",
+              "Title": "DepartmentRepository.cs",
+              "DocumentMoniker": "C:\\Internship\\Codes\\DontNet\\Assignment-1\\hrms\\hrms\\Repository\\impl\\DepartmentRepository.cs",
+              "RelativeDocumentMoniker": "hrms\\Repository\\impl\\DepartmentRepository.cs",
+              "ToolTip": "C:\\Internship\\Codes\\DontNet\\Assignment-1\\hrms\\hrms\\Repository\\impl\\DepartmentRepository.cs",
+              "RelativeToolTip": "hrms\\Repository\\impl\\DepartmentRepository.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAADYAAAAlAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-02-06T10:20:15.977Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-02-11T07:32:01.419Z"
             },
             {
               "$type": "Document",
               "DocumentIndex": 43,
-              "Title": "IUserService.cs",
-              "DocumentMoniker": "C:\\Internship\\Codes\\DontNet\\Assignment-1\\hrms\\hrms\\Service\\IUserService.cs",
-              "RelativeDocumentMoniker": "hrms\\Service\\IUserService.cs",
-              "ToolTip": "C:\\Internship\\Codes\\DontNet\\Assignment-1\\hrms\\hrms\\Service\\IUserService.cs",
-              "RelativeToolTip": "hrms\\Service\\IUserService.cs",
-              "ViewState": "AgIAAAMAAAAAAAAAAADgvwsAAAAkAAAAAAAAAA==",
+              "Title": "NotificationResponseDto.cs",
+              "DocumentMoniker": "C:\\Internship\\Codes\\DontNet\\Assignment-1\\hrms\\hrms\\Dto\\Response\\Notification\\NotificationResponseDto.cs",
+              "RelativeDocumentMoniker": "hrms\\Dto\\Response\\Notification\\NotificationResponseDto.cs",
+              "ToolTip": "C:\\Internship\\Codes\\DontNet\\Assignment-1\\hrms\\hrms\\Dto\\Response\\Notification\\NotificationResponseDto.cs",
+              "RelativeToolTip": "hrms\\Dto\\Response\\Notification\\NotificationResponseDto.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAAqAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-02-08T09:04:02.673Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 44,
-              "Title": "TravelCreateDto.cs",
-              "DocumentMoniker": "C:\\Internship\\Codes\\DontNet\\Assignment-1\\hrms\\hrms\\Dto\\Request\\Travel\\TravelCreateDto.cs",
-              "RelativeDocumentMoniker": "hrms\\Dto\\Request\\Travel\\TravelCreateDto.cs",
-              "ToolTip": "C:\\Internship\\Codes\\DontNet\\Assignment-1\\hrms\\hrms\\Dto\\Request\\Travel\\TravelCreateDto.cs",
-              "RelativeToolTip": "hrms\\Dto\\Request\\Travel\\TravelCreateDto.cs",
-              "ViewState": "AgIAAAYAAAAAAAAAAAAywA0AAAA/AAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-02-09T05:03:52.275Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 46,
-              "Title": "Traveler.cs",
-              "DocumentMoniker": "C:\\Internship\\Codes\\DontNet\\Assignment-1\\hrms\\hrms\\Model\\Traveler.cs",
-              "RelativeDocumentMoniker": "hrms\\Model\\Traveler.cs",
-              "ToolTip": "C:\\Internship\\Codes\\DontNet\\Assignment-1\\hrms\\hrms\\Model\\Traveler.cs",
-              "RelativeToolTip": "hrms\\Model\\Traveler.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-02-09T08:55:03.97Z"
+              "WhenOpened": "2026-02-12T08:02:02.903Z"
             },
             {
               "$type": "Document",
               "DocumentIndex": 45,
-              "Title": "Travel.cs",
-              "DocumentMoniker": "C:\\Internship\\Codes\\DontNet\\Assignment-1\\hrms\\hrms\\Model\\Travel.cs",
-              "RelativeDocumentMoniker": "hrms\\Model\\Travel.cs",
-              "ToolTip": "C:\\Internship\\Codes\\DontNet\\Assignment-1\\hrms\\hrms\\Model\\Travel.cs",
-              "RelativeToolTip": "hrms\\Model\\Travel.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAAtAAAAAAAAAA==",
+              "Title": "ExpenseResponseDto.cs",
+              "DocumentMoniker": "C:\\Internship\\Codes\\DontNet\\Assignment-1\\hrms\\hrms\\Dto\\Response\\Expense\\ExpenseResponseDto.cs",
+              "RelativeDocumentMoniker": "hrms\\Dto\\Response\\Expense\\ExpenseResponseDto.cs",
+              "ToolTip": "C:\\Internship\\Codes\\DontNet\\Assignment-1\\hrms\\hrms\\Dto\\Response\\Expense\\ExpenseResponseDto.cs",
+              "RelativeToolTip": "hrms\\Dto\\Response\\Expense\\ExpenseResponseDto.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAuwBAAAAAxAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-02-08T09:47:20.3Z"
+              "WhenOpened": "2026-02-09T13:37:35.285Z"
             },
             {
               "$type": "Document",
               "DocumentIndex": 47,
+              "Title": "Expense.cs",
+              "DocumentMoniker": "C:\\Internship\\Codes\\DontNet\\Assignment-1\\hrms\\hrms\\Model\\Expense.cs",
+              "RelativeDocumentMoniker": "hrms\\Model\\Expense.cs",
+              "ToolTip": "C:\\Internship\\Codes\\DontNet\\Assignment-1\\hrms\\hrms\\Model\\Expense.cs",
+              "RelativeToolTip": "hrms\\Model\\Expense.cs",
+              "ViewState": "AgIAAA0AAAAAAAAAAAAQwBgAAAAxAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-02-08T10:01:28.982Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 44,
+              "Title": "UserController.cs",
+              "DocumentMoniker": "C:\\Internship\\Codes\\DontNet\\Assignment-1\\hrms\\hrms\\Controllers\\UserController.cs",
+              "RelativeDocumentMoniker": "hrms\\Controllers\\UserController.cs",
+              "ToolTip": "C:\\Internship\\Codes\\DontNet\\Assignment-1\\hrms\\hrms\\Controllers\\UserController.cs",
+              "RelativeToolTip": "hrms\\Controllers\\UserController.cs",
+              "ViewState": "AgIAABYAAAAAAAAAAAAQwA0AAAAEAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-02-08T09:03:44.204Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 104,
+              "Title": "20260212063808_new-field.cs",
+              "DocumentMoniker": "C:\\Internship\\Codes\\DontNet\\Assignment-1\\hrms\\hrms\\Migrations\\20260212063808_new-field.cs",
+              "RelativeDocumentMoniker": "hrms\\Migrations\\20260212063808_new-field.cs",
+              "ToolTip": "C:\\Internship\\Codes\\DontNet\\Assignment-1\\hrms\\hrms\\Migrations\\20260212063808_new-field.cs",
+              "RelativeToolTip": "hrms\\Migrations\\20260212063808_new-field.cs",
+              "ViewState": "AgIAAAYAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-02-12T06:38:08.743Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 46,
               "Title": "ExpenseStatusChangeDto.cs",
               "DocumentMoniker": "C:\\Internship\\Codes\\DontNet\\Assignment-1\\hrms\\hrms\\Dto\\Request\\Expense\\ExpenseStatusChangeDto.cs",
               "RelativeDocumentMoniker": "hrms\\Dto\\Request\\Expense\\ExpenseStatusChangeDto.cs",
@@ -1004,6 +1101,330 @@
             {
               "$type": "Document",
               "DocumentIndex": 48,
+              "Title": "IExpenseService.cs",
+              "DocumentMoniker": "C:\\Internship\\Codes\\DontNet\\Assignment-1\\hrms\\hrms\\Service\\IExpenseService.cs",
+              "RelativeDocumentMoniker": "hrms\\Service\\IExpenseService.cs",
+              "ToolTip": "C:\\Internship\\Codes\\DontNet\\Assignment-1\\hrms\\hrms\\Service\\IExpenseService.cs",
+              "RelativeToolTip": "hrms\\Service\\IExpenseService.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAAhAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-02-09T16:12:50.673Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 50,
+              "Title": "ExpenseCategoryCreateDto.cs",
+              "DocumentMoniker": "C:\\Internship\\Codes\\DontNet\\Assignment-1\\hrms\\hrms\\Dto\\Request\\Category\\ExpenseCategoryCreateDto.cs",
+              "RelativeDocumentMoniker": "hrms\\Dto\\Request\\Category\\ExpenseCategoryCreateDto.cs",
+              "ToolTip": "C:\\Internship\\Codes\\DontNet\\Assignment-1\\hrms\\hrms\\Dto\\Request\\Category\\ExpenseCategoryCreateDto.cs",
+              "RelativeToolTip": "hrms\\Dto\\Request\\Category\\ExpenseCategoryCreateDto.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAQAAAAIAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-02-09T13:04:18.844Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 102,
+              "Title": "20260211122328_initial.cs",
+              "DocumentMoniker": "C:\\Internship\\Codes\\DontNet\\Assignment-1\\hrms\\hrms\\Migrations\\20260211122328_initial.cs",
+              "RelativeDocumentMoniker": "hrms\\Migrations\\20260211122328_initial.cs",
+              "ToolTip": "C:\\Internship\\Codes\\DontNet\\Assignment-1\\hrms\\hrms\\Migrations\\20260211122328_initial.cs",
+              "RelativeToolTip": "hrms\\Migrations\\20260211122328_initial.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-02-11T12:23:28.983Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 49,
+              "Title": "ExpenseProofCreateDto.cs",
+              "DocumentMoniker": "C:\\Internship\\Codes\\DontNet\\Assignment-1\\hrms\\hrms\\Dto\\Request\\Expense\\ExpenseProofCreateDto.cs",
+              "RelativeDocumentMoniker": "hrms\\Dto\\Request\\Expense\\ExpenseProofCreateDto.cs",
+              "ToolTip": "C:\\Internship\\Codes\\DontNet\\Assignment-1\\hrms\\hrms\\Dto\\Request\\Expense\\ExpenseProofCreateDto.cs",
+              "RelativeToolTip": "hrms\\Dto\\Request\\Expense\\ExpenseProofCreateDto.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-02-11T12:10:18.629Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 51,
+              "Title": "ExpenseCategoryResponseDto.cs",
+              "DocumentMoniker": "C:\\Internship\\Codes\\DontNet\\Assignment-1\\hrms\\hrms\\Dto\\Response\\Expense\\Category\\ExpenseCategoryResponseDto.cs",
+              "RelativeDocumentMoniker": "hrms\\Dto\\Response\\Expense\\Category\\ExpenseCategoryResponseDto.cs",
+              "ToolTip": "C:\\Internship\\Codes\\DontNet\\Assignment-1\\hrms\\hrms\\Dto\\Response\\Expense\\Category\\ExpenseCategoryResponseDto.cs",
+              "RelativeToolTip": "hrms\\Dto\\Response\\Expense\\Category\\ExpenseCategoryResponseDto.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAIAAAARAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-02-09T13:07:39.506Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 54,
+              "Title": "IExpenseRepository.cs",
+              "DocumentMoniker": "C:\\Internship\\Codes\\DontNet\\Assignment-1\\hrms\\hrms\\Repository\\IExpenseRepository.cs",
+              "RelativeDocumentMoniker": "hrms\\Repository\\IExpenseRepository.cs",
+              "ToolTip": "C:\\Internship\\Codes\\DontNet\\Assignment-1\\hrms\\hrms\\Repository\\IExpenseRepository.cs",
+              "RelativeToolTip": "hrms\\Repository\\IExpenseRepository.cs",
+              "ViewState": "AgIAAAIAAAAAAAAAAAAhwA8AAAAFAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-02-09T16:14:20.657Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 53,
+              "Title": "TravelService.cs",
+              "DocumentMoniker": "C:\\Internship\\Codes\\DontNet\\Assignment-1\\hrms\\hrms\\Service\\impl\\TravelService.cs",
+              "RelativeDocumentMoniker": "hrms\\Service\\impl\\TravelService.cs",
+              "ToolTip": "C:\\Internship\\Codes\\DontNet\\Assignment-1\\hrms\\hrms\\Service\\impl\\TravelService.cs",
+              "RelativeToolTip": "hrms\\Service\\impl\\TravelService.cs",
+              "ViewState": "AgIAAAYAAAAAAAAAAAAAACsAAAA4AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-02-09T05:21:21.119Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 52,
+              "Title": "ITravelRepository.cs",
+              "DocumentMoniker": "C:\\Internship\\Codes\\DontNet\\Assignment-1\\hrms\\hrms\\Repository\\ITravelRepository.cs",
+              "RelativeDocumentMoniker": "hrms\\Repository\\ITravelRepository.cs",
+              "ToolTip": "C:\\Internship\\Codes\\DontNet\\Assignment-1\\hrms\\hrms\\Repository\\ITravelRepository.cs",
+              "RelativeToolTip": "hrms\\Repository\\ITravelRepository.cs",
+              "ViewState": "AgIAAAoAAAAAAAAAAAAQwBQAAAAFAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-02-09T05:22:02.272Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 55,
+              "Title": "DepartmentService.cs",
+              "DocumentMoniker": "C:\\Internship\\Codes\\DontNet\\Assignment-1\\hrms\\hrms\\Service\\impl\\DepartmentService.cs",
+              "RelativeDocumentMoniker": "hrms\\Service\\impl\\DepartmentService.cs",
+              "ToolTip": "C:\\Internship\\Codes\\DontNet\\Assignment-1\\hrms\\hrms\\Service\\impl\\DepartmentService.cs",
+              "RelativeToolTip": "hrms\\Service\\impl\\DepartmentService.cs",
+              "ViewState": "AgIAAAwAAAAAAAAAAAAAwBYAAAAPAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-02-11T07:45:06.043Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 57,
+              "Title": "DepartmentCreateDto.cs",
+              "DocumentMoniker": "C:\\Internship\\Codes\\DontNet\\Assignment-1\\hrms\\hrms\\Dto\\Request\\Department\\DepartmentCreateDto.cs",
+              "RelativeDocumentMoniker": "hrms\\Dto\\Request\\Department\\DepartmentCreateDto.cs",
+              "ToolTip": "C:\\Internship\\Codes\\DontNet\\Assignment-1\\hrms\\hrms\\Dto\\Request\\Department\\DepartmentCreateDto.cs",
+              "RelativeToolTip": "hrms\\Dto\\Request\\Department\\DepartmentCreateDto.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAABMAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-02-11T07:19:49.65Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 56,
+              "Title": "IDepartmentRepository.cs",
+              "DocumentMoniker": "C:\\Internship\\Codes\\DontNet\\Assignment-1\\hrms\\hrms\\Repository\\IDepartmentRepository.cs",
+              "RelativeDocumentMoniker": "hrms\\Repository\\IDepartmentRepository.cs",
+              "ToolTip": "C:\\Internship\\Codes\\DontNet\\Assignment-1\\hrms\\hrms\\Repository\\IDepartmentRepository.cs",
+              "RelativeToolTip": "hrms\\Repository\\IDepartmentRepository.cs",
+              "ViewState": "AgIAAAQAAAAAAAAAAAAnwA0AAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-02-11T07:30:58.278Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 58,
+              "Title": "IDepartmentService.cs",
+              "DocumentMoniker": "C:\\Internship\\Codes\\DontNet\\Assignment-1\\hrms\\hrms\\Service\\IDepartmentService.cs",
+              "RelativeDocumentMoniker": "hrms\\Service\\IDepartmentService.cs",
+              "ToolTip": "C:\\Internship\\Codes\\DontNet\\Assignment-1\\hrms\\hrms\\Service\\IDepartmentService.cs",
+              "RelativeToolTip": "hrms\\Service\\IDepartmentService.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAuwAoAAAARAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-02-11T07:44:44.124Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 59,
+              "Title": "20260211083043_initial.cs",
+              "DocumentMoniker": "C:\\Internship\\Codes\\DontNet\\Assignment-1\\hrms\\hrms\\Migrations\\20260211083043_initial.cs",
+              "RelativeDocumentMoniker": "hrms\\Migrations\\20260211083043_initial.cs",
+              "ToolTip": "C:\\Internship\\Codes\\DontNet\\Assignment-1\\hrms\\hrms\\Migrations\\20260211083043_initial.cs",
+              "RelativeToolTip": "hrms\\Migrations\\20260211083043_initial.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-02-11T08:30:43.827Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 61,
+              "Title": "EmailSettings.cs",
+              "DocumentMoniker": "C:\\Internship\\Codes\\DontNet\\Assignment-1\\hrms\\hrms\\Utility\\EmailSettings.cs",
+              "RelativeDocumentMoniker": "hrms\\Utility\\EmailSettings.cs",
+              "ToolTip": "C:\\Internship\\Codes\\DontNet\\Assignment-1\\hrms\\hrms\\Utility\\EmailSettings.cs",
+              "RelativeToolTip": "hrms\\Utility\\EmailSettings.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAAoAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-02-08T16:48:00.918Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 60,
+              "Title": "appsettings.json",
+              "DocumentMoniker": "C:\\Internship\\Codes\\DontNet\\Assignment-1\\hrms\\hrms\\appsettings.json",
+              "RelativeDocumentMoniker": "hrms\\appsettings.json",
+              "ToolTip": "C:\\Internship\\Codes\\DontNet\\Assignment-1\\hrms\\hrms\\appsettings.json",
+              "RelativeToolTip": "hrms\\appsettings.json",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAABHAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2026-02-05T17:32:22.967Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 62,
+              "Title": "UserService.cs",
+              "DocumentMoniker": "C:\\Internship\\Codes\\DontNet\\Assignment-1\\hrms\\hrms\\Service\\impl\\UserService.cs",
+              "RelativeDocumentMoniker": "hrms\\Service\\impl\\UserService.cs",
+              "ToolTip": "C:\\Internship\\Codes\\DontNet\\Assignment-1\\hrms\\hrms\\Service\\impl\\UserService.cs",
+              "RelativeToolTip": "hrms\\Service\\impl\\UserService.cs",
+              "ViewState": "AgIAAAYAAAAAAAAAAAAAAAcAAAAdAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-02-08T09:04:34.282Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 63,
+              "Title": "AuthenticationService.cs",
+              "DocumentMoniker": "C:\\Internship\\Codes\\DontNet\\Assignment-1\\hrms\\hrms\\Service\\impl\\AuthenticationService.cs",
+              "RelativeDocumentMoniker": "hrms\\Service\\impl\\AuthenticationService.cs",
+              "ToolTip": "C:\\Internship\\Codes\\DontNet\\Assignment-1\\hrms\\hrms\\Service\\impl\\AuthenticationService.cs",
+              "RelativeToolTip": "hrms\\Service\\impl\\AuthenticationService.cs",
+              "ViewState": "AgIAAFIAAAAAAAAAAAAgwGQAAAAOAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-02-06T10:13:58.408Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 65,
+              "Title": "UserResponseDto.cs",
+              "DocumentMoniker": "C:\\Internship\\Codes\\DontNet\\Assignment-1\\hrms\\hrms\\Dto\\Response\\User\\UserResponseDto.cs",
+              "RelativeDocumentMoniker": "hrms\\Dto\\Response\\User\\UserResponseDto.cs",
+              "ToolTip": "C:\\Internship\\Codes\\DontNet\\Assignment-1\\hrms\\hrms\\Dto\\Response\\User\\UserResponseDto.cs",
+              "RelativeToolTip": "hrms\\Dto\\Response\\User\\UserResponseDto.cs",
+              "ViewState": "AgIAAAYAAAAAAAAAAAAAABEAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-02-08T08:18:19.572Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 64,
+              "Title": "Department.cs",
+              "DocumentMoniker": "C:\\Internship\\Codes\\DontNet\\Assignment-1\\hrms\\hrms\\Model\\Department.cs",
+              "RelativeDocumentMoniker": "hrms\\Model\\Department.cs",
+              "ToolTip": "C:\\Internship\\Codes\\DontNet\\Assignment-1\\hrms\\hrms\\Model\\Department.cs",
+              "RelativeToolTip": "hrms\\Model\\Department.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAIAAAAoAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-02-11T07:12:21.849Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 66,
+              "Title": "DepartmentResponseDto.cs",
+              "DocumentMoniker": "C:\\Internship\\Codes\\DontNet\\Assignment-1\\hrms\\hrms\\Dto\\Response\\Department\\DepartmentResponseDto.cs",
+              "RelativeDocumentMoniker": "hrms\\Dto\\Response\\Department\\DepartmentResponseDto.cs",
+              "ToolTip": "C:\\Internship\\Codes\\DontNet\\Assignment-1\\hrms\\hrms\\Dto\\Response\\Department\\DepartmentResponseDto.cs",
+              "RelativeToolTip": "hrms\\Dto\\Response\\Department\\DepartmentResponseDto.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAUAAAAyAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-02-11T07:21:07.774Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 67,
+              "Title": "ITravelService.cs",
+              "DocumentMoniker": "C:\\Internship\\Codes\\DontNet\\Assignment-1\\hrms\\hrms\\Service\\ITravelService.cs",
+              "RelativeDocumentMoniker": "hrms\\Service\\ITravelService.cs",
+              "ToolTip": "C:\\Internship\\Codes\\DontNet\\Assignment-1\\hrms\\hrms\\Service\\ITravelService.cs",
+              "RelativeToolTip": "hrms\\Service\\ITravelService.cs",
+              "ViewState": "AgIAABAAAAAAAAAAAIA+wBUAAAAaAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-02-09T04:40:46.14Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 68,
+              "Title": "TravelWithTravelerResponseDto.cs",
+              "DocumentMoniker": "C:\\Internship\\Codes\\DontNet\\Assignment-1\\hrms\\hrms\\Dto\\Response\\Travel\\TravelWithTravelerResponseDto.cs",
+              "RelativeDocumentMoniker": "hrms\\Dto\\Response\\Travel\\TravelWithTravelerResponseDto.cs",
+              "ToolTip": "C:\\Internship\\Codes\\DontNet\\Assignment-1\\hrms\\hrms\\Dto\\Response\\Travel\\TravelWithTravelerResponseDto.cs",
+              "RelativeToolTip": "hrms\\Dto\\Response\\Travel\\TravelWithTravelerResponseDto.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAswA4AAABTAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-02-09T11:57:47.138Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 69,
+              "Title": "TravelerAddDto.cs",
+              "DocumentMoniker": "C:\\Internship\\Codes\\DontNet\\Assignment-1\\hrms\\hrms\\Dto\\Request\\Travel\\TravelerAddDto.cs",
+              "RelativeDocumentMoniker": "hrms\\Dto\\Request\\Travel\\TravelerAddDto.cs",
+              "ToolTip": "C:\\Internship\\Codes\\DontNet\\Assignment-1\\hrms\\hrms\\Dto\\Request\\Travel\\TravelerAddDto.cs",
+              "RelativeToolTip": "hrms\\Dto\\Request\\Travel\\TravelerAddDto.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAIAAAARAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-02-09T09:10:28.798Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 70,
+              "Title": "IUserService.cs",
+              "DocumentMoniker": "C:\\Internship\\Codes\\DontNet\\Assignment-1\\hrms\\hrms\\Service\\IUserService.cs",
+              "RelativeDocumentMoniker": "hrms\\Service\\IUserService.cs",
+              "ToolTip": "C:\\Internship\\Codes\\DontNet\\Assignment-1\\hrms\\hrms\\Service\\IUserService.cs",
+              "RelativeToolTip": "hrms\\Service\\IUserService.cs",
+              "ViewState": "AgIAAAMAAAAAAAAAAADgvwsAAAAkAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-02-08T09:04:02.673Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 71,
+              "Title": "TravelCreateDto.cs",
+              "DocumentMoniker": "C:\\Internship\\Codes\\DontNet\\Assignment-1\\hrms\\hrms\\Dto\\Request\\Travel\\TravelCreateDto.cs",
+              "RelativeDocumentMoniker": "hrms\\Dto\\Request\\Travel\\TravelCreateDto.cs",
+              "ToolTip": "C:\\Internship\\Codes\\DontNet\\Assignment-1\\hrms\\hrms\\Dto\\Request\\Travel\\TravelCreateDto.cs",
+              "RelativeToolTip": "hrms\\Dto\\Request\\Travel\\TravelCreateDto.cs",
+              "ViewState": "AgIAAAYAAAAAAAAAAAAywA0AAAA/AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-02-09T05:03:52.275Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 73,
+              "Title": "Traveler.cs",
+              "DocumentMoniker": "C:\\Internship\\Codes\\DontNet\\Assignment-1\\hrms\\hrms\\Model\\Traveler.cs",
+              "RelativeDocumentMoniker": "hrms\\Model\\Traveler.cs",
+              "ToolTip": "C:\\Internship\\Codes\\DontNet\\Assignment-1\\hrms\\hrms\\Model\\Traveler.cs",
+              "RelativeToolTip": "hrms\\Model\\Traveler.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-02-09T08:55:03.97Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 72,
+              "Title": "Travel.cs",
+              "DocumentMoniker": "C:\\Internship\\Codes\\DontNet\\Assignment-1\\hrms\\hrms\\Model\\Travel.cs",
+              "RelativeDocumentMoniker": "hrms\\Model\\Travel.cs",
+              "ToolTip": "C:\\Internship\\Codes\\DontNet\\Assignment-1\\hrms\\hrms\\Model\\Travel.cs",
+              "RelativeToolTip": "hrms\\Model\\Travel.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAAtAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-02-08T09:47:20.3Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 74,
               "Title": "IEmailService.cs",
               "DocumentMoniker": "C:\\Internship\\Codes\\DontNet\\Assignment-1\\hrms\\hrms\\Service\\IEmailService.cs",
               "RelativeDocumentMoniker": "hrms\\Service\\IEmailService.cs",
@@ -1015,7 +1436,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 49,
+              "DocumentIndex": 75,
               "Title": "EmailService.cs",
               "DocumentMoniker": "C:\\Internship\\Codes\\DontNet\\Assignment-1\\hrms\\hrms\\Service\\impl\\EmailService.cs",
               "RelativeDocumentMoniker": "hrms\\Service\\impl\\EmailService.cs",
@@ -1027,7 +1448,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 50,
+              "DocumentIndex": 76,
               "Title": "ExpenseProofResponseDto.cs",
               "DocumentMoniker": "C:\\Internship\\Codes\\DontNet\\Assignment-1\\hrms\\hrms\\Dto\\Response\\Expense\\Proof\\ExpenseProofResponseDto.cs",
               "RelativeDocumentMoniker": "hrms\\Dto\\Response\\Expense\\Proof\\ExpenseProofResponseDto.cs",
@@ -1039,7 +1460,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 51,
+              "DocumentIndex": 77,
               "Title": "TravelDocument.cs",
               "DocumentMoniker": "C:\\Internship\\Codes\\DontNet\\Assignment-1\\hrms\\hrms\\Model\\TravelDocument.cs",
               "RelativeDocumentMoniker": "hrms\\Model\\TravelDocument.cs",
@@ -1051,7 +1472,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 52,
+              "DocumentIndex": 78,
               "Title": "TravelDocumentResponseDto.cs",
               "DocumentMoniker": "C:\\Internship\\Codes\\DontNet\\Assignment-1\\hrms\\hrms\\Dto\\Response\\Travel\\Document\\TravelDocumentResponseDto.cs",
               "RelativeDocumentMoniker": "hrms\\Dto\\Response\\Travel\\Document\\TravelDocumentResponseDto.cs",
@@ -1063,7 +1484,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 53,
+              "DocumentIndex": 79,
               "Title": "TravelDocumentCreateDto.cs",
               "DocumentMoniker": "C:\\Internship\\Codes\\DontNet\\Assignment-1\\hrms\\hrms\\Dto\\Request\\Travel\\Document\\TravelDocumentCreateDto.cs",
               "RelativeDocumentMoniker": "hrms\\Dto\\Request\\Travel\\Document\\TravelDocumentCreateDto.cs",
@@ -1075,7 +1496,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 54,
+              "DocumentIndex": 80,
               "Title": "TravelResponseDto.cs",
               "DocumentMoniker": "C:\\Internship\\Codes\\DontNet\\Assignment-1\\hrms\\hrms\\Dto\\Response\\Travel\\TravelResponseDto.cs",
               "RelativeDocumentMoniker": "hrms\\Dto\\Response\\Travel\\TravelResponseDto.cs",
@@ -1087,7 +1508,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 57,
+              "DocumentIndex": 83,
               "Title": "LoginResponseDto.cs",
               "DocumentMoniker": "C:\\Internship\\Codes\\DontNet\\Assignment-1\\hrms\\hrms\\Dto\\Response\\Authentication\\LoginResponseDto.cs",
               "RelativeDocumentMoniker": "hrms\\Dto\\Response\\Authentication\\LoginResponseDto.cs",
@@ -1099,7 +1520,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 56,
+              "DocumentIndex": 82,
               "Title": "LoginRequestDto.cs",
               "DocumentMoniker": "C:\\Internship\\Codes\\DontNet\\Assignment-1\\hrms\\hrms\\Dto\\Request\\Authentication\\LoginRequestDto.cs",
               "RelativeDocumentMoniker": "hrms\\Dto\\Request\\Authentication\\LoginRequestDto.cs",
@@ -1111,7 +1532,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 55,
+              "DocumentIndex": 81,
               "Title": "IAuthenticationService.cs",
               "DocumentMoniker": "C:\\Internship\\Codes\\DontNet\\Assignment-1\\hrms\\hrms\\Service\\IAuthenticationService.cs",
               "RelativeDocumentMoniker": "hrms\\Service\\IAuthenticationService.cs",
@@ -1123,7 +1544,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 58,
+              "DocumentIndex": 84,
               "Title": "ExpenseProof.cs",
               "DocumentMoniker": "C:\\Internship\\Codes\\DontNet\\Assignment-1\\hrms\\hrms\\Model\\ExpenseProof.cs",
               "RelativeDocumentMoniker": "hrms\\Model\\ExpenseProof.cs",
@@ -1135,7 +1556,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 59,
+              "DocumentIndex": 85,
               "Title": "CloudinaryService.cs",
               "DocumentMoniker": "C:\\Internship\\Codes\\DontNet\\Assignment-1\\hrms\\hrms\\Service\\impl\\CloudinaryService.cs",
               "RelativeDocumentMoniker": "hrms\\Service\\impl\\CloudinaryService.cs",
@@ -1147,7 +1568,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 60,
+              "DocumentIndex": 86,
               "Title": "CloudinarySettings.cs",
               "DocumentMoniker": "C:\\Internship\\Codes\\DontNet\\Assignment-1\\hrms\\hrms\\Utility\\CloudinarySettings.cs",
               "RelativeDocumentMoniker": "hrms\\Utility\\CloudinarySettings.cs",
@@ -1159,7 +1580,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 61,
+              "DocumentIndex": 87,
               "Title": "ICloudinaryService.cs",
               "DocumentMoniker": "C:\\Internship\\Codes\\DontNet\\Assignment-1\\hrms\\hrms\\Service\\ICloudinaryService.cs",
               "RelativeDocumentMoniker": "hrms\\Service\\ICloudinaryService.cs",
@@ -1171,7 +1592,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 62,
+              "DocumentIndex": 88,
               "Title": "ExpenseCategory.cs",
               "DocumentMoniker": "C:\\Internship\\Codes\\DontNet\\Assignment-1\\hrms\\hrms\\Model\\ExpenseCategory.cs",
               "RelativeDocumentMoniker": "hrms\\Model\\ExpenseCategory.cs",
@@ -1183,19 +1604,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 63,
-              "Title": "Notification.cs",
-              "DocumentMoniker": "C:\\Internship\\Codes\\DontNet\\Assignment-1\\hrms\\hrms\\Model\\Notification.cs",
-              "RelativeDocumentMoniker": "hrms\\Model\\Notification.cs",
-              "ToolTip": "C:\\Internship\\Codes\\DontNet\\Assignment-1\\hrms\\hrms\\Model\\Notification.cs",
-              "RelativeToolTip": "hrms\\Model\\Notification.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAuwAIAAAARAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-02-09T12:11:59.608Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 64,
+              "DocumentIndex": 89,
               "Title": "TravelerDto.cs",
               "DocumentMoniker": "C:\\Internship\\Codes\\DontNet\\Assignment-1\\hrms\\hrms\\Dto\\Response\\Traveler\\TravelerDto.cs",
               "RelativeDocumentMoniker": "hrms\\Dto\\Response\\Traveler\\TravelerDto.cs",
@@ -1207,7 +1616,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 65,
+              "DocumentIndex": 90,
               "Title": "TravelUpdateDto.cs",
               "DocumentMoniker": "C:\\Internship\\Codes\\DontNet\\Assignment-1\\hrms\\hrms\\Dto\\Request\\Travel\\TravelUpdateDto.cs",
               "RelativeDocumentMoniker": "hrms\\Dto\\Request\\Travel\\TravelUpdateDto.cs",
@@ -1219,7 +1628,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 66,
+              "DocumentIndex": 91,
               "Title": "AlreadyExists.cs",
               "DocumentMoniker": "C:\\Internship\\Codes\\DontNet\\Assignment-1\\hrms\\hrms\\Dto\\Response\\Error\\AlreadyExists.cs",
               "RelativeDocumentMoniker": "hrms\\Dto\\Response\\Error\\AlreadyExists.cs",
@@ -1231,7 +1640,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 67,
+              "DocumentIndex": 92,
               "Title": "PagedReponseDto.cs",
               "DocumentMoniker": "C:\\Internship\\Codes\\DontNet\\Assignment-1\\hrms\\hrms\\Dto\\Response\\Other\\PagedReponseDto.cs",
               "RelativeDocumentMoniker": "hrms\\Dto\\Response\\Other\\PagedReponseDto.cs",
@@ -1243,19 +1652,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 68,
-              "Title": "PagedReponseOffSet.cs",
-              "DocumentMoniker": "C:\\Internship\\Codes\\DontNet\\Assignment-1\\hrms\\hrms\\Dto\\Response\\Other\\PagedReponseOffSet.cs",
-              "RelativeDocumentMoniker": "hrms\\Dto\\Response\\Other\\PagedReponseOffSet.cs",
-              "ToolTip": "C:\\Internship\\Codes\\DontNet\\Assignment-1\\hrms\\hrms\\Dto\\Response\\Other\\PagedReponseOffSet.cs",
-              "RelativeToolTip": "hrms\\Dto\\Response\\Other\\PagedReponseOffSet.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAIAAAAmAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-02-09T05:55:53.723Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 69,
+              "DocumentIndex": 93,
               "Title": "20260209104110_traveler.cs",
               "DocumentMoniker": "C:\\Internship\\Codes\\DontNet\\Assignment-1\\hrms\\hrms\\Migrations\\20260209104110_traveler.cs",
               "RelativeDocumentMoniker": "hrms\\Migrations\\20260209104110_traveler.cs",
@@ -1266,31 +1663,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 70,
-              "Title": "CustomExceptionFilterAttribute.cs",
-              "DocumentMoniker": "C:\\Internship\\Codes\\DontNet\\Assignment-1\\hrms\\hrms\\CustomException\\CustomExceptionFilterAttribute.cs",
-              "RelativeDocumentMoniker": "hrms\\CustomException\\CustomExceptionFilterAttribute.cs",
-              "ToolTip": "C:\\Internship\\Codes\\DontNet\\Assignment-1\\hrms\\hrms\\CustomException\\CustomExceptionFilterAttribute.cs",
-              "RelativeToolTip": "hrms\\CustomException\\CustomExceptionFilterAttribute.cs",
-              "ViewState": "AgIAACEAAAAAAAAAAAAYwAMAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-02-06T09:25:56.796Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 71,
-              "Title": "BaseCustomException.cs",
-              "DocumentMoniker": "C:\\Internship\\Codes\\DontNet\\Assignment-1\\hrms\\hrms\\CustomException\\BaseCustomException.cs",
-              "RelativeDocumentMoniker": "hrms\\CustomException\\BaseCustomException.cs",
-              "ToolTip": "C:\\Internship\\Codes\\DontNet\\Assignment-1\\hrms\\hrms\\CustomException\\BaseCustomException.cs",
-              "RelativeToolTip": "hrms\\CustomException\\BaseCustomException.cs",
-              "ViewState": "AgIAABAAAAAAAAAAAAAUwCEAAABrAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-02-06T09:19:43.589Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 72,
+              "DocumentIndex": 94,
               "Title": "20260208114201_initial.cs",
               "DocumentMoniker": "C:\\Internship\\Codes\\DontNet\\Assignment-1\\hrms\\hrms\\Migrations\\20260208114201_initial.cs",
               "RelativeDocumentMoniker": "hrms\\Migrations\\20260208114201_initial.cs",
@@ -1301,7 +1674,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 73,
+              "DocumentIndex": 95,
               "Title": "20260208113454_initial.cs",
               "DocumentMoniker": "C:\\Internship\\Codes\\DontNet\\Assignment-1\\hrms\\hrms\\Migrations\\20260208113454_initial.cs",
               "RelativeDocumentMoniker": "hrms\\Migrations\\20260208113454_initial.cs",
@@ -1312,7 +1685,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 74,
+              "DocumentIndex": 96,
               "Title": "WeatherForecastController.cs",
               "DocumentMoniker": "C:\\Internship\\Codes\\DontNet\\Assignment-1\\hrms\\hrms\\Controllers\\WeatherForecastController.cs",
               "RelativeDocumentMoniker": "hrms\\Controllers\\WeatherForecastController.cs",
@@ -1324,7 +1697,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 75,
+              "DocumentIndex": 97,
               "Title": "PasswordHelper.cs",
               "DocumentMoniker": "C:\\Internship\\Codes\\DontNet\\Assignment-1\\hrms\\hrms\\Utility\\PasswordHelper.cs",
               "RelativeDocumentMoniker": "hrms\\Utility\\PasswordHelper.cs",
@@ -1336,7 +1709,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 76,
+              "DocumentIndex": 98,
               "Title": "20260206091120_InitialCreate.cs",
               "DocumentMoniker": "C:\\Internship\\Codes\\DontNet\\Assignment-1\\hrms\\hrms\\Migrations\\20260206091120_InitialCreate.cs",
               "RelativeDocumentMoniker": "hrms\\Migrations\\20260206091120_InitialCreate.cs",
@@ -1347,7 +1720,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 77,
+              "DocumentIndex": 99,
               "Title": "20260206090521_InitialCreate.cs",
               "DocumentMoniker": "C:\\Internship\\Codes\\DontNet\\Assignment-1\\hrms\\hrms\\Migrations\\20260206090521_InitialCreate.cs",
               "RelativeDocumentMoniker": "hrms\\Migrations\\20260206090521_InitialCreate.cs",
@@ -1358,7 +1731,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 78,
+              "DocumentIndex": 100,
               "Title": "20260206090000_InitialCreate.cs",
               "DocumentMoniker": "C:\\Internship\\Codes\\DontNet\\Assignment-1\\hrms\\hrms\\Migrations\\20260206090000_InitialCreate.cs",
               "RelativeDocumentMoniker": "hrms\\Migrations\\20260206090000_InitialCreate.cs",
@@ -1369,7 +1742,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 79,
+              "DocumentIndex": 101,
               "Title": "20260206085719_InitialCreate.cs",
               "DocumentMoniker": "C:\\Internship\\Codes\\DontNet\\Assignment-1\\hrms\\hrms\\Migrations\\20260206085719_InitialCreate.cs",
               "RelativeDocumentMoniker": "hrms\\Migrations\\20260206085719_InitialCreate.cs",

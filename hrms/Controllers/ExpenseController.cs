@@ -35,6 +35,7 @@ namespace hrms.Controllers
             ExpenseCreateDto dto
             )
         {
+            Console.WriteLine("Adding New Expense !");
             List<IFormFile> files = dto.Proofs;
             if (TravelId == null || dto == null
                 || files == null || files.Count == 0
@@ -65,6 +66,25 @@ namespace hrms.Controllers
             int travelId = (int)TravelId;
             int travelerId = (int)TravelerId;
             List<ExpenseResponseDto> respone = await _service.GetTravelTravelerExpense(travelId,travelerId);
+            return Ok(respone);
+        }
+
+        [HttpGet("{TravelId}/expense")]
+        [Authorize(Roles = "EMPLOYEE")]
+        public async Task<IActionResult> GetEmployeeExpense(
+            int? TravelId
+            )
+        {
+            if (TravelId == null)
+                throw new NotFoundCustomException("Travel Id not found !");
+            int travelId = (int)TravelId; 
+            var CurrentUser = User;
+            if (CurrentUser == null)
+                throw new UnauthorizedCustomException($"Unauthorized Access !");
+
+            int travelerId = Int32.Parse(CurrentUser.FindFirst(ClaimTypes.PrimarySid)?.Value);
+
+            List<ExpenseResponseDto> respone = await _service.GetTravelTravelerExpense(travelId, travelerId);
             return Ok(respone);
         }
 

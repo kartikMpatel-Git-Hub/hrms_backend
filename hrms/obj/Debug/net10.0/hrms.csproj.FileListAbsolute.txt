@@ -68,7 +68,6 @@ C:\Internship\Codes\DontNet\Assignment-1\hrms\hrms\obj\Debug\net10.0\staticwebas
 C:\Internship\Codes\DontNet\Assignment-1\hrms\hrms\obj\Debug\net10.0\staticwebassets.development.json
 C:\Internship\Codes\DontNet\Assignment-1\hrms\hrms\obj\Debug\net10.0\staticwebassets.build.endpoints.json
 C:\Internship\Codes\DontNet\Assignment-1\hrms\hrms\obj\Debug\net10.0\swae.build.ex.cache
-C:\Internship\Codes\DontNet\Assignment-1\hrms\hrms\obj\Debug\net10.0\staticwebassets.upToDateCheck.txt
 C:\Internship\Codes\DontNet\Assignment-1\hrms\hrms\obj\Debug\net10.0\hrms.csproj.Up2Date
 C:\Internship\Codes\DontNet\Assignment-1\hrms\hrms\obj\Debug\net10.0\hrms.dll
 C:\Internship\Codes\DontNet\Assignment-1\hrms\hrms\obj\Debug\net10.0\refint\hrms.dll
@@ -164,3 +163,4 @@ C:\Internship\Codes\DontNet\Assignment-1\hrms\hrms\bin\Debug\net10.0\Microsoft.A
 C:\Internship\Codes\DontNet\Assignment-1\hrms\hrms\bin\Debug\net10.0\AutoMapper.dll
 C:\Internship\Codes\DontNet\Assignment-1\hrms\hrms\bin\Debug\net10.0\AutoMapper.Extensions.Microsoft.DependencyInjection.dll
 C:\Internship\Codes\DontNet\Assignment-1\hrms\hrms\bin\Debug\net10.0\CloudinaryDotNet.dll
+C:\Internship\Codes\DontNet\Assignment-1\hrms\hrms\obj\Debug\net10.0\staticwebassets.upToDateCheck.txt
