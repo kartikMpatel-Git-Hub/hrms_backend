@@ -38,7 +38,7 @@ namespace hrms.Controllers
             return Ok(response);
         }
 
-        [HttpGet]
+        [HttpGet("hr/created")]
         [Authorize(Roles = "HR")]
         public async Task<IActionResult> GetJobsCreatedByHr(int pageNumber = 1, int pageSize = 10)
         {
@@ -51,7 +51,18 @@ namespace hrms.Controllers
 
             return Ok(jobs);
         }
-        [HttpGet("{jobId}")]
+
+
+        [HttpGet]
+        public async Task<IActionResult> GetAllJobs(int pageNumber = 1, int pageSize = 10)
+        {
+            PagedReponseDto<JobResponseDto> jobs = await _service.GetAllJobs(pageNumber, pageSize);
+
+            return Ok(jobs);
+        }
+
+
+        [HttpGet("{jobId}/reviewers")]
         [Authorize(Roles = "HR")]
         public async Task<IActionResult> GetJobsReviewers(
             int? jobId)
@@ -60,6 +71,18 @@ namespace hrms.Controllers
                 throw new ArgumentNullException($"Job Id not found !");
 
             JobResponseWithReviewersDto reviewers = await _service.GetJobDetail((int)jobId);
+
+            return Ok(reviewers);
+        }
+
+        [HttpGet("{jobId}")]
+        public async Task<IActionResult> GetJobById(
+            int? jobId)
+        {
+            if (jobId == null)
+                throw new ArgumentNullException($"Job Id not found !");
+
+            JobResponseDto reviewers = await _service.GetJobById((int)jobId);
 
             return Ok(reviewers);
         }

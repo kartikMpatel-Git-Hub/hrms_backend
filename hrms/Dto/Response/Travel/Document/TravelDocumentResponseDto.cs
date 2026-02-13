@@ -1,4 +1,6 @@
-﻿namespace hrms.Dto.Response.Travel.Document
+﻿using hrms.Dto.Response.User;
+
+namespace hrms.Dto.Response.Travel.Document
 {
     public class TravelDocumentResponseDto
     {
@@ -8,9 +10,7 @@
         public string DocumentUrl { get; set; }
         public string DocumentName { get; set; }
         public string DocumentType { get; set; }
-        public int UploadedBy { get; set; }
-        public DateTime created_at { get; set; }
-        public DateTime updated_at { get; set; }
-        public bool is_deleted { get; set; }
+        public UserResponseDto Uploader { get; set; }
+        public DateTime UploadedAt { get; set; }
     }
 }

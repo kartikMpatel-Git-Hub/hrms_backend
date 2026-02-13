@@ -48,6 +48,18 @@ namespace hrms.Service.impl
             return _mappers.Map<JobResponseDto>(createdJob);
         }
 
+        public async Task<PagedReponseDto<JobResponseDto>> GetAllJobs(int pageNumber, int pageSize)
+        {
+            PagedReponseOffSet<Job> jobs = await _repository.GetAllJobs(pageNumber, pageSize);
+            return _mappers.Map<PagedReponseDto<JobResponseDto>>(jobs);
+        }
+
+        public async Task<JobResponseDto> GetJobById(int jobId)
+        {
+            Job job = await _repository.GetJobById(jobId);
+            return _mappers.Map<JobResponseDto>(job);
+        }
+
         public async Task<JobResponseWithReviewersDto> GetJobDetail(int jobId)
         {
             Job job = await _repository.GetJobById(jobId);

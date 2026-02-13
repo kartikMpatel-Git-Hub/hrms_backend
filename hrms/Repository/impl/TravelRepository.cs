@@ -108,7 +108,10 @@ namespace hrms.Repository.impl
         public async Task<List<TravelDocument>> GetTravelDocuments(int travelId, int travelerId)
         {
             List<TravelDocument> documents =
-                await _db.TravelDocuments.Where((td) => td.TravelId == travelId && td.TravelerId == travelerId).ToListAsync();
+                await _db.TravelDocuments
+                .Where((td) => td.TravelId == travelId && td.TravelerId == travelerId)
+                .Include(td => td.Uploader)
+                .ToListAsync();
             if (documents == null)
                 throw new NotFoundCustomException("Document not found !");
             return documents;

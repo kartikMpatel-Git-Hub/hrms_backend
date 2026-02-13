@@ -15,6 +15,9 @@ namespace hrms.Repository
         Task<User> GetEmployeeById(int currentUserId);
         Task<User> GetHrById(int hrId);
         Task<List<User>> GetEmployeesByName(string s);
+        Task<List<User>> GetUserByKey(string s);
         Task<List<User>> GetAllEmployee(int v1, int v2);
+        Task<PagedReponseOffSet<User>> GetAllHrs(int pageSize, int pageNumber);
+        Task<List<User>> GetHrByKey(string s);
     }
 }
