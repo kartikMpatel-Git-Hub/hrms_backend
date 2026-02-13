@@ -11,5 +11,10 @@
         public int CreatedBy { get; set; }
         public int ContactTo { get; set; }
         public bool IsActive { get; set; }
+
+        public static implicit operator JobResponseDto(JobResponseWithReviewersDto v)
+        {
+            throw new NotImplementedException();
+        }
     }
 }

@@ -38,7 +38,7 @@ namespace hrms.Controllers
             return Ok(user);
         }
 
-        [HttpGet("search")]
+        [HttpGet("search/employee")]
         [Authorize]
         public async Task<IActionResult> GetEmployeesByName(string? key)
         {
@@ -51,6 +51,41 @@ namespace hrms.Controllers
             string s = key;
             List<UserResponseDto> employees =
                 await _service.GetEmployeesByName(s);
+            return Ok(employees);
+        }
+
+
+        [HttpGet("search/hr")]
+        [Authorize]
+        public async Task<IActionResult> GetHrByKey(string? key)
+        {
+            if (key == null)
+            {
+                PagedReponseDto<UserResponseDto> res =
+                await _service.GetAllHr(10, 1);
+                List<UserResponseDto> e = res.Data;
+                return Ok(e);
+            }
+            string s = key;
+            List<UserResponseDto> hrs =
+                await _service.GetHrByKey(s);
+            return Ok(hrs);
+        }
+
+        [HttpGet("search/all")]
+        [Authorize]
+        public async Task<IActionResult> GetUserByKey(string? key)
+        {
+            if (key == null)
+            {
+                var res =
+                await _service.GetAllUser(10,1);
+                List<UserResponseDto> e = res.Data;
+                return Ok(e);
+            }
+            string s = key;
+            List<UserResponseDto> employees =
+                await _service.GetUserByKey(s);
             return Ok(employees);
         }
     }

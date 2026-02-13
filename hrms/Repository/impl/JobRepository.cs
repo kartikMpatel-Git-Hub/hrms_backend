@@ -22,12 +22,28 @@ namespace hrms.Repository.impl
             return addedEntity.Entity;
         }
 
+        public async Task<PagedReponseOffSet<Job>> GetAllJobs(int pageNumber, int pageSize)
+        {
+            List<Job> jobs = await _db.Jobs
+                .Where(j => j.is_deleted == false && j.IsActive == true)
+                .Skip((pageNumber - 1) * pageSize)
+                .Take(pageSize)
+                .ToListAsync();
+            int totalCount = await _db.Jobs
+                .Where(j => j.is_deleted == false && j.IsActive == true)
+                .Skip((pageNumber - 1) * pageSize)
+                .Take(pageSize)
+                .CountAsync();
+            return new PagedReponseOffSet<Job>(jobs, pageNumber, pageSize, totalCount);
+        }
+
         public async Task<Job> GetJobById(int jobId)
         {
             Job job = await _db.Jobs
                 .Where(j => j.Id == jobId && j.is_deleted == false && j.IsActive == true)
                 .Include(j => j.Reviewers)
                     .ThenInclude(jr => jr.Reviewer)
+                .Include(j => j.Contact)
                 .FirstOrDefaultAsync();
             if (job == null)
                 throw new NotFoundCustomException($"Job With Id : {jobId} Not found !");

@@ -1,11 +1,9 @@
 ﻿using AutoMapper;
 using hrms.CustomException;
 using hrms.Dto.Response.Other;
-using hrms.Dto.Response.Travel;
 using hrms.Dto.Response.User;
 using hrms.Model;
 using hrms.Repository;
-using System.Threading.Tasks;
 
 namespace hrms.Service.impl
 {
@@ -56,6 +54,25 @@ namespace hrms.Service.impl
             List<User> employees = await _repository.GetAllEmployee(10,1);
             
             return _mapper.Map<List<UserResponseDto>>(employees);
+        }
+
+        public async Task<List<UserResponseDto>> GetUserByKey(string s)
+        {
+            List<User> employees = await _repository.GetUserByKey(s);
+            return _mapper.Map<List<UserResponseDto>>(employees);
+        }
+
+        public async Task<PagedReponseDto<UserResponseDto>> GetAllHr(int pageSize, int pageNumber)
+        {
+            PagedReponseOffSet<User> PageHrs = await _repository.GetAllHrs(pageSize, pageNumber);
+            var response = _mapper.Map<PagedReponseDto<UserResponseDto>>(PageHrs);
+            return response;
+        }
+
+        public async Task<List<UserResponseDto>> GetHrByKey(string s)
+        {
+            List<User> hrs = await _repository.GetHrByKey(s);
+            return _mapper.Map<List<UserResponseDto>>(hrs);
         }
     }
 }

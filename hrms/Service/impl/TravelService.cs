@@ -136,7 +136,7 @@ namespace hrms.Service.impl
         {
             Travel travel = await _repository.GetTravelById(travelId);
             User currentUser = await _userService.GetUserEntityById(currentUserId);
-            User traveler = currentUser.Id == travelerId ? currentUser : await _repository.GetTravelerByTravelId(travelId, travelerId);
+            User traveler = await _repository.GetTravelerByTravelId(travelId, travelerId);
 
 
             TravelDocument document = new TravelDocument()
@@ -149,10 +149,7 @@ namespace hrms.Service.impl
                 Uploader = currentUser,
                 DocumentName = dto.DocumentName,
                 DocumentType = dto.Document.ContentType,
-                DocumentUrl = await _cloudinary.UploadAsync(dto.Document),
-                //created_at = DateTime.Now,
-                //updated_at = DateTime.Now,
-                //is_deleted = false
+                DocumentUrl = await _cloudinary.UploadAsync(dto.Document)
             };
             TravelDocument travelDocument = await _repository.AddTravelDocument(document);
             return _mapper.Map<TravelDocumentResponseDto>(travelDocument);

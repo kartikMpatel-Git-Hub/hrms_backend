@@ -181,7 +181,7 @@
   },
   {
     "ContainingType": "hrms.Controllers.JobController",
-    "Method": "GetJobsCreatedByHr",
+    "Method": "GetAllJobs",
     "RelativePath": "Job",
     "HttpMethod": "GET",
     "IsController": true,
@@ -202,7 +202,7 @@
   },
   {
     "ContainingType": "hrms.Controllers.JobController",
-    "Method": "GetJobsReviewers",
+    "Method": "GetJobById",
     "RelativePath": "Job/{jobId}",
     "HttpMethod": "GET",
     "IsController": true,
@@ -212,6 +212,43 @@
         "Name": "jobId",
         "Type": "System.Nullable\u00601[[System.Int32, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]",
         "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "hrms.Controllers.JobController",
+    "Method": "GetJobsReviewers",
+    "RelativePath": "Job/{jobId}/reviewers",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "jobId",
+        "Type": "System.Nullable\u00601[[System.Int32, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "hrms.Controllers.JobController",
+    "Method": "GetJobsCreatedByHr",
+    "RelativePath": "Job/hr/created",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "pageNumber",
+        "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
+        "Name": "pageSize",
+        "Type": "System.Int32",
+        "IsRequired": false
       }
     ],
     "ReturnTypes": []
@@ -647,8 +684,40 @@
   },
   {
     "ContainingType": "hrms.Controllers.UserController",
+    "Method": "GetUserByKey",
+    "RelativePath": "User/search/all",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "key",
+        "Type": "System.String",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "hrms.Controllers.UserController",
     "Method": "GetEmployeesByName",
-    "RelativePath": "User/search",
+    "RelativePath": "User/search/employee",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "key",
+        "Type": "System.String",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "hrms.Controllers.UserController",
+    "Method": "GetHrByKey",
+    "RelativePath": "User/search/hr",
     "HttpMethod": "GET",
     "IsController": true,
     "Order": 0,

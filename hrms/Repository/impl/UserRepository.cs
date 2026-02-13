@@ -48,7 +48,7 @@ namespace hrms.Repository.impl
 
         public async Task<List<User>> GetAllEmployee(int pageSize, int pageNumber)
         {
-            var TotalRecords = await _context.Users.Where(u => !u.is_deleted).CountAsync();
+            var TotalRecords = await _context.Users.Where(u => !u.is_deleted && u.Role == UserRole.EMPLOYEE).CountAsync();
             Console.WriteLine($"Total User : {TotalRecords}");
             List<User> users = await _context.Users
                 .OrderBy(u => u.Id)
@@ -88,11 +88,24 @@ namespace hrms.Repository.impl
 
         public async Task<List<User>> GetEmployeesByName(string s)
         {
-            List<User> employees 
+            List<User> employees
                 = await _context.Users
-                .Where(u => u.FullName.Contains(s) 
+                .Where(u => u.FullName.Contains(s)
                 && u.Role == UserRole.EMPLOYEE
                 && u.is_deleted == false)
+                .Skip(0)
+                .Take(20)
+                .ToListAsync();
+            return employees;
+        }
+        public async Task<List<User>> GetUserByKey(string s)
+        {
+            List<User> employees
+                = await _context.Users
+                .Where(u => (u.FullName.Contains(s) || u.Email.Contains(s))
+                && u.is_deleted == false)
+                .Skip(0)
+                .Take(20)
                 .ToListAsync();
             return employees;
         }
@@ -122,6 +135,32 @@ namespace hrms.Repository.impl
         public async Task SaveChangesAsync()
         {
             await _context.SaveChangesAsync();
+        }
+
+        public async Task<PagedReponseOffSet<User>> GetAllHrs(int pageSize, int pageNumber)
+        {
+            var TotalRecords = await _context.Users
+                .Where(u => !u.is_deleted && u.Role == UserRole.HR).CountAsync();
+            List<User> hrs = await _context.Users
+                .OrderBy(u => u.Id)
+                .Where(u => !u.is_deleted && u.Role == UserRole.HR)
+                .Skip((pageNumber - 1) * pageSize)
+                .Take(pageSize)
+                .ToListAsync();
+            PagedReponseOffSet<User> Response = new PagedReponseOffSet<User>(hrs, pageNumber, pageSize, TotalRecords);
+            return Response;
+        }
+
+        public async Task<List<User>> GetHrByKey(string s)
+        {
+            List<User> employees
+                = await _context.Users
+                .Where(u => (u.FullName.Contains(s) || u.Email.Contains(s))
+                && u.is_deleted == false && u.Role == UserRole.HR)
+                .Skip(0)
+                .Take(20)
+                .ToListAsync();
+            return employees;
         }
     }
 }
