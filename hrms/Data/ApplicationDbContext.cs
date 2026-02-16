@@ -502,6 +502,13 @@ namespace hrms.Data
                     .HasMaxLength(500);
 
                 entity
+                    .Property(jr => jr.Status)
+                    .HasConversion<String>()
+                    .IsRequired()
+                    .HasColumnName("status")
+                    .HasMaxLength(20);
+
+                entity
                     .Property(jr => jr.ReferedAt)
                     .IsRequired()
                     .HasColumnName("refered_at");

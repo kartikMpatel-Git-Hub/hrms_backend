@@ -15,6 +15,7 @@ namespace hrms.Service
         Task<List<UserResponseDto>> GetHrByKey(string s);
         Task<UserResponseDto> GetUserById(int UserId);
         Task<List<UserResponseDto>> GetUserByKey(string s);
+        Task<List<UserResponseDto>> GetUserChart(int userId);
         Task<User> GetUserEntityById(int UserId);
     }
 }

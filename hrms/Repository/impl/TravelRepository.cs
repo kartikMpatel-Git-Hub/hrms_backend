@@ -61,10 +61,6 @@ namespace hrms.Repository.impl
             var TotalRecords = await _db
                 .Travelers
                 .Where(tl => tl.TravelerId == id)
-                .Skip((pageNumber - 1) * pageSize)
-                .Take(pageSize)
-                .Include(tl => tl.Travel)
-                .Select(tl => tl.Travel)
                 .CountAsync();
             List<Travel> travels = await _db
                 .Travelers

@@ -56,6 +56,8 @@ builder.Services.AddScoped<IDepartmentRepository,DepartmentRepository>();
 builder.Services.AddScoped<INotificationRepository,NotificationRepository>();
 builder.Services.AddScoped<IJobRepository, JobRepository>();
 builder.Services.AddScoped<IJobReviewerRepository, JobReviewerRepository>();
+builder.Services.AddScoped<IJobReferralRepository, JobReferralRepository>();
+builder.Services.AddScoped<IJobShareRepository, JobShareRepository>();
 
 builder.Services.AddScoped<IAuthenticationService, AuthenticationService>();
 builder.Services.AddScoped<IUserService, UserService>();

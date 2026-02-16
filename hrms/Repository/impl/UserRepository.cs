@@ -39,6 +39,7 @@ namespace hrms.Repository.impl
             List<User> users = await _context.Users
                 .OrderBy(u => u.Id)
                 .Where(u => !u.is_deleted)
+                .Include(u => u.Department)
                 .Skip((PageNumber - 1) * PageSize)
                 .Take(PageSize)
                 .ToListAsync();
@@ -104,6 +105,7 @@ namespace hrms.Repository.impl
                 = await _context.Users
                 .Where(u => (u.FullName.Contains(s) || u.Email.Contains(s))
                 && u.is_deleted == false)
+                .Include(u => u.Department)
                 .Skip(0)
                 .Take(20)
                 .ToListAsync();
@@ -161,6 +163,16 @@ namespace hrms.Repository.impl
                 .Take(20)
                 .ToListAsync();
             return employees;
+        }
+
+        public async Task<User> GetById(int id)
+        {
+            User user = await _context.Users
+                .FirstOrDefaultAsync(
+                (u) => u.Id == id);
+            if (user == null)
+                throw new NotFoundCustomException($"User With id : {id} not found");
+            return user;
         }
     }
 }

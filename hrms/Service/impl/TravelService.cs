@@ -1,20 +1,13 @@
 ﻿using AutoMapper;
-using CloudinaryDotNet;
 using hrms.CustomException;
-using hrms.Dto.Request.Category;
-using hrms.Dto.Request.Expense;
 using hrms.Dto.Request.Travel;
 using hrms.Dto.Request.Travel.Document;
-using hrms.Dto.Response.Expense;
-using hrms.Dto.Response.Expense.Category;
 using hrms.Dto.Response.Other;
 using hrms.Dto.Response.Travel;
 using hrms.Dto.Response.Travel.Document;
 using hrms.Dto.Response.Traveler;
-using hrms.Dto.Response.User;
 using hrms.Model;
 using hrms.Repository;
-using System.Threading.Tasks;
 
 namespace hrms.Service.impl
 {
@@ -78,18 +71,15 @@ namespace hrms.Service.impl
             var Response = _mapper.Map<PagedReponseDto<TravelResponseDto>>(PageTravels);
             return Response;
         }
-
         public async Task<TravelResponseDto> GetTravelByIdAsync(int TravelId)
         {
             Travel travel = await _repository.GetTravelById(TravelId);
             return _mapper.Map<TravelResponseDto>(travel);
         }
-
         public async Task RemoveTravel(int TravelId)
         {
             await _repository.DeleteTravel(TravelId);
         }
-
         public async Task<TravelResponseDto> UpdateTravelById(int TravelId, TravelUpdateDto dto)
         {
             Travel Trav = await _repository.GetTravelById(TravelId);
@@ -110,7 +100,6 @@ namespace hrms.Service.impl
             Travel UpdatedTravel = await _repository.UpdateTravel(Trav);
             return _mapper.Map<TravelResponseDto>(UpdatedTravel);
         }
-
         private async Task<Travel> CreateTravel(TravelCreateDto dto, int currentUserId)
         {
             User currentUser = await _userService.GetUserEntityById(currentUserId);

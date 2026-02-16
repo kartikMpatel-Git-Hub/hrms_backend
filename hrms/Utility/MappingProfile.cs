@@ -7,6 +7,8 @@ using hrms.Dto.Response.Expense.Proof;
 using hrms.Dto.Response.Job;
 using hrms.Dto.Response.Notification;
 using hrms.Dto.Response.Other;
+using hrms.Dto.Response.Referred;
+using hrms.Dto.Response.Share;
 using hrms.Dto.Response.Travel;
 using hrms.Dto.Response.Travel.Document;
 using hrms.Dto.Response.Traveler;
@@ -38,8 +40,30 @@ namespace hrms.Utility
             CreateMap<Job, JobResponseDto>();
             CreateMap<Job, JobResponseWithReviewersDto>();
             CreateMap<JobReviewer, JobReviewerResponseDto>();
+            CreateMap<JobReferral, ReferralResponseDto>()
+                .ForMember(
+                dest => dest.Status,
+                opt => opt.MapFrom(src => GetStatus(src.Status)));
+            CreateMap<JobShared, SharedJobResponseDto>();
 
             CreateMap(typeof(PagedReponseOffSet<>),typeof(PagedReponseDto<>));
+        }
+
+        private object GetStatus(ReferralStatus status)
+        {
+            switch (status)
+            {
+                case ReferralStatus.Pending:
+                    return "Pending";
+                case ReferralStatus.Inreview:
+                    return "Inreview";
+                case ReferralStatus.Rejected:
+                    return "Rejected";
+                case ReferralStatus.Hired:
+                    return "Hired";
+                default:
+                    return "Unknown";
+            }
         }
 
         private object GetStatus(ExpenseStatus status)
