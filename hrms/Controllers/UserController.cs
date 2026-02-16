@@ -88,5 +88,16 @@ namespace hrms.Controllers
                 await _service.GetUserByKey(s);
             return Ok(employees);
         }
+
+        [HttpGet("{userId}/organization-chart")]
+        public async Task<IActionResult> GetEmployeeOrganizationChart(int? userId)
+        {
+            if(userId == null)
+            {
+                throw new ArgumentNullException("userid not found !!");
+            }
+            List<UserResponseDto> organizationChart = await _service.GetUserChart((int)userId);
+            return Ok(organizationChart);
+        }
     }
 }

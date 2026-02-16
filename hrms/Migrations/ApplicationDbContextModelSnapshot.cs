@@ -284,6 +284,12 @@ namespace hrms.Migrations
                         .HasColumnType("nvarchar(50)")
                         .HasColumnName("refered_person_name");
 
+                    b.Property<string>("Status")
+                        .IsRequired()
+                        .HasMaxLength(20)
+                        .HasColumnType("nvarchar(20)")
+                        .HasColumnName("status");
+
                     b.Property<bool>("is_deleted")
                         .HasColumnType("bit");
 
@@ -703,7 +709,7 @@ namespace hrms.Migrations
             modelBuilder.Entity("hrms.Model.JobReviewer", b =>
                 {
                     b.HasOne("hrms.Model.Job", "Job")
-                        .WithMany()
+                        .WithMany("Reviewers")
                         .HasForeignKey("JobId")
                         .OnDelete(DeleteBehavior.Restrict)
                         .IsRequired()
@@ -839,6 +845,11 @@ namespace hrms.Migrations
             modelBuilder.Entity("hrms.Model.Expense", b =>
                 {
                     b.Navigation("Proofs");
+                });
+
+            modelBuilder.Entity("hrms.Model.Job", b =>
+                {
+                    b.Navigation("Reviewers");
                 });
 
             modelBuilder.Entity("hrms.Model.Travel", b =>

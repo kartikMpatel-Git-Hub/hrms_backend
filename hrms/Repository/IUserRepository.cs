@@ -8,6 +8,7 @@ namespace hrms.Repository
         Task<PagedReponseOffSet<User>> GetAll(int PageSize,int PageNumber);
         Task<bool> ExistsByEmailAsync(String email);
         Task<User> GetByIdAsync(int? id);
+        Task<User> GetById(int id);
         Task<User> GetByEmailAsync(string email);
         Task<User> AddAsync(User user);
         Task SaveChangesAsync();

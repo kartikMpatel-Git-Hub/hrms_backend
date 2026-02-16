@@ -4,6 +4,7 @@ using hrms.Dto.Response.Other;
 using hrms.Dto.Response.User;
 using hrms.Model;
 using hrms.Repository;
+using Microsoft.EntityFrameworkCore;
 
 namespace hrms.Service.impl
 {
@@ -73,6 +74,22 @@ namespace hrms.Service.impl
         {
             List<User> hrs = await _repository.GetHrByKey(s);
             return _mapper.Map<List<UserResponseDto>>(hrs);
+        }
+
+        public async Task<List<UserResponseDto>> GetUserChart(int userId)
+        {
+            var chain = new List<User>();
+            var currentUser = await _repository.GetById(userId);
+            chain.Add(currentUser);
+            while (currentUser != null && currentUser.ManagerId.HasValue)
+            {
+                currentUser = await _repository.GetById((int)currentUser.ManagerId);
+                if (currentUser != null)
+                {
+                    chain.Add(currentUser);
+                }
+            }
+            return _mapper.Map<List<UserResponseDto>>(chain);
         }
     }
 }
