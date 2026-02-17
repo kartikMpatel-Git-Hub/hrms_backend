@@ -20,7 +20,10 @@ namespace hrms.Data
         public DbSet<JobReviewer> Reviewers { get; set; }
         public DbSet<JobReferral> Referrals { get; set; }
         public DbSet<JobShared> SharedJobs { get; set; }
-        
+        public DbSet<Game> Games { get; set; }
+        public DbSet<UserGameInterest> UserGameInterests { get; set; }
+        public DbSet<UserGameState> UserGameStates { get; set; }
+        public DbSet<GameSlot> GameSlots { get; set; }
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             base.OnModelCreating(modelBuilder);
@@ -564,6 +567,122 @@ namespace hrms.Data
                     .OnDelete(DeleteBehavior.Restrict);
             });
 
+            modelBuilder.Entity<Game>(entity =>
+            {
+                entity.ToTable("games");
+
+                entity.HasKey(g => g.Id);
+
+                entity
+                    .Property(g => g.Id)
+                    .HasColumnName("pk_game_id");
+
+                entity
+                    .Property(g => g.Name)
+                    .IsRequired()
+                    .HasColumnName("game_name")
+                    .HasMaxLength(30);
+
+                entity
+                    .Property(g => g.MaxPlayer)
+                    .HasColumnName("max_player_per_game")
+                    .IsRequired();
+
+                entity
+                    .Property(g => g.MinPlayer)
+                    .HasColumnName("min_player_per_game")
+                    .IsRequired();
+            });
+
+            modelBuilder.Entity<UserGameInterest>(entity =>
+            {
+                entity.ToTable("user_game_interest");
+
+                entity.HasKey(ug => ug.Id);
+
+                entity
+                    .Property(ug => ug.Id)
+                    .HasColumnName("pk_user_game_id");
+
+                entity
+                    .HasOne(ug => ug.Game)
+                    .WithMany()
+                    .HasForeignKey(ug => ug.GameId)
+                    .HasConstraintName("fk_user_game_game_id")
+                    .OnDelete(DeleteBehavior.Restrict);
+
+                entity
+                    .HasOne(ug => ug.User)
+                    .WithMany()
+                    .HasForeignKey(ug => ug.UserId)
+                    .HasConstraintName("fk_user_game_user_id")
+                    .OnDelete(DeleteBehavior.Restrict);
+            });
+
+            modelBuilder.Entity<UserGameState>(entity =>
+            {
+                entity.ToTable("user_game_state");
+
+                entity.HasKey(ug => ug.Id);
+
+                entity
+                    .Property(ug => ug.Id)
+                    .HasColumnName("pk_user_game_state_id");
+
+                entity
+                    .Property(ug => ug.LastPayledAt)
+                    .IsRequired()
+                    .HasColumnName("last_played_at");
+
+                entity
+                    .Property(ug => ug.GamePlayed)
+                    .IsRequired()
+                    .HasColumnName("game_played");
+
+                entity
+                    .HasOne(ug => ug.Game)
+                    .WithMany()
+                    .HasForeignKey(ug => ug.GameId)
+                    .HasConstraintName("fk_user_state_game_id")
+                    .OnDelete(DeleteBehavior.Restrict);
+
+                entity
+                    .HasOne(ug => ug.User)
+                    .WithMany()
+                    .HasForeignKey(ug => ug.UserId)
+                    .HasConstraintName("fk_game_state_user_id")
+                    .OnDelete(DeleteBehavior.Restrict);
+            });
+
+            modelBuilder.Entity<GameSlot>(entity =>
+            {
+                entity.ToTable("user_game_slot");
+
+                entity.HasKey(gs => gs.Id);
+
+                entity
+                    .Property(gs => gs.Id)
+                    .HasColumnName("pk_game_slot_id");
+
+                entity
+                    .Property(gs => gs.StartTime)
+                    .IsRequired()
+                    .HasColumnName("start_time");
+
+                entity
+                    .Property(gs => gs.EndTime)
+                    .IsRequired()
+                    .HasColumnName("end_time");
+
+                entity
+                    .HasOne(ug => ug.Game)
+                    .WithMany(g => g.Slots)
+                    .HasForeignKey(ug => ug.GameId)
+                    .HasConstraintName("fk_user_slot_game_id")
+                    .OnDelete(DeleteBehavior.Restrict);
+
+                
+            });
         }
 
     }

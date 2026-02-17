@@ -17,7 +17,7 @@ namespace hrms.Service
         Task<TravelResponseDto> UpdateTravelById(int TravelId,TravelUpdateDto dto);
         Task AddTraveler(int currentUserId, TravelerAddDto dto);
         Task<TravelDocumentResponseDto> AddTravelDocument(int travelId, int travelerId, int currentUserId, TravelDocumentCreateDto dto);
-        Task<List<TravelDocumentResponseDto>> GetTravelDocument(int travelId, int travelerId);
+        Task<List<TravelDocumentResponseDto>> GetTravelDocument(int travelId, int travelerId,int userId);
         Task<PagedReponseDto<TravelResponseDto>> GetEmployeeTravels(int currentUserId, int pageSize, int pageNumber);
         Task<TravelerDto> AddTraveler(int travelId, int travelerId);
     }

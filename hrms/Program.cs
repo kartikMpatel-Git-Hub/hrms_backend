@@ -58,6 +58,7 @@ builder.Services.AddScoped<IJobRepository, JobRepository>();
 builder.Services.AddScoped<IJobReviewerRepository, JobReviewerRepository>();
 builder.Services.AddScoped<IJobReferralRepository, JobReferralRepository>();
 builder.Services.AddScoped<IJobShareRepository, JobShareRepository>();
+builder.Services.AddScoped<IGameRepository, GameRepository>();
 
 builder.Services.AddScoped<IAuthenticationService, AuthenticationService>();
 builder.Services.AddScoped<IUserService, UserService>();
@@ -69,6 +70,7 @@ builder.Services.AddScoped<IDepartmentService, DepartmentService>();
 builder.Services.AddScoped<INotificationService, NotificationService>();
 builder.Services.AddScoped<IJobService, JobService>();
 builder.Services.AddScoped<IJobReviewerService, JobReviewerService>();
+builder.Services.AddScoped<IGameService, GameService>();
 
 builder.Services.AddAutoMapper(typeof(MappingProfile));
 

@@ -54,13 +54,14 @@ namespace hrms.Service.impl
             {
                 throw new InvalidOperationCustomException($"Traveler : {currentUserId}Not Found With Travel : {travelId}");
             }
-            Travel travel = await _travelRepository.GetTravelById(travelId);
-            if(dto.Amount > travel.MaxAmountLimit)
-            {
-                throw new InvalidOperationCustomException($"Expense Amount can not exide {travel.MaxAmountLimit}");
-            }
-            User employee = await _userService.GetEmployee(currentUserId);
             ExpenseCategory category = await _repository.GetCategoryById(dto.CategoryId);
+            Travel travel = await _travelRepository.GetTravelById(travelId);
+            User employee = await _userService.GetEmployee(currentUserId);
+            decimal todaysExpense = dto.Amount + await _travelRepository.GetTodaysExpense(travelId, currentUserId);
+            if(todaysExpense > travel.MaxAmountLimit)
+            {
+                throw new InvalidOperationCustomException($"You have reached Daily Expense Limit !(LIMIT {travel.MaxAmountLimit})");
+            }
             if (travel.StartDate > DateTime.Now || travel.EndDate.AddDays(10) < DateTime.Now)
             {
                 throw new InvalidOperationCustomException("Expense can not add before trip start and after 10 days of completed trip !");

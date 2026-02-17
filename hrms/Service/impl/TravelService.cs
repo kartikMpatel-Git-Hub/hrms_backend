@@ -144,9 +144,9 @@ namespace hrms.Service.impl
             return _mapper.Map<TravelDocumentResponseDto>(travelDocument);
         }
 
-        public async Task<List<TravelDocumentResponseDto>> GetTravelDocument(int travelId, int travelerId)
+        public async Task<List<TravelDocumentResponseDto>> GetTravelDocument(int travelId, int travelerId, int userId)
         {
-            List<TravelDocument> documents = await _repository.GetTravelDocuments(travelId, travelerId);
+            List<TravelDocument> documents = await _repository.GetTravelDocuments(travelId, travelerId,userId);
             return _mapper.Map<List<TravelDocumentResponseDto>>(documents);
         }
 

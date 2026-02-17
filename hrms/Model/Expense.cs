@@ -21,7 +21,6 @@ namespace hrms.Model
         public ExpenseStatus Status { get; set; }
         public string Remarks { get; set; }
         public string Details { get; set; }
-
         public DateTime ExpenseDate { get; set; }
         public List<ExpenseProof> Proofs { get; set; } = new List<ExpenseProof>();
     }
