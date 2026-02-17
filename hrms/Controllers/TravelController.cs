@@ -167,7 +167,11 @@ namespace hrms.Controllers
                 return BadRequest(new { message = "Traveler Id Not Found !" });
             int travelId = (int)TravelId;
             int travelerId = (int)TravelerId;
-            List<TravelDocumentResponseDto> response = await _service.GetTravelDocument(travelId, travelerId);
+            var CurrentUser = User;
+            if (CurrentUser == null)
+                throw new UnauthorizedCustomException($"Unauthorized Access !");
+            int CurrentUserId = Int32.Parse(CurrentUser.FindFirst(ClaimTypes.PrimarySid)?.Value);
+            List<TravelDocumentResponseDto> response = await _service.GetTravelDocument(travelId, travelerId,CurrentUserId);
             return Ok(response);
         }
 

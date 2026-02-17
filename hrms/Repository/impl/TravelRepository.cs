@@ -74,6 +74,19 @@ namespace hrms.Repository.impl
             return Response;
         }
 
+        public async Task<decimal> GetTodaysExpense(int travelId, int currentUserId)
+        {
+            List<Expense> expenses = await _db.Expenses
+                .Where(e => e.TravelId == travelId && e.TravelerId == currentUserId && e.ExpenseDate.Date == DateTime.Now.Date)
+                .ToListAsync();
+            decimal total = 0;
+            foreach(var expense in expenses)
+            {
+                total += expense.Amount;
+            }
+            return total;
+        }
+
         public async Task<Travel> GetTravelById(int TravelId)
         {
             Travel? travel = await _db.Travels.
@@ -101,11 +114,11 @@ namespace hrms.Repository.impl
             return Response;
         }
 
-        public async Task<List<TravelDocument>> GetTravelDocuments(int travelId, int travelerId)
+        public async Task<List<TravelDocument>> GetTravelDocuments(int travelId, int travelerId,int userId)
         {
             List<TravelDocument> documents =
                 await _db.TravelDocuments
-                .Where((td) => td.TravelId == travelId && td.TravelerId == travelerId)
+                .Where((td) => td.TravelId == travelId && td.TravelerId == travelerId && td.UploadedBy != userId)
                 .Include(td => td.Uploader)
                 .ToListAsync();
             if (documents == null)

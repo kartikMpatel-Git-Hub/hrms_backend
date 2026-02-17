@@ -1,9 +1,13 @@
 ﻿using AutoMapper;
 using CloudinaryDotNet.Actions;
+using hrms.Dto.Request.Game;
+using hrms.Dto.Request.Game.GameSlot;
 using hrms.Dto.Response.Department;
 using hrms.Dto.Response.Expense;
 using hrms.Dto.Response.Expense.Category;
 using hrms.Dto.Response.Expense.Proof;
+using hrms.Dto.Response.Game;
+using hrms.Dto.Response.Game.GameSlot;
 using hrms.Dto.Response.Job;
 using hrms.Dto.Response.Notification;
 using hrms.Dto.Response.Other;
@@ -45,6 +49,16 @@ namespace hrms.Utility
                 dest => dest.Status,
                 opt => opt.MapFrom(src => GetStatus(src.Status)));
             CreateMap<JobShared, SharedJobResponseDto>();
+
+            CreateMap<Game, GameResponseDto>();
+            CreateMap<Game, GameResponseWithSlot>();
+            CreateMap<GameCreateDto, Game>();
+            CreateMap<GameUpdateDto, Game>();
+
+            CreateMap<GameSlot, GameSlotResponseDto>();
+            CreateMap<GameSlotCreateDto,GameSlot>();
+            CreateMap<GameSlotUpdateDto,GameSlot>();
+
 
             CreateMap(typeof(PagedReponseOffSet<>),typeof(PagedReponseDto<>));
         }
