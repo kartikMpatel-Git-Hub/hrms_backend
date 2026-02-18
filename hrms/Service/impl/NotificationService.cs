@@ -17,6 +17,7 @@ namespace hrms.Service.impl
             _repository = repository;
             _mapper = mapper;
         }
+
         public async Task<PagedReponseDto<NotificationResponseDto>> GetMyNotification(int userId,int pageNumber, int pageSize)
         {
             PagedReponseOffSet<Notification> notifications = await _repository.GetMyNotifications(userId,pageNumber,pageSize);

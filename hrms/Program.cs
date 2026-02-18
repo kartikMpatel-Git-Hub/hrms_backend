@@ -11,6 +11,7 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Options;
 using Microsoft.IdentityModel.Tokens;
+using Quartz;
 using System.Text;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -45,9 +46,29 @@ builder.Services.Configure<ApiBehaviorOptions>(option =>
         });
     };
 });
-// Learn more about configuring OpenAPI at https://aka.ms/aspnet/openapi
 builder.Services.AddOpenApi();
 builder.Services.AddSwaggerGen();
+
+builder.Services.AddQuartz(q =>
+{
+    q.UseMicrosoftDependencyInjectionJobFactory();
+
+    var jobKey = new JobKey("WeeklyJob");
+    q.AddJob<WeeklyJob>(opts => opts.WithIdentity(jobKey));
+
+    q.AddTrigger(opts => opts
+        .ForJob(jobKey)
+        .WithIdentity("WeeklyJob-trigger")
+        .StartNow()
+        //.WithCronSchedule("0 0/1 * * * ?")
+        //.WithCronSchedule("0 0 0 ? * MON")
+    );
+});
+
+builder.Services.AddQuartzHostedService(options =>
+{
+    options.WaitForJobsToComplete = true;
+});
 
 builder.Services.AddScoped<IUserRepository, UserRepository>();
 builder.Services.AddScoped<ITravelRepository, TravelRepository>();
@@ -59,6 +80,8 @@ builder.Services.AddScoped<IJobReviewerRepository, JobReviewerRepository>();
 builder.Services.AddScoped<IJobReferralRepository, JobReferralRepository>();
 builder.Services.AddScoped<IJobShareRepository, JobShareRepository>();
 builder.Services.AddScoped<IGameRepository, GameRepository>();
+builder.Services.AddScoped<IGameBookingRepository, GameBookingRepository>();
+builder.Services.AddScoped<IUserGameRepository, UserGameRepository>();
 
 builder.Services.AddScoped<IAuthenticationService, AuthenticationService>();
 builder.Services.AddScoped<IUserService, UserService>();
@@ -71,6 +94,7 @@ builder.Services.AddScoped<INotificationService, NotificationService>();
 builder.Services.AddScoped<IJobService, JobService>();
 builder.Services.AddScoped<IJobReviewerService, JobReviewerService>();
 builder.Services.AddScoped<IGameService, GameService>();
+builder.Services.AddScoped<IGameSlotService, GameSlotService>();
 
 builder.Services.AddAutoMapper(typeof(MappingProfile));
 

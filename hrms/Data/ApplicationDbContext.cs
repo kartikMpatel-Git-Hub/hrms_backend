@@ -24,6 +24,10 @@ namespace hrms.Data
         public DbSet<UserGameInterest> UserGameInterests { get; set; }
         public DbSet<UserGameState> UserGameStates { get; set; }
         public DbSet<GameSlot> GameSlots { get; set; }
+        public DbSet<GameQueue> GameQueues { get; set; }
+        public DbSet<BookingSlot> WeeklyGameSlots { get; set; }
+        public DbSet<BookingPlayer> BookingPlayers { get; set; }
+
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             base.OnModelCreating(modelBuilder);
@@ -605,6 +609,13 @@ namespace hrms.Data
                     .HasColumnName("pk_user_game_id");
 
                 entity
+                    .Property(gq => gq.Status)
+                    .HasConversion<String>()
+                    .IsRequired()
+                    .HasColumnName("status")
+                    .HasMaxLength(20);
+
+                entity
                     .HasOne(ug => ug.Game)
                     .WithMany()
                     .HasForeignKey(ug => ug.GameId)
@@ -656,7 +667,7 @@ namespace hrms.Data
 
             modelBuilder.Entity<GameSlot>(entity =>
             {
-                entity.ToTable("user_game_slot");
+                entity.ToTable("game_slots");
 
                 entity.HasKey(gs => gs.Id);
 
@@ -683,6 +694,118 @@ namespace hrms.Data
 
                 
             });
+
+            modelBuilder.Entity<GameQueue>(entity =>
+            {
+                entity.ToTable("game_queue");
+
+                entity.HasKey(gq => gq.Id);
+
+                entity
+                    .Property(gq => gq.Id)
+                    .HasColumnName("pk_game_queue_id");
+
+                entity
+                    .HasOne(gq => gq.Game)
+                    .WithMany()
+                    .HasForeignKey(gq => gq.GameId)
+                    .HasConstraintName("fk_game_queue_game_id")
+                    .OnDelete(DeleteBehavior.Restrict);
+
+                entity
+                    .HasOne(gq => gq.Player)
+                    .WithMany()
+                    .HasForeignKey(gq => gq.PlayerId)
+                    .HasConstraintName("fk_game_queue_player_id")
+                    .OnDelete(DeleteBehavior.Restrict);
+
+                entity
+                    .Property(gq => gq.Status)
+                    .HasConversion<String>()
+                    .IsRequired()
+                    .HasColumnName("status")
+                    .HasMaxLength(20);
+
+                entity
+                    .Property(gq => gq.EnqueueAt)
+                    .IsRequired()
+                    .HasColumnName("enqueue_at");
+            });
+
+            modelBuilder.Entity<BookingSlot>(entity =>
+            {
+                entity.ToTable("booking_slot");
+
+                entity.HasKey(wgs => wgs.Id);
+
+                entity
+                    .Property(wgs => wgs.Id)
+                    .HasColumnName("pk_booking_slot_id");
+
+                entity
+                    .HasOne(wgs => wgs.Game)
+                    .WithMany(g => g.BookingSlots)
+                    .HasForeignKey(gq => gq.GameId)
+                    .HasConstraintName("fk_bookin_slot_game_id")
+                    .OnDelete(DeleteBehavior.Restrict);
+
+                entity
+                    .HasOne(wgs => wgs.Booked)
+                    .WithMany()
+                    .HasForeignKey(wgs => wgs.BookedBy)
+                    .HasConstraintName("fk_booking_slot_booked_by_id")
+                    .OnDelete(DeleteBehavior.Restrict);
+
+                entity
+                    .Property(gq => gq.Status)
+                    .HasConversion<String>()
+                    .IsRequired()
+                    .HasColumnName("status")
+                    .HasMaxLength(20);
+                
+                entity
+                    .Property(gq => gq.StartTime)
+                    .IsRequired()
+                    .HasColumnName("start_time");
+
+                entity
+                    .Property(gq => gq.EndTime)
+                    .IsRequired()
+                    .HasColumnName("end_time");
+
+                entity
+                    .Property(gq => gq.Date)
+                    .IsRequired()
+                    .HasColumnName("date");
+
+            });
+
+            modelBuilder.Entity<BookingPlayer>(entity =>
+            {
+                entity.ToTable("booking_players");
+
+                entity.HasKey(bp => bp.Id);
+
+                entity
+                    .Property(bp => bp.Id)
+                    .HasColumnName("pk_booking_id");
+
+                entity
+                    .HasOne(bp => bp.Slot)
+                    .WithMany(wgb => wgb.Players)
+                    .HasForeignKey(bp => bp.SlotId)
+                    .HasConstraintName("fk_game_slot_slot_id")
+                    .OnDelete(DeleteBehavior.Restrict);
+
+                entity
+                    .HasOne(bp => bp.Player)
+                    .WithMany()
+                    .HasForeignKey(bp => bp.PlayerId)
+                    .HasConstraintName("fk_game_slot_player_id")
+                    .OnDelete(DeleteBehavior.Restrict);
+
+            });
+
         }
 
     }

@@ -1,4 +1,5 @@
-﻿using AutoMapper;
+﻿using System.Security.Claims;
+using AutoMapper;
 using hrms.CustomException;
 using hrms.Dto.Response.Other;
 using hrms.Dto.Response.Travel;
@@ -98,6 +99,24 @@ namespace hrms.Controllers
             }
             List<UserResponseDto> organizationChart = await _service.GetUserChart((int)userId);
             return Ok(organizationChart);
+        }
+
+        [HttpPut("game-interest/{gameId}")]
+        public async Task<IActionResult> UpdateUserGameInterest(int? gameId)
+        {   
+
+            if (gameId == null)
+            {
+                throw new ArgumentNullException("GameId is null");
+            }
+            var CurrentUser = User;
+            if (CurrentUser == null)
+                throw new UnauthorizedCustomException($"Unauthorized Access !");
+
+            int CurrentUserId = Int32.Parse(CurrentUser.FindFirst(ClaimTypes.PrimarySid)?.Value);
+
+            await _service.ToggleGameInterestStatus(CurrentUserId,(int)gameId);
+            return Ok("Updated Successfully");
         }
     }
 }

@@ -7,5 +7,8 @@
         public int MaxPlayer { get; set; }
         public int MinPlayer { get; set; }
         public List<GameSlot> Slots { get; set; } = new List<GameSlot>();
+        public List<BookingSlot> BookingSlots { get; set; } = new List<BookingSlot>();
+
+
     }
 }

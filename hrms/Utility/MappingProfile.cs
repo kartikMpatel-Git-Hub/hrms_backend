@@ -1,7 +1,9 @@
 ﻿using AutoMapper;
 using CloudinaryDotNet.Actions;
+using hrms.Dto.Request.BookingSlot;
 using hrms.Dto.Request.Game;
 using hrms.Dto.Request.Game.GameSlot;
+using hrms.Dto.Response.BookingSlot;
 using hrms.Dto.Response.Department;
 using hrms.Dto.Response.Expense;
 using hrms.Dto.Response.Expense.Category;
@@ -59,8 +61,36 @@ namespace hrms.Utility
             CreateMap<GameSlotCreateDto,GameSlot>();
             CreateMap<GameSlotUpdateDto,GameSlot>();
 
+            CreateMap<BookingSlotCreateDto,BookingSlot>();
+            CreateMap<BookingSlot,BookingSlotResponseDto>()
+                .ForMember(
+                dest => dest.Status,
+                opt => opt.MapFrom(src => GetStatus(src.Status)));
+
+            CreateMap<BookingSlot,BookingSlotWithPlayerResponseDto>()
+                .ForMember(
+                dest => dest.Status,
+                opt => opt.MapFrom(src => GetStatus(src.Status)));
+
+            CreateMap<BookingPlayer,BookingPlayerResponseDto>();
+
 
             CreateMap(typeof(PagedReponseOffSet<>),typeof(PagedReponseDto<>));
+        }
+
+        private object GetStatus(GameSlotStatus status)
+        {
+            switch (status)
+            {
+                case GameSlotStatus.COMPLETED:
+                    return "Completed";
+                case GameSlotStatus.BOOKED:
+                    return "Booked";
+                case GameSlotStatus.AVAILABLE:
+                    return "Available";
+                default:
+                    return "Unknown";
+            }
         }
 
         private object GetStatus(ReferralStatus status)

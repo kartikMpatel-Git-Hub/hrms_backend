@@ -14,6 +14,13 @@ namespace hrms.Repository.impl
             _db = db;
         }
 
+        public async Task<Notification> CreateNotification(Notification notification)
+        {
+            var result = await _db.Notifications.AddAsync(notification);
+            await _db.SaveChangesAsync();
+            return result.Entity;
+        }
+
         public async Task<int> GetMyNotificationCount(int userId)
         {
             int TotalRecords = await _db.Notifications
