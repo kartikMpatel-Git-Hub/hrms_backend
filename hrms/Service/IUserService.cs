@@ -17,5 +17,6 @@ namespace hrms.Service
         Task<List<UserResponseDto>> GetUserByKey(string s);
         Task<List<UserResponseDto>> GetUserChart(int userId);
         Task<User> GetUserEntityById(int UserId);
+        Task ToggleGameInterestStatus(int userId, int gameId);
     }
 }

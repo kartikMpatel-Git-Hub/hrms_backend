@@ -128,7 +128,7 @@ namespace hrms.Repository.impl
                 throw new NotFoundCustomException($"manager id not found");
             User user = await _context.Users
                 .FirstOrDefaultAsync(
-                (u) => u.Id == managerId && u.Role == UserRole.MANAGER);
+                (u) => u.Id == managerId && (u.Role == UserRole.MANAGER || u.Role == UserRole.ADMIN));
             if (user == null)
                 throw new NotFoundCustomException($"Manager With id : {managerId} not found");
             return user;
@@ -173,6 +173,30 @@ namespace hrms.Repository.impl
             if (user == null)
                 throw new NotFoundCustomException($"User With id : {id} not found");
             return user;
+        }
+
+        public async Task ToggleGameInterestStatus(int userId, int gameId)
+        {
+                UserGameInterest? interest = _context.UserGameInterests
+                    .FirstOrDefault(ugi => ugi.UserId == userId && ugi.GameId == gameId);
+    
+                if (interest == null)
+                {
+                    interest = new UserGameInterest
+                    {
+                        UserId = userId,
+                        GameId = gameId,
+                        Status = InterestStatus.INTERESTED
+                    };
+                    await _context.UserGameInterests.AddAsync(interest);
+                }
+                else
+                {
+                    interest.Status = interest.Status == InterestStatus.INTERESTED ? InterestStatus.NOTINTERESTED : InterestStatus.INTERESTED;
+                    _context.UserGameInterests.Update(interest);
+                }
+    
+                await _context.SaveChangesAsync();
         }
     }
 }

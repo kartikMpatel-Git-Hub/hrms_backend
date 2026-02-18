@@ -7,5 +7,6 @@ namespace hrms.Repository
     {
         Task<int> GetMyNotificationCount(int userId);
         Task<PagedReponseOffSet<Notification>> GetMyNotifications(int userId, int pageNumber, int pageSize);
+        Task<Notification> CreateNotification(Notification notification);
     }
 }

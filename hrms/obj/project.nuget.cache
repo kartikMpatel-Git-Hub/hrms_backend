@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "YJVNt7RVRAc=",
+  "dgSpecHash": "vB4xy9NdoLM=",
   "success": true,
   "projectFilePath": "C:\\Internship\\Codes\\DontNet\\Assignment-1\\hrms\\hrms\\hrms.csproj",
   "expectedPackageFiles": [
@@ -44,6 +44,9 @@
     "C:\\Users\\patelkar\\.nuget\\packages\\microsoft.visualstudio.solutionpersistence\\1.0.52\\microsoft.visualstudio.solutionpersistence.1.0.52.nupkg.sha512",
     "C:\\Users\\patelkar\\.nuget\\packages\\mono.texttemplating\\3.0.0\\mono.texttemplating.3.0.0.nupkg.sha512",
     "C:\\Users\\patelkar\\.nuget\\packages\\newtonsoft.json\\13.0.3\\newtonsoft.json.13.0.3.nupkg.sha512",
+    "C:\\Users\\patelkar\\.nuget\\packages\\quartz\\3.15.1\\quartz.3.15.1.nupkg.sha512",
+    "C:\\Users\\patelkar\\.nuget\\packages\\quartz.extensions.dependencyinjection\\3.15.1\\quartz.extensions.dependencyinjection.3.15.1.nupkg.sha512",
+    "C:\\Users\\patelkar\\.nuget\\packages\\quartz.extensions.hosting\\3.15.1\\quartz.extensions.hosting.3.15.1.nupkg.sha512",
     "C:\\Users\\patelkar\\.nuget\\packages\\swashbuckle.aspnetcore\\10.1.2\\swashbuckle.aspnetcore.10.1.2.nupkg.sha512",
     "C:\\Users\\patelkar\\.nuget\\packages\\swashbuckle.aspnetcore.swagger\\10.1.2\\swashbuckle.aspnetcore.swagger.10.1.2.nupkg.sha512",
     "C:\\Users\\patelkar\\.nuget\\packages\\swashbuckle.aspnetcore.swaggergen\\10.1.2\\swashbuckle.aspnetcore.swaggergen.10.1.2.nupkg.sha512",

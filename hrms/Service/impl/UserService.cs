@@ -91,5 +91,10 @@ namespace hrms.Service.impl
             }
             return _mapper.Map<List<UserResponseDto>>(chain);
         }
+
+        public Task ToggleGameInterestStatus(int userId, int gameId)
+        {
+            return _repository.ToggleGameInterestStatus(userId, gameId);
+        }
     }
 }

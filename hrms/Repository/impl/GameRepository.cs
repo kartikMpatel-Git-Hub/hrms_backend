@@ -35,6 +35,14 @@ namespace hrms.Repository.impl
             return reponse;
         }
 
+        public async Task<List<Game>> GetAllGames()
+        {
+            List<Game> games = await _db.Games
+                                .Where(g => g.is_deleted == false)
+                                .ToListAsync();
+            return games;
+        }
+
         public async Task<Game> GetGameById(int gameId)
         {
             Game game = await _db.Games
@@ -54,6 +62,11 @@ namespace hrms.Repository.impl
             return gameSlot;
         }
 
+        public async Task<List<GameSlot>> GetGameSlots(int gameId)
+        {
+            List<GameSlot> slots = await _db.GameSlots.Where(gs => gs.GameId ==  gameId).ToListAsync();
+            return slots;
+        }
         public async Task<bool> isSlotExist(TimeOnly startTime, TimeOnly endTime)
         {
 

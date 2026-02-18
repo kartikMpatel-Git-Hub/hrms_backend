@@ -12,7 +12,7 @@ using hrms.Data;
 namespace hrms.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20260216065152_initial")]
+    [Migration("20260218055307_initial")]
     partial class initial
     {
         /// <inheritdoc />
@@ -24,6 +24,84 @@ namespace hrms.Migrations
                 .HasAnnotation("Relational:MaxIdentifierLength", 128);
 
             SqlServerModelBuilderExtensions.UseIdentityColumns(modelBuilder);
+
+            modelBuilder.Entity("hrms.Model.BookingPlayer", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .HasColumnName("pk_booking_id");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+
+                    b.Property<int>("PlayerId")
+                        .HasColumnType("int");
+
+                    b.Property<int>("SlotId")
+                        .HasColumnType("int");
+
+                    b.Property<bool>("is_deleted")
+                        .HasColumnType("bit");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("PlayerId");
+
+                    b.HasIndex("SlotId");
+
+                    b.ToTable("booking_players", (string)null);
+                });
+
+            modelBuilder.Entity("hrms.Model.BookingSlot", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .HasColumnName("pk_booking_slot_id");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+
+                    b.Property<int>("BookedBy")
+                        .HasColumnType("int");
+
+                    b.Property<DateTime>("Date")
+                        .HasColumnType("datetime2")
+                        .HasColumnName("date");
+
+                    b.Property<TimeOnly>("EndTime")
+                        .HasColumnType("time")
+                        .HasColumnName("end_time");
+
+                    b.Property<int>("GameId")
+                        .HasColumnType("int");
+
+                    b.Property<TimeOnly>("StartTime")
+                        .HasColumnType("time")
+                        .HasColumnName("start_time");
+
+                    b.Property<string>("Status")
+                        .IsRequired()
+                        .HasMaxLength(20)
+                        .HasColumnType("nvarchar(20)")
+                        .HasColumnName("status");
+
+                    b.Property<DateTime>("created_at")
+                        .HasColumnType("datetime2");
+
+                    b.Property<bool>("is_deleted")
+                        .HasColumnType("bit");
+
+                    b.Property<DateTime>("updated_at")
+                        .HasColumnType("datetime2");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("BookedBy");
+
+                    b.HasIndex("GameId");
+
+                    b.ToTable("booking_slot", (string)null);
+                });
 
             modelBuilder.Entity("hrms.Model.Department", b =>
                 {
@@ -175,6 +253,116 @@ namespace hrms.Migrations
                     b.HasIndex("ExpenseId");
 
                     b.ToTable("expense_proof", (string)null);
+                });
+
+            modelBuilder.Entity("hrms.Model.Game", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .HasColumnName("pk_game_id");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+
+                    b.Property<int>("MaxPlayer")
+                        .HasColumnType("int")
+                        .HasColumnName("max_player_per_game");
+
+                    b.Property<int>("MinPlayer")
+                        .HasColumnType("int")
+                        .HasColumnName("min_player_per_game");
+
+                    b.Property<string>("Name")
+                        .IsRequired()
+                        .HasMaxLength(30)
+                        .HasColumnType("nvarchar(30)")
+                        .HasColumnName("game_name");
+
+                    b.Property<DateTime>("created_at")
+                        .HasColumnType("datetime2");
+
+                    b.Property<bool>("is_deleted")
+                        .HasColumnType("bit");
+
+                    b.Property<DateTime>("updated_at")
+                        .HasColumnType("datetime2");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("games", (string)null);
+                });
+
+            modelBuilder.Entity("hrms.Model.GameQueue", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .HasColumnName("pk_game_queue_id");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+
+                    b.Property<DateTime>("EnqueueAt")
+                        .HasColumnType("datetime2")
+                        .HasColumnName("enqueue_at");
+
+                    b.Property<int>("GameId")
+                        .HasColumnType("int");
+
+                    b.Property<int>("PlayerId")
+                        .HasColumnType("int");
+
+                    b.Property<string>("Status")
+                        .IsRequired()
+                        .HasMaxLength(20)
+                        .HasColumnType("nvarchar(20)")
+                        .HasColumnName("status");
+
+                    b.Property<bool>("is_deleted")
+                        .HasColumnType("bit");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("GameId");
+
+                    b.HasIndex("PlayerId");
+
+                    b.ToTable("game_queue", (string)null);
+                });
+
+            modelBuilder.Entity("hrms.Model.GameSlot", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .HasColumnName("pk_game_slot_id");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+
+                    b.Property<TimeOnly>("EndTime")
+                        .HasColumnType("time")
+                        .HasColumnName("end_time");
+
+                    b.Property<int>("GameId")
+                        .HasColumnType("int");
+
+                    b.Property<TimeOnly>("StartTime")
+                        .HasColumnType("time")
+                        .HasColumnName("start_time");
+
+                    b.Property<DateTime>("created_at")
+                        .HasColumnType("datetime2");
+
+                    b.Property<bool>("is_deleted")
+                        .HasColumnType("bit");
+
+                    b.Property<DateTime>("updated_at")
+                        .HasColumnType("datetime2");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("GameId");
+
+                    b.ToTable("game_slots", (string)null);
                 });
 
             modelBuilder.Entity("hrms.Model.Job", b =>
@@ -625,6 +813,104 @@ namespace hrms.Migrations
                     b.ToTable("users", (string)null);
                 });
 
+            modelBuilder.Entity("hrms.Model.UserGameInterest", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .HasColumnName("pk_user_game_id");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+
+                    b.Property<int>("GameId")
+                        .HasColumnType("int");
+
+                    b.Property<int>("UserId")
+                        .HasColumnType("int");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("GameId");
+
+                    b.HasIndex("UserId");
+
+                    b.ToTable("user_game_interest", (string)null);
+                });
+
+            modelBuilder.Entity("hrms.Model.UserGameState", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .HasColumnName("pk_user_game_state_id");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+
+                    b.Property<int>("GameId")
+                        .HasColumnType("int");
+
+                    b.Property<int>("GamePlayed")
+                        .HasColumnType("int")
+                        .HasColumnName("game_played");
+
+                    b.Property<DateTime>("LastPayledAt")
+                        .HasColumnType("datetime2")
+                        .HasColumnName("last_played_at");
+
+                    b.Property<int>("UserId")
+                        .HasColumnType("int");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("GameId");
+
+                    b.HasIndex("UserId");
+
+                    b.ToTable("user_game_state", (string)null);
+                });
+
+            modelBuilder.Entity("hrms.Model.BookingPlayer", b =>
+                {
+                    b.HasOne("hrms.Model.User", "Player")
+                        .WithMany()
+                        .HasForeignKey("PlayerId")
+                        .OnDelete(DeleteBehavior.Restrict)
+                        .IsRequired()
+                        .HasConstraintName("fk_game_slot_player_id");
+
+                    b.HasOne("hrms.Model.BookingSlot", "Slot")
+                        .WithMany("Players")
+                        .HasForeignKey("SlotId")
+                        .OnDelete(DeleteBehavior.Restrict)
+                        .IsRequired()
+                        .HasConstraintName("fk_game_slot_slot_id");
+
+                    b.Navigation("Player");
+
+                    b.Navigation("Slot");
+                });
+
+            modelBuilder.Entity("hrms.Model.BookingSlot", b =>
+                {
+                    b.HasOne("hrms.Model.User", "Booked")
+                        .WithMany()
+                        .HasForeignKey("BookedBy")
+                        .OnDelete(DeleteBehavior.Restrict)
+                        .IsRequired()
+                        .HasConstraintName("fk_booking_slot_booked_by_id");
+
+                    b.HasOne("hrms.Model.Game", "Game")
+                        .WithMany()
+                        .HasForeignKey("GameId")
+                        .OnDelete(DeleteBehavior.Restrict)
+                        .IsRequired()
+                        .HasConstraintName("fk_bookin_slot_game_id");
+
+                    b.Navigation("Booked");
+
+                    b.Navigation("Game");
+                });
+
             modelBuilder.Entity("hrms.Model.Expense", b =>
                 {
                     b.HasOne("hrms.Model.ExpenseCategory", "Category")
@@ -665,6 +951,39 @@ namespace hrms.Migrations
                         .HasConstraintName("fk_expense_proof_id");
 
                     b.Navigation("Expense");
+                });
+
+            modelBuilder.Entity("hrms.Model.GameQueue", b =>
+                {
+                    b.HasOne("hrms.Model.Game", "Game")
+                        .WithMany()
+                        .HasForeignKey("GameId")
+                        .OnDelete(DeleteBehavior.Restrict)
+                        .IsRequired()
+                        .HasConstraintName("fk_game_queue_game_id");
+
+                    b.HasOne("hrms.Model.User", "Player")
+                        .WithMany()
+                        .HasForeignKey("PlayerId")
+                        .OnDelete(DeleteBehavior.Restrict)
+                        .IsRequired()
+                        .HasConstraintName("fk_game_queue_player_id");
+
+                    b.Navigation("Game");
+
+                    b.Navigation("Player");
+                });
+
+            modelBuilder.Entity("hrms.Model.GameSlot", b =>
+                {
+                    b.HasOne("hrms.Model.Game", "Game")
+                        .WithMany("Slots")
+                        .HasForeignKey("GameId")
+                        .OnDelete(DeleteBehavior.Restrict)
+                        .IsRequired()
+                        .HasConstraintName("fk_user_slot_game_id");
+
+                    b.Navigation("Game");
                 });
 
             modelBuilder.Entity("hrms.Model.Job", b =>
@@ -845,9 +1164,61 @@ namespace hrms.Migrations
                     b.Navigation("Manager");
                 });
 
+            modelBuilder.Entity("hrms.Model.UserGameInterest", b =>
+                {
+                    b.HasOne("hrms.Model.Game", "Game")
+                        .WithMany()
+                        .HasForeignKey("GameId")
+                        .OnDelete(DeleteBehavior.Restrict)
+                        .IsRequired()
+                        .HasConstraintName("fk_user_game_game_id");
+
+                    b.HasOne("hrms.Model.User", "User")
+                        .WithMany()
+                        .HasForeignKey("UserId")
+                        .OnDelete(DeleteBehavior.Restrict)
+                        .IsRequired()
+                        .HasConstraintName("fk_user_game_user_id");
+
+                    b.Navigation("Game");
+
+                    b.Navigation("User");
+                });
+
+            modelBuilder.Entity("hrms.Model.UserGameState", b =>
+                {
+                    b.HasOne("hrms.Model.Game", "Game")
+                        .WithMany()
+                        .HasForeignKey("GameId")
+                        .OnDelete(DeleteBehavior.Restrict)
+                        .IsRequired()
+                        .HasConstraintName("fk_user_state_game_id");
+
+                    b.HasOne("hrms.Model.User", "User")
+                        .WithMany()
+                        .HasForeignKey("UserId")
+                        .OnDelete(DeleteBehavior.Restrict)
+                        .IsRequired()
+                        .HasConstraintName("fk_game_state_user_id");
+
+                    b.Navigation("Game");
+
+                    b.Navigation("User");
+                });
+
+            modelBuilder.Entity("hrms.Model.BookingSlot", b =>
+                {
+                    b.Navigation("Players");
+                });
+
             modelBuilder.Entity("hrms.Model.Expense", b =>
                 {
                     b.Navigation("Proofs");
+                });
+
+            modelBuilder.Entity("hrms.Model.Game", b =>
+                {
+                    b.Navigation("Slots");
                 });
 
             modelBuilder.Entity("hrms.Model.Job", b =>
