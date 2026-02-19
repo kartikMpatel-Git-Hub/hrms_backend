@@ -8,6 +8,6 @@
         public int UserId { get; set; }
         public User User { get; set; }
         public int GamePlayed { get; set; }
-        public DateTime LastPayledAt { get; set; }
+        public DateTime LastPlayedAt { get; set; }
     }
 }

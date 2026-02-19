@@ -128,8 +128,8 @@ namespace hrms.Service.impl
                 User manager = await _repo.GetManagerByIdAsync(dto.ManagerId);
                 if (manager == null)
                     throw new NotFoundCustomException($"Manager With manager_id : {dto.ManagerId} Not Found !");
-                user.Manager = manager;
-                user.ManagerId = manager.Id;
+                user.Reported = manager;
+                user.ReportTo = manager.Id;
             }
 
             if (dto.DepartmentId != null)

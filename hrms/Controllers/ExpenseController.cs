@@ -4,6 +4,7 @@ using hrms.Dto.Request.Category;
 using hrms.Dto.Request.Expense;
 using hrms.Dto.Response.Expense;
 using hrms.Dto.Response.Expense.Category;
+using hrms.Dto.Response.Other;
 using hrms.Model;
 using hrms.Service;
 using Microsoft.AspNetCore.Authorization;
@@ -20,7 +21,7 @@ namespace hrms.Controllers
         private readonly IExpenseService _service;
         private readonly ICloudinaryService _cloudinary;
 
-        public ExpenseController(IExpenseService service,ICloudinaryService cloudinary)
+        public ExpenseController(IExpenseService service, ICloudinaryService cloudinary)
         {
             _service = service;
             _cloudinary = cloudinary;
@@ -54,6 +55,25 @@ namespace hrms.Controllers
             return Ok(respone);
         }
 
+        [HttpGet("all-expense")]
+        [Authorize(Roles = "HR")]
+        public async Task<IActionResult> GetAllExpenses(
+            int pageNumber = 1,
+            int pageSize = 10
+            )
+        {
+            if (pageNumber < 1)
+                return BadRequest("Page Number must be greater than 0 !");
+            if (pageSize < 1)
+                return BadRequest("Page Size must be greater than 0 !");
+            var CurrentUser = User;
+            if (CurrentUser == null)
+                throw new UnauthorizedCustomException($"Unauthorized Access !");
+            int CurrentUserId = Int32.Parse(CurrentUser.FindFirst(ClaimTypes.PrimarySid)?.Value);
+            PagedReponseDto<ExpenseResponseDto> response = await _service.GetAllExpenses(pageNumber, pageSize, CurrentUserId);
+            return Ok(response);
+        }
+
 
         [HttpGet("{TravelId}/traveler/{TravelerId}/expense")]
         public async Task<IActionResult> GetTravelTravelerExpense(
@@ -65,7 +85,7 @@ namespace hrms.Controllers
                 throw new NotFoundCustomException("Travel or Traveler Id not found !");
             int travelId = (int)TravelId;
             int travelerId = (int)TravelerId;
-            List<ExpenseResponseDto> respone = await _service.GetTravelTravelerExpense(travelId,travelerId);
+            List<ExpenseResponseDto> respone = await _service.GetTravelTravelerExpense(travelId, travelerId);
             return Ok(respone);
         }
 
@@ -77,7 +97,7 @@ namespace hrms.Controllers
         {
             if (TravelId == null)
                 throw new NotFoundCustomException("Travel Id not found !");
-            int travelId = (int)TravelId; 
+            int travelId = (int)TravelId;
             var CurrentUser = User;
             if (CurrentUser == null)
                 throw new UnauthorizedCustomException($"Unauthorized Access !");
@@ -106,7 +126,7 @@ namespace hrms.Controllers
             return Ok(response);
         }
 
-        
+
         [HttpPatch("{Travelid}/traveler/{TravelerId}/expense/{ExpenseId}")]
         [Authorize(Roles = "HR")]
         public async Task<IActionResult> ChangeExpenseStatus(
@@ -121,7 +141,7 @@ namespace hrms.Controllers
             int travelId = (int)TravelId;
             int travelerId = (int)TravelerId;
             int expenseId = (int)ExpenseId;
-            ExpenseResponseDto respone = await _service.ChangeExpenseStatus(travelId, travelerId,expenseId,dto);
+            ExpenseResponseDto respone = await _service.ChangeExpenseStatus(travelId, travelerId, expenseId, dto);
             return Ok(respone);
         }
     }

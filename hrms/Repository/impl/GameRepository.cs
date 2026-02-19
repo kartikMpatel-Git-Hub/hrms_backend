@@ -8,11 +8,37 @@ namespace hrms.Repository.impl
 {
     public class GameRepository(ApplicationDbContext _db) : IGameRepository
     {
+        public async Task CreateBookingSlot(BookingSlot bookingSlot)
+        {
+            await _db.BookingSlots.AddAsync(bookingSlot);
+            await _db.SaveChangesAsync();
+        }
 
         public async Task<Game> CreateGame(Game newGame)
         {
             var SavedEntity = await _db.Games.AddAsync(newGame);
             await _db.SaveChangesAsync();
+            foreach (var user in await _db.Users.Where(u => !u.is_deleted).ToListAsync())
+            {
+                System.Console.WriteLine($"Added Game : {SavedEntity.Entity.Name} for User : {user.Id}");
+                var userGameState = new UserGameState()
+                {
+                    UserId = user.Id,
+                    GameId = SavedEntity.Entity.Id,
+                    GamePlayed = 0,
+                    LastPlayedAt = DateTime.Now
+                };
+                await _db.UserGameStates.AddAsync(userGameState);
+                await _db.SaveChangesAsync();
+                var userGameInterest = new UserGameInterest()
+                {
+                    UserId = user.Id,
+                    GameId = SavedEntity.Entity.Id,
+                    Status = InterestStatus.NOTINTERESTED
+                };
+                await _db.UserGameInterests.AddAsync(userGameInterest);
+                await _db.SaveChangesAsync();
+            }
             return SavedEntity.Entity;
         }
 
@@ -28,7 +54,7 @@ namespace hrms.Repository.impl
             int totalData = await _db.Games.Where(g => g.is_deleted == false).CountAsync();
             List<Game> games = await _db.Games
                                 .Where(g => g.is_deleted == false)
-                                .Skip((pageNumber-1) * pageSize)
+                                .Skip((pageNumber - 1) * pageSize)
                                 .Take(pageSize)
                                 .ToListAsync();
             PagedReponseOffSet<Game> reponse = new PagedReponseOffSet<Game>(games, pageNumber, pageSize, totalData);
@@ -64,7 +90,7 @@ namespace hrms.Repository.impl
 
         public async Task<List<GameSlot>> GetGameSlots(int gameId)
         {
-            List<GameSlot> slots = await _db.GameSlots.Where(gs => gs.GameId ==  gameId).ToListAsync();
+            List<GameSlot> slots = await _db.GameSlots.Where(gs => gs.GameId == gameId).ToListAsync();
             return slots;
         }
         public async Task<bool> isSlotExist(TimeOnly startTime, TimeOnly endTime)
@@ -72,8 +98,8 @@ namespace hrms.Repository.impl
 
             return await _db.GameSlots.AnyAsync(gs =>
                     !gs.is_deleted &&
-                    startTime < gs.EndTime &&  
-                    endTime > gs.StartTime      
+                    startTime < gs.EndTime &&
+                    endTime > gs.StartTime
                 );
 
         }

@@ -1,5 +1,6 @@
 ﻿using hrms.CustomException;
 using hrms.Data;
+using hrms.Dto.Response.Other;
 using hrms.Model;
 using Microsoft.EntityFrameworkCore;
 
@@ -53,6 +54,23 @@ namespace hrms.Repository.impl
             if (categories == null)
                 throw new NotFoundCustomException("Expense Category Not Found !");
             return categories;
+        }
+
+        public async Task<PagedReponseOffSet<Expense>> GetAllExpenses(int pageNumber, int pageSize, int currentUserId)
+        {
+            int totalRecords = await _db.Expenses
+                            .Where(e => e.Travel.CreatedBy == currentUserId)
+                            .CountAsync();
+            List<Expense> expenses
+                = _db.Expenses
+                .Include(e => e.Category)
+                .Include(e => e.Proofs)
+                .Where(e => e.Travel.CreatedBy == currentUserId)
+                .Skip((pageNumber - 1) * pageSize)
+                .Take(pageSize)
+                .ToList();
+            PagedReponseOffSet<Expense> response = new PagedReponseOffSet<Expense>(expenses, totalRecords, pageNumber, pageSize);
+            return response;
         }
 
         public async Task<List<Expense>> GetAllTravelTravelerExpense(int travelId, int travelerId)

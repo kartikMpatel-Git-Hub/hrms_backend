@@ -2,6 +2,7 @@
 using hrms.Dto.Request.Expense;
 using hrms.Dto.Response.Expense;
 using hrms.Dto.Response.Expense.Category;
+using hrms.Dto.Response.Other;
 
 namespace hrms.Service
 {
@@ -12,5 +13,6 @@ namespace hrms.Service
         Task<List<ExpenseCategoryResponseDto>> GetExpenseCategory();
         Task<List<ExpenseResponseDto>> GetTravelTravelerExpense(int travelId, int travelerId);
         Task<ExpenseResponseDto> ChangeExpenseStatus(int travelId, int travelerId, int expenseId,ExpenseStatusChangeDto dto);
+        Task<PagedReponseDto<ExpenseResponseDto>> GetAllExpenses(int pageNumber, int pageSize, int currentUserId);
     }
 }

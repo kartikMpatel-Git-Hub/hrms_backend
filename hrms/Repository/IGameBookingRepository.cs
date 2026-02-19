@@ -13,5 +13,9 @@ namespace hrms.Repository
         Task<List<BookingSlot>> GetSlots(int GameId,DateTime from, DateTime to);
         Task<BookingSlot> ChangeStatus(BookingSlot updatedSlot);
         Task<bool> existsSlot(int id, TimeOnly startTime, TimeOnly endTime, DateTime now);
+        Task CreateSlotOffer(SlotOffere offer);
+        Task<SlotOffere> GetSlotOffer(int offerId);
+        Task UpdateSlotOffer(SlotOffere offer);
+        Task ExpriredOffrers(int bookingSlotId);
     }
 }
