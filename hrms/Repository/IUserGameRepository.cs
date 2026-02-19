@@ -16,5 +16,6 @@ namespace hrms.Repository
         Task<List<UserGameState>> GetUsersGameStates(int gameId);
         Task<bool> IsUserInterestedInGame(int id, int gameId);
         Task<PagedReponseOffSet<User>> GetAvailablePlayers(int gameId, string? key, int pageSize, int pageNumber);
+        Task<List<int>> GetUserGameStates(int gameId, int gamePlayed);
     }
 }

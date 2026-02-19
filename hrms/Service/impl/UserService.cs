@@ -81,9 +81,9 @@ namespace hrms.Service.impl
             var chain = new List<User>();
             var currentUser = await _repository.GetById(userId);
             chain.Add(currentUser);
-            while (currentUser != null && currentUser.ManagerId.HasValue)
+            while (currentUser != null && currentUser.ReportTo.HasValue)
             {
-                currentUser = await _repository.GetById((int)currentUser.ManagerId);
+                currentUser = await _repository.GetById((int)currentUser.ReportTo);
                 if (currentUser != null)
                 {
                     chain.Add(currentUser);

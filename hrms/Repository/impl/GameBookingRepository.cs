@@ -9,7 +9,7 @@ namespace hrms.Repository.impl
     {
         public async Task<BookingSlot> BookSlot(BookingSlot createSlot)
         {
-            BookingSlot slot = _db.WeeklyGameSlots.Update(createSlot).Entity;
+            BookingSlot slot = _db.BookingSlots.Update(createSlot).Entity;
             await _db.SaveChangesAsync();
             return slot;
         }
@@ -40,14 +40,14 @@ namespace hrms.Repository.impl
 
         public async Task<BookingSlot> ChangeStatus(BookingSlot updatedSlot)
         {
-            BookingSlot slot = _db.WeeklyGameSlots.Update(updatedSlot).Entity;
+            BookingSlot slot = _db.BookingSlots.Update(updatedSlot).Entity;
             await _db.SaveChangesAsync();
             return slot;
         }
 
         public async Task<BookingSlot> CreateSlot(BookingSlot slot)
         {
-            var savedEntity = await _db.WeeklyGameSlots.AddAsync(slot);
+            var savedEntity = await _db.BookingSlots.AddAsync(slot);
             await _db.SaveChangesAsync();
             Console.WriteLine("Slot Created !");
             return savedEntity.Entity;
@@ -55,21 +55,25 @@ namespace hrms.Repository.impl
 
         public async Task<BookingSlot> GetSlot(int slotId)
         {
-            BookingSlot slot = await _db.WeeklyGameSlots
+            BookingSlot slot = await _db.BookingSlots
                 .Where(
-                    (wgs) => 
-                        wgs.Id == slotId && 
+                    (wgs) =>
+                        wgs.Id == slotId &&
                         wgs.is_deleted == false
                     )
-                .Include((b) => b.Players.Where((p) => p.is_deleted == false))
+                .Include((b) => 
+                    b.Players
+                        .Where((p) => p.is_deleted == false)
+                    )
+                .ThenInclude((p)=>p.Player)
                 .Include(s => s.Game)
                 .FirstOrDefaultAsync();
             return slot == null ? throw new NotFoundCustomException($"BookingSlot with Id : {slotId} Not Found !") : slot;
         }
 
-        public async Task<List<BookingSlot>> GetSlots(int GameId,DateTime from, DateTime to)
+        public async Task<List<BookingSlot>> GetSlots(int GameId, DateTime from, DateTime to)
         {
-            List<BookingSlot> slot = await _db.WeeklyGameSlots
+            List<BookingSlot> slot = await _db.BookingSlots
                 .Where(
                     (wgs) =>
                         wgs.GameId == GameId &&
@@ -82,13 +86,47 @@ namespace hrms.Repository.impl
 
         public async Task<bool> existsSlot(int id, TimeOnly startTime, TimeOnly endTime, DateTime now)
         {
-            bool exists = await _db.WeeklyGameSlots.Where(
-                   s => s.GameId == id && 
-                   s.StartTime == startTime && 
+            bool exists = await _db.BookingSlots.Where(
+                   s => s.GameId == id &&
+                   s.StartTime == startTime &&
                    s.EndTime == endTime &&
                    s.Date.Date == now.Date
                 ).AnyAsync();
             return exists;
+        }
+
+        public async Task CreateSlotOffer(SlotOffere offer)
+        {
+            await _db.SlotOffers.AddAsync(offer);
+            await _db.SaveChangesAsync();
+        }
+
+        public Task<SlotOffere> GetSlotOffer(int offerId)
+        {
+            SlotOffere offer = _db.SlotOffers.Where(o => o.Id == offerId).FirstOrDefault();
+            if (offer == null)
+            {
+                throw new NotFoundCustomException($"Offer with Id : {offerId} Not Found !");
+            }
+            return Task.FromResult(offer);
+        }
+
+        public Task UpdateSlotOffer(SlotOffere offer)
+        {
+            _db.SlotOffers.Update(offer);
+            _db.SaveChanges();
+            return Task.CompletedTask;
+        }
+
+        public async Task ExpriredOffrers(int bookingSlotId)
+        {
+            List<SlotOffere> offers = await _db.SlotOffers.Where(o => o.BookingSlotId == bookingSlotId && o.Status == SlotOfferStatus.Pending).ToListAsync();
+            foreach (var offer in offers)
+            {
+                offer.Status = SlotOfferStatus.Expired;
+                _db.SlotOffers.Update(offer);
+            }
+            await _db.SaveChangesAsync();
         }
     }
 }

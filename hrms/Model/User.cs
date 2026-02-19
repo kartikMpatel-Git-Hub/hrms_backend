@@ -17,8 +17,8 @@
         public UserRole Role { get; set; }
         public DateTime DateOfBirth { get; set; }
         public DateTime DateOfJoin { get; set; }
-        public int? ManagerId { get; set; }
-        public User Manager { get; set; }
+        public int? ReportTo { get; set; }
+        public User Reported { get; set; }
         public int? DepartmentId { get; set; }
         public Department Department { get; set; }
         public string Designation {  get; set; }

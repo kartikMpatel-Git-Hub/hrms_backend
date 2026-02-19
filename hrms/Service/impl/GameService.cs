@@ -41,6 +41,17 @@ namespace hrms.Service.impl
             newSlot.Game = game;
             newSlot.StartTime = newSlot.StartTime;
             newSlot = await _repository.CreateGameSlot(newSlot);
+
+            BookingSlot bookingSlot = new BookingSlot()
+            {
+                GameId = gameId,
+                StartTime = dto.StartTime,
+                EndTime = dto.EndTime,
+                Date = DateTime.Now,
+                Status = GameSlotStatus.AVAILABLE,
+            };
+            await _repository.CreateBookingSlot(bookingSlot);
+
             return _mapper.Map<GameSlotResponseDto>( newSlot );
         }
 

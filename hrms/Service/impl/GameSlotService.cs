@@ -120,7 +120,7 @@ namespace hrms.Service.impl
                         Game = slot.Game,
                         User = intUser.User,
                         GamePlayed = 0,
-                        LastPayledAt = DateTime.Now
+                        LastPlayedAt = DateTime.Now
                     };
                     await _userGameRpository.CreateUserState(newState);
                     states.Add(newState);
@@ -186,5 +186,6 @@ namespace hrms.Service.impl
             PagedReponseOffSet<User> users = await _userGameRpository.GetAvailablePlayers(gameId, key, pageSize, pageNumber);
             return _mapper.Map<PagedReponseDto<UserResponseDto>>(users);
         }
+
     }
 }

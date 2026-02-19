@@ -6,7 +6,7 @@ namespace hrms.Data
     public class ApplicationDbContext : DbContext
     {
         public ApplicationDbContext(DbContextOptions<ApplicationDbContext> options) : base(options)
-        {}
+        { }
         public DbSet<Department> Departments { get; set; }
         public DbSet<User> Users { get; set; }
         public DbSet<Travel> Travels { get; set; }
@@ -25,8 +25,10 @@ namespace hrms.Data
         public DbSet<UserGameState> UserGameStates { get; set; }
         public DbSet<GameSlot> GameSlots { get; set; }
         public DbSet<GameQueue> GameQueues { get; set; }
-        public DbSet<BookingSlot> WeeklyGameSlots { get; set; }
+        public DbSet<BookingSlot> BookingSlots { get; set; }
         public DbSet<BookingPlayer> BookingPlayers { get; set; }
+        public DbSet<SlotOffere> SlotOffers { get; set; }
+        public DbSet<RequestedPlayer> RequestedPlayers { get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
@@ -96,10 +98,10 @@ namespace hrms.Data
                     .HasColumnName("designation")
                     .HasMaxLength(30);
 
-                entity.HasOne(u => u.Manager)
+                entity.HasOne(u => u.Reported)
                       .WithMany(m => m.Employees)
-                      .HasConstraintName("fk_managaer_user_id")
-                      .HasForeignKey(u => u.ManagerId)
+                      .HasConstraintName("fk_reported_user_id")
+                      .HasForeignKey(u => u.ReportTo)
                       .OnDelete(DeleteBehavior.Restrict);
 
                 entity.HasOne(u => u.Department)
@@ -267,7 +269,7 @@ namespace hrms.Data
 
                 entity
                     .Property(e => e.Amount)
-                    .HasPrecision(10,2)
+                    .HasPrecision(10, 2)
                     .HasColumnName("expense_amount")
                     .IsRequired();
 
@@ -641,7 +643,7 @@ namespace hrms.Data
                     .HasColumnName("pk_user_game_state_id");
 
                 entity
-                    .Property(ug => ug.LastPayledAt)
+                    .Property(ug => ug.LastPlayedAt)
                     .IsRequired()
                     .HasColumnName("last_played_at");
 
@@ -692,7 +694,7 @@ namespace hrms.Data
                     .HasConstraintName("fk_user_slot_game_id")
                     .OnDelete(DeleteBehavior.Restrict);
 
-                
+
             });
 
             modelBuilder.Entity<GameQueue>(entity =>
@@ -762,7 +764,12 @@ namespace hrms.Data
                     .IsRequired()
                     .HasColumnName("status")
                     .HasMaxLength(20);
-                
+
+                entity
+                     .Property(gq => gq.CurrentPriorityOrder)
+                     .IsRequired()
+                     .HasColumnName("current_priority_order");
+
                 entity
                     .Property(gq => gq.StartTime)
                     .IsRequired()
@@ -806,7 +813,76 @@ namespace hrms.Data
 
             });
 
-        }
+            modelBuilder.Entity<SlotOffere>(entity =>
+            {
+                entity.ToTable("slot_offers");
 
+                entity.HasKey(so => so.Id);
+
+                entity
+                    .Property(so => so.Id)
+                    .HasColumnName("pk_slot_offer_id");
+
+                entity
+                    .HasOne(so => so.Slot)
+                    .WithMany(s => s.Offers)
+                    .HasForeignKey(so => so.BookingSlotId)
+                    .HasConstraintName("fk_slot_offer_booking_slot_id")
+                    .OnDelete(DeleteBehavior.Restrict);
+
+                entity
+                    .HasOne(so => so.Offered)
+                    .WithMany()
+                    .HasForeignKey(so => so.OffereTo)
+                    .HasConstraintName("fk_slot_offer_offered_to_id")
+                    .OnDelete(DeleteBehavior.Restrict);
+
+                entity
+                    .Property(so => so.PriorityOrder)
+                    .IsRequired()
+                    .HasColumnName("priority_order");
+
+                entity
+                    .Property(so => so.CreatedAt)
+                    .IsRequired()
+                    .HasColumnName("created_at");
+
+                entity
+                    .Property(so => so.ExpiredAt)
+                    .HasColumnName("expired_at");
+
+                entity
+                    .Property(so => so.Status)
+                    .HasConversion<String>()
+                    .IsRequired()
+                    .HasColumnName("status")
+                    .HasMaxLength(20);
+            });
+            
+             modelBuilder.Entity<RequestedPlayer>(entity =>
+            {
+                entity.ToTable("requested_players");
+
+                entity.HasKey(rp => rp.Id);
+
+                entity
+                    .Property(rp => rp.Id)
+                    .HasColumnName("pk_requested_player_id");
+
+                entity
+                    .HasOne(rp => rp.Slot)
+                    .WithMany(sbr => sbr.RequestedPlayers)
+                    .HasForeignKey(rp => rp.SlotId)
+                    .HasConstraintName("fk_requested_player_slot_id")
+                    .OnDelete(DeleteBehavior.Restrict);
+
+                entity
+                    .HasOne(rp => rp.Player)
+                    .WithMany()
+                    .HasForeignKey(rp => rp.PlayerId)
+                    .HasConstraintName("fk_requested_player_player_id")
+                    .OnDelete(DeleteBehavior.Restrict);
+                });
+        }
     }
 }

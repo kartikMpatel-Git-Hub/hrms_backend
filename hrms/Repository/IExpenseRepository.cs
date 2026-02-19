@@ -1,4 +1,5 @@
-﻿using hrms.Model;
+﻿using hrms.Dto.Response.Other;
+using hrms.Model;
 
 namespace hrms.Repository
 {
@@ -13,5 +14,6 @@ namespace hrms.Repository
         Task<List<Expense>> GetAllTravelTravelerExpense(int travelId, int travelerId);
         Task<Expense> GetExpenseById(int expenseId);
         Task<Expense> UpdateExpenseStatus(Expense expense);
+        Task<PagedReponseOffSet<Expense>> GetAllExpenses(int pageNumber, int pageSize, int currentUserId);
     }
 }

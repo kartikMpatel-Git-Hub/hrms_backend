@@ -102,6 +102,7 @@ namespace hrms.Controllers
         }
 
         [HttpPut("game-interest/{gameId}")]
+        [Authorize]
         public async Task<IActionResult> UpdateUserGameInterest(int? gameId)
         {   
 

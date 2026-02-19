@@ -40,6 +40,19 @@ namespace hrms.Repository.impl
             UserGameState gameState = await _db.UserGameStates
                                 .Where((ugs) => ugs.UserId == userId && ugs.GameId == gameId)
                                 .FirstOrDefaultAsync();
+            if(gameState == null)
+            {
+                gameState = new UserGameState()
+                {
+                    UserId = userId,
+                    GameId = gameId,
+                    GamePlayed = 0,
+                    LastPlayedAt = DateTime.Now
+                };
+                var savedEntity = await _db.UserGameStates.AddAsync(gameState);
+                await _db.SaveChangesAsync();
+                return savedEntity.Entity;
+            }
             return gameState;
         }
 
@@ -131,6 +144,15 @@ namespace hrms.Repository.impl
             
             PagedReponseOffSet<User> pagedReponse = new PagedReponseOffSet<User>(users, pageNumber, pageSize, total);
             return pagedReponse;
+        }
+
+        public Task<List<int>> GetUserGameStates(int gameId, int gamePlayed)
+        {
+            return _db.UserGameStates
+                    .Where(ugs => ugs.GameId == gameId && ugs.GamePlayed < gamePlayed)
+                    .OrderBy(u => u.GamePlayed)
+                    .Select(u => u.UserId)
+                    .ToListAsync();
         }
     }
 }

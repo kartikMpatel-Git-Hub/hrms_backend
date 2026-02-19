@@ -10,6 +10,7 @@ using hrms.Dto.Response.Expense.Category;
 using hrms.Dto.Response.Expense.Proof;
 using hrms.Dto.Response.Game;
 using hrms.Dto.Response.Game.GameSlot;
+using hrms.Dto.Response.Game.offere;
 using hrms.Dto.Response.Job;
 using hrms.Dto.Response.Notification;
 using hrms.Dto.Response.Other;
@@ -72,18 +73,40 @@ namespace hrms.Utility
                 dest => dest.Status,
                 opt => opt.MapFrom(src => GetStatus(src.Status)));
 
+            CreateMap<SlotOffere,SlotOffereResponseDto>()
+                .ForMember(
+                dest => dest.Status,
+                opt => opt.MapFrom(src => GetStatus(src.Status)));
+
             CreateMap<BookingPlayer,BookingPlayerResponseDto>();
 
 
             CreateMap(typeof(PagedReponseOffSet<>),typeof(PagedReponseDto<>));
         }
 
+        private object GetStatus(SlotOfferStatus status)
+        {
+            switch (status)
+            {
+                case SlotOfferStatus.Accepted:
+                    return "Accepted";
+                case SlotOfferStatus.InProcess:
+                    return "InProcess";
+                case SlotOfferStatus.Pending:
+                    return "Pending";
+                case SlotOfferStatus.Expired:
+                    return "Expired";
+                default:
+                    return "Unknown";
+            }
+        }
+
         private object GetStatus(GameSlotStatus status)
         {
             switch (status)
             {
-                case GameSlotStatus.COMPLETED:
-                    return "Completed";
+                case GameSlotStatus.WAITING:
+                    return "Waiting";
                 case GameSlotStatus.BOOKED:
                     return "Booked";
                 case GameSlotStatus.AVAILABLE:

@@ -7,22 +7,35 @@ using System.Net;
 
 namespace hrms.Repository.impl
 {
-    public class UserRepository : IUserRepository
+    public class UserRepository(
+        ApplicationDbContext _context
+        ) : IUserRepository
     {
-
-        public readonly ApplicationDbContext _context;
-
-        public UserRepository(ApplicationDbContext context)
-        {
-            this._context = context;
-        }
-
-
         public async Task<User> AddAsync(User user)
         {
             var AddedEntity = await _context.Users.AddAsync(user);
             await _context.SaveChangesAsync();
             var AddedUser = AddedEntity.Entity;
+            foreach(var game in await _context.Games.ToListAsync())
+            {
+                var userGameState = new UserGameState()
+                {
+                    UserId = AddedUser.Id,
+                    GameId = game.Id,
+                    GamePlayed = 0,
+                    LastPlayedAt = DateTime.Now
+                };
+                await _context.UserGameStates.AddAsync(userGameState);
+                await _context.SaveChangesAsync();
+                var userGameInterest = new UserGameInterest()
+                {
+                    UserId = AddedUser.Id,
+                    GameId = game.Id,
+                    Status = InterestStatus.NOTINTERESTED
+                };
+                await _context.UserGameInterests.AddAsync(userGameInterest);
+                await _context.SaveChangesAsync();
+            }
             return AddedUser;
 
         }
@@ -32,7 +45,7 @@ namespace hrms.Repository.impl
             return await _context.Users.AnyAsync((u) => u.Email == email);
         }
 
-        public async Task<PagedReponseOffSet<User>> GetAll(int PageSize,int PageNumber)
+        public async Task<PagedReponseOffSet<User>> GetAll(int PageSize, int PageNumber)
         {
             var TotalRecords = await _context.Users.Where(u => !u.is_deleted).CountAsync();
             Console.WriteLine($"Total User : {TotalRecords}");
@@ -177,26 +190,26 @@ namespace hrms.Repository.impl
 
         public async Task ToggleGameInterestStatus(int userId, int gameId)
         {
-                UserGameInterest? interest = _context.UserGameInterests
-                    .FirstOrDefault(ugi => ugi.UserId == userId && ugi.GameId == gameId);
-    
-                if (interest == null)
+            UserGameInterest? interest = _context.UserGameInterests
+                .FirstOrDefault(ugi => ugi.UserId == userId && ugi.GameId == gameId);
+
+            if (interest == null)
+            {
+                interest = new UserGameInterest
                 {
-                    interest = new UserGameInterest
-                    {
-                        UserId = userId,
-                        GameId = gameId,
-                        Status = InterestStatus.INTERESTED
-                    };
-                    await _context.UserGameInterests.AddAsync(interest);
-                }
-                else
-                {
-                    interest.Status = interest.Status == InterestStatus.INTERESTED ? InterestStatus.NOTINTERESTED : InterestStatus.INTERESTED;
-                    _context.UserGameInterests.Update(interest);
-                }
-    
-                await _context.SaveChangesAsync();
+                    UserId = userId,
+                    GameId = gameId,
+                    Status = InterestStatus.INTERESTED
+                };
+                await _context.UserGameInterests.AddAsync(interest);
+            }
+            else
+            {
+                interest.Status = interest.Status == InterestStatus.INTERESTED ? InterestStatus.NOTINTERESTED : InterestStatus.INTERESTED;
+                _context.UserGameInterests.Update(interest);
+            }
+
+            await _context.SaveChangesAsync();
         }
     }
 }

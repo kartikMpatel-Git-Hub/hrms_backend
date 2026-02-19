@@ -60,8 +60,8 @@ builder.Services.AddQuartz(q =>
         .ForJob(jobKey)
         .WithIdentity("WeeklyJob-trigger")
         .StartNow()
-        //.WithCronSchedule("0 0/1 * * * ?")
-        //.WithCronSchedule("0 0 0 ? * MON")
+        //.WithCronSchedule("0 0 0 * * ?")
+    //.WithCronSchedule("0 0 0 ? * MON")
     );
 });
 
@@ -95,6 +95,9 @@ builder.Services.AddScoped<IJobService, JobService>();
 builder.Services.AddScoped<IJobReviewerService, JobReviewerService>();
 builder.Services.AddScoped<IGameService, GameService>();
 builder.Services.AddScoped<IGameSlotService, GameSlotService>();
+builder.Services.AddScoped<ISlotBookingService, SlotBookingService>();
+
+builder.Services.AddHostedService<SlotPriorotyCornJob>();
 
 builder.Services.AddAutoMapper(typeof(MappingProfile));
 

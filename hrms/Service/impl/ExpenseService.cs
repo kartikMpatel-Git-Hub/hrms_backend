@@ -4,6 +4,7 @@ using hrms.Dto.Request.Category;
 using hrms.Dto.Request.Expense;
 using hrms.Dto.Response.Expense;
 using hrms.Dto.Response.Expense.Category;
+using hrms.Dto.Response.Other;
 using hrms.Model;
 using hrms.Repository;
 
@@ -150,6 +151,12 @@ namespace hrms.Service.impl
                 default:
                     throw new NotFoundCustomException($"Expense status : {status} not found !");
             }
+        }
+
+        public async Task<PagedReponseDto<ExpenseResponseDto>> GetAllExpenses(int pageNumber, int pageSize, int currentUserId)
+        {
+            PagedReponseOffSet<Expense> expenses =  await _repository.GetAllExpenses(pageNumber, pageSize, currentUserId);
+            return _mapper.Map<PagedReponseDto<ExpenseResponseDto>>(expenses);
         }
     }
 }

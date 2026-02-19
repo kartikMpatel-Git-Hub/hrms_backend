@@ -1,8 +1,10 @@
 ﻿using hrms.CustomException;
 using hrms.Dto.Request.BookingSlot;
 using hrms.Dto.Response.BookingSlot;
+using hrms.Dto.Response.Game.offere;
 using hrms.Dto.Response.Other;
 using hrms.Dto.Response.User;
+using hrms.Model;
 using hrms.Service;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
@@ -13,7 +15,10 @@ namespace hrms.Controllers
     [Route("game")]
     [ApiController]
     [Authorize]
-    public class BookingSlotContoller(IGameSlotService _service) : Controller
+    public class BookingSlotContoller(
+        IGameSlotService _service,
+        ISlotBookingService _slotBookingService
+        ) : Controller
     {
 
         [HttpPost("{gameId}/booking/{bookingSlotId}")]
@@ -28,9 +33,43 @@ namespace hrms.Controllers
                 throw new UnauthorizedCustomException($"Unauthorized Access !");
             int CurrentUserId = Int32.Parse(CurrentUser.FindFirst(ClaimTypes.PrimarySid)?.Value);
 
-            BookingSlotResponseDto response = await _service.BookSlot((int)bookingSlotId, CurrentUserId, dto);
+            BookingSlotResponseDto response = await _slotBookingService.BookSlot((int)bookingSlotId, CurrentUserId, dto);
             return Ok(response);
         }
+
+        [HttpPost("offere/{offerId}/accept")]
+        public async Task<IActionResult> AcceptOffere(int? offerId,BookSlotRequestDto? dto)
+        {
+            if (offerId == null)
+                return BadRequest($"Offere Id Not Found !");
+            if(dto == null)
+                return BadRequest($"Players Information Not Found !");
+            await _slotBookingService.AcceptOffer((int)offerId, dto);
+            return Ok($"Offere Accepted !");
+        }
+
+        [HttpPost("offere/{offerId}/reject")]
+        public async Task<IActionResult> RejectOffere(int? offerId)
+        {
+            if (offerId == null)
+                return BadRequest($"Offere Id Not Found !");
+            await _slotBookingService.RejectOffer((int)offerId);
+            return Ok($"Offere Rejected !");
+        }
+
+        [HttpGet("{gameId}/offere")]
+        public async Task<IActionResult> GetActiveOfferes(int? gameId)
+        {
+            if (gameId == null)
+                return BadRequest("Game id Not found !!");
+            var CurrentUser = User;
+            if (CurrentUser == null)
+                throw new UnauthorizedCustomException($"Unauthorized Access !");
+            int CurrentUserId = Int32.Parse(CurrentUser.FindFirst(ClaimTypes.PrimarySid)?.Value);
+            List<SlotOffereResponseDto> slotOfferes = await _slotBookingService.GetActiveOfferes(CurrentUserId,(int)gameId);
+            return Ok(slotOfferes);
+        }
+
 
         [HttpGet("{gameId}/booking/{bookingSlotId}")]
         public async Task<IActionResult> GetSlotInformation(int? bookingSlotId)

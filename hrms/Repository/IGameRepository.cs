@@ -17,5 +17,6 @@ namespace hrms.Repository
         Task RemoveGameSlot(GameSlot gameSlot);
         Task<Game> UpdateGame(Game updatedGame);
         Task<GameSlot> UpdateGameSlot(GameSlot updatedGameSlot);
+        Task CreateBookingSlot(BookingSlot bookingSlot);
     }
 }
