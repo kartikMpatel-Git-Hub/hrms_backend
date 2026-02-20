@@ -82,6 +82,7 @@ builder.Services.AddScoped<IJobShareRepository, JobShareRepository>();
 builder.Services.AddScoped<IGameRepository, GameRepository>();
 builder.Services.AddScoped<IGameBookingRepository, GameBookingRepository>();
 builder.Services.AddScoped<IUserGameRepository, UserGameRepository>();
+builder.Services.AddScoped<IPostRepository, PostRepository>();
 
 builder.Services.AddScoped<IAuthenticationService, AuthenticationService>();
 builder.Services.AddScoped<IUserService, UserService>();
@@ -96,6 +97,7 @@ builder.Services.AddScoped<IJobReviewerService, JobReviewerService>();
 builder.Services.AddScoped<IGameService, GameService>();
 builder.Services.AddScoped<IGameSlotService, GameSlotService>();
 builder.Services.AddScoped<ISlotBookingService, SlotBookingService>();
+builder.Services.AddScoped<IPostService, PostService>();
 
 builder.Services.AddHostedService<SlotPriorotyCornJob>();
 

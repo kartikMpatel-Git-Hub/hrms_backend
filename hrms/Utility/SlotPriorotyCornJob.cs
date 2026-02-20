@@ -7,14 +7,18 @@ using Quartz.Impl.AdoJobStore;
 
 namespace hrms.Utility
 {
-    public class SlotPriorotyCornJob(IServiceScopeFactory _serviceScopeFactory) : BackgroundService
+    public class SlotPriorotyCornJob(IServiceScopeFactory _serviceScopeFactory) 
+    : BackgroundService
     {
         protected override async Task ExecuteAsync(CancellationToken stoppingToken)
         {
             while (!stoppingToken.IsCancellationRequested)
             {
-                await ProcessSlots();
-                await Task.Delay(TimeSpan.FromMinutes(4), stoppingToken);
+                // await ProcessSlots();
+                await Task.Delay(
+                    TimeSpan.FromSeconds(10), 
+                    // TimeSpan.FromMinutes(4), 
+                    stoppingToken);
             }
         }
 
@@ -24,15 +28,17 @@ namespace hrms.Utility
             var _db = scope.ServiceProvider.GetRequiredService<ApplicationDbContext>();
             var _email = scope.ServiceProvider.GetRequiredService<IEmailService>();
             var now = DateTime.Now;
+
+
+
             var slots = await _db.BookingSlots
                         .Include(s => s.Offers)
                         .Include(s => s.RequestedPlayers)
                         .Where(s => s.Status == Model.GameSlotStatus.WAITING)
                         .ToListAsync();
-            System.Console.WriteLine("Active Slot : " + slots.Count);
 
             var activeSlots = slots.Where(s => s.Date.Add(s.StartTime.ToTimeSpan()) > now).ToList();
-
+            System.Console.WriteLine("Active Slot : " + activeSlots.Count);
             foreach (var slot in activeSlots)
             {
                 await ProcessSlot(slot, now, _db, _email);
@@ -63,14 +69,14 @@ namespace hrms.Utility
                 return;
             }
             var activeOffers = slot.Offers
-                    .Where(o => o.Status == SlotOfferStatus.InProcess)
+                    .Where(o => o.Status == SlotOfferStatus.InProcess && o.BookingSlotId == slot.Id)
                     .OrderBy(o => o.PriorityOrder)
                     .FirstOrDefault();
             if (activeOffers == null)
             {
                 await CreateNextOffer(db,slot,emailService);
                 activeOffers = slot.Offers
-                    .Where(o => o.Status == SlotOfferStatus.InProcess)
+                    .Where(o => o.Status == SlotOfferStatus.InProcess && o.BookingSlotId == slot.Id)
                     .OrderBy(o => o.PriorityOrder)
                     .FirstOrDefault();
             }

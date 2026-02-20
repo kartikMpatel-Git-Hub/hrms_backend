@@ -61,11 +61,11 @@ namespace hrms.Repository.impl
                         wgs.Id == slotId &&
                         wgs.is_deleted == false
                     )
-                .Include((b) => 
+                .Include((b) =>
                     b.Players
                         .Where((p) => p.is_deleted == false)
                     )
-                .ThenInclude((p)=>p.Player)
+                .ThenInclude((p) => p.Player)
                 .Include(s => s.Game)
                 .FirstOrDefaultAsync();
             return slot == null ? throw new NotFoundCustomException($"BookingSlot with Id : {slotId} Not Found !") : slot;
@@ -80,6 +80,7 @@ namespace hrms.Repository.impl
                         wgs.is_deleted == false &&
                         wgs.Date.Date >= from.Date && wgs.Date.Date <= to.Date
                     )
+                .OrderBy(s => s.StartTime)
                 .ToListAsync();
             return slot;
         }
@@ -126,6 +127,12 @@ namespace hrms.Repository.impl
                 offer.Status = SlotOfferStatus.Expired;
                 _db.SlotOffers.Update(offer);
             }
+            await _db.SaveChangesAsync();
+        }
+
+        public async Task AddPlayerToRequest(RequestedPlayer requestedPlayer)
+        {
+            await _db.RequestedPlayers.AddAsync(requestedPlayer);
             await _db.SaveChangesAsync();
         }
     }

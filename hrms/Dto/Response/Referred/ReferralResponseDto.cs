@@ -13,6 +13,7 @@ namespace hrms.Dto.Response.Referred
         public string Note { get; set; }
         public string Status { get; set; }
         public int ReferedBy { get; set; }
+        public string Referer { get; set; }
         public int JobId { get; set; }
         public DateTime ReferedAt { get; set; }
     }

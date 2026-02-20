@@ -602,6 +602,155 @@ namespace hrms.Migrations
                     b.ToTable("notifications", (string)null);
                 });
 
+            modelBuilder.Entity("hrms.Model.Post", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .HasColumnName("pk_post_id");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+
+                    b.Property<string>("Description")
+                        .IsRequired()
+                        .HasMaxLength(1000)
+                        .HasColumnType("nvarchar(1000)")
+                        .HasColumnName("description");
+
+                    b.Property<bool>("InAppropriate")
+                        .HasColumnType("bit")
+                        .HasColumnName("is_inappropriate");
+
+                    b.Property<bool>("IsPublic")
+                        .HasColumnType("bit")
+                        .HasColumnName("is_public");
+
+                    b.Property<int>("PostById")
+                        .HasColumnType("int");
+
+                    b.Property<string>("PostUrl")
+                        .IsRequired()
+                        .HasMaxLength(500)
+                        .HasColumnType("nvarchar(500)")
+                        .HasColumnName("post_url");
+
+                    b.Property<string>("Title")
+                        .IsRequired()
+                        .HasMaxLength(100)
+                        .HasColumnType("nvarchar(100)")
+                        .HasColumnName("title");
+
+                    b.Property<DateTime>("created_at")
+                        .HasColumnType("datetime2");
+
+                    b.Property<bool>("is_deleted")
+                        .HasColumnType("bit");
+
+                    b.Property<DateTime>("updated_at")
+                        .HasColumnType("datetime2");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("PostById");
+
+                    b.ToTable("posts", (string)null);
+                });
+
+            modelBuilder.Entity("hrms.Model.PostComment", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .HasColumnName("pk_post_comment_id");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+
+                    b.Property<string>("Comment")
+                        .IsRequired()
+                        .HasMaxLength(500)
+                        .HasColumnType("nvarchar(500)")
+                        .HasColumnName("comment");
+
+                    b.Property<int>("CommentById")
+                        .HasColumnType("int");
+
+                    b.Property<int>("PostId")
+                        .HasColumnType("int");
+
+                    b.Property<DateTime>("created_at")
+                        .HasColumnType("datetime2");
+
+                    b.Property<bool>("is_deleted")
+                        .HasColumnType("bit");
+
+                    b.Property<DateTime>("updated_at")
+                        .HasColumnType("datetime2");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("CommentById");
+
+                    b.HasIndex("PostId");
+
+                    b.ToTable("post_comments", (string)null);
+                });
+
+            modelBuilder.Entity("hrms.Model.PostLike", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .HasColumnName("pk_post_like_id");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+
+                    b.Property<bool>("IsDeleted")
+                        .HasColumnType("bit")
+                        .HasColumnName("is_deleted");
+
+                    b.Property<int>("LikedById")
+                        .HasColumnType("int");
+
+                    b.Property<int>("PostId")
+                        .HasColumnType("int");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("LikedById");
+
+                    b.HasIndex("PostId");
+
+                    b.ToTable("post_likes", (string)null);
+                });
+
+            modelBuilder.Entity("hrms.Model.PostTag", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .HasColumnName("pk_post_tag_id");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+
+                    b.Property<bool>("IsDeleted")
+                        .HasColumnType("bit")
+                        .HasColumnName("is_deleted");
+
+                    b.Property<int>("PostId")
+                        .HasColumnType("int");
+
+                    b.Property<int>("TagId")
+                        .HasColumnType("int");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("PostId");
+
+                    b.HasIndex("TagId");
+
+                    b.ToTable("post_tags", (string)null);
+                });
+
             modelBuilder.Entity("hrms.Model.RequestedPlayer", b =>
                 {
                     b.Property<int>("Id")
@@ -666,6 +815,30 @@ namespace hrms.Migrations
                     b.HasIndex("OffereTo");
 
                     b.ToTable("slot_offers", (string)null);
+                });
+
+            modelBuilder.Entity("hrms.Model.Tag", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .HasColumnName("pk_tag_id");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+
+                    b.Property<string>("IsDeleted")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("TagName")
+                        .IsRequired()
+                        .HasMaxLength(30)
+                        .HasColumnType("nvarchar(30)")
+                        .HasColumnName("tag_name");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("tags", (string)null);
                 });
 
             modelBuilder.Entity("hrms.Model.Travel", b =>
@@ -1168,6 +1341,81 @@ namespace hrms.Migrations
                     b.Navigation("Notified");
                 });
 
+            modelBuilder.Entity("hrms.Model.Post", b =>
+                {
+                    b.HasOne("hrms.Model.User", "PostByUser")
+                        .WithMany()
+                        .HasForeignKey("PostById")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired()
+                        .HasConstraintName("fk_post_by_user_id");
+
+                    b.Navigation("PostByUser");
+                });
+
+            modelBuilder.Entity("hrms.Model.PostComment", b =>
+                {
+                    b.HasOne("hrms.Model.User", "CommentBy")
+                        .WithMany()
+                        .HasForeignKey("CommentById")
+                        .OnDelete(DeleteBehavior.Restrict)
+                        .IsRequired()
+                        .HasConstraintName("fk_post_comment_by_user_id");
+
+                    b.HasOne("hrms.Model.Post", "Post")
+                        .WithMany("Comments")
+                        .HasForeignKey("PostId")
+                        .OnDelete(DeleteBehavior.Restrict)
+                        .IsRequired()
+                        .HasConstraintName("fk_post_comment_post_id");
+
+                    b.Navigation("CommentBy");
+
+                    b.Navigation("Post");
+                });
+
+            modelBuilder.Entity("hrms.Model.PostLike", b =>
+                {
+                    b.HasOne("hrms.Model.User", "LikedBy")
+                        .WithMany()
+                        .HasForeignKey("LikedById")
+                        .OnDelete(DeleteBehavior.Restrict)
+                        .IsRequired()
+                        .HasConstraintName("fk_post_like_by_user_id");
+
+                    b.HasOne("hrms.Model.Post", "Post")
+                        .WithMany("Likes")
+                        .HasForeignKey("PostId")
+                        .OnDelete(DeleteBehavior.Restrict)
+                        .IsRequired()
+                        .HasConstraintName("fk_post_like_post_id");
+
+                    b.Navigation("LikedBy");
+
+                    b.Navigation("Post");
+                });
+
+            modelBuilder.Entity("hrms.Model.PostTag", b =>
+                {
+                    b.HasOne("hrms.Model.Post", "Post")
+                        .WithMany("PostTags")
+                        .HasForeignKey("PostId")
+                        .OnDelete(DeleteBehavior.Restrict)
+                        .IsRequired()
+                        .HasConstraintName("fk_post_tag_post_id");
+
+                    b.HasOne("hrms.Model.Tag", "Tag")
+                        .WithMany()
+                        .HasForeignKey("TagId")
+                        .OnDelete(DeleteBehavior.Restrict)
+                        .IsRequired()
+                        .HasConstraintName("fk_post_tag_tag_id");
+
+                    b.Navigation("Post");
+
+                    b.Navigation("Tag");
+                });
+
             modelBuilder.Entity("hrms.Model.RequestedPlayer", b =>
                 {
                     b.HasOne("hrms.Model.User", "Player")
@@ -1358,6 +1606,15 @@ namespace hrms.Migrations
             modelBuilder.Entity("hrms.Model.Job", b =>
                 {
                     b.Navigation("Reviewers");
+                });
+
+            modelBuilder.Entity("hrms.Model.Post", b =>
+                {
+                    b.Navigation("Comments");
+
+                    b.Navigation("Likes");
+
+                    b.Navigation("PostTags");
                 });
 
             modelBuilder.Entity("hrms.Model.Travel", b =>

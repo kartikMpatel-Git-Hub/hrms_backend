@@ -1,11 +1,9 @@
-﻿using CloudinaryDotNet;
-using hrms.CustomException;
+﻿using hrms.CustomException;
 using hrms.Dto.Request.Category;
 using hrms.Dto.Request.Expense;
 using hrms.Dto.Response.Expense;
 using hrms.Dto.Response.Expense.Category;
 using hrms.Dto.Response.Other;
-using hrms.Model;
 using hrms.Service;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
@@ -19,12 +17,14 @@ namespace hrms.Controllers
     public class ExpenseController : Controller
     {
         private readonly IExpenseService _service;
-        private readonly ICloudinaryService _cloudinary;
+        //private readonly ICloudinaryService _cloudinary;
 
-        public ExpenseController(IExpenseService service, ICloudinaryService cloudinary)
+        public ExpenseController(IExpenseService service
+            //, ICloudinaryService cloudinary
+            )
         {
             _service = service;
-            _cloudinary = cloudinary;
+            //_cloudinary = cloudinary;
         }
 
 

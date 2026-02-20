@@ -12,6 +12,7 @@ namespace hrms.Service.impl
 {
     public class GameService(
         IGameRepository _repository,
+        IUserGameRepository _userGameRpository,
         IMapper _mapper) : IGameService
     {
         public async Task<GameResponseDto> CreateGame(GameCreateDto dto)
@@ -77,6 +78,16 @@ namespace hrms.Service.impl
         {
             Game game = await _repository.GetGameById(gameId);
             return _mapper.Map<GameResponseWithSlot>(game);
+        }
+
+        public Task<bool> IsUserInterestedInGame(int currentUserId, int gameId)
+        {
+            return _userGameRpository.IsUserInterestedInGame(currentUserId, gameId);
+        }
+
+        public Task<bool> ToggleGameInterestStatus(int currentUserId, int gameId)
+        {
+            return _userGameRpository.ToggleGameInterestStatus(currentUserId, gameId);
         }
 
         public async Task<GameResponseDto> UpdateGame(int gameId, GameUpdateDto dto)

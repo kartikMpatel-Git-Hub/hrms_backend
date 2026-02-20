@@ -17,5 +17,6 @@ namespace hrms.Repository
         Task<SlotOffere> GetSlotOffer(int offerId);
         Task UpdateSlotOffer(SlotOffere offer);
         Task ExpriredOffrers(int bookingSlotId);
+        Task AddPlayerToRequest(RequestedPlayer requestedPlayer);
     }
 }

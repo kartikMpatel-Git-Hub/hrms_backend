@@ -175,6 +175,7 @@ namespace hrms.Service.impl
 
         private async Task MailAfterShared(JobShared jobShared)
         {
+            System.Console.WriteLine("Job Shared Mail Function Called");
             StringBuilder mailBodyBuilder = new StringBuilder();
             mailBodyBuilder.Append("<h1>Job Opening</h1>");
             mailBodyBuilder.Append($"<h4>Job Title : {jobShared.Job.Title}</h4>");
@@ -188,6 +189,47 @@ namespace hrms.Service.impl
             mailBodyBuilder.Append($"<h3>View JD : {jobShared.Job.JdUrl}</h3>");
 
             await _email.SendEmailAsync(jobShared.SharedTo, $"Job Opening for {jobShared.Job.Title}", mailBodyBuilder.ToString());
+            System.Console.WriteLine("Job Shared Mail Sent");
+        }
+
+        public async Task<PagedReponseDto<SharedJobResponseDto>> GetSharedJobByJobId(int jobId, int pageNumber, int pageSize)
+        {
+            PagedReponseOffSet<JobShared> pagedReponse = await  _jobShareRepository.GetSharedJobByJobId(jobId, pageNumber, pageSize);
+            return _mappers.Map<PagedReponseDto<SharedJobResponseDto>>(pagedReponse);
+        }
+
+        public async Task<JobResponseDto> UpdateJob(int jobId, int hrId, JobUpdateDto job)
+        {
+            Job jobToUpdate = await _repository.GetJobById(jobId);
+            if (jobToUpdate.CreatedBy != hrId)
+                throw new UnauthorizedAccessException($"Unauthorized Access !");    
+            if(job.Title != null)
+                jobToUpdate.Title = job.Title;
+            if(job.JobRole != null)
+                jobToUpdate.JobRole = job.JobRole;
+            if(job.Place != null)
+                jobToUpdate.Place = job.Place;
+            if(job.Requirements != null)
+                jobToUpdate.Requirements = job.Requirements;
+            if(job.IsActive != jobToUpdate.IsActive)
+                jobToUpdate.IsActive = job.IsActive;
+            Job updatedJob = await _repository.UpdateJob(jobToUpdate);
+            await _email.SendEmailAsync(jobToUpdate.Contact.Email, $"Job Updated for {jobToUpdate.Title}", $"Job with Title {jobToUpdate.Title} has been updated. Please check the job details.");
+            foreach (var reviewer in jobToUpdate.Reviewers)
+            {
+                string email = reviewer.Reviewer.Email;
+                await _email.SendEmailAsync(email, $"Job Updated for {jobToUpdate.Title}", $"Job with Title {jobToUpdate.Title} has been updated. Please check the job details.");
+            }
+            return _mappers.Map<JobResponseDto>(updatedJob);
+
+        }
+
+        public async Task DeleteJob(int jobId, int hrId)
+        {
+            Job job = await _repository.GetJobById(jobId);
+            if (job.CreatedBy != hrId)
+                throw new UnauthorizedAccessException($"Unauthorized Access !");
+            await _repository.DeleteJob(job);
         }
     }
 }

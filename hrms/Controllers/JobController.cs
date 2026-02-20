@@ -42,6 +42,22 @@ namespace hrms.Controllers
             return Ok(response);
         }
 
+
+        [HttpPut("{jobId}")]
+        [Authorize(Roles = "HR")]
+        [Consumes("multipart/form-data")]
+        public async Task<IActionResult> UpdateJob(int? jobId, JobUpdateDto? job)
+        {
+            if (jobId == null || job == null)
+                throw new ArgumentNullException("Job Id or Job Body Not Found !");
+            var CurrentUser = User;
+            if (CurrentUser == null)               
+                throw new UnauthorizedCustomException($"Unauthorized Access !"); 
+            int hrId = Int32.Parse(CurrentUser.FindFirst(ClaimTypes.PrimarySid)?.Value);
+            JobResponseDto response = await _service.UpdateJob((int)jobId, hrId, job);
+            return Ok(response);
+        }
+
         [HttpGet("hr/created")]
         [Authorize(Roles = "HR")]
         public async Task<IActionResult> GetJobsCreatedByHr(int pageNumber = 1, int pageSize = 10)
@@ -92,7 +108,7 @@ namespace hrms.Controllers
         }
 
 
-        [HttpPost("{jobId}/referred")]
+        [HttpPost("{jobId}/referre")]
         [Authorize(Roles = "EMPLOYEE")]
         public async Task<IActionResult> ReferedJob(
             int? jobId,ReferralCreateDto? dto)
@@ -184,5 +200,33 @@ namespace hrms.Controllers
             return Ok(response);
         }
 
+        [HttpGet("{jobId}/share")]
+        public async Task<IActionResult> GetSharedJobByJobId(int? jobId, int pageNumber = 1, int pageSize = 10)
+        {
+            if (jobId == null)
+                throw new ArgumentNullException($"Job Id not found !");
+            if (pageNumber < 1 || pageSize < 1)
+                throw new InvalidOperationCustomException($"Invalid Pagination !");
+
+            PagedReponseDto<SharedJobResponseDto> response = await _service.GetSharedJobByJobId((int)jobId,pageNumber,pageSize);
+
+            return Ok(response);
+        }
+
+        [HttpDelete("{jobId}")]
+        [Authorize(Roles = "HR")]
+        public async Task<IActionResult> DeleteJob(int? jobId)
+        {
+            if (jobId == null)
+                throw new ArgumentNullException($"Job Id not found !");
+
+            var CurrentUser = User;
+            if (CurrentUser == null)
+                throw new UnauthorizedCustomException($"Unauthorized Access !");
+
+            int hrId = Int32.Parse(CurrentUser.FindFirst(ClaimTypes.PrimarySid)?.Value);
+            await _service.DeleteJob((int)jobId, hrId);
+            return Ok(new { message = "Job Deleted Successfully !" });
+        }
     }
 }
