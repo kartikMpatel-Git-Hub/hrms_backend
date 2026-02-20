@@ -29,6 +29,11 @@ namespace hrms.Data
         public DbSet<BookingPlayer> BookingPlayers { get; set; }
         public DbSet<SlotOffere> SlotOffers { get; set; }
         public DbSet<RequestedPlayer> RequestedPlayers { get; set; }
+        public DbSet<Tag> Tags { get; set; }
+        public DbSet<Post> Posts { get; set; }
+        public DbSet<PostComment> PostComments { get; set; }
+        public DbSet<PostTag> PostTags { get; set; }
+        public DbSet<PostLike> PostLikes { get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
@@ -858,8 +863,8 @@ namespace hrms.Data
                     .HasColumnName("status")
                     .HasMaxLength(20);
             });
-            
-             modelBuilder.Entity<RequestedPlayer>(entity =>
+
+            modelBuilder.Entity<RequestedPlayer>(entity =>
             {
                 entity.ToTable("requested_players");
 
@@ -882,7 +887,157 @@ namespace hrms.Data
                     .HasForeignKey(rp => rp.PlayerId)
                     .HasConstraintName("fk_requested_player_player_id")
                     .OnDelete(DeleteBehavior.Restrict);
-                });
+            });
+
+            modelBuilder.Entity<Tag>(entity =>
+            {
+                entity.ToTable("tags");
+
+                entity.HasKey(t => t.Id);
+
+                entity
+                    .Property(t => t.Id)
+                    .HasColumnName("pk_tag_id");
+
+                entity
+                    .Property(t => t.TagName)
+                    .IsRequired()
+                    .HasColumnName("tag_name")
+                    .HasMaxLength(30);
+            });
+
+            modelBuilder.Entity<Post>(entity =>
+            {
+                entity.ToTable("posts");
+
+                entity.HasKey(p => p.Id);
+
+                entity
+                    .Property(p => p.Id)
+                    .HasColumnName("pk_post_id");
+
+                entity
+                    .Property(p => p.PostUrl)
+                    .IsRequired()
+                    .HasColumnName("post_url")
+                    .HasMaxLength(500);
+                entity
+                     .Property(p => p.Title)
+                     .IsRequired()
+                     .HasColumnName("title")
+                     .HasMaxLength(100);
+
+                entity.Property(p => p.Description)
+                 .HasColumnName("description")
+                 .HasMaxLength(1000);
+
+                entity
+                    .Property(p => p.IsPublic)
+                    .IsRequired()
+                    .HasColumnName("is_public");
+
+                entity
+                    .Property(p => p.InAppropriate)
+                    .IsRequired()
+                    .HasColumnName("is_inappropriate");
+
+                entity
+                    .HasOne(p => p.PostByUser)
+                    .WithMany()
+                    .HasForeignKey(p => p.PostById)
+                    .HasConstraintName("fk_post_by_user_id");
+            });
+       
+            modelBuilder.Entity<PostComment>(entity =>
+            {
+                entity.ToTable("post_comments");
+
+                entity.HasKey(pc => pc.Id);
+
+                entity
+                    .Property(pc => pc.Id)
+                    .HasColumnName("pk_post_comment_id");
+
+                entity
+                    .Property(pc => pc.Comment)
+                    .IsRequired()
+                    .HasColumnName("comment")
+                    .HasMaxLength(500);
+
+                entity
+                    .HasOne(pc => pc.Post)
+                    .WithMany(p => p.Comments)
+                    .HasForeignKey(pc => pc.PostId)
+                    .HasConstraintName("fk_post_comment_post_id")
+                    .OnDelete(DeleteBehavior.Restrict);
+
+                entity
+                    .HasOne(pc => pc.CommentBy)
+                    .WithMany()
+                    .HasForeignKey(pc => pc.CommentById)
+                    .HasConstraintName("fk_post_comment_by_user_id")
+                    .OnDelete(DeleteBehavior.Restrict);
+            });
+
+            modelBuilder.Entity<PostLike>(entity =>
+            {
+                entity.ToTable("post_likes");
+
+                entity.HasKey(pl => pl.Id);
+
+                entity
+                    .Property(pl => pl.Id)
+                    .HasColumnName("pk_post_like_id");
+
+                entity
+                    .HasOne(pl => pl.Post)
+                    .WithMany(p => p.Likes)
+                    .HasForeignKey(pl => pl.PostId)
+                    .HasConstraintName("fk_post_like_post_id")
+                    .OnDelete(DeleteBehavior.Restrict);
+
+                entity
+                    .HasOne(pl => pl.LikedBy)
+                    .WithMany()
+                    .HasForeignKey(pl => pl.LikedById)
+                    .HasConstraintName("fk_post_like_by_user_id")
+                    .OnDelete(DeleteBehavior.Restrict);
+                
+                entity  
+                    .Property(pl => pl.IsDeleted)
+                    .IsRequired()
+                    .HasColumnName("is_deleted");
+            });
+        
+            modelBuilder.Entity<PostTag>(entity =>
+            {
+                entity.ToTable("post_tags");
+
+                entity.HasKey(pt => pt.Id);
+
+                entity
+                    .Property(pt => pt.Id)
+                    .HasColumnName("pk_post_tag_id");
+
+                entity
+                    .HasOne(pt => pt.Post)
+                    .WithMany(p => p.PostTags)
+                    .HasForeignKey(pt => pt.PostId)
+                    .HasConstraintName("fk_post_tag_post_id")
+                    .OnDelete(DeleteBehavior.Restrict);
+
+                entity
+                    .HasOne(pt => pt.Tag)
+                    .WithMany()
+                    .HasForeignKey(pt => pt.TagId)
+                    .HasConstraintName("fk_post_tag_tag_id")
+                    .OnDelete(DeleteBehavior.Restrict);
+                
+                entity  
+                    .Property(pt => pt.IsDeleted)
+                    .IsRequired()
+                    .HasColumnName("is_deleted");
+            });
         }
     }
 }

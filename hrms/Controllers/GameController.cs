@@ -1,4 +1,6 @@
-﻿using hrms.Dto.Request.Game;
+﻿using System.Security.Claims;
+using hrms.CustomException;
+using hrms.Dto.Request.Game;
 using hrms.Dto.Request.Game.GameSlot;
 using hrms.Dto.Response.Game;
 using hrms.Dto.Response.Game.GameSlot;
@@ -106,6 +108,38 @@ namespace hrms.Controllers
                 return BadRequest("Game Id not found !");
             await _service.DeleteGameSlot((int)gameSlotId);
             return Ok(new { message = $"game slot with id : {gameSlotId} deleted !" });
+        }
+
+        [HttpGet("{gameId}/is-interested")]
+        public async Task<IActionResult> IsUserInterestedInGame(int? gameId)
+        {
+            if (gameId == null)
+                return BadRequest("Game Id not found !");
+            var CurrentUser = User;
+            if (CurrentUser == null)
+                throw new UnauthorizedCustomException($"Unauthorized Access !");
+            int CurrentUserId = Int32.Parse(CurrentUser.FindFirst(ClaimTypes.PrimarySid)?.Value);
+            bool response = await _service.IsUserInterestedInGame(CurrentUserId, (int)gameId);
+            return Ok(new { isInterested = response });
+        }
+
+        [HttpPatch("{gameId}/toggle-interest")]
+        [Authorize]
+        public async Task<IActionResult> UpdateUserGameInterest(int? gameId)
+        {   
+
+            if (gameId == null)
+            {
+                throw new ArgumentNullException("GameId is null");
+            }
+            var CurrentUser = User;
+            if (CurrentUser == null)
+                throw new UnauthorizedCustomException($"Unauthorized Access !");
+
+            int CurrentUserId = Int32.Parse(CurrentUser.FindFirst(ClaimTypes.PrimarySid)?.Value);
+
+            Boolean status = await _service.ToggleGameInterestStatus(CurrentUserId,(int)gameId);
+            return Ok(new { status });
         }
     }
 }

@@ -22,6 +22,13 @@ namespace hrms.Repository.impl
             return addedEntity.Entity;
         }
 
+        public async Task DeleteJob(Job job)
+        {
+            job.is_deleted = true;
+            _db.Jobs.Update(job);
+            await _db.SaveChangesAsync();
+        }
+
         public async Task<PagedReponseOffSet<Job>> GetAllJobs(int pageNumber, int pageSize)
         {
             List<Job> jobs = await _db.Jobs
@@ -62,7 +69,14 @@ namespace hrms.Repository.impl
                 .Skip((pageNumber - 1) * pageSize)
                 .Take(pageSize)
                 .CountAsync();
-            return new PagedReponseOffSet<Job>(jobs, pageNumber,pageSize,totalCount);
+            return new PagedReponseOffSet<Job>(jobs, pageNumber, pageSize, totalCount);
+        }
+
+        public async Task<Job> UpdateJob(Job jobToUpdate)
+        {
+            var updatedEntity = _db.Jobs.Update(jobToUpdate);
+            await _db.SaveChangesAsync();
+            return updatedEntity.Entity;
         }
     }
 }

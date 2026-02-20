@@ -26,7 +26,8 @@ namespace hrms.Utility
 {
     public class MappingProfile : Profile
     {
-        public MappingProfile() {
+        public MappingProfile()
+        {
 
             CreateMap<Department, DepartmentResponseDto>();
             CreateMap<User, UserResponseDto>()
@@ -37,7 +38,7 @@ namespace hrms.Utility
             CreateMap<Travel, TravelWithTravelerResponseDto>();
             CreateMap<Traveler, TravelerDto>();
             CreateMap<ExpenseCategory, ExpenseCategoryResponseDto>();
-            CreateMap<Expense,ExpenseResponseDto>()
+            CreateMap<Expense, ExpenseResponseDto>()
                 .ForMember(
                 dest => dest.Status,
                 opt => opt.MapFrom(src => GetStatus(src.Status)));
@@ -50,8 +51,16 @@ namespace hrms.Utility
             CreateMap<JobReferral, ReferralResponseDto>()
                 .ForMember(
                 dest => dest.Status,
-                opt => opt.MapFrom(src => GetStatus(src.Status)));
-            CreateMap<JobShared, SharedJobResponseDto>();
+                opt => opt.MapFrom(src => GetStatus(src.Status)))
+                .ForMember(
+                dest => dest.Referer,
+                opt => opt.MapFrom(src => src.Referer.Email)
+                );
+            CreateMap<JobShared, SharedJobResponseDto>()
+                .ForMember(
+                dest => dest.Shared,
+                opt => opt.MapFrom(src => src.Shared.Email)
+                );
 
             CreateMap<Game, GameResponseDto>();
             CreateMap<Game, GameResponseWithSlot>();
@@ -59,29 +68,29 @@ namespace hrms.Utility
             CreateMap<GameUpdateDto, Game>();
 
             CreateMap<GameSlot, GameSlotResponseDto>();
-            CreateMap<GameSlotCreateDto,GameSlot>();
-            CreateMap<GameSlotUpdateDto,GameSlot>();
+            CreateMap<GameSlotCreateDto, GameSlot>();
+            CreateMap<GameSlotUpdateDto, GameSlot>();
 
-            CreateMap<BookingSlotCreateDto,BookingSlot>();
-            CreateMap<BookingSlot,BookingSlotResponseDto>()
+            CreateMap<BookingSlotCreateDto, BookingSlot>();
+            CreateMap<BookingSlot, BookingSlotResponseDto>()
                 .ForMember(
                 dest => dest.Status,
                 opt => opt.MapFrom(src => GetStatus(src.Status)));
 
-            CreateMap<BookingSlot,BookingSlotWithPlayerResponseDto>()
+            CreateMap<BookingSlot, BookingSlotWithPlayerResponseDto>()
                 .ForMember(
                 dest => dest.Status,
                 opt => opt.MapFrom(src => GetStatus(src.Status)));
 
-            CreateMap<SlotOffere,SlotOffereResponseDto>()
+            CreateMap<SlotOffere, SlotOffereResponseDto>()
                 .ForMember(
                 dest => dest.Status,
                 opt => opt.MapFrom(src => GetStatus(src.Status)));
 
-            CreateMap<BookingPlayer,BookingPlayerResponseDto>();
+            CreateMap<BookingPlayer, BookingPlayerResponseDto>();
 
 
-            CreateMap(typeof(PagedReponseOffSet<>),typeof(PagedReponseDto<>));
+            CreateMap(typeof(PagedReponseOffSet<>), typeof(PagedReponseDto<>));
         }
 
         private object GetStatus(SlotOfferStatus status)

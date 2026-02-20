@@ -101,23 +101,6 @@ namespace hrms.Controllers
             return Ok(organizationChart);
         }
 
-        [HttpPut("game-interest/{gameId}")]
-        [Authorize]
-        public async Task<IActionResult> UpdateUserGameInterest(int? gameId)
-        {   
-
-            if (gameId == null)
-            {
-                throw new ArgumentNullException("GameId is null");
-            }
-            var CurrentUser = User;
-            if (CurrentUser == null)
-                throw new UnauthorizedCustomException($"Unauthorized Access !");
-
-            int CurrentUserId = Int32.Parse(CurrentUser.FindFirst(ClaimTypes.PrimarySid)?.Value);
-
-            await _service.ToggleGameInterestStatus(CurrentUserId,(int)gameId);
-            return Ok("Updated Successfully");
-        }
+        
     }
 }

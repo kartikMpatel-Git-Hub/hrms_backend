@@ -14,6 +14,8 @@ namespace hrms.Service
         Task DeleteGameSlot(int gameSlotId);
         Task<PagedReponseDto<GameResponseDto>> GetAllGames(int pageNumber, int pageSize);
         Task<GameResponseWithSlot> GetGame(int gameId);
+        Task<bool> IsUserInterestedInGame(int currentUserId, int gameId);
+        Task<bool> ToggleGameInterestStatus(int currentUserId, int gameId);
         Task<GameResponseDto> UpdateGame(int gameId, GameUpdateDto dto);
         Task<GameSlotResponseDto> UpdateGameSlot(int gameSlotId, GameSlotUpdateDto dto);
     }

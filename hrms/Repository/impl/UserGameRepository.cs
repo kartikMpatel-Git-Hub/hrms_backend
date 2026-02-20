@@ -40,7 +40,7 @@ namespace hrms.Repository.impl
             UserGameState gameState = await _db.UserGameStates
                                 .Where((ugs) => ugs.UserId == userId && ugs.GameId == gameId)
                                 .FirstOrDefaultAsync();
-            if(gameState == null)
+            if (gameState == null)
             {
                 gameState = new UserGameState()
                 {
@@ -122,37 +122,90 @@ namespace hrms.Repository.impl
                     .AnyAsync();
         }
 
-        public async Task<PagedReponseOffSet<User>> GetAvailablePlayers(int gameId, string? key, int pageSize, int pageNumber)
+        public async Task<PagedReponseOffSet<User>> GetAvailablePlayers(int gameId, int currentUserId, string? key, int pageSize, int pageNumber)
         {
             int total = await _db.UserGameInterests
                             .Where(ugi => ugi.GameId == gameId &&
                                         ugi.Status == InterestStatus.INTERESTED &&
+                                        ugi.UserId != currentUserId &&
                                         !ugi.User.is_deleted &&
                                         (ugi.User.FullName.Contains(key) || ugi.User.Email.Contains(key))
                                 ).CountAsync();
-            
+
             List<User> users = await _db.UserGameInterests
                             .Where(ugi => ugi.GameId == gameId &&
                                         ugi.Status == InterestStatus.INTERESTED &&
+                                        ugi.UserId != currentUserId &&
                                         !ugi.User.is_deleted &&
                                         (ugi.User.FullName.Contains(key) || ugi.User.Email.Contains(key))
                                 )
                             .Select(ugi => ugi.User)
                             .Skip((pageNumber - 1) * pageSize)
                             .Take(pageSize)
-                            .ToListAsync();  
-            
+                            .ToListAsync();
+
             PagedReponseOffSet<User> pagedReponse = new PagedReponseOffSet<User>(users, pageNumber, pageSize, total);
             return pagedReponse;
         }
 
-        public Task<List<int>> GetUserGameStates(int gameId, int gamePlayed)
+        public async Task<List<int>> GetUserGameStates(int gameId, int gamePlayed)
         {
-            return _db.UserGameStates
-                    .Where(ugs => ugs.GameId == gameId && ugs.GamePlayed < gamePlayed)
-                    .OrderBy(u => u.GamePlayed)
-                    .Select(u => u.UserId)
+
+            // select * from user_game_interest t1
+            // join user_game_state t2 on t1.GameId = t2.GameId and t1.UserId = t2.UserId
+            // where t1.GameId = 1 and [status] = 'INTERESTED' and t2.game_played < 4
+            // order by t2.game_played
+
+            List<int> users = await _db.UserGameInterests
+                    .Where(ugi => ugi.GameId == gameId &&
+                                ugi.Status == InterestStatus.INTERESTED)
+                    .Join(_db.UserGameStates,
+                        ugi => new { ugi.GameId, ugi.UserId },
+                        ugs => new { ugs.GameId, ugs.UserId },
+                        (ugi, ugs) => new { ugi, ugs })
+                    .Where(joined => joined.ugs.GamePlayed < gamePlayed)
+                    .OrderBy(joined => joined.ugs.GamePlayed)
+                    .Select(joined => joined.ugi.UserId)
                     .ToListAsync();
+            return users;
+
+            // List<int> users = await _db.UserGameStates
+            //         .Where(ugs => ugs.GameId == gameId && ugs.GamePlayed < gamePlayed)
+            //         .OrderBy(u => u.GamePlayed)
+            //         .Select(u => u.UserId)
+            //         .ToListAsync();
+            // users = await _db.UserGameInterests
+            //         .Where(
+            //     (ugi) => ugi.GameId == gameId &&
+            //             ugi.Status == InterestStatus.INTERESTED &&
+            //             users.Contains(ugi.UserId)
+            //     ).Select(ugi => ugi.UserId).ToListAsync();
+            // return users;
+        }
+
+        public async Task<bool> ToggleGameInterestStatus(int userId, int gameId)
+        {
+            UserGameInterest? interest = _db.UserGameInterests
+                .FirstOrDefault(ugi => ugi.UserId == userId && ugi.GameId == gameId);
+
+            if (interest == null)
+            {
+                interest = new UserGameInterest
+                {
+                    UserId = userId,
+                    GameId = gameId,
+                    Status = InterestStatus.INTERESTED
+                };
+                await _db.UserGameInterests.AddAsync(interest);
+            }
+            else
+            {
+                interest.Status = interest.Status == InterestStatus.INTERESTED ? InterestStatus.NOTINTERESTED : InterestStatus.INTERESTED;
+                _db.UserGameInterests.Update(interest);
+            }
+
+            await _db.SaveChangesAsync();
+            return interest.Status == InterestStatus.INTERESTED;
         }
     }
 }

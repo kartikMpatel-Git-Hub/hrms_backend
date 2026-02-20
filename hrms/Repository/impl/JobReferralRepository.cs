@@ -66,6 +66,7 @@ namespace hrms.Repository.impl
             List<JobReferral> referrals = await _db.Referrals
                 //.Include(jr => jr.Job)
                 .Where(jr => jr.JobId == jobId)
+                .Include(jr => jr.Referer)
                 .Skip((pageNumber - 1) * pageSize)
                 .Take(pageSize)
                 .ToListAsync();

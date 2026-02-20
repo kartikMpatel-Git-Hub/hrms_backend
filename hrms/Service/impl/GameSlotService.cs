@@ -181,9 +181,9 @@ namespace hrms.Service.impl
             await _repository.RemovePlayer(bookingId);
         }
 
-        public async Task<PagedReponseDto<UserResponseDto>> GetAvailablePlayers(int gameId, string? key, int pageSize, int pageNumber)
+        public async Task<PagedReponseDto<UserResponseDto>> GetAvailablePlayers(int gameId, int currentUserId, string? key, int pageSize, int pageNumber)
         {
-            PagedReponseOffSet<User> users = await _userGameRpository.GetAvailablePlayers(gameId, key, pageSize, pageNumber);
+            PagedReponseOffSet<User> users = await _userGameRpository.GetAvailablePlayers(gameId, currentUserId, key, pageSize, pageNumber);
             return _mapper.Map<PagedReponseDto<UserResponseDto>>(users);
         }
 

@@ -14,6 +14,6 @@ namespace hrms.Service
         Task<BookingSlotWithPlayerResponseDto> GetSlot(int slotId);
         Task<List<BookingSlotResponseDto>> GetBookingSlots(int gameId, DateTime from, DateTime to);
         Task<BookingSlotResponseDto> BookSlot(int bookingSlotId, int currentUserId, BookSlotRequestDto dto);
-        Task<PagedReponseDto<UserResponseDto>> GetAvailablePlayers(int gameId, string? key, int pageSize, int pageNumber);
+        Task<PagedReponseDto<UserResponseDto>> GetAvailablePlayers(int gameId, int currentUserId, string? key, int pageSize, int pageNumber);
     }
 }

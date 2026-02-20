@@ -15,7 +15,8 @@ namespace hrms.Repository
         Task<List<UserGameInterest>> GetInterestedPlayers(int gameId);
         Task<List<UserGameState>> GetUsersGameStates(int gameId);
         Task<bool> IsUserInterestedInGame(int id, int gameId);
-        Task<PagedReponseOffSet<User>> GetAvailablePlayers(int gameId, string? key, int pageSize, int pageNumber);
+        Task<PagedReponseOffSet<User>> GetAvailablePlayers(int gameId, int currentUserId, string? key, int pageSize, int pageNumber);
         Task<List<int>> GetUserGameStates(int gameId, int gamePlayed);
+        Task<bool> ToggleGameInterestStatus(int currentUserId, int gameId);
     }
 }

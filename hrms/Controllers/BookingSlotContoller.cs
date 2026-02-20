@@ -21,7 +21,7 @@ namespace hrms.Controllers
         ) : Controller
     {
 
-        [HttpPost("{gameId}/booking/{bookingSlotId}")]
+        [HttpPost("{gameId}/slot/{bookingSlotId}/book")]
         public async Task<IActionResult> BookSlot(int?
             bookingSlotId, BookSlotRequestDto dto)
         {
@@ -31,6 +31,8 @@ namespace hrms.Controllers
             var CurrentUser = User;
             if (CurrentUser == null)
                 throw new UnauthorizedCustomException($"Unauthorized Access !");
+            if(dto == null || dto.Players == null || dto.Players.Count == 0)
+                return BadRequest($"Players Information Not Found !");
             int CurrentUserId = Int32.Parse(CurrentUser.FindFirst(ClaimTypes.PrimarySid)?.Value);
 
             BookingSlotResponseDto response = await _slotBookingService.BookSlot((int)bookingSlotId, CurrentUserId, dto);
@@ -42,7 +44,7 @@ namespace hrms.Controllers
         {
             if (offerId == null)
                 return BadRequest($"Offere Id Not Found !");
-            if(dto == null)
+            if(dto == null || dto.Players == null || dto.Players.Count == 0)
                 return BadRequest($"Players Information Not Found !");
             await _slotBookingService.AcceptOffer((int)offerId, dto);
             return Ok($"Offere Accepted !");
@@ -107,7 +109,11 @@ namespace hrms.Controllers
         {
             if (gameId == null)
                 return BadRequest("Game id Not Found !");
-            PagedReponseDto<UserResponseDto> response = await _service.GetAvailablePlayers((int)gameId, key, PageSize, PageNumber);
+            var CurrentUser = User;
+            if (CurrentUser == null)
+                throw new UnauthorizedCustomException($"Unauthorized Access !");
+            int CurrentUserId = Int32.Parse(CurrentUser.FindFirst(ClaimTypes.PrimarySid)?.Value);
+            PagedReponseDto<UserResponseDto> response = await _service.GetAvailablePlayers((int)gameId, CurrentUserId, key, PageSize, PageNumber);
             return Ok(response);
         }
     }

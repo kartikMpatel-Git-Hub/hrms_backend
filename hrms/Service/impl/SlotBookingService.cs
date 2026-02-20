@@ -75,7 +75,7 @@ namespace hrms.Service.impl
             }
             if (!await _userGameRpository.IsUserInterestedInGame(userId, slot.GameId))
             {
-                throw new InvalidOperationCustomException($"User with Id : {userId} is not Interested in Game with Id : {slot.GameId} !");
+                throw new InvalidOperationCustomException($"You Have not mark this game as Interested !");
             }
             foreach (var playerId in dto.Players)
             {
@@ -85,10 +85,7 @@ namespace hrms.Service.impl
                 }
             }
             UserGameState userGameState = await _userGameRpository.GetUserGameState(userId, slot.GameId);
-            // System.Console.WriteLine(userGameState.GamePlayed);
             List<int> hightPriority = await _userGameRpository.GetUserGameStates(slot.GameId, userGameState.GamePlayed);
-            // System.Console.WriteLine(hightPriority.Count);
-            // return null;
             if (hightPriority.Count == 0)
             {
                 var user = await _userRepository.GetByIdAsync(userId);
@@ -134,10 +131,11 @@ namespace hrms.Service.impl
                     PlayerId = playerId,
                     SlotId = slot.Id
                 };
-                slot.RequestedPlayers.Add(requestedPlayer);
+                await _repository.AddPlayerToRequest(requestedPlayer);
             }
             int idx = 1;
-            foreach (var playerId in hightPriority)
+            // how to prvent sending offere to those who are already in request list
+            foreach (var playerId in hightPriority.Where(hp => !dto.Players.Contains(hp) && hp != userId).ToList())
             {
                 var offer = new SlotOffere()
                 {
