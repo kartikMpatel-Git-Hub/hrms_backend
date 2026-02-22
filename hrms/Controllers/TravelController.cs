@@ -190,7 +190,17 @@ namespace hrms.Controllers
             return Ok(response);
         }
 
-        // [HttpGet("")]
+        [HttpGet("{travelerId}/travels")]
+        public async Task<IActionResult> GetTravelsByTravelerId(int? travelerId, int PageSize = 10, int PageNumber = 1)
+        {
+            if (travelerId == null)
+                return BadRequest(new { message = "Traveler Id Not Found !" });
+            if (PageNumber <= 0 || PageSize <= 0)
+                throw new InvalidOperationCustomException($"{nameof(PageNumber)} and {nameof(PageSize)} size must be greater than 0.");
+            int TravelerId = (int)travelerId;
+            PagedReponseDto<TravelResponseDto> response = await _service.GetTravelsByTravelerId(TravelerId, PageSize, PageNumber);
+            return Ok(response);
+        }
 
     }
 }

@@ -178,5 +178,11 @@ namespace hrms.Service.impl
             await _email.SendEmailAsync(traveler.Email, "Your Traveling Booking !", $"Your Traveling is Booked from {travel.StartDate} to {travel.EndDate} for a {travel.Location}");
             return _mapper.Map<TravelerDto>(AddedTraveler);
         }
+
+        public async Task<PagedReponseDto<TravelResponseDto>> GetTravelsByTravelerId(int travelerId, int pageSize, int pageNumber)
+        {
+            PagedReponseOffSet<Travel> PageTravels = await _repository.GetTravelsByTravelerId(travelerId, pageSize, pageNumber);
+            return _mapper.Map<PagedReponseDto<TravelResponseDto>>(PageTravels);
+        }
     }
 }

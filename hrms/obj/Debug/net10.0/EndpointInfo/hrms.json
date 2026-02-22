@@ -415,6 +415,18 @@
         }
       }
     },
+    "/Dashboard/daily-celebrations": {
+      "get": {
+        "tags": [
+          "Dashboard"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
     "/Department/{departmentId}": {
       "get": {
         "tags": [
@@ -2781,6 +2793,47 @@
         }
       }
     },
+    "/Travel/{travelerId}/travels": {
+      "get": {
+        "tags": [
+          "Travel"
+        ],
+        "parameters": [
+          {
+            "name": "travelerId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          },
+          {
+            "name": "PageSize",
+            "in": "query",
+            "schema": {
+              "type": "integer",
+              "format": "int32",
+              "default": 10
+            }
+          },
+          {
+            "name": "PageNumber",
+            "in": "query",
+            "schema": {
+              "type": "integer",
+              "format": "int32",
+              "default": 1
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
     "/User": {
       "get": {
         "tags": [
@@ -2986,7 +3039,7 @@
         }
       }
     },
-    "/User/with-manager": {
+    "/User/my-team": {
       "get": {
         "tags": [
           "User"
@@ -3420,6 +3473,9 @@
     },
     {
       "name": "BookingSlotContoller"
+    },
+    {
+      "name": "Dashboard"
     },
     {
       "name": "Department"

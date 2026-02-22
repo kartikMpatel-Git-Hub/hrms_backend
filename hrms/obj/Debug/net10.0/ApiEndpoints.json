@@ -87,6 +87,16 @@
     "ReturnTypes": []
   },
   {
+    "ContainingType": "hrms.Controllers.DashboardController",
+    "Method": "GetDailyCelebrations",
+    "RelativePath": "Dashboard/daily-celebrations",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
     "ContainingType": "hrms.Controllers.DepartmentController",
     "Method": "GetDepartments",
     "RelativePath": "Department",
@@ -1357,6 +1367,32 @@
   },
   {
     "ContainingType": "hrms.Controllers.TravelController",
+    "Method": "GetTravelsByTravelerId",
+    "RelativePath": "Travel/{travelerId}/travels",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "travelerId",
+        "Type": "System.Nullable\u00601[[System.Int32, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]",
+        "IsRequired": true
+      },
+      {
+        "Name": "PageSize",
+        "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
+        "Name": "PageNumber",
+        "Type": "System.Int32",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "hrms.Controllers.TravelController",
     "Method": "UpdateTravel",
     "RelativePath": "Travel/{TravelId}",
     "HttpMethod": "PUT",
@@ -1797,6 +1833,27 @@
   },
   {
     "ContainingType": "hrms.Controllers.UserController",
+    "Method": "GetEmployeeWithManager",
+    "RelativePath": "User/my-team",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "PageSize",
+        "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
+        "Name": "PageNumber",
+        "Type": "System.Int32",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "hrms.Controllers.UserController",
     "Method": "GetUserByKey",
     "RelativePath": "User/search/all",
     "HttpMethod": "GET",
@@ -1847,27 +1904,6 @@
     "ContainingType": "hrms.Controllers.UserController",
     "Method": "GetAllHr",
     "RelativePath": "User/user-hr",
-    "HttpMethod": "GET",
-    "IsController": true,
-    "Order": 0,
-    "Parameters": [
-      {
-        "Name": "PageSize",
-        "Type": "System.Int32",
-        "IsRequired": false
-      },
-      {
-        "Name": "PageNumber",
-        "Type": "System.Int32",
-        "IsRequired": false
-      }
-    ],
-    "ReturnTypes": []
-  },
-  {
-    "ContainingType": "hrms.Controllers.UserController",
-    "Method": "GetEmployeeWithManager",
-    "RelativePath": "User/with-manager",
     "HttpMethod": "GET",
     "IsController": true,
     "Order": 0,

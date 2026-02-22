@@ -166,3 +166,4 @@ C:\Internship\Codes\DontNet\Assignment-1\hrms\hrms\bin\Debug\net10.0\CloudinaryD
 C:\Internship\Codes\DontNet\Assignment-1\hrms\hrms\bin\Debug\net10.0\Quartz.dll
 C:\Internship\Codes\DontNet\Assignment-1\hrms\hrms\bin\Debug\net10.0\Quartz.Extensions.DependencyInjection.dll
 C:\Internship\Codes\DontNet\Assignment-1\hrms\hrms\bin\Debug\net10.0\Quartz.Extensions.Hosting.dll
+C:\Internship\Codes\DontNet\Assignment-1\hrms\hrms\obj\Debug\net10.0\staticwebassets.upToDateCheck.txt

@@ -183,18 +183,18 @@ namespace hrms.Service.impl
         {
             var slotStartDateTime =
             slot.Date.Add(slot.StartTime.ToTimeSpan());
-            System.Console.WriteLine($"Processing slot ID: {slot.Id}, Start Time: {slotStartDateTime}, Current Time: {DateTime.Now}");
+            //System.Console.WriteLine($"Processing slot ID: {slot.Id}, Start Time: {slotStartDateTime}, Current Time: {DateTime.Now}");
             if (DateTime.Now > slotStartDateTime)
             {
                 slot.Status = GameSlotStatus.COMPLETED;
                 await _repository.UpdateGameSlot(slot);
                 return;
             }
-            System.Console.WriteLine($"Checking if slot ID: {slot.Id} is ready for allocation...");
+            //System.Console.WriteLine($"Checking if slot ID: {slot.Id} is ready for allocation...");
             if (DateTime.Now <
                 slotStartDateTime.AddMinutes(-slot.Game.SlotAssignedBeforeMinutes))
             {
-                System.Console.WriteLine($"Slot ID: {slot.Id} is not ready for allocation. It will be processed at: {slotStartDateTime.AddMinutes(-slot.Game.SlotAssignedBeforeMinutes)}");
+                //System.Console.WriteLine($"Slot ID: {slot.Id} is not ready for allocation. It will be processed at: {slotStartDateTime.AddMinutes(-slot.Game.SlotAssignedBeforeMinutes)}");
                 return;
             }
 
@@ -217,24 +217,24 @@ namespace hrms.Service.impl
 
             if (waiting == null)
             {
-                System.Console.WriteLine($"No waiting entries found for slot ID: {slot.Id}. Slot remains in status: {slot.Status}");
+                //System.Console.WriteLine($"No waiting entries found for slot ID: {slot.Id}. Slot remains in status: {slot.Status}");
                 return;
             }
-            System.Console.WriteLine($"Found waiting entry with ID: {waiting.Waiting.Id} for slot ID: {slot.Id}. Proceeding with allocation...");
-            System.Console.WriteLine($"Waiting entry details - RequestedById: {waiting.Waiting.RequestedById}, RequestedAt: {waiting.Waiting.RequestedAt}, UserGameState: {(waiting.State != null ? $"GamePlayed: {waiting.State.GamePlayed}, LastPlayedAt: {waiting.State.LastPlayedAt}" : "No game state")}");
+            //System.Console.WriteLine($"Found waiting entry with ID: {waiting.Waiting.Id} for slot ID: {slot.Id}. Proceeding with allocation...");
+            //System.Console.WriteLine($"Waiting entry details - RequestedById: {waiting.Waiting.RequestedById}, RequestedAt: {waiting.Waiting.RequestedAt}, UserGameState: {(waiting.State != null ? $"GamePlayed: {waiting.State.GamePlayed}, LastPlayedAt: {waiting.State.LastPlayedAt}" : "No game state")}");
             
             // Get waiting players before starting transaction
             var players = await _db.GameSlotWaitingPlayers
                         .Where(p => p.GameSlotWaitingId == waiting.Waiting.Id)
                         .ToArrayAsync();
-            System.Console.WriteLine($"Found {players.Length} waiting players for waiting entry ID: {waiting.Waiting.Id}");
+            //System.Console.WriteLine($"Found {players.Length} waiting players for waiting entry ID: {waiting.Waiting.Id}");
             
             using var tx = await _db.Database.BeginTransactionAsync();
             
             // Add all waiting players to the slot
             foreach (var player in players)
             {
-                System.Console.WriteLine("Adding player with ID: " + player.PlayerId + " to slot ID: " + slot.Id);
+                //System.Console.WriteLine("Adding player with ID: " + player.PlayerId + " to slot ID: " + slot.Id);
                 _db.GameSlotPlayers.Add(new GameSlotPlayer
                 {
                     SlotId = slot.Id,
@@ -250,7 +250,7 @@ namespace hrms.Service.impl
             slot.BookedAt = DateTime.Now;
             _db.GameSlots.Update(slot);
             
-            System.Console.WriteLine("Slot with ID: " + slot.Id + " is now booked by user ID: " + waiting.Waiting.RequestedById);
+            //System.Console.WriteLine("Slot with ID: " + slot.Id + " is now booked by user ID: " + waiting.Waiting.RequestedById);
             
             await _db.SaveChangesAsync();
             await tx.CommitAsync();

@@ -39,6 +39,7 @@ namespace hrms.Data
         public DbSet<PostComment> PostComments { get; set; }
         public DbSet<PostTag> PostTags { get; set; }
         public DbSet<PostLike> PostLikes { get; set; }
+        public DbSet<DailyCelebration> DailyCelebrations { get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
@@ -1230,6 +1231,35 @@ namespace hrms.Data
                     .IsRequired()
                     .HasColumnName("is_deleted");
             });
+
+            modelBuilder.Entity<DailyCelebration>(entity =>
+            {
+                entity.ToTable("daily_celebrations");
+
+                entity.HasKey(dc => dc.Id);
+
+                entity
+                    .Property(dc => dc.Id)
+                    .HasColumnName("pk_daily_celebration_id");
+
+                entity
+                    .Property(dc => dc.EventType)
+                    .IsRequired()
+                    .HasColumnName("celebration_type")
+                    .HasMaxLength(50);
+
+                entity
+                    .Property(dc => dc.EventDate)
+                    .IsRequired()
+                    .HasColumnName("celebration_date");
+
+                entity
+                    .HasOne(dc => dc.User)
+                     .WithMany()
+                     .HasForeignKey(dc => dc.UserId)
+                     .HasConstraintName("fk_daily_celebration_user_id")
+                     .OnDelete(DeleteBehavior.Restrict);
+             });
         }
     }
 }
