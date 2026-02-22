@@ -18,7 +18,7 @@ namespace hrms.Repository.impl
             await _db.GameSlotWaitings.AddAsync(waiting);
             await _db.SaveChangesAsync();
 
-            foreach(var player in dto.Players)
+            foreach (var player in dto.Players)
             {
                 var waitingPlayer = new GameSlotWaitingPlayer
                 {
@@ -29,7 +29,7 @@ namespace hrms.Repository.impl
             }
             GameSlot gameSlot = await _db.GameSlots
                                 .FirstOrDefaultAsync(s => s.Id == slotId && s.GameId == gameId);
-            if(gameSlot == null)
+            if (gameSlot == null)
             {
                 throw new NotFoundCustomException($"Game Slot with ID {slotId} for Game ID {gameId} not found.");
             }
@@ -100,7 +100,7 @@ namespace hrms.Repository.impl
                         .Games
                         .Include(g => g.GameOperationWindows.Where(w => !w.is_deleted).OrderBy(w => w.OperationalStartTime))
                         .FirstOrDefaultAsync(g => g.Id == gameId && !g.is_deleted);
-            if(game == null)
+            if (game == null)
             {
                 throw new NotFoundCustomException($"Game with ID {gameId} not found.");
             }
@@ -110,7 +110,7 @@ namespace hrms.Repository.impl
         public async Task<GameOperationWindow> GetGameOperationWindowById(int windowId)
         {
             GameOperationWindow window = await _db.GameOperationWindows.FirstOrDefaultAsync(w => w.Id == windowId && !w.is_deleted);
-            if(window == null)
+            if (window == null)
             {
                 throw new NotFoundCustomException($"Game Operation Window with ID {windowId} not found.");
             }
@@ -123,7 +123,7 @@ namespace hrms.Repository.impl
                     .Include(gs => gs.BookedBy)
                     .Include(gs => gs.Players).ThenInclude(p => p.Player)
                     .FirstOrDefaultAsync(s => s.Id == slotId && s.GameId == gameId);
-            if(slot == null)
+            if (slot == null)
             {
                 throw new NotFoundCustomException($"Game Slot with ID {slotId} for Game ID {gameId} not found.");
             }
@@ -133,11 +133,34 @@ namespace hrms.Repository.impl
         public async Task<List<GameSlotWaiting>> GetGameSlotWaitlist(int gameId, int slotId)
         {
             List<GameSlotWaiting> waitlistEntries = await _db.GameSlotWaitings
-                    .Where(w => w.GameSlotId == slotId)
+                    .Where(w => w.GameSlotId == slotId && !w.IsCancelled)
                     .Include(w => w.WaitingPlayers).ThenInclude(p => p.Player)
                     .Include(w => w.RequestedBy)
                     .ToListAsync();
             return waitlistEntries;
+        }
+
+        public async Task<GameSlotWaiting> GetGameSlotWaitlistById(int waitlistId)
+        {
+            GameSlotWaiting entry = await _db.GameSlotWaitings
+                    .FirstOrDefaultAsync(w => w.Id == waitlistId);
+            if (entry == null)
+            {
+                throw new NotFoundCustomException($"Game Slot Waiting Entry with ID {waitlistId} not found.");
+            }
+            return entry;
+        }
+
+        public async Task<GameSlotWaiting> GetUserWaitlistEntryForSlot(int gameId, int slotId, int bookedById)
+        {
+            GameSlotWaiting entry = await _db.GameSlotWaitings
+                   .Where(w => w.GameSlotId == slotId && w.RequestedBy.Id == bookedById)
+                   .FirstOrDefaultAsync();
+            if (entry == null)
+            {
+                throw new NotFoundCustomException($"Game Slot Waiting Entry for Slot ID {slotId} and User ID {bookedById} not found.");
+            }
+            return entry;
         }
 
         public Task<bool> IsOperationWindowOverlap(int gameId, TimeOnly operationalStartTime, TimeOnly operationalEndTime)
@@ -154,8 +177,19 @@ namespace hrms.Repository.impl
         {
             bool isBooked = _db.GameSlotWaitings
                             .Include(w => w.WaitingPlayers)
+                            .Where(w => !w.IsCancelled)
                             .Any(w => w.GameSlotId == slotId && w.WaitingPlayers.Any(p => p.PlayerId == userId));
             return Task.FromResult(isBooked);
+        }
+
+        public async Task RemovePlayerFromGameSlot(int id)
+        {
+            GameSlotPlayer player = await _db.GameSlotPlayers.FirstOrDefaultAsync(p => p.Id == id);
+            if (player != null)
+            {
+                _db.GameSlotPlayers.Remove(player);
+                await _db.SaveChangesAsync();
+            }
         }
 
         public async Task<Game> UpdateGame(Game updatedGame)
@@ -170,6 +204,12 @@ namespace hrms.Repository.impl
             _db.GameSlots.Update(slot);
             await _db.SaveChangesAsync();
             return slot;
+        }
+
+        public async Task UpdateGameSlotWaiting(GameSlotWaiting myWaitlistEntry)
+        {
+            _db.GameSlotWaitings.Update(myWaitlistEntry);
+            await _db.SaveChangesAsync();
         }
     }
 }

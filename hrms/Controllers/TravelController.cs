@@ -1,6 +1,7 @@
 ﻿using hrms.CustomException;
 using hrms.Dto.Request.Travel;
 using hrms.Dto.Request.Travel.Document;
+using hrms.Dto.Response.Expense;
 using hrms.Dto.Response.Other;
 using hrms.Dto.Response.Travel;
 using hrms.Dto.Response.Travel.Document;
@@ -190,7 +191,7 @@ namespace hrms.Controllers
             return Ok(response);
         }
 
-        [HttpGet("{travelerId}/travels")]
+        [HttpGet("traveler/{travelerId}")]
         public async Task<IActionResult> GetTravelsByTravelerId(int? travelerId, int PageSize = 10, int PageNumber = 1)
         {
             if (travelerId == null)
@@ -199,6 +200,36 @@ namespace hrms.Controllers
                 throw new InvalidOperationCustomException($"{nameof(PageNumber)} and {nameof(PageSize)} size must be greater than 0.");
             int TravelerId = (int)travelerId;
             PagedReponseDto<TravelResponseDto> response = await _service.GetTravelsByTravelerId(TravelerId, PageSize, PageNumber);
+            return Ok(response);
+        }
+
+        [HttpGet("{travelId}/traveler/{travelerId}/expenses")]
+        public async Task<IActionResult> GetExpensesByTravelIdAndTravelerId(int? travelId, int? travelerId, int PageSize = 10, int PageNumber = 1)
+        {
+            if (travelId == null)
+                return BadRequest(new { message = "Travel Id Not Found !" });
+            if (travelerId == null)
+                return BadRequest(new { message = "Traveler Id Not Found !" });
+            if (PageNumber <= 0 || PageSize <= 0)
+                throw new InvalidOperationCustomException($"{nameof(PageNumber)} and {nameof(PageSize)} size must be greater than 0.");
+            int TravelId = (int)travelId;
+            int TravelerId = (int)travelerId;
+            PagedReponseDto<ExpenseResponseDto> response = await _service.GetExpensesByTravelIdAndTravelerId(TravelId, TravelerId, PageSize, PageNumber);
+            return Ok(response);
+        }
+
+        [HttpGet("{travelId}/traveler/{travelerId}/documents")]
+        public async Task<IActionResult> GetDocumentsByTravelIdAndTravelerId(int? travelId, int? travelerId, int PageSize = 10, int PageNumber = 1)
+        {
+            if (travelId == null)
+                return BadRequest(new { message = "Travel Id Not Found !" });
+            if (travelerId == null)
+                return BadRequest(new { message = "Traveler Id Not Found !" });
+            if (PageNumber <= 0 || PageSize <= 0)
+                throw new InvalidOperationCustomException($"{nameof(PageNumber)} and {nameof(PageSize)} size must be greater than 0.");
+            int TravelId = (int)travelId;
+            int TravelerId = (int)travelerId;
+            PagedReponseDto<TravelDocumentResponseDto> response = await _service.GetDocumentsByTravelIdAndTravelerId(TravelId, TravelerId, PageSize, PageNumber);
             return Ok(response);
         }
 

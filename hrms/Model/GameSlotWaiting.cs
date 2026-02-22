@@ -8,6 +8,7 @@ namespace hrms.Model
         public int RequestedById { get; set; }
         public User RequestedBy { get; set; }
         public DateTime? RequestedAt { get; set; }
+        public bool IsCancelled { get; set; } = false;
         public List<GameSlotWaitingPlayer> WaitingPlayers { get; set; } = new List<GameSlotWaitingPlayer>();
     }
 }

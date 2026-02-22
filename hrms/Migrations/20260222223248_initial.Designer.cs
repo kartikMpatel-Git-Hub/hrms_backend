@@ -12,8 +12,8 @@ using hrms.Data;
 namespace hrms.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20260222172110_final")]
-    partial class final
+    [Migration("20260222223248_initial")]
+    partial class initial
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -482,6 +482,10 @@ namespace hrms.Migrations
 
                     b.Property<int>("GameSlotId")
                         .HasColumnType("int");
+
+                    b.Property<bool>("IsCancelled")
+                        .HasColumnType("bit")
+                        .HasColumnName("is_cancelled");
 
                     b.Property<DateTime?>("RequestedAt")
                         .ValueGeneratedOnAdd()

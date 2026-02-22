@@ -207,5 +207,16 @@ namespace hrms.Repository.impl
             await _db.SaveChangesAsync();
             return interest.Status == InterestStatus.INTERESTED;
         }
+
+        public async Task DecrementGamePlayed(int bookedById, int gameId)
+        {
+            UserGameState? gameState = await _db.UserGameStates.FirstOrDefaultAsync(ugs => ugs.UserId == bookedById && ugs.GameId == gameId);
+            if (gameState != null && gameState.GamePlayed > 0)
+            {
+                gameState.GamePlayed -= 1;
+                _db.UserGameStates.Update(gameState);
+                await _db.SaveChangesAsync();
+            }
+        }
     }
 }

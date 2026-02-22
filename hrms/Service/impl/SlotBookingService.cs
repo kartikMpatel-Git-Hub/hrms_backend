@@ -199,7 +199,7 @@ namespace hrms.Service.impl
             }
 
             var waiting = await _db.GameSlotWaitings
-            .Where(w => w.GameSlotId == slot.Id)
+            .Where(w => w.GameSlotId == slot.Id && w.IsCancelled == false)
             .Select(w => new
             {
                 Waiting = w,
@@ -213,6 +213,7 @@ namespace hrms.Service.impl
             .ThenBy(x => x.State != null ? x.State.GamePlayed : 0)
             .ThenBy(x => x.State != null ? x.State.LastPlayedAt : DateTime.MinValue)
             .ThenBy(x => x.Waiting.RequestedAt)
+            .ThenBy(x => x.Waiting.Id)
             .FirstOrDefaultAsync();
 
             if (waiting == null)

@@ -56,6 +56,19 @@ namespace hrms.Repository.impl
             await _db.SaveChangesAsync();
         }
 
+        public async Task<PagedReponseOffSet<TravelDocument>> GetDocumentsByTravelIdAndTravelerId(int travelId, int travelerId, int pageSize, int pageNumber)
+        {
+            int TotalRecords = await _db.TravelDocuments.Where(td => td.TravelId == travelId && td.TravelerId == travelerId).CountAsync();
+            List<TravelDocument> documents = await _db.TravelDocuments
+                .Where(td => td.TravelId == travelId && td.TravelerId == travelerId)
+                .Include(td => td.Uploader)
+                .Skip((pageNumber - 1) * pageSize)
+                .Take(pageSize)
+                .ToListAsync();
+            PagedReponseOffSet<TravelDocument> Response = new PagedReponseOffSet<TravelDocument>(documents, pageNumber, pageSize, TotalRecords);
+            return Response;
+        }
+
         public async Task<PagedReponseOffSet<Travel>> GetEmployeeTravels(int id, int pageSize, int pageNumber)
         {
             var TotalRecords = await _db
@@ -71,6 +84,19 @@ namespace hrms.Repository.impl
                 .Select(tl => tl.Travel)
                 .ToListAsync();
             PagedReponseOffSet<Travel> Response = new PagedReponseOffSet<Travel>(travels, pageNumber, pageSize, TotalRecords);
+            return Response;
+        }
+
+        public async Task<PagedReponseOffSet<Expense>> GetExpensesByTravelIdAndTravelerId(int travelId, int travelerId, int pageSize, int pageNumber)
+        {
+            int TotalRecords = await _db.Expenses.Where(e => e.TravelId == travelId && e.TravelerId == travelerId).CountAsync();
+            List<Expense> expenses = await _db.Expenses
+                .Where(e => e.TravelId == travelId && e.TravelerId == travelerId)
+                .Include(e => e.Proofs)
+                .Skip((pageNumber - 1) * pageSize)
+                .Take(pageSize)
+                .ToListAsync();
+            PagedReponseOffSet<Expense> Response = new PagedReponseOffSet<Expense>(expenses, pageNumber, pageSize, TotalRecords);
             return Response;
         }
 

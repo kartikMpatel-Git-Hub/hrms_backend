@@ -179,6 +179,27 @@ namespace hrms.Migrations
                 });
 
             migrationBuilder.CreateTable(
+                name: "daily_celebrations",
+                columns: table => new
+                {
+                    pk_daily_celebration_id = table.Column<int>(type: "int", nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
+                    UserId = table.Column<int>(type: "int", nullable: false),
+                    celebration_type = table.Column<int>(type: "int", maxLength: 50, nullable: false),
+                    celebration_date = table.Column<DateTime>(type: "datetime2", nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_daily_celebrations", x => x.pk_daily_celebration_id);
+                    table.ForeignKey(
+                        name: "fk_daily_celebration_user_id",
+                        column: x => x.UserId,
+                        principalTable: "users",
+                        principalColumn: "pk_user_id",
+                        onDelete: ReferentialAction.Restrict);
+                });
+
+            migrationBuilder.CreateTable(
                 name: "game_slots",
                 columns: table => new
                 {
@@ -189,7 +210,7 @@ namespace hrms.Migrations
                     end_time = table.Column<TimeOnly>(type: "time", nullable: false),
                     date = table.Column<DateTime>(type: "datetime2", nullable: false),
                     BookedById = table.Column<int>(type: "int", nullable: true),
-                    booked_at = table.Column<DateTime>(type: "datetime2", nullable: true, defaultValueSql: "GETUTCDATE()"),
+                    booked_at = table.Column<DateTime>(type: "datetime2", nullable: true),
                     Status = table.Column<int>(type: "int", nullable: false)
                 },
                 constraints: table =>
@@ -493,7 +514,8 @@ namespace hrms.Migrations
                         .Annotation("SqlServer:Identity", "1, 1"),
                     GameSlotId = table.Column<int>(type: "int", nullable: false),
                     RequestedById = table.Column<int>(type: "int", nullable: false),
-                    requested_at = table.Column<DateTime>(type: "datetime2", nullable: true, defaultValueSql: "GETUTCDATE()")
+                    requested_at = table.Column<DateTime>(type: "datetime2", nullable: true, defaultValueSql: "GETUTCDATE()"),
+                    is_cancelled = table.Column<bool>(type: "bit", nullable: false)
                 },
                 constraints: table =>
                 {
@@ -864,6 +886,11 @@ namespace hrms.Migrations
                 column: "RequesterId");
 
             migrationBuilder.CreateIndex(
+                name: "IX_daily_celebrations_UserId",
+                table: "daily_celebrations",
+                column: "UserId");
+
+            migrationBuilder.CreateIndex(
                 name: "IX_expense_proof_ExpenseId",
                 table: "expense_proof",
                 column: "ExpenseId");
@@ -1100,6 +1127,9 @@ namespace hrms.Migrations
         {
             migrationBuilder.DropTable(
                 name: "booking_players");
+
+            migrationBuilder.DropTable(
+                name: "daily_celebrations");
 
             migrationBuilder.DropTable(
                 name: "expense_proof");

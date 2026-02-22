@@ -1,7 +1,9 @@
 ﻿using AutoMapper;
+using Azure;
 using hrms.CustomException;
 using hrms.Dto.Request.Travel;
 using hrms.Dto.Request.Travel.Document;
+using hrms.Dto.Response.Expense;
 using hrms.Dto.Response.Other;
 using hrms.Dto.Response.Travel;
 using hrms.Dto.Response.Travel.Document;
@@ -183,6 +185,18 @@ namespace hrms.Service.impl
         {
             PagedReponseOffSet<Travel> PageTravels = await _repository.GetTravelsByTravelerId(travelerId, pageSize, pageNumber);
             return _mapper.Map<PagedReponseDto<TravelResponseDto>>(PageTravels);
+        }
+
+        public async Task<PagedReponseDto<ExpenseResponseDto>> GetExpensesByTravelIdAndTravelerId(int travelId, int travelerId, int pageSize, int pageNumber)
+        {
+            PagedReponseOffSet<Expense> PageExpenses =  await _repository.GetExpensesByTravelIdAndTravelerId(travelId, travelerId, pageSize, pageNumber);
+            return _mapper.Map<PagedReponseDto<ExpenseResponseDto>>(PageExpenses);
+        }
+
+        public async Task<PagedReponseDto<TravelDocumentResponseDto>> GetDocumentsByTravelIdAndTravelerId(int travelId, int travelerId, int pageSize, int pageNumber)
+        {
+            PagedReponseOffSet<TravelDocument> PageDocuments = await _repository.GetDocumentsByTravelIdAndTravelerId(travelId, travelerId, pageSize, pageNumber);
+            return _mapper.Map<PagedReponseDto<TravelDocumentResponseDto>>(PageDocuments);
         }
     }
 }
