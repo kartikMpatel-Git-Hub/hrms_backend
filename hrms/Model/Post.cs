@@ -8,7 +8,7 @@ namespace hrms.Model
         public User PostByUser { get; set; }
         public string Title { get; set; }
         public string Description { get; set; }
-        public bool IsPublic { get; set; }
+        public bool IsPublic { get; set; } = true;
         public bool InAppropriate { get; set; }
         public List<PostComment> Comments { get; set; }
         public List<PostLike> Likes { get; set; }

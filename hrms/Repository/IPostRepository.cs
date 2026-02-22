@@ -17,10 +17,16 @@ namespace hrms.Repository
         Task<Post> GetPostById(int postId);
         Task<PagedReponseOffSet<Tag>> GetTags(int pageNumber, int pageSize);
         Task<PagedReponseOffSet<Tag>> GetTags(string searchQuery, int pageNumber, int pageSize);
-        Task<List<PostTag>> GetTagsForPost(int postId);
+        Task<List<Tag>> GetTagsForPost(int postId);
         Task<bool> LikePost(int postId, int userId);
         Task RemoveTagFromPost(int postId, int tagId);
         Task<PostComment> UpdateComment(PostComment comment);
         Task<Post> UpdatePost(Post updatedPost);
+        Task<PostComment> CreateComment(PostComment comment);
+        Task<PostTag> AddTagToPost(PostTag postTag);
+        Task<Tag> GetTagByName(string tagName);
+        Task MarkPostInAppropriate(Post postId);
+        Task<PagedReponseOffSet<Post>> GetInappropriatePosts(int page, int pageSize);
+        Task<PagedReponseOffSet<Post>> GetMyPosts(int userId, int page, int pageSize);
     }
 }

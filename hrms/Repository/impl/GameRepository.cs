@@ -1,135 +1,175 @@
 ﻿using hrms.CustomException;
 using hrms.Data;
+using hrms.Dto.Request.BookingSlot;
+using hrms.Dto.Response.Game;
 using hrms.Dto.Response.Other;
 using hrms.Model;
 using Microsoft.EntityFrameworkCore;
-
 namespace hrms.Repository.impl
 {
     public class GameRepository(ApplicationDbContext _db) : IGameRepository
     {
-        public async Task CreateBookingSlot(BookingSlot bookingSlot)
+        public async Task<GameSlot> BookGameSlot(int gameId, int slotId, int userId, BookSlotRequestDto dto)
         {
-            await _db.BookingSlots.AddAsync(bookingSlot);
+            var waiting = new GameSlotWaiting();
+            waiting.GameSlotId = slotId;
+            waiting.RequestedById = userId;
+            waiting.RequestedAt = DateTime.Now;
+            await _db.GameSlotWaitings.AddAsync(waiting);
             await _db.SaveChangesAsync();
-        }
 
-        public async Task<Game> CreateGame(Game newGame)
-        {
-            var SavedEntity = await _db.Games.AddAsync(newGame);
-            await _db.SaveChangesAsync();
-            foreach (var user in await _db.Users.Where(u => !u.is_deleted).ToListAsync())
+            foreach(var player in dto.Players)
             {
-                System.Console.WriteLine($"Added Game : {SavedEntity.Entity.Name} for User : {user.Id}");
-                var userGameState = new UserGameState()
+                var waitingPlayer = new GameSlotWaitingPlayer
                 {
-                    UserId = user.Id,
-                    GameId = SavedEntity.Entity.Id,
-                    GamePlayed = 0,
-                    LastPlayedAt = DateTime.Now
+                    GameSlotWaitingId = waiting.Id,
+                    PlayerId = player
                 };
-                await _db.UserGameStates.AddAsync(userGameState);
-                await _db.SaveChangesAsync();
-                var userGameInterest = new UserGameInterest()
-                {
-                    UserId = user.Id,
-                    GameId = SavedEntity.Entity.Id,
-                    Status = InterestStatus.NOTINTERESTED
-                };
-                await _db.UserGameInterests.AddAsync(userGameInterest);
-                await _db.SaveChangesAsync();
+                await _db.GameSlotWaitingPlayers.AddAsync(waitingPlayer);
             }
-            return SavedEntity.Entity;
-        }
-
-        public async Task<GameSlot> CreateGameSlot(GameSlot newSlot)
-        {
-            var savedGameSlot = await _db.GameSlots.AddAsync(newSlot);
+            GameSlot gameSlot = await _db.GameSlots
+                                .FirstOrDefaultAsync(s => s.Id == slotId && s.GameId == gameId);
+            if(gameSlot == null)
+            {
+                throw new NotFoundCustomException($"Game Slot with ID {slotId} for Game ID {gameId} not found.");
+            }
+            gameSlot.Status = GameSlotStatus.WAITING;
+            _db.GameSlots.Update(gameSlot);
             await _db.SaveChangesAsync();
-            return savedGameSlot.Entity;
-        }
-
-        public async Task<PagedReponseOffSet<Game>> GetAllGames(int pageNumber, int pageSize)
-        {
-            int totalData = await _db.Games.Where(g => g.is_deleted == false).CountAsync();
-            List<Game> games = await _db.Games
-                                .Where(g => g.is_deleted == false)
-                                .Skip((pageNumber - 1) * pageSize)
-                                .Take(pageSize)
-                                .ToListAsync();
-            PagedReponseOffSet<Game> reponse = new PagedReponseOffSet<Game>(games, pageNumber, pageSize, totalData);
-            return reponse;
-        }
-
-        public async Task<List<Game>> GetAllGames()
-        {
-            List<Game> games = await _db.Games
-                                .Where(g => g.is_deleted == false)
-                                .ToListAsync();
-            return games;
-        }
-
-        public async Task<Game> GetGameById(int gameId)
-        {
-            Game game = await _db.Games
-                .Where((g) => g.Id == gameId)
-                .Include(g => g.Slots.Where(s => s.is_deleted == false).OrderBy(s => s.StartTime))
-                .FirstOrDefaultAsync();
-            if (game == null)
-                throw new NotFoundCustomException($"Game with id : {gameId} Not Found !");
-            return game;
-        }
-
-        public async Task<GameSlot> GetGameSlotById(int gameSlotId)
-        {
-            GameSlot gameSlot = await _db.GameSlots.Where((gs) => gs.Id == gameSlotId).FirstOrDefaultAsync();
-            if (gameSlot == null)
-                throw new NotFoundCustomException($"Game slot with id : {gameSlotId} Not Found !");
             return gameSlot;
         }
 
-        public async Task<List<GameSlot>> GetGameSlots(int gameId)
+        public async Task<Game> CreateGame(Game game)
         {
-            List<GameSlot> slots = await _db.GameSlots.Where(gs => gs.GameId == gameId).ToListAsync();
-            return slots;
-        }
-        public async Task<bool> isSlotExist(TimeOnly startTime, TimeOnly endTime)
-        {
-
-            return await _db.GameSlots.AnyAsync(gs =>
-                    !gs.is_deleted &&
-                    startTime < gs.EndTime &&
-                    endTime > gs.StartTime
-                );
-
+            var createdGame = await _db.Games.AddAsync(game);
+            await _db.SaveChangesAsync();
+            return createdGame.Entity;
         }
 
-        public async Task RemoveGame(Game game)
+        public async Task<GameOperationWindow> CreateGameOperationWindow(GameOperationWindow window)
+        {
+            var createdWindow = await _db.GameOperationWindows.AddAsync(window);
+            await _db.SaveChangesAsync();
+            return createdWindow.Entity;
+        }
+
+        public async Task DeleteGame(Game game)
         {
             game.is_deleted = true;
             _db.Games.Update(game);
             await _db.SaveChangesAsync();
         }
 
-        public async Task RemoveGameSlot(GameSlot gameSlot)
+        public async Task DeleteGameOperationWindow(GameOperationWindow window)
         {
-            gameSlot.is_deleted = true;
-            _db.GameSlots.Update(gameSlot);
+            window.is_deleted = true;
+            _db.GameOperationWindows.Update(window);
             await _db.SaveChangesAsync();
+        }
+
+        public async Task<List<GameOperationWindow>> GetAllGameOperationWindows(int gameId)
+        {
+            return await _db.GameOperationWindows
+                            .Where(w => w.GameId == gameId && !w.is_deleted)
+                            .ToListAsync();
+        }
+
+        public async Task<PagedReponseOffSet<Game>> GetAllGames(int pageNumber, int pageSize)
+        {
+            int totalRecords = await _db.Games.CountAsync(g => !g.is_deleted);
+            List<Game> games = await _db.Games
+                                        .Where(g => !g.is_deleted)
+                                        .Skip((pageNumber - 1) * pageSize)
+                                        .Take(pageSize)
+                                        .ToListAsync();
+            return new PagedReponseOffSet<Game>(games, totalRecords, pageNumber, pageSize);
+        }
+
+        public async Task<List<GameSlot>> GetAllGameSlots(int gameId, DateTime startDate, DateTime endDate)
+        {
+            List<GameSlot> query = await _db.GameSlots
+                        .Where(s => s.GameId == gameId && s.Date >= startDate.Date && s.Date <= endDate.Date)
+                        .OrderBy(s => s.Date).ThenBy(s => s.StartTime)
+                        .ToListAsync();
+            return query;
+        }
+
+        public async Task<Game> GetGameById(int gameId)
+        {
+            Game game = await _db
+                        .Games
+                        .Include(g => g.GameOperationWindows.Where(w => !w.is_deleted).OrderBy(w => w.OperationalStartTime))
+                        .FirstOrDefaultAsync(g => g.Id == gameId && !g.is_deleted);
+            if(game == null)
+            {
+                throw new NotFoundCustomException($"Game with ID {gameId} not found.");
+            }
+            return game;
+        }
+
+        public async Task<GameOperationWindow> GetGameOperationWindowById(int windowId)
+        {
+            GameOperationWindow window = await _db.GameOperationWindows.FirstOrDefaultAsync(w => w.Id == windowId && !w.is_deleted);
+            if(window == null)
+            {
+                throw new NotFoundCustomException($"Game Operation Window with ID {windowId} not found.");
+            }
+            return window;
+        }
+
+        public async Task<GameSlot> GetGameSlotById(int gameId, int slotId)
+        {
+            GameSlot slot = await _db.GameSlots
+                    .Include(gs => gs.BookedBy)
+                    .Include(gs => gs.Players).ThenInclude(p => p.Player)
+                    .FirstOrDefaultAsync(s => s.Id == slotId && s.GameId == gameId);
+            if(slot == null)
+            {
+                throw new NotFoundCustomException($"Game Slot with ID {slotId} for Game ID {gameId} not found.");
+            }
+            return slot;
+        }
+
+        public async Task<List<GameSlotWaiting>> GetGameSlotWaitlist(int gameId, int slotId)
+        {
+            List<GameSlotWaiting> waitlistEntries = await _db.GameSlotWaitings
+                    .Where(w => w.GameSlotId == slotId)
+                    .Include(w => w.WaitingPlayers).ThenInclude(p => p.Player)
+                    .Include(w => w.RequestedBy)
+                    .ToListAsync();
+            return waitlistEntries;
+        }
+
+        public Task<bool> IsOperationWindowOverlap(int gameId, TimeOnly operationalStartTime, TimeOnly operationalEndTime)
+        {
+            bool isOverlap = _db.GameOperationWindows
+                            .Any(w => w.GameId == gameId && !w.is_deleted &&
+                                ((operationalStartTime >= w.OperationalStartTime && operationalStartTime < w.OperationalEndTime) ||
+                                 (operationalEndTime > w.OperationalStartTime && operationalEndTime <= w.OperationalEndTime) ||
+                                 (operationalStartTime <= w.OperationalStartTime && operationalEndTime >= w.OperationalEndTime)));
+            return Task.FromResult(isOverlap);
+        }
+
+        public Task<bool> IsUserAlreadyBookedInSlot(int gameId, int slotId, int userId)
+        {
+            bool isBooked = _db.GameSlotWaitings
+                            .Include(w => w.WaitingPlayers)
+                            .Any(w => w.GameSlotId == slotId && w.WaitingPlayers.Any(p => p.PlayerId == userId));
+            return Task.FromResult(isBooked);
         }
 
         public async Task<Game> UpdateGame(Game updatedGame)
         {
-            var entityEntry = _db.Games.Update(updatedGame);
+            _db.Games.Update(updatedGame);
             await _db.SaveChangesAsync();
-            return entityEntry.Entity;
+            return updatedGame;
         }
 
-        public async Task<GameSlot> UpdateGameSlot(GameSlot updatedGameSlot)
+        public async Task<GameSlot> UpdateGameSlot(GameSlot slot)
         {
-            var entityEntry = _db.GameSlots.Update(updatedGameSlot);
+            _db.GameSlots.Update(slot);
             await _db.SaveChangesAsync();
-            return entityEntry.Entity;
+            return slot;
         }
     }
 }

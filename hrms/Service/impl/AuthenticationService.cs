@@ -66,6 +66,7 @@ namespace hrms.Service.impl
             string generatedToken = new JwtSecurityTokenHandler().WriteToken(token);
             LoginResponseDto response = new LoginResponseDto()
             {
+                id = user.Id,
                 email = user.Email,
                 role = user.Role.ToString(),
                 token = generatedToken

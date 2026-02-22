@@ -19,8 +19,8 @@ namespace hrms.Migrations
                         .Annotation("SqlServer:Identity", "1, 1"),
                     DepartmentName = table.Column<string>(type: "nvarchar(30)", maxLength: 30, nullable: false),
                     is_deleted = table.Column<bool>(type: "bit", nullable: false),
-                    created_at = table.Column<DateTime>(type: "datetime2", nullable: false),
-                    updated_at = table.Column<DateTime>(type: "datetime2", nullable: false)
+                    created_at = table.Column<DateTime>(type: "datetime2", nullable: false, defaultValueSql: "GETUTCDATE()"),
+                    updated_at = table.Column<DateTime>(type: "datetime2", nullable: false, defaultValueSql: "GETUTCDATE()")
                 },
                 constraints: table =>
                 {
@@ -49,14 +49,31 @@ namespace hrms.Migrations
                         .Annotation("SqlServer:Identity", "1, 1"),
                     game_name = table.Column<string>(type: "nvarchar(30)", maxLength: 30, nullable: false),
                     max_player_per_game = table.Column<int>(type: "int", nullable: false),
+                    duration_in_minutes = table.Column<int>(type: "int", nullable: false),
                     min_player_per_game = table.Column<int>(type: "int", nullable: false),
+                    slot_assigned_before_x_minutes = table.Column<int>(type: "int", nullable: false),
+                    slot_create_for_next_x_days = table.Column<int>(type: "int", nullable: false),
                     is_deleted = table.Column<bool>(type: "bit", nullable: false),
-                    created_at = table.Column<DateTime>(type: "datetime2", nullable: false),
-                    updated_at = table.Column<DateTime>(type: "datetime2", nullable: false)
+                    created_at = table.Column<DateTime>(type: "datetime2", nullable: false, defaultValueSql: "GETUTCDATE()"),
+                    updated_at = table.Column<DateTime>(type: "datetime2", nullable: false, defaultValueSql: "GETUTCDATE()")
                 },
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_games", x => x.pk_game_id);
+                });
+
+            migrationBuilder.CreateTable(
+                name: "tags",
+                columns: table => new
+                {
+                    pk_tag_id = table.Column<int>(type: "int", nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
+                    tag_name = table.Column<string>(type: "nvarchar(30)", maxLength: 30, nullable: false),
+                    IsDeleted = table.Column<bool>(type: "bit", nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_tags", x => x.pk_tag_id);
                 });
 
             migrationBuilder.CreateTable(
@@ -76,8 +93,8 @@ namespace hrms.Migrations
                     DepartmentId = table.Column<int>(type: "int", nullable: true),
                     designation = table.Column<string>(type: "nvarchar(30)", maxLength: 30, nullable: false),
                     is_deleted = table.Column<bool>(type: "bit", nullable: false),
-                    created_at = table.Column<DateTime>(type: "datetime2", nullable: false),
-                    updated_at = table.Column<DateTime>(type: "datetime2", nullable: false)
+                    created_at = table.Column<DateTime>(type: "datetime2", nullable: false, defaultValueSql: "GETUTCDATE()"),
+                    updated_at = table.Column<DateTime>(type: "datetime2", nullable: false, defaultValueSql: "GETUTCDATE()")
                 },
                 constraints: table =>
                 {
@@ -97,23 +114,23 @@ namespace hrms.Migrations
                 });
 
             migrationBuilder.CreateTable(
-                name: "game_slots",
+                name: "game_operation_window",
                 columns: table => new
                 {
-                    pk_game_slot_id = table.Column<int>(type: "int", nullable: false)
+                    pk_game_operation_window_id = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
                     GameId = table.Column<int>(type: "int", nullable: false),
-                    start_time = table.Column<TimeOnly>(type: "time", nullable: false),
-                    end_time = table.Column<TimeOnly>(type: "time", nullable: false),
+                    operational_start_time = table.Column<TimeOnly>(type: "time", nullable: false),
+                    operational_end_time = table.Column<TimeOnly>(type: "time", nullable: false),
                     is_deleted = table.Column<bool>(type: "bit", nullable: false),
                     created_at = table.Column<DateTime>(type: "datetime2", nullable: false),
                     updated_at = table.Column<DateTime>(type: "datetime2", nullable: false)
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_game_slots", x => x.pk_game_slot_id);
+                    table.PrimaryKey("PK_game_operation_window", x => x.pk_game_operation_window_id);
                     table.ForeignKey(
-                        name: "fk_user_slot_game_id",
+                        name: "fk_game_operation_window_game_id",
                         column: x => x.GameId,
                         principalTable: "games",
                         principalColumn: "pk_game_id",
@@ -136,8 +153,8 @@ namespace hrms.Migrations
                     RequesterId = table.Column<int>(type: "int", nullable: true),
                     current_priority_order = table.Column<int>(type: "int", nullable: false),
                     is_deleted = table.Column<bool>(type: "bit", nullable: false),
-                    created_at = table.Column<DateTime>(type: "datetime2", nullable: false),
-                    updated_at = table.Column<DateTime>(type: "datetime2", nullable: false)
+                    created_at = table.Column<DateTime>(type: "datetime2", nullable: false, defaultValueSql: "GETUTCDATE()"),
+                    updated_at = table.Column<DateTime>(type: "datetime2", nullable: false, defaultValueSql: "GETUTCDATE()")
                 },
                 constraints: table =>
                 {
@@ -162,31 +179,32 @@ namespace hrms.Migrations
                 });
 
             migrationBuilder.CreateTable(
-                name: "game_queue",
+                name: "game_slots",
                 columns: table => new
                 {
-                    pk_game_queue_id = table.Column<int>(type: "int", nullable: false)
+                    pk_game_slot_id = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
                     GameId = table.Column<int>(type: "int", nullable: false),
-                    PlayerId = table.Column<int>(type: "int", nullable: false),
-                    is_deleted = table.Column<bool>(type: "bit", nullable: false),
-                    status = table.Column<string>(type: "nvarchar(20)", maxLength: 20, nullable: false),
-                    enqueue_at = table.Column<DateTime>(type: "datetime2", nullable: false)
+                    start_time = table.Column<TimeOnly>(type: "time", nullable: false),
+                    end_time = table.Column<TimeOnly>(type: "time", nullable: false),
+                    date = table.Column<DateTime>(type: "datetime2", nullable: false),
+                    BookedById = table.Column<int>(type: "int", nullable: true),
+                    booked_at = table.Column<DateTime>(type: "datetime2", nullable: true, defaultValueSql: "GETUTCDATE()"),
+                    Status = table.Column<int>(type: "int", nullable: false)
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_game_queue", x => x.pk_game_queue_id);
+                    table.PrimaryKey("PK_game_slots", x => x.pk_game_slot_id);
                     table.ForeignKey(
-                        name: "fk_game_queue_game_id",
+                        name: "FK_game_slots_users_BookedById",
+                        column: x => x.BookedById,
+                        principalTable: "users",
+                        principalColumn: "pk_user_id");
+                    table.ForeignKey(
+                        name: "fk_game_slot_game_id",
                         column: x => x.GameId,
                         principalTable: "games",
                         principalColumn: "pk_game_id",
-                        onDelete: ReferentialAction.Restrict);
-                    table.ForeignKey(
-                        name: "fk_game_queue_player_id",
-                        column: x => x.PlayerId,
-                        principalTable: "users",
-                        principalColumn: "pk_user_id",
                         onDelete: ReferentialAction.Restrict);
                 });
 
@@ -205,8 +223,8 @@ namespace hrms.Migrations
                     ContactTo = table.Column<int>(type: "int", nullable: false),
                     is_active = table.Column<bool>(type: "bit", nullable: false),
                     is_deleted = table.Column<bool>(type: "bit", nullable: false),
-                    created_at = table.Column<DateTime>(type: "datetime2", nullable: false),
-                    updated_at = table.Column<DateTime>(type: "datetime2", nullable: false)
+                    created_at = table.Column<DateTime>(type: "datetime2", nullable: false, defaultValueSql: "GETUTCDATE()"),
+                    updated_at = table.Column<DateTime>(type: "datetime2", nullable: false, defaultValueSql: "GETUTCDATE()")
                 },
                 constraints: table =>
                 {
@@ -249,6 +267,33 @@ namespace hrms.Migrations
                 });
 
             migrationBuilder.CreateTable(
+                name: "posts",
+                columns: table => new
+                {
+                    pk_post_id = table.Column<int>(type: "int", nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
+                    post_url = table.Column<string>(type: "nvarchar(500)", maxLength: 500, nullable: false),
+                    PostById = table.Column<int>(type: "int", nullable: false),
+                    title = table.Column<string>(type: "nvarchar(100)", maxLength: 100, nullable: false),
+                    description = table.Column<string>(type: "nvarchar(1000)", maxLength: 1000, nullable: false),
+                    is_public = table.Column<bool>(type: "bit", nullable: false),
+                    is_inappropriate = table.Column<bool>(type: "bit", nullable: false),
+                    is_deleted = table.Column<bool>(type: "bit", nullable: false),
+                    created_at = table.Column<DateTime>(type: "datetime2", nullable: false, defaultValueSql: "GETUTCDATE()"),
+                    updated_at = table.Column<DateTime>(type: "datetime2", nullable: false, defaultValueSql: "GETUTCDATE()")
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_posts", x => x.pk_post_id);
+                    table.ForeignKey(
+                        name: "fk_post_by_user_id",
+                        column: x => x.PostById,
+                        principalTable: "users",
+                        principalColumn: "pk_user_id",
+                        onDelete: ReferentialAction.Cascade);
+                });
+
+            migrationBuilder.CreateTable(
                 name: "travels",
                 columns: table => new
                 {
@@ -262,8 +307,8 @@ namespace hrms.Migrations
                     CreatedBy = table.Column<int>(type: "int", nullable: false),
                     expense_max_amount_limit = table.Column<decimal>(type: "decimal(10,2)", precision: 10, scale: 2, nullable: false),
                     is_deleted = table.Column<bool>(type: "bit", nullable: false),
-                    created_at = table.Column<DateTime>(type: "datetime2", nullable: false),
-                    updated_at = table.Column<DateTime>(type: "datetime2", nullable: false)
+                    created_at = table.Column<DateTime>(type: "datetime2", nullable: false, defaultValueSql: "GETUTCDATE()"),
+                    updated_at = table.Column<DateTime>(type: "datetime2", nullable: false, defaultValueSql: "GETUTCDATE()")
                 },
                 constraints: table =>
                 {
@@ -415,6 +460,59 @@ namespace hrms.Migrations
                 });
 
             migrationBuilder.CreateTable(
+                name: "game_slot_players",
+                columns: table => new
+                {
+                    pk_game_slot_player_id = table.Column<int>(type: "int", nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
+                    SlotId = table.Column<int>(type: "int", nullable: false),
+                    PlayerId = table.Column<int>(type: "int", nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_game_slot_players", x => x.pk_game_slot_player_id);
+                    table.ForeignKey(
+                        name: "fk_game_slot_player_player_id",
+                        column: x => x.PlayerId,
+                        principalTable: "users",
+                        principalColumn: "pk_user_id",
+                        onDelete: ReferentialAction.Restrict);
+                    table.ForeignKey(
+                        name: "fk_game_slot_player_slot_id",
+                        column: x => x.SlotId,
+                        principalTable: "game_slots",
+                        principalColumn: "pk_game_slot_id",
+                        onDelete: ReferentialAction.Restrict);
+                });
+
+            migrationBuilder.CreateTable(
+                name: "game_slot_waiting",
+                columns: table => new
+                {
+                    pk_game_slot_waiting_id = table.Column<int>(type: "int", nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
+                    GameSlotId = table.Column<int>(type: "int", nullable: false),
+                    RequestedById = table.Column<int>(type: "int", nullable: false),
+                    requested_at = table.Column<DateTime>(type: "datetime2", nullable: true, defaultValueSql: "GETUTCDATE()")
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_game_slot_waiting", x => x.pk_game_slot_waiting_id);
+                    table.ForeignKey(
+                        name: "fk_game_slot_waiting_requested_by_id",
+                        column: x => x.RequestedById,
+                        principalTable: "users",
+                        principalColumn: "pk_user_id",
+                        onDelete: ReferentialAction.Restrict);
+                    table.ForeignKey(
+                        name: "fk_game_slot_waiting_slot_id",
+                        column: x => x.GameSlotId,
+                        principalTable: "game_slots",
+                        principalColumn: "pk_game_slot_id",
+                        onDelete: ReferentialAction.Restrict);
+                });
+
+            migrationBuilder.CreateTable(
                 name: "job_referrals",
                 columns: table => new
                 {
@@ -503,6 +601,90 @@ namespace hrms.Migrations
                 });
 
             migrationBuilder.CreateTable(
+                name: "post_comments",
+                columns: table => new
+                {
+                    pk_post_comment_id = table.Column<int>(type: "int", nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
+                    comment = table.Column<string>(type: "nvarchar(500)", maxLength: 500, nullable: false),
+                    PostId = table.Column<int>(type: "int", nullable: false),
+                    CommentById = table.Column<int>(type: "int", nullable: false),
+                    is_deleted = table.Column<bool>(type: "bit", nullable: false),
+                    created_at = table.Column<DateTime>(type: "datetime2", nullable: false, defaultValueSql: "GETUTCDATE()"),
+                    updated_at = table.Column<DateTime>(type: "datetime2", nullable: false, defaultValueSql: "GETUTCDATE()")
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_post_comments", x => x.pk_post_comment_id);
+                    table.ForeignKey(
+                        name: "fk_post_comment_by_user_id",
+                        column: x => x.CommentById,
+                        principalTable: "users",
+                        principalColumn: "pk_user_id",
+                        onDelete: ReferentialAction.Restrict);
+                    table.ForeignKey(
+                        name: "fk_post_comment_post_id",
+                        column: x => x.PostId,
+                        principalTable: "posts",
+                        principalColumn: "pk_post_id",
+                        onDelete: ReferentialAction.Restrict);
+                });
+
+            migrationBuilder.CreateTable(
+                name: "post_likes",
+                columns: table => new
+                {
+                    pk_post_like_id = table.Column<int>(type: "int", nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
+                    PostId = table.Column<int>(type: "int", nullable: false),
+                    LikedById = table.Column<int>(type: "int", nullable: false),
+                    is_deleted = table.Column<bool>(type: "bit", nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_post_likes", x => x.pk_post_like_id);
+                    table.ForeignKey(
+                        name: "fk_post_like_by_user_id",
+                        column: x => x.LikedById,
+                        principalTable: "users",
+                        principalColumn: "pk_user_id",
+                        onDelete: ReferentialAction.Restrict);
+                    table.ForeignKey(
+                        name: "fk_post_like_post_id",
+                        column: x => x.PostId,
+                        principalTable: "posts",
+                        principalColumn: "pk_post_id",
+                        onDelete: ReferentialAction.Restrict);
+                });
+
+            migrationBuilder.CreateTable(
+                name: "post_tags",
+                columns: table => new
+                {
+                    pk_post_tag_id = table.Column<int>(type: "int", nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
+                    PostId = table.Column<int>(type: "int", nullable: false),
+                    TagId = table.Column<int>(type: "int", nullable: false),
+                    is_deleted = table.Column<bool>(type: "bit", nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_post_tags", x => x.pk_post_tag_id);
+                    table.ForeignKey(
+                        name: "fk_post_tag_post_id",
+                        column: x => x.PostId,
+                        principalTable: "posts",
+                        principalColumn: "pk_post_id",
+                        onDelete: ReferentialAction.Restrict);
+                    table.ForeignKey(
+                        name: "fk_post_tag_tag_id",
+                        column: x => x.TagId,
+                        principalTable: "tags",
+                        principalColumn: "pk_tag_id",
+                        onDelete: ReferentialAction.Restrict);
+                });
+
+            migrationBuilder.CreateTable(
                 name: "expenses",
                 columns: table => new
                 {
@@ -517,8 +699,8 @@ namespace hrms.Migrations
                     details = table.Column<string>(type: "nvarchar(200)", maxLength: 200, nullable: false),
                     expense_date = table.Column<DateTime>(type: "datetime2", nullable: false),
                     is_deleted = table.Column<bool>(type: "bit", nullable: false),
-                    created_at = table.Column<DateTime>(type: "datetime2", nullable: false),
-                    updated_at = table.Column<DateTime>(type: "datetime2", nullable: false)
+                    created_at = table.Column<DateTime>(type: "datetime2", nullable: false, defaultValueSql: "GETUTCDATE()"),
+                    updated_at = table.Column<DateTime>(type: "datetime2", nullable: false, defaultValueSql: "GETUTCDATE()")
                 },
                 constraints: table =>
                 {
@@ -609,6 +791,32 @@ namespace hrms.Migrations
                 });
 
             migrationBuilder.CreateTable(
+                name: "game_slot_waiting_players",
+                columns: table => new
+                {
+                    pk_game_slot_waiting_player_id = table.Column<int>(type: "int", nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
+                    GameSlotWaitingId = table.Column<int>(type: "int", nullable: false),
+                    PlayerId = table.Column<int>(type: "int", nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_game_slot_waiting_players", x => x.pk_game_slot_waiting_player_id);
+                    table.ForeignKey(
+                        name: "fk_game_slot_waiting_player_player_id",
+                        column: x => x.PlayerId,
+                        principalTable: "users",
+                        principalColumn: "pk_user_id",
+                        onDelete: ReferentialAction.Restrict);
+                    table.ForeignKey(
+                        name: "fk_game_slot_waiting_player_waiting_id",
+                        column: x => x.GameSlotWaitingId,
+                        principalTable: "game_slot_waiting",
+                        principalColumn: "pk_game_slot_waiting_id",
+                        onDelete: ReferentialAction.Restrict);
+                });
+
+            migrationBuilder.CreateTable(
                 name: "expense_proof",
                 columns: table => new
                 {
@@ -676,14 +884,44 @@ namespace hrms.Migrations
                 column: "TravelId");
 
             migrationBuilder.CreateIndex(
-                name: "IX_game_queue_GameId",
-                table: "game_queue",
+                name: "IX_game_operation_window_GameId",
+                table: "game_operation_window",
                 column: "GameId");
 
             migrationBuilder.CreateIndex(
-                name: "IX_game_queue_PlayerId",
-                table: "game_queue",
+                name: "IX_game_slot_players_PlayerId",
+                table: "game_slot_players",
                 column: "PlayerId");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_game_slot_players_SlotId",
+                table: "game_slot_players",
+                column: "SlotId");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_game_slot_waiting_GameSlotId",
+                table: "game_slot_waiting",
+                column: "GameSlotId");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_game_slot_waiting_RequestedById",
+                table: "game_slot_waiting",
+                column: "RequestedById");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_game_slot_waiting_players_GameSlotWaitingId",
+                table: "game_slot_waiting_players",
+                column: "GameSlotWaitingId");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_game_slot_waiting_players_PlayerId",
+                table: "game_slot_waiting_players",
+                column: "PlayerId");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_game_slots_BookedById",
+                table: "game_slots",
+                column: "BookedById");
 
             migrationBuilder.CreateIndex(
                 name: "IX_game_slots_GameId",
@@ -734,6 +972,41 @@ namespace hrms.Migrations
                 name: "IX_notifications_NotifiedTo",
                 table: "notifications",
                 column: "NotifiedTo");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_post_comments_CommentById",
+                table: "post_comments",
+                column: "CommentById");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_post_comments_PostId",
+                table: "post_comments",
+                column: "PostId");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_post_likes_LikedById",
+                table: "post_likes",
+                column: "LikedById");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_post_likes_PostId",
+                table: "post_likes",
+                column: "PostId");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_post_tags_PostId",
+                table: "post_tags",
+                column: "PostId");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_post_tags_TagId",
+                table: "post_tags",
+                column: "TagId");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_posts_PostById",
+                table: "posts",
+                column: "PostById");
 
             migrationBuilder.CreateIndex(
                 name: "IX_requested_players_PlayerId",
@@ -832,10 +1105,13 @@ namespace hrms.Migrations
                 name: "expense_proof");
 
             migrationBuilder.DropTable(
-                name: "game_queue");
+                name: "game_operation_window");
 
             migrationBuilder.DropTable(
-                name: "game_slots");
+                name: "game_slot_players");
+
+            migrationBuilder.DropTable(
+                name: "game_slot_waiting_players");
 
             migrationBuilder.DropTable(
                 name: "job_referrals");
@@ -848,6 +1124,15 @@ namespace hrms.Migrations
 
             migrationBuilder.DropTable(
                 name: "notifications");
+
+            migrationBuilder.DropTable(
+                name: "post_comments");
+
+            migrationBuilder.DropTable(
+                name: "post_likes");
+
+            migrationBuilder.DropTable(
+                name: "post_tags");
 
             migrationBuilder.DropTable(
                 name: "requested_players");
@@ -871,7 +1156,16 @@ namespace hrms.Migrations
                 name: "expenses");
 
             migrationBuilder.DropTable(
+                name: "game_slot_waiting");
+
+            migrationBuilder.DropTable(
                 name: "jobs");
+
+            migrationBuilder.DropTable(
+                name: "posts");
+
+            migrationBuilder.DropTable(
+                name: "tags");
 
             migrationBuilder.DropTable(
                 name: "booking_slot");
@@ -883,10 +1177,13 @@ namespace hrms.Migrations
                 name: "travels");
 
             migrationBuilder.DropTable(
-                name: "games");
+                name: "game_slots");
 
             migrationBuilder.DropTable(
                 name: "users");
+
+            migrationBuilder.DropTable(
+                name: "games");
 
             migrationBuilder.DropTable(
                 name: "departments");

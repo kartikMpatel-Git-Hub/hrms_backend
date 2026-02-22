@@ -40,7 +40,21 @@ namespace hrms.Controllers
         {
             if(page <= 0 || pageSize <= 0)
                 return BadRequest("Page Number and Page Size must be greater than zero !");
-            PagedReponseDto<PostResponseDto> response = await _service.GetPosts(page, pageSize);
+            var user = User;
+            if (user == null)
+                return Unauthorized("Unauthorized Access !");
+            var userId = Int32.Parse(user.FindFirst(System.Security.Claims.ClaimTypes.PrimarySid)?.Value);  
+            PagedReponseDto<PostResponseDto> response = await _service.GetMyPosts(userId, page, pageSize);
+            return Ok(response);
+        }
+
+        [HttpGet("inappropriate")]
+        [Authorize(Roles = "Admin, HR")]
+        public async Task<IActionResult> GetInappropriatePosts(int page = 1, int pageSize = 10)
+        {
+            if(page <= 0 || pageSize <= 0)
+                return BadRequest("Page Number and Page Size must be greater than zero !");
+            PagedReponseDto<PostResponseDto> response = await _service.GetInappropriatePosts(page, pageSize);
             return Ok(response);
         }
 
@@ -51,10 +65,22 @@ namespace hrms.Controllers
                 return BadRequest("Post Id must be greater than zero !");
             if(postId <= 0)
                 return BadRequest("Post Id must be greater than zero !");
-            PostDetailResponseDto response = await _service.GetPost((int)postId);
+            var user = User;
+            if (user == null)
+                return Unauthorized("Unauthorized Access !");
+            var userId = Int32.Parse(user.FindFirst(System.Security.Claims.ClaimTypes.PrimarySid)?.Value);  
+            PostDetailResponseDto response = await _service.GetPost(userId, (int)postId);
             return Ok(response);
         }
 
+        [HttpPatch("{postId}/inappropriate")]
+        public async Task<IActionResult> MarkPostInAppropriate(int? postId)
+        {
+            if(postId == null || postId <= 0)
+                return BadRequest("Post Id must be greater than zero !");
+            await _service.MarkPostInAppropriate((int)postId);
+            return Ok(new { message = $"Post with ID {postId} marked as inappropriate successfully." });
+        }
         [HttpPut("{postId}")]
         public async Task<IActionResult> UpdatePost(int? postId, PostUpdateDto? postUpdateDto)
         {
@@ -72,7 +98,7 @@ namespace hrms.Controllers
             if(postId == null || postId <= 0)
                 return BadRequest("Post Id must be greater than zero !");
             await _service.DeletePost((int)postId);
-            return Ok("Post deleted successfully.");
+            return Ok(new { message = "Post deleted successfully." });
         }
 
         // like related posts
@@ -87,7 +113,7 @@ namespace hrms.Controllers
                 return Unauthorized("Unauthorized Access !");
             var userId = Int32.Parse(user.FindFirst(System.Security.Claims.ClaimTypes.PrimarySid)?.Value);
             bool isLiked = await _service.LikePost((int)postId, userId);
-            return Ok(isLiked ? "Post liked successfully." : "Post Like removed successfully.");
+            return Ok(new { message = isLiked ? "Post liked successfully." : "Post Like removed successfully." });
         }
 
         // [HttpGet("{postId}/like")]
@@ -98,7 +124,7 @@ namespace hrms.Controllers
 
         // comment related posts
 
-        [HttpPost("{postId}/comment")]
+        [HttpPost("{postId}/comments")]
         public async Task<IActionResult> CommentOnPost(int? postId, CommentCreateDto? commentCreateDto)
         {
             if(postId == null || postId <= 0)
@@ -122,7 +148,7 @@ namespace hrms.Controllers
             return Ok(response);
         }
 
-        [HttpDelete("{postId}/comment/{commentId}")]
+        [HttpDelete("{postId}/comments/{commentId}")]
         public async Task<IActionResult> DeleteComment(int? postId, int? commentId)
         {
             if(postId == null || postId <= 0)
@@ -130,10 +156,10 @@ namespace hrms.Controllers
             if(commentId == null || commentId <= 0)
                 return BadRequest("Comment Id must be greater than zero !");
             await _service.DeleteComment((int)postId, (int)commentId);
-            return Ok($"Comment with ID {commentId} deleted from post with ID {postId} successfully.");
+            return Ok(new { message = $"Comment with ID {commentId} deleted from post with ID {postId} successfully." });
         }
 
-        [HttpPut("{postId}/comment/{commentId}")]
+        [HttpPut("{postId}/comments/{commentId}")]
         public async Task<IActionResult> UpdateComment(int? postId, int? commentId, CommentUpdateDto? commentUpdateDto)
         {
             if(postId == null || postId <= 0)
@@ -153,7 +179,11 @@ namespace hrms.Controllers
         {
             if(pageNumber <= 0 || pageSize <= 0)
                 return BadRequest("Page Number and Page Size must be greater than zero !");
-            PagedReponseDto<PostResponseDto> response = await _service.GetFeed(pageNumber, pageSize);
+            var user = User;
+            if (user == null)
+                return Unauthorized("Unauthorized Access !");
+            var userId = Int32.Parse(user.FindFirst(System.Security.Claims.ClaimTypes.PrimarySid)?.Value);
+            PagedReponseDto<PostResponseDto> response = await _service.GetFeed(userId,pageNumber, pageSize);
             return Ok(response);
         }
 
@@ -187,7 +217,7 @@ namespace hrms.Controllers
                 return BadRequest("Tag Id must be greater than zero !");
 
             await _service.DeleteTag((int)tagId);
-            return Ok($"Tag with ID {tagId} deleted successfully.");    
+            return Ok(new { message = $"Tag with ID {tagId} deleted successfully." });    
         }
 
         // tags related to post
@@ -201,7 +231,7 @@ namespace hrms.Controllers
             return Ok(response);            
         }
 
-        [HttpPost("{postId}/tags")]
+        [HttpPost("{postId}/tags/{tagId}")]
         public async Task<IActionResult> AddTagToPost(int? postId, int? tagId)
         {
             if(postId == null || postId <= 0)
@@ -209,7 +239,7 @@ namespace hrms.Controllers
             if(tagId == null || tagId <= 0)
                 return BadRequest("Tag Id must be greater than zero !");
             await _service.AddTagToPost((int)postId, (int)tagId);
-            return Ok($"Tag with ID {tagId} added to post with ID {postId} successfully.");
+            return Ok(new { message = $"Tag with ID {tagId} added to post with ID {postId} successfully." });
         }
 
         [HttpDelete("{postId}/tags/{tagId}")]
@@ -220,7 +250,7 @@ namespace hrms.Controllers
             if(tagId == null || tagId <= 0)
                 return BadRequest("Tag Id must be greater than zero !");
             await _service.RemoveTagFromPost((int)postId, (int)tagId);
-            return Ok($"Tag with ID {tagId} removed from post with ID {postId} successfully.");
+            return Ok(new { message = $"Tag with ID {tagId} removed from post with ID {postId} successfully." });
         }
     }
 }

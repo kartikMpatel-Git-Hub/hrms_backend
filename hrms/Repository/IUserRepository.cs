@@ -21,5 +21,8 @@ namespace hrms.Repository
         Task<PagedReponseOffSet<User>> GetAllHrs(int pageSize, int pageNumber);
         Task<List<User>> GetHrByKey(string s);
         Task ToggleGameInterestStatus(int userId, int gameId);
+        Task<PagedReponseOffSet<User>> GetAllUserForHr(int pageSize, int pageNumber);
+        Task<PagedReponseOffSet<User>> GetAllManagers(int pageSize, int pageNumber);
+        Task<PagedReponseOffSet<User>> GetEmployeeUnderManager(int userId, int pageSize, int pageNumber);
     }
 }

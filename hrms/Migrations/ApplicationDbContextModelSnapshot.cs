@@ -93,13 +93,19 @@ namespace hrms.Migrations
                         .HasColumnName("status");
 
                     b.Property<DateTime>("created_at")
-                        .HasColumnType("datetime2");
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("datetime2")
+                        .HasColumnName("created_at")
+                        .HasDefaultValueSql("GETUTCDATE()");
 
                     b.Property<bool>("is_deleted")
                         .HasColumnType("bit");
 
                     b.Property<DateTime>("updated_at")
-                        .HasColumnType("datetime2");
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("datetime2")
+                        .HasColumnName("updated_at")
+                        .HasDefaultValueSql("GETUTCDATE()");
 
                     b.HasKey("Id");
 
@@ -127,13 +133,19 @@ namespace hrms.Migrations
                         .HasColumnType("nvarchar(30)");
 
                     b.Property<DateTime>("created_at")
-                        .HasColumnType("datetime2");
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("datetime2")
+                        .HasColumnName("created_at")
+                        .HasDefaultValueSql("GETUTCDATE()");
 
                     b.Property<bool>("is_deleted")
                         .HasColumnType("bit");
 
                     b.Property<DateTime>("updated_at")
-                        .HasColumnType("datetime2");
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("datetime2")
+                        .HasColumnName("updated_at")
+                        .HasDefaultValueSql("GETUTCDATE()");
 
                     b.HasKey("Id");
 
@@ -186,13 +198,19 @@ namespace hrms.Migrations
                         .HasColumnType("int");
 
                     b.Property<DateTime>("created_at")
-                        .HasColumnType("datetime2");
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("datetime2")
+                        .HasColumnName("created_at")
+                        .HasDefaultValueSql("GETUTCDATE()");
 
                     b.Property<bool>("is_deleted")
                         .HasColumnType("bit");
 
                     b.Property<DateTime>("updated_at")
-                        .HasColumnType("datetime2");
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("datetime2")
+                        .HasColumnName("updated_at")
+                        .HasDefaultValueSql("GETUTCDATE()");
 
                     b.HasKey("Id");
 
@@ -273,6 +291,10 @@ namespace hrms.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
 
+                    b.Property<int>("Duration")
+                        .HasColumnType("int")
+                        .HasColumnName("duration_in_minutes");
+
                     b.Property<int>("MaxPlayer")
                         .HasColumnType("int")
                         .HasColumnName("max_player_per_game");
@@ -287,6 +309,54 @@ namespace hrms.Migrations
                         .HasColumnType("nvarchar(30)")
                         .HasColumnName("game_name");
 
+                    b.Property<int>("SlotAssignedBeforeMinutes")
+                        .HasColumnType("int")
+                        .HasColumnName("slot_assigned_before_x_minutes");
+
+                    b.Property<int>("SlotCreateForNextXDays")
+                        .HasColumnType("int")
+                        .HasColumnName("slot_create_for_next_x_days");
+
+                    b.Property<DateTime>("created_at")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("datetime2")
+                        .HasColumnName("created_at")
+                        .HasDefaultValueSql("GETUTCDATE()");
+
+                    b.Property<bool>("is_deleted")
+                        .HasColumnType("bit");
+
+                    b.Property<DateTime>("updated_at")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("datetime2")
+                        .HasColumnName("updated_at")
+                        .HasDefaultValueSql("GETUTCDATE()");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("games", (string)null);
+                });
+
+            modelBuilder.Entity("hrms.Model.GameOperationWindow", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .HasColumnName("pk_game_operation_window_id");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+
+                    b.Property<int>("GameId")
+                        .HasColumnType("int");
+
+                    b.Property<TimeOnly>("OperationalEndTime")
+                        .HasColumnType("time")
+                        .HasColumnName("operational_end_time");
+
+                    b.Property<TimeOnly>("OperationalStartTime")
+                        .HasColumnType("time")
+                        .HasColumnName("operational_start_time");
+
                     b.Property<DateTime>("created_at")
                         .HasColumnType("datetime2");
 
@@ -298,44 +368,9 @@ namespace hrms.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("games", (string)null);
-                });
-
-            modelBuilder.Entity("hrms.Model.GameQueue", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int")
-                        .HasColumnName("pk_game_queue_id");
-
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
-
-                    b.Property<DateTime>("EnqueueAt")
-                        .HasColumnType("datetime2")
-                        .HasColumnName("enqueue_at");
-
-                    b.Property<int>("GameId")
-                        .HasColumnType("int");
-
-                    b.Property<int>("PlayerId")
-                        .HasColumnType("int");
-
-                    b.Property<string>("Status")
-                        .IsRequired()
-                        .HasMaxLength(20)
-                        .HasColumnType("nvarchar(20)")
-                        .HasColumnName("status");
-
-                    b.Property<bool>("is_deleted")
-                        .HasColumnType("bit");
-
-                    b.HasKey("Id");
-
                     b.HasIndex("GameId");
 
-                    b.HasIndex("PlayerId");
-
-                    b.ToTable("game_queue", (string)null);
+                    b.ToTable("game_operation_window", (string)null);
                 });
 
             modelBuilder.Entity("hrms.Model.GameSlot", b =>
@@ -346,6 +381,19 @@ namespace hrms.Migrations
                         .HasColumnName("pk_game_slot_id");
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+
+                    b.Property<DateTime?>("BookedAt")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("datetime2")
+                        .HasColumnName("booked_at")
+                        .HasDefaultValueSql("GETUTCDATE()");
+
+                    b.Property<int?>("BookedById")
+                        .HasColumnType("int");
+
+                    b.Property<DateTime>("Date")
+                        .HasColumnType("datetime2")
+                        .HasColumnName("date");
 
                     b.Property<TimeOnly>("EndTime")
                         .HasColumnType("time")
@@ -358,20 +406,94 @@ namespace hrms.Migrations
                         .HasColumnType("time")
                         .HasColumnName("start_time");
 
-                    b.Property<DateTime>("created_at")
-                        .HasColumnType("datetime2");
-
-                    b.Property<bool>("is_deleted")
-                        .HasColumnType("bit");
-
-                    b.Property<DateTime>("updated_at")
-                        .HasColumnType("datetime2");
+                    b.Property<int>("Status")
+                        .HasColumnType("int");
 
                     b.HasKey("Id");
+
+                    b.HasIndex("BookedById");
 
                     b.HasIndex("GameId");
 
                     b.ToTable("game_slots", (string)null);
+                });
+
+            modelBuilder.Entity("hrms.Model.GameSlotPlayer", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .HasColumnName("pk_game_slot_player_id");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+
+                    b.Property<int>("PlayerId")
+                        .HasColumnType("int");
+
+                    b.Property<int>("SlotId")
+                        .HasColumnType("int");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("PlayerId");
+
+                    b.HasIndex("SlotId");
+
+                    b.ToTable("game_slot_players", (string)null);
+                });
+
+            modelBuilder.Entity("hrms.Model.GameSlotWaiting", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .HasColumnName("pk_game_slot_waiting_id");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+
+                    b.Property<int>("GameSlotId")
+                        .HasColumnType("int");
+
+                    b.Property<DateTime?>("RequestedAt")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("datetime2")
+                        .HasColumnName("requested_at")
+                        .HasDefaultValueSql("GETUTCDATE()");
+
+                    b.Property<int>("RequestedById")
+                        .HasColumnType("int");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("GameSlotId");
+
+                    b.HasIndex("RequestedById");
+
+                    b.ToTable("game_slot_waiting", (string)null);
+                });
+
+            modelBuilder.Entity("hrms.Model.GameSlotWaitingPlayer", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .HasColumnName("pk_game_slot_waiting_player_id");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+
+                    b.Property<int>("GameSlotWaitingId")
+                        .HasColumnType("int");
+
+                    b.Property<int>("PlayerId")
+                        .HasColumnType("int");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("GameSlotWaitingId");
+
+                    b.HasIndex("PlayerId");
+
+                    b.ToTable("game_slot_waiting_players", (string)null);
                 });
 
             modelBuilder.Entity("hrms.Model.Job", b =>
@@ -424,13 +546,19 @@ namespace hrms.Migrations
                         .HasColumnName("title");
 
                     b.Property<DateTime>("created_at")
-                        .HasColumnType("datetime2");
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("datetime2")
+                        .HasColumnName("created_at")
+                        .HasDefaultValueSql("GETUTCDATE()");
 
                     b.Property<bool>("is_deleted")
                         .HasColumnType("bit");
 
                     b.Property<DateTime>("updated_at")
-                        .HasColumnType("datetime2");
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("datetime2")
+                        .HasColumnName("updated_at")
+                        .HasDefaultValueSql("GETUTCDATE()");
 
                     b.HasKey("Id");
 
@@ -641,13 +769,19 @@ namespace hrms.Migrations
                         .HasColumnName("title");
 
                     b.Property<DateTime>("created_at")
-                        .HasColumnType("datetime2");
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("datetime2")
+                        .HasColumnName("created_at")
+                        .HasDefaultValueSql("GETUTCDATE()");
 
                     b.Property<bool>("is_deleted")
                         .HasColumnType("bit");
 
                     b.Property<DateTime>("updated_at")
-                        .HasColumnType("datetime2");
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("datetime2")
+                        .HasColumnName("updated_at")
+                        .HasDefaultValueSql("GETUTCDATE()");
 
                     b.HasKey("Id");
 
@@ -678,13 +812,19 @@ namespace hrms.Migrations
                         .HasColumnType("int");
 
                     b.Property<DateTime>("created_at")
-                        .HasColumnType("datetime2");
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("datetime2")
+                        .HasColumnName("created_at")
+                        .HasDefaultValueSql("GETUTCDATE()");
 
                     b.Property<bool>("is_deleted")
                         .HasColumnType("bit");
 
                     b.Property<DateTime>("updated_at")
-                        .HasColumnType("datetime2");
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("datetime2")
+                        .HasColumnName("updated_at")
+                        .HasDefaultValueSql("GETUTCDATE()");
 
                     b.HasKey("Id");
 
@@ -826,9 +966,8 @@ namespace hrms.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
 
-                    b.Property<string>("IsDeleted")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
+                    b.Property<bool>("IsDeleted")
+                        .HasColumnType("bit");
 
                     b.Property<string>("TagName")
                         .IsRequired()
@@ -885,13 +1024,19 @@ namespace hrms.Migrations
                         .HasColumnName("title");
 
                     b.Property<DateTime>("created_at")
-                        .HasColumnType("datetime2");
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("datetime2")
+                        .HasColumnName("created_at")
+                        .HasDefaultValueSql("GETUTCDATE()");
 
                     b.Property<bool>("is_deleted")
                         .HasColumnType("bit");
 
                     b.Property<DateTime>("updated_at")
-                        .HasColumnType("datetime2");
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("datetime2")
+                        .HasColumnName("updated_at")
+                        .HasDefaultValueSql("GETUTCDATE()");
 
                     b.HasKey("Id");
 
@@ -1041,13 +1186,19 @@ namespace hrms.Migrations
                         .HasColumnName("user_role");
 
                     b.Property<DateTime>("created_at")
-                        .HasColumnType("datetime2");
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("datetime2")
+                        .HasColumnName("created_at")
+                        .HasDefaultValueSql("GETUTCDATE()");
 
                     b.Property<bool>("is_deleted")
                         .HasColumnType("bit");
 
                     b.Property<DateTime>("updated_at")
-                        .HasColumnType("datetime2");
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("datetime2")
+                        .HasColumnName("updated_at")
+                        .HasDefaultValueSql("GETUTCDATE()");
 
                     b.HasKey("Id");
 
@@ -1153,7 +1304,7 @@ namespace hrms.Migrations
                         .HasConstraintName("fk_booking_slot_booked_by_id");
 
                     b.HasOne("hrms.Model.Game", "Game")
-                        .WithMany("BookingSlots")
+                        .WithMany()
                         .HasForeignKey("GameId")
                         .OnDelete(DeleteBehavior.Restrict)
                         .IsRequired()
@@ -1212,37 +1363,97 @@ namespace hrms.Migrations
                     b.Navigation("Expense");
                 });
 
-            modelBuilder.Entity("hrms.Model.GameQueue", b =>
+            modelBuilder.Entity("hrms.Model.GameOperationWindow", b =>
                 {
+                    b.HasOne("hrms.Model.Game", "Game")
+                        .WithMany("GameOperationWindows")
+                        .HasForeignKey("GameId")
+                        .OnDelete(DeleteBehavior.Restrict)
+                        .IsRequired()
+                        .HasConstraintName("fk_game_operation_window_game_id");
+
+                    b.Navigation("Game");
+                });
+
+            modelBuilder.Entity("hrms.Model.GameSlot", b =>
+                {
+                    b.HasOne("hrms.Model.User", "BookedBy")
+                        .WithMany()
+                        .HasForeignKey("BookedById");
+
                     b.HasOne("hrms.Model.Game", "Game")
                         .WithMany()
                         .HasForeignKey("GameId")
                         .OnDelete(DeleteBehavior.Restrict)
                         .IsRequired()
-                        .HasConstraintName("fk_game_queue_game_id");
+                        .HasConstraintName("fk_game_slot_game_id");
+
+                    b.Navigation("BookedBy");
+
+                    b.Navigation("Game");
+                });
+
+            modelBuilder.Entity("hrms.Model.GameSlotPlayer", b =>
+                {
+                    b.HasOne("hrms.Model.User", "Player")
+                        .WithMany()
+                        .HasForeignKey("PlayerId")
+                        .OnDelete(DeleteBehavior.Restrict)
+                        .IsRequired()
+                        .HasConstraintName("fk_game_slot_player_player_id");
+
+                    b.HasOne("hrms.Model.GameSlot", "GameSlot")
+                        .WithMany("Players")
+                        .HasForeignKey("SlotId")
+                        .OnDelete(DeleteBehavior.Restrict)
+                        .IsRequired()
+                        .HasConstraintName("fk_game_slot_player_slot_id");
+
+                    b.Navigation("GameSlot");
+
+                    b.Navigation("Player");
+                });
+
+            modelBuilder.Entity("hrms.Model.GameSlotWaiting", b =>
+                {
+                    b.HasOne("hrms.Model.GameSlot", "GameSlot")
+                        .WithMany()
+                        .HasForeignKey("GameSlotId")
+                        .OnDelete(DeleteBehavior.Restrict)
+                        .IsRequired()
+                        .HasConstraintName("fk_game_slot_waiting_slot_id");
+
+                    b.HasOne("hrms.Model.User", "RequestedBy")
+                        .WithMany()
+                        .HasForeignKey("RequestedById")
+                        .OnDelete(DeleteBehavior.Restrict)
+                        .IsRequired()
+                        .HasConstraintName("fk_game_slot_waiting_requested_by_id");
+
+                    b.Navigation("GameSlot");
+
+                    b.Navigation("RequestedBy");
+                });
+
+            modelBuilder.Entity("hrms.Model.GameSlotWaitingPlayer", b =>
+                {
+                    b.HasOne("hrms.Model.GameSlotWaiting", "GameSlotWaiting")
+                        .WithMany("WaitingPlayers")
+                        .HasForeignKey("GameSlotWaitingId")
+                        .OnDelete(DeleteBehavior.Restrict)
+                        .IsRequired()
+                        .HasConstraintName("fk_game_slot_waiting_player_waiting_id");
 
                     b.HasOne("hrms.Model.User", "Player")
                         .WithMany()
                         .HasForeignKey("PlayerId")
                         .OnDelete(DeleteBehavior.Restrict)
                         .IsRequired()
-                        .HasConstraintName("fk_game_queue_player_id");
+                        .HasConstraintName("fk_game_slot_waiting_player_player_id");
 
-                    b.Navigation("Game");
+                    b.Navigation("GameSlotWaiting");
 
                     b.Navigation("Player");
-                });
-
-            modelBuilder.Entity("hrms.Model.GameSlot", b =>
-                {
-                    b.HasOne("hrms.Model.Game", "Game")
-                        .WithMany("Slots")
-                        .HasForeignKey("GameId")
-                        .OnDelete(DeleteBehavior.Restrict)
-                        .IsRequired()
-                        .HasConstraintName("fk_user_slot_game_id");
-
-                    b.Navigation("Game");
                 });
 
             modelBuilder.Entity("hrms.Model.Job", b =>
@@ -1598,9 +1809,17 @@ namespace hrms.Migrations
 
             modelBuilder.Entity("hrms.Model.Game", b =>
                 {
-                    b.Navigation("BookingSlots");
+                    b.Navigation("GameOperationWindows");
+                });
 
-                    b.Navigation("Slots");
+            modelBuilder.Entity("hrms.Model.GameSlot", b =>
+                {
+                    b.Navigation("Players");
+                });
+
+            modelBuilder.Entity("hrms.Model.GameSlotWaiting", b =>
+                {
+                    b.Navigation("WaitingPlayers");
                 });
 
             modelBuilder.Entity("hrms.Model.Job", b =>

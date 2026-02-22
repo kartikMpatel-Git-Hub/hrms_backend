@@ -96,5 +96,23 @@ namespace hrms.Service.impl
         {
             return _repository.ToggleGameInterestStatus(userId, gameId);
         }
+
+        public async Task<PagedReponseDto<UserResponseDto>> GetAllUserForHr(int pageSize, int pageNumber)
+        {
+            PagedReponseOffSet<User> PageUsers = await _repository.GetAllUserForHr(pageSize, pageNumber);
+            return _mapper.Map<PagedReponseDto<UserResponseDto>>(PageUsers);
+        }
+
+        public async Task<PagedReponseDto<UserResponseDto>> GetAllManagers(int pageSize, int pageNumber)
+        {
+            PagedReponseOffSet<User> PageUsers = await _repository.GetAllManagers(pageSize, pageNumber);
+            return _mapper.Map<PagedReponseDto<UserResponseDto>>(PageUsers);
+        }
+
+        public async Task<PagedReponseDto<UserResponseDto>> GetEmployeeUnderManager(int userId, int pageSize, int pageNumber)
+        {
+            PagedReponseOffSet<User> PageUsers = await _repository.GetEmployeeUnderManager(userId, pageSize, pageNumber);
+            return _mapper.Map<PagedReponseDto<UserResponseDto>>(PageUsers);
+        }
     }
 }

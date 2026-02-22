@@ -75,7 +75,10 @@ namespace hrms.Repository.impl
 
         public async Task<User> GetByEmailAsync(string email)
         {
-            return await _context.Users.FirstOrDefaultAsync((u) => u.Email == email);
+            User user = await _context.Users.FirstOrDefaultAsync((u) => u.Email == email);
+            if (user == null)
+                throw new NotFoundCustomException($"User With Email : {email} not found");
+            return user;
         }
 
         public async Task<User> GetByIdAsync(int? id)
@@ -210,6 +213,51 @@ namespace hrms.Repository.impl
             }
 
             await _context.SaveChangesAsync();
+        }
+
+        public Task<PagedReponseOffSet<User>> GetAllUserForHr(int pageSize, int pageNumber)
+        {
+            var TotalRecords = _context.Users.Where(u => !u.is_deleted && (u.Role == UserRole.EMPLOYEE || u.Role == UserRole.MANAGER)).Count();
+            Console.WriteLine($"Total User : {TotalRecords}");
+            List<User> users = _context.Users
+                .OrderBy(u => u.Id)
+                .Where(u => !u.is_deleted && (u.Role == UserRole.EMPLOYEE || u.Role == UserRole.MANAGER))
+                .Include(u => u.Department)
+                .Skip((pageNumber - 1) * pageSize)
+                .Take(pageSize)
+                .ToList();
+            PagedReponseOffSet<User> Response = new PagedReponseOffSet<User>(users, pageNumber, pageSize, TotalRecords);
+            return Task.FromResult(Response);
+        }
+
+        public Task<PagedReponseOffSet<User>> GetAllManagers(int pageSize, int pageNumber)
+        {
+            var TotalRecords = _context.Users.Where(u => !u.is_deleted && (u.Role == UserRole.MANAGER || u.Role == UserRole.ADMIN)).Count();
+            Console.WriteLine($"Total User : {TotalRecords}");
+            List<User> users = _context.Users
+                .OrderBy(u => u.Id)
+                .Where(u => !u.is_deleted && (u.Role == UserRole.MANAGER || u.Role == UserRole.ADMIN))
+                .Include(u => u.Department)
+                .Skip((pageNumber - 1) * pageSize)
+                .Take(pageSize)
+                .ToList();
+            PagedReponseOffSet<User> Response = new PagedReponseOffSet<User>(users, pageNumber, pageSize, TotalRecords);
+            return Task.FromResult(Response);
+        }
+
+        public Task<PagedReponseOffSet<User>> GetEmployeeUnderManager(int userId, int pageSize, int pageNumber)
+        {
+            var TotalRecords = _context.Users.Where(u => !u.is_deleted && u.ReportTo == userId).Count();
+            Console.WriteLine($"Total User : {TotalRecords}");
+            List<User> users = _context.Users
+                .OrderBy(u => u.Id)
+                .Where(u => !u.is_deleted && u.ReportTo == userId)
+                .Include(u => u.Department)
+                .Skip((pageNumber - 1) * pageSize)
+                .Take(pageSize)
+                .ToList();
+            PagedReponseOffSet<User> Response = new PagedReponseOffSet<User>(users, pageNumber, pageSize, TotalRecords);
+            return Task.FromResult(Response);
         }
     }
 }

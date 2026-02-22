@@ -1,4 +1,5 @@
 using AutoMapper;
+using Azure;
 using hrms.Dto.Request.Post;
 using hrms.Dto.Request.Post.Comment;
 using hrms.Dto.Request.Post.Tag;
@@ -15,29 +16,45 @@ namespace hrms.Service.impl
         IPostRepository _repository,
         IUserRepository _userRepository,
         IMapper _mapper,
+        IEmailService _emailService,
         ICloudinaryService _cloudinaryService
         ) : IPostService
     {
-        public Task AddTagToPost(int postId, int tagId)
+        public async Task AddTagToPost(int postId, int tagId)
         {
-            throw new NotImplementedException();
+            await _repository.GetPostById(postId);
+            await _repository.GetTagById(tagId);
+            PostTag postTag = new PostTag()
+            {
+                PostId = postId,
+                TagId = tagId
+            };
+            await _repository.AddTagToPost(postTag);
         }
 
-        public Task<CommentResponseDto> CommentOnPost(int postId, int userId, CommentCreateDto commentCreateDto)
+        public async Task<CommentResponseDto> CommentOnPost(int postId, int userId, CommentCreateDto commentCreateDto)
         {
-            throw new NotImplementedException();
+            await _userRepository.GetByIdAsync(userId);
+            await _repository.GetPostById(postId);
+            PostComment comment = _mapper.Map<PostComment>(commentCreateDto);
+            comment.PostId = postId;
+            comment.CommentById = userId;
+            comment.created_at = DateTime.Now;
+            comment.updated_at = DateTime.Now;
+            PostComment createdComment = await _repository.CreateComment(comment);
+            return _mapper.Map<CommentResponseDto>(createdComment);
         }
 
         public async Task<PostResponseDto> CreatePost(int userId, PostCreateDto postCreateDto)
         {
             User user = await _userRepository.GetByIdAsync(userId);
-            Post post = CreatePost(postCreateDto);
+            Post post = await CreatePost(postCreateDto);
             post.PostById = userId;
             post.PostUrl = await _cloudinaryService.UploadAsync(postCreateDto.Post);
             Post createdPost = await _repository.CreatePost(post);
+            createdPost.PostByUser = user;
             return _mapper.Map<PostResponseDto>(createdPost);
         }
-
 
         public async Task<TagResponseDto> CreateTag(TagCreateDto tagCreateDto)
         {
@@ -69,16 +86,39 @@ namespace hrms.Service.impl
 
         }
 
-        public async Task<PagedReponseDto<PostResponseDto>> GetFeed(int pageNumber, int pageSize)
+        public async Task<PagedReponseDto<PostResponseDto>> GetFeed(int userId, int pageNumber, int pageSize)
         {
             PagedReponseOffSet<Post> pagedPosts = await _repository.GetFeed(pageNumber, pageSize);
-            return _mapper.Map<PagedReponseDto<PostResponseDto>>(pagedPosts);
+            PagedReponseDto<PostResponseDto> response = new PagedReponseDto<PostResponseDto>
+            {
+                Data = pagedPosts.Data.Select(post => ConvertToDto(userId, post)).ToList(),
+                TotalRecords = pagedPosts.TotalRecords,
+                PageNumber = pagedPosts.PageNumber,
+                PageSize = pagedPosts.PageSize,
+                TotalPages = pagedPosts.TotalPages
+            };
+            return response;
         }
 
-        public async Task<PostDetailResponseDto> GetPost(int postId)
+        private PostResponseDto ConvertToDto(int userId, Post post)
+        {
+            PostResponseDto dto = _mapper.Map<PostResponseDto>(post);
+            dto.IsLiked = post.Likes.Any(like => like.LikedById == userId);
+            return dto;
+        }
+
+        private PostDetailResponseDto ConvertDetailToDto(int userId, Post post)
+        {
+            PostDetailResponseDto dto = _mapper.Map<PostDetailResponseDto>(post);
+            dto.IsLiked = post.Likes.Any(like => like.LikedById == userId);
+            dto.Tags = _mapper.Map<List<TagResponseDto>>(post.PostTags.Select(pt => pt.Tag).ToList());
+            return dto;
+        }
+
+        public async Task<PostDetailResponseDto> GetPost(int userId, int postId)
         {
             Post post = await _repository.GetPostById(postId);
-            return _mapper.Map<PostDetailResponseDto>(post);
+            return ConvertDetailToDto(userId, post);
         }
 
         public async Task<PagedReponseDto<PostResponseDto>> GetPosts(int page, int pageSize)
@@ -103,7 +143,7 @@ namespace hrms.Service.impl
 
         public async Task<List<TagResponseDto>> GetTagsForPost(int postId)
         {
-            List<PostTag> postTags = await _repository.GetTagsForPost(postId);
+            List<Tag> postTags = await _repository.GetTagsForPost(postId);
             return _mapper.Map<List<TagResponseDto>>(postTags);
         }
 
@@ -121,7 +161,7 @@ namespace hrms.Service.impl
         public async Task<CommentResponseDto> UpdateComment(int postId, int commentId, CommentUpdateDto commentUpdateDto)
         {
             PostComment comment = await _repository.GetCommentById(commentId);
-            if (comment != null)
+            if (commentUpdateDto.Comment != null)
                 comment.Comment = commentUpdateDto.Comment;
             await _repository.UpdateComment(comment);
             return _mapper.Map<CommentResponseDto>(comment);
@@ -143,17 +183,66 @@ namespace hrms.Service.impl
                 post.IsPublic = postUpdateDto.IsPublic;
             return post;
         }
-        private Post CreatePost(PostCreateDto postCreateDto)
+        private async Task<Post> CreatePost(PostCreateDto postCreateDto)
         {
             Post post = new Post()
             {
                 Title = postCreateDto.Title,
                 Description = postCreateDto.Description,
                 IsPublic = postCreateDto.IsPublic,
-                InAppropriate = false
+                InAppropriate = false,
+                created_at = DateTime.Now,
+                updated_at = DateTime.Now
             };
+            post.PostTags = new List<PostTag>();
+            if (postCreateDto.Tags != null)
+            {
+                foreach (string tagName in postCreateDto.Tags)
+                {
+                    Tag tag = await _repository.GetTagByName(tagName);
+                    if (tag != null)
+                    {
+                        PostTag newTag = new PostTag()
+                        {
+                            TagId = tag.Id,
+                            Tag = tag
+                        };
+                        post.PostTags.Add(newTag);
+                    }
+                }
+            }
             return post;
         }
 
+        public async Task MarkPostInAppropriate(int postId)
+        {
+            Post post = await _repository.GetPostById(postId);
+            if (!post.InAppropriate)
+            {
+                await _emailService.SendEmailAsync(post.PostByUser.Email, "Inappropriate Post Reported", $"Your post titled '{post.Title}' has been reported as inappropriate.");
+            }
+            post.InAppropriate = !post.InAppropriate;
+            await _repository.MarkPostInAppropriate(post);
+        }
+
+        public async Task<PagedReponseDto<PostResponseDto>> GetInappropriatePosts(int page, int pageSize)
+        {
+            PagedReponseOffSet<Post> pagedPosts = await _repository.GetInappropriatePosts(page, pageSize);
+            return _mapper.Map<PagedReponseDto<PostResponseDto>>(pagedPosts);
+        }
+
+        public async Task<PagedReponseDto<PostResponseDto>> GetMyPosts(int userId, int page, int pageSize)
+        {
+            PagedReponseOffSet<Post> pagedPosts = await _repository.GetMyPosts(userId, page, pageSize);
+            PagedReponseDto<PostResponseDto> response = new PagedReponseDto<PostResponseDto>
+            {
+                Data = pagedPosts.Data.Select(post => ConvertToDto(userId, post)).ToList(),
+                TotalRecords = pagedPosts.TotalRecords,
+                PageNumber = pagedPosts.PageNumber,
+                PageSize = pagedPosts.PageSize,
+                TotalPages = pagedPosts.TotalPages
+            };
+            return response;
+        }
     }
 }

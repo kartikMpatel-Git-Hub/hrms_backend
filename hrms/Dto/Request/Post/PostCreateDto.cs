@@ -5,7 +5,7 @@ namespace hrms.Dto.Request.Post
         public IFormFile Post { get; set; }
         public string Title { get; set; }
         public string Description { get; set; }
-        public bool IsPublic { get; set; }
-        public List<int>? Tags { get; set; }
+        public bool IsPublic { get; set; } = true;
+        public List<string>? Tags { get; set; }
     }
 }
