@@ -5,6 +5,7 @@ using hrms.Dto.Request.Post;
 using hrms.Dto.Request.Post.Comment;
 using hrms.Dto.Request.Post.Tag;
 using hrms.Dto.Response.BookingSlot;
+using hrms.Dto.Response.DailyCelebration;
 using hrms.Dto.Response.Department;
 using hrms.Dto.Response.Expense;
 using hrms.Dto.Response.Expense.Category;
@@ -144,6 +145,7 @@ namespace hrms.Utility
             CreateMap<GameSlotPlayer, GameSlotPlayerResponseDto>();
             CreateMap<GameSlotWaiting, GameSlotWaitinglistResponseDto>();
             CreateMap<GameSlotWaitingPlayer, WaitlistPlayerResponseDto>();
+            CreateMap<DailyCelebration,DailyCelebrationResponseDto>();
 
 
             CreateMap(typeof(PagedReponseOffSet<>), typeof(PagedReponseDto<>));

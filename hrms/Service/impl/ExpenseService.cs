@@ -58,7 +58,7 @@ namespace hrms.Service.impl
             ExpenseCategory category = await _repository.GetCategoryById(dto.CategoryId);
             Travel travel = await _travelRepository.GetTravelById(travelId);
             User employee = await _userService.GetEmployee(currentUserId);
-            decimal todaysExpense = dto.Amount + await _travelRepository.GetTodaysExpense(travelId, currentUserId);
+            decimal todaysExpense = dto.Amount + await _travelRepository.GetTodaysExpense(travelId, currentUserId, dto.ExpenseDate);
             if(todaysExpense > travel.MaxAmountLimit)
             {
                 throw new InvalidOperationCustomException($"You have reached Daily Expense Limit !(LIMIT {travel.MaxAmountLimit})");

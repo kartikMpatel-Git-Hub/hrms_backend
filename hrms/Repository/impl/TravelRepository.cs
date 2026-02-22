@@ -74,10 +74,10 @@ namespace hrms.Repository.impl
             return Response;
         }
 
-        public async Task<decimal> GetTodaysExpense(int travelId, int currentUserId)
+        public async Task<decimal> GetTodaysExpense(int travelId, int currentUserId,DateTime dateTime)
         {
             List<Expense> expenses = await _db.Expenses
-                .Where(e => e.TravelId == travelId && e.TravelerId == currentUserId && e.ExpenseDate.Date == DateTime.Now.Date)
+                .Where(e => e.TravelId == travelId && e.TravelerId == currentUserId && e.ExpenseDate.Date == dateTime.Date)
                 .ToListAsync();
             decimal total = 0;
             foreach(var expense in expenses)
@@ -148,6 +148,22 @@ namespace hrms.Repository.impl
                 throw new InvalidOperationCustomException("Failed To fetch traveler !");
             return user;
 
+        }
+
+        public async Task<PagedReponseOffSet<Travel>> GetTravelsByTravelerId(int travelerId, int pageSize, int pageNumber)
+        {
+            int TotalRecords = await _db.Travels
+                .Where(t => !t.is_deleted)
+                .Include(t => t.Travelers.Where(tr => tr.TravelerId == travelerId))
+                .CountAsync();
+            List<Travel> Travels = await _db.Travels
+                .Where(t => !t.is_deleted)
+                .Include(t => t.Travelers.Where(tr => tr.TravelerId == travelerId))
+                .Skip((pageNumber - 1) * pageSize)
+                .Take(pageSize)
+                .ToListAsync();
+            PagedReponseOffSet<Travel> Response = new PagedReponseOffSet<Travel>(Travels, pageNumber, pageSize, TotalRecords);
+            return Response;    
         }
 
         public async Task<Travel> UpdateTravel(Travel travel)

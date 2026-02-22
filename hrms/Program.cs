@@ -83,6 +83,7 @@ builder.Services.AddScoped<IGameRepository, GameRepository>();
 builder.Services.AddScoped<IGameBookingRepository, GameBookingRepository>();
 builder.Services.AddScoped<IUserGameRepository, UserGameRepository>();
 builder.Services.AddScoped<IPostRepository, PostRepository>();
+builder.Services.AddScoped<IDailyCelebrationRepository, DailyCelebrationRepository>();
 
 builder.Services.AddScoped<IAuthenticationService, AuthenticationService>();
 builder.Services.AddScoped<IUserService, UserService>();
@@ -99,6 +100,7 @@ builder.Services.AddScoped<IGameSlotService, GameSlotService>();
 builder.Services.AddScoped<ISlotBookingService, SlotBookingService>();
 builder.Services.AddScoped<IPostService, PostService>();
 builder.Services.AddScoped<IGameSlotGenerateService, GameSlotGenerateService>();
+builder.Services.AddScoped<IDailyCelebrationService, DailyCelebrationService>();
 
 builder.Services.AddHostedService<SlotAssignedCronJob>();
 

@@ -17,6 +17,7 @@ namespace hrms.Repository
         Task<User> GetTravelerByTravelId(int travelId, int travelerId);
         Task<List<TravelDocument>> GetTravelDocuments(int travelId, int travelerId, int userId);
         Task<PagedReponseOffSet<Travel>> GetEmployeeTravels(int id, int pageSize, int pageNumber);
-        Task<decimal> GetTodaysExpense(int travelId, int currentUserId);
+        Task<decimal> GetTodaysExpense(int travelId, int currentUserId, DateTime dateTime);
+        Task<PagedReponseOffSet<Travel>> GetTravelsByTravelerId(int travelerId, int pageSize, int pageNumber);
     }
 }
