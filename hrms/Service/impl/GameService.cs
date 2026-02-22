@@ -27,11 +27,11 @@ namespace hrms.Service.impl
         private async Task ValidateBookSlotRequest(int gameId, int slotId, int userId, BookSlotRequestDto dto)
         {
             Game game = await _repository.GetGameById(gameId);
-            if(game.MaxPlayer < dto.Players.Count + 1)
+            if (game.MaxPlayer < dto.Players.Count + 1)
             {
                 throw new InvalidOperationCustomException("Number of players exceeds the maximum allowed for this game.");
             }
-             if(game.MinPlayer > dto.Players.Count + 1)
+            if (game.MinPlayer > dto.Players.Count + 1)
             {
                 throw new InvalidOperationCustomException("Number of players is less than the minimum required for this game.");
             }
@@ -63,9 +63,35 @@ namespace hrms.Service.impl
             }
         }
 
-        public Task<GameSlotResponseDto> CancelGameSlot(int gameId, int slotId)
+        public async Task<GameSlotResponseDto> CancelGameSlot(int gameId, int slotId)
         {
-            throw new NotImplementedException();
+            GameSlot slot = await _repository.GetGameSlotById(gameId, slotId);
+            
+            var slotStartDateTime = slot.Date.Add(slot.StartTime.ToTimeSpan());
+            var timeUntilSlotStart = slotStartDateTime - DateTime.Now;
+            
+            if (timeUntilSlotStart.TotalMinutes <= 15)
+            {
+                throw new InvalidOperationCustomException("Cannot cancel booking. The slot starts in less than 15 minutes.");
+            }
+            
+            GameSlotWaiting myWaitlistEntry = await _repository.GetUserWaitlistEntryForSlot(gameId, slotId, (int)slot.BookedById);
+            await _userGameRepository.DecrementGamePlayed((int)slot.BookedById, gameId);
+            myWaitlistEntry.IsCancelled = true;
+            await _repository.UpdateGameSlotWaiting(myWaitlistEntry);
+            slot.BookedById = null;
+            slot.BookedBy = null;
+            
+            // Materialize the collection first to avoid "collection modified" error
+            var playersToRemove = slot.Players.ToList();
+            foreach (var player in playersToRemove)
+            {
+                await _userGameRepository.DecrementGamePlayed(player.PlayerId, gameId);
+                await _repository.RemovePlayerFromGameSlot(player.Id);
+            }
+            slot.Status = GameSlotStatus.WAITING;
+            GameSlot updatedSlot = await _repository.UpdateGameSlot(slot);
+            return _mapper.Map<GameSlotResponseDto>(updatedSlot);
         }
 
         public async Task<GameResponseDto> CreateGame(GameCreateDto dto)
@@ -184,6 +210,14 @@ namespace hrms.Service.impl
         {
             bool isInterested = await _userGameRepository.IsUserInterestedInGame(userId, gameId);
             return isInterested;
+        }
+
+        public async Task<GameSlotWaitinglistResponseDto> CancelWaitingListEntry(int gameId, int slotId, int waitlistId)
+        {
+            GameSlotWaiting entry = await _repository.GetGameSlotWaitlistById(waitlistId);
+            entry.IsCancelled = true;
+            await _repository.UpdateGameSlotWaiting(entry);
+            return _mapper.Map<GameSlotWaitinglistResponseDto>(entry);
         }
     }
 }

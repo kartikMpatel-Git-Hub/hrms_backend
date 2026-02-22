@@ -109,7 +109,7 @@ namespace hrms.Controllers
 
 
         [HttpPost("{jobId}/referre")]
-        [Authorize(Roles = "EMPLOYEE")]
+        [Authorize(Roles = "EMPLOYEE,MANAGER")]
         public async Task<IActionResult> ReferedJob(
             int? jobId,ReferralCreateDto? dto)
         {
@@ -183,7 +183,7 @@ namespace hrms.Controllers
         }
 
         [HttpPost("{jobId}/share")]
-        [Authorize(Roles = "EMPLOYEE")]
+        [Authorize(Roles = "EMPLOYEE,MANAGER")]
         public async Task<IActionResult> ShareJob(
             int? jobId, ShareCreateDto? dto)
         {

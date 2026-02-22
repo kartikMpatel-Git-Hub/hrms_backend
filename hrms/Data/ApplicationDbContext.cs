@@ -870,7 +870,11 @@ namespace hrms.Data
                     .HasForeignKey(gsw => gsw.RequestedById)
                     .HasConstraintName("fk_game_slot_waiting_requested_by_id")
                     .OnDelete(DeleteBehavior.Restrict);
-                
+
+                entity
+                    .Property(gsw => gsw.IsCancelled)
+                    .HasColumnName("is_cancelled");
+
                 entity
                     .Property(gsw => gsw.RequestedAt)
                     .HasColumnName("requested_at")

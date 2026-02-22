@@ -19,5 +19,7 @@ namespace hrms.Repository
         Task<PagedReponseOffSet<Travel>> GetEmployeeTravels(int id, int pageSize, int pageNumber);
         Task<decimal> GetTodaysExpense(int travelId, int currentUserId, DateTime dateTime);
         Task<PagedReponseOffSet<Travel>> GetTravelsByTravelerId(int travelerId, int pageSize, int pageNumber);
+        Task<PagedReponseOffSet<Expense>> GetExpensesByTravelIdAndTravelerId(int travelId, int travelerId, int pageSize, int pageNumber);
+        Task<PagedReponseOffSet<TravelDocument>> GetDocumentsByTravelIdAndTravelerId(int travelId, int travelerId, int pageSize, int pageNumber);
     }
 }

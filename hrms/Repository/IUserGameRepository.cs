@@ -18,5 +18,6 @@ namespace hrms.Repository
         Task<PagedReponseOffSet<User>> GetAvailablePlayers(int gameId, int currentUserId, string? key, int pageSize, int pageNumber);
         Task<List<int>> GetUserGameStates(int gameId, int gamePlayed);
         Task<bool> ToggleGameInterestStatus(int currentUserId, int gameId);
+        Task DecrementGamePlayed(int bookedById, int gameId);
     }
 }

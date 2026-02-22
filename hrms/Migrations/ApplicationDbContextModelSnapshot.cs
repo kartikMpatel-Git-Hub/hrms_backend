@@ -480,6 +480,10 @@ namespace hrms.Migrations
                     b.Property<int>("GameSlotId")
                         .HasColumnType("int");
 
+                    b.Property<bool>("IsCancelled")
+                        .HasColumnType("bit")
+                        .HasColumnName("is_cancelled");
+
                     b.Property<DateTime?>("RequestedAt")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("datetime2")

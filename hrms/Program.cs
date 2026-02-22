@@ -59,9 +59,8 @@ builder.Services.AddQuartz(q =>
     q.AddTrigger(opts => opts
         .ForJob(jobKey)
         .WithIdentity("WeeklyJob-trigger")
-        .StartNow()
-        //.WithCronSchedule("0 5 0 ? * *")
-    //.WithCronSchedule("0 0 0 ? * MON")
+        .StartNow() 
+        // .WithCronSchedule("0 5 0 ? * *")  
     );
 });
 
@@ -180,5 +179,19 @@ app.UseAuthentication();
 app.UseAuthorization();
 
 app.MapControllers();
+
+using (var scope = app.Services.CreateScope())
+{
+    var services = scope.ServiceProvider;
+    try
+    {
+        var context = services.GetRequiredService<ApplicationDbContext>();
+        var seeder = new DataSeeder(context, services.GetRequiredService<ILogger<DataSeeder>>());
+        await seeder.SeedDataAsync();
+    }
+    catch (Exception ex)
+    {
+    }
+}
 
 app.Run();

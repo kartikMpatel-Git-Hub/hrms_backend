@@ -169,6 +169,17 @@ namespace hrms.Controllers
             return Ok(response);
         }
 
+        [HttpDelete("{gameId}/slots/{slotId}/waitlist/{waitlistId}")]
+        public async Task<IActionResult> CancelGameSlotWaitlist(int? gameId, int? slotId, int? waitlistId)
+        {
+            if (gameId == null || gameId <= 0 || slotId == null || slotId <= 0 || waitlistId == null || waitlistId <= 0)
+            {
+                return BadRequest("Invalid game ID, slot ID, or waitlist ID.");
+            }
+            GameSlotWaitinglistResponseDto response = await _service.CancelWaitingListEntry((int)gameId, (int)slotId, (int)waitlistId);
+            return Ok(response);
+        }
+
         [HttpPost("{gameId}/slots/{slotId}")]
         public async Task<IActionResult> BookGameSlot(int? gameId, int? slotId, BookSlotRequestDto dto)
         {
@@ -187,7 +198,6 @@ namespace hrms.Controllers
         [HttpDelete("{gameId}/slots/{slotId}")]
         public async Task<IActionResult> CancelGameSlot(int? gameId, int? slotId)
         {
-            return BadRequest("Slot cancellation is currently unavailable. Please contact support for assistance.");
             if (gameId == null || gameId <= 0 || slotId == null || slotId <= 0)
             {
                 return BadRequest("Invalid game ID or slot ID.");

@@ -9,6 +9,7 @@ namespace hrms.Service
     {
         Task<GameSlotResponseDto> BookGameSlot(int gameId, int slotId, int userId, BookSlotRequestDto dto);
         Task<GameSlotResponseDto> CancelGameSlot(int gameId, int slotId);
+        Task<GameSlotWaitinglistResponseDto> CancelWaitingListEntry(int gameId, int slotId, int waitlistId);
         Task<GameResponseDto> CreateGame(GameCreateDto dto);
         Task<GameOperationWindowResponseDto> CreateGameOperationWindow(int gameId, GameOperationWindowCreateDto dto);
         Task<bool> DeleteGame(int gameId);
