@@ -1,4 +1,5 @@
 ﻿using hrms.Dto.Response.Game.GameSlot;
+using hrms.Model;
 
 namespace hrms.Dto.Response.Game
 {
@@ -8,6 +9,7 @@ namespace hrms.Dto.Response.Game
         public string Name { get; set; }
         public int MaxPlayer { get; set; }
         public int MinPlayer { get; set; } = 0;
-        public List<GameSlotResponseDto> Slots { get; set; } = new List<GameSlotResponseDto>();
+        public int Duration { get; set; } = 0;
+        public List<GameOperationWindowResponseDto> GameOperationWindows { get; set; } = new List<GameOperationWindowResponseDto>();
     }
 }

@@ -14,7 +14,9 @@ namespace hrms.Dto.Response.Post
         public DateTime CreatedAt { get; set; }
         public DateTime UpdatedAt { get; set; }
         public bool IsLiked { get; set; }
-        public UserMinimalResponseDto PostBy { get; set; }
+        public UserMinimalResponseDto PostByUser { get; set; }
+        public bool InAppropriate { get; set; }
+        public List<TagResponseDto> Tags { get; set; } = new List<TagResponseDto>();
         public int LikeCount { get; set; }
         public int CommentCount { get; set; }
     }

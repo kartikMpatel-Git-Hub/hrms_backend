@@ -18,12 +18,15 @@ namespace hrms.Service
         Task DeletePost(int postId);
         Task DeleteTag(int tagId);
         Task<PagedReponseDto<CommentResponseDto>> GetCommentsForPost(int postId, int pageNumber, int pageSize);
-        Task<PagedReponseDto<PostResponseDto>> GetFeed(int pageNumber, int pageSize);
-        Task<PostDetailResponseDto> GetPost(int postId);
+        Task<PagedReponseDto<PostResponseDto>> GetFeed(int userId, int pageNumber, int pageSize);
+        Task<PagedReponseDto<PostResponseDto>> GetInappropriatePosts(int page, int pageSize);
+        Task<PagedReponseDto<PostResponseDto>> GetMyPosts(int userId, int page, int pageSize);
+        Task<PostDetailResponseDto> GetPost(int userId, int postId);
         Task<PagedReponseDto<PostResponseDto>> GetPosts(int page, int pageSize);
         Task<PagedReponseDto<TagResponseDto>> GetTags(string searchQuery, int pageNumber, int pageSize);
         Task<List<TagResponseDto>> GetTagsForPost(int postId);
         Task<bool> LikePost(int postId, int userId);
+        Task MarkPostInAppropriate(int postId);
         Task RemoveTagFromPost(int postId, int tagId);
         Task<CommentResponseDto> UpdateComment(int postId, int commentId, CommentUpdateDto commentUpdateDto);
         Task<PostResponseDto> UpdatePost(int postId, PostUpdateDto postUpdateDto);

@@ -810,48 +810,6 @@
         }
       }
     },
-    "/Game/{gameId}/slot": {
-      "post": {
-        "tags": [
-          "Game"
-        ],
-        "parameters": [
-          {
-            "name": "gameId",
-            "in": "path",
-            "required": true,
-            "schema": {
-              "type": "integer",
-              "format": "int32"
-            }
-          }
-        ],
-        "requestBody": {
-          "content": {
-            "application/json": {
-              "schema": {
-                "$ref": "#/components/schemas/GameSlotCreateDto"
-              }
-            },
-            "text/json": {
-              "schema": {
-                "$ref": "#/components/schemas/GameSlotCreateDto"
-              }
-            },
-            "application/*+json": {
-              "schema": {
-                "$ref": "#/components/schemas/GameSlotCreateDto"
-              }
-            }
-          }
-        },
-        "responses": {
-          "200": {
-            "description": "OK"
-          }
-        }
-      }
-    },
     "/Game/{gameId}": {
       "get": {
         "tags": [
@@ -936,27 +894,19 @@
         }
       }
     },
-    "/Game/{gameId}/slot/{gameSlotId}": {
-      "put": {
+    "/Game/{gameId}/operation-window": {
+      "post": {
         "tags": [
           "Game"
         ],
         "parameters": [
           {
-            "name": "gameSlotId",
+            "name": "gameId",
             "in": "path",
             "required": true,
             "schema": {
               "type": "integer",
               "format": "int32"
-            }
-          },
-          {
-            "name": "gameId",
-            "in": "path",
-            "required": true,
-            "schema": {
-              "type": "string"
             }
           }
         ],
@@ -964,17 +914,17 @@
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/GameSlotUpdateDto"
+                "$ref": "#/components/schemas/GameOperationWindowCreateDto"
               }
             },
             "text/json": {
               "schema": {
-                "$ref": "#/components/schemas/GameSlotUpdateDto"
+                "$ref": "#/components/schemas/GameOperationWindowCreateDto"
               }
             },
             "application/*+json": {
               "schema": {
-                "$ref": "#/components/schemas/GameSlotUpdateDto"
+                "$ref": "#/components/schemas/GameOperationWindowCreateDto"
               }
             }
           }
@@ -985,37 +935,6 @@
           }
         }
       },
-      "delete": {
-        "tags": [
-          "Game"
-        ],
-        "parameters": [
-          {
-            "name": "gameSlotId",
-            "in": "path",
-            "required": true,
-            "schema": {
-              "type": "integer",
-              "format": "int32"
-            }
-          },
-          {
-            "name": "gameId",
-            "in": "path",
-            "required": true,
-            "schema": {
-              "type": "string"
-            }
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": "OK"
-          }
-        }
-      }
-    },
-    "/Game/{gameId}/is-interested": {
       "get": {
         "tags": [
           "Game"
@@ -1038,8 +957,245 @@
         }
       }
     },
+    "/Game/{gameId}/operation-window/{windowId}": {
+      "delete": {
+        "tags": [
+          "Game"
+        ],
+        "parameters": [
+          {
+            "name": "gameId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          },
+          {
+            "name": "windowId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/Game/{gameId}/slots": {
+      "get": {
+        "tags": [
+          "Game"
+        ],
+        "parameters": [
+          {
+            "name": "gameId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          },
+          {
+            "name": "startDate",
+            "in": "query",
+            "schema": {
+              "type": "string",
+              "format": "date-time"
+            }
+          },
+          {
+            "name": "endDate",
+            "in": "query",
+            "schema": {
+              "type": "string",
+              "format": "date-time"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/Game/{gameId}/slots/{slotId}/details": {
+      "get": {
+        "tags": [
+          "Game"
+        ],
+        "parameters": [
+          {
+            "name": "gameId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          },
+          {
+            "name": "slotId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/Game/{gameId}/slots/{slotId}/waitlist": {
+      "get": {
+        "tags": [
+          "Game"
+        ],
+        "parameters": [
+          {
+            "name": "gameId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          },
+          {
+            "name": "slotId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/Game/{gameId}/slots/{slotId}": {
+      "post": {
+        "tags": [
+          "Game"
+        ],
+        "parameters": [
+          {
+            "name": "gameId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          },
+          {
+            "name": "slotId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/BookSlotRequestDto"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/BookSlotRequestDto"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/BookSlotRequestDto"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      },
+      "delete": {
+        "tags": [
+          "Game"
+        ],
+        "parameters": [
+          {
+            "name": "gameId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          },
+          {
+            "name": "slotId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
     "/Game/{gameId}/toggle-interest": {
       "patch": {
+        "tags": [
+          "Game"
+        ],
+        "parameters": [
+          {
+            "name": "gameId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      },
+      "get": {
         "tags": [
           "Game"
         ],
@@ -1668,8 +1824,7 @@
             "schema": {
               "type": "array",
               "items": {
-                "type": "integer",
-                "format": "int32"
+                "type": "string"
               }
             }
           }
@@ -1700,6 +1855,38 @@
           }
         }
       },
+      "get": {
+        "tags": [
+          "Post"
+        ],
+        "parameters": [
+          {
+            "name": "page",
+            "in": "query",
+            "schema": {
+              "type": "integer",
+              "format": "int32",
+              "default": 1
+            }
+          },
+          {
+            "name": "pageSize",
+            "in": "query",
+            "schema": {
+              "type": "integer",
+              "format": "int32",
+              "default": 10
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/Post/inappropriate": {
       "get": {
         "tags": [
           "Post"
@@ -1766,45 +1953,23 @@
               "type": "integer",
               "format": "int32"
             }
-          },
-          {
-            "name": "Title",
-            "in": "query",
-            "schema": {
-              "type": "string"
-            }
-          },
-          {
-            "name": "Description",
-            "in": "query",
-            "schema": {
-              "type": "string"
-            }
-          },
-          {
-            "name": "IsPublic",
-            "in": "query",
-            "schema": {
-              "type": "boolean"
-            }
           }
         ],
         "requestBody": {
           "content": {
-            "multipart/form-data": {
+            "application/json": {
               "schema": {
-                "type": "object",
-                "properties": {
-                  "Post": {
-                    "type": "string",
-                    "format": "binary"
-                  }
-                }
-              },
-              "encoding": {
-                "Post": {
-                  "style": "form"
-                }
+                "$ref": "#/components/schemas/PostUpdateDto"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/PostUpdateDto"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/PostUpdateDto"
               }
             }
           }
@@ -1816,6 +1981,29 @@
         }
       },
       "delete": {
+        "tags": [
+          "Post"
+        ],
+        "parameters": [
+          {
+            "name": "postId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/Post/{postId}/inappropriate": {
+      "patch": {
         "tags": [
           "Post"
         ],
@@ -1860,7 +2048,7 @@
         }
       }
     },
-    "/Post/{postId}/comment": {
+    "/Post/{postId}/comments": {
       "post": {
         "tags": [
           "Post"
@@ -1900,9 +2088,7 @@
             "description": "OK"
           }
         }
-      }
-    },
-    "/Post/{postId}/comments": {
+      },
       "get": {
         "tags": [
           "Post"
@@ -1943,7 +2129,7 @@
         }
       }
     },
-    "/Post/{postId}/comment/{commentId}": {
+    "/Post/{postId}/comments/{commentId}": {
       "delete": {
         "tags": [
           "Post"
@@ -2168,7 +2354,9 @@
             "description": "OK"
           }
         }
-      },
+      }
+    },
+    "/Post/{postId}/tags/{tagId}": {
       "post": {
         "tags": [
           "Post"
@@ -2185,7 +2373,8 @@
           },
           {
             "name": "tagId",
-            "in": "query",
+            "in": "path",
+            "required": true,
             "schema": {
               "type": "integer",
               "format": "int32"
@@ -2197,9 +2386,7 @@
             "description": "OK"
           }
         }
-      }
-    },
-    "/Post/{postId}/tags/{tagId}": {
+      },
       "delete": {
         "tags": [
           "Post"
@@ -2626,6 +2813,70 @@
         }
       }
     },
+    "/User/user-hr": {
+      "get": {
+        "tags": [
+          "User"
+        ],
+        "parameters": [
+          {
+            "name": "PageSize",
+            "in": "query",
+            "schema": {
+              "type": "integer",
+              "format": "int32",
+              "default": 10
+            }
+          },
+          {
+            "name": "PageNumber",
+            "in": "query",
+            "schema": {
+              "type": "integer",
+              "format": "int32",
+              "default": 1
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/User/managers": {
+      "get": {
+        "tags": [
+          "User"
+        ],
+        "parameters": [
+          {
+            "name": "PageSize",
+            "in": "query",
+            "schema": {
+              "type": "integer",
+              "format": "int32",
+              "default": 10
+            }
+          },
+          {
+            "name": "PageNumber",
+            "in": "query",
+            "schema": {
+              "type": "integer",
+              "format": "int32",
+              "default": 1
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
     "/User/{UserId}": {
       "get": {
         "tags": [
@@ -2725,6 +2976,38 @@
             "schema": {
               "type": "integer",
               "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/User/with-manager": {
+      "get": {
+        "tags": [
+          "User"
+        ],
+        "parameters": [
+          {
+            "name": "PageSize",
+            "in": "query",
+            "schema": {
+              "type": "integer",
+              "format": "int32",
+              "default": 10
+            }
+          },
+          {
+            "name": "PageNumber",
+            "in": "query",
+            "schema": {
+              "type": "integer",
+              "format": "int32",
+              "default": 1
             }
           }
         ],
@@ -2850,9 +3133,12 @@
       },
       "GameCreateDto": {
         "required": [
+          "duration",
           "maxPlayer",
           "minPlayer",
-          "name"
+          "name",
+          "slotAssignedBeforeMinutes",
+          "slotCreateForNextXDays"
         ],
         "type": "object",
         "properties": {
@@ -2868,36 +3154,30 @@
           "minPlayer": {
             "type": "integer",
             "format": "int32"
+          },
+          "duration": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "slotAssignedBeforeMinutes": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "slotCreateForNextXDays": {
+            "type": "integer",
+            "format": "int32"
           }
         },
         "additionalProperties": false
       },
-      "GameSlotCreateDto": {
-        "required": [
-          "endTime",
-          "startTime"
-        ],
+      "GameOperationWindowCreateDto": {
         "type": "object",
         "properties": {
-          "startTime": {
+          "operationalStartTime": {
             "type": "string",
             "format": "time"
           },
-          "endTime": {
-            "type": "string",
-            "format": "time"
-          }
-        },
-        "additionalProperties": false
-      },
-      "GameSlotUpdateDto": {
-        "type": "object",
-        "properties": {
-          "startTime": {
-            "type": "string",
-            "format": "time"
-          },
-          "endTime": {
+          "operationalEndTime": {
             "type": "string",
             "format": "time"
           }
@@ -2917,6 +3197,21 @@
             "nullable": true
           },
           "minPlayer": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "duration": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "slotAssignedBeforeMinutes": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "slotCreateForNextXDays": {
             "type": "integer",
             "format": "int32",
             "nullable": true
@@ -2959,6 +3254,23 @@
           "password": {
             "type": "string",
             "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "PostUpdateDto": {
+        "type": "object",
+        "properties": {
+          "title": {
+            "type": "string",
+            "nullable": true
+          },
+          "description": {
+            "type": "string",
+            "nullable": true
+          },
+          "isPublic": {
+            "type": "boolean"
           }
         },
         "additionalProperties": false

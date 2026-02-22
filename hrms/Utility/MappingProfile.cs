@@ -1,19 +1,22 @@
 ﻿using AutoMapper;
-using CloudinaryDotNet.Actions;
 using hrms.Dto.Request.BookingSlot;
 using hrms.Dto.Request.Game;
-using hrms.Dto.Request.Game.GameSlot;
+using hrms.Dto.Request.Post;
+using hrms.Dto.Request.Post.Comment;
+using hrms.Dto.Request.Post.Tag;
 using hrms.Dto.Response.BookingSlot;
 using hrms.Dto.Response.Department;
 using hrms.Dto.Response.Expense;
 using hrms.Dto.Response.Expense.Category;
 using hrms.Dto.Response.Expense.Proof;
 using hrms.Dto.Response.Game;
-using hrms.Dto.Response.Game.GameSlot;
 using hrms.Dto.Response.Game.offere;
 using hrms.Dto.Response.Job;
 using hrms.Dto.Response.Notification;
 using hrms.Dto.Response.Other;
+using hrms.Dto.Response.Post;
+using hrms.Dto.Response.Post.Comment;
+using hrms.Dto.Response.Post.Tag;
 using hrms.Dto.Response.Referred;
 using hrms.Dto.Response.Share;
 using hrms.Dto.Response.Travel;
@@ -62,15 +65,6 @@ namespace hrms.Utility
                 opt => opt.MapFrom(src => src.Shared.Email)
                 );
 
-            CreateMap<Game, GameResponseDto>();
-            CreateMap<Game, GameResponseWithSlot>();
-            CreateMap<GameCreateDto, Game>();
-            CreateMap<GameUpdateDto, Game>();
-
-            CreateMap<GameSlot, GameSlotResponseDto>();
-            CreateMap<GameSlotCreateDto, GameSlot>();
-            CreateMap<GameSlotUpdateDto, GameSlot>();
-
             CreateMap<BookingSlotCreateDto, BookingSlot>();
             CreateMap<BookingSlot, BookingSlotResponseDto>()
                 .ForMember(
@@ -88,6 +82,68 @@ namespace hrms.Utility
                 opt => opt.MapFrom(src => GetStatus(src.Status)));
 
             CreateMap<BookingPlayer, BookingPlayerResponseDto>();
+
+            CreateMap<PostCreateDto, Post>();
+            CreateMap<PostUpdateDto, Post>();
+            CreateMap<Post, PostResponseDto>()
+                .ForMember(
+                dest => dest.LikeCount,
+                opt => opt.MapFrom(src => src.Likes.Count))
+                .ForMember(
+                dest => dest.CommentCount,
+                opt => opt.MapFrom(src => src.Comments.Count))
+                .ForMember(
+                dest => dest.CreatedAt,
+                opt => opt.MapFrom(src => src.created_at))
+                .ForMember(
+                dest => dest.UpdatedAt,
+                opt => opt.MapFrom(src => src.updated_at));
+
+            CreateMap<Post, PostDetailResponseDto>()
+                .ForMember(
+                dest => dest.LikeCount,
+                opt => opt.MapFrom(src => src.Likes.Count))
+                .ForMember(
+                dest => dest.CommentCount,
+                opt => opt.MapFrom(src => src.Comments.Count))
+                .ForMember(
+                dest => dest.CreatedAt,
+                opt => opt.MapFrom(src => src.created_at))
+                .ForMember(
+                dest => dest.UpdatedAt,
+                opt => opt.MapFrom(src => src.updated_at));
+
+            CreateMap<TagCreateDto, Tag>();
+            CreateMap<Tag, TagResponseDto>();
+            
+            CreateMap<CommentCreateDto, PostComment>();
+            CreateMap<CommentUpdateDto, PostComment>();
+            CreateMap<PostComment, CommentResponseDto>()
+                .ForMember(
+                dest => dest.CreatedAt,
+                opt => opt.MapFrom(src => src.created_at))
+                .ForMember(
+                dest => dest.UpdatedAt,
+                opt => opt.MapFrom(src => src.updated_at));
+            CreateMap<User, UserMinimalResponseDto>();
+
+            CreateMap<GameCreateDto, Game>();
+            CreateMap<GameUpdateDto, Game>();
+            CreateMap<Game,GameResponseDto>();
+            CreateMap<Game, GameResponseWithSlot>();
+
+            CreateMap<GameOperationWindowCreateDto, GameOperationWindow>();
+            CreateMap<GameOperationWindow, GameOperationWindowResponseDto>();
+
+            CreateMap<GameSlotWaiting, GameSlotWaitinglistResponseDto>();
+            CreateMap<GameSlot, GameSlotResponseDto>()
+                .ForMember(
+                dest => dest.Status,
+                opt => opt.MapFrom(src => GetStatus(src.Status)));
+            CreateMap<GameSlot, GameSlotDetailResponseDto>();
+            CreateMap<GameSlotPlayer, GameSlotPlayerResponseDto>();
+            CreateMap<GameSlotWaiting, GameSlotWaitinglistResponseDto>();
+            CreateMap<GameSlotWaitingPlayer, WaitlistPlayerResponseDto>();
 
 
             CreateMap(typeof(PagedReponseOffSet<>), typeof(PagedReponseDto<>));
@@ -120,6 +176,8 @@ namespace hrms.Utility
                     return "Booked";
                 case GameSlotStatus.AVAILABLE:
                     return "Available";
+                case GameSlotStatus.COMPLETED:
+                    return "Completed";
                 default:
                     return "Unknown";
             }

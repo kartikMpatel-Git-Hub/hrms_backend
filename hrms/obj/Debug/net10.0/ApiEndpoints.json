@@ -139,7 +139,7 @@
       {
         "Name": "dto",
         "Type": "hrms.Dto.Request.Game.GameCreateDto",
-        "IsRequired": false
+        "IsRequired": true
       }
     ],
     "ReturnTypes": []
@@ -197,7 +197,7 @@
       {
         "Name": "dto",
         "Type": "hrms.Dto.Request.Game.GameUpdateDto",
-        "IsRequired": false
+        "IsRequired": true
       }
     ],
     "ReturnTypes": []
@@ -297,22 +297,6 @@
     "ReturnTypes": []
   },
   {
-    "ContainingType": "hrms.Controllers.GameController",
-    "Method": "IsUserInterestedInGame",
-    "RelativePath": "Game/{gameId}/is-interested",
-    "HttpMethod": "GET",
-    "IsController": true,
-    "Order": 0,
-    "Parameters": [
-      {
-        "Name": "gameId",
-        "Type": "System.Nullable\u00601[[System.Int32, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]",
-        "IsRequired": true
-      }
-    ],
-    "ReturnTypes": []
-  },
-  {
     "ContainingType": "hrms.Controllers.BookingSlotContoller",
     "Method": "GetActiveOfferes",
     "RelativePath": "game/{gameId}/offere",
@@ -330,8 +314,8 @@
   },
   {
     "ContainingType": "hrms.Controllers.GameController",
-    "Method": "CreateGameSlote",
-    "RelativePath": "Game/{gameId}/slot",
+    "Method": "CreateGameOperationWindow",
+    "RelativePath": "Game/{gameId}/operation-window",
     "HttpMethod": "POST",
     "IsController": true,
     "Order": 0,
@@ -343,8 +327,45 @@
       },
       {
         "Name": "dto",
-        "Type": "hrms.Dto.Request.Game.GameSlot.GameSlotCreateDto",
-        "IsRequired": false
+        "Type": "hrms.Dto.Request.Game.GameOperationWindowCreateDto",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "hrms.Controllers.GameController",
+    "Method": "GetAllGameOperationWindows",
+    "RelativePath": "Game/{gameId}/operation-window",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "gameId",
+        "Type": "System.Nullable\u00601[[System.Int32, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "hrms.Controllers.GameController",
+    "Method": "DeleteGameOperationWindow",
+    "RelativePath": "Game/{gameId}/operation-window/{windowId}",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "gameId",
+        "Type": "System.Nullable\u00601[[System.Int32, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]",
+        "IsRequired": true
+      },
+      {
+        "Name": "windowId",
+        "Type": "System.Nullable\u00601[[System.Int32, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]",
+        "IsRequired": true
       }
     ],
     "ReturnTypes": []
@@ -377,25 +398,51 @@
   },
   {
     "ContainingType": "hrms.Controllers.GameController",
-    "Method": "UpdateGameSlot",
-    "RelativePath": "Game/{gameId}/slot/{gameSlotId}",
-    "HttpMethod": "PUT",
+    "Method": "GetAllGameSlots",
+    "RelativePath": "Game/{gameId}/slots",
+    "HttpMethod": "GET",
     "IsController": true,
     "Order": 0,
     "Parameters": [
       {
-        "Name": "gameSlotId",
+        "Name": "gameId",
+        "Type": "System.Nullable\u00601[[System.Int32, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]",
+        "IsRequired": true
+      },
+      {
+        "Name": "startDate",
+        "Type": "System.Nullable\u00601[[System.DateTime, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]",
+        "IsRequired": false
+      },
+      {
+        "Name": "endDate",
+        "Type": "System.Nullable\u00601[[System.DateTime, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "hrms.Controllers.GameController",
+    "Method": "BookGameSlot",
+    "RelativePath": "Game/{gameId}/slots/{slotId}",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "gameId",
+        "Type": "System.Nullable\u00601[[System.Int32, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]",
+        "IsRequired": true
+      },
+      {
+        "Name": "slotId",
         "Type": "System.Nullable\u00601[[System.Int32, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]",
         "IsRequired": true
       },
       {
         "Name": "dto",
-        "Type": "hrms.Dto.Request.Game.GameSlot.GameSlotUpdateDto",
-        "IsRequired": false
-      },
-      {
-        "Name": "gameId",
-        "Type": "",
+        "Type": "hrms.Dto.Request.BookingSlot.BookSlotRequestDto",
         "IsRequired": true
       }
     ],
@@ -403,20 +450,20 @@
   },
   {
     "ContainingType": "hrms.Controllers.GameController",
-    "Method": "DeleteGameSlot",
-    "RelativePath": "Game/{gameId}/slot/{gameSlotId}",
+    "Method": "CancelGameSlot",
+    "RelativePath": "Game/{gameId}/slots/{slotId}",
     "HttpMethod": "DELETE",
     "IsController": true,
     "Order": 0,
     "Parameters": [
       {
-        "Name": "gameSlotId",
+        "Name": "gameId",
         "Type": "System.Nullable\u00601[[System.Int32, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]",
         "IsRequired": true
       },
       {
-        "Name": "gameId",
-        "Type": "",
+        "Name": "slotId",
+        "Type": "System.Nullable\u00601[[System.Int32, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]",
         "IsRequired": true
       }
     ],
@@ -424,9 +471,67 @@
   },
   {
     "ContainingType": "hrms.Controllers.GameController",
-    "Method": "UpdateUserGameInterest",
+    "Method": "GetGameSlot",
+    "RelativePath": "Game/{gameId}/slots/{slotId}/details",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "gameId",
+        "Type": "System.Nullable\u00601[[System.Int32, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]",
+        "IsRequired": true
+      },
+      {
+        "Name": "slotId",
+        "Type": "System.Nullable\u00601[[System.Int32, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "hrms.Controllers.GameController",
+    "Method": "GetGameSlotWaitlist",
+    "RelativePath": "Game/{gameId}/slots/{slotId}/waitlist",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "gameId",
+        "Type": "System.Nullable\u00601[[System.Int32, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]",
+        "IsRequired": true
+      },
+      {
+        "Name": "slotId",
+        "Type": "System.Nullable\u00601[[System.Int32, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "hrms.Controllers.GameController",
+    "Method": "ToggleGameInterest",
     "RelativePath": "Game/{gameId}/toggle-interest",
     "HttpMethod": "PATCH",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "gameId",
+        "Type": "System.Nullable\u00601[[System.Int32, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "hrms.Controllers.GameController",
+    "Method": "IsUserInterested",
+    "RelativePath": "Game/{gameId}/toggle-interest",
+    "HttpMethod": "GET",
     "IsController": true,
     "Order": 0,
     "Parameters": [
@@ -870,7 +975,7 @@
       },
       {
         "Name": "Tags",
-        "Type": "System.Collections.Generic.List\u00601[[System.Int32, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]",
+        "Type": "System.Collections.Generic.List\u00601[[System.String, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]",
         "IsRequired": false
       }
     ],
@@ -927,23 +1032,8 @@
         "IsRequired": true
       },
       {
-        "Name": "Post",
-        "Type": "Microsoft.AspNetCore.Http.IFormFile",
-        "IsRequired": false
-      },
-      {
-        "Name": "Title",
-        "Type": "System.String",
-        "IsRequired": false
-      },
-      {
-        "Name": "Description",
-        "Type": "System.String",
-        "IsRequired": false
-      },
-      {
-        "Name": "IsPublic",
-        "Type": "System.Boolean",
+        "Name": "postUpdateDto",
+        "Type": "hrms.Dto.Request.Post.PostUpdateDto",
         "IsRequired": false
       }
     ],
@@ -968,7 +1058,7 @@
   {
     "ContainingType": "hrms.Controllers.PostController",
     "Method": "CommentOnPost",
-    "RelativePath": "Post/{postId}/comment",
+    "RelativePath": "Post/{postId}/comments",
     "HttpMethod": "POST",
     "IsController": true,
     "Order": 0,
@@ -981,53 +1071,6 @@
       {
         "Name": "commentCreateDto",
         "Type": "hrms.Dto.Request.Post.Comment.CommentCreateDto",
-        "IsRequired": false
-      }
-    ],
-    "ReturnTypes": []
-  },
-  {
-    "ContainingType": "hrms.Controllers.PostController",
-    "Method": "DeleteComment",
-    "RelativePath": "Post/{postId}/comment/{commentId}",
-    "HttpMethod": "DELETE",
-    "IsController": true,
-    "Order": 0,
-    "Parameters": [
-      {
-        "Name": "postId",
-        "Type": "System.Nullable\u00601[[System.Int32, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]",
-        "IsRequired": true
-      },
-      {
-        "Name": "commentId",
-        "Type": "System.Nullable\u00601[[System.Int32, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]",
-        "IsRequired": true
-      }
-    ],
-    "ReturnTypes": []
-  },
-  {
-    "ContainingType": "hrms.Controllers.PostController",
-    "Method": "UpdateComment",
-    "RelativePath": "Post/{postId}/comment/{commentId}",
-    "HttpMethod": "PUT",
-    "IsController": true,
-    "Order": 0,
-    "Parameters": [
-      {
-        "Name": "postId",
-        "Type": "System.Nullable\u00601[[System.Int32, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]",
-        "IsRequired": true
-      },
-      {
-        "Name": "commentId",
-        "Type": "System.Nullable\u00601[[System.Int32, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]",
-        "IsRequired": true
-      },
-      {
-        "Name": "commentUpdateDto",
-        "Type": "hrms.Dto.Request.Post.Comment.CommentUpdateDto",
         "IsRequired": false
       }
     ],
@@ -1055,6 +1098,69 @@
         "Name": "pageSize",
         "Type": "System.Int32",
         "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "hrms.Controllers.PostController",
+    "Method": "DeleteComment",
+    "RelativePath": "Post/{postId}/comments/{commentId}",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "postId",
+        "Type": "System.Nullable\u00601[[System.Int32, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]",
+        "IsRequired": true
+      },
+      {
+        "Name": "commentId",
+        "Type": "System.Nullable\u00601[[System.Int32, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "hrms.Controllers.PostController",
+    "Method": "UpdateComment",
+    "RelativePath": "Post/{postId}/comments/{commentId}",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "postId",
+        "Type": "System.Nullable\u00601[[System.Int32, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]",
+        "IsRequired": true
+      },
+      {
+        "Name": "commentId",
+        "Type": "System.Nullable\u00601[[System.Int32, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]",
+        "IsRequired": true
+      },
+      {
+        "Name": "commentUpdateDto",
+        "Type": "hrms.Dto.Request.Post.Comment.CommentUpdateDto",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "hrms.Controllers.PostController",
+    "Method": "MarkPostInAppropriate",
+    "RelativePath": "Post/{postId}/inappropriate",
+    "HttpMethod": "PATCH",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "postId",
+        "Type": "System.Nullable\u00601[[System.Int32, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]",
+        "IsRequired": true
       }
     ],
     "ReturnTypes": []
@@ -1094,7 +1200,7 @@
   {
     "ContainingType": "hrms.Controllers.PostController",
     "Method": "AddTagToPost",
-    "RelativePath": "Post/{postId}/tags",
+    "RelativePath": "Post/{postId}/tags/{tagId}",
     "HttpMethod": "POST",
     "IsController": true,
     "Order": 0,
@@ -1107,7 +1213,7 @@
       {
         "Name": "tagId",
         "Type": "System.Nullable\u00601[[System.Int32, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]",
-        "IsRequired": false
+        "IsRequired": true
       }
     ],
     "ReturnTypes": []
@@ -1143,6 +1249,27 @@
     "Parameters": [
       {
         "Name": "pageNumber",
+        "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
+        "Name": "pageSize",
+        "Type": "System.Int32",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "hrms.Controllers.PostController",
+    "Method": "GetInappropriatePosts",
+    "RelativePath": "Post/inappropriate",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "page",
         "Type": "System.Int32",
         "IsRequired": false
       },
@@ -1649,6 +1776,27 @@
   },
   {
     "ContainingType": "hrms.Controllers.UserController",
+    "Method": "GetManager",
+    "RelativePath": "User/managers",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "PageSize",
+        "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
+        "Name": "PageNumber",
+        "Type": "System.Int32",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "hrms.Controllers.UserController",
     "Method": "GetUserByKey",
     "RelativePath": "User/search/all",
     "HttpMethod": "GET",
@@ -1690,6 +1838,48 @@
       {
         "Name": "key",
         "Type": "System.String",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "hrms.Controllers.UserController",
+    "Method": "GetAllHr",
+    "RelativePath": "User/user-hr",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "PageSize",
+        "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
+        "Name": "PageNumber",
+        "Type": "System.Int32",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "hrms.Controllers.UserController",
+    "Method": "GetEmployeeWithManager",
+    "RelativePath": "User/with-manager",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "PageSize",
+        "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
+        "Name": "PageNumber",
+        "Type": "System.Int32",
         "IsRequired": false
       }
     ],

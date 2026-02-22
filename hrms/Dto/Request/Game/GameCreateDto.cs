@@ -10,10 +10,16 @@ namespace hrms.Dto.Request.Game
         public string Name { get; set; }
         
         [Required(ErrorMessage = "Max Player can not be empty !")]
-        
-        public int MaxPlayer { get; set; }
+        public int MaxPlayer { get; set; } = 1;
         
         [Required(ErrorMessage = "Min Player can not be empty !")]
-        public int MinPlayer { get; set; }
+        public int MinPlayer { get; set; } = 1;
+
+        [Required(ErrorMessage = "Duration can not be empty !")]
+        public int Duration { get; set; } = 30;
+        [Required(ErrorMessage = "Slot Assigned Before X Minutes can not be empty !")]
+        public int SlotAssignedBeforeMinutes { get; set; } = 30;
+        [Required(ErrorMessage = "Slot Create For Next X Days can not be empty !")]
+        public int SlotCreateForNextXDays { get; set; } = 7;
     }
 }

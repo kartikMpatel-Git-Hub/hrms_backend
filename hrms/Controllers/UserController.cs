@@ -14,7 +14,7 @@ namespace hrms.Controllers
 {
     [Route("[controller]")]
     [ApiController]
-    //[Authorize]
+    [Authorize]
     public class UserController : Controller
     {
         private readonly IUserService _service;
@@ -25,10 +25,30 @@ namespace hrms.Controllers
 
         [HttpGet]
         //[Authorize(Roles = "ADMIN,HR")]
-        public async Task<IActionResult> GetAll(int PageSize = 10,int PageNumber = 1) {
+        public async Task<IActionResult> GetAll(int PageSize = 10, int PageNumber = 1)
+        {
             if (PageNumber <= 0 || PageSize <= 0)
                 throw new InvalidOperationCustomException($"{nameof(PageNumber)} and {nameof(PageSize)} size must be greater than 0.");
-            PagedReponseDto<UserResponseDto> response = await _service.GetAllUser(PageSize,PageNumber);
+            PagedReponseDto<UserResponseDto> response = await _service.GetAllUser(PageSize, PageNumber);
+            return Ok(response);
+        }
+
+        [HttpGet("user-hr")]
+        [Authorize(Roles = "HR")]
+        public async Task<IActionResult> GetAllHr(int PageSize = 10, int PageNumber = 1)
+        {
+            if (PageNumber <= 0 || PageSize <= 0)
+                throw new InvalidOperationCustomException($"{nameof(PageNumber)} and {nameof(PageSize)} size must be greater than 0.");
+            PagedReponseDto<UserResponseDto> response = await _service.GetAllUserForHr(PageSize, PageNumber);
+            return Ok(response);
+        }
+
+        [HttpGet("managers")]
+        public async Task<IActionResult> GetManager(int PageSize = 10, int PageNumber = 1)
+        {
+            if (PageNumber <= 0 || PageSize <= 0)
+                throw new InvalidOperationCustomException($"{nameof(PageNumber)} and {nameof(PageSize)} size must be greater than 0.");
+            PagedReponseDto<UserResponseDto> response = await _service.GetAllManagers(PageSize, PageNumber);
             return Ok(response);
         }
 
@@ -80,7 +100,7 @@ namespace hrms.Controllers
             if (key == null)
             {
                 var res =
-                await _service.GetAllUser(10,1);
+                await _service.GetAllUser(10, 1);
                 List<UserResponseDto> e = res.Data;
                 return Ok(e);
             }
@@ -93,7 +113,7 @@ namespace hrms.Controllers
         [HttpGet("{userId}/organization-chart")]
         public async Task<IActionResult> GetEmployeeOrganizationChart(int? userId)
         {
-            if(userId == null)
+            if (userId == null)
             {
                 throw new ArgumentNullException("userid not found !!");
             }
@@ -101,6 +121,16 @@ namespace hrms.Controllers
             return Ok(organizationChart);
         }
 
-        
+        [HttpGet("my-team")]
+        [Authorize(Roles = "MANAGER")]
+        public async Task<IActionResult> GetEmployeeWithManager(int PageSize = 10, int PageNumber = 1)
+        {
+            var user = User;
+            if (user == null)
+                throw new UnauthorizedCustomException($"Unauthorized Access !");
+            int userId = Int32.Parse(user.FindFirst(ClaimTypes.PrimarySid)?.Value);
+            PagedReponseDto<UserResponseDto> response = await _service.GetEmployeeUnderManager(userId, PageSize, PageNumber);
+            return Ok(response);
+        }
     }
 }

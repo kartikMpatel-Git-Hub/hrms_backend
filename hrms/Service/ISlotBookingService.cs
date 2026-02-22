@@ -8,12 +8,13 @@ namespace hrms.Service
 {
     public interface ISlotBookingService
     {
-        Task AcceptOffer(int offerId, BookSlotRequestDto dto);
+        // Task AcceptOffer(int offerId, BookSlotRequestDto dto);
 
         // Task<List<BookingSlot>> GetAvailableSlots(int gameId, DateTime date);
-        Task<BookingSlotResponseDto> BookSlot(int slotId, int userId,BookSlotRequestDto dto);
-        Task<List<SlotOffereResponseDto>> GetActiveOfferes(int currentUser,int gameId);
-        Task RejectOffer(int offerId);
+        // Task<BookingSlotResponseDto> BookSlot(int slotId, int userId,BookSlotRequestDto dto);
+        // Task<List<SlotOffereResponseDto>> GetActiveOfferes(int currentUser,int gameId);
+        Task ProcessSlotsAsync();
+        // Task RejectOffer(int offerId);
         // Task CancelBooking(int slotId, int userId);
         // Task<List<BookingSlot>> GetUserBookings(int userId);
         // Task OfferSlot(int slotId, int fromUserId, int toUserId);

@@ -4,6 +4,6 @@ namespace hrms.Model
     {
         public int Id { get; set; }
         public string TagName { get; set; }
-        public string IsDeleted { get; set; }
+        public bool IsDeleted { get; set; }
     }
 }

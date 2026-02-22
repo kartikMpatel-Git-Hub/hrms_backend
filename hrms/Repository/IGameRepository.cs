@@ -1,22 +1,27 @@
-﻿using hrms.Dto.Response.Other;
+﻿using hrms.Dto.Request.BookingSlot;
+using hrms.Dto.Response.Game;
+using hrms.Dto.Response.Other;
 using hrms.Model;
 
 namespace hrms.Repository
 {
     public interface IGameRepository
     {
-        Task<Game> CreateGame(Game newGame);
-        Task<GameSlot> CreateGameSlot(GameSlot newSlot);
+        Task<GameSlot> BookGameSlot(int gameId, int slotId, int userId, BookSlotRequestDto dto);
+        Task<Game> CreateGame(Game game);
+        Task<GameOperationWindow> CreateGameOperationWindow(GameOperationWindow window);
+        Task DeleteGame(Game game);
+        Task DeleteGameOperationWindow(GameOperationWindow window);
+        Task<List<GameOperationWindow>> GetAllGameOperationWindows(int gameId);
         Task<PagedReponseOffSet<Game>> GetAllGames(int pageNumber, int pageSize);
-        Task<List<Game>> GetAllGames();
+        Task<List<GameSlot>> GetAllGameSlots(int gameId, DateTime startDate, DateTime endDate);
         Task<Game> GetGameById(int gameId);
-        Task<List<GameSlot>> GetGameSlots(int gameId);
-        Task<GameSlot> GetGameSlotById(int gameSlotId);
-        Task<bool> isSlotExist(TimeOnly startTime, TimeOnly endTime);
-        Task RemoveGame(Game game);
-        Task RemoveGameSlot(GameSlot gameSlot);
+        Task<GameOperationWindow> GetGameOperationWindowById(int windowId);
+        Task<GameSlot> GetGameSlotById(int gameId, int slotId);
+        Task<List<GameSlotWaiting>> GetGameSlotWaitlist(int gameId, int slotId);
+        Task<bool> IsOperationWindowOverlap(int gameId, TimeOnly operationalStartTime, TimeOnly operationalEndTime);
+        Task<bool> IsUserAlreadyBookedInSlot(int gameId, int slotId, int userId);
         Task<Game> UpdateGame(Game updatedGame);
-        Task<GameSlot> UpdateGameSlot(GameSlot updatedGameSlot);
-        Task CreateBookingSlot(BookingSlot bookingSlot);
+        Task<GameSlot> UpdateGameSlot(GameSlot slot);
     }
 }

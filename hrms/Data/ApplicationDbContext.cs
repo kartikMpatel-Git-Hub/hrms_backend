@@ -20,11 +20,16 @@ namespace hrms.Data
         public DbSet<JobReviewer> Reviewers { get; set; }
         public DbSet<JobReferral> Referrals { get; set; }
         public DbSet<JobShared> SharedJobs { get; set; }
-        public DbSet<Game> Games { get; set; }
         public DbSet<UserGameInterest> UserGameInterests { get; set; }
         public DbSet<UserGameState> UserGameStates { get; set; }
+
+        public DbSet<Game> Games { get; set; }
+        public DbSet<GameOperationWindow> GameOperationWindows { get; set; }
         public DbSet<GameSlot> GameSlots { get; set; }
-        public DbSet<GameQueue> GameQueues { get; set; }
+        public DbSet<GameSlotPlayer> GameSlotPlayers { get; set; }
+        public DbSet<GameSlotWaiting> GameSlotWaitings { get; set; }
+        public DbSet<GameSlotWaitingPlayer> GameSlotWaitingPlayers { get; set; }
+
         public DbSet<BookingSlot> BookingSlots { get; set; }
         public DbSet<BookingPlayer> BookingPlayers { get; set; }
         public DbSet<SlotOffere> SlotOffers { get; set; }
@@ -53,6 +58,16 @@ namespace hrms.Data
                     .Property(d => d.DepartmentName)
                     .IsRequired()
                     .HasMaxLength(30);
+
+                entity
+                    .Property(d => d.created_at)
+                    .HasColumnName("created_at")
+                    .HasDefaultValueSql("GETUTCDATE()");
+
+                entity
+                    .Property(d => d.updated_at)
+                    .HasColumnName("updated_at")
+                    .HasDefaultValueSql("GETUTCDATE()");
             });
 
             modelBuilder.Entity<User>(entity =>
@@ -114,7 +129,18 @@ namespace hrms.Data
                       .HasConstraintName("fk_department_id")
                       .HasForeignKey(u => u.DepartmentId)
                       .OnDelete(DeleteBehavior.Restrict);
+
+                entity
+                    .Property(u => u.created_at)
+                    .HasColumnName("created_at")
+                    .HasDefaultValueSql("GETUTCDATE()");
+
+                entity
+                    .Property(u => u.updated_at)
+                    .HasColumnName("updated_at")
+                    .HasDefaultValueSql("GETUTCDATE()");
             });
+
 
             modelBuilder.Entity<Travel>(entity =>
             {
@@ -157,6 +183,16 @@ namespace hrms.Data
                     .IsRequired()
                     .HasPrecision(10, 2)
                     .HasColumnName("expense_max_amount_limit");
+
+                entity
+                    .Property(t => t.created_at)
+                    .HasColumnName("created_at")
+                    .HasDefaultValueSql("GETUTCDATE()");
+
+                entity
+                    .Property(t => t.updated_at)
+                    .HasColumnName("updated_at")
+                    .HasDefaultValueSql("GETUTCDATE()");
 
                 entity
                     .HasOne(t => t.Creater)
@@ -314,6 +350,16 @@ namespace hrms.Data
                     .OnDelete(DeleteBehavior.Restrict);
 
                 entity
+                    .Property(e => e.created_at)
+                    .HasColumnName("created_at")
+                    .HasDefaultValueSql("GETUTCDATE()");
+
+                entity
+                    .Property(e => e.updated_at)
+                    .HasColumnName("updated_at")
+                    .HasDefaultValueSql("GETUTCDATE()");
+
+                entity
                     .HasOne(e => e.Category)
                     .WithMany()
                     .HasForeignKey(c => c.CategoryId)
@@ -356,6 +402,7 @@ namespace hrms.Data
                     .OnDelete(DeleteBehavior.Restrict);
             });
 
+
             modelBuilder.Entity<Notification>(entity =>
             {
                 entity.ToTable("notifications");
@@ -395,6 +442,7 @@ namespace hrms.Data
                     .HasConstraintName("fk_notified_user_id")
                     .OnDelete(DeleteBehavior.Restrict);
             });
+
 
             modelBuilder.Entity<Job>(entity =>
             {
@@ -454,6 +502,16 @@ namespace hrms.Data
                     .HasForeignKey(n => n.ContactTo)
                     .HasConstraintName("fk_job_contact_to_id")
                     .OnDelete(DeleteBehavior.Restrict);
+
+                entity
+                    .Property(j => j.created_at)
+                    .HasColumnName("created_at")
+                    .HasDefaultValueSql("GETUTCDATE()");
+
+                entity
+                    .Property(j => j.updated_at)
+                    .HasColumnName("updated_at")
+                    .HasDefaultValueSql("GETUTCDATE()");
             });
 
             modelBuilder.Entity<JobReviewer>(entity =>
@@ -578,6 +636,7 @@ namespace hrms.Data
                     .OnDelete(DeleteBehavior.Restrict);
             });
 
+
             modelBuilder.Entity<Game>(entity =>
             {
                 entity.ToTable("games");
@@ -603,6 +662,59 @@ namespace hrms.Data
                     .Property(g => g.MinPlayer)
                     .HasColumnName("min_player_per_game")
                     .IsRequired();
+                
+                entity
+                    .Property(g => g.Duration)
+                    .HasColumnName("duration_in_minutes")
+                    .IsRequired();
+                
+                entity
+                    .Property(g => g.SlotAssignedBeforeMinutes)
+                    .HasColumnName("slot_assigned_before_x_minutes")
+                    .IsRequired();
+                
+                entity
+                    .Property(g => g.SlotCreateForNextXDays)
+                    .HasColumnName("slot_create_for_next_x_days")
+                    .IsRequired();
+
+                entity
+                    .Property(g => g.created_at)
+                    .HasColumnName("created_at")
+                    .HasDefaultValueSql("GETUTCDATE()");
+
+                entity
+                    .Property(g => g.updated_at)
+                    .HasColumnName("updated_at")
+                    .HasDefaultValueSql("GETUTCDATE()");
+            });
+
+            modelBuilder.Entity<GameOperationWindow>(entity =>
+            {
+                entity.ToTable("game_operation_window");
+
+                entity.HasKey(gow => gow.Id);
+
+                entity
+                    .Property(gow => gow.Id)
+                    .HasColumnName("pk_game_operation_window_id");
+
+                entity
+                    .Property(gow => gow.OperationalStartTime)
+                    .IsRequired()
+                    .HasColumnName("operational_start_time");
+
+                entity
+                    .Property(gow => gow.OperationalEndTime)
+                    .IsRequired()
+                    .HasColumnName("operational_end_time");
+
+                entity
+                    .HasOne(gow => gow.Game)
+                    .WithMany(g => g.GameOperationWindows)
+                    .HasForeignKey(gow => gow.GameId)
+                    .HasConstraintName("fk_game_operation_window_game_id")
+                    .OnDelete(DeleteBehavior.Restrict);
             });
 
             modelBuilder.Entity<UserGameInterest>(entity =>
@@ -683,60 +795,110 @@ namespace hrms.Data
                     .HasColumnName("pk_game_slot_id");
 
                 entity
-                    .Property(gs => gs.StartTime)
+                    .Property(gq => gq.StartTime)
                     .IsRequired()
                     .HasColumnName("start_time");
 
                 entity
-                    .Property(gs => gs.EndTime)
+                    .Property(gq => gq.EndTime)
                     .IsRequired()
                     .HasColumnName("end_time");
 
                 entity
-                    .HasOne(ug => ug.Game)
-                    .WithMany(g => g.Slots)
-                    .HasForeignKey(ug => ug.GameId)
-                    .HasConstraintName("fk_user_slot_game_id")
+                    .Property(gq => gq.Date)
+                    .IsRequired()
+                    .HasColumnName("date");
+
+                entity
+                    .HasOne(gs => gs.Game)
+                    .WithMany()
+                    .HasForeignKey(gs => gs.GameId)
+                    .HasConstraintName("fk_game_slot_game_id")
                     .OnDelete(DeleteBehavior.Restrict);
 
-
+                entity
+                     .Property(gs => gs.BookedAt)
+                     .HasColumnName("booked_at");
             });
 
-            modelBuilder.Entity<GameQueue>(entity =>
+            modelBuilder.Entity<GameSlotPlayer>(entity =>
             {
-                entity.ToTable("game_queue");
+                entity.ToTable("game_slot_players");
 
-                entity.HasKey(gq => gq.Id);
-
-                entity
-                    .Property(gq => gq.Id)
-                    .HasColumnName("pk_game_queue_id");
+                entity.HasKey(gsp => gsp.Id);
 
                 entity
-                    .HasOne(gq => gq.Game)
-                    .WithMany()
-                    .HasForeignKey(gq => gq.GameId)
-                    .HasConstraintName("fk_game_queue_game_id")
+                    .Property(gsp => gsp.Id)
+                    .HasColumnName("pk_game_slot_player_id");
+
+                entity
+                    .HasOne(gsp => gsp.GameSlot)
+                    .WithMany(gs => gs.Players)
+                    .HasForeignKey(gsp => gsp.SlotId)
+                    .HasConstraintName("fk_game_slot_player_slot_id")
                     .OnDelete(DeleteBehavior.Restrict);
 
                 entity
-                    .HasOne(gq => gq.Player)
+                    .HasOne(gsp => gsp.Player)
                     .WithMany()
-                    .HasForeignKey(gq => gq.PlayerId)
-                    .HasConstraintName("fk_game_queue_player_id")
+                    .HasForeignKey(gsp => gsp.PlayerId)
+                    .HasConstraintName("fk_game_slot_player_player_id")
+                    .OnDelete(DeleteBehavior.Restrict);
+            });
+
+            modelBuilder.Entity<GameSlotWaiting>(entity =>
+            {
+                entity.ToTable("game_slot_waiting");
+
+                entity.HasKey(gsw => gsw.Id);
+
+                entity
+                    .Property(gsw => gsw.Id)
+                    .HasColumnName("pk_game_slot_waiting_id");
+
+                entity
+                    .HasOne(gsw => gsw.GameSlot)
+                    .WithMany()
+                    .HasForeignKey(gsw => gsw.GameSlotId)
+                    .HasConstraintName("fk_game_slot_waiting_slot_id")
                     .OnDelete(DeleteBehavior.Restrict);
 
                 entity
-                    .Property(gq => gq.Status)
-                    .HasConversion<String>()
-                    .IsRequired()
-                    .HasColumnName("status")
-                    .HasMaxLength(20);
+                    .HasOne(gsw => gsw.RequestedBy)
+                    .WithMany()
+                    .HasForeignKey(gsw => gsw.RequestedById)
+                    .HasConstraintName("fk_game_slot_waiting_requested_by_id")
+                    .OnDelete(DeleteBehavior.Restrict);
+                
+                entity
+                    .Property(gsw => gsw.RequestedAt)
+                    .HasColumnName("requested_at")
+                    .HasDefaultValueSql("GETUTCDATE()");
+            });
+
+            modelBuilder.Entity<GameSlotWaitingPlayer>(entity =>
+            {
+                entity.ToTable("game_slot_waiting_players");
+
+                entity.HasKey(gswp => gswp.Id);
 
                 entity
-                    .Property(gq => gq.EnqueueAt)
-                    .IsRequired()
-                    .HasColumnName("enqueue_at");
+                    .Property(gswp => gswp.Id)
+                    .HasColumnName("pk_game_slot_waiting_player_id");
+
+                entity
+                    .HasOne(gswp => gswp.GameSlotWaiting)
+                    .WithMany(gsw => gsw.WaitingPlayers)
+                    .HasForeignKey(gswp => gswp.GameSlotWaitingId)
+                    .HasConstraintName("fk_game_slot_waiting_player_waiting_id")
+                    .OnDelete(DeleteBehavior.Restrict);
+
+                entity
+                    .HasOne(gswp => gswp.Player)
+                    .WithMany()
+                    .HasForeignKey(gswp => gswp.PlayerId)
+                    .HasConstraintName("fk_game_slot_waiting_player_player_id")
+                    .OnDelete(DeleteBehavior.Restrict);
             });
 
             modelBuilder.Entity<BookingSlot>(entity =>
@@ -751,7 +913,7 @@ namespace hrms.Data
 
                 entity
                     .HasOne(wgs => wgs.Game)
-                    .WithMany(g => g.BookingSlots)
+                    .WithMany()
                     .HasForeignKey(gq => gq.GameId)
                     .HasConstraintName("fk_bookin_slot_game_id")
                     .OnDelete(DeleteBehavior.Restrict);
@@ -790,6 +952,15 @@ namespace hrms.Data
                     .IsRequired()
                     .HasColumnName("date");
 
+                entity
+                    .Property(bs => bs.created_at)
+                    .HasColumnName("created_at")
+                    .HasDefaultValueSql("GETUTCDATE()");
+
+                entity
+                    .Property(bs => bs.updated_at)
+                    .HasColumnName("updated_at")
+                    .HasDefaultValueSql("GETUTCDATE()");
             });
 
             modelBuilder.Entity<BookingPlayer>(entity =>
@@ -889,6 +1060,7 @@ namespace hrms.Data
                     .OnDelete(DeleteBehavior.Restrict);
             });
 
+
             modelBuilder.Entity<Tag>(entity =>
             {
                 entity.ToTable("tags");
@@ -942,6 +1114,16 @@ namespace hrms.Data
                     .HasColumnName("is_inappropriate");
 
                 entity
+                    .Property(p => p.created_at)
+                    .HasColumnName("created_at")
+                    .HasDefaultValueSql("GETUTCDATE()");
+
+                entity
+                    .Property(p => p.updated_at)
+                    .HasColumnName("updated_at")
+                    .HasDefaultValueSql("GETUTCDATE()");
+
+                entity
                     .HasOne(p => p.PostByUser)
                     .WithMany()
                     .HasForeignKey(p => p.PostById)
@@ -977,6 +1159,16 @@ namespace hrms.Data
                     .HasForeignKey(pc => pc.CommentById)
                     .HasConstraintName("fk_post_comment_by_user_id")
                     .OnDelete(DeleteBehavior.Restrict);
+
+                entity
+                    .Property(pc => pc.created_at)
+                    .HasColumnName("created_at")
+                    .HasDefaultValueSql("GETUTCDATE()");
+
+                entity
+                    .Property(pc => pc.updated_at)
+                    .HasColumnName("updated_at")
+                    .HasDefaultValueSql("GETUTCDATE()");
             });
 
             modelBuilder.Entity<PostLike>(entity =>

@@ -18,7 +18,8 @@ namespace hrms.Controllers
     public class BookingSlotContoller(
         IGameSlotService _service,
         ISlotBookingService _slotBookingService
-        ) : Controller
+        ) 
+        : Controller
     {
 
         [HttpPost("{gameId}/slot/{bookingSlotId}/book")]
@@ -35,8 +36,8 @@ namespace hrms.Controllers
                 return BadRequest($"Players Information Not Found !");
             int CurrentUserId = Int32.Parse(CurrentUser.FindFirst(ClaimTypes.PrimarySid)?.Value);
 
-            BookingSlotResponseDto response = await _slotBookingService.BookSlot((int)bookingSlotId, CurrentUserId, dto);
-            return Ok(response);
+            //BookingSlotResponseDto response = await _slotBookingService.BookSlot((int)bookingSlotId, CurrentUserId, dto);
+            return Ok("response");
         }
 
         [HttpPost("offere/{offerId}/accept")]
@@ -46,7 +47,7 @@ namespace hrms.Controllers
                 return BadRequest($"Offere Id Not Found !");
             if(dto == null || dto.Players == null || dto.Players.Count == 0)
                 return BadRequest($"Players Information Not Found !");
-            await _slotBookingService.AcceptOffer((int)offerId, dto);
+            //await _slotBookingService.AcceptOffer((int)offerId, dto);
             return Ok($"Offere Accepted !");
         }
 
@@ -55,7 +56,7 @@ namespace hrms.Controllers
         {
             if (offerId == null)
                 return BadRequest($"Offere Id Not Found !");
-            await _slotBookingService.RejectOffer((int)offerId);
+            //await _slotBookingService.RejectOffer((int)offerId);
             return Ok($"Offere Rejected !");
         }
 
@@ -68,8 +69,8 @@ namespace hrms.Controllers
             if (CurrentUser == null)
                 throw new UnauthorizedCustomException($"Unauthorized Access !");
             int CurrentUserId = Int32.Parse(CurrentUser.FindFirst(ClaimTypes.PrimarySid)?.Value);
-            List<SlotOffereResponseDto> slotOfferes = await _slotBookingService.GetActiveOfferes(CurrentUserId,(int)gameId);
-            return Ok(slotOfferes);
+            //List<SlotOffereResponseDto> slotOfferes = await _slotBookingService.GetActiveOfferes(CurrentUserId,(int)gameId);
+            return Ok("slotOfferes");
         }
 
 

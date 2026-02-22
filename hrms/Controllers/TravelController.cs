@@ -190,5 +190,7 @@ namespace hrms.Controllers
             return Ok(response);
         }
 
+        [HttpGet("")]
+
     }
 }

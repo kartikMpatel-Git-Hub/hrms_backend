@@ -23,6 +23,7 @@
     {
         AVAILABLE,
         BOOKED,
-        WAITING
+        WAITING,
+        COMPLETED
     }
 }

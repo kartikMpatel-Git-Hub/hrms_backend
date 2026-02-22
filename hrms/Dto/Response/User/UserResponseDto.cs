@@ -12,7 +12,7 @@ namespace hrms.Dto.Response.User
         public String Role { get; set; }
         public DateTime DateOfBirth { get; set; }
         public DateTime DateOfJoin { get; set; }
-        public int? ManagerId { get; set; }
+        public int? ReportTo { get; set; }
         public DepartmentResponseDto Department { get; set; }
         public string Designation { get; set; }
 
