@@ -1,4 +1,5 @@
 using hrms.Dto.Response.DailyCelebration;
+using hrms.Dto.Response.Game;
 
 namespace hrms.Service
 {
@@ -6,5 +7,6 @@ namespace hrms.Service
     {
         Task AddDailyCelebration();
         Task<List<DailyCelebrationResponseDto>> GetDailyCelebrationsForToday();
+        Task<List<UpcomingBookingSlotResponseDto>> GetUpcomingBookingSlotsForToday();
     }
 }

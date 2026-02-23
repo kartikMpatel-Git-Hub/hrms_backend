@@ -47,7 +47,7 @@ namespace hrms.Repository.impl
         public async Task<Job> GetJobById(int jobId)
         {
             Job job = await _db.Jobs
-                .Where(j => j.Id == jobId && j.is_deleted == false && j.IsActive == true)
+                .Where(j => j.Id == jobId && j.is_deleted == false)
                 .Include(j => j.Reviewers)
                     .ThenInclude(jr => jr.Reviewer)
                 .Include(j => j.Contact)
@@ -60,12 +60,12 @@ namespace hrms.Repository.impl
         public async Task<PagedReponseOffSet<Job>> GetJobsCreatedByHr(int hrId, int pageNumber, int pageSize)
         {
             List<Job> jobs = await _db.Jobs
-                .Where(j => j.CreatedBy == hrId && j.is_deleted == false && j.IsActive == true)
+                .Where(j => j.CreatedBy == hrId && j.is_deleted == false)
                 .Skip((pageNumber - 1) * pageSize)
                 .Take(pageSize)
                 .ToListAsync();
             int totalCount = await _db.Jobs
-                .Where(j => j.CreatedBy == hrId && j.is_deleted == false && j.IsActive == true)
+                .Where(j => j.CreatedBy == hrId && j.is_deleted == false)
                 .Skip((pageNumber - 1) * pageSize)
                 .Take(pageSize)
                 .CountAsync();

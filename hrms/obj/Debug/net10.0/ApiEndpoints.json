@@ -97,6 +97,16 @@
     "ReturnTypes": []
   },
   {
+    "ContainingType": "hrms.Controllers.DashboardController",
+    "Method": "GetUpcomingBookingSlots",
+    "RelativePath": "Dashboard/upcomeing-booked-slots",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
     "ContainingType": "hrms.Controllers.DepartmentController",
     "Method": "GetDepartments",
     "RelativePath": "Department",
