@@ -144,7 +144,7 @@ namespace hrms.Repository.impl
         {
             List<TravelDocument> documents =
                 await _db.TravelDocuments
-                .Where((td) => td.TravelId == travelId && td.TravelerId == travelerId && td.UploadedBy != userId)
+                .Where((td) => td.TravelId == travelId && td.TravelerId == travelerId)
                 .Include(td => td.Uploader)
                 .ToListAsync();
             if (documents == null)

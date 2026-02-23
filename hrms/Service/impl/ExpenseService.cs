@@ -59,6 +59,10 @@ namespace hrms.Service.impl
             Travel travel = await _travelRepository.GetTravelById(travelId);
             User employee = await _userService.GetEmployee(currentUserId);
             decimal todaysExpense = dto.Amount + await _travelRepository.GetTodaysExpense(travelId, currentUserId, dto.ExpenseDate);
+            if(dto.ExpenseDate > DateTime.Now)
+            {
+                throw new InvalidOperationCustomException("Expense Date can not be in Future !");
+            }
             if(todaysExpense > travel.MaxAmountLimit)
             {
                 throw new InvalidOperationCustomException($"You have reached Daily Expense Limit !(LIMIT {travel.MaxAmountLimit})");

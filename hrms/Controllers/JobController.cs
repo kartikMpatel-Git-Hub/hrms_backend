@@ -45,7 +45,6 @@ namespace hrms.Controllers
 
         [HttpPut("{jobId}")]
         [Authorize(Roles = "HR")]
-        [Consumes("multipart/form-data")]
         public async Task<IActionResult> UpdateJob(int? jobId, JobUpdateDto? job)
         {
             if (jobId == null || job == null)

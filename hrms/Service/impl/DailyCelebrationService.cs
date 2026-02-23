@@ -1,5 +1,6 @@
 using AutoMapper;
 using hrms.Dto.Response.DailyCelebration;
+using hrms.Dto.Response.Game;
 using hrms.Model;
 using hrms.Repository;
 
@@ -8,6 +9,7 @@ namespace hrms.Service.impl
     public class DailyCelebrationService(
         IDailyCelebrationRepository _repository, 
         IPostRepository _postRepository,
+        IGameRepository _gameRepository,
         IMapper _mapper
         ) : IDailyCelebrationService
     {
@@ -69,6 +71,12 @@ namespace hrms.Service.impl
         {
             List<DailyCelebration> celebrations = await _repository.GetDailyCelebrationsForToday();
             return _mapper.Map<List<DailyCelebrationResponseDto>>(celebrations);
+        }
+
+        public async Task<List<UpcomingBookingSlotResponseDto>> GetUpcomingBookingSlotsForToday()
+        {
+            List<GameSlot> gameSlots = await _gameRepository.GetUpcomingBookingSlotsForToday();
+            return _mapper.Map<List<UpcomingBookingSlotResponseDto>>(gameSlots);
         }
     }
 }

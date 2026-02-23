@@ -116,7 +116,7 @@ namespace hrms.Utility
 
             CreateMap<TagCreateDto, Tag>();
             CreateMap<Tag, TagResponseDto>();
-            
+
             CreateMap<CommentCreateDto, PostComment>();
             CreateMap<CommentUpdateDto, PostComment>();
             CreateMap<PostComment, CommentResponseDto>()
@@ -130,7 +130,7 @@ namespace hrms.Utility
 
             CreateMap<GameCreateDto, Game>();
             CreateMap<GameUpdateDto, Game>();
-            CreateMap<Game,GameResponseDto>();
+            CreateMap<Game, GameResponseDto>();
             CreateMap<Game, GameResponseWithSlot>();
 
             CreateMap<GameOperationWindowCreateDto, GameOperationWindow>();
@@ -145,8 +145,15 @@ namespace hrms.Utility
             CreateMap<GameSlotPlayer, GameSlotPlayerResponseDto>();
             CreateMap<GameSlotWaiting, GameSlotWaitinglistResponseDto>();
             CreateMap<GameSlotWaitingPlayer, WaitlistPlayerResponseDto>();
-            CreateMap<DailyCelebration,DailyCelebrationResponseDto>();
-
+            CreateMap<DailyCelebration, DailyCelebrationResponseDto>();
+            CreateMap<GameSlot, UpcomingBookingSlotResponseDto>()
+                .ForMember(
+                dest => dest.PlayerCount,
+                opt => opt.MapFrom(src => src.Players != null ? src.Players.Count : 0)
+                )
+                .ForMember(
+                dest => dest.Status,
+                opt => opt.MapFrom(src => GetStatus(src.Status)));
 
             CreateMap(typeof(PagedReponseOffSet<>), typeof(PagedReponseDto<>));
         }

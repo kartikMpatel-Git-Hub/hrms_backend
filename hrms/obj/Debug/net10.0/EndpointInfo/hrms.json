@@ -427,6 +427,18 @@
         }
       }
     },
+    "/Dashboard/upcomeing-booked-slots": {
+      "get": {
+        "tags": [
+          "Dashboard"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
     "/Department/{departmentId}": {
       "get": {
         "tags": [
@@ -1407,7 +1419,17 @@
         ],
         "requestBody": {
           "content": {
-            "multipart/form-data": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/JobUpdateDto"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/JobUpdateDto"
+              }
+            },
+            "application/*+json": {
               "schema": {
                 "$ref": "#/components/schemas/JobUpdateDto"
               }

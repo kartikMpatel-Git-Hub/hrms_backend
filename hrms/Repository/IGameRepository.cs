@@ -20,6 +20,7 @@ namespace hrms.Repository
         Task<GameSlot> GetGameSlotById(int gameId, int slotId);
         Task<List<GameSlotWaiting>> GetGameSlotWaitlist(int gameId, int slotId);
         Task<GameSlotWaiting> GetGameSlotWaitlistById(int waitlistId);
+        Task<List<GameSlot>> GetUpcomingBookingSlotsForToday();
         Task<GameSlotWaiting> GetUserWaitlistEntryForSlot(int gameId, int slotId, int bookedById);
         Task<bool> IsOperationWindowOverlap(int gameId, TimeOnly operationalStartTime, TimeOnly operationalEndTime);
         Task<bool> IsUserAlreadyBookedInSlot(int gameId, int slotId, int userId);

@@ -151,6 +151,28 @@ namespace hrms.Repository.impl
             return entry;
         }
 
+        public async Task<List<GameSlot>> GetUpcomingBookingSlotsForToday()
+        {
+            DateTime today = DateTime.Today;
+            List<Game> games = await _db.Games.Where(g => !g.is_deleted).ToListAsync();
+            List<GameSlot> upcomingSlots = new List<GameSlot>();
+            foreach (var game in games)
+            {
+                GameSlot slots = await _db.GameSlots
+                    .Where(s => s.GameId == game.Id && s.Date == today && s.StartTime > TimeOnly.FromDateTime(DateTime.Now) && s.Status == GameSlotStatus.BOOKED)
+                    .Include(s => s.Game)
+                    .Include(s => s.BookedBy)
+                    .Include(s => s.Players)
+                    .OrderBy(s => s.StartTime)
+                    .FirstOrDefaultAsync();
+                if (slots != null)
+                {
+                    upcomingSlots.Add(slots);
+                }
+            }
+            return upcomingSlots;
+        }
+
         public async Task<GameSlotWaiting> GetUserWaitlistEntryForSlot(int gameId, int slotId, int bookedById)
         {
             GameSlotWaiting entry = await _db.GameSlotWaitings
