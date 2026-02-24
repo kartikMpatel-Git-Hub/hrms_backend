@@ -303,7 +303,7 @@ namespace hrms.Service.impl
             {
                 NotifiedTo = u.Id,
                 Title = "Slot Booked",
-                Description = $"Your booking for slot {slot.Id} is confirmed.",
+                Description = $"Your Slot is booked for game {slot.Game.Name} on {slot.Date.ToShortDateString()} from {slot.StartTime} to {slot.EndTime}.",
                 NotificationDate = DateTime.Now
             };
             await _db.Notifications.AddAsync(notification);
@@ -311,7 +311,7 @@ namespace hrms.Service.impl
             await emailService.SendEmailAsync(
                 u.Email,
                 "Slot Booked",
-                $"Your booking for slot {slot.Id} is confirmed.");
+                $"Your Slot is booked for game {slot.Game.Name} on {slot.Date.ToShortDateString()} from {slot.StartTime} to {slot.EndTime}.");
 
             foreach (var player in players)
             {
@@ -321,15 +321,16 @@ namespace hrms.Service.impl
 
                 if (user != null)
                 {
-                    await emailService.SendEmailAsync(user.Email, "Slot Booked", $"Slot {slot.Id} is booked by {slot.BookedBy.Email} user.");
-                    var n = new Notification
+                    await emailService.SendEmailAsync(user.Email, "Slot Booked", $"Slot {slot.Id} is booked by {u.Email} user for game {slot.Game.Name} on {slot.Date.ToShortDateString()} from {slot.StartTime} to {slot.EndTime}.");
+                    var no = new Notification
                     {
                         NotifiedTo = user.Id,
                         Title = "Slot Booked",
-                        Description = $"Your booking for slot {slot.Id} is confirmed.",
+                        Description = $"Your Slot is booked for game {slot.Game.Name} on {slot.Date.ToShortDateString()} from {slot.StartTime} to {slot.EndTime}.",
                         NotificationDate = DateTime.Now
                     };
-                    await _db.Notifications.AddAsync(n);
+                    await _db.Notifications.AddAsync(no);
+                    await _db.SaveChangesAsync();
                 }
             }
         }
