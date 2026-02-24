@@ -3,6 +3,14 @@
   "WorkspaceRootPath": "C:\\Internship\\Codes\\DontNet\\Assignment-1\\hrms\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{AB23E0BF-5829-AC0A-19B6-FD50EBF907C3}|hrms\\hrms.csproj|c:\\internship\\codes\\dontnet\\assignment-1\\hrms\\hrms\\controllers\\jobcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{AB23E0BF-5829-AC0A-19B6-FD50EBF907C3}|hrms\\hrms.csproj|solutionrelative:hrms\\controllers\\jobcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{AB23E0BF-5829-AC0A-19B6-FD50EBF907C3}|hrms\\hrms.csproj|c:\\internship\\codes\\dontnet\\assignment-1\\hrms\\hrms\\service\\impl\\slotbookingservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{AB23E0BF-5829-AC0A-19B6-FD50EBF907C3}|hrms\\hrms.csproj|solutionrelative:hrms\\service\\impl\\slotbookingservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{AB23E0BF-5829-AC0A-19B6-FD50EBF907C3}|hrms\\hrms.csproj|c:\\internship\\codes\\dontnet\\assignment-1\\hrms\\hrms\\controllers\\usercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{AB23E0BF-5829-AC0A-19B6-FD50EBF907C3}|hrms\\hrms.csproj|solutionrelative:hrms\\controllers\\usercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
@@ -27,14 +35,6 @@
       "RelativeMoniker": "D:0:0:{AB23E0BF-5829-AC0A-19B6-FD50EBF907C3}|hrms\\hrms.csproj|solutionrelative:hrms\\controllers\\gamecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Internship\\Codes\\DontNet\\Assignment-1\\hrms\\hrms\\Migrations\\20260224053455_inappropriate-reason.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:hrms\\Migrations\\20260224053455_inappropriate-reason.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{AB23E0BF-5829-AC0A-19B6-FD50EBF907C3}|hrms\\hrms.csproj|c:\\internship\\codes\\dontnet\\assignment-1\\hrms\\hrms\\service\\impl\\slotbookingservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{AB23E0BF-5829-AC0A-19B6-FD50EBF907C3}|hrms\\hrms.csproj|solutionrelative:hrms\\service\\impl\\slotbookingservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{AB23E0BF-5829-AC0A-19B6-FD50EBF907C3}|hrms\\hrms.csproj|c:\\internship\\codes\\dontnet\\assignment-1\\hrms\\hrms\\utility\\slotassigedcronjob.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{AB23E0BF-5829-AC0A-19B6-FD50EBF907C3}|hrms\\hrms.csproj|solutionrelative:hrms\\utility\\slotassigedcronjob.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
@@ -49,6 +49,10 @@
     {
       "AbsoluteMoniker": "D:0:0:{AB23E0BF-5829-AC0A-19B6-FD50EBF907C3}|hrms\\hrms.csproj|c:\\internship\\codes\\dontnet\\assignment-1\\hrms\\hrms\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
       "RelativeMoniker": "D:0:0:{AB23E0BF-5829-AC0A-19B6-FD50EBF907C3}|hrms\\hrms.csproj|solutionrelative:hrms\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{AB23E0BF-5829-AC0A-19B6-FD50EBF907C3}|hrms\\hrms.csproj|c:\\internship\\codes\\dontnet\\assignment-1\\hrms\\hrms\\migrations\\20260224053455_inappropriate-reason.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{AB23E0BF-5829-AC0A-19B6-FD50EBF907C3}|hrms\\hrms.csproj|solutionrelative:hrms\\migrations\\20260224053455_inappropriate-reason.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -58,7 +62,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 17,
+          "SelectedChildIndex": 12,
           "Children": [
             {
               "$type": "Bookmark",
@@ -110,7 +114,20 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 0,
+              "Title": "JobController.cs",
+              "DocumentMoniker": "C:\\Internship\\Codes\\DontNet\\Assignment-1\\hrms\\hrms\\Controllers\\JobController.cs",
+              "RelativeDocumentMoniker": "hrms\\Controllers\\JobController.cs",
+              "ToolTip": "C:\\Internship\\Codes\\DontNet\\Assignment-1\\hrms\\hrms\\Controllers\\JobController.cs",
+              "RelativeToolTip": "hrms\\Controllers\\JobController.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAApAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-02-24T11:48:49.563Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
               "Title": "UserProfileResponseDto.cs",
               "DocumentMoniker": "C:\\Internship\\Codes\\DontNet\\Assignment-1\\hrms\\hrms\\Dto\\Response\\User\\UserProfileResponseDto.cs",
               "RelativeDocumentMoniker": "hrms\\Dto\\Response\\User\\UserProfileResponseDto.cs",
@@ -118,12 +135,11 @@
               "RelativeToolTip": "hrms\\Dto\\Response\\User\\UserProfileResponseDto.cs",
               "ViewState": "AgIAAA4AAAAAAAAAAAA0wBQAAAAFAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-02-24T07:23:35.816Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-02-24T07:23:35.816Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 5,
               "Title": "UserRepository.cs",
               "DocumentMoniker": "C:\\Internship\\Codes\\DontNet\\Assignment-1\\hrms\\hrms\\Repository\\impl\\UserRepository.cs",
               "RelativeDocumentMoniker": "hrms\\Repository\\impl\\UserRepository.cs",
@@ -131,12 +147,11 @@
               "RelativeToolTip": "hrms\\Repository\\impl\\UserRepository.cs",
               "ViewState": "AgIAAAEBAAAAAAAAAAAqwAYBAAAQAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-02-24T07:06:25.516Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-02-24T07:06:25.516Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 12,
               "Title": "20260224053455_inappropriate-reason.cs",
               "DocumentMoniker": "C:\\Internship\\Codes\\DontNet\\Assignment-1\\hrms\\hrms\\Migrations\\20260224053455_inappropriate-reason.cs",
               "RelativeDocumentMoniker": "hrms\\Migrations\\20260224053455_inappropriate-reason.cs",
@@ -144,18 +159,17 @@
               "RelativeToolTip": "hrms\\Migrations\\20260224053455_inappropriate-reason.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-02-24T05:34:55.669Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-02-24T05:34:55.669Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
+              "DocumentIndex": 1,
               "Title": "SlotBookingService.cs",
               "DocumentMoniker": "C:\\Internship\\Codes\\DontNet\\Assignment-1\\hrms\\hrms\\Service\\impl\\SlotBookingService.cs",
               "RelativeDocumentMoniker": "hrms\\Service\\impl\\SlotBookingService.cs",
               "ToolTip": "C:\\Internship\\Codes\\DontNet\\Assignment-1\\hrms\\hrms\\Service\\impl\\SlotBookingService.cs",
               "RelativeToolTip": "hrms\\Service\\impl\\SlotBookingService.cs",
-              "ViewState": "AgIAAPoAAAAAAAAAAAAuwAgBAAANAAAAAAAAAA==",
+              "ViewState": "AgIAAO4AAAAAAAAAAADwv/oAAAARAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-02-24T04:42:32.037Z",
               "EditorCaption": ""
@@ -170,12 +184,11 @@
               "RelativeToolTip": "hrms\\Controllers\\ExpenseController.cs",
               "ViewState": "AgIAAAcAAAAAAAAAAAAwwBMAAAA6AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-02-23T14:07:32.396Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-02-23T14:07:32.396Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 2,
               "Title": "UserController.cs",
               "DocumentMoniker": "C:\\Internship\\Codes\\DontNet\\Assignment-1\\hrms\\hrms\\Controllers\\UserController.cs",
               "RelativeDocumentMoniker": "hrms\\Controllers\\UserController.cs",
@@ -188,7 +201,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 4,
               "Title": "User.cs",
               "DocumentMoniker": "C:\\Internship\\Codes\\DontNet\\Assignment-1\\hrms\\hrms\\Model\\User.cs",
               "RelativeDocumentMoniker": "hrms\\Model\\User.cs",
@@ -196,12 +209,11 @@
               "RelativeToolTip": "hrms\\Model\\User.cs",
               "ViewState": "AgIAABMAAAAAAAAAAADwvxkAAAAFAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-02-24T07:10:04.746Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-02-24T07:10:04.746Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 6,
               "Title": "ApplicationDbContext.cs",
               "DocumentMoniker": "C:\\Internship\\Codes\\DontNet\\Assignment-1\\hrms\\hrms\\Data\\ApplicationDbContext.cs",
               "RelativeDocumentMoniker": "hrms\\Data\\ApplicationDbContext.cs",
@@ -209,12 +221,11 @@
               "RelativeToolTip": "hrms\\Data\\ApplicationDbContext.cs",
               "ViewState": "AgIAAEAAAAAAAAAAAAAuwEkAAAAkAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-02-06T08:22:58.223Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-02-06T08:22:58.223Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 7,
               "Title": "GameController.cs",
               "DocumentMoniker": "C:\\Internship\\Codes\\DontNet\\Assignment-1\\hrms\\hrms\\Controllers\\GameController.cs",
               "RelativeDocumentMoniker": "hrms\\Controllers\\GameController.cs",
@@ -222,8 +233,7 @@
               "RelativeToolTip": "hrms\\Controllers\\GameController.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-02-24T07:05:22.408Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-02-24T07:05:22.408Z"
             },
             {
               "$type": "Document",
@@ -235,8 +245,7 @@
               "RelativeToolTip": "hrms\\Utility\\SlotAssigedCronJob.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-02-23T13:49:08.733Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-02-23T13:49:08.733Z"
             },
             {
               "$type": "Document",

@@ -179,11 +179,11 @@ namespace hrms.Repository.impl
         public async Task<PagedReponseOffSet<Travel>> GetTravelsByTravelerId(int travelerId, int pageSize, int pageNumber)
         {
             int TotalRecords = await _db.Travels
-                .Where(t => !t.is_deleted)
+                .Where(t => !t.is_deleted && t.Travelers.Any(tr => tr.TravelerId == travelerId))
                 .Include(t => t.Travelers.Where(tr => tr.TravelerId == travelerId))
                 .CountAsync();
             List<Travel> Travels = await _db.Travels
-                .Where(t => !t.is_deleted)
+                .Where(t => !t.is_deleted && t.Travelers.Any(tr => tr.TravelerId == travelerId))
                 .Include(t => t.Travelers.Where(tr => tr.TravelerId == travelerId))
                 .Skip((pageNumber - 1) * pageSize)
                 .Take(pageSize)

@@ -106,9 +106,8 @@ namespace hrms.Controllers
             return Ok(reviewers);
         }
 
-
         [HttpPost("{jobId}/referre")]
-        [Authorize(Roles = "EMPLOYEE,MANAGER")]
+        [Authorize(Roles = "EMPLOYEE,MANAGER,HR")]
         public async Task<IActionResult> ReferedJob(
             int? jobId,ReferralCreateDto? dto)
         {
@@ -182,7 +181,7 @@ namespace hrms.Controllers
         }
 
         [HttpPost("{jobId}/share")]
-        [Authorize(Roles = "EMPLOYEE,MANAGER")]
+        [Authorize(Roles = "EMPLOYEE,MANAGER,HR")]
         public async Task<IActionResult> ShareJob(
             int? jobId, ShareCreateDto? dto)
         {
