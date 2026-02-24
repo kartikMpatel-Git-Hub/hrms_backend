@@ -1119,6 +1119,11 @@ namespace hrms.Data
                     .HasColumnName("is_inappropriate");
 
                 entity
+                    .Property(p => p.InAppropriateReason)
+                    .HasColumnName("inappropriate_reason")
+                    .HasMaxLength(500);
+
+                entity
                     .Property(p => p.created_at)
                     .HasColumnName("created_at")
                     .HasDefaultValueSql("GETUTCDATE()");

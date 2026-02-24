@@ -159,7 +159,10 @@ namespace hrms.Repository.impl
             foreach (var game in games)
             {
                 GameSlot slots = await _db.GameSlots
-                    .Where(s => s.GameId == game.Id && s.Date == today && s.StartTime > TimeOnly.FromDateTime(DateTime.Now) && s.Status == GameSlotStatus.BOOKED)
+                    .Where(s => s.GameId == game.Id 
+                    && s.Date == today 
+                    && s.EndTime > TimeOnly.FromDateTime(DateTime.Now) 
+                    && s.Status == GameSlotStatus.BOOKED)
                     .Include(s => s.Game)
                     .Include(s => s.BookedBy)
                     .Include(s => s.Players)

@@ -16,6 +16,7 @@ namespace hrms.Dto.Response.Post
         public bool IsLiked { get; set; }
         public UserMinimalResponseDto PostByUser { get; set; }
         public bool InAppropriate { get; set; }
+        public string? InAppropriateReason { get; set; }
         public List<TagResponseDto> Tags { get; set; } = new List<TagResponseDto>();
         public int LikeCount { get; set; }
         public int CommentCount { get; set; }

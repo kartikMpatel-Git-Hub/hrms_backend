@@ -26,7 +26,7 @@ namespace hrms.Service
         Task<PagedReponseDto<TagResponseDto>> GetTags(string searchQuery, int pageNumber, int pageSize);
         Task<List<TagResponseDto>> GetTagsForPost(int postId);
         Task<bool> LikePost(int postId, int userId);
-        Task MarkPostInAppropriate(int postId);
+        Task MarkPostInAppropriate(int postId, string? reason);
         Task RemoveTagFromPost(int postId, int tagId);
         Task<CommentResponseDto> UpdateComment(int postId, int commentId, CommentUpdateDto commentUpdateDto);
         Task<PostResponseDto> UpdatePost(int postId, PostUpdateDto postUpdateDto);

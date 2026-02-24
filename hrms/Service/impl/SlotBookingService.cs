@@ -1,10 +1,4 @@
-using System.Security.Claims;
-using AutoMapper;
-using hrms.CustomException;
-using hrms.Data;
-using hrms.Dto.Request.BookingSlot;
-using hrms.Dto.Response.BookingSlot;
-using hrms.Dto.Response.Game.offere;
+﻿using hrms.Data;
 using hrms.Model;
 using hrms.Repository;
 using Microsoft.EntityFrameworkCore;
@@ -183,59 +177,102 @@ namespace hrms.Service.impl
         {
             var slotStartDateTime =
             slot.Date.Add(slot.StartTime.ToTimeSpan());
-            //System.Console.WriteLine($"Processing slot ID: {slot.Id}, Start Time: {slotStartDateTime}, Current Time: {DateTime.Now}");
-            if (DateTime.Now > slotStartDateTime)
+            var slotEndDateTime =
+            slot.Date.Add(slot.EndTime.ToTimeSpan());
+            if (DateTime.Now >= slotEndDateTime)
             {
                 slot.Status = GameSlotStatus.COMPLETED;
                 await _repository.UpdateGameSlot(slot);
                 return;
             }
-            //System.Console.WriteLine($"Checking if slot ID: {slot.Id} is ready for allocation...");
             if (DateTime.Now <
                 slotStartDateTime.AddMinutes(-slot.Game.SlotAssignedBeforeMinutes))
             {
-                //System.Console.WriteLine($"Slot ID: {slot.Id} is not ready for allocation. It will be processed at: {slotStartDateTime.AddMinutes(-slot.Game.SlotAssignedBeforeMinutes)}");
                 return;
             }
 
-            var waiting = await _db.GameSlotWaitings
-            .Where(w => w.GameSlotId == slot.Id && w.IsCancelled == false)
-            .Select(w => new
-            {
-                Waiting = w,
-                State = _db.UserGameStates
-                    .FirstOrDefault(s =>
-                        s.UserId == w.RequestedById &&
-                        s.GameId == slot.GameId)
-            })
-            .OrderBy(x =>
-                x.State == null || x.State.GamePlayed == 0 ? 0 : 1)
-            .ThenBy(x => x.State != null ? x.State.GamePlayed : 0)
-            .ThenBy(x => x.State != null ? x.State.LastPlayedAt : DateTime.MinValue)
-            .ThenBy(x => x.Waiting.RequestedAt)
-            .ThenBy(x => x.Waiting.Id)
-            .FirstOrDefaultAsync();
+            //var waiting = await _db.GameSlotWaitings
+            //.Where(w => w.GameSlotId == slot.Id && w.IsCancelled == false)
+            //.Select(w => new
+            //{
+            //    Waiting = w,
+            //    State = _db.UserGameStates
+            //        .FirstOrDefault(s =>
+            //            s.UserId == w.RequestedById &&
+            //            s.GameId == slot.GameId)
+            //})
+            //.OrderBy(x =>
+            //    x.State == null || x.State.GamePlayed == 0 ? 0 : 1)
+            //.ThenBy(x => x.State != null ? x.State.GamePlayed : 0)
+            //.ThenBy(x => x.State != null ? x.State.LastPlayedAt : DateTime.MinValue)
+            //.ThenBy(x => x.Waiting.RequestedAt)
+            //.ThenBy(x => x.Waiting.Id)
+            //.FirstOrDefaultAsync();
 
-            if (waiting == null)
+            var waitingGroup = await
+                (
+                    from w in _db.GameSlotWaitings
+                    where w.GameSlotId == slot.Id && !w.IsCancelled
+                    select new
+                    {
+                        Waiting = w,
+                        UserId = w.RequestedById
+                    }
+                )
+                .Union
+                (
+                    from w in _db.GameSlotWaitings
+                    join p in _db.GameSlotWaitingPlayers
+                        on w.Id equals p.GameSlotWaitingId
+                    where w.GameSlotId == slot.Id && !w.IsCancelled
+                    select new
+                    {
+                        Waiting = w,
+                        UserId = p.PlayerId
+                    }
+                )
+                .GroupJoin(
+                    _db.UserGameStates.Where(s => s.GameId == slot.GameId),
+                    x => x.UserId,
+                    s => s.UserId,
+                    (x, gs) => new { x.Waiting, GameStates = gs }
+                )
+                .SelectMany(
+                    x => x.GameStates.DefaultIfEmpty(),
+                    (x, s) => new
+                    {
+                        Waiting = x.Waiting,
+                        GamePlayed = s != null ? s.GamePlayed : 0,
+                        LastPlayedAt = (DateTime?)s.LastPlayedAt
+                    }
+                )
+                .GroupBy(x => x.Waiting)
+                .Select(g => new
+                {
+                    Waiting = g.Key,
+                    AverageGamePlayed = g.Average(x => x.GamePlayed),
+                    LastPlayedAt = g.Max(x => x.LastPlayedAt),
+                    HasHistory = g.Any(x => x.GamePlayed > 0)
+                })
+                .OrderBy(x => x.HasHistory ? 1 : 0)
+                .ThenBy(x => x.AverageGamePlayed)
+                .ThenBy(x => x.LastPlayedAt ?? DateTime.MinValue)
+                .ThenBy(x => x.Waiting.RequestedAt)
+                .ThenBy(x => x.Waiting.Id)
+                .FirstOrDefaultAsync();
+
+            if (waitingGroup == null)
             {
-                //System.Console.WriteLine($"No waiting entries found for slot ID: {slot.Id}. Slot remains in status: {slot.Status}");
                 return;
             }
-            //System.Console.WriteLine($"Found waiting entry with ID: {waiting.Waiting.Id} for slot ID: {slot.Id}. Proceeding with allocation...");
-            //System.Console.WriteLine($"Waiting entry details - RequestedById: {waiting.Waiting.RequestedById}, RequestedAt: {waiting.Waiting.RequestedAt}, UserGameState: {(waiting.State != null ? $"GamePlayed: {waiting.State.GamePlayed}, LastPlayedAt: {waiting.State.LastPlayedAt}" : "No game state")}");
-            
-            // Get waiting players before starting transaction
             var players = await _db.GameSlotWaitingPlayers
-                        .Where(p => p.GameSlotWaitingId == waiting.Waiting.Id)
+                        .Where(p => p.GameSlotWaitingId == waitingGroup.Waiting.Id)
                         .ToArrayAsync();
-            //System.Console.WriteLine($"Found {players.Length} waiting players for waiting entry ID: {waiting.Waiting.Id}");
-            
+
             using var tx = await _db.Database.BeginTransactionAsync();
-            
-            // Add all waiting players to the slot
+
             foreach (var player in players)
             {
-                //System.Console.WriteLine("Adding player with ID: " + player.PlayerId + " to slot ID: " + slot.Id);
                 _db.GameSlotPlayers.Add(new GameSlotPlayer
                 {
                     SlotId = slot.Id,
@@ -243,16 +280,13 @@ namespace hrms.Service.impl
                 });
                 await UpdateUserGameState(player.PlayerId, slot.GameId);
             }
-            
-            await UpdateUserGameState(waiting.Waiting.RequestedById, slot.GameId);
-            
-            slot.BookedById = waiting.Waiting.RequestedById;
+
+            await UpdateUserGameState(waitingGroup.Waiting.RequestedById, slot.GameId);
+
+            slot.BookedById = waitingGroup.Waiting.RequestedById;
             slot.Status = GameSlotStatus.BOOKED;
             slot.BookedAt = DateTime.Now;
             _db.GameSlots.Update(slot);
-            
-            //System.Console.WriteLine("Slot with ID: " + slot.Id + " is now booked by user ID: " + waiting.Waiting.RequestedById);
-            
             await _db.SaveChangesAsync();
             await tx.CommitAsync();
 

@@ -20,6 +20,11 @@ namespace hrms.Service.impl
             await _repository.GetGameSlotById(gameId, slotId);
             await _userRepository.GetByIdAsync(userId);
             await ValidateBookSlotRequest(gameId, slotId, userId, dto);
+            GameSlot slot = await _repository.GetGameSlotById(gameId, slotId);
+            if(slot.EndTime <= TimeOnly.FromDateTime(DateTime.Now))
+            {
+                throw new InvalidOperationCustomException("Cannot book a slot that has already ended.");
+            }
             GameSlot gameSlot = await _repository.BookGameSlot(gameId, slotId, userId, dto);
             return _mapper.Map<GameSlotResponseDto>(gameSlot);
         }
@@ -37,13 +42,13 @@ namespace hrms.Service.impl
             }
             if (!await _userGameRepository.IsUserInterestedInGame(userId, gameId))
             {
-                throw new InvalidOperationCustomException("User is not already interested");
+                throw new InvalidOperationCustomException("You Have Not Mark Game As Interested interested");
             }
             foreach (var player in dto.Players)
             {
                 if (!await _userGameRepository.IsUserInterestedInGame(player, gameId))
                 {
-                    throw new InvalidOperationCustomException($"Player with ID {player} is not interested");
+                    throw new InvalidOperationCustomException($"Selected Player is not interested");
                 }
             }
             if (dto.Players.Count < 1)
@@ -52,13 +57,13 @@ namespace hrms.Service.impl
             }
             if (await _repository.IsUserAlreadyBookedInSlot(gameId, slotId, userId))
             {
-                throw new InvalidOperationCustomException("User has already booked this slot.");
+                throw new InvalidOperationCustomException("You Have already booked this slot.");
             }
             foreach (var player in dto.Players)
             {
                 if (await _repository.IsUserAlreadyBookedInSlot(gameId, slotId, player))
                 {
-                    throw new InvalidOperationCustomException($"Player with ID {player} has already booked this slot.");
+                    throw new InvalidOperationCustomException($"one or more Players has already booked this slot.");
                 }
             }
         }

@@ -10,6 +10,8 @@ namespace hrms.Dto.Response.Game
         public int MaxPlayer { get; set; }
         public int MinPlayer { get; set; } = 0;
         public int Duration { get; set; } = 0;
+        public int SlotAssignedBeforeMinutes { get; set; }
+        public int SlotCreateForNextXDays { get; set; }
         public List<GameOperationWindowResponseDto> GameOperationWindows { get; set; } = new List<GameOperationWindowResponseDto>();
     }
 }

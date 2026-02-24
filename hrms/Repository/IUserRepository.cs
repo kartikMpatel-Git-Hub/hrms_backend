@@ -24,5 +24,6 @@ namespace hrms.Repository
         Task<PagedReponseOffSet<User>> GetAllUserForHr(int pageSize, int pageNumber);
         Task<PagedReponseOffSet<User>> GetAllManagers(int pageSize, int pageNumber);
         Task<PagedReponseOffSet<User>> GetEmployeeUnderManager(int userId, int pageSize, int pageNumber);
+        Task<User> GetUserProfile(int userId);
     }
 }
