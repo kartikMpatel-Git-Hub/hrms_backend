@@ -16,6 +16,7 @@ namespace hrms.Service.impl
         IPostRepository _repository,
         IUserRepository _userRepository,
         IMapper _mapper,
+        INotificationRepository _notificationRepository,
         IEmailService _emailService,
         ICloudinaryService _cloudinaryService
         ) : IPostService
@@ -214,15 +215,29 @@ namespace hrms.Service.impl
             return post;
         }
 
-        public async Task MarkPostInAppropriate(int postId)
+        public async Task MarkPostInAppropriate(int postId, string? reason)
         {
             Post post = await _repository.GetPostById(postId);
             if (!post.InAppropriate)
             {
-                await _emailService.SendEmailAsync(post.PostByUser.Email, "Inappropriate Post Reported", $"Your post titled '{post.Title}' has been reported as inappropriate.");
+                post.InAppropriateReason = reason ?? "No reason provided";
+                await CreateNotificationForInAppropriate(post);
             }
             post.InAppropriate = !post.InAppropriate;
             await _repository.MarkPostInAppropriate(post);
+        }
+
+        private async Task CreateNotificationForInAppropriate(Post post)
+        {
+            await _emailService.SendEmailAsync(post.PostByUser.Email, "Inappropriate Post Reported", $"Your post titled '{post.Title}' has been reported as inappropriate.");
+            Notification notification = new Notification()
+            {
+                NotifiedTo = post.PostById,
+                Title = "Post Inappropriate",
+                NotificationDate = DateTime.Now,
+                Description = $"Your post titled '{post.Title}' has been reported as inappropriate. it will not longer be visible to other users until reviewed by the admin.",
+            };
+            await _notificationRepository.CreateNotification(notification);
         }
 
         public async Task<PagedReponseDto<PostResponseDto>> GetInappropriatePosts(int page, int pageSize)

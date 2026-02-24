@@ -10,25 +10,18 @@ using hrms.Repository;
 
 namespace hrms.Service.impl
 {
-    public class ExpenseService : IExpenseService
+    public class ExpenseService(
+        IExpenseRepository _repository,
+        IUserService _userService,
+        IUserRepository _userRepository,
+        ITravelRepository _travelRepository,
+        IMapper _mapper,
+        IEmailService _email,
+        ICloudinaryService _cloudinary,
+        INotificationRepository _notificationRepository
+    ) : IExpenseService
     {
 
-        private readonly IExpenseRepository _repository;
-        private readonly IUserService _userService;
-        private readonly ITravelRepository _travelRepository;
-        private readonly IMapper _mapper;
-        private readonly IEmailService _email;
-        private readonly ICloudinaryService _cloudinary;
-
-        public ExpenseService(IEmailService email, IExpenseRepository repository, IMapper mapper, IUserService userService, ITravelRepository travelRepository,ICloudinaryService cloudinary)
-        {
-            _repository = repository;
-            _userService = userService;
-            _mapper = mapper;
-            _email = email;
-            _travelRepository = travelRepository;
-            _cloudinary = cloudinary;
-        }
         public async Task<ExpenseCategoryResponseDto> CreateExpenseCategory(ExpenseCategoryCreateDto dto)
         {
             if (await _repository.ExistExpenseCategory(dto.Category))
@@ -141,7 +134,25 @@ namespace hrms.Service.impl
                 throw new InvalidOperationCustomException("Expense Review already given !");
             }
             Expense e = await _repository.UpdateExpenseStatus(expense);
+             await NotifiedUserForExpenseStatusChange(e);
             return _mapper.Map<ExpenseResponseDto>(e);
+        }
+
+        private async Task NotifiedUserForExpenseStatusChange(Expense e)
+        {
+            var traveler = await _userRepository.GetById(e.TravelerId);
+            await _email.SendEmailAsync(traveler.Email, "Expense Status Changed", $"""
+                Your expense with ID {e.Id} has been updated to status {e.Status}.
+                """);
+            Notification notification = new Notification()
+            {
+                NotifiedTo = traveler.Id,
+                Title = "Expense Status Changed",
+                Description = $"Your expense with ID {e.Id} has been updated to status {e.Status}.",
+                IsViewed = false,
+                NotificationDate = DateTime.Now
+            };
+            await _notificationRepository.CreateNotification(notification);
         }
 
         private ExpenseStatus GetStatus(string status)

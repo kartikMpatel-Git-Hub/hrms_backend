@@ -99,7 +99,7 @@
   {
     "ContainingType": "hrms.Controllers.DashboardController",
     "Method": "GetUpcomingBookingSlots",
-    "RelativePath": "Dashboard/upcomeing-booked-slots",
+    "RelativePath": "Dashboard/upcoming-bookings",
     "HttpMethod": "GET",
     "IsController": true,
     "Order": 0,
@@ -1207,6 +1207,11 @@
         "Name": "postId",
         "Type": "System.Nullable\u00601[[System.Int32, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]",
         "IsRequired": true
+      },
+      {
+        "Name": "markDto",
+        "Type": "hrms.Dto.Request.Post.PostInAppriproateMarkDto",
+        "IsRequired": false
       }
     ],
     "ReturnTypes": []
@@ -1886,7 +1891,7 @@
     "Parameters": [
       {
         "Name": "UserId",
-        "Type": "System.Int32",
+        "Type": "System.Nullable\u00601[[System.Int32, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]",
         "IsRequired": true
       }
     ],

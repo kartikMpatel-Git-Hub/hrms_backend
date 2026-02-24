@@ -74,11 +74,11 @@ namespace hrms.Controllers
         }
 
         [HttpPatch("{postId}/inappropriate")]
-        public async Task<IActionResult> MarkPostInAppropriate(int? postId)
+        public async Task<IActionResult> MarkPostInAppropriate(int? postId,PostInAppriproateMarkDto? markDto)
         {
             if(postId == null || postId <= 0)
                 return BadRequest("Post Id must be greater than zero !");
-            await _service.MarkPostInAppropriate((int)postId);
+            await _service.MarkPostInAppropriate((int)postId, markDto?.Reason);
             return Ok(new { message = $"Post with ID {postId} marked as inappropriate successfully." });
         }
         [HttpPut("{postId}")]

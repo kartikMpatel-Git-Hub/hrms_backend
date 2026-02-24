@@ -93,8 +93,6 @@ namespace hrms.Repository.impl
 
         public async Task<User> GetEmployeeById(int employeeId)
         {
-            if (employeeId == null)
-                throw new NotFoundCustomException($"employee id not found");
             User user = await _context.Users
                 .FirstOrDefaultAsync(
                 (u) => u.Id == employeeId && u.Role == UserRole.EMPLOYEE);
@@ -258,6 +256,21 @@ namespace hrms.Repository.impl
                 .ToList();
             PagedReponseOffSet<User> Response = new PagedReponseOffSet<User>(users, pageNumber, pageSize, TotalRecords);
             return Task.FromResult(Response);
+        }
+
+        public async Task<User> GetUserProfile(int userId)
+        {
+            User user = await _context.Users
+                .Where(u => u.Id == userId && !u.is_deleted)
+                .Include(u => u.Department)
+                .Include(u => u.Reported)
+                .Include(u => u.Employees)
+                .FirstOrDefaultAsync();
+            if(user == null)
+            {
+                throw new NotFoundCustomException($"User with id {userId} not found");
+            }
+            return user;
         }
     }
 }

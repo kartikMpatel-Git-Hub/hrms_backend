@@ -22,8 +22,6 @@
         public int? DepartmentId { get; set; }
         public Department Department { get; set; }
         public string Designation {  get; set; }
-        public ICollection<User> Employees { get; set; }
-
-
+        public IEnumerable<User> Employees { get; set; }
     }
 }

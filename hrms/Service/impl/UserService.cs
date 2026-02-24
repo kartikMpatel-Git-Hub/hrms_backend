@@ -4,7 +4,6 @@ using hrms.Dto.Response.Other;
 using hrms.Dto.Response.User;
 using hrms.Model;
 using hrms.Repository;
-using Microsoft.EntityFrameworkCore;
 
 namespace hrms.Service.impl
 {
@@ -89,6 +88,7 @@ namespace hrms.Service.impl
                     chain.Add(currentUser);
                 }
             }
+            chain.Reverse();
             return _mapper.Map<List<UserResponseDto>>(chain);
         }
 
@@ -113,6 +113,12 @@ namespace hrms.Service.impl
         {
             PagedReponseOffSet<User> PageUsers = await _repository.GetEmployeeUnderManager(userId, pageSize, pageNumber);
             return _mapper.Map<PagedReponseDto<UserResponseDto>>(PageUsers);
+        }
+
+        public async Task<UserProfileResponseDto> GetUserProfile(int userId)
+        {
+            User user = await _repository.GetUserProfile(userId);
+            return _mapper.Map<UserProfileResponseDto>(user);
         }
     }
 }

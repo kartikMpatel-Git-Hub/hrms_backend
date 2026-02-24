@@ -10,6 +10,7 @@ namespace hrms.Model
         public string Description { get; set; }
         public bool IsPublic { get; set; } = true;
         public bool InAppropriate { get; set; }
+        public string? InAppropriateReason { get; set; }
         public List<PostComment> Comments { get; set; }
         public List<PostLike> Likes { get; set; }
         public List<PostTag> PostTags { get; set; }

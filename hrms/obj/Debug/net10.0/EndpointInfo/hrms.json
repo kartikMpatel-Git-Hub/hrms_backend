@@ -427,7 +427,7 @@
         }
       }
     },
-    "/Dashboard/upcomeing-booked-slots": {
+    "/Dashboard/upcoming-bookings": {
       "get": {
         "tags": [
           "Dashboard"
@@ -2093,6 +2093,25 @@
             }
           }
         ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/PostInAppriproateMarkDto"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/PostInAppriproateMarkDto"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/PostInAppriproateMarkDto"
+              }
+            }
+          }
+        },
         "responses": {
           "200": {
             "description": "OK"
@@ -3468,6 +3487,16 @@
             "nullable": true
           },
           "password": {
+            "type": "string",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "PostInAppriproateMarkDto": {
+        "type": "object",
+        "properties": {
+          "reason": {
             "type": "string",
             "nullable": true
           }

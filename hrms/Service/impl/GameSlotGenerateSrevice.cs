@@ -26,6 +26,10 @@ namespace hrms.Service.impl
                         {
                             bool exists = await _db.GameSlots
                                         .AnyAsync(s => s.GameId == game.Id && s.Date == date && s.StartTime == start);
+                            //exists = await _db.GameSlots
+                            //            .AnyAsync(s => s.GameId == game.Id
+                            //            && s.Date == date
+                            //            && start > s.StartTime && start <= s.EndTime);
                             if (!exists)
                             {
                                 GameSlot slot = new GameSlot

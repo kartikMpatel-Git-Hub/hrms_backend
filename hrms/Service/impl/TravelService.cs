@@ -128,8 +128,7 @@ namespace hrms.Service.impl
             Travel travel = await _repository.GetTravelById(travelId);
             User currentUser = await _userService.GetUserEntityById(currentUserId);
             User traveler = await _repository.GetTravelerByTravelId(travelId, travelerId);
-
-
+            
             TravelDocument document = new TravelDocument()
             {
                 TravelerId = traveler.Id,

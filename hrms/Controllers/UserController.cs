@@ -53,9 +53,13 @@ namespace hrms.Controllers
         }
 
         [HttpGet("{UserId}")]
-        public async Task<IActionResult> GetUser(int UserId)
+        public async Task<IActionResult> GetUser(int? UserId)
         {
-            var user = await _service.GetUserById(UserId);
+            if (UserId == null)
+            {
+                return BadRequest("UserId is required.");
+            }
+            UserProfileResponseDto user = await _service.GetUserProfile((int)UserId);
             return Ok(user);
         }
 

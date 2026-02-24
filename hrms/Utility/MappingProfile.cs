@@ -38,8 +38,23 @@ namespace hrms.Utility
                 .ForMember(
                 dest => dest.Role,
                 opt => opt.MapFrom(src => GetRoleName(src.Role)));
-            CreateMap<Travel, TravelResponseDto>();
-            CreateMap<Travel, TravelWithTravelerResponseDto>();
+
+            CreateMap<User, UserProfileResponseDto>()
+                .ForMember(
+                dest => dest.Team,
+                opt => opt.MapFrom(src => src.Employees))
+                .ForMember(
+                dest => dest.Role,
+                opt => opt.MapFrom(src => GetRoleName(src.Role)));
+            
+            CreateMap<Travel, TravelResponseDto>()
+                .ForMember(
+                dest => dest.Description,
+                opt => opt.MapFrom(src => src.Desciption));
+            CreateMap<Travel, TravelWithTravelerResponseDto>()
+                .ForMember(
+                dest => dest.Description,
+                opt => opt.MapFrom(src => src.Desciption));
             CreateMap<Traveler, TravelerDto>();
             CreateMap<ExpenseCategory, ExpenseCategoryResponseDto>();
             CreateMap<Expense, ExpenseResponseDto>()
