@@ -3,6 +3,7 @@ using hrms.Dto.Response.Notification;
 using hrms.Dto.Response.Other;
 using hrms.Service;
 using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Cors;
 using Microsoft.AspNetCore.Mvc;
 using System.Security.Claims;
 
@@ -11,6 +12,7 @@ namespace hrms.Controllers
     [Route("[controller]")]
     [ApiController]
     [Authorize]
+    [EnableCors("MyAllowSpecificOrigins")]
     public class NotificationController : Controller
     {
         private readonly INotificationService _notificationService;
@@ -21,12 +23,14 @@ namespace hrms.Controllers
         }
 
         [HttpGet]
-        public async Task<IActionResult> GetMyNotification(int? pageNumber = 1, int? pageSize = 10)
+        public async Task<IActionResult> GetMyNotification(int pageNumber = 1, int pageSize = 10)
         {
-            if (pageNumber == null || pageSize == null || pageNumber <= 0 || pageSize <= 0)
+            if (pageNumber <= 0 || pageSize <= 0)
             {
                 throw new ArgumentNullException("Pagenumber and Pagesize not found !");
             }
+            System.Console.WriteLine(pageNumber);
+            System.Console.WriteLine(pageSize);
             var CurrentUser = User;
             if (CurrentUser == null)
                 throw new UnauthorizedCustomException($"Unauthorized Access !");

@@ -32,6 +32,18 @@ namespace hrms.Service.impl
             _cloudinary = cloudinary;
             _departmentRepo = departmentRepo;
         }
+
+        public async Task ForgetPassword(ForgetPasswordRequestDto dto)
+        {
+            string newPassword = PasswordHelper.GenerateRandomPassword();
+            User user = await _repo.GetByEmailAsync(dto.Email);
+            if (user == null)
+                throw new NotFoundCustomException($"user with email {dto.Email} not found !");
+            user.HashPassword = PasswordHelper.HashPassword(newPassword);
+            await _repo.UpdateAsync(user);
+            await _email.SendEmailAsync(dto.Email, "Password Reset", $"<h1>Your New Password is : {newPassword} </h1>");
+        }
+
         public async Task<LoginResponseDto> Login(LoginRequestDto dto)
         {
             User user = await _repo.GetByEmailAsync(dto.Email);

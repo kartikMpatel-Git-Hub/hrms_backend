@@ -1,4 +1,5 @@
-﻿using hrms.Dto.Response.Other;
+﻿using hrms.Dto.Request.User;
+using hrms.Dto.Response.Other;
 using hrms.Dto.Response.Travel;
 using hrms.Dto.Response.User;
 using hrms.Model;
@@ -22,5 +23,6 @@ namespace hrms.Service
         Task<User> GetUserEntityById(int UserId);
         Task<UserProfileResponseDto> GetUserProfile(int userId);
         Task ToggleGameInterestStatus(int userId, int gameId);
+        Task UpdateUser(int userId, UserUpdateRequestDto userUpdateRequestDto);
     }
 }

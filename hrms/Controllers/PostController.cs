@@ -50,11 +50,11 @@ namespace hrms.Controllers
 
         [HttpGet("inappropriate")]
         [Authorize(Roles = "Admin, HR")]
-        public async Task<IActionResult> GetInappropriatePosts(int page = 1, int pageSize = 10)
+        public async Task<IActionResult> GetInappropriatePosts(int pageNumber = 1, int pageSize = 10)
         {
-            if(page <= 0 || pageSize <= 0)
+            if(pageNumber <= 0 || pageSize <= 0)
                 return BadRequest("Page Number and Page Size must be greater than zero !");
-            PagedReponseDto<PostResponseDto> response = await _service.GetInappropriatePosts(page, pageSize);
+            PagedReponseDto<PostResponseDto> response = await _service.GetInappropriatePosts(pageNumber, pageSize);
             return Ok(response);
         }
 

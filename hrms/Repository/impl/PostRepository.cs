@@ -84,6 +84,7 @@ namespace hrms.Repository.impl
                 .Include(c => c.CommentBy)
                 .Skip((pageNumber - 1) * pageSize)
                 .Take(pageSize)
+                .OrderByDescending(c => c.created_at)
                 .ToListAsync();
 
             return new PagedReponseOffSet<PostComment>(comments, pageNumber, pageSize, total);
@@ -91,17 +92,19 @@ namespace hrms.Repository.impl
 
         public async Task<PagedReponseOffSet<Post>> GetFeed(int pageNumber, int pageSize)
         {
+            System.Console.WriteLine($"Page Number : {pageNumber} , Page Size : {pageSize}");
             int total = await _db.Posts
                 .Where(p => p.is_deleted == false && p.IsPublic == true && p.InAppropriate == false)
                 .CountAsync();
 
             var posts = await _db.Posts
                 .Where(p => p.is_deleted == false && p.IsPublic == true && p.InAppropriate == false)
-                .Skip((pageNumber - 1) * pageSize)
                 .Include(p => p.PostByUser)
                 .Include(p => p.Comments.Where(c => c.is_deleted == false))
                 .Include(p => p.Likes.Where(l => l.IsDeleted == false))
+                .Skip((pageNumber - 1) * pageSize)
                 .Take(pageSize)
+                .OrderByDescending(p => p.created_at)
                 .ToListAsync();
 
             return new PagedReponseOffSet<Post>(posts, pageNumber, pageSize, total);
@@ -120,6 +123,7 @@ namespace hrms.Repository.impl
                 .Include(p => p.Comments.Where(c => c.is_deleted == false))
                 .Include(p => p.Likes.Where(l => l.IsDeleted == false))
                 .Take(pageSize)
+                .OrderByDescending(p => p.created_at)
                 .ToListAsync();
 
             return new PagedReponseOffSet<Post>(posts, page, pageSize, total);
@@ -137,6 +141,7 @@ namespace hrms.Repository.impl
                 .Include(p => p.PostByUser)
                 .Include(p => p.Comments.Where(c => c.is_deleted == false))
                 .Include(p => p.Likes.Where(l => l.IsDeleted == false))
+                .OrderByDescending(p => p.created_at)
                 .Take(pageSize)
                 .ToListAsync();
 
@@ -264,6 +269,7 @@ namespace hrms.Repository.impl
 
         public async Task<PostComment> UpdateComment(PostComment comment)
         {
+            comment.updated_at = DateTime.Now;
             _db.PostComments.Update(comment);
             await _db.SaveChangesAsync();
             return await GetCommentById(comment.Id);
@@ -271,6 +277,7 @@ namespace hrms.Repository.impl
 
         public async Task<Post> UpdatePost(Post updatedPost)
         {
+            updatedPost.updated_at = DateTime.Now;
             _db.Posts.Update(updatedPost);
             await _db.SaveChangesAsync();
             return updatedPost;

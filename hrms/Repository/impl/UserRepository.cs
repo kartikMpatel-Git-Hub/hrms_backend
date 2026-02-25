@@ -55,6 +55,7 @@ namespace hrms.Repository.impl
                 .Include(u => u.Department)
                 .Skip((PageNumber - 1) * PageSize)
                 .Take(PageSize)
+                .OrderBy(u => u.created_at)
                 .ToListAsync();
             PagedReponseOffSet<User> Response = new PagedReponseOffSet<User>(users, PageNumber, PageSize, TotalRecords);
             return Response;
@@ -69,6 +70,7 @@ namespace hrms.Repository.impl
                 .Where(u => !u.is_deleted && u.Role == UserRole.EMPLOYEE)
                 .Skip((pageNumber - 1) * pageSize)
                 .Take(pageSize)
+                .OrderByDescending(u => u.created_at)
                 .ToListAsync();
             return users;
         }
@@ -109,7 +111,7 @@ namespace hrms.Repository.impl
                 && u.Role == UserRole.EMPLOYEE
                 && u.is_deleted == false)
                 .Skip(0)
-                .Take(20)
+                .Take(10)
                 .ToListAsync();
             return employees;
         }
@@ -121,7 +123,8 @@ namespace hrms.Repository.impl
                 && u.is_deleted == false)
                 .Include(u => u.Department)
                 .Skip(0)
-                .Take(20)
+                .Take(10)
+                .OrderBy(u => u.created_at)
                 .ToListAsync();
             return employees;
         }
@@ -158,10 +161,10 @@ namespace hrms.Repository.impl
             var TotalRecords = await _context.Users
                 .Where(u => !u.is_deleted && u.Role == UserRole.HR).CountAsync();
             List<User> hrs = await _context.Users
-                .OrderBy(u => u.Id)
                 .Where(u => !u.is_deleted && u.Role == UserRole.HR)
                 .Skip((pageNumber - 1) * pageSize)
                 .Take(pageSize)
+                .OrderByDescending(u => u.created_at)
                 .ToListAsync();
             PagedReponseOffSet<User> Response = new PagedReponseOffSet<User>(hrs, pageNumber, pageSize, TotalRecords);
             return Response;
@@ -174,7 +177,7 @@ namespace hrms.Repository.impl
                 .Where(u => (u.FullName.Contains(s) || u.Email.Contains(s))
                 && u.is_deleted == false && u.Role == UserRole.HR)
                 .Skip(0)
-                .Take(20)
+                .Take(10)
                 .ToListAsync();
             return employees;
         }
@@ -218,7 +221,7 @@ namespace hrms.Repository.impl
             var TotalRecords = _context.Users.Where(u => !u.is_deleted && (u.Role == UserRole.EMPLOYEE || u.Role == UserRole.MANAGER)).Count();
             Console.WriteLine($"Total User : {TotalRecords}");
             List<User> users = _context.Users
-                .OrderBy(u => u.Id)
+                .OrderByDescending(u => u.created_at)
                 .Where(u => !u.is_deleted && (u.Role == UserRole.EMPLOYEE || u.Role == UserRole.MANAGER))
                 .Include(u => u.Department)
                 .Skip((pageNumber - 1) * pageSize)
@@ -233,7 +236,7 @@ namespace hrms.Repository.impl
             var TotalRecords = _context.Users.Where(u => !u.is_deleted && (u.Role == UserRole.MANAGER || u.Role == UserRole.ADMIN)).Count();
             Console.WriteLine($"Total User : {TotalRecords}");
             List<User> users = _context.Users
-                .OrderBy(u => u.Id)
+                .OrderByDescending(u => u.created_at)
                 .Where(u => !u.is_deleted && (u.Role == UserRole.MANAGER || u.Role == UserRole.ADMIN))
                 .Include(u => u.Department)
                 .Skip((pageNumber - 1) * pageSize)
@@ -248,7 +251,7 @@ namespace hrms.Repository.impl
             var TotalRecords = _context.Users.Where(u => !u.is_deleted && u.ReportTo == userId).Count();
             Console.WriteLine($"Total User : {TotalRecords}");
             List<User> users = _context.Users
-                .OrderBy(u => u.Id)
+                .OrderByDescending(u => u.created_at)
                 .Where(u => !u.is_deleted && u.ReportTo == userId)
                 .Include(u => u.Department)
                 .Skip((pageNumber - 1) * pageSize)
@@ -271,6 +274,12 @@ namespace hrms.Repository.impl
                 throw new NotFoundCustomException($"User with id {userId} not found");
             }
             return user;
+        }
+
+        public async Task UpdateAsync(User user)
+        {
+            _context.Users.Update(user);
+            await _context.SaveChangesAsync();
         }
     }
 }

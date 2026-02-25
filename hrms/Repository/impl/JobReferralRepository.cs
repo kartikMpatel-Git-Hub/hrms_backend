@@ -34,6 +34,7 @@ namespace hrms.Repository.impl
                 .Where(jr => jr.ReferedBy == refId)
                 .Skip((pageNumber - 1) * pageSize)
                 .Take(pageSize)
+                .OrderByDescending(jr => jr.ReferedAt)
                 .ToListAsync();
             PagedReponseOffSet<JobReferral> response = new PagedReponseOffSet<JobReferral>(referrals, pageNumber, pageSize, TotalRecords);
             return response;
@@ -51,6 +52,7 @@ namespace hrms.Repository.impl
                 .Where(jr => jr.Job.CreatedBy == hrId)
                 .Skip((pageNumber - 1) * pageSize)
                 .Take(pageSize)
+                .OrderByDescending(jr => jr.ReferedAt)
                 .ToListAsync();
             PagedReponseOffSet<JobReferral> response = new PagedReponseOffSet<JobReferral>(referrals, pageNumber, pageSize, TotalRecords);
             return response;
@@ -69,6 +71,7 @@ namespace hrms.Repository.impl
                 .Include(jr => jr.Referer)
                 .Skip((pageNumber - 1) * pageSize)
                 .Take(pageSize)
+                .OrderByDescending(jr => jr.ReferedAt)
                 .ToListAsync();
             PagedReponseOffSet<JobReferral> response = new PagedReponseOffSet<JobReferral>(referrals, pageNumber, pageSize, TotalRecords);
             return response;

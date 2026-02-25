@@ -1,6 +1,7 @@
 ﻿using System.Security.Claims;
 using AutoMapper;
 using hrms.CustomException;
+using hrms.Dto.Request.User;
 using hrms.Dto.Response.Other;
 using hrms.Dto.Response.Travel;
 using hrms.Dto.Response.User;
@@ -61,6 +62,17 @@ namespace hrms.Controllers
             }
             UserProfileResponseDto user = await _service.GetUserProfile((int)UserId);
             return Ok(user);
+        }
+
+        [HttpPut("{UserId}")]
+        public async Task<IActionResult> UpdateUser(int? UserId, UserUpdateRequestDto userUpdateRequestDto)
+        {
+            if (UserId == null)
+            {
+                return BadRequest("UserId is required.");
+            }
+            await _service.UpdateUser((int)UserId, userUpdateRequestDto);
+            return Ok("User Updated Successfully");
         }
 
         [HttpGet("search/employee")]

@@ -64,7 +64,6 @@ namespace hrms.Controllers
             var CurrentUser = User;
             if (CurrentUser == null)
                 throw new UnauthorizedCustomException($"Unauthorized Access !");
-
             int hrId = Int32.Parse(CurrentUser.FindFirst(ClaimTypes.PrimarySid)?.Value);
             PagedReponseDto<JobResponseDto> jobs = await _service.GetJobsCreatedByHr(hrId, pageNumber, pageSize);
 
@@ -76,7 +75,6 @@ namespace hrms.Controllers
         public async Task<IActionResult> GetAllJobs(int pageNumber = 1, int pageSize = 10)
         {
             PagedReponseDto<JobResponseDto> jobs = await _service.GetAllJobs(pageNumber, pageSize);
-
             return Ok(jobs);
         }
 

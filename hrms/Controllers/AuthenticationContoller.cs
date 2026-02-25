@@ -51,5 +51,12 @@ namespace hrms.Controllers
             return Ok(new { message = "Logged out successfully" });
         }
 
+        [HttpPost("forget-password")]
+        public async Task<IActionResult> ForgetPassword(ForgetPasswordRequestDto dto)
+        {
+            await _service.ForgetPassword(dto);
+            return Ok(new { message = "New Password is set and sent to your email." });
+        }
+
     }
 }

@@ -64,6 +64,7 @@ namespace hrms.Repository.impl
                 .Include(td => td.Uploader)
                 .Skip((pageNumber - 1) * pageSize)
                 .Take(pageSize)
+                .OrderByDescending(td => td.UploadedAt)
                 .ToListAsync();
             PagedReponseOffSet<TravelDocument> Response = new PagedReponseOffSet<TravelDocument>(documents, pageNumber, pageSize, TotalRecords);
             return Response;
@@ -82,6 +83,7 @@ namespace hrms.Repository.impl
                 .Take(pageSize)
                 .Include(tl => tl.Travel)
                 .Select(tl => tl.Travel)
+                .OrderByDescending(t => t.created_at)
                 .ToListAsync();
             PagedReponseOffSet<Travel> Response = new PagedReponseOffSet<Travel>(travels, pageNumber, pageSize, TotalRecords);
             return Response;
@@ -93,8 +95,10 @@ namespace hrms.Repository.impl
             List<Expense> expenses = await _db.Expenses
                 .Where(e => e.TravelId == travelId && e.TravelerId == travelerId)
                 .Include(e => e.Proofs)
+                .Include(e => e.Category)
                 .Skip((pageNumber - 1) * pageSize)
                 .Take(pageSize)
+                .OrderByDescending(e => e.ExpenseDate)
                 .ToListAsync();
             PagedReponseOffSet<Expense> Response = new PagedReponseOffSet<Expense>(expenses, pageNumber, pageSize, TotalRecords);
             return Response;
@@ -131,10 +135,10 @@ namespace hrms.Repository.impl
         {
             var TotalRecords = await _db.Travels.Where(t => t.CreatedBy ==  HrId).CountAsync();
             List<Travel> Travels = await _db.Travels
-                .OrderBy(t => t.Id)
                 .Where(t => t.CreatedBy ==  HrId)
                 .Skip((PageNumber - 1) * PageSize)
                 .Take(PageSize)
+                .OrderByDescending(t => t.created_at)
                 .ToListAsync();
             PagedReponseOffSet<Travel> Response = new PagedReponseOffSet<Travel>(Travels, PageNumber, PageSize, TotalRecords);
             return Response;
@@ -187,6 +191,7 @@ namespace hrms.Repository.impl
                 .Include(t => t.Travelers.Where(tr => tr.TravelerId == travelerId))
                 .Skip((pageNumber - 1) * pageSize)
                 .Take(pageSize)
+                .OrderByDescending(t => t.created_at)
                 .ToListAsync();
             PagedReponseOffSet<Travel> Response = new PagedReponseOffSet<Travel>(Travels, pageNumber, pageSize, TotalRecords);
             return Response;    
@@ -194,6 +199,7 @@ namespace hrms.Repository.impl
 
         public async Task<Travel> UpdateTravel(Travel travel)
         {
+            travel.updated_at = DateTime.Now;
             var AddedEntity = _db.Travels.Update(travel);
             await _db.SaveChangesAsync();
             var AddedTravel = AddedEntity.Entity;

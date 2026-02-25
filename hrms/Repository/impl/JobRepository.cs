@@ -31,16 +31,16 @@ namespace hrms.Repository.impl
 
         public async Task<PagedReponseOffSet<Job>> GetAllJobs(int pageNumber, int pageSize)
         {
+            int totalCount = await _db.Jobs
+                .Where(j => j.is_deleted == false && j.IsActive == true)
+                .CountAsync();
+                
             List<Job> jobs = await _db.Jobs
                 .Where(j => j.is_deleted == false && j.IsActive == true)
                 .Skip((pageNumber - 1) * pageSize)
                 .Take(pageSize)
+                .OrderByDescending(j => j.created_at)
                 .ToListAsync();
-            int totalCount = await _db.Jobs
-                .Where(j => j.is_deleted == false && j.IsActive == true)
-                .Skip((pageNumber - 1) * pageSize)
-                .Take(pageSize)
-                .CountAsync();
             return new PagedReponseOffSet<Job>(jobs, pageNumber, pageSize, totalCount);
         }
 
@@ -59,16 +59,15 @@ namespace hrms.Repository.impl
 
         public async Task<PagedReponseOffSet<Job>> GetJobsCreatedByHr(int hrId, int pageNumber, int pageSize)
         {
+            int totalCount = await _db.Jobs
+                .Where(j => j.CreatedBy == hrId && j.is_deleted == false)
+                .CountAsync();
             List<Job> jobs = await _db.Jobs
                 .Where(j => j.CreatedBy == hrId && j.is_deleted == false)
                 .Skip((pageNumber - 1) * pageSize)
                 .Take(pageSize)
+                .OrderByDescending(j => j.created_at)
                 .ToListAsync();
-            int totalCount = await _db.Jobs
-                .Where(j => j.CreatedBy == hrId && j.is_deleted == false)
-                .Skip((pageNumber - 1) * pageSize)
-                .Take(pageSize)
-                .CountAsync();
             return new PagedReponseOffSet<Job>(jobs, pageNumber, pageSize, totalCount);
         }
 

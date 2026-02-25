@@ -35,6 +35,7 @@ namespace hrms.Utility
 
             var departments = new List<Department>
             {
+                new Department { DepartmentName = "Administration", is_deleted = false, created_at = DateTime.Now, updated_at = DateTime.Now },
                 new Department { DepartmentName = "Human Resources", is_deleted = false, created_at = DateTime.Now, updated_at = DateTime.Now },
                 new Department { DepartmentName = "Information Technology", is_deleted = false, created_at = DateTime.Now, updated_at = DateTime.Now },
                 new Department { DepartmentName = "Finance", is_deleted = false, created_at = DateTime.Now, updated_at = DateTime.Now },

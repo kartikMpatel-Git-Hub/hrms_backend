@@ -14,20 +14,8 @@ namespace hrms.Controllers
     [Route("travel")]
     [ApiController]
     [Authorize]
-    public class ExpenseController : Controller
+    public class ExpenseController(IExpenseService _service,ITravelService _travelService) : Controller
     {
-        private readonly IExpenseService _service;
-        //private readonly ICloudinaryService _cloudinary;
-
-        public ExpenseController(IExpenseService service
-            //, ICloudinaryService cloudinary
-            )
-        {
-            _service = service;
-            //_cloudinary = cloudinary;
-        }
-
-
         [HttpPost("{TravelId}/expense")]
         [Consumes("multipart/form-data")]
         [Authorize(Roles = "EMPLOYEE")]
@@ -92,7 +80,9 @@ namespace hrms.Controllers
         [HttpGet("{TravelId}/expense")]
         [Authorize(Roles = "EMPLOYEE")]
         public async Task<IActionResult> GetEmployeeExpense(
-            int? TravelId
+            int? TravelId,
+            int pageNumber = 1,
+            int pageSize = 10
             )
         {
             if (TravelId == null)
@@ -104,8 +94,8 @@ namespace hrms.Controllers
 
             int travelerId = Int32.Parse(CurrentUser.FindFirst(ClaimTypes.PrimarySid)?.Value);
 
-            List<ExpenseResponseDto> respone = await _service.GetTravelTravelerExpense(travelId, travelerId);
-            return Ok(respone);
+            PagedReponseDto<ExpenseResponseDto> response = await _travelService.GetExpensesByTravelIdAndTravelerId(travelId, travelerId, pageSize, pageNumber);
+            return Ok(response);
         }
 
 

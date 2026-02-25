@@ -36,10 +36,10 @@ namespace hrms.Repository.impl
                 .CountAsync();
             Console.WriteLine($"Total Notification : {TotalRecords}");
             List<Notification> notifications = await _db.Notifications
-                .OrderByDescending(n => n.NotificationDate)
                 .Where(n => n.NotifiedTo == userId)
                 .Skip((pageNumber - 1) * pageSize)
                 .Take(pageSize)
+                .OrderByDescending(n => n.NotificationDate)
                 .ToListAsync();
             foreach (var notification in notifications)
             {

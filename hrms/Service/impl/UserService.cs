@@ -1,5 +1,6 @@
 ﻿using AutoMapper;
 using hrms.CustomException;
+using hrms.Dto.Request.User;
 using hrms.Dto.Response.Other;
 using hrms.Dto.Response.User;
 using hrms.Model;
@@ -7,25 +8,17 @@ using hrms.Repository;
 
 namespace hrms.Service.impl
 {
-    public class UserService : IUserService
+    public class UserService(IUserRepository _repository, IMapper _mapper, ICloudinaryService _cloudinaryService) : IUserService
     {
-        private readonly IUserRepository _repository;
-        private readonly IMapper _mapper;
-
-        public UserService(IUserRepository repository,IMapper mapper)
-        {
-            _repository = repository;
-            _mapper = mapper;
-        }
         public async Task<UserResponseDto> GetUserById(int UserId)
         {
             var user = GetUserEntityById(UserId);
             return _mapper.Map<UserResponseDto>(user);
         }
 
-        public async Task<PagedReponseDto<UserResponseDto>> GetAllUser(int PageSize,int PageNumber)
+        public async Task<PagedReponseDto<UserResponseDto>> GetAllUser(int PageSize, int PageNumber)
         {
-            PagedReponseOffSet<User> PageUsers = await _repository.GetAll(PageSize,PageNumber);
+            PagedReponseOffSet<User> PageUsers = await _repository.GetAll(PageSize, PageNumber);
             var response = _mapper.Map<PagedReponseDto<UserResponseDto>>(PageUsers);
             return response;
         }
@@ -51,8 +44,8 @@ namespace hrms.Service.impl
 
         public async Task<List<UserResponseDto>> GetEmployees()
         {
-            List<User> employees = await _repository.GetAllEmployee(10,1);
-            
+            List<User> employees = await _repository.GetAllEmployee(10, 1);
+
             return _mapper.Map<List<UserResponseDto>>(employees);
         }
 
@@ -119,6 +112,29 @@ namespace hrms.Service.impl
         {
             User user = await _repository.GetUserProfile(userId);
             return _mapper.Map<UserProfileResponseDto>(user);
+        }
+
+        public async Task UpdateUser(int userId, UserUpdateRequestDto userUpdateRequestDto)
+        {
+            User user = await UpdateUserData(userId, userUpdateRequestDto);
+            await _repository.UpdateAsync(user);
+        }
+
+        private async Task<User> UpdateUserData(int userId, UserUpdateRequestDto dto)
+        {
+            User user = await _repository.GetById(userId);
+            if (dto.FullName != null) user.FullName = dto.FullName;
+            if (dto.Email != null) user.Email = dto.Email;
+            if (dto.DateOfBirth != null) user.DateOfBirth = (DateTime)dto.DateOfBirth;
+            if (dto.DateOfJoin != null) user.DateOfJoin = (DateTime)dto.DateOfJoin;
+            if (dto.ReportTo != null) user.ReportTo = dto.ReportTo;
+            if (dto.DepartmentId != null) user.DepartmentId = dto.DepartmentId;
+            if (dto.Designation != null) user.Designation = dto.Designation;
+            if (dto.Image != null)
+            {
+                user.Image = await _cloudinaryService.UploadAsync(dto.Image);
+            }
+            return user;
         }
     }
 }

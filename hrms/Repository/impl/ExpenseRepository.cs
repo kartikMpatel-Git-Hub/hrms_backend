@@ -68,8 +68,9 @@ namespace hrms.Repository.impl
                 .Where(e => e.Travel.CreatedBy == currentUserId)
                 .Skip((pageNumber - 1) * pageSize)
                 .Take(pageSize)
+                .OrderByDescending(e => e.ExpenseDate)
                 .ToList();
-            PagedReponseOffSet<Expense> response = new PagedReponseOffSet<Expense>(expenses, totalRecords, pageNumber, pageSize);
+            PagedReponseOffSet<Expense> response = new PagedReponseOffSet<Expense>(expenses, pageNumber, pageSize,totalRecords);
             return response;
         }
 

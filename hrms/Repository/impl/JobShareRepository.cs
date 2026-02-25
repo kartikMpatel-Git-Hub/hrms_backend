@@ -29,7 +29,9 @@ namespace hrms.Repository.impl
                     .Where(js => js.JobId == jobId && !js.is_deleted)
                     .Include(j => j.Shared)
                     .Skip((pageNumber - 1) * pageSize)
-                    .Take(pageSize).ToListAsync();
+                    .Take(pageSize)
+                    .OrderByDescending(js => js.SharedAt)
+                    .ToListAsync();
             return new PagedReponseOffSet<JobShared>(data, total, pageNumber, pageSize);
         }
     }
