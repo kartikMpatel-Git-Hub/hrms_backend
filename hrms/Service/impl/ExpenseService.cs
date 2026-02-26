@@ -1,5 +1,6 @@
 ﻿using AutoMapper;
 using hrms.CustomException;
+using hrms.dto.request.Expense;
 using hrms.Dto.Request.Category;
 using hrms.Dto.Request.Expense;
 using hrms.Dto.Response.Expense;
@@ -44,7 +45,7 @@ namespace hrms.Service.impl
             List<IFormFile> files
             )
         {
-            if(!await _travelRepository.UserExistsInTravel(travelId,currentUserId))
+            if (!await _travelRepository.UserExistsInTravel(travelId, currentUserId))
             {
                 throw new InvalidOperationCustomException($"Traveler : {currentUserId}Not Found With Travel : {travelId}");
             }
@@ -52,11 +53,11 @@ namespace hrms.Service.impl
             Travel travel = await _travelRepository.GetTravelById(travelId);
             User employee = await _userService.GetEmployee(currentUserId);
             decimal todaysExpense = dto.Amount + await _travelRepository.GetTodaysExpense(travelId, currentUserId, dto.ExpenseDate);
-            if(dto.ExpenseDate > DateTime.Now)
+            if (dto.ExpenseDate > DateTime.Now)
             {
                 throw new InvalidOperationCustomException("Expense Date can not be in Future !");
             }
-            if(todaysExpense > travel.MaxAmountLimit)
+            if (todaysExpense > travel.MaxAmountLimit)
             {
                 throw new InvalidOperationCustomException($"You have reached Daily Expense Limit !(LIMIT {travel.MaxAmountLimit})");
             }
@@ -81,10 +82,11 @@ namespace hrms.Service.impl
                 Remarks = dto.Remarks != null ? dto.Remarks : ""
             };
             Expense AddedExpense = await _repository.AddExpense(expense);
-            
+
             List<ExpenseProof> proofs = new List<ExpenseProof>();
-            
-            foreach (IFormFile file in files) {
+
+            foreach (IFormFile file in files)
+            {
                 ExpenseProof proof = new ExpenseProof()
                 {
                     ExpenseId = AddedExpense.Id,
@@ -116,14 +118,14 @@ namespace hrms.Service.impl
             return _mapper.Map<List<ExpenseResponseDto>>(expenses);
         }
 
-        public async Task<ExpenseResponseDto> ChangeExpenseStatus(int travelId, int travelerId, int expenseId,ExpenseStatusChangeDto dto)
+        public async Task<ExpenseResponseDto> ChangeExpenseStatus(int travelId, int travelerId, int expenseId, ExpenseStatusChangeDto dto)
         {
             Expense expense = await _repository.GetExpenseById(expenseId);
-            if(dto.Status == ExpenseStatus.PENDING.ToString())
+            if (dto.Status == ExpenseStatus.PENDING.ToString())
             {
                 throw new InvalidOperationCustomException("updating Status Can not be Pending !");
             }
-            if(expense.Status == ExpenseStatus.PENDING)
+            if (expense.Status == ExpenseStatus.PENDING)
             {
                 expense.Status = GetStatus(dto.Status);
                 expense.Remarks = dto.Remarks != null ? dto.Remarks : "";
@@ -134,7 +136,7 @@ namespace hrms.Service.impl
                 throw new InvalidOperationCustomException("Expense Review already given !");
             }
             Expense e = await _repository.UpdateExpenseStatus(expense);
-             await NotifiedUserForExpenseStatusChange(e);
+            await NotifiedUserForExpenseStatusChange(e);
             return _mapper.Map<ExpenseResponseDto>(e);
         }
 
@@ -142,13 +144,13 @@ namespace hrms.Service.impl
         {
             var traveler = await _userRepository.GetById(e.TravelerId);
             await _email.SendEmailAsync(traveler.Email, "Expense Status Changed", $"""
-                Your expense with ID {e.Id} has been updated to status {e.Status}.
+                Your expense {e.Details} has been updated to status {e.Status}.
                 """);
             Notification notification = new Notification()
             {
                 NotifiedTo = traveler.Id,
                 Title = "Expense Status Changed",
-                Description = $"Your expense with ID {e.Id} has been updated to status {e.Status}.",
+                Description = $"Your expense {e.Details} has been updated to status {e.Status}.",
                 IsViewed = false,
                 NotificationDate = DateTime.Now
             };
@@ -170,8 +172,58 @@ namespace hrms.Service.impl
 
         public async Task<PagedReponseDto<ExpenseResponseDto>> GetAllExpenses(int pageNumber, int pageSize, int currentUserId)
         {
-            PagedReponseOffSet<Expense> expenses =  await _repository.GetAllExpenses(pageNumber, pageSize, currentUserId);
+            PagedReponseOffSet<Expense> expenses = await _repository.GetAllExpenses(pageNumber, pageSize, currentUserId);
             return _mapper.Map<PagedReponseDto<ExpenseResponseDto>>(expenses);
+        }
+
+        public async Task<ExpenseResponseDto> UpdateExpense(int travelId, int expenseId, int currentUserId, ExpenseUpdateDto dto)
+        {
+            if (!await _travelRepository.UserExistsInTravel(travelId, currentUserId))
+            {
+                throw new InvalidOperationCustomException($"Traveler : {currentUserId}Not Found With Travel : {travelId}");
+            }
+            if(dto.CategoryId != null)
+            {
+                await _repository.GetCategoryById((int)dto.CategoryId);
+            }
+            Travel travel = await _travelRepository.GetTravelById(travelId);
+            Expense expense = await _repository.GetExpenseById(expenseId);
+            if(dto.Amount != null)
+            {
+                decimal todaysExpense = (decimal)dto.Amount + await _travelRepository.GetTodaysExpense(travelId, currentUserId,dto.ExpenseDate);
+                if(dto.ExpenseDate == expense.ExpenseDate)
+                {
+                    todaysExpense -= expense.Amount;
+                }
+                if (todaysExpense > travel.MaxAmountLimit)
+                {
+                    throw new InvalidOperationCustomException($"You have reached Daily Expense Limit !(LIMIT {travel.MaxAmountLimit})");
+                }
+            }
+            if (dto.ExpenseDate > DateTime.Now)
+            {
+                throw new InvalidOperationCustomException("Expense Date can not be in Future !");
+            }
+            if (travel.StartDate > DateTime.Now || travel.EndDate.AddDays(10) < DateTime.Now)
+            {
+                throw new InvalidOperationCustomException("Expense can not add before trip start and after 10 days of completed trip !");
+            }
+            if (dto.ExpenseDate > travel.EndDate || dto.ExpenseDate < travel.StartDate)
+                throw new InvalidOperationCustomException("Invalid Expense Date. it must be between travel days !");
+
+            Expense updatedExpense = UpdateExpenseEntity(expense, dto);
+            Expense e = await _repository.UpdateExpense(updatedExpense);
+            return _mapper.Map<ExpenseResponseDto>(e);
+        }
+
+        private Expense UpdateExpenseEntity(Expense expense, ExpenseUpdateDto dto)
+        {
+            if (dto.Amount != null) expense.Amount = (decimal)dto.Amount;
+            if (dto.CategoryId != null) expense.CategoryId = (int)dto.CategoryId;
+            expense.ExpenseDate = (DateTime)dto.ExpenseDate;
+            if (dto.Details != null) expense.Details = dto.Details;
+            if (dto.Remarks != null) expense.Remarks = dto.Remarks;
+            return expense;
         }
     }
 }

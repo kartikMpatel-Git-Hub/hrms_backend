@@ -8,13 +8,16 @@ namespace hrms.Repository.impl
     public class DepartmentRepository : IDepartmentRepository
     {
         private readonly ApplicationDbContext _db;
-        public DepartmentRepository(ApplicationDbContext db) {
+        private readonly ILogger<DepartmentRepository> _logger;
+        public DepartmentRepository(ApplicationDbContext db, ILogger<DepartmentRepository> logger) {
             _db = db;
+            _logger = logger;
         }
         public async Task<Department> CreateDepartment(Department department)
         {
             var AddedEntity = await _db.Departments.AddAsync(department);
             await _db.SaveChangesAsync();
+            _logger.LogInformation("Created Department with Id {Id}", AddedEntity.Entity.Id);
             return AddedEntity.Entity;
         }
 
@@ -23,6 +26,7 @@ namespace hrms.Repository.impl
             Department department = await GetDepartmentById(deptId);
             department.is_deleted = true;
             await _db.SaveChangesAsync();
+            _logger.LogInformation("Soft-deleted Department with Id {Id}", deptId);
             return department;
         }
 
@@ -39,6 +43,7 @@ namespace hrms.Repository.impl
                 .FirstOrDefaultAsync();
             if (department == null)
                 throw new NotFoundCustomException($"Department With Id : {deptId} Not Found !");
+            _logger.LogInformation("Fetched Department with Id {Id}", deptId);
             return department;
         }
 
@@ -46,6 +51,7 @@ namespace hrms.Repository.impl
         {
             List<Department> departments = await _db.Departments
                 .Where(d => d.is_deleted == false).ToListAsync();
+            _logger.LogInformation("Fetched {Count} departments", departments.Count);
             return departments;
         }
 

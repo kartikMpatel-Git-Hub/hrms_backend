@@ -16,21 +16,22 @@ namespace hrms.Controllers
     public class NotificationController : Controller
     {
         private readonly INotificationService _notificationService;
+        private readonly ILogger<NotificationController> _logger;
 
-        public NotificationController(INotificationService notificationService)
+        public NotificationController(INotificationService notificationService, ILogger<NotificationController> logger)
         {
-            this._notificationService = notificationService;   
+            this._notificationService = notificationService;
+            _logger = logger;
         }
 
         [HttpGet]
         public async Task<IActionResult> GetMyNotification(int pageNumber = 1, int pageSize = 10)
         {
+            _logger.LogInformation("[{Method}] {Url} - Request received", Request.Method, Request.Path);
             if (pageNumber <= 0 || pageSize <= 0)
             {
                 throw new ArgumentNullException("Pagenumber and Pagesize not found !");
             }
-            System.Console.WriteLine(pageNumber);
-            System.Console.WriteLine(pageSize);
             var CurrentUser = User;
             if (CurrentUser == null)
                 throw new UnauthorizedCustomException($"Unauthorized Access !");
@@ -38,17 +39,20 @@ namespace hrms.Controllers
             int userId = Int32.Parse(CurrentUser.FindFirst(ClaimTypes.PrimarySid)?.Value);
             PagedReponseDto<NotificationResponseDto> notifications =
                 await _notificationService.GetMyNotification(userId, (int)pageNumber, (int)pageSize);
+            _logger.LogInformation("[{Method}] {Url} - Fetched notifications for user {UserId} successfully", Request.Method, Request.Path, userId);
             return Ok(notifications);
         }
         [HttpGet("count")]
         public async Task<IActionResult> GetMyNotificationCount()
         {
+            _logger.LogInformation("[{Method}] {Url} - Request received", Request.Method, Request.Path);
             var CurrentUser = User;
             if (CurrentUser == null)
                 throw new UnauthorizedCustomException($"Unauthorized Access !");
 
             int userId = Int32.Parse(CurrentUser.FindFirst(ClaimTypes.PrimarySid)?.Value);
             int count = await _notificationService.GetMyNotificationCount(userId);
+            _logger.LogInformation("[{Method}] {Url} - Fetched notification count {Count} for user {UserId} successfully", Request.Method, Request.Path, count, userId);
             return Ok(new {count});
         }
     }

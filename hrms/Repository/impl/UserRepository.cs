@@ -8,7 +8,8 @@ using System.Net;
 namespace hrms.Repository.impl
 {
     public class UserRepository(
-        ApplicationDbContext _context
+        ApplicationDbContext _context,
+        ILogger<UserRepository> _logger
         ) : IUserRepository
     {
         public async Task<User> AddAsync(User user)
@@ -16,6 +17,7 @@ namespace hrms.Repository.impl
             var AddedEntity = await _context.Users.AddAsync(user);
             await _context.SaveChangesAsync();
             var AddedUser = AddedEntity.Entity;
+            _logger.LogInformation("Created User with Id {Id}", AddedUser.Id);
             foreach(var game in await _context.Games.ToListAsync())
             {
                 var userGameState = new UserGameState()
@@ -48,14 +50,14 @@ namespace hrms.Repository.impl
         public async Task<PagedReponseOffSet<User>> GetAll(int PageSize, int PageNumber)
         {
             var TotalRecords = await _context.Users.Where(u => !u.is_deleted).CountAsync();
-            Console.WriteLine($"Total User : {TotalRecords}");
+            _logger.LogInformation("Fetching all users, total: {Total}, page {Page}", TotalRecords, PageNumber);
             List<User> users = await _context.Users
                 .OrderBy(u => u.Id)
                 .Where(u => !u.is_deleted)
-                .Include(u => u.Department)
+                .OrderBy(u => u.created_at)
                 .Skip((PageNumber - 1) * PageSize)
                 .Take(PageSize)
-                .OrderBy(u => u.created_at)
+                .Include(u => u.Department)
                 .ToListAsync();
             PagedReponseOffSet<User> Response = new PagedReponseOffSet<User>(users, PageNumber, PageSize, TotalRecords);
             return Response;
@@ -64,13 +66,13 @@ namespace hrms.Repository.impl
         public async Task<List<User>> GetAllEmployee(int pageSize, int pageNumber)
         {
             var TotalRecords = await _context.Users.Where(u => !u.is_deleted && u.Role == UserRole.EMPLOYEE).CountAsync();
-            Console.WriteLine($"Total User : {TotalRecords}");
+            _logger.LogInformation("Fetching all employees, total: {Total}, page {Page}", TotalRecords, pageNumber);
             List<User> users = await _context.Users
                 .OrderBy(u => u.Id)
                 .Where(u => !u.is_deleted && u.Role == UserRole.EMPLOYEE)
+                .OrderByDescending(u => u.created_at)
                 .Skip((pageNumber - 1) * pageSize)
                 .Take(pageSize)
-                .OrderByDescending(u => u.created_at)
                 .ToListAsync();
             return users;
         }
@@ -80,6 +82,7 @@ namespace hrms.Repository.impl
             User user = await _context.Users.FirstOrDefaultAsync((u) => u.Email == email);
             if (user == null)
                 throw new NotFoundCustomException($"User With Email : {email} not found");
+            _logger.LogInformation("Fetched User by Email {Email}", email);
             return user;
         }
 
@@ -121,10 +124,10 @@ namespace hrms.Repository.impl
                 = await _context.Users
                 .Where(u => (u.FullName.Contains(s) || u.Email.Contains(s))
                 && u.is_deleted == false)
-                .Include(u => u.Department)
+                .OrderBy(u => u.created_at)
                 .Skip(0)
                 .Take(10)
-                .OrderBy(u => u.created_at)
+                .Include(u => u.Department)
                 .ToListAsync();
             return employees;
         }
@@ -162,9 +165,9 @@ namespace hrms.Repository.impl
                 .Where(u => !u.is_deleted && u.Role == UserRole.HR).CountAsync();
             List<User> hrs = await _context.Users
                 .Where(u => !u.is_deleted && u.Role == UserRole.HR)
+                .OrderByDescending(u => u.created_at)
                 .Skip((pageNumber - 1) * pageSize)
                 .Take(pageSize)
-                .OrderByDescending(u => u.created_at)
                 .ToListAsync();
             PagedReponseOffSet<User> Response = new PagedReponseOffSet<User>(hrs, pageNumber, pageSize, TotalRecords);
             return Response;
@@ -219,7 +222,7 @@ namespace hrms.Repository.impl
         public Task<PagedReponseOffSet<User>> GetAllUserForHr(int pageSize, int pageNumber)
         {
             var TotalRecords = _context.Users.Where(u => !u.is_deleted && (u.Role == UserRole.EMPLOYEE || u.Role == UserRole.MANAGER)).Count();
-            Console.WriteLine($"Total User : {TotalRecords}");
+            _logger.LogInformation("Fetching users for HR, total: {Total}, page {Page}", TotalRecords, pageNumber);
             List<User> users = _context.Users
                 .OrderByDescending(u => u.created_at)
                 .Where(u => !u.is_deleted && (u.Role == UserRole.EMPLOYEE || u.Role == UserRole.MANAGER))
@@ -234,7 +237,7 @@ namespace hrms.Repository.impl
         public Task<PagedReponseOffSet<User>> GetAllManagers(int pageSize, int pageNumber)
         {
             var TotalRecords = _context.Users.Where(u => !u.is_deleted && (u.Role == UserRole.MANAGER || u.Role == UserRole.ADMIN)).Count();
-            Console.WriteLine($"Total User : {TotalRecords}");
+            _logger.LogInformation("Fetching all managers, total: {Total}, page {Page}", TotalRecords, pageNumber);
             List<User> users = _context.Users
                 .OrderByDescending(u => u.created_at)
                 .Where(u => !u.is_deleted && (u.Role == UserRole.MANAGER || u.Role == UserRole.ADMIN))
@@ -249,7 +252,7 @@ namespace hrms.Repository.impl
         public Task<PagedReponseOffSet<User>> GetEmployeeUnderManager(int userId, int pageSize, int pageNumber)
         {
             var TotalRecords = _context.Users.Where(u => !u.is_deleted && u.ReportTo == userId).Count();
-            Console.WriteLine($"Total User : {TotalRecords}");
+            _logger.LogInformation("Fetching employees under ManagerId {ManagerId}, total: {Total}", userId, TotalRecords);
             List<User> users = _context.Users
                 .OrderByDescending(u => u.created_at)
                 .Where(u => !u.is_deleted && u.ReportTo == userId)
@@ -280,6 +283,7 @@ namespace hrms.Repository.impl
         {
             _context.Users.Update(user);
             await _context.SaveChangesAsync();
+            _logger.LogInformation("Updated User with Id {Id}", user.Id);
         }
     }
 }

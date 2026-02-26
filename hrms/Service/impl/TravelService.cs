@@ -33,6 +33,10 @@ namespace hrms.Service.impl
         public async Task AddTraveler(int TreavelId, TravelerAddDto dto)
         {
             Travel travel = await _repository.GetTravelById(TreavelId);
+            if(DateTime.Now.Date >= travel.StartDate.Date)
+            {
+                throw new InvalidOperationCustomException("You can not add traveler to this travel because the travel is already started or completed !");
+            }
             List<User> travelers = new List<User>();
             foreach (var traveler in dto.Travelers)
             {
@@ -91,10 +95,6 @@ namespace hrms.Service.impl
                 Trav.Title = dto.Title;
             if(dto.Desciption != null)
                 Trav.Desciption = dto.Desciption;
-            if (dto.StartDate != null)
-                Trav.StartDate = (DateTime)dto.StartDate;
-            if (dto.EndDate != null)
-                Trav.EndDate = (DateTime)dto.EndDate;
             if (dto.Location != null)
                 Trav.Location = dto.Location;
             if(dto.MaxAmountLimit != null)

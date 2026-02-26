@@ -57,7 +57,7 @@ namespace hrms.Service.impl
             {
                 new Claim(ClaimTypes.PrimarySid,user.Id.ToString()),
                 new Claim(ClaimTypes.Name, user.Email),
-                new Claim(ClaimTypes.Role, user.Role.ToString())
+                new Claim(ClaimTypes.Role, user.Role.ToString()),
             };
 
             var key = new SymmetricSecurityKey(
@@ -81,7 +81,8 @@ namespace hrms.Service.impl
                 id = user.Id,
                 email = user.Email,
                 role = user.Role.ToString(),
-                token = generatedToken
+                token = generatedToken,
+                image = user.Image
             };
             return response;
         }

@@ -8,16 +8,19 @@ namespace hrms.Repository.impl
     public class NotificationRepository : INotificationRepository
     {
         private readonly ApplicationDbContext _db;
+        private readonly ILogger<NotificationRepository> _logger;
 
-        public NotificationRepository(ApplicationDbContext db)
+        public NotificationRepository(ApplicationDbContext db, ILogger<NotificationRepository> logger)
         {
             _db = db;
+            _logger = logger;
         }
 
         public async Task<Notification> CreateNotification(Notification notification)
         {
             var result = await _db.Notifications.AddAsync(notification);
             await _db.SaveChangesAsync();
+            _logger.LogInformation("Created Notification with Id {Id} for UserId {UserId}", result.Entity.Id, notification.NotifiedTo);
             return result.Entity;
         }
 
@@ -26,6 +29,7 @@ namespace hrms.Repository.impl
             int TotalRecords = await _db.Notifications
                 .Where(n => n.NotifiedTo == userId && n.IsViewed == false)
                 .CountAsync();
+            _logger.LogInformation("Unread notification count for UserId {UserId}: {Count}", userId, TotalRecords);
             return TotalRecords;
         }
 
@@ -34,12 +38,12 @@ namespace hrms.Repository.impl
             var TotalRecords = await _db.Notifications
                 .Where(n => n.NotifiedTo == userId)
                 .CountAsync();
-            Console.WriteLine($"Total Notification : {TotalRecords}");
+            _logger.LogInformation("Fetching notifications for UserId {UserId}, total: {Total}, page {Page}", userId, TotalRecords, pageNumber);
             List<Notification> notifications = await _db.Notifications
                 .Where(n => n.NotifiedTo == userId)
+                .OrderByDescending(n => n.NotificationDate)
                 .Skip((pageNumber - 1) * pageSize)
                 .Take(pageSize)
-                .OrderByDescending(n => n.NotificationDate)
                 .ToListAsync();
             foreach (var notification in notifications)
             {

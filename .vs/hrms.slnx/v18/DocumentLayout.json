@@ -150,9 +150,10 @@
               "RelativeDocumentMoniker": "hrms\\Dto\\Response\\User\\UserProfileResponseDto.cs",
               "ToolTip": "C:\\Internship\\Codes\\DontNet\\Assignment-1\\hrms\\hrms\\Dto\\Response\\User\\UserProfileResponseDto.cs",
               "RelativeToolTip": "hrms\\Dto\\Response\\User\\UserProfileResponseDto.cs",
-              "ViewState": "AgIAAA4AAAAAAAAAAAA0wBQAAAAFAAAAAAAAAA==",
+              "ViewState": "AgIAAA8AAAAAAAAAAAAywBQAAAAFAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-02-24T07:23:35.816Z"
+              "WhenOpened": "2026-02-24T07:23:35.816Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
@@ -162,9 +163,10 @@
               "RelativeDocumentMoniker": "hrms\\Repository\\impl\\UserRepository.cs",
               "ToolTip": "C:\\Internship\\Codes\\DontNet\\Assignment-1\\hrms\\hrms\\Repository\\impl\\UserRepository.cs",
               "RelativeToolTip": "hrms\\Repository\\impl\\UserRepository.cs",
-              "ViewState": "AgIAAAEBAAAAAAAAAAAqwAYBAAAQAAAAAAAAAA==",
+              "ViewState": "AgIAAAEBAAAAAAAAAAAqwAYBAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-02-24T07:06:25.516Z"
+              "WhenOpened": "2026-02-24T07:06:25.516Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
@@ -176,7 +178,8 @@
               "RelativeToolTip": "hrms\\Migrations\\20260224053455_inappropriate-reason.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-02-24T05:34:55.669Z"
+              "WhenOpened": "2026-02-24T05:34:55.669Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
@@ -188,7 +191,8 @@
               "RelativeToolTip": "hrms\\Service\\impl\\SlotBookingService.cs",
               "ViewState": "AgIAAO4AAAAAAAAAAADwv/oAAAARAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-02-24T04:42:32.037Z"
+              "WhenOpened": "2026-02-24T04:42:32.037Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
@@ -198,9 +202,10 @@
               "RelativeDocumentMoniker": "hrms\\Controllers\\ExpenseController.cs",
               "ToolTip": "C:\\Internship\\Codes\\DontNet\\Assignment-1\\hrms\\hrms\\Controllers\\ExpenseController.cs",
               "RelativeToolTip": "hrms\\Controllers\\ExpenseController.cs",
-              "ViewState": "AgIAAAcAAAAAAAAAAAAwwBMAAAA6AAAAAAAAAA==",
+              "ViewState": "AgIAAAcAAAAAAAAAAAAwwBMAAAAoAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-02-23T14:07:32.396Z"
+              "WhenOpened": "2026-02-23T14:07:32.396Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
@@ -210,9 +215,10 @@
               "RelativeDocumentMoniker": "hrms\\Controllers\\UserController.cs",
               "ToolTip": "C:\\Internship\\Codes\\DontNet\\Assignment-1\\hrms\\hrms\\Controllers\\UserController.cs",
               "RelativeToolTip": "hrms\\Controllers\\UserController.cs",
-              "ViewState": "AgIAAG0AAAAAAAAAAADwv3sAAABRAAAAAAAAAA==",
+              "ViewState": "AgIAAG0AAAAAAAAAAADwv3sAAAAtAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-02-24T07:05:24.099Z"
+              "WhenOpened": "2026-02-24T07:05:24.099Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
@@ -222,9 +228,10 @@
               "RelativeDocumentMoniker": "hrms\\Model\\User.cs",
               "ToolTip": "C:\\Internship\\Codes\\DontNet\\Assignment-1\\hrms\\hrms\\Model\\User.cs",
               "RelativeToolTip": "hrms\\Model\\User.cs",
-              "ViewState": "AgIAABMAAAAAAAAAAADwvxkAAAAFAAAAAAAAAA==",
+              "ViewState": "AgIAABMAAAAAAAAAAAAwwBkAAAAFAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-02-24T07:10:04.746Z"
+              "WhenOpened": "2026-02-24T07:10:04.746Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
@@ -236,7 +243,8 @@
               "RelativeToolTip": "hrms\\Data\\ApplicationDbContext.cs",
               "ViewState": "AgIAAEAAAAAAAAAAAAAuwEkAAAAkAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-02-06T08:22:58.223Z"
+              "WhenOpened": "2026-02-06T08:22:58.223Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
@@ -248,7 +256,8 @@
               "RelativeToolTip": "hrms\\Controllers\\GameController.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-02-24T07:05:22.408Z"
+              "WhenOpened": "2026-02-24T07:05:22.408Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
@@ -260,7 +269,8 @@
               "RelativeToolTip": "hrms\\Utility\\SlotAssigedCronJob.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-02-23T13:49:08.733Z"
+              "WhenOpened": "2026-02-23T13:49:08.733Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
@@ -270,9 +280,10 @@
               "RelativeDocumentMoniker": "hrms\\Program.cs",
               "ToolTip": "C:\\Internship\\Codes\\DontNet\\Assignment-1\\hrms\\hrms\\Program.cs",
               "RelativeToolTip": "hrms\\Program.cs",
-              "ViewState": "AgIAALAAAAAAAAAAAAAAAMIAAAABAAAAAAAAAA==",
+              "ViewState": "AgIAALsAAAAAAAAAAABhwNUAAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-02-23T11:51:25.815Z"
+              "WhenOpened": "2026-02-23T11:51:25.815Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
@@ -284,7 +295,8 @@
               "RelativeToolTip": "hrms\\appsettings.json",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
-              "WhenOpened": "2026-02-23T11:51:19.171Z"
+              "WhenOpened": "2026-02-23T11:51:19.171Z",
+              "EditorCaption": ""
             }
           ]
         }

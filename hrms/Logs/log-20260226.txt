@@ -1,0 +1,1674 @@
+2026-02-26 15:20:36 [Information] Initialized Scheduler Signaller of type: Quartz.Core.SchedulerSignalerImpl
+2026-02-26 15:20:36 [Information] Quartz Scheduler created
+2026-02-26 15:20:36 [Information] JobFactory set to: Quartz.Simpl.MicrosoftDependencyInjectionJobFactory
+2026-02-26 15:20:36 [Information] RAMJobStore initialized.
+2026-02-26 15:20:36 [Information] Quartz Scheduler 3.15.1.0 - 'QuartzScheduler' with instanceId 'NON_CLUSTERED' initialized
+2026-02-26 15:20:36 [Information] Using thread pool 'Quartz.Simpl.DefaultThreadPool', size: 10
+2026-02-26 15:20:36 [Information] Using job store 'Quartz.Simpl.RAMJobStore', supports persistence: False, clustered: False
+2026-02-26 15:20:36 [Information] Adding 1 jobs, 1 triggers.
+2026-02-26 15:20:36 [Information] Adding job: DEFAULT.WeeklyJob
+2026-02-26 15:20:36 [Information] Scheduler QuartzScheduler_$_NON_CLUSTERED started.
+2026-02-26 15:20:37 [Information] Starting Daily Celebration Job at 02/26/2026 15:20:37
+2026-02-26 15:20:37 [Information] Skipping birthday celebration for user 9 because it already exists
+2026-02-26 15:20:37 [Information] Skipping anniversary celebration for user 9 because it already exists
+2026-02-26 15:20:37 [Information] Cache Updated for Daily Celebrations at 02/26/2026 15:20:37
+2026-02-26 15:20:51 [Information] ["GET"] "/notification/count" - Request received
+2026-02-26 15:20:51 [Information] ["GET"] "/notification/count" - Fetched notification count 0 for user 3 successfully
+2026-02-26 15:20:53 [Information] ["GET"] "/travel/all-expense" - Request received
+2026-02-26 15:20:53 [Information] ["GET"] "/travel/all-expense" - Fetched all expenses for HR 3 successfully
+2026-02-26 15:20:58 [Information] ["GET"] "/notification/count" - Request received
+2026-02-26 15:20:58 [Information] ["GET"] "/travel/all-expense" - Request received
+2026-02-26 15:20:58 [Information] ["GET"] "/notification/count" - Fetched notification count 0 for user 3 successfully
+2026-02-26 15:20:58 [Information] ["GET"] "/travel/all-expense" - Fetched all expenses for HR 3 successfully
+2026-02-26 15:21:01 [Information] ["GET"] "/dashboard/upcoming-bookings" - Request received
+2026-02-26 15:21:01 [Information] ["GET"] "/dashboard/daily-celebrations" - Request received
+2026-02-26 15:21:01 [Information] Retrieved 2 daily celebrations from repository
+2026-02-26 15:21:01 [Information] ["GET"] "/dashboard/daily-celebrations" - Fetched 2 daily celebrations successfully
+2026-02-26 15:21:01 [Information] Retrieved 0 upcoming booking slots from repository
+2026-02-26 15:21:01 [Information] ["GET"] "/dashboard/upcoming-bookings" - Fetched 0 upcoming booking slots successfully
+2026-02-26 15:21:11 [Information] ["GET"] "/notification/count" - Request received
+2026-02-26 15:21:11 [Information] ["GET"] "/notification/count" - Fetched notification count 0 for user 3 successfully
+2026-02-26 15:21:12 [Information] ["GET"] "/dashboard/upcoming-bookings" - Request received
+2026-02-26 15:21:12 [Information] ["GET"] "/dashboard/daily-celebrations" - Request received
+2026-02-26 15:21:12 [Information] ["GET"] "/dashboard/upcoming-bookings" - Fetched 0 upcoming booking slots successfully
+2026-02-26 15:21:12 [Information] ["GET"] "/dashboard/daily-celebrations" - Fetched 2 daily celebrations successfully
+2026-02-26 15:21:14 [Information] ["GET"] "/dashboard/upcoming-bookings" - Request received
+2026-02-26 15:21:14 [Information] ["GET"] "/dashboard/daily-celebrations" - Request received
+2026-02-26 15:21:14 [Information] ["GET"] "/dashboard/upcoming-bookings" - Fetched 0 upcoming booking slots successfully
+2026-02-26 15:21:14 [Information] ["GET"] "/dashboard/daily-celebrations" - Fetched 2 daily celebrations successfully
+2026-02-26 15:21:14 [Information] ["GET"] "/notification/count" - Request received
+2026-02-26 15:21:14 [Information] ["GET"] "/notification/count" - Fetched notification count 0 for user 3 successfully
+2026-02-26 15:21:25 [Information] ["GET"] "/notification/count" - Request received
+2026-02-26 15:21:25 [Information] ["GET"] "/dashboard/daily-celebrations" - Request received
+2026-02-26 15:21:25 [Information] ["GET"] "/dashboard/upcoming-bookings" - Request received
+2026-02-26 15:21:25 [Information] ["GET"] "/dashboard/daily-celebrations" - Fetched 2 daily celebrations successfully
+2026-02-26 15:21:25 [Information] ["GET"] "/dashboard/upcoming-bookings" - Fetched 0 upcoming booking slots successfully
+2026-02-26 15:21:25 [Information] ["GET"] "/notification/count" - Fetched notification count 0 for user 3 successfully
+2026-02-26 15:21:32 [Information] ["GET"] "/travel/hr" - Request received
+2026-02-26 15:21:32 [Information] ["GET"] "/travel/hr" - Fetched travels for HR 3 successfully
+2026-02-26 15:21:40 [Information] ["GET"] "/notification/count" - Request received
+2026-02-26 15:21:40 [Information] ["GET"] "/travel/hr" - Request received
+2026-02-26 15:21:40 [Information] ["GET"] "/travel/hr" - Fetched travels for HR 3 successfully
+2026-02-26 15:21:40 [Information] ["GET"] "/notification/count" - Fetched notification count 0 for user 3 successfully
+2026-02-26 15:21:50 [Information] ["GET"] "/notification/count" - Request received
+2026-02-26 15:21:50 [Information] ["GET"] "/travel/hr" - Request received
+2026-02-26 15:21:50 [Information] ["GET"] "/notification/count" - Fetched notification count 0 for user 3 successfully
+2026-02-26 15:21:50 [Information] ["GET"] "/travel/hr" - Fetched travels for HR 3 successfully
+2026-02-26 15:21:59 [Information] ["GET"] "/notification/count" - Request received
+2026-02-26 15:21:59 [Information] ["GET"] "/travel/hr" - Request received
+2026-02-26 15:21:59 [Information] ["GET"] "/notification/count" - Fetched notification count 0 for user 3 successfully
+2026-02-26 15:21:59 [Information] ["GET"] "/travel/hr" - Fetched travels for HR 3 successfully
+2026-02-26 15:22:00 [Information] ["GET"] "/notification/count" - Request received
+2026-02-26 15:22:00 [Information] ["GET"] "/travel/hr" - Request received
+2026-02-26 15:22:00 [Information] ["GET"] "/notification/count" - Fetched notification count 0 for user 3 successfully
+2026-02-26 15:22:00 [Information] ["GET"] "/travel/hr" - Fetched travels for HR 3 successfully
+2026-02-26 15:22:05 [Information] ["GET"] "/department" - Request received
+2026-02-26 15:22:05 [Information] Retrieved 7 departments from repository and cached with version 0
+2026-02-26 15:22:05 [Information] ["GET"] "/department" - Fetched all departments successfully
+2026-02-26 15:22:15 [Information] ["GET"] "/notification/count" - Request received
+2026-02-26 15:22:15 [Information] ["GET"] "/department" - Request received
+2026-02-26 15:22:15 [Information] ["GET"] "/department" - Fetched all departments successfully
+2026-02-26 15:22:15 [Information] ["GET"] "/notification/count" - Fetched notification count 0 for user 3 successfully
+2026-02-26 15:22:17 [Information] ["GET"] "/travel/all-expense" - Request received
+2026-02-26 15:22:17 [Information] ["GET"] "/travel/all-expense" - Fetched all expenses for HR 3 successfully
+2026-02-26 15:22:19 [Information] ["GET"] "/notification/count" - Request received
+2026-02-26 15:22:19 [Information] ["GET"] "/travel/all-expense" - Request received
+2026-02-26 15:22:19 [Information] ["GET"] "/notification/count" - Fetched notification count 0 for user 3 successfully
+2026-02-26 15:22:19 [Information] ["GET"] "/travel/all-expense" - Fetched all expenses for HR 3 successfully
+2026-02-26 15:22:19 [Information] ["GET"] "/department" - Request received
+2026-02-26 15:22:19 [Information] ["GET"] "/department" - Fetched all departments successfully
+2026-02-26 15:31:38 [Information] ["GET"] "/notification/count" - Request received
+2026-02-26 15:31:38 [Information] ["GET"] "/department" - Request received
+2026-02-26 15:31:38 [Information] ["GET"] "/department" - Fetched all departments successfully
+2026-02-26 15:31:38 [Information] ["GET"] "/notification/count" - Fetched notification count 0 for user 3 successfully
+2026-02-26 15:32:23 [Information] ["GET"] "/department" - Request received
+2026-02-26 15:32:23 [Information] ["GET"] "/notification/count" - Request received
+2026-02-26 15:32:23 [Information] ["GET"] "/department" - Fetched all departments successfully
+2026-02-26 15:32:23 [Information] ["GET"] "/notification/count" - Fetched notification count 0 for user 3 successfully
+2026-02-26 15:33:47 [Information] ["GET"] "/department" - Request received
+2026-02-26 15:33:47 [Information] ["GET"] "/notification/count" - Request received
+2026-02-26 15:33:47 [Information] ["GET"] "/department" - Fetched all departments successfully
+2026-02-26 15:33:47 [Information] ["GET"] "/notification/count" - Fetched notification count 0 for user 3 successfully
+2026-02-26 15:37:33 [Information] Initialized Scheduler Signaller of type: Quartz.Core.SchedulerSignalerImpl
+2026-02-26 15:37:33 [Information] Quartz Scheduler created
+2026-02-26 15:37:33 [Information] JobFactory set to: Quartz.Simpl.MicrosoftDependencyInjectionJobFactory
+2026-02-26 15:37:33 [Information] RAMJobStore initialized.
+2026-02-26 15:37:33 [Information] Quartz Scheduler 3.15.1.0 - 'QuartzScheduler' with instanceId 'NON_CLUSTERED' initialized
+2026-02-26 15:37:33 [Information] Using thread pool 'Quartz.Simpl.DefaultThreadPool', size: 10
+2026-02-26 15:37:33 [Information] Using job store 'Quartz.Simpl.RAMJobStore', supports persistence: False, clustered: False
+2026-02-26 15:37:33 [Information] Adding 1 jobs, 1 triggers.
+2026-02-26 15:37:33 [Information] Adding job: DEFAULT.WeeklyJob
+2026-02-26 15:37:34 [Information] Scheduler QuartzScheduler_$_NON_CLUSTERED started.
+2026-02-26 15:37:34 [Information] Starting Daily Celebration Job at 02/26/2026 15:37:34
+2026-02-26 15:37:34 [Information] Found 1 birthday users for today
+2026-02-26 15:37:34 [Information] Found 1 work anniversary users for today
+2026-02-26 15:37:34 [Information] Fetched system user with Id 4
+2026-02-26 15:37:34 [Information] Celebration exists check for UserId 9, EventType Birthday: True
+2026-02-26 15:37:34 [Information] Skipping birthday celebration for user 9 because it already exists
+2026-02-26 15:37:34 [Information] Celebration exists check for UserId 9, EventType WorkAnniversary: True
+2026-02-26 15:37:34 [Information] Skipping anniversary celebration for user 9 because it already exists
+2026-02-26 15:37:34 [Information] Cache Updated for Daily Celebrations at 02/26/2026 15:37:34
+2026-02-26 15:45:52 [Information] Scheduler "QuartzScheduler_$_NON_CLUSTERED" shutting down.
+2026-02-26 15:45:52 [Information] Scheduler QuartzScheduler_$_NON_CLUSTERED paused.
+2026-02-26 15:45:52 [Information] Scheduler QuartzScheduler_$_NON_CLUSTERED Shutdown complete.
+2026-02-26 15:47:10 [Information] Initialized Scheduler Signaller of type: Quartz.Core.SchedulerSignalerImpl
+2026-02-26 15:47:10 [Information] Quartz Scheduler created
+2026-02-26 15:47:10 [Information] JobFactory set to: Quartz.Simpl.MicrosoftDependencyInjectionJobFactory
+2026-02-26 15:47:10 [Information] RAMJobStore initialized.
+2026-02-26 15:47:10 [Information] Quartz Scheduler 3.15.1.0 - 'QuartzScheduler' with instanceId 'NON_CLUSTERED' initialized
+2026-02-26 15:47:10 [Information] Using thread pool 'Quartz.Simpl.DefaultThreadPool', size: 10
+2026-02-26 15:47:10 [Information] Using job store 'Quartz.Simpl.RAMJobStore', supports persistence: False, clustered: False
+2026-02-26 15:47:10 [Information] Adding 1 jobs, 1 triggers.
+2026-02-26 15:47:10 [Information] Adding job: DEFAULT.WeeklyJob
+2026-02-26 15:47:10 [Information] Scheduler QuartzScheduler_$_NON_CLUSTERED started.
+2026-02-26 15:47:11 [Information] Starting Daily Celebration Job at 02/26/2026 15:47:11
+2026-02-26 15:47:11 [Information] Found 1 birthday users for today
+2026-02-26 15:47:11 [Information] Found 1 work anniversary users for today
+2026-02-26 15:47:11 [Information] Fetched system user with Id 4
+2026-02-26 15:47:11 [Information] Celebration exists check for UserId 9, EventType Birthday: True
+2026-02-26 15:47:11 [Information] Skipping birthday celebration for user 9 because it already exists
+2026-02-26 15:47:11 [Information] Celebration exists check for UserId 9, EventType WorkAnniversary: True
+2026-02-26 15:47:11 [Information] Skipping anniversary celebration for user 9 because it already exists
+2026-02-26 15:47:11 [Information] Cache Updated for Daily Celebrations at 02/26/2026 15:47:11
+2026-02-26 15:47:20 [Information] ["GET"] "/notification/count" - Request received
+2026-02-26 15:47:20 [Information] ["GET"] "/dashboard/daily-celebrations" - Request received
+2026-02-26 15:47:20 [Information] ["GET"] "/dashboard/upcoming-bookings" - Request received
+2026-02-26 15:47:20 [Information] Unread notification count for UserId 3: 0
+2026-02-26 15:47:20 [Information] ["GET"] "/notification/count" - Fetched notification count 0 for user 3 successfully
+2026-02-26 15:47:20 [Information] Found 0 upcoming booking slots for today
+2026-02-26 15:47:20 [Information] Retrieved 0 upcoming booking slots from repository
+2026-02-26 15:47:20 [Information] ["GET"] "/dashboard/upcoming-bookings" - Fetched 0 upcoming booking slots successfully
+2026-02-26 15:47:20 [Information] Found 2 daily celebrations for today
+2026-02-26 15:47:20 [Information] Retrieved 2 daily celebrations from repository
+2026-02-26 15:47:20 [Information] ["GET"] "/dashboard/daily-celebrations" - Fetched 2 daily celebrations successfully
+2026-02-26 15:47:56 [Information] ["GET"] "/notification/count" - Request received
+2026-02-26 15:47:56 [Information] ["GET"] "/dashboard/upcoming-bookings" - Request received
+2026-02-26 15:47:56 [Information] ["GET"] "/dashboard/daily-celebrations" - Request received
+2026-02-26 15:47:56 [Information] ["GET"] "/dashboard/upcoming-bookings" - Fetched 0 upcoming booking slots successfully
+2026-02-26 15:47:56 [Information] ["GET"] "/dashboard/daily-celebrations" - Fetched 2 daily celebrations successfully
+2026-02-26 15:47:56 [Information] Unread notification count for UserId 3: 0
+2026-02-26 15:47:56 [Information] ["GET"] "/notification/count" - Fetched notification count 0 for user 3 successfully
+2026-02-26 15:47:58 [Information] ["GET"] "/travel/hr" - Request received
+2026-02-26 15:47:58 [Information] ["GET"] "/travel/hr" - Fetched travels for HR 3 successfully
+2026-02-26 15:48:05 [Information] ["GET"] "/notification/count" - Request received
+2026-02-26 15:48:05 [Information] ["GET"] "/travel/hr" - Request received
+2026-02-26 15:48:05 [Information] Unread notification count for UserId 3: 0
+2026-02-26 15:48:05 [Information] ["GET"] "/notification/count" - Fetched notification count 0 for user 3 successfully
+2026-02-26 15:48:05 [Information] ["GET"] "/travel/hr" - Fetched travels for HR 3 successfully
+2026-02-26 15:48:07 [Information] ["GET"] "/notification/count" - Request received
+2026-02-26 15:48:07 [Information] Unread notification count for UserId 3: 0
+2026-02-26 15:48:07 [Information] ["GET"] "/notification/count" - Fetched notification count 0 for user 3 successfully
+2026-02-26 15:48:07 [Information] ["GET"] "/travel/hr" - Request received
+2026-02-26 15:48:07 [Information] ["GET"] "/travel/hr" - Fetched travels for HR 3 successfully
+2026-02-26 17:18:45 [Information] Initialized Scheduler Signaller of type: Quartz.Core.SchedulerSignalerImpl
+2026-02-26 17:18:45 [Information] Quartz Scheduler created
+2026-02-26 17:18:45 [Information] JobFactory set to: Quartz.Simpl.MicrosoftDependencyInjectionJobFactory
+2026-02-26 17:18:45 [Information] RAMJobStore initialized.
+2026-02-26 17:18:45 [Information] Quartz Scheduler 3.15.1.0 - 'QuartzScheduler' with instanceId 'NON_CLUSTERED' initialized
+2026-02-26 17:18:45 [Information] Using thread pool 'Quartz.Simpl.DefaultThreadPool', size: 10
+2026-02-26 17:18:45 [Information] Using job store 'Quartz.Simpl.RAMJobStore', supports persistence: False, clustered: False
+2026-02-26 17:18:45 [Information] Adding 1 jobs, 1 triggers.
+2026-02-26 17:18:45 [Information] Adding job: DEFAULT.WeeklyJob
+2026-02-26 17:18:46 [Information] Scheduler QuartzScheduler_$_NON_CLUSTERED started.
+2026-02-26 17:18:46 [Information] Updated GameSlot with Id 171
+2026-02-26 17:18:46 [Information] Updated GameSlot with Id 172
+2026-02-26 17:18:46 [Information] Updated GameSlot with Id 173
+2026-02-26 17:18:46 [Information] Updated GameSlot with Id 199
+2026-02-26 17:18:46 [Information] Updated GameSlot with Id 200
+2026-02-26 17:18:46 [Information] Updated GameSlot with Id 201
+2026-02-26 17:18:46 [Information] Updated GameSlot with Id 241
+2026-02-26 17:18:46 [Information] Updated GameSlot with Id 242
+2026-02-26 17:18:46 [Information] Updated GameSlot with Id 243
+2026-02-26 17:18:46 [Information] Starting Daily Celebration Job at 02/26/2026 17:18:46
+2026-02-26 17:18:46 [Information] Found 1 birthday users for today
+2026-02-26 17:18:46 [Information] Found 1 work anniversary users for today
+2026-02-26 17:18:46 [Information] Fetched system user with Id 4
+2026-02-26 17:18:46 [Information] Celebration exists check for UserId 9, EventType Birthday: True
+2026-02-26 17:18:46 [Information] Skipping birthday celebration for user 9 because it already exists
+2026-02-26 17:18:46 [Information] Celebration exists check for UserId 9, EventType WorkAnniversary: True
+2026-02-26 17:18:46 [Information] Skipping anniversary celebration for user 9 because it already exists
+2026-02-26 17:18:46 [Information] Cache Updated for Daily Celebrations at 02/26/2026 17:18:46
+2026-02-26 17:21:15 [Information] ["POST"] "/Authentication/login" - Request received
+2026-02-26 17:21:15 [Information] Fetched User by Email "hr@gmail.com"
+2026-02-26 17:21:15 [Information] ["POST"] "/Authentication/login" - User logged in successfully
+2026-02-26 17:21:15 [Information] ["GET"] "/notification/count" - Request received
+2026-02-26 17:21:15 [Information] ["GET"] "/dashboard/daily-celebrations" - Request received
+2026-02-26 17:21:15 [Information] ["GET"] "/dashboard/upcoming-bookings" - Request received
+2026-02-26 17:21:15 [Information] Unread notification count for UserId 3: 0
+2026-02-26 17:21:15 [Information] ["GET"] "/notification/count" - Fetched notification count 0 for user 3 successfully
+2026-02-26 17:21:15 [Information] Found 2 daily celebrations for today
+2026-02-26 17:21:16 [Information] Retrieved 2 daily celebrations from repository
+2026-02-26 17:21:16 [Information] ["GET"] "/dashboard/daily-celebrations" - Fetched 2 daily celebrations successfully
+2026-02-26 17:21:16 [Information] Found 0 upcoming booking slots for today
+2026-02-26 17:21:16 [Information] Retrieved 0 upcoming booking slots from repository
+2026-02-26 17:21:16 [Information] ["GET"] "/dashboard/upcoming-bookings" - Fetched 0 upcoming booking slots successfully
+2026-02-26 17:21:38 [Information] ["GET"] "/notification/count" - Request received
+2026-02-26 17:21:38 [Information] Unread notification count for UserId 3: 0
+2026-02-26 17:21:38 [Information] ["GET"] "/notification/count" - Fetched notification count 0 for user 3 successfully
+2026-02-26 17:21:38 [Information] ["GET"] "/dashboard/upcoming-bookings" - Request received
+2026-02-26 17:21:38 [Information] ["GET"] "/dashboard/daily-celebrations" - Request received
+2026-02-26 17:21:38 [Information] ["GET"] "/dashboard/upcoming-bookings" - Fetched 0 upcoming booking slots successfully
+2026-02-26 17:21:38 [Information] ["GET"] "/dashboard/daily-celebrations" - Fetched 2 daily celebrations successfully
+2026-02-26 17:21:53 [Information] ["GET"] "/dashboard/upcoming-bookings" - Request received
+2026-02-26 17:21:53 [Information] ["GET"] "/dashboard/daily-celebrations" - Request received
+2026-02-26 17:21:53 [Information] ["GET"] "/dashboard/upcoming-bookings" - Fetched 0 upcoming booking slots successfully
+2026-02-26 17:21:53 [Information] ["GET"] "/dashboard/daily-celebrations" - Fetched 2 daily celebrations successfully
+2026-02-26 17:21:53 [Information] ["GET"] "/notification/count" - Request received
+2026-02-26 17:21:53 [Information] Unread notification count for UserId 3: 0
+2026-02-26 17:21:53 [Information] ["GET"] "/notification/count" - Fetched notification count 0 for user 3 successfully
+2026-02-26 17:22:06 [Information] ["GET"] "/dashboard/daily-celebrations" - Request received
+2026-02-26 17:22:06 [Information] ["GET"] "/dashboard/upcoming-bookings" - Request received
+2026-02-26 17:22:06 [Information] ["GET"] "/notification/count" - Request received
+2026-02-26 17:22:06 [Information] ["GET"] "/dashboard/daily-celebrations" - Fetched 2 daily celebrations successfully
+2026-02-26 17:22:06 [Information] ["GET"] "/dashboard/upcoming-bookings" - Fetched 0 upcoming booking slots successfully
+2026-02-26 17:22:06 [Information] Unread notification count for UserId 3: 0
+2026-02-26 17:22:06 [Information] ["GET"] "/notification/count" - Fetched notification count 0 for user 3 successfully
+2026-02-26 17:22:07 [Information] ["GET"] "/travel/hr" - Request received
+2026-02-26 17:22:07 [Information] ["GET"] "/travel/hr" - Fetched travels for HR 3 successfully
+2026-02-26 17:22:09 [Information] ["GET"] "/job/hr/created" - Request received
+2026-02-26 17:22:09 [Information] Retrieved jobs created by HR with Id 3 from repository and cached with version 0
+2026-02-26 17:22:09 [Information] Total jobs retrieved for HR with Id 3: 3
+2026-02-26 17:22:09 [Information] ["GET"] "/job/hr/created" - Fetched jobs created by HR 3 successfully
+2026-02-26 17:22:14 [Information] ["GET"] "/notification/count" - Request received
+2026-02-26 17:22:14 [Information] ["GET"] "/job/hr/created" - Request received
+2026-02-26 17:22:14 [Information] ["GET"] "/job/hr/created" - Fetched jobs created by HR 3 successfully
+2026-02-26 17:22:14 [Information] Unread notification count for UserId 3: 0
+2026-02-26 17:22:14 [Information] ["GET"] "/notification/count" - Fetched notification count 0 for user 3 successfully
+2026-02-26 17:22:52 [Information] ["GET"] "/notification/count" - Request received
+2026-02-26 17:22:52 [Information] Unread notification count for UserId 3: 0
+2026-02-26 17:22:52 [Information] ["GET"] "/notification/count" - Fetched notification count 0 for user 3 successfully
+2026-02-26 17:22:52 [Information] ["GET"] "/job/hr/created" - Request received
+2026-02-26 17:22:52 [Information] ["GET"] "/job/hr/created" - Fetched jobs created by HR 3 successfully
+2026-02-26 17:22:55 [Information] ["GET"] "/travel/all-expense" - Request received
+2026-02-26 17:22:55 [Information] Fetched 5 expenses for UserId 3, page 1
+2026-02-26 17:22:55 [Information] ["GET"] "/travel/all-expense" - Fetched all expenses for HR 3 successfully
+2026-02-26 17:22:56 [Information] ["GET"] "/job/hr/created" - Request received
+2026-02-26 17:22:56 [Information] ["GET"] "/job/hr/created" - Fetched jobs created by HR 3 successfully
+2026-02-26 17:23:02 [Information] ["GET"] "/notification/count" - Request received
+2026-02-26 17:23:02 [Information] ["GET"] "/job/hr/created" - Request received
+2026-02-26 17:23:02 [Information] ["GET"] "/job/hr/created" - Fetched jobs created by HR 3 successfully
+2026-02-26 17:23:02 [Information] Unread notification count for UserId 3: 0
+2026-02-26 17:23:02 [Information] ["GET"] "/notification/count" - Fetched notification count 0 for user 3 successfully
+2026-02-26 17:23:07 [Information] ["GET"] "/notification/count" - Request received
+2026-02-26 17:23:07 [Information] ["GET"] "/job/hr/created" - Request received
+2026-02-26 17:23:07 [Information] ["GET"] "/job/hr/created" - Fetched jobs created by HR 3 successfully
+2026-02-26 17:23:07 [Information] Unread notification count for UserId 3: 0
+2026-02-26 17:23:07 [Information] ["GET"] "/notification/count" - Fetched notification count 0 for user 3 successfully
+2026-02-26 17:23:09 [Information] ["GET"] "/notification/count" - Request received
+2026-02-26 17:23:09 [Information] ["GET"] "/job/hr/created" - Request received
+2026-02-26 17:23:09 [Information] ["GET"] "/job/hr/created" - Fetched jobs created by HR 3 successfully
+2026-02-26 17:23:09 [Information] Unread notification count for UserId 3: 0
+2026-02-26 17:23:09 [Information] ["GET"] "/notification/count" - Fetched notification count 0 for user 3 successfully
+2026-02-26 17:23:16 [Information] ["PUT"] "/job/3" - Request received
+2026-02-26 17:23:16 [Information] Fetched Job with Id 3
+2026-02-26 17:23:16 [Information] Updated Job with Id 3
+2026-02-26 17:23:32 [Information] Job with Id 3 updated successfully by HR with Id 3
+2026-02-26 17:23:32 [Information] ["PUT"] "/job/3" - Job 3 updated by HR 3 successfully
+2026-02-26 17:23:32 [Information] ["GET"] "/job/hr/created" - Request received
+2026-02-26 17:23:32 [Information] Retrieved jobs created by HR with Id 3 from repository and cached with version 1
+2026-02-26 17:23:32 [Information] Total jobs retrieved for HR with Id 3: 3
+2026-02-26 17:23:32 [Information] ["GET"] "/job/hr/created" - Fetched jobs created by HR 3 successfully
+2026-02-26 17:23:49 [Information] ["GET"] "/notification/count" - Request received
+2026-02-26 17:23:49 [Information] ["GET"] "/job/hr/created" - Request received
+2026-02-26 17:23:49 [Information] ["GET"] "/job/hr/created" - Fetched jobs created by HR 3 successfully
+2026-02-26 17:23:49 [Information] Unread notification count for UserId 3: 0
+2026-02-26 17:23:49 [Information] ["GET"] "/notification/count" - Fetched notification count 0 for user 3 successfully
+2026-02-26 17:23:51 [Information] ["GET"] "/notification/count" - Request received
+2026-02-26 17:23:51 [Information] ["GET"] "/job/hr/created" - Request received
+2026-02-26 17:23:51 [Information] ["GET"] "/job/hr/created" - Fetched jobs created by HR 3 successfully
+2026-02-26 17:23:51 [Information] Unread notification count for UserId 3: 0
+2026-02-26 17:23:51 [Information] ["GET"] "/notification/count" - Fetched notification count 0 for user 3 successfully
+2026-02-26 17:23:58 [Information] ["PUT"] "/job/3" - Request received
+2026-02-26 17:23:58 [Information] Fetched Job with Id 3
+2026-02-26 17:23:58 [Information] Updated Job with Id 3
+2026-02-26 17:24:14 [Information] Job with Id 3 updated successfully by HR with Id 3
+2026-02-26 17:24:14 [Information] ["PUT"] "/job/3" - Job 3 updated by HR 3 successfully
+2026-02-26 17:24:14 [Information] ["GET"] "/job/hr/created" - Request received
+2026-02-26 17:24:14 [Information] Retrieved jobs created by HR with Id 3 from repository and cached with version 2
+2026-02-26 17:24:14 [Information] Total jobs retrieved for HR with Id 3: 3
+2026-02-26 17:24:14 [Information] ["GET"] "/job/hr/created" - Fetched jobs created by HR 3 successfully
+2026-02-26 17:24:24 [Information] ["GET"] "/notification/count" - Request received
+2026-02-26 17:24:24 [Information] ["GET"] "/job/hr/created" - Request received
+2026-02-26 17:24:24 [Information] ["GET"] "/job/hr/created" - Fetched jobs created by HR 3 successfully
+2026-02-26 17:24:24 [Information] Unread notification count for UserId 3: 0
+2026-02-26 17:24:24 [Information] ["GET"] "/notification/count" - Fetched notification count 0 for user 3 successfully
+2026-02-26 17:24:47 [Information] ["GET"] "/notification/count" - Request received
+2026-02-26 17:24:47 [Information] ["GET"] "/job/hr/created" - Request received
+2026-02-26 17:24:47 [Information] ["GET"] "/job/hr/created" - Fetched jobs created by HR 3 successfully
+2026-02-26 17:24:47 [Information] Unread notification count for UserId 3: 0
+2026-02-26 17:24:47 [Information] ["GET"] "/notification/count" - Fetched notification count 0 for user 3 successfully
+2026-02-26 17:24:51 [Information] ["GET"] "/notification/count" - Request received
+2026-02-26 17:24:51 [Information] ["GET"] "/job/hr/created" - Request received
+2026-02-26 17:24:51 [Information] ["GET"] "/job/hr/created" - Fetched jobs created by HR 3 successfully
+2026-02-26 17:24:51 [Information] Unread notification count for UserId 3: 0
+2026-02-26 17:24:51 [Information] ["GET"] "/notification/count" - Fetched notification count 0 for user 3 successfully
+2026-02-26 17:24:58 [Information] ["GET"] "/job/3/reviewers" - Request received
+2026-02-26 17:24:58 [Information] Fetched Job with Id 3
+2026-02-26 17:24:58 [Information] Retrieved job detail with reviewers for job with Id 3 from repository and cached with version 2
+2026-02-26 17:24:58 [Information] ["GET"] "/job/3/reviewers" - Fetched reviewers for job 3 successfully
+2026-02-26 17:25:39 [Information] ["GET"] "/notification/count" - Request received
+2026-02-26 17:25:39 [Information] ["GET"] "/job/3/reviewers" - Request received
+2026-02-26 17:25:39 [Information] ["GET"] "/job/3/reviewers" - Fetched reviewers for job 3 successfully
+2026-02-26 17:25:39 [Information] Unread notification count for UserId 3: 0
+2026-02-26 17:25:39 [Information] ["GET"] "/notification/count" - Fetched notification count 0 for user 3 successfully
+2026-02-26 17:25:54 [Information] ["GET"] "/notification/count" - Request received
+2026-02-26 17:25:54 [Information] ["GET"] "/job/3/reviewers" - Request received
+2026-02-26 17:25:54 [Information] ["GET"] "/job/3/reviewers" - Fetched reviewers for job 3 successfully
+2026-02-26 17:25:54 [Information] Unread notification count for UserId 3: 0
+2026-02-26 17:25:54 [Information] ["GET"] "/notification/count" - Fetched notification count 0 for user 3 successfully
+2026-02-26 17:26:19 [Information] ["GET"] "/notification/count" - Request received
+2026-02-26 17:26:19 [Information] ["GET"] "/job/3/reviewers" - Request received
+2026-02-26 17:26:19 [Information] ["GET"] "/job/3/reviewers" - Fetched reviewers for job 3 successfully
+2026-02-26 17:26:19 [Information] Unread notification count for UserId 3: 0
+2026-02-26 17:26:19 [Information] ["GET"] "/notification/count" - Fetched notification count 0 for user 3 successfully
+2026-02-26 17:26:52 [Information] ["GET"] "/notification/count" - Request received
+2026-02-26 17:26:52 [Information] ["GET"] "/job/3/reviewers" - Request received
+2026-02-26 17:26:52 [Information] ["GET"] "/job/3/reviewers" - Fetched reviewers for job 3 successfully
+2026-02-26 17:26:52 [Information] Unread notification count for UserId 3: 0
+2026-02-26 17:26:52 [Information] ["GET"] "/notification/count" - Fetched notification count 0 for user 3 successfully
+2026-02-26 17:27:45 [Information] ["GET"] "/notification/count" - Request received
+2026-02-26 17:27:45 [Information] ["GET"] "/job/3/reviewers" - Request received
+2026-02-26 17:27:45 [Information] ["GET"] "/job/3/reviewers" - Fetched reviewers for job 3 successfully
+2026-02-26 17:27:45 [Information] Unread notification count for UserId 3: 0
+2026-02-26 17:27:45 [Information] ["GET"] "/notification/count" - Fetched notification count 0 for user 3 successfully
+2026-02-26 17:27:49 [Information] ["GET"] "/notification/count" - Request received
+2026-02-26 17:27:49 [Information] ["GET"] "/job/3/reviewers" - Request received
+2026-02-26 17:27:49 [Information] ["GET"] "/job/3/reviewers" - Fetched reviewers for job 3 successfully
+2026-02-26 17:27:49 [Information] Unread notification count for UserId 3: 0
+2026-02-26 17:27:49 [Information] ["GET"] "/notification/count" - Fetched notification count 0 for user 3 successfully
+2026-02-26 17:27:50 [Information] ["GET"] "/notification/count" - Request received
+2026-02-26 17:27:50 [Information] ["GET"] "/job/3/reviewers" - Request received
+2026-02-26 17:27:50 [Information] ["GET"] "/job/3/reviewers" - Fetched reviewers for job 3 successfully
+2026-02-26 17:27:50 [Information] Unread notification count for UserId 3: 0
+2026-02-26 17:27:50 [Information] ["GET"] "/notification/count" - Fetched notification count 0 for user 3 successfully
+2026-02-26 17:27:51 [Information] ["GET"] "/job/3/referred" - Request received
+2026-02-26 17:27:51 [Information] Fetched 1 referrals for JobId 3, page 1
+2026-02-26 17:27:51 [Information] Retrieved job referrals by job with Id 3 from repository and cached with version 0
+2026-02-26 17:27:51 [Information] Total job referrals retrieved for job with Id 3: 1
+2026-02-26 17:27:51 [Information] ["GET"] "/job/3/referred" - Fetched referrals for job 3 successfully
+2026-02-26 17:29:30 [Information] ["GET"] "/notification/count" - Request received
+2026-02-26 17:29:30 [Information] ["GET"] "/job/3/referred" - Request received
+2026-02-26 17:29:30 [Information] ["GET"] "/job/3/referred" - Fetched referrals for job 3 successfully
+2026-02-26 17:29:30 [Information] Unread notification count for UserId 3: 0
+2026-02-26 17:29:30 [Information] ["GET"] "/notification/count" - Fetched notification count 0 for user 3 successfully
+2026-02-26 17:29:31 [Information] ["GET"] "/job/3/reviewers" - Request received
+2026-02-26 17:29:31 [Information] ["GET"] "/job/3/reviewers" - Fetched reviewers for job 3 successfully
+2026-02-26 17:29:34 [Information] ["GET"] "/job/3/referred" - Request received
+2026-02-26 17:29:34 [Information] ["GET"] "/job/3/referred" - Fetched referrals for job 3 successfully
+2026-02-26 17:30:05 [Information] ["GET"] "/job/3/reviewers" - Request received
+2026-02-26 17:30:05 [Information] ["GET"] "/job/3/reviewers" - Fetched reviewers for job 3 successfully
+2026-02-26 17:30:09 [Information] ["GET"] "/job/3/share" - Request received
+2026-02-26 17:30:09 [Information] Fetched 2 shared jobs for JobId 3, page 1
+2026-02-26 17:30:09 [Information] Retrieved shared jobs by job with Id 3 from repository and cached with version 0
+2026-02-26 17:30:09 [Information] Total shared jobs retrieved for job with Id 3: 2
+2026-02-26 17:30:09 [Information] ["GET"] "/job/3/share" - Fetched shared entries for job 3 successfully
+2026-02-26 17:30:13 [Information] ["GET"] "/notification/count" - Request received
+2026-02-26 17:30:13 [Information] ["GET"] "/job/3/share" - Request received
+2026-02-26 17:30:13 [Information] ["GET"] "/job/3/share" - Fetched shared entries for job 3 successfully
+2026-02-26 17:30:13 [Information] Unread notification count for UserId 3: 0
+2026-02-26 17:30:13 [Information] ["GET"] "/notification/count" - Fetched notification count 0 for user 3 successfully
+2026-02-26 17:30:47 [Information] Updated GameSlot with Id 174
+2026-02-26 17:30:47 [Information] Updated GameSlot with Id 202
+2026-02-26 17:31:14 [Information] ["GET"] "/notification/count" - Request received
+2026-02-26 17:31:14 [Information] ["GET"] "/job/3/share" - Request received
+2026-02-26 17:31:14 [Information] ["GET"] "/job/3/share" - Fetched shared entries for job 3 successfully
+2026-02-26 17:31:14 [Information] Unread notification count for UserId 3: 0
+2026-02-26 17:31:14 [Information] ["GET"] "/notification/count" - Fetched notification count 0 for user 3 successfully
+2026-02-26 17:31:14 [Information] ["GET"] "/notification/count" - Request received
+2026-02-26 17:31:14 [Information] ["GET"] "/job/3/share" - Request received
+2026-02-26 17:31:14 [Information] ["GET"] "/job/3/share" - Fetched shared entries for job 3 successfully
+2026-02-26 17:31:14 [Information] Unread notification count for UserId 3: 0
+2026-02-26 17:31:14 [Information] ["GET"] "/notification/count" - Fetched notification count 0 for user 3 successfully
+2026-02-26 17:31:16 [Information] ["GET"] "/job/3/share" - Request received
+2026-02-26 17:31:16 [Information] Fetched 0 shared jobs for JobId 3, page 2
+2026-02-26 17:31:16 [Information] Retrieved shared jobs by job with Id 3 from repository and cached with version 0
+2026-02-26 17:31:16 [Information] Total shared jobs retrieved for job with Id 3: 0
+2026-02-26 17:31:16 [Information] ["GET"] "/job/3/share" - Fetched shared entries for job 3 successfully
+2026-02-26 17:31:18 [Information] ["GET"] "/job/3/share" - Request received
+2026-02-26 17:31:18 [Information] Fetched 0 shared jobs for JobId 3, page 3
+2026-02-26 17:31:18 [Information] Retrieved shared jobs by job with Id 3 from repository and cached with version 0
+2026-02-26 17:31:18 [Information] Total shared jobs retrieved for job with Id 3: 0
+2026-02-26 17:31:18 [Information] ["GET"] "/job/3/share" - Fetched shared entries for job 3 successfully
+2026-02-26 17:31:20 [Information] ["GET"] "/job/3/share" - Request received
+2026-02-26 17:31:20 [Information] ["GET"] "/job/3/share" - Fetched shared entries for job 3 successfully
+2026-02-26 17:31:34 [Information] ["GET"] "/job/3/share" - Request received
+2026-02-26 17:31:34 [Information] ["GET"] "/job/3/share" - Fetched shared entries for job 3 successfully
+2026-02-26 17:31:34 [Information] ["GET"] "/notification/count" - Request received
+2026-02-26 17:31:34 [Information] ["GET"] "/job/3/share" - Request received
+2026-02-26 17:31:34 [Information] ["GET"] "/job/3/share" - Fetched shared entries for job 3 successfully
+2026-02-26 17:31:34 [Information] Unread notification count for UserId 3: 0
+2026-02-26 17:31:34 [Information] ["GET"] "/notification/count" - Fetched notification count 0 for user 3 successfully
+2026-02-26 17:31:51 [Information] ["GET"] "/job/3/share" - Request received
+2026-02-26 17:31:51 [Information] ["GET"] "/job/3/share" - Fetched shared entries for job 3 successfully
+2026-02-26 17:32:51 [Information] Scheduler "QuartzScheduler_$_NON_CLUSTERED" shutting down.
+2026-02-26 17:32:51 [Information] Scheduler QuartzScheduler_$_NON_CLUSTERED paused.
+2026-02-26 17:32:51 [Information] Scheduler QuartzScheduler_$_NON_CLUSTERED Shutdown complete.
+2026-02-26 17:33:04 [Information] Initialized Scheduler Signaller of type: Quartz.Core.SchedulerSignalerImpl
+2026-02-26 17:33:04 [Information] Quartz Scheduler created
+2026-02-26 17:33:04 [Information] JobFactory set to: Quartz.Simpl.MicrosoftDependencyInjectionJobFactory
+2026-02-26 17:33:04 [Information] RAMJobStore initialized.
+2026-02-26 17:33:04 [Information] Quartz Scheduler 3.15.1.0 - 'QuartzScheduler' with instanceId 'NON_CLUSTERED' initialized
+2026-02-26 17:33:04 [Information] Using thread pool 'Quartz.Simpl.DefaultThreadPool', size: 10
+2026-02-26 17:33:04 [Information] Using job store 'Quartz.Simpl.RAMJobStore', supports persistence: False, clustered: False
+2026-02-26 17:33:04 [Information] Adding 1 jobs, 1 triggers.
+2026-02-26 17:33:04 [Information] Adding job: DEFAULT.WeeklyJob
+2026-02-26 17:33:05 [Information] Scheduler QuartzScheduler_$_NON_CLUSTERED started.
+2026-02-26 17:33:05 [Information] Starting Daily Celebration Job at 02/26/2026 17:33:05
+2026-02-26 17:33:05 [Information] Found 1 birthday users for today
+2026-02-26 17:33:05 [Information] Found 1 work anniversary users for today
+2026-02-26 17:33:05 [Information] Fetched system user with Id 4
+2026-02-26 17:33:05 [Information] Celebration exists check for UserId 9, EventType Birthday: True
+2026-02-26 17:33:05 [Information] Skipping birthday celebration for user 9 because it already exists
+2026-02-26 17:33:05 [Information] Celebration exists check for UserId 9, EventType WorkAnniversary: True
+2026-02-26 17:33:05 [Information] Skipping anniversary celebration for user 9 because it already exists
+2026-02-26 17:33:05 [Information] Cache Updated for Daily Celebrations at 02/26/2026 17:33:05
+2026-02-26 17:33:20 [Information] ["GET"] "/notification/count" - Request received
+2026-02-26 17:33:20 [Information] ["GET"] "/job/3/share" - Request received
+2026-02-26 17:33:20 [Information] Unread notification count for UserId 3: 0
+2026-02-26 17:33:20 [Information] ["GET"] "/notification/count" - Fetched notification count 0 for user 3 successfully
+2026-02-26 17:33:20 [Information] Fetched 2 shared jobs for JobId 3, page 1
+2026-02-26 17:33:20 [Information] Retrieved shared jobs by job with Id 3 from repository and cached with version 0
+2026-02-26 17:33:20 [Information] Total shared jobs retrieved for job with Id 3: 2
+2026-02-26 17:33:20 [Information] ["GET"] "/job/3/share" - Fetched shared entries for job 3 successfully
+2026-02-26 17:33:22 [Information] ["GET"] "/job/3/reviewers" - Request received
+2026-02-26 17:33:22 [Information] Fetched Job with Id 3
+2026-02-26 17:33:22 [Information] Retrieved job detail with reviewers for job with Id 3 from repository and cached with version 0
+2026-02-26 17:33:22 [Information] ["GET"] "/job/3/reviewers" - Fetched reviewers for job 3 successfully
+2026-02-26 17:33:26 [Information] ["GET"] "/job/3/share" - Request received
+2026-02-26 17:33:26 [Information] ["GET"] "/job/3/share" - Fetched shared entries for job 3 successfully
+2026-02-26 17:33:29 [Information] ["GET"] "/job/3/share" - Request received
+2026-02-26 17:33:29 [Information] ["GET"] "/job/3/share" - Fetched shared entries for job 3 successfully
+2026-02-26 17:33:29 [Information] ["GET"] "/notification/count" - Request received
+2026-02-26 17:33:29 [Information] Unread notification count for UserId 3: 0
+2026-02-26 17:33:29 [Information] ["GET"] "/notification/count" - Fetched notification count 0 for user 3 successfully
+2026-02-26 17:33:49 [Information] ["GET"] "/job/3/share" - Request received
+2026-02-26 17:33:49 [Information] Fetched 1 shared jobs for JobId 3, page 1
+2026-02-26 17:33:49 [Information] Retrieved shared jobs by job with Id 3 from repository and cached with version 0
+2026-02-26 17:33:49 [Information] Total shared jobs retrieved for job with Id 3: 1
+2026-02-26 17:33:49 [Information] ["GET"] "/job/3/share" - Fetched shared entries for job 3 successfully
+2026-02-26 17:33:50 [Information] ["GET"] "/job/3/share" - Request received
+2026-02-26 17:33:50 [Information] ["GET"] "/job/3/share" - Fetched shared entries for job 3 successfully
+2026-02-26 17:33:50 [Information] ["GET"] "/notification/count" - Request received
+2026-02-26 17:33:50 [Information] Unread notification count for UserId 3: 0
+2026-02-26 17:33:50 [Information] ["GET"] "/notification/count" - Fetched notification count 0 for user 3 successfully
+2026-02-26 17:33:52 [Information] ["GET"] "/job/3/share" - Request received
+2026-02-26 17:33:52 [Information] Fetched 1 shared jobs for JobId 3, page 2
+2026-02-26 17:33:52 [Information] Retrieved shared jobs by job with Id 3 from repository and cached with version 0
+2026-02-26 17:33:52 [Information] Total shared jobs retrieved for job with Id 3: 1
+2026-02-26 17:33:52 [Information] ["GET"] "/job/3/share" - Fetched shared entries for job 3 successfully
+2026-02-26 17:33:55 [Information] ["GET"] "/job/3/share" - Request received
+2026-02-26 17:33:55 [Information] ["GET"] "/job/3/share" - Fetched shared entries for job 3 successfully
+2026-02-26 17:35:22 [Information] ["GET"] "/notification/count" - Request received
+2026-02-26 17:35:22 [Information] ["GET"] "/job/3/share" - Request received
+2026-02-26 17:35:22 [Information] ["GET"] "/job/3/share" - Fetched shared entries for job 3 successfully
+2026-02-26 17:35:22 [Information] Unread notification count for UserId 3: 0
+2026-02-26 17:35:22 [Information] ["GET"] "/notification/count" - Fetched notification count 0 for user 3 successfully
+2026-02-26 17:36:58 [Information] ["GET"] "/notification/count" - Request received
+2026-02-26 17:36:58 [Information] ["GET"] "/job/3/share" - Request received
+2026-02-26 17:36:58 [Information] ["GET"] "/job/3/share" - Fetched shared entries for job 3 successfully
+2026-02-26 17:36:58 [Information] Unread notification count for UserId 3: 0
+2026-02-26 17:36:58 [Information] ["GET"] "/notification/count" - Fetched notification count 0 for user 3 successfully
+2026-02-26 17:37:19 [Information] ["GET"] "/notification/count" - Request received
+2026-02-26 17:37:19 [Information] ["GET"] "/job/3/share" - Request received
+2026-02-26 17:37:19 [Information] ["GET"] "/job/3/share" - Fetched shared entries for job 3 successfully
+2026-02-26 17:37:19 [Information] Unread notification count for UserId 3: 0
+2026-02-26 17:37:19 [Information] ["GET"] "/notification/count" - Fetched notification count 0 for user 3 successfully
+2026-02-26 17:37:32 [Information] ["GET"] "/notification/count" - Request received
+2026-02-26 17:37:32 [Information] ["GET"] "/job/3/share" - Request received
+2026-02-26 17:37:32 [Information] ["GET"] "/job/3/share" - Fetched shared entries for job 3 successfully
+2026-02-26 17:37:32 [Information] Unread notification count for UserId 3: 0
+2026-02-26 17:37:32 [Information] ["GET"] "/notification/count" - Fetched notification count 0 for user 3 successfully
+2026-02-26 17:37:33 [Information] ["GET"] "/job/3/share" - Request received
+2026-02-26 17:37:33 [Information] ["GET"] "/job/3/share" - Fetched shared entries for job 3 successfully
+2026-02-26 17:37:36 [Information] ["GET"] "/notification/count" - Request received
+2026-02-26 17:37:36 [Information] ["GET"] "/job/3/share" - Request received
+2026-02-26 17:37:36 [Information] ["GET"] "/job/3/share" - Fetched shared entries for job 3 successfully
+2026-02-26 17:37:36 [Information] Unread notification count for UserId 3: 0
+2026-02-26 17:37:36 [Information] ["GET"] "/notification/count" - Fetched notification count 0 for user 3 successfully
+2026-02-26 17:37:40 [Information] ["GET"] "/job/3/share" - Request received
+2026-02-26 17:37:40 [Information] ["GET"] "/notification/count" - Request received
+2026-02-26 17:37:40 [Information] ["GET"] "/job/3/share" - Fetched shared entries for job 3 successfully
+2026-02-26 17:37:40 [Information] Unread notification count for UserId 3: 0
+2026-02-26 17:37:40 [Information] ["GET"] "/notification/count" - Fetched notification count 0 for user 3 successfully
+2026-02-26 17:37:43 [Information] ["GET"] "/notification/count" - Request received
+2026-02-26 17:37:43 [Information] ["GET"] "/job/3/share" - Request received
+2026-02-26 17:37:43 [Information] ["GET"] "/job/3/share" - Fetched shared entries for job 3 successfully
+2026-02-26 17:37:43 [Information] Unread notification count for UserId 3: 0
+2026-02-26 17:37:43 [Information] ["GET"] "/notification/count" - Fetched notification count 0 for user 3 successfully
+2026-02-26 17:37:43 [Information] ["GET"] "/job/3/share" - Request received
+2026-02-26 17:37:43 [Information] Fetched 2 shared jobs for JobId 3, page 1
+2026-02-26 17:37:43 [Information] Retrieved shared jobs by job with Id 3 from repository and cached with version 0
+2026-02-26 17:37:43 [Information] Total shared jobs retrieved for job with Id 3: 2
+2026-02-26 17:37:43 [Information] ["GET"] "/job/3/share" - Fetched shared entries for job 3 successfully
+2026-02-26 17:37:48 [Information] ["GET"] "/notification/count" - Request received
+2026-02-26 17:37:48 [Information] ["GET"] "/job/3/share" - Request received
+2026-02-26 17:37:48 [Information] ["GET"] "/job/3/share" - Fetched shared entries for job 3 successfully
+2026-02-26 17:37:48 [Information] Unread notification count for UserId 3: 0
+2026-02-26 17:37:48 [Information] ["GET"] "/notification/count" - Fetched notification count 0 for user 3 successfully
+2026-02-26 17:37:56 [Information] ["GET"] "/job/3/reviewers" - Request received
+2026-02-26 17:37:56 [Information] ["GET"] "/job/3/reviewers" - Fetched reviewers for job 3 successfully
+2026-02-26 17:37:58 [Information] ["GET"] "/job/3/referred" - Request received
+2026-02-26 17:37:58 [Information] Fetched 1 referrals for JobId 3, page 1
+2026-02-26 17:37:58 [Information] Retrieved job referrals by job with Id 3 from repository and cached with version 0
+2026-02-26 17:37:58 [Information] Total job referrals retrieved for job with Id 3: 1
+2026-02-26 17:37:58 [Information] ["GET"] "/job/3/referred" - Fetched referrals for job 3 successfully
+2026-02-26 17:38:04 [Information] ["GET"] "/notification/count" - Request received
+2026-02-26 17:38:04 [Information] ["GET"] "/job/3/referred" - Request received
+2026-02-26 17:38:04 [Information] ["GET"] "/job/3/referred" - Fetched referrals for job 3 successfully
+2026-02-26 17:38:04 [Information] Unread notification count for UserId 3: 0
+2026-02-26 17:38:04 [Information] ["GET"] "/notification/count" - Fetched notification count 0 for user 3 successfully
+2026-02-26 17:38:11 [Information] ["GET"] "/travel/all-expense" - Request received
+2026-02-26 17:38:11 [Information] Fetched 5 expenses for UserId 3, page 1
+2026-02-26 17:38:11 [Information] ["GET"] "/travel/all-expense" - Fetched all expenses for HR 3 successfully
+2026-02-26 17:38:13 [Information] ["GET"] "/job/hr/created" - Request received
+2026-02-26 17:38:13 [Information] Retrieved jobs created by HR with Id 3 from repository and cached with version 0
+2026-02-26 17:38:13 [Information] Total jobs retrieved for HR with Id 3: 3
+2026-02-26 17:38:13 [Information] ["GET"] "/job/hr/created" - Fetched jobs created by HR 3 successfully
+2026-02-26 17:38:18 [Information] ["GET"] "/job/3/reviewers" - Request received
+2026-02-26 17:38:18 [Information] ["GET"] "/job/3/reviewers" - Fetched reviewers for job 3 successfully
+2026-02-26 17:38:19 [Information] ["GET"] "/job/3/referred" - Request received
+2026-02-26 17:38:19 [Information] ["GET"] "/job/3/referred" - Fetched referrals for job 3 successfully
+2026-02-26 17:38:24 [Information] ["GET"] "/job/3/referred" - Request received
+2026-02-26 17:38:24 [Information] ["GET"] "/job/3/referred" - Fetched referrals for job 3 successfully
+2026-02-26 17:38:24 [Information] ["GET"] "/notification/count" - Request received
+2026-02-26 17:38:24 [Information] Unread notification count for UserId 3: 0
+2026-02-26 17:38:24 [Information] ["GET"] "/notification/count" - Fetched notification count 0 for user 3 successfully
+2026-02-26 17:38:24 [Information] ["GET"] "/job/3/reviewers" - Request received
+2026-02-26 17:38:24 [Information] ["GET"] "/job/3/reviewers" - Fetched reviewers for job 3 successfully
+2026-02-26 17:38:25 [Information] ["GET"] "/job/3/share" - Request received
+2026-02-26 17:38:25 [Information] ["GET"] "/job/3/share" - Fetched shared entries for job 3 successfully
+2026-02-26 17:38:47 [Information] Scheduler "QuartzScheduler_$_NON_CLUSTERED" shutting down.
+2026-02-26 17:38:47 [Information] Scheduler QuartzScheduler_$_NON_CLUSTERED paused.
+2026-02-26 17:38:47 [Information] Scheduler QuartzScheduler_$_NON_CLUSTERED Shutdown complete.
+2026-02-26 17:45:42 [Information] Initialized Scheduler Signaller of type: Quartz.Core.SchedulerSignalerImpl
+2026-02-26 17:45:42 [Information] Quartz Scheduler created
+2026-02-26 17:45:42 [Information] JobFactory set to: Quartz.Simpl.MicrosoftDependencyInjectionJobFactory
+2026-02-26 17:45:42 [Information] RAMJobStore initialized.
+2026-02-26 17:45:42 [Information] Quartz Scheduler 3.15.1.0 - 'QuartzScheduler' with instanceId 'NON_CLUSTERED' initialized
+2026-02-26 17:45:42 [Information] Using thread pool 'Quartz.Simpl.DefaultThreadPool', size: 10
+2026-02-26 17:45:42 [Information] Using job store 'Quartz.Simpl.RAMJobStore', supports persistence: False, clustered: False
+2026-02-26 17:45:42 [Information] Adding 1 jobs, 1 triggers.
+2026-02-26 17:45:42 [Information] Adding job: DEFAULT.WeeklyJob
+2026-02-26 17:45:42 [Information] Scheduler QuartzScheduler_$_NON_CLUSTERED started.
+2026-02-26 17:45:43 [Information] Starting Daily Celebration Job at 02/26/2026 17:45:43
+2026-02-26 17:45:43 [Information] Found 1 birthday users for today
+2026-02-26 17:45:43 [Information] Found 1 work anniversary users for today
+2026-02-26 17:45:43 [Information] Fetched system user with Id 4
+2026-02-26 17:45:43 [Information] Celebration exists check for UserId 9, EventType Birthday: True
+2026-02-26 17:45:43 [Information] Skipping birthday celebration for user 9 because it already exists
+2026-02-26 17:45:43 [Information] Celebration exists check for UserId 9, EventType WorkAnniversary: True
+2026-02-26 17:45:43 [Information] Skipping anniversary celebration for user 9 because it already exists
+2026-02-26 17:45:43 [Information] Cache Updated for Daily Celebrations at 02/26/2026 17:45:43
+2026-02-26 17:45:53 [Information] ["GET"] "/notification/count" - Request received
+2026-02-26 17:45:53 [Information] ["GET"] "/job/3/share" - Request received
+2026-02-26 17:45:53 [Information] Unread notification count for UserId 3: 0
+2026-02-26 17:45:53 [Information] ["GET"] "/notification/count" - Fetched notification count 0 for user 3 successfully
+2026-02-26 17:45:53 [Information] ["GET"] "/notification/count" - Request received
+2026-02-26 17:45:53 [Information] Unread notification count for UserId 3: 0
+2026-02-26 17:45:53 [Information] ["GET"] "/notification/count" - Fetched notification count 0 for user 3 successfully
+2026-02-26 17:45:53 [Information] Fetched 2 shared jobs for JobId 3, page 1
+2026-02-26 17:45:53 [Information] Retrieved shared jobs by job with Id 3 from repository and cached with version 0
+2026-02-26 17:45:53 [Information] Total shared jobs retrieved for job with Id 3: 2
+2026-02-26 17:45:53 [Information] ["GET"] "/job/3/share" - Fetched shared entries for job 3 successfully
+2026-02-26 17:45:54 [Information] ["GET"] "/notification/count" - Request received
+2026-02-26 17:45:54 [Information] ["GET"] "/job/3/share" - Request received
+2026-02-26 17:45:54 [Information] ["GET"] "/job/3/share" - Fetched shared entries for job 3 successfully
+2026-02-26 17:45:54 [Information] Unread notification count for UserId 3: 0
+2026-02-26 17:45:54 [Information] ["GET"] "/notification/count" - Fetched notification count 0 for user 3 successfully
+2026-02-26 17:45:55 [Information] ["GET"] "/notification/count" - Request received
+2026-02-26 17:45:55 [Information] Unread notification count for UserId 3: 0
+2026-02-26 17:45:55 [Information] ["GET"] "/notification/count" - Fetched notification count 0 for user 3 successfully
+2026-02-26 17:45:55 [Information] ["GET"] "/job/3/share" - Request received
+2026-02-26 17:45:55 [Information] ["GET"] "/job/3/share" - Fetched shared entries for job 3 successfully
+2026-02-26 17:46:07 [Information] ["GET"] "/notification/count" - Request received
+2026-02-26 17:46:07 [Information] ["GET"] "/job/3/share" - Request received
+2026-02-26 17:46:07 [Information] ["GET"] "/job/3/share" - Fetched shared entries for job 3 successfully
+2026-02-26 17:46:07 [Information] Unread notification count for UserId 3: 0
+2026-02-26 17:46:07 [Information] ["GET"] "/notification/count" - Fetched notification count 0 for user 3 successfully
+2026-02-26 17:46:11 [Information] ["GET"] "/notification/count" - Request received
+2026-02-26 17:46:11 [Information] ["GET"] "/job/3/share" - Request received
+2026-02-26 17:46:11 [Information] ["GET"] "/job/3/share" - Fetched shared entries for job 3 successfully
+2026-02-26 17:46:11 [Information] Unread notification count for UserId 3: 0
+2026-02-26 17:46:11 [Information] ["GET"] "/notification/count" - Fetched notification count 0 for user 3 successfully
+2026-02-26 17:46:12 [Information] ["GET"] "/job/3/reviewers" - Request received
+2026-02-26 17:46:12 [Information] Fetched Job with Id 3
+2026-02-26 17:46:12 [Information] Retrieved job detail with reviewers for job with Id 3 from repository and cached with version 0
+2026-02-26 17:46:12 [Information] ["GET"] "/job/3/reviewers" - Fetched reviewers for job 3 successfully
+2026-02-26 17:46:18 [Information] ["GET"] "/notification/count" - Request received
+2026-02-26 17:46:18 [Information] ["GET"] "/job/3/reviewers" - Request received
+2026-02-26 17:46:18 [Information] ["GET"] "/job/3/reviewers" - Fetched reviewers for job 3 successfully
+2026-02-26 17:46:18 [Information] Unread notification count for UserId 3: 0
+2026-02-26 17:46:18 [Information] ["GET"] "/notification/count" - Fetched notification count 0 for user 3 successfully
+2026-02-26 17:46:20 [Information] ["GET"] "/notification/count" - Request received
+2026-02-26 17:46:20 [Information] ["GET"] "/job/3/reviewers" - Request received
+2026-02-26 17:46:20 [Information] ["GET"] "/job/3/reviewers" - Fetched reviewers for job 3 successfully
+2026-02-26 17:46:20 [Information] Unread notification count for UserId 3: 0
+2026-02-26 17:46:20 [Information] ["GET"] "/notification/count" - Fetched notification count 0 for user 3 successfully
+2026-02-26 17:46:23 [Information] ["GET"] "/job/hr/created" - Request received
+2026-02-26 17:46:23 [Information] Retrieved jobs created by HR with Id 3 from repository and cached with version 0
+2026-02-26 17:46:23 [Information] Total jobs retrieved for HR with Id 3: 3
+2026-02-26 17:46:23 [Information] ["GET"] "/job/hr/created" - Fetched jobs created by HR 3 successfully
+2026-02-26 17:46:36 [Information] ["GET"] "/job/hr/created" - Request received
+2026-02-26 17:46:36 [Information] Retrieved jobs created by HR with Id 3 from repository and cached with version 0
+2026-02-26 17:46:36 [Information] Total jobs retrieved for HR with Id 3: 1
+2026-02-26 17:46:36 [Information] ["GET"] "/job/hr/created" - Fetched jobs created by HR 3 successfully
+2026-02-26 17:46:36 [Information] ["GET"] "/job/hr/created" - Request received
+2026-02-26 17:46:36 [Information] ["GET"] "/job/hr/created" - Fetched jobs created by HR 3 successfully
+2026-02-26 17:46:36 [Information] ["GET"] "/notification/count" - Request received
+2026-02-26 17:46:36 [Information] Unread notification count for UserId 3: 0
+2026-02-26 17:46:36 [Information] ["GET"] "/notification/count" - Fetched notification count 0 for user 3 successfully
+2026-02-26 17:46:49 [Information] ["GET"] "/notification/count" - Request received
+2026-02-26 17:46:49 [Information] ["GET"] "/job/hr/created" - Request received
+2026-02-26 17:46:49 [Information] ["GET"] "/job/hr/created" - Fetched jobs created by HR 3 successfully
+2026-02-26 17:46:49 [Information] Unread notification count for UserId 3: 0
+2026-02-26 17:46:49 [Information] ["GET"] "/notification/count" - Fetched notification count 0 for user 3 successfully
+2026-02-26 17:46:51 [Information] ["GET"] "/job/hr/created" - Request received
+2026-02-26 17:46:51 [Information] Retrieved jobs created by HR with Id 3 from repository and cached with version 0
+2026-02-26 17:46:51 [Information] Total jobs retrieved for HR with Id 3: 1
+2026-02-26 17:46:51 [Information] ["GET"] "/job/hr/created" - Fetched jobs created by HR 3 successfully
+2026-02-26 17:46:53 [Information] ["GET"] "/notification/count" - Request received
+2026-02-26 17:46:53 [Information] ["GET"] "/job/hr/created" - Request received
+2026-02-26 17:46:53 [Information] ["GET"] "/job/hr/created" - Fetched jobs created by HR 3 successfully
+2026-02-26 17:46:53 [Information] Unread notification count for UserId 3: 0
+2026-02-26 17:46:53 [Information] ["GET"] "/notification/count" - Fetched notification count 0 for user 3 successfully
+2026-02-26 17:46:54 [Information] ["GET"] "/job/hr/created" - Request received
+2026-02-26 17:46:54 [Information] Retrieved jobs created by HR with Id 3 from repository and cached with version 0
+2026-02-26 17:46:54 [Information] Total jobs retrieved for HR with Id 3: 1
+2026-02-26 17:46:54 [Information] ["GET"] "/job/hr/created" - Fetched jobs created by HR 3 successfully
+2026-02-26 17:47:00 [Information] ["GET"] "/notification/count" - Request received
+2026-02-26 17:47:00 [Information] ["GET"] "/job/hr/created" - Request received
+2026-02-26 17:47:00 [Information] ["GET"] "/job/hr/created" - Fetched jobs created by HR 3 successfully
+2026-02-26 17:47:00 [Information] Unread notification count for UserId 3: 0
+2026-02-26 17:47:00 [Information] ["GET"] "/notification/count" - Fetched notification count 0 for user 3 successfully
+2026-02-26 17:47:01 [Information] ["GET"] "/job/hr/created" - Request received
+2026-02-26 17:47:01 [Information] ["GET"] "/job/hr/created" - Fetched jobs created by HR 3 successfully
+2026-02-26 17:47:32 [Information] ["GET"] "/notification/count" - Request received
+2026-02-26 17:47:32 [Information] ["GET"] "/job/hr/created" - Request received
+2026-02-26 17:47:32 [Information] ["GET"] "/job/hr/created" - Fetched jobs created by HR 3 successfully
+2026-02-26 17:47:32 [Information] Unread notification count for UserId 3: 0
+2026-02-26 17:47:32 [Information] ["GET"] "/notification/count" - Fetched notification count 0 for user 3 successfully
+2026-02-26 17:47:33 [Information] ["GET"] "/notification/count" - Request received
+2026-02-26 17:47:33 [Information] ["GET"] "/job/hr/created" - Request received
+2026-02-26 17:47:33 [Information] ["GET"] "/job/hr/created" - Fetched jobs created by HR 3 successfully
+2026-02-26 17:47:33 [Information] Unread notification count for UserId 3: 0
+2026-02-26 17:47:33 [Information] ["GET"] "/notification/count" - Fetched notification count 0 for user 3 successfully
+2026-02-26 17:47:34 [Information] ["GET"] "/job/hr/created" - Request received
+2026-02-26 17:47:34 [Information] ["GET"] "/job/hr/created" - Fetched jobs created by HR 3 successfully
+2026-02-26 17:47:39 [Information] ["GET"] "/job/hr/created" - Request received
+2026-02-26 17:47:39 [Information] ["GET"] "/job/hr/created" - Fetched jobs created by HR 3 successfully
+2026-02-26 17:47:39 [Information] ["GET"] "/notification/count" - Request received
+2026-02-26 17:47:39 [Information] Unread notification count for UserId 3: 0
+2026-02-26 17:47:39 [Information] ["GET"] "/notification/count" - Fetched notification count 0 for user 3 successfully
+2026-02-26 17:47:41 [Information] ["GET"] "/job/hr/created" - Request received
+2026-02-26 17:47:41 [Information] ["GET"] "/job/hr/created" - Fetched jobs created by HR 3 successfully
+2026-02-26 17:47:47 [Information] ["PUT"] "/job/2" - Request received
+2026-02-26 17:47:47 [Information] Fetched Job with Id 2
+2026-02-26 17:47:48 [Information] Updated Job with Id 2
+2026-02-26 17:47:59 [Information] Job with Id 2 updated successfully by HR with Id 3
+2026-02-26 17:47:59 [Information] ["PUT"] "/job/2" - Job 2 updated by HR 3 successfully
+2026-02-26 17:47:59 [Information] ["GET"] "/job/hr/created" - Request received
+2026-02-26 17:47:59 [Information] Retrieved jobs created by HR with Id 3 from repository and cached with version 1
+2026-02-26 17:47:59 [Information] Total jobs retrieved for HR with Id 3: 1
+2026-02-26 17:47:59 [Information] ["GET"] "/job/hr/created" - Fetched jobs created by HR 3 successfully
+2026-02-26 17:48:03 [Information] ["GET"] "/job/hr/created" - Request received
+2026-02-26 17:48:03 [Information] ["GET"] "/job/hr/created" - Fetched jobs created by HR 3 successfully
+2026-02-26 17:48:03 [Information] ["GET"] "/notification/count" - Request received
+2026-02-26 17:48:03 [Information] Unread notification count for UserId 3: 0
+2026-02-26 17:48:03 [Information] ["GET"] "/notification/count" - Fetched notification count 0 for user 3 successfully
+2026-02-26 17:48:05 [Information] ["GET"] "/job/hr/created" - Request received
+2026-02-26 17:48:05 [Information] Retrieved jobs created by HR with Id 3 from repository and cached with version 1
+2026-02-26 17:48:05 [Information] Total jobs retrieved for HR with Id 3: 1
+2026-02-26 17:48:05 [Information] ["GET"] "/job/hr/created" - Fetched jobs created by HR 3 successfully
+2026-02-26 17:48:06 [Information] ["GET"] "/job/hr/created" - Request received
+2026-02-26 17:48:06 [Information] ["GET"] "/job/hr/created" - Fetched jobs created by HR 3 successfully
+2026-02-26 17:48:09 [Information] ["GET"] "/job/hr/created" - Request received
+2026-02-26 17:48:09 [Information] Retrieved jobs created by HR with Id 3 from repository and cached with version 1
+2026-02-26 17:48:09 [Information] Total jobs retrieved for HR with Id 3: 1
+2026-02-26 17:48:09 [Information] ["GET"] "/job/hr/created" - Fetched jobs created by HR 3 successfully
+2026-02-26 17:48:12 [Information] ["GET"] "/job/hr/created" - Request received
+2026-02-26 17:48:12 [Information] ["GET"] "/job/hr/created" - Fetched jobs created by HR 3 successfully
+2026-02-26 17:48:12 [Information] ["GET"] "/notification/count" - Request received
+2026-02-26 17:48:12 [Information] Unread notification count for UserId 3: 0
+2026-02-26 17:48:12 [Information] ["GET"] "/notification/count" - Fetched notification count 0 for user 3 successfully
+2026-02-26 17:48:16 [Information] ["GET"] "/notification/count" - Request received
+2026-02-26 17:48:16 [Information] ["GET"] "/job/hr/created" - Request received
+2026-02-26 17:48:16 [Information] ["GET"] "/job/hr/created" - Fetched jobs created by HR 3 successfully
+2026-02-26 17:48:16 [Information] Unread notification count for UserId 3: 0
+2026-02-26 17:48:16 [Information] ["GET"] "/notification/count" - Fetched notification count 0 for user 3 successfully
+2026-02-26 17:48:16 [Information] ["GET"] "/job/hr/created" - Request received
+2026-02-26 17:48:16 [Information] Retrieved jobs created by HR with Id 3 from repository and cached with version 1
+2026-02-26 17:48:16 [Information] Total jobs retrieved for HR with Id 3: 3
+2026-02-26 17:48:16 [Information] ["GET"] "/job/hr/created" - Fetched jobs created by HR 3 successfully
+2026-02-26 17:48:25 [Information] ["PUT"] "/job/2" - Request received
+2026-02-26 17:48:25 [Information] Fetched Job with Id 2
+2026-02-26 17:48:25 [Information] Updated Job with Id 2
+2026-02-26 17:48:36 [Information] Job with Id 2 updated successfully by HR with Id 3
+2026-02-26 17:48:36 [Information] ["PUT"] "/job/2" - Job 2 updated by HR 3 successfully
+2026-02-26 17:48:36 [Information] ["GET"] "/job/hr/created" - Request received
+2026-02-26 17:48:36 [Information] Retrieved jobs created by HR with Id 3 from repository and cached with version 2
+2026-02-26 17:48:36 [Information] Total jobs retrieved for HR with Id 3: 3
+2026-02-26 17:48:36 [Information] ["GET"] "/job/hr/created" - Fetched jobs created by HR 3 successfully
+2026-02-26 17:48:39 [Information] ["GET"] "/notification/count" - Request received
+2026-02-26 17:48:39 [Information] ["GET"] "/job/hr/created" - Request received
+2026-02-26 17:48:39 [Information] ["GET"] "/job/hr/created" - Fetched jobs created by HR 3 successfully
+2026-02-26 17:48:39 [Information] Unread notification count for UserId 3: 0
+2026-02-26 17:48:39 [Information] ["GET"] "/notification/count" - Fetched notification count 0 for user 3 successfully
+2026-02-26 17:48:45 [Information] ["GET"] "/notification/count" - Request received
+2026-02-26 17:48:45 [Information] ["GET"] "/job/hr/created" - Request received
+2026-02-26 17:48:45 [Information] ["GET"] "/job/hr/created" - Fetched jobs created by HR 3 successfully
+2026-02-26 17:48:45 [Information] Unread notification count for UserId 3: 0
+2026-02-26 17:48:45 [Information] ["GET"] "/notification/count" - Fetched notification count 0 for user 3 successfully
+2026-02-26 17:48:49 [Information] ["GET"] "/job/review" - Request received
+2026-02-26 17:48:49 [Information] Fetched 3 jobs to review for ReviewerId 3, page 1
+2026-02-26 17:48:49 [Information] Retrieved jobs to review for reviewer with Id 3 from repository and cached with version 2
+2026-02-26 17:48:49 [Information] Total jobs to review retrieved for reviewer with Id 3: 3
+2026-02-26 17:48:49 [Information] ["GET"] "/job/review" - Fetched jobs to review for reviewer 3 successfully
+2026-02-26 17:48:54 [Information] ["GET"] "/notification/count" - Request received
+2026-02-26 17:48:54 [Information] ["GET"] "/job/review" - Request received
+2026-02-26 17:48:54 [Information] ["GET"] "/job/review" - Fetched jobs to review for reviewer 3 successfully
+2026-02-26 17:48:54 [Information] Unread notification count for UserId 3: 0
+2026-02-26 17:48:54 [Information] ["GET"] "/notification/count" - Fetched notification count 0 for user 3 successfully
+2026-02-26 17:48:55 [Information] ["GET"] "/job/hr/created" - Request received
+2026-02-26 17:48:55 [Information] ["GET"] "/job/hr/created" - Fetched jobs created by HR 3 successfully
+2026-02-26 17:48:57 [Information] ["GET"] "/notification/count" - Request received
+2026-02-26 17:48:57 [Information] ["GET"] "/job/hr/created" - Request received
+2026-02-26 17:48:57 [Information] ["GET"] "/job/hr/created" - Fetched jobs created by HR 3 successfully
+2026-02-26 17:48:57 [Information] Unread notification count for UserId 3: 0
+2026-02-26 17:48:57 [Information] ["GET"] "/notification/count" - Fetched notification count 0 for user 3 successfully
+2026-02-26 17:48:58 [Information] ["GET"] "/job/review" - Request received
+2026-02-26 17:48:58 [Information] ["GET"] "/job/review" - Fetched jobs to review for reviewer 3 successfully
+2026-02-26 17:49:01 [Information] ["GET"] "/notification/count" - Request received
+2026-02-26 17:49:01 [Information] ["GET"] "/job/review" - Request received
+2026-02-26 17:49:01 [Information] ["GET"] "/job/review" - Fetched jobs to review for reviewer 3 successfully
+2026-02-26 17:49:01 [Information] Unread notification count for UserId 3: 0
+2026-02-26 17:49:01 [Information] ["GET"] "/notification/count" - Fetched notification count 0 for user 3 successfully
+2026-02-26 17:49:02 [Information] ["GET"] "/job/3/referred" - Request received
+2026-02-26 17:49:02 [Information] Fetched 1 referrals for JobId 3, page 1
+2026-02-26 17:49:02 [Information] Retrieved job referrals by job with Id 3 from repository and cached with version 0
+2026-02-26 17:49:02 [Information] Total job referrals retrieved for job with Id 3: 1
+2026-02-26 17:49:02 [Information] ["GET"] "/job/3/referred" - Fetched referrals for job 3 successfully
+2026-02-26 17:49:12 [Information] ["GET"] "/job/3/referred" - Request received
+2026-02-26 17:49:12 [Information] ["GET"] "/notification/count" - Request received
+2026-02-26 17:49:12 [Information] ["GET"] "/job/3/referred" - Fetched referrals for job 3 successfully
+2026-02-26 17:49:12 [Information] Unread notification count for UserId 3: 0
+2026-02-26 17:49:12 [Information] ["GET"] "/notification/count" - Fetched notification count 0 for user 3 successfully
+2026-02-26 17:49:14 [Information] ["GET"] "/job/review" - Request received
+2026-02-26 17:49:14 [Information] ["GET"] "/job/review" - Fetched jobs to review for reviewer 3 successfully
+2026-02-26 17:49:15 [Information] ["GET"] "/job/2/referred" - Request received
+2026-02-26 17:49:15 [Information] Fetched 1 referrals for JobId 2, page 1
+2026-02-26 17:49:15 [Information] Retrieved job referrals by job with Id 2 from repository and cached with version 0
+2026-02-26 17:49:15 [Information] Total job referrals retrieved for job with Id 2: 1
+2026-02-26 17:49:15 [Information] ["GET"] "/job/2/referred" - Fetched referrals for job 2 successfully
+2026-02-26 17:49:16 [Information] ["GET"] "/job/review" - Request received
+2026-02-26 17:49:16 [Information] ["GET"] "/job/review" - Fetched jobs to review for reviewer 3 successfully
+2026-02-26 17:49:19 [Information] ["GET"] "/notification/count" - Request received
+2026-02-26 17:49:19 [Information] ["GET"] "/job/review" - Request received
+2026-02-26 17:49:19 [Information] ["GET"] "/job/review" - Fetched jobs to review for reviewer 3 successfully
+2026-02-26 17:49:19 [Information] Unread notification count for UserId 3: 0
+2026-02-26 17:49:19 [Information] ["GET"] "/notification/count" - Fetched notification count 0 for user 3 successfully
+2026-02-26 17:49:20 [Information] ["GET"] "/job/3/referred" - Request received
+2026-02-26 17:49:20 [Information] ["GET"] "/job/3/referred" - Fetched referrals for job 3 successfully
+2026-02-26 17:49:26 [Information] ["GET"] "/notification/count" - Request received
+2026-02-26 17:49:26 [Information] ["GET"] "/job/3/referred" - Request received
+2026-02-26 17:49:26 [Information] ["GET"] "/job/3/referred" - Fetched referrals for job 3 successfully
+2026-02-26 17:49:26 [Information] Unread notification count for UserId 3: 0
+2026-02-26 17:49:26 [Information] ["GET"] "/notification/count" - Fetched notification count 0 for user 3 successfully
+2026-02-26 17:49:30 [Information] ["GET"] "/notification/count" - Request received
+2026-02-26 17:49:30 [Information] ["GET"] "/job/3/referred" - Request received
+2026-02-26 17:49:30 [Information] ["GET"] "/job/3/referred" - Fetched referrals for job 3 successfully
+2026-02-26 17:49:30 [Information] Unread notification count for UserId 3: 0
+2026-02-26 17:49:30 [Information] ["GET"] "/notification/count" - Fetched notification count 0 for user 3 successfully
+2026-02-26 17:49:32 [Information] ["GET"] "/job/review" - Request received
+2026-02-26 17:49:32 [Information] ["GET"] "/job/review" - Fetched jobs to review for reviewer 3 successfully
+2026-02-26 17:49:35 [Information] ["GET"] "/job/review" - Request received
+2026-02-26 17:49:35 [Information] ["GET"] "/job/review" - Fetched jobs to review for reviewer 3 successfully
+2026-02-26 17:49:35 [Information] ["GET"] "/notification/count" - Request received
+2026-02-26 17:49:35 [Information] Unread notification count for UserId 3: 0
+2026-02-26 17:49:35 [Information] ["GET"] "/notification/count" - Fetched notification count 0 for user 3 successfully
+2026-02-26 17:55:12 [Information] ["GET"] "/notification/count" - Request received
+2026-02-26 17:55:12 [Information] ["GET"] "/job/review" - Request received
+2026-02-26 17:55:12 [Information] ["GET"] "/job/review" - Fetched jobs to review for reviewer 3 successfully
+2026-02-26 17:55:12 [Information] Unread notification count for UserId 3: 0
+2026-02-26 17:55:12 [Information] ["GET"] "/notification/count" - Fetched notification count 0 for user 3 successfully
+2026-02-26 17:57:05 [Information] ["GET"] "/notification/count" - Request received
+2026-02-26 17:57:05 [Information] ["GET"] "/job/review" - Request received
+2026-02-26 17:57:05 [Information] ["GET"] "/job/review" - Fetched jobs to review for reviewer 3 successfully
+2026-02-26 17:57:05 [Information] Unread notification count for UserId 3: 0
+2026-02-26 17:57:05 [Information] ["GET"] "/notification/count" - Fetched notification count 0 for user 3 successfully
+2026-02-26 18:00:43 [Information] Updated GameSlot with Id 175
+2026-02-26 18:00:43 [Information] Updated GameSlot with Id 203
+2026-02-26 18:02:32 [Information] ["GET"] "/notification/count" - Request received
+2026-02-26 18:02:32 [Information] ["GET"] "/job/review" - Request received
+2026-02-26 18:02:32 [Information] ["GET"] "/job/review" - Fetched jobs to review for reviewer 3 successfully
+2026-02-26 18:02:32 [Information] Unread notification count for UserId 3: 0
+2026-02-26 18:02:32 [Information] ["GET"] "/notification/count" - Fetched notification count 0 for user 3 successfully
+2026-02-26 18:02:42 [Information] ["GET"] "/notification/count" - Request received
+2026-02-26 18:02:42 [Information] ["GET"] "/job/review" - Request received
+2026-02-26 18:02:42 [Information] ["GET"] "/job/review" - Fetched jobs to review for reviewer 3 successfully
+2026-02-26 18:02:42 [Information] Unread notification count for UserId 3: 0
+2026-02-26 18:02:42 [Information] ["GET"] "/notification/count" - Fetched notification count 0 for user 3 successfully
+2026-02-26 18:30:45 [Information] Updated GameSlot with Id 176
+2026-02-26 18:35:41 [Information] Scheduler "QuartzScheduler_$_NON_CLUSTERED" shutting down.
+2026-02-26 18:35:41 [Information] Scheduler QuartzScheduler_$_NON_CLUSTERED paused.
+2026-02-26 18:35:41 [Information] Scheduler QuartzScheduler_$_NON_CLUSTERED Shutdown complete.
+2026-02-26 18:36:05 [Information] Initialized Scheduler Signaller of type: Quartz.Core.SchedulerSignalerImpl
+2026-02-26 18:36:05 [Information] Quartz Scheduler created
+2026-02-26 18:36:05 [Information] JobFactory set to: Quartz.Simpl.MicrosoftDependencyInjectionJobFactory
+2026-02-26 18:36:05 [Information] RAMJobStore initialized.
+2026-02-26 18:36:05 [Information] Quartz Scheduler 3.15.1.0 - 'QuartzScheduler' with instanceId 'NON_CLUSTERED' initialized
+2026-02-26 18:36:05 [Information] Using thread pool 'Quartz.Simpl.DefaultThreadPool', size: 10
+2026-02-26 18:36:05 [Information] Using job store 'Quartz.Simpl.RAMJobStore', supports persistence: False, clustered: False
+2026-02-26 18:36:05 [Information] Adding 1 jobs, 1 triggers.
+2026-02-26 18:36:05 [Information] Adding job: DEFAULT.WeeklyJob
+2026-02-26 18:36:05 [Information] Scheduler QuartzScheduler_$_NON_CLUSTERED started.
+2026-02-26 18:36:05 [Information] Starting Daily Celebration Job at 02/26/2026 18:36:05
+2026-02-26 18:36:05 [Information] Found 1 birthday users for today
+2026-02-26 18:36:05 [Information] Found 1 work anniversary users for today
+2026-02-26 18:36:05 [Information] Fetched system user with Id 4
+2026-02-26 18:36:05 [Information] Celebration exists check for UserId 9, EventType Birthday: True
+2026-02-26 18:36:05 [Information] Skipping birthday celebration for user 9 because it already exists
+2026-02-26 18:36:05 [Information] Celebration exists check for UserId 9, EventType WorkAnniversary: True
+2026-02-26 18:36:05 [Information] Skipping anniversary celebration for user 9 because it already exists
+2026-02-26 18:36:05 [Information] Cache Updated for Daily Celebrations at 02/26/2026 18:36:05
+2026-02-26 18:36:34 [Information] ["POST"] "/Authentication/login" - Request received
+2026-02-26 18:36:34 [Information] Fetched User by Email "hr@gmail.com"
+2026-02-26 18:36:34 [Information] ["POST"] "/Authentication/login" - User logged in successfully
+2026-02-26 18:36:34 [Information] ["GET"] "/dashboard/upcoming-bookings" - Request received
+2026-02-26 18:36:34 [Information] ["GET"] "/dashboard/daily-celebrations" - Request received
+2026-02-26 18:36:34 [Information] ["GET"] "/notification/count" - Request received
+2026-02-26 18:36:34 [Information] Unread notification count for UserId 3: 0
+2026-02-26 18:36:34 [Information] ["GET"] "/notification/count" - Fetched notification count 0 for user 3 successfully
+2026-02-26 18:36:34 [Information] Found 0 upcoming booking slots for today
+2026-02-26 18:36:34 [Information] Retrieved 0 upcoming booking slots from repository
+2026-02-26 18:36:34 [Information] ["GET"] "/dashboard/upcoming-bookings" - Fetched 0 upcoming booking slots successfully
+2026-02-26 18:36:34 [Information] Found 2 daily celebrations for today
+2026-02-26 18:36:34 [Information] Retrieved 2 daily celebrations from repository
+2026-02-26 18:36:34 [Information] ["GET"] "/dashboard/daily-celebrations" - Fetched 2 daily celebrations successfully
+2026-02-26 18:37:09 [Information] ["GET"] "/notification/count" - Request received
+2026-02-26 18:37:09 [Information] ["GET"] "/dashboard/daily-celebrations" - Request received
+2026-02-26 18:37:09 [Information] ["GET"] "/dashboard/upcoming-bookings" - Request received
+2026-02-26 18:37:09 [Information] Unread notification count for UserId 3: 0
+2026-02-26 18:37:09 [Information] ["GET"] "/dashboard/daily-celebrations" - Fetched 2 daily celebrations successfully
+2026-02-26 18:37:09 [Information] ["GET"] "/notification/count" - Fetched notification count 0 for user 3 successfully
+2026-02-26 18:37:09 [Information] ["GET"] "/dashboard/upcoming-bookings" - Fetched 0 upcoming booking slots successfully
+2026-02-26 18:37:10 [Information] ["GET"] "/travel/hr" - Request received
+2026-02-26 18:37:10 [Information] ["GET"] "/travel/hr" - Fetched travels for HR 3 successfully
+2026-02-26 18:37:11 [Information] ["GET"] "/travel/hr" - Request received
+2026-02-26 18:37:11 [Information] ["GET"] "/notification/count" - Request received
+2026-02-26 18:37:11 [Information] Unread notification count for UserId 3: 0
+2026-02-26 18:37:11 [Information] ["GET"] "/notification/count" - Fetched notification count 0 for user 3 successfully
+2026-02-26 18:37:11 [Information] ["GET"] "/travel/hr" - Fetched travels for HR 3 successfully
+2026-02-26 18:37:13 [Information] ["GET"] "/notification/count" - Request received
+2026-02-26 18:37:13 [Information] Unread notification count for UserId 3: 0
+2026-02-26 18:37:13 [Information] ["GET"] "/notification/count" - Fetched notification count 0 for user 3 successfully
+2026-02-26 18:37:13 [Information] ["GET"] "/travel/hr" - Request received
+2026-02-26 18:37:13 [Information] ["GET"] "/travel/hr" - Fetched travels for HR 3 successfully
+2026-02-26 18:37:14 [Information] ["GET"] "/dashboard/upcoming-bookings" - Request received
+2026-02-26 18:37:14 [Information] ["GET"] "/dashboard/upcoming-bookings" - Fetched 0 upcoming booking slots successfully
+2026-02-26 18:37:14 [Information] ["GET"] "/dashboard/daily-celebrations" - Request received
+2026-02-26 18:37:14 [Information] ["GET"] "/dashboard/daily-celebrations" - Fetched 2 daily celebrations successfully
+2026-02-26 18:37:22 [Information] ["GET"] "/dashboard/upcoming-bookings" - Request received
+2026-02-26 18:37:22 [Information] ["GET"] "/dashboard/upcoming-bookings" - Fetched 0 upcoming booking slots successfully
+2026-02-26 18:37:22 [Information] ["GET"] "/dashboard/daily-celebrations" - Request received
+2026-02-26 18:37:22 [Information] ["GET"] "/dashboard/daily-celebrations" - Fetched 2 daily celebrations successfully
+2026-02-26 18:37:22 [Information] ["GET"] "/notification/count" - Request received
+2026-02-26 18:37:22 [Information] Unread notification count for UserId 3: 0
+2026-02-26 18:37:22 [Information] ["GET"] "/notification/count" - Fetched notification count 0 for user 3 successfully
+2026-02-26 18:37:25 [Information] ["GET"] "/job/hr/created" - Request received
+2026-02-26 18:37:25 [Information] Retrieved jobs created by HR with Id 3 from repository and cached with version 1
+2026-02-26 18:37:25 [Information] Total jobs retrieved for HR with Id 3: 3
+2026-02-26 18:37:25 [Information] ["GET"] "/job/hr/created" - Fetched jobs created by HR 3 successfully
+2026-02-26 18:37:30 [Information] ["GET"] "/notification/count" - Request received
+2026-02-26 18:37:30 [Information] ["GET"] "/job/hr/created" - Request received
+2026-02-26 18:37:30 [Information] ["GET"] "/job/hr/created" - Fetched jobs created by HR 3 successfully
+2026-02-26 18:37:30 [Information] Unread notification count for UserId 3: 0
+2026-02-26 18:37:30 [Information] ["GET"] "/notification/count" - Fetched notification count 0 for user 3 successfully
+2026-02-26 18:37:38 [Information] ["GET"] "/notification/count" - Request received
+2026-02-26 18:37:38 [Information] Unread notification count for UserId 3: 0
+2026-02-26 18:37:38 [Information] ["GET"] "/notification/count" - Fetched notification count 0 for user 3 successfully
+2026-02-26 18:37:38 [Information] ["GET"] "/job/hr/created" - Request received
+2026-02-26 18:37:38 [Information] ["GET"] "/job/hr/created" - Fetched jobs created by HR 3 successfully
+2026-02-26 18:45:23 [Information] Scheduler "QuartzScheduler_$_NON_CLUSTERED" shutting down.
+2026-02-26 18:45:23 [Information] Scheduler QuartzScheduler_$_NON_CLUSTERED paused.
+2026-02-26 18:45:23 [Information] Scheduler QuartzScheduler_$_NON_CLUSTERED Shutdown complete.
+2026-02-26 19:02:12 [Information] Initialized Scheduler Signaller of type: Quartz.Core.SchedulerSignalerImpl
+2026-02-26 19:02:12 [Information] Quartz Scheduler created
+2026-02-26 19:02:12 [Information] JobFactory set to: Quartz.Simpl.MicrosoftDependencyInjectionJobFactory
+2026-02-26 19:02:12 [Information] RAMJobStore initialized.
+2026-02-26 19:02:12 [Information] Quartz Scheduler 3.15.1.0 - 'QuartzScheduler' with instanceId 'NON_CLUSTERED' initialized
+2026-02-26 19:02:12 [Information] Using thread pool 'Quartz.Simpl.DefaultThreadPool', size: 10
+2026-02-26 19:02:12 [Information] Using job store 'Quartz.Simpl.RAMJobStore', supports persistence: False, clustered: False
+2026-02-26 19:02:12 [Information] Adding 1 jobs, 1 triggers.
+2026-02-26 19:02:12 [Information] Adding job: DEFAULT.WeeklyJob
+2026-02-26 19:02:13 [Information] Scheduler QuartzScheduler_$_NON_CLUSTERED started.
+2026-02-26 19:02:13 [Information] Updated GameSlot with Id 177
+2026-02-26 19:02:13 [Information] Starting Daily Celebration Job at 02/26/2026 19:02:13
+2026-02-26 19:02:13 [Information] Found 1 birthday users for today
+2026-02-26 19:02:13 [Information] Found 1 work anniversary users for today
+2026-02-26 19:02:13 [Information] Fetched system user with Id 4
+2026-02-26 19:02:13 [Information] Celebration exists check for UserId 9, EventType Birthday: True
+2026-02-26 19:02:13 [Information] Skipping birthday celebration for user 9 because it already exists
+2026-02-26 19:02:13 [Information] Celebration exists check for UserId 9, EventType WorkAnniversary: True
+2026-02-26 19:02:13 [Information] Skipping anniversary celebration for user 9 because it already exists
+2026-02-26 19:02:13 [Information] Cache Updated for Daily Celebrations at 02/26/2026 19:02:13
+2026-02-26 19:03:09 [Information] ["GET"] "/notification/count" - Request received
+2026-02-26 19:03:09 [Information] ["GET"] "/job/hr/created" - Request received
+2026-02-26 19:03:09 [Information] Unread notification count for UserId 3: 0
+2026-02-26 19:03:09 [Information] ["GET"] "/notification/count" - Fetched notification count 0 for user 3 successfully
+2026-02-26 19:03:09 [Information] Retrieved jobs created by HR with Id 3 from repository and cached with version 1
+2026-02-26 19:03:09 [Information] Total jobs retrieved for HR with Id 3: 3
+2026-02-26 19:03:09 [Information] ["GET"] "/job/hr/created" - Fetched jobs created by HR 3 successfully
+2026-02-26 19:03:15 [Information] ["GET"] "/notification/count" - Request received
+2026-02-26 19:03:15 [Information] ["GET"] "/job/hr/created" - Request received
+2026-02-26 19:03:15 [Information] ["GET"] "/job/hr/created" - Fetched jobs created by HR 3 successfully
+2026-02-26 19:03:15 [Information] Unread notification count for UserId 3: 0
+2026-02-26 19:03:15 [Information] ["GET"] "/notification/count" - Fetched notification count 0 for user 3 successfully
+2026-02-26 19:03:15 [Information] ["GET"] "/notification/count" - Request received
+2026-02-26 19:03:15 [Information] Unread notification count for UserId 3: 0
+2026-02-26 19:03:15 [Information] ["GET"] "/notification/count" - Fetched notification count 0 for user 3 successfully
+2026-02-26 19:03:15 [Information] ["GET"] "/notification/count" - Request received
+2026-02-26 19:03:15 [Information] Unread notification count for UserId 3: 0
+2026-02-26 19:03:15 [Information] ["GET"] "/notification/count" - Fetched notification count 0 for user 3 successfully
+2026-02-26 19:03:15 [Information] ["GET"] "/job/hr/created" - Request received
+2026-02-26 19:03:15 [Information] ["GET"] "/job/hr/created" - Fetched jobs created by HR 3 successfully
+2026-02-26 19:03:20 [Information] ["POST"] "/Authentication/login" - Request received
+2026-02-26 19:03:20 [Information] Fetched User by Email "manav@gmail.com"
+2026-02-26 19:03:20 [Information] ["POST"] "/Authentication/login" - User logged in successfully
+2026-02-26 19:03:20 [Information] ["GET"] "/notification/count" - Request received
+2026-02-26 19:03:20 [Information] Unread notification count for UserId 6: 0
+2026-02-26 19:03:20 [Information] ["GET"] "/notification/count" - Fetched notification count 0 for user 6 successfully
+2026-02-26 19:03:20 [Information] ["GET"] "/dashboard/upcoming-bookings" - Request received
+2026-02-26 19:03:20 [Information] ["GET"] "/dashboard/daily-celebrations" - Request received
+2026-02-26 19:03:20 [Information] Found 2 daily celebrations for today
+2026-02-26 19:03:20 [Information] Retrieved 2 daily celebrations from repository
+2026-02-26 19:03:20 [Information] ["GET"] "/dashboard/daily-celebrations" - Fetched 2 daily celebrations successfully
+2026-02-26 19:03:20 [Information] Found 0 upcoming booking slots for today
+2026-02-26 19:03:20 [Information] Retrieved 0 upcoming booking slots from repository
+2026-02-26 19:03:20 [Information] ["GET"] "/dashboard/upcoming-bookings" - Fetched 0 upcoming booking slots successfully
+2026-02-26 19:03:25 [Information] ["GET"] "/job" - Request received
+2026-02-26 19:03:25 [Information] Fetched 2 active jobs, page 1
+2026-02-26 19:03:25 [Information] Retrieved jobs list from repository and cached with version 1
+2026-02-26 19:03:25 [Information] Total jobs retrieved: 2
+2026-02-26 19:03:25 [Information] ["GET"] "/job" - Fetched all jobs successfully
+2026-02-26 19:03:38 [Information] ["GET"] "/notification/count" - Request received
+2026-02-26 19:03:38 [Information] ["GET"] "/job" - Request received
+2026-02-26 19:03:38 [Information] ["GET"] "/job" - Fetched all jobs successfully
+2026-02-26 19:03:38 [Information] Unread notification count for UserId 6: 0
+2026-02-26 19:03:38 [Information] ["GET"] "/notification/count" - Fetched notification count 0 for user 6 successfully
+2026-02-26 19:03:47 [Information] ["POST"] "/Authentication/login" - Request received
+2026-02-26 19:03:47 [Information] Fetched User by Email "hr@gmail.com"
+2026-02-26 19:03:47 [Information] ["POST"] "/Authentication/login" - User logged in successfully
+2026-02-26 19:03:47 [Information] ["GET"] "/notification/count" - Request received
+2026-02-26 19:03:48 [Information] Unread notification count for UserId 3: 0
+2026-02-26 19:03:48 [Information] ["GET"] "/notification/count" - Fetched notification count 0 for user 3 successfully
+2026-02-26 19:03:48 [Information] ["GET"] "/dashboard/daily-celebrations" - Request received
+2026-02-26 19:03:48 [Information] ["GET"] "/dashboard/upcoming-bookings" - Request received
+2026-02-26 19:03:48 [Information] ["GET"] "/dashboard/upcoming-bookings" - Fetched 0 upcoming booking slots successfully
+2026-02-26 19:03:48 [Information] ["GET"] "/dashboard/daily-celebrations" - Fetched 2 daily celebrations successfully
+2026-02-26 19:03:49 [Information] ["GET"] "/job/hr/created" - Request received
+2026-02-26 19:03:49 [Information] ["GET"] "/job/hr/created" - Fetched jobs created by HR 3 successfully
+2026-02-26 19:03:52 [Information] ["GET"] "/notification/count" - Request received
+2026-02-26 19:03:52 [Information] ["GET"] "/job" - Request received
+2026-02-26 19:03:52 [Information] ["GET"] "/job" - Fetched all jobs successfully
+2026-02-26 19:03:52 [Information] Unread notification count for UserId 6: 0
+2026-02-26 19:03:52 [Information] ["GET"] "/notification/count" - Fetched notification count 0 for user 6 successfully
+2026-02-26 19:03:53 [Information] ["GET"] "/job/hr/created" - Request received
+2026-02-26 19:03:53 [Information] ["GET"] "/job/hr/created" - Fetched jobs created by HR 3 successfully
+2026-02-26 19:03:53 [Information] ["GET"] "/notification/count" - Request received
+2026-02-26 19:03:53 [Information] Unread notification count for UserId 3: 0
+2026-02-26 19:03:53 [Information] ["GET"] "/notification/count" - Fetched notification count 0 for user 3 successfully
+2026-02-26 19:03:59 [Information] ["PUT"] "/job/2" - Request received
+2026-02-26 19:03:59 [Information] Fetched Job with Id 2
+2026-02-26 19:03:59 [Information] Updated Job with Id 2
+2026-02-26 19:04:11 [Information] Job with Id 2 updated successfully by HR with Id 3
+2026-02-26 19:04:11 [Information] ["PUT"] "/job/2" - Job 2 updated by HR 3 successfully
+2026-02-26 19:04:11 [Information] ["GET"] "/job/hr/created" - Request received
+2026-02-26 19:04:11 [Information] Retrieved jobs created by HR with Id 3 from repository and cached with version 2
+2026-02-26 19:04:11 [Information] Total jobs retrieved for HR with Id 3: 3
+2026-02-26 19:04:11 [Information] ["GET"] "/job/hr/created" - Fetched jobs created by HR 3 successfully
+2026-02-26 19:04:12 [Information] ["GET"] "/job" - Request received
+2026-02-26 19:04:12 [Information] ["GET"] "/notification/count" - Request received
+2026-02-26 19:04:12 [Information] Unread notification count for UserId 6: 0
+2026-02-26 19:04:12 [Information] ["GET"] "/notification/count" - Fetched notification count 0 for user 6 successfully
+2026-02-26 19:04:12 [Information] Fetched 1 active jobs, page 1
+2026-02-26 19:04:12 [Information] Retrieved jobs list from repository and cached with version 2
+2026-02-26 19:04:12 [Information] Total jobs retrieved: 1
+2026-02-26 19:04:12 [Information] ["GET"] "/job" - Fetched all jobs successfully
+2026-02-26 19:04:16 [Information] ["GET"] "/notification/count" - Request received
+2026-02-26 19:04:16 [Information] ["GET"] "/job/hr/created" - Request received
+2026-02-26 19:04:16 [Information] ["GET"] "/job/hr/created" - Fetched jobs created by HR 3 successfully
+2026-02-26 19:04:16 [Information] Unread notification count for UserId 3: 0
+2026-02-26 19:04:16 [Information] ["GET"] "/notification/count" - Fetched notification count 0 for user 3 successfully
+2026-02-26 19:04:18 [Information] ["GET"] "/notification/count" - Request received
+2026-02-26 19:04:18 [Information] ["GET"] "/job" - Request received
+2026-02-26 19:04:18 [Information] ["GET"] "/job" - Fetched all jobs successfully
+2026-02-26 19:04:18 [Information] Unread notification count for UserId 6: 0
+2026-02-26 19:04:18 [Information] ["GET"] "/notification/count" - Fetched notification count 0 for user 6 successfully
+2026-02-26 19:04:23 [Information] ["GET"] "/notification/count" - Request received
+2026-02-26 19:04:23 [Information] ["GET"] "/job/hr/created" - Request received
+2026-02-26 19:04:23 [Information] ["GET"] "/job/hr/created" - Fetched jobs created by HR 3 successfully
+2026-02-26 19:04:23 [Information] Unread notification count for UserId 3: 0
+2026-02-26 19:04:23 [Information] ["GET"] "/notification/count" - Fetched notification count 0 for user 3 successfully
+2026-02-26 19:04:24 [Information] ["GET"] "/notification/count" - Request received
+2026-02-26 19:04:24 [Information] ["GET"] "/job" - Request received
+2026-02-26 19:04:24 [Information] ["GET"] "/job" - Fetched all jobs successfully
+2026-02-26 19:04:24 [Information] Unread notification count for UserId 6: 0
+2026-02-26 19:04:24 [Information] ["GET"] "/notification/count" - Fetched notification count 0 for user 6 successfully
+2026-02-26 19:04:24 [Information] ["GET"] "/notification/count" - Request received
+2026-02-26 19:04:24 [Information] ["GET"] "/job/hr/created" - Request received
+2026-02-26 19:04:24 [Information] ["GET"] "/job/hr/created" - Fetched jobs created by HR 3 successfully
+2026-02-26 19:04:24 [Information] Unread notification count for UserId 3: 0
+2026-02-26 19:04:24 [Information] ["GET"] "/notification/count" - Fetched notification count 0 for user 3 successfully
+2026-02-26 19:04:28 [Information] ["GET"] "/job/3/reviewers" - Request received
+2026-02-26 19:04:28 [Information] Fetched Job with Id 3
+2026-02-26 19:04:28 [Information] Retrieved job detail with reviewers for job with Id 3 from repository and cached with version 0
+2026-02-26 19:04:28 [Information] ["GET"] "/job/3/reviewers" - Fetched reviewers for job 3 successfully
+2026-02-26 19:04:29 [Information] ["GET"] "/job/3/referred" - Request received
+2026-02-26 19:04:29 [Information] Fetched 1 referrals for JobId 3, page 1
+2026-02-26 19:04:29 [Information] Retrieved job referrals by job with Id 3 from repository and cached with version 0
+2026-02-26 19:04:29 [Information] Total job referrals retrieved for job with Id 3: 1
+2026-02-26 19:04:29 [Information] ["GET"] "/job/3/referred" - Fetched referrals for job 3 successfully
+2026-02-26 19:04:30 [Information] ["GET"] "/notification/count" - Request received
+2026-02-26 19:04:30 [Information] ["GET"] "/job" - Request received
+2026-02-26 19:04:30 [Information] ["GET"] "/job" - Fetched all jobs successfully
+2026-02-26 19:04:30 [Information] Unread notification count for UserId 6: 0
+2026-02-26 19:04:30 [Information] ["GET"] "/notification/count" - Fetched notification count 0 for user 6 successfully
+2026-02-26 19:04:32 [Information] ["GET"] "/job/3/referred" - Request received
+2026-02-26 19:04:32 [Information] ["GET"] "/job/3/referred" - Fetched referrals for job 3 successfully
+2026-02-26 19:04:32 [Information] ["GET"] "/notification/count" - Request received
+2026-02-26 19:04:32 [Information] Unread notification count for UserId 3: 0
+2026-02-26 19:04:32 [Information] ["GET"] "/notification/count" - Fetched notification count 0 for user 3 successfully
+2026-02-26 19:04:32 [Information] ["GET"] "/job/3/reviewers" - Request received
+2026-02-26 19:04:32 [Information] ["GET"] "/job/3/reviewers" - Fetched reviewers for job 3 successfully
+2026-02-26 19:04:34 [Information] ["GET"] "/job/3/share" - Request received
+2026-02-26 19:04:34 [Information] Fetched 2 shared jobs for JobId 3, page 1
+2026-02-26 19:04:34 [Information] Retrieved shared jobs by job with Id 3 from repository and cached with version 0
+2026-02-26 19:04:34 [Information] Total shared jobs retrieved for job with Id 3: 2
+2026-02-26 19:04:34 [Information] ["GET"] "/job/3/share" - Fetched shared entries for job 3 successfully
+2026-02-26 19:04:35 [Information] ["GET"] "/notification/count" - Request received
+2026-02-26 19:04:35 [Information] ["GET"] "/job" - Request received
+2026-02-26 19:04:35 [Information] ["GET"] "/job" - Fetched all jobs successfully
+2026-02-26 19:04:35 [Information] Unread notification count for UserId 6: 0
+2026-02-26 19:04:35 [Information] ["GET"] "/notification/count" - Fetched notification count 0 for user 6 successfully
+2026-02-26 19:04:41 [Information] ["GET"] "/notification/count" - Request received
+2026-02-26 19:04:41 [Information] ["GET"] "/job/3/share" - Request received
+2026-02-26 19:04:41 [Information] ["GET"] "/job/3/share" - Fetched shared entries for job 3 successfully
+2026-02-26 19:04:41 [Information] Unread notification count for UserId 3: 0
+2026-02-26 19:04:41 [Information] ["GET"] "/notification/count" - Fetched notification count 0 for user 3 successfully
+2026-02-26 19:04:41 [Information] ["GET"] "/notification/count" - Request received
+2026-02-26 19:04:41 [Information] ["GET"] "/job" - Request received
+2026-02-26 19:04:41 [Information] ["GET"] "/job" - Fetched all jobs successfully
+2026-02-26 19:04:41 [Information] Unread notification count for UserId 6: 0
+2026-02-26 19:04:41 [Information] ["GET"] "/notification/count" - Fetched notification count 0 for user 6 successfully
+2026-02-26 19:04:51 [Information] ["POST"] "/job/3/share" - Request received
+2026-02-26 19:04:51 [Information] Fetched Job with Id 3
+2026-02-26 19:04:51 [Information] Created JobShare with Id 5 for JobId 3
+2026-02-26 19:04:56 [Information] Created job share for job with Id 3 and shared to "ronak@gmail.com"
+2026-02-26 19:04:56 [Information] ["POST"] "/job/3/share" - Job 3 shared by user 6 successfully
+2026-02-26 19:04:58 [Information] ["GET"] "/notification/count" - Request received
+2026-02-26 19:04:58 [Information] ["GET"] "/job/3/share" - Request received
+2026-02-26 19:04:58 [Information] Unread notification count for UserId 3: 0
+2026-02-26 19:04:58 [Information] ["GET"] "/notification/count" - Fetched notification count 0 for user 3 successfully
+2026-02-26 19:04:58 [Information] Fetched 2 shared jobs for JobId 3, page 1
+2026-02-26 19:04:58 [Information] Retrieved shared jobs by job with Id 3 from repository and cached with version 1
+2026-02-26 19:04:58 [Information] Total shared jobs retrieved for job with Id 3: 2
+2026-02-26 19:04:58 [Information] ["GET"] "/job/3/share" - Fetched shared entries for job 3 successfully
+2026-02-26 19:05:01 [Information] ["GET"] "/job/3/share" - Request received
+2026-02-26 19:05:01 [Information] Fetched 1 shared jobs for JobId 3, page 2
+2026-02-26 19:05:01 [Information] Retrieved shared jobs by job with Id 3 from repository and cached with version 1
+2026-02-26 19:05:01 [Information] Total shared jobs retrieved for job with Id 3: 1
+2026-02-26 19:05:01 [Information] ["GET"] "/job/3/share" - Fetched shared entries for job 3 successfully
+2026-02-26 19:05:03 [Information] ["GET"] "/notification/count" - Request received
+2026-02-26 19:05:03 [Information] ["GET"] "/job" - Request received
+2026-02-26 19:05:03 [Information] ["GET"] "/job" - Fetched all jobs successfully
+2026-02-26 19:05:03 [Information] Unread notification count for UserId 6: 0
+2026-02-26 19:05:03 [Information] ["GET"] "/notification/count" - Fetched notification count 0 for user 6 successfully
+2026-02-26 19:05:04 [Information] ["GET"] "/notification/count" - Request received
+2026-02-26 19:05:04 [Information] ["GET"] "/job/3/share" - Request received
+2026-02-26 19:05:04 [Information] ["GET"] "/job/3/share" - Fetched shared entries for job 3 successfully
+2026-02-26 19:05:04 [Information] Unread notification count for UserId 3: 0
+2026-02-26 19:05:04 [Information] ["GET"] "/notification/count" - Fetched notification count 0 for user 3 successfully
+2026-02-26 19:05:08 [Information] ["GET"] "/notification/count" - Request received
+2026-02-26 19:05:08 [Information] ["GET"] "/job/3/share" - Request received
+2026-02-26 19:05:08 [Information] ["GET"] "/job/3/share" - Fetched shared entries for job 3 successfully
+2026-02-26 19:05:08 [Information] Unread notification count for UserId 3: 0
+2026-02-26 19:05:08 [Information] ["GET"] "/notification/count" - Fetched notification count 0 for user 3 successfully
+2026-02-26 19:05:32 [Information] ["GET"] "/notification/count" - Request received
+2026-02-26 19:05:32 [Information] ["GET"] "/job/3/share" - Request received
+2026-02-26 19:05:32 [Information] ["GET"] "/job/3/share" - Fetched shared entries for job 3 successfully
+2026-02-26 19:05:32 [Information] Unread notification count for UserId 3: 0
+2026-02-26 19:05:32 [Information] ["GET"] "/notification/count" - Fetched notification count 0 for user 3 successfully
+2026-02-26 19:05:32 [Information] ["GET"] "/job/3/share" - Request received
+2026-02-26 19:05:32 [Information] Fetched 3 shared jobs for JobId 3, page 1
+2026-02-26 19:05:32 [Information] Retrieved shared jobs by job with Id 3 from repository and cached with version 1
+2026-02-26 19:05:32 [Information] Total shared jobs retrieved for job with Id 3: 3
+2026-02-26 19:05:32 [Information] ["GET"] "/job/3/share" - Fetched shared entries for job 3 successfully
+2026-02-26 19:06:09 [Information] ["GET"] "/notification/count" - Request received
+2026-02-26 19:06:09 [Information] ["GET"] "/job/3/share" - Request received
+2026-02-26 19:06:09 [Information] ["GET"] "/job/3/share" - Fetched shared entries for job 3 successfully
+2026-02-26 19:06:09 [Information] Unread notification count for UserId 3: 0
+2026-02-26 19:06:09 [Information] ["GET"] "/notification/count" - Fetched notification count 0 for user 3 successfully
+2026-02-26 19:07:04 [Information] ["GET"] "/notification/count" - Request received
+2026-02-26 19:07:04 [Information] ["GET"] "/job/3/share" - Request received
+2026-02-26 19:07:04 [Information] ["GET"] "/job/3/share" - Fetched shared entries for job 3 successfully
+2026-02-26 19:07:04 [Information] Unread notification count for UserId 3: 0
+2026-02-26 19:07:04 [Information] ["GET"] "/notification/count" - Fetched notification count 0 for user 3 successfully
+2026-02-26 19:07:05 [Information] ["GET"] "/job" - Request received
+2026-02-26 19:07:05 [Information] ["GET"] "/job" - Fetched all jobs successfully
+2026-02-26 19:07:05 [Information] ["GET"] "/notification/count" - Request received
+2026-02-26 19:07:05 [Information] Unread notification count for UserId 6: 0
+2026-02-26 19:07:05 [Information] ["GET"] "/notification/count" - Fetched notification count 0 for user 6 successfully
+2026-02-26 19:07:07 [Information] ["GET"] "/notification/count" - Request received
+2026-02-26 19:07:07 [Information] ["GET"] "/job" - Request received
+2026-02-26 19:07:07 [Information] ["GET"] "/job" - Fetched all jobs successfully
+2026-02-26 19:07:07 [Information] Unread notification count for UserId 6: 0
+2026-02-26 19:07:07 [Information] ["GET"] "/notification/count" - Fetched notification count 0 for user 6 successfully
+2026-02-26 19:07:20 [Information] ["GET"] "/notification/count" - Request received
+2026-02-26 19:07:20 [Information] ["GET"] "/job" - Request received
+2026-02-26 19:07:20 [Information] ["GET"] "/job" - Fetched all jobs successfully
+2026-02-26 19:07:20 [Information] Unread notification count for UserId 6: 0
+2026-02-26 19:07:20 [Information] ["GET"] "/notification/count" - Fetched notification count 0 for user 6 successfully
+2026-02-26 19:08:24 [Information] ["GET"] "/notification/count" - Request received
+2026-02-26 19:08:24 [Information] ["GET"] "/job" - Request received
+2026-02-26 19:08:24 [Information] ["GET"] "/job" - Fetched all jobs successfully
+2026-02-26 19:08:24 [Information] Unread notification count for UserId 6: 0
+2026-02-26 19:08:24 [Information] ["GET"] "/notification/count" - Fetched notification count 0 for user 6 successfully
+2026-02-26 19:08:28 [Information] ["GET"] "/notification/count" - Request received
+2026-02-26 19:08:28 [Information] ["GET"] "/job/3/share" - Request received
+2026-02-26 19:08:28 [Information] ["GET"] "/job/3/share" - Fetched shared entries for job 3 successfully
+2026-02-26 19:08:28 [Information] Unread notification count for UserId 3: 0
+2026-02-26 19:08:28 [Information] ["GET"] "/notification/count" - Fetched notification count 0 for user 3 successfully
+2026-02-26 19:08:28 [Information] ["GET"] "/notification/count" - Request received
+2026-02-26 19:08:28 [Information] ["GET"] "/job" - Request received
+2026-02-26 19:08:28 [Information] ["GET"] "/job" - Fetched all jobs successfully
+2026-02-26 19:08:28 [Information] Unread notification count for UserId 6: 0
+2026-02-26 19:08:28 [Information] ["GET"] "/notification/count" - Fetched notification count 0 for user 6 successfully
+2026-02-26 19:08:28 [Information] ["GET"] "/notification/count" - Request received
+2026-02-26 19:08:28 [Information] ["GET"] "/job/3/share" - Request received
+2026-02-26 19:08:28 [Information] ["GET"] "/job/3/share" - Fetched shared entries for job 3 successfully
+2026-02-26 19:08:28 [Information] Unread notification count for UserId 3: 0
+2026-02-26 19:08:28 [Information] ["GET"] "/notification/count" - Fetched notification count 0 for user 3 successfully
+2026-02-26 19:08:29 [Information] ["GET"] "/job/3/reviewers" - Request received
+2026-02-26 19:08:29 [Information] ["GET"] "/job/3/reviewers" - Fetched reviewers for job 3 successfully
+2026-02-26 19:08:30 [Information] ["GET"] "/job/3/referred" - Request received
+2026-02-26 19:08:30 [Information] ["GET"] "/job/3/referred" - Fetched referrals for job 3 successfully
+2026-02-26 19:08:31 [Information] ["GET"] "/notification/count" - Request received
+2026-02-26 19:08:31 [Information] ["GET"] "/job" - Request received
+2026-02-26 19:08:31 [Information] ["GET"] "/job" - Fetched all jobs successfully
+2026-02-26 19:08:31 [Information] Unread notification count for UserId 6: 0
+2026-02-26 19:08:31 [Information] ["GET"] "/notification/count" - Fetched notification count 0 for user 6 successfully
+2026-02-26 19:08:52 [Information] ["POST"] "/job/3/referre" - Request received
+2026-02-26 19:08:52 [Information] Fetched Job with Id 3
+2026-02-26 19:08:52 [Information] Creating job referral for job with Id 3 by employee with Id 6
+2026-02-26 19:08:56 [Information] Created JobReferral with Id 4 for JobId 3
+2026-02-26 19:08:56 [Information] Job referral created successfully for job with Id 3 by employee with Id 6
+2026-02-26 19:09:10 [Information] ["GET"] "/notification/count" - Request received
+2026-02-26 19:09:10 [Information] ["GET"] "/job" - Request received
+2026-02-26 19:09:10 [Information] ["GET"] "/job" - Fetched all jobs successfully
+2026-02-26 19:09:10 [Information] Unread notification count for UserId 6: 0
+2026-02-26 19:09:10 [Information] ["GET"] "/notification/count" - Fetched notification count 0 for user 6 successfully
+2026-02-26 19:09:12 [Information] ["POST"] "/job/3/referre" - Job 3 referred by user 6 successfully
+2026-02-26 19:11:32 [Information] ["GET"] "/notification/count" - Request received
+2026-02-26 19:11:32 [Information] ["GET"] "/job" - Request received
+2026-02-26 19:11:32 [Information] ["GET"] "/job" - Fetched all jobs successfully
+2026-02-26 19:11:32 [Information] Unread notification count for UserId 6: 0
+2026-02-26 19:11:32 [Information] ["GET"] "/notification/count" - Fetched notification count 0 for user 6 successfully
+2026-02-26 19:11:36 [Information] ["GET"] "/notification/count" - Request received
+2026-02-26 19:11:36 [Information] ["GET"] "/job/3/referred" - Request received
+2026-02-26 19:11:36 [Information] Unread notification count for UserId 3: 0
+2026-02-26 19:11:36 [Information] ["GET"] "/notification/count" - Fetched notification count 0 for user 3 successfully
+2026-02-26 19:11:37 [Information] Fetched 2 referrals for JobId 3, page 1
+2026-02-26 19:11:37 [Information] Retrieved job referrals by job with Id 3 from repository and cached with version 1
+2026-02-26 19:11:37 [Information] Total job referrals retrieved for job with Id 3: 2
+2026-02-26 19:11:37 [Information] ["GET"] "/job/3/referred" - Fetched referrals for job 3 successfully
+2026-02-26 19:11:44 [Information] ["GET"] "/job/3/reviewers" - Request received
+2026-02-26 19:11:44 [Information] ["GET"] "/job/3/reviewers" - Fetched reviewers for job 3 successfully
+2026-02-26 19:12:35 [Information] ["GET"] "/user/3" - Request received
+2026-02-26 19:12:36 [Information] ["GET"] "/user/3" - Fetched profile for user 3 successfully
+2026-02-26 19:12:37 [Information] ["GET"] "/job/3/reviewers" - Request received
+2026-02-26 19:12:37 [Information] ["GET"] "/job/3/reviewers" - Fetched reviewers for job 3 successfully
+2026-02-26 19:12:50 [Information] ["GET"] "/notification/count" - Request received
+2026-02-26 19:12:50 [Information] ["GET"] "/job" - Request received
+2026-02-26 19:12:50 [Information] ["GET"] "/job" - Fetched all jobs successfully
+2026-02-26 19:12:50 [Information] Unread notification count for UserId 6: 0
+2026-02-26 19:12:50 [Information] ["GET"] "/notification/count" - Fetched notification count 0 for user 6 successfully
+2026-02-26 19:12:53 [Information] ["GET"] "/notification/count" - Request received
+2026-02-26 19:12:53 [Information] ["GET"] "/job/3/reviewers" - Request received
+2026-02-26 19:12:53 [Information] ["GET"] "/job/3/reviewers" - Fetched reviewers for job 3 successfully
+2026-02-26 19:12:53 [Information] Unread notification count for UserId 3: 0
+2026-02-26 19:12:53 [Information] ["GET"] "/notification/count" - Fetched notification count 0 for user 3 successfully
+2026-02-26 19:12:54 [Information] ["GET"] "/notification/count" - Request received
+2026-02-26 19:12:54 [Information] ["GET"] "/job" - Request received
+2026-02-26 19:12:54 [Information] ["GET"] "/job" - Fetched all jobs successfully
+2026-02-26 19:12:54 [Information] Unread notification count for UserId 6: 0
+2026-02-26 19:12:54 [Information] ["GET"] "/notification/count" - Fetched notification count 0 for user 6 successfully
+2026-02-26 19:12:55 [Information] ["GET"] "/job/review" - Request received
+2026-02-26 19:12:55 [Information] Fetched 2 jobs to review for ReviewerId 6, page 1
+2026-02-26 19:12:55 [Information] Retrieved jobs to review for reviewer with Id 6 from repository and cached with version 2
+2026-02-26 19:12:55 [Information] Total jobs to review retrieved for reviewer with Id 6: 2
+2026-02-26 19:12:55 [Information] ["GET"] "/job/review" - Fetched jobs to review for reviewer 6 successfully
+2026-02-26 19:13:02 [Information] ["GET"] "/notification/count" - Request received
+2026-02-26 19:13:02 [Information] ["GET"] "/job/3/reviewers" - Request received
+2026-02-26 19:13:02 [Information] ["GET"] "/job/3/reviewers" - Fetched reviewers for job 3 successfully
+2026-02-26 19:13:02 [Information] Unread notification count for UserId 3: 0
+2026-02-26 19:13:02 [Information] ["GET"] "/notification/count" - Fetched notification count 0 for user 3 successfully
+2026-02-26 19:13:03 [Information] ["GET"] "/job/hr/created" - Request received
+2026-02-26 19:13:03 [Information] ["GET"] "/job/hr/created" - Fetched jobs created by HR 3 successfully
+2026-02-26 19:13:04 [Information] ["GET"] "/job/review" - Request received
+2026-02-26 19:13:04 [Information] Fetched 3 jobs to review for ReviewerId 3, page 1
+2026-02-26 19:13:04 [Information] Retrieved jobs to review for reviewer with Id 3 from repository and cached with version 2
+2026-02-26 19:13:04 [Information] Total jobs to review retrieved for reviewer with Id 3: 3
+2026-02-26 19:13:04 [Information] ["GET"] "/job/review" - Fetched jobs to review for reviewer 3 successfully
+2026-02-26 19:13:06 [Information] ["GET"] "/notification/count" - Request received
+2026-02-26 19:13:06 [Information] ["GET"] "/job/review" - Request received
+2026-02-26 19:13:06 [Information] ["GET"] "/job/review" - Fetched jobs to review for reviewer 6 successfully
+2026-02-26 19:13:06 [Information] Unread notification count for UserId 6: 0
+2026-02-26 19:13:06 [Information] ["GET"] "/notification/count" - Fetched notification count 0 for user 6 successfully
+2026-02-26 19:13:21 [Information] ["POST"] "/Authentication/login" - Request received
+2026-02-26 19:13:21 [Information] Fetched User by Email "keval@gmail.com"
+2026-02-26 19:13:21 [Error] An unhandled exception occurred: "Invalid Password !"
+hrms.CustomException.InvalidOperationCustomException: Invalid Password !
+   at hrms.Service.impl.AuthenticationService.Login(LoginRequestDto dto) in C:\Internship\Codes\DontNet\Assignment-1\hrms\hrms\Service\impl\AuthenticationService.cs:line 54
+   at hrms.Controllers.AuthenticationController.Login(LoginRequestDto dto) in C:\Internship\Codes\DontNet\Assignment-1\hrms\hrms\Controllers\AuthenticationContoller.cs:line 40
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.TaskOfIActionResultExecutor.Execute(ActionContext actionContext, IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeInnerFilterAsync>g__Awaited|13_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeNextExceptionFilterAsync>g__Awaited|26_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+2026-02-26 19:13:25 [Information] ["POST"] "/Authentication/login" - Request received
+2026-02-26 19:13:25 [Information] Fetched User by Email "ronak@gmail.com"
+2026-02-26 19:13:25 [Information] ["POST"] "/Authentication/login" - User logged in successfully
+2026-02-26 19:13:25 [Information] ["GET"] "/dashboard/daily-celebrations" - Request received
+2026-02-26 19:13:25 [Information] ["GET"] "/notification/count" - Request received
+2026-02-26 19:13:25 [Information] Unread notification count for UserId 7: 0
+2026-02-26 19:13:25 [Information] ["GET"] "/notification/count" - Fetched notification count 0 for user 7 successfully
+2026-02-26 19:13:25 [Information] ["GET"] "/dashboard/upcoming-bookings" - Request received
+2026-02-26 19:13:25 [Information] Found 2 daily celebrations for today
+2026-02-26 19:13:25 [Information] Retrieved 2 daily celebrations from repository
+2026-02-26 19:13:25 [Information] ["GET"] "/dashboard/daily-celebrations" - Fetched 2 daily celebrations successfully
+2026-02-26 19:13:25 [Information] Found 0 upcoming booking slots for today
+2026-02-26 19:13:25 [Information] Retrieved 0 upcoming booking slots from repository
+2026-02-26 19:13:25 [Information] ["GET"] "/dashboard/upcoming-bookings" - Fetched 0 upcoming booking slots successfully
+2026-02-26 19:13:26 [Information] ["GET"] "/job" - Request received
+2026-02-26 19:13:26 [Information] ["GET"] "/job" - Fetched all jobs successfully
+2026-02-26 19:13:29 [Information] ["GET"] "/job/review" - Request received
+2026-02-26 19:13:29 [Information] Fetched 1 jobs to review for ReviewerId 7, page 1
+2026-02-26 19:13:29 [Information] Retrieved jobs to review for reviewer with Id 7 from repository and cached with version 2
+2026-02-26 19:13:29 [Information] Total jobs to review retrieved for reviewer with Id 7: 1
+2026-02-26 19:13:29 [Information] ["GET"] "/job/review" - Fetched jobs to review for reviewer 7 successfully
+2026-02-26 19:13:32 [Information] ["GET"] "/notification/count" - Request received
+2026-02-26 19:13:32 [Information] ["GET"] "/job/review" - Request received
+2026-02-26 19:13:32 [Information] ["GET"] "/job/review" - Fetched jobs to review for reviewer 3 successfully
+2026-02-26 19:13:32 [Information] Unread notification count for UserId 3: 0
+2026-02-26 19:13:32 [Information] ["GET"] "/notification/count" - Fetched notification count 0 for user 3 successfully
+2026-02-26 19:13:33 [Information] ["GET"] "/job/hr/created" - Request received
+2026-02-26 19:13:33 [Information] ["GET"] "/job/hr/created" - Fetched jobs created by HR 3 successfully
+2026-02-26 19:13:33 [Information] ["GET"] "/notification/count" - Request received
+2026-02-26 19:13:33 [Information] ["GET"] "/job/review" - Request received
+2026-02-26 19:13:33 [Information] ["GET"] "/job/review" - Fetched jobs to review for reviewer 7 successfully
+2026-02-26 19:13:33 [Information] Unread notification count for UserId 7: 0
+2026-02-26 19:13:33 [Information] ["GET"] "/notification/count" - Fetched notification count 0 for user 7 successfully
+2026-02-26 19:13:34 [Information] ["GET"] "/notification/count" - Request received
+2026-02-26 19:13:34 [Information] ["GET"] "/job/hr/created" - Request received
+2026-02-26 19:13:34 [Information] ["GET"] "/job/hr/created" - Fetched jobs created by HR 3 successfully
+2026-02-26 19:13:34 [Information] Unread notification count for UserId 3: 0
+2026-02-26 19:13:34 [Information] ["GET"] "/notification/count" - Fetched notification count 0 for user 3 successfully
+2026-02-26 19:13:37 [Information] ["GET"] "/job/3/reviewers" - Request received
+2026-02-26 19:13:37 [Information] ["GET"] "/job/3/reviewers" - Fetched reviewers for job 3 successfully
+2026-02-26 19:13:38 [Information] ["GET"] "/notification/count" - Request received
+2026-02-26 19:13:38 [Information] ["GET"] "/job/review" - Request received
+2026-02-26 19:13:38 [Information] ["GET"] "/job/review" - Fetched jobs to review for reviewer 7 successfully
+2026-02-26 19:13:38 [Information] Unread notification count for UserId 7: 0
+2026-02-26 19:13:38 [Information] ["GET"] "/notification/count" - Fetched notification count 0 for user 7 successfully
+2026-02-26 19:13:42 [Information] ["GET"] "/notification/count" - Request received
+2026-02-26 19:13:42 [Information] ["GET"] "/job/3/reviewers" - Request received
+2026-02-26 19:13:42 [Information] ["GET"] "/job/3/reviewers" - Fetched reviewers for job 3 successfully
+2026-02-26 19:13:42 [Information] Unread notification count for UserId 3: 0
+2026-02-26 19:13:42 [Information] ["GET"] "/notification/count" - Fetched notification count 0 for user 3 successfully
+2026-02-26 19:13:43 [Information] ["GET"] "/user/user-hr" - Request received
+2026-02-26 19:13:43 [Information] Fetching users for HR, total: 4, page 1
+2026-02-26 19:13:43 [Information] ["GET"] "/user/user-hr" - Fetched HR users successfully
+2026-02-26 19:13:51 [Information] ["POST"] "/Authentication/login" - Request received
+2026-02-26 19:13:51 [Information] Fetched User by Email "kartik@gmail.com"
+2026-02-26 19:13:51 [Information] ["POST"] "/Authentication/login" - User logged in successfully
+2026-02-26 19:13:51 [Information] ["GET"] "/notification/count" - Request received
+2026-02-26 19:13:51 [Information] ["GET"] "/dashboard/daily-celebrations" - Request received
+2026-02-26 19:13:51 [Information] ["GET"] "/dashboard/daily-celebrations" - Fetched 2 daily celebrations successfully
+2026-02-26 19:13:51 [Information] ["GET"] "/dashboard/upcoming-bookings" - Request received
+2026-02-26 19:13:51 [Information] ["GET"] "/dashboard/upcoming-bookings" - Fetched 0 upcoming booking slots successfully
+2026-02-26 19:13:51 [Information] Unread notification count for UserId 5: 0
+2026-02-26 19:13:51 [Information] ["GET"] "/notification/count" - Fetched notification count 0 for user 5 successfully
+2026-02-26 19:13:56 [Information] ["GET"] "/job" - Request received
+2026-02-26 19:13:56 [Information] ["GET"] "/job" - Fetched all jobs successfully
+2026-02-26 19:13:58 [Information] ["GET"] "/job/review" - Request received
+2026-02-26 19:13:58 [Information] Fetched 1 jobs to review for ReviewerId 5, page 1
+2026-02-26 19:13:58 [Information] Retrieved jobs to review for reviewer with Id 5 from repository and cached with version 2
+2026-02-26 19:13:58 [Information] Total jobs to review retrieved for reviewer with Id 5: 1
+2026-02-26 19:13:58 [Information] ["GET"] "/job/review" - Fetched jobs to review for reviewer 5 successfully
+2026-02-26 19:13:59 [Information] ["GET"] "/notification/count" - Request received
+2026-02-26 19:13:59 [Information] ["GET"] "/user/user-hr" - Request received
+2026-02-26 19:13:59 [Information] Unread notification count for UserId 3: 0
+2026-02-26 19:13:59 [Information] ["GET"] "/notification/count" - Fetched notification count 0 for user 3 successfully
+2026-02-26 19:13:59 [Information] Fetching users for HR, total: 4, page 1
+2026-02-26 19:13:59 [Information] ["GET"] "/user/user-hr" - Fetched HR users successfully
+2026-02-26 19:14:01 [Information] ["GET"] "/notification/count" - Request received
+2026-02-26 19:14:01 [Information] ["GET"] "/user/user-hr" - Request received
+2026-02-26 19:14:01 [Information] Fetching users for HR, total: 4, page 1
+2026-02-26 19:14:01 [Information] Unread notification count for UserId 3: 0
+2026-02-26 19:14:01 [Information] ["GET"] "/notification/count" - Fetched notification count 0 for user 3 successfully
+2026-02-26 19:14:01 [Information] ["GET"] "/user/user-hr" - Fetched HR users successfully
+2026-02-26 19:14:02 [Information] ["GET"] "/job/review" - Request received
+2026-02-26 19:14:02 [Information] ["GET"] "/job/review" - Fetched jobs to review for reviewer 5 successfully
+2026-02-26 19:14:02 [Information] ["GET"] "/notification/count" - Request received
+2026-02-26 19:14:02 [Information] Unread notification count for UserId 5: 0
+2026-02-26 19:14:02 [Information] ["GET"] "/notification/count" - Fetched notification count 0 for user 5 successfully
+2026-02-26 19:14:02 [Information] ["GET"] "/job" - Request received
+2026-02-26 19:14:02 [Information] ["GET"] "/job" - Fetched all jobs successfully
+2026-02-26 19:14:05 [Information] ["GET"] "/dashboard/upcoming-bookings" - Request received
+2026-02-26 19:14:05 [Information] ["GET"] "/dashboard/daily-celebrations" - Request received
+2026-02-26 19:14:05 [Information] ["GET"] "/dashboard/upcoming-bookings" - Fetched 0 upcoming booking slots successfully
+2026-02-26 19:14:05 [Information] ["GET"] "/dashboard/daily-celebrations" - Fetched 2 daily celebrations successfully
+2026-02-26 19:14:06 [Information] ["GET"] "/job" - Request received
+2026-02-26 19:14:06 [Information] ["GET"] "/job" - Fetched all jobs successfully
+2026-02-26 19:14:07 [Information] ["GET"] "/job/review" - Request received
+2026-02-26 19:14:07 [Information] ["GET"] "/job/review" - Fetched jobs to review for reviewer 5 successfully
+2026-02-26 19:14:10 [Information] ["GET"] "/job" - Request received
+2026-02-26 19:14:10 [Information] ["GET"] "/job" - Fetched all jobs successfully
+2026-02-26 19:14:14 [Information] ["GET"] "/notification/count" - Request received
+2026-02-26 19:14:14 [Information] ["GET"] "/user/user-hr" - Request received
+2026-02-26 19:14:14 [Information] Fetching users for HR, total: 4, page 1
+2026-02-26 19:14:14 [Information] Unread notification count for UserId 3: 0
+2026-02-26 19:14:14 [Information] ["GET"] "/notification/count" - Fetched notification count 0 for user 3 successfully
+2026-02-26 19:14:14 [Information] ["GET"] "/user/user-hr" - Fetched HR users successfully
+2026-02-26 19:14:16 [Information] ["GET"] "/notification/count" - Request received
+2026-02-26 19:14:16 [Information] Unread notification count for UserId 5: 0
+2026-02-26 19:14:16 [Information] ["GET"] "/notification/count" - Fetched notification count 0 for user 5 successfully
+2026-02-26 19:14:16 [Information] ["GET"] "/job" - Request received
+2026-02-26 19:14:16 [Information] ["GET"] "/job" - Fetched all jobs successfully
+2026-02-26 19:14:17 [Information] ["GET"] "/notification/count" - Request received
+2026-02-26 19:14:17 [Information] ["GET"] "/user/user-hr" - Request received
+2026-02-26 19:14:17 [Information] Fetching users for HR, total: 4, page 1
+2026-02-26 19:14:17 [Information] Unread notification count for UserId 3: 0
+2026-02-26 19:14:17 [Information] ["GET"] "/notification/count" - Fetched notification count 0 for user 3 successfully
+2026-02-26 19:14:17 [Information] ["GET"] "/user/user-hr" - Fetched HR users successfully
+2026-02-26 19:14:18 [Information] ["GET"] "/job/hr/created" - Request received
+2026-02-26 19:14:18 [Information] ["GET"] "/job/hr/created" - Fetched jobs created by HR 3 successfully
+2026-02-26 19:14:20 [Information] ["GET"] "/job/1/reviewers" - Request received
+2026-02-26 19:14:20 [Information] Fetched Job with Id 1
+2026-02-26 19:14:20 [Information] Retrieved job detail with reviewers for job with Id 1 from repository and cached with version 0
+2026-02-26 19:14:20 [Information] ["GET"] "/job/1/reviewers" - Fetched reviewers for job 1 successfully
+2026-02-26 19:14:27 [Information] ["GET"] "/notification/count" - Request received
+2026-02-26 19:14:27 [Information] ["GET"] "/job" - Request received
+2026-02-26 19:14:27 [Information] ["GET"] "/job" - Fetched all jobs successfully
+2026-02-26 19:14:27 [Information] Unread notification count for UserId 5: 0
+2026-02-26 19:14:27 [Information] ["GET"] "/notification/count" - Fetched notification count 0 for user 5 successfully
+2026-02-26 19:14:45 [Information] ["GET"] "/notification/count" - Request received
+2026-02-26 19:14:45 [Information] ["GET"] "/job/1/reviewers" - Request received
+2026-02-26 19:14:45 [Information] ["GET"] "/job/1/reviewers" - Fetched reviewers for job 1 successfully
+2026-02-26 19:14:45 [Information] Unread notification count for UserId 3: 0
+2026-02-26 19:14:45 [Information] ["GET"] "/notification/count" - Fetched notification count 0 for user 3 successfully
+2026-02-26 19:14:48 [Information] ["GET"] "/notification" - Request received
+2026-02-26 19:14:48 [Information] Fetching notifications for UserId 3, total: 11, page 1
+2026-02-26 19:14:48 [Information] ["GET"] "/notification" - Fetched notifications for user 3 successfully
+2026-02-26 19:14:51 [Information] ["GET"] "/notification/count" - Request received
+2026-02-26 19:14:51 [Information] ["GET"] "/job" - Request received
+2026-02-26 19:14:51 [Information] ["GET"] "/job" - Fetched all jobs successfully
+2026-02-26 19:14:51 [Information] Unread notification count for UserId 5: 0
+2026-02-26 19:14:51 [Information] ["GET"] "/notification/count" - Fetched notification count 0 for user 5 successfully
+2026-02-26 19:14:51 [Information] ["GET"] "/notification/count" - Request received
+2026-02-26 19:14:51 [Information] ["GET"] "/notification" - Request received
+2026-02-26 19:14:51 [Information] Unread notification count for UserId 3: 0
+2026-02-26 19:14:51 [Information] Fetching notifications for UserId 3, total: 11, page 1
+2026-02-26 19:14:51 [Information] ["GET"] "/notification/count" - Fetched notification count 0 for user 3 successfully
+2026-02-26 19:14:51 [Information] ["GET"] "/notification" - Fetched notifications for user 3 successfully
+2026-02-26 19:14:53 [Information] ["GET"] "/notification" - Request received
+2026-02-26 19:14:53 [Information] Fetching notifications for UserId 3, total: 11, page 2
+2026-02-26 19:14:53 [Information] ["GET"] "/notification" - Fetched notifications for user 3 successfully
+2026-02-26 19:14:55 [Information] ["GET"] "/notification" - Request received
+2026-02-26 19:14:55 [Information] Fetching notifications for UserId 3, total: 11, page 1
+2026-02-26 19:14:55 [Information] ["GET"] "/notification" - Fetched notifications for user 3 successfully
+2026-02-26 19:14:57 [Information] ["GET"] "/job" - Request received
+2026-02-26 19:14:57 [Information] ["GET"] "/job" - Fetched all jobs successfully
+2026-02-26 19:14:57 [Information] ["GET"] "/notification/count" - Request received
+2026-02-26 19:14:57 [Information] Unread notification count for UserId 5: 0
+2026-02-26 19:14:57 [Information] ["GET"] "/notification/count" - Fetched notification count 0 for user 5 successfully
+2026-02-26 19:14:59 [Information] ["GET"] "/notification" - Request received
+2026-02-26 19:14:59 [Information] Fetching notifications for UserId 5, total: 1, page 1
+2026-02-26 19:14:59 [Information] ["GET"] "/notification" - Fetched notifications for user 5 successfully
+2026-02-26 19:15:00 [Information] ["GET"] "/notification/count" - Request received
+2026-02-26 19:15:00 [Information] ["GET"] "/notification" - Request received
+2026-02-26 19:15:00 [Information] Fetching notifications for UserId 3, total: 11, page 1
+2026-02-26 19:15:00 [Information] Unread notification count for UserId 3: 0
+2026-02-26 19:15:00 [Information] ["GET"] "/notification/count" - Fetched notification count 0 for user 3 successfully
+2026-02-26 19:15:00 [Information] ["GET"] "/notification" - Fetched notifications for user 3 successfully
+2026-02-26 19:15:03 [Information] ["GET"] "/job/hr/created" - Request received
+2026-02-26 19:15:03 [Information] ["GET"] "/job/hr/created" - Fetched jobs created by HR 3 successfully
+2026-02-26 19:15:06 [Information] ["GET"] "/post/feed" - Request received
+2026-02-26 19:15:06 [Information] Fetched 5 feed posts, page 1
+2026-02-26 19:15:06 [Information] ["GET"] "/post/feed" - Fetched feed for user 3 successfully
+2026-02-26 19:15:06 [Information] ["GET"] "/game" - Request received
+2026-02-26 19:15:06 [Information] ["GET"] "/game" - Fetched 3 games successfully
+2026-02-26 19:15:09 [Information] ["GET"] "/game/1/toggle-interest" - Request received
+2026-02-26 19:15:09 [Information] ["GET"] "/game/1/slots" - Request received
+2026-02-26 19:15:09 [Information] ["GET"] "/game/1/toggle-interest" - Checked interest in game 1 for user 3 successfully
+2026-02-26 19:15:09 [Information] ["GET"] "/game/1/slots" - Fetched 52 slots for game 1 successfully
+2026-02-26 19:15:17 [Information] ["GET"] "/game/1/booking/available-players" - Request received
+2026-02-26 19:15:17 [Information] ["GET"] "/game/1/booking/available-players" - Fetched available players for game 1 successfully
+2026-02-26 19:15:20 [Information] ["POST"] "/game/1/slots/178" - Request received
+2026-02-26 19:15:21 [Information] Fetched GameSlot 178 for GameId 1
+2026-02-26 19:15:21 [Information] Fetched Game with Id 1
+2026-02-26 19:15:21 [Information] Fetched GameSlot 178 for GameId 1
+2026-02-26 19:15:21 [Information] Booked GameSlot 178 for GameId 1 by UserId 3
+2026-02-26 19:15:21 [Information] ["POST"] "/game/1/slots/178" - Slot 178 of game 1 booked by user 3 successfully
+2026-02-26 19:15:21 [Information] ["GET"] "/game/1/slots" - Request received
+2026-02-26 19:15:21 [Information] ["GET"] "/game/1/slots" - Fetched 52 slots for game 1 successfully
+2026-02-26 19:15:24 [Information] ["GET"] "/game/1/slots/178/waitlist" - Request received
+2026-02-26 19:15:24 [Information] ["GET"] "/game/1/slots/178/waitlist" - Fetched 1 waitlist entries for slot 178 of game 1 successfully
+2026-02-26 19:15:28 [Information] ["GET"] "/game/1/slots" - Request received
+2026-02-26 19:15:28 [Information] ["GET"] "/game/1/toggle-interest" - Request received
+2026-02-26 19:15:28 [Information] ["GET"] "/game/1/toggle-interest" - Checked interest in game 1 for user 3 successfully
+2026-02-26 19:15:28 [Information] ["GET"] "/game/1/slots" - Fetched 52 slots for game 1 successfully
+2026-02-26 19:15:29 [Information] ["GET"] "/notification/count" - Request received
+2026-02-26 19:15:29 [Information] ["GET"] "/notification" - Request received
+2026-02-26 19:15:29 [Information] Fetching notifications for UserId 5, total: 1, page 1
+2026-02-26 19:15:29 [Information] Unread notification count for UserId 5: 0
+2026-02-26 19:15:29 [Information] ["GET"] "/notification/count" - Fetched notification count 0 for user 5 successfully
+2026-02-26 19:15:29 [Information] ["GET"] "/notification" - Fetched notifications for user 5 successfully
+2026-02-26 19:15:30 [Information] ["GET"] "/game/1/slots" - Request received
+2026-02-26 19:15:30 [Information] ["GET"] "/game/1/toggle-interest" - Request received
+2026-02-26 19:15:30 [Information] ["GET"] "/game/1/toggle-interest" - Checked interest in game 1 for user 3 successfully
+2026-02-26 19:15:30 [Information] ["GET"] "/game/1/slots" - Fetched 52 slots for game 1 successfully
+2026-02-26 19:15:30 [Information] ["GET"] "/notification/count" - Request received
+2026-02-26 19:15:30 [Information] Unread notification count for UserId 3: 0
+2026-02-26 19:15:30 [Information] ["GET"] "/notification/count" - Fetched notification count 0 for user 3 successfully
+2026-02-26 19:15:32 [Information] ["GET"] "/job/hr/created" - Request received
+2026-02-26 19:15:32 [Information] ["GET"] "/job/hr/created" - Fetched jobs created by HR 3 successfully
+2026-02-26 19:15:47 [Information] ["GET"] "/department" - Request received
+2026-02-26 19:15:47 [Information] Fetched 7 departments
+2026-02-26 19:15:47 [Information] Retrieved 7 departments from repository and cached with version 1
+2026-02-26 19:15:47 [Information] ["GET"] "/department" - Fetched all departments successfully
+2026-02-26 19:15:51 [Information] ["GET"] "/notification/count" - Request received
+2026-02-26 19:15:51 [Information] ["GET"] "/notification" - Request received
+2026-02-26 19:15:51 [Information] Unread notification count for UserId 5: 0
+2026-02-26 19:15:51 [Information] ["GET"] "/notification/count" - Fetched notification count 0 for user 5 successfully
+2026-02-26 19:15:51 [Information] Fetching notifications for UserId 5, total: 1, page 1
+2026-02-26 19:15:51 [Information] ["GET"] "/notification" - Fetched notifications for user 5 successfully
+2026-02-26 19:15:52 [Information] ["GET"] "/notification/count" - Request received
+2026-02-26 19:15:52 [Information] ["GET"] "/department" - Request received
+2026-02-26 19:15:52 [Information] ["GET"] "/department" - Fetched all departments successfully
+2026-02-26 19:15:52 [Information] Unread notification count for UserId 3: 0
+2026-02-26 19:15:52 [Information] ["GET"] "/notification/count" - Fetched notification count 0 for user 3 successfully
+2026-02-26 19:15:53 [Information] ["GET"] "/notification/count" - Request received
+2026-02-26 19:15:53 [Information] ["GET"] "/notification" - Request received
+2026-02-26 19:15:53 [Information] Fetching notifications for UserId 5, total: 1, page 1
+2026-02-26 19:15:53 [Information] Unread notification count for UserId 5: 0
+2026-02-26 19:15:53 [Information] ["GET"] "/notification/count" - Fetched notification count 0 for user 5 successfully
+2026-02-26 19:15:53 [Information] ["GET"] "/notification" - Fetched notifications for user 5 successfully
+2026-02-26 19:15:59 [Information] ["POST"] "/Authentication/login" - Request received
+2026-02-26 19:15:59 [Information] Fetched User by Email "manav@gmail.com"
+2026-02-26 19:15:59 [Information] ["POST"] "/Authentication/login" - User logged in successfully
+2026-02-26 19:15:59 [Information] ["GET"] "/notification/count" - Request received
+2026-02-26 19:15:59 [Information] ["GET"] "/dashboard/daily-celebrations" - Request received
+2026-02-26 19:15:59 [Information] ["GET"] "/dashboard/daily-celebrations" - Fetched 2 daily celebrations successfully
+2026-02-26 19:15:59 [Information] ["GET"] "/dashboard/upcoming-bookings" - Request received
+2026-02-26 19:15:59 [Information] ["GET"] "/dashboard/upcoming-bookings" - Fetched 0 upcoming booking slots successfully
+2026-02-26 19:15:59 [Information] Unread notification count for UserId 6: 0
+2026-02-26 19:15:59 [Information] ["GET"] "/notification/count" - Fetched notification count 0 for user 6 successfully
+2026-02-26 19:16:13 [Information] ["GET"] "/dashboard/daily-celebrations" - Request received
+2026-02-26 19:16:13 [Information] ["GET"] "/dashboard/daily-celebrations" - Fetched 2 daily celebrations successfully
+2026-02-26 19:16:13 [Information] ["GET"] "/notification/count" - Request received
+2026-02-26 19:16:13 [Information] ["GET"] "/dashboard/upcoming-bookings" - Request received
+2026-02-26 19:16:13 [Information] ["GET"] "/dashboard/upcoming-bookings" - Fetched 0 upcoming booking slots successfully
+2026-02-26 19:16:13 [Information] Unread notification count for UserId 6: 0
+2026-02-26 19:16:13 [Information] ["GET"] "/notification/count" - Fetched notification count 0 for user 6 successfully
+2026-02-26 19:16:15 [Information] ["GET"] "/notification/count" - Request received
+2026-02-26 19:16:15 [Information] Unread notification count for UserId 3: 1
+2026-02-26 19:16:15 [Information] ["GET"] "/notification/count" - Fetched notification count 1 for user 3 successfully
+2026-02-26 19:16:15 [Information] ["GET"] "/department" - Request received
+2026-02-26 19:16:15 [Information] ["GET"] "/department" - Fetched all departments successfully
+2026-02-26 19:16:16 [Information] ["GET"] "/dashboard/daily-celebrations" - Request received
+2026-02-26 19:16:16 [Information] ["GET"] "/notification/count" - Request received
+2026-02-26 19:16:16 [Information] ["GET"] "/dashboard/daily-celebrations" - Fetched 2 daily celebrations successfully
+2026-02-26 19:16:16 [Information] ["GET"] "/dashboard/upcoming-bookings" - Request received
+2026-02-26 19:16:16 [Information] ["GET"] "/dashboard/upcoming-bookings" - Fetched 0 upcoming booking slots successfully
+2026-02-26 19:16:16 [Information] Unread notification count for UserId 6: 0
+2026-02-26 19:16:16 [Information] ["GET"] "/notification/count" - Fetched notification count 0 for user 6 successfully
+2026-02-26 19:16:18 [Information] ["GET"] "/post/feed" - Request received
+2026-02-26 19:16:18 [Information] Fetched 6 feed posts, page 1
+2026-02-26 19:16:18 [Information] ["GET"] "/post/feed" - Fetched feed for user 6 successfully
+2026-02-26 19:16:19 [Information] ["GET"] "/game" - Request received
+2026-02-26 19:16:19 [Information] ["GET"] "/game" - Fetched 3 games successfully
+2026-02-26 19:16:20 [Information] ["GET"] "/notification" - Request received
+2026-02-26 19:16:20 [Information] Fetching notifications for UserId 6, total: 7, page 1
+2026-02-26 19:16:20 [Information] ["GET"] "/notification" - Fetched notifications for user 6 successfully
+2026-02-26 19:16:25 [Information] ["GET"] "/notification/count" - Request received
+2026-02-26 19:16:25 [Information] ["GET"] "/department" - Request received
+2026-02-26 19:16:25 [Information] ["GET"] "/department" - Fetched all departments successfully
+2026-02-26 19:16:25 [Information] Unread notification count for UserId 3: 1
+2026-02-26 19:16:25 [Information] ["GET"] "/notification/count" - Fetched notification count 1 for user 3 successfully
+2026-02-26 19:16:27 [Information] ["GET"] "/notification" - Request received
+2026-02-26 19:16:27 [Information] Fetching notifications for UserId 3, total: 12, page 1
+2026-02-26 19:16:27 [Information] ["GET"] "/notification" - Fetched notifications for user 3 successfully
+2026-02-26 19:16:29 [Information] ["GET"] "/notification" - Request received
+2026-02-26 19:16:29 [Information] Fetching notifications for UserId 3, total: 12, page 2
+2026-02-26 19:16:29 [Information] ["GET"] "/notification" - Fetched notifications for user 3 successfully
+2026-02-26 19:16:33 [Information] ["GET"] "/notification" - Request received
+2026-02-26 19:16:33 [Information] Fetching notifications for UserId 3, total: 12, page 1
+2026-02-26 19:16:33 [Information] ["GET"] "/notification" - Fetched notifications for user 3 successfully
+2026-02-26 19:16:35 [Information] ["GET"] "/notification" - Request received
+2026-02-26 19:16:35 [Information] Fetching notifications for UserId 3, total: 12, page 2
+2026-02-26 19:16:35 [Information] ["GET"] "/notification" - Fetched notifications for user 3 successfully
+2026-02-26 19:16:39 [Information] ["GET"] "/notification/count" - Request received
+2026-02-26 19:16:39 [Information] ["GET"] "/notification" - Request received
+2026-02-26 19:16:39 [Information] Fetching notifications for UserId 6, total: 8, page 1
+2026-02-26 19:16:39 [Information] Unread notification count for UserId 6: 1
+2026-02-26 19:16:39 [Information] ["GET"] "/notification/count" - Fetched notification count 1 for user 6 successfully
+2026-02-26 19:16:39 [Information] ["GET"] "/notification" - Fetched notifications for user 6 successfully
+2026-02-26 19:16:44 [Information] ["GET"] "/notification/count" - Request received
+2026-02-26 19:16:44 [Information] ["GET"] "/notification" - Request received
+2026-02-26 19:16:44 [Information] Unread notification count for UserId 3: 0
+2026-02-26 19:16:44 [Information] ["GET"] "/notification/count" - Fetched notification count 0 for user 3 successfully
+2026-02-26 19:16:44 [Information] Fetching notifications for UserId 3, total: 12, page 2
+2026-02-26 19:16:44 [Information] ["GET"] "/notification" - Fetched notifications for user 3 successfully
+2026-02-26 19:17:23 [Information] Scheduler "QuartzScheduler_$_NON_CLUSTERED" shutting down.
+2026-02-26 19:17:23 [Information] Scheduler QuartzScheduler_$_NON_CLUSTERED paused.
+2026-02-26 19:17:23 [Information] Scheduler QuartzScheduler_$_NON_CLUSTERED Shutdown complete.
+2026-02-26 19:17:35 [Information] Initialized Scheduler Signaller of type: Quartz.Core.SchedulerSignalerImpl
+2026-02-26 19:17:35 [Information] Quartz Scheduler created
+2026-02-26 19:17:35 [Information] JobFactory set to: Quartz.Simpl.MicrosoftDependencyInjectionJobFactory
+2026-02-26 19:17:35 [Information] RAMJobStore initialized.
+2026-02-26 19:17:35 [Information] Quartz Scheduler 3.15.1.0 - 'QuartzScheduler' with instanceId 'NON_CLUSTERED' initialized
+2026-02-26 19:17:35 [Information] Using thread pool 'Quartz.Simpl.DefaultThreadPool', size: 10
+2026-02-26 19:17:35 [Information] Using job store 'Quartz.Simpl.RAMJobStore', supports persistence: False, clustered: False
+2026-02-26 19:17:35 [Information] Adding 1 jobs, 1 triggers.
+2026-02-26 19:17:35 [Information] Adding job: DEFAULT.WeeklyJob
+2026-02-26 19:17:35 [Information] Scheduler QuartzScheduler_$_NON_CLUSTERED started.
+2026-02-26 19:17:36 [Information] Starting Daily Celebration Job at 02/26/2026 19:17:36
+2026-02-26 19:17:36 [Information] Found 1 birthday users for today
+2026-02-26 19:17:36 [Information] Found 1 work anniversary users for today
+2026-02-26 19:17:36 [Information] Fetched system user with Id 4
+2026-02-26 19:17:36 [Information] Celebration exists check for UserId 9, EventType Birthday: True
+2026-02-26 19:17:36 [Information] Skipping birthday celebration for user 9 because it already exists
+2026-02-26 19:17:36 [Information] Celebration exists check for UserId 9, EventType WorkAnniversary: True
+2026-02-26 19:17:36 [Information] Skipping anniversary celebration for user 9 because it already exists
+2026-02-26 19:17:36 [Information] Cache Updated for Daily Celebrations at 02/26/2026 19:17:36
+2026-02-26 19:17:49 [Information] ["GET"] "/notification/count" - Request received
+2026-02-26 19:17:49 [Information] ["GET"] "/notification" - Request received
+2026-02-26 19:17:49 [Information] Unread notification count for UserId 3: 0
+2026-02-26 19:17:49 [Information] ["GET"] "/notification/count" - Fetched notification count 0 for user 3 successfully
+2026-02-26 19:17:49 [Information] Fetching notifications for UserId 3, total: 12, page 2
+2026-02-26 19:17:49 [Information] ["GET"] "/notification" - Fetched notifications for user 3 successfully
+2026-02-26 19:17:50 [Information] ["GET"] "/notification" - Request received
+2026-02-26 19:17:50 [Information] Fetching notifications for UserId 3, total: 12, page 1
+2026-02-26 19:17:50 [Information] ["GET"] "/notification" - Fetched notifications for user 3 successfully
+2026-02-26 19:18:06 [Information] ["GET"] "/notification/count" - Request received
+2026-02-26 19:18:06 [Information] ["GET"] "/notification" - Request received
+2026-02-26 19:18:06 [Information] Fetching notifications for UserId 3, total: 12, page 1
+2026-02-26 19:18:06 [Information] Unread notification count for UserId 3: 0
+2026-02-26 19:18:06 [Information] ["GET"] "/notification/count" - Fetched notification count 0 for user 3 successfully
+2026-02-26 19:18:06 [Information] ["GET"] "/notification" - Fetched notifications for user 3 successfully
+2026-02-26 19:18:11 [Information] ["GET"] "/user/user-hr" - Request received
+2026-02-26 19:18:11 [Information] Fetching users for HR, total: 4, page 1
+2026-02-26 19:18:11 [Information] ["GET"] "/user/user-hr" - Fetched HR users successfully
+2026-02-26 19:18:13 [Information] ["GET"] "/post/feed" - Request received
+2026-02-26 19:18:13 [Information] Fetched 5 feed posts, page 1
+2026-02-26 19:18:13 [Information] ["GET"] "/post/feed" - Fetched feed for user 3 successfully
+2026-02-26 19:23:41 [Information] ["GET"] "/notification/count" - Request received
+2026-02-26 19:23:41 [Information] ["GET"] "/notification" - Request received
+2026-02-26 19:23:41 [Information] Unread notification count for UserId 6: 0
+2026-02-26 19:23:41 [Information] Fetching notifications for UserId 6, total: 8, page 1
+2026-02-26 19:23:41 [Information] ["GET"] "/notification/count" - Fetched notification count 0 for user 6 successfully
+2026-02-26 19:23:41 [Information] ["GET"] "/notification" - Fetched notifications for user 6 successfully
+2026-02-26 19:23:42 [Information] ["GET"] "/notification/count" - Request received
+2026-02-26 19:23:42 [Information] ["GET"] "/notification" - Request received
+2026-02-26 19:23:42 [Information] Fetching notifications for UserId 6, total: 8, page 1
+2026-02-26 19:23:42 [Information] Unread notification count for UserId 6: 0
+2026-02-26 19:23:42 [Information] ["GET"] "/notification/count" - Fetched notification count 0 for user 6 successfully
+2026-02-26 19:23:42 [Information] ["GET"] "/notification" - Fetched notifications for user 6 successfully
+2026-02-26 19:26:18 [Information] ["GET"] "/notification/count" - Request received
+2026-02-26 19:26:18 [Information] ["GET"] "/notification" - Request received
+2026-02-26 19:26:18 [Information] Fetching notifications for UserId 6, total: 8, page 1
+2026-02-26 19:26:18 [Information] Unread notification count for UserId 6: 0
+2026-02-26 19:26:18 [Information] ["GET"] "/notification/count" - Fetched notification count 0 for user 6 successfully
+2026-02-26 19:26:18 [Information] ["GET"] "/notification" - Fetched notifications for user 6 successfully
+2026-02-26 19:28:46 [Information] ["GET"] "/notification/count" - Request received
+2026-02-26 19:28:46 [Information] ["GET"] "/notification" - Request received
+2026-02-26 19:28:46 [Information] Fetching notifications for UserId 6, total: 8, page 1
+2026-02-26 19:28:46 [Information] Unread notification count for UserId 6: 0
+2026-02-26 19:28:46 [Information] ["GET"] "/notification/count" - Fetched notification count 0 for user 6 successfully
+2026-02-26 19:28:46 [Information] ["GET"] "/notification" - Fetched notifications for user 6 successfully
+2026-02-26 19:29:00 [Information] ["GET"] "/notification/count" - Request received
+2026-02-26 19:29:00 [Information] ["GET"] "/notification" - Request received
+2026-02-26 19:29:00 [Information] Fetching notifications for UserId 6, total: 8, page 1
+2026-02-26 19:29:00 [Information] ["GET"] "/notification" - Fetched notifications for user 6 successfully
+2026-02-26 19:29:00 [Information] Unread notification count for UserId 6: 0
+2026-02-26 19:29:00 [Information] ["GET"] "/notification/count" - Fetched notification count 0 for user 6 successfully
+2026-02-26 19:29:25 [Information] ["GET"] "/notification/count" - Request received
+2026-02-26 19:29:25 [Information] Unread notification count for UserId 3: 0
+2026-02-26 19:29:25 [Information] ["GET"] "/notification/count" - Fetched notification count 0 for user 3 successfully
+2026-02-26 19:29:25 [Information] ["GET"] "/post/feed" - Request received
+2026-02-26 19:29:25 [Information] Fetched 5 feed posts, page 1
+2026-02-26 19:29:25 [Information] ["GET"] "/post/feed" - Fetched feed for user 3 successfully
+2026-02-26 19:29:31 [Information] ["GET"] "/job/hr/created" - Request received
+2026-02-26 19:29:31 [Information] Retrieved jobs created by HR with Id 3 from repository and cached with version 1
+2026-02-26 19:29:31 [Information] Total jobs retrieved for HR with Id 3: 3
+2026-02-26 19:29:31 [Information] ["GET"] "/job/hr/created" - Fetched jobs created by HR 3 successfully
+2026-02-26 19:29:37 [Information] Scheduler "QuartzScheduler_$_NON_CLUSTERED" shutting down.
+2026-02-26 19:29:37 [Information] Scheduler QuartzScheduler_$_NON_CLUSTERED paused.
+2026-02-26 19:29:37 [Information] Scheduler QuartzScheduler_$_NON_CLUSTERED Shutdown complete.
+2026-02-26 19:29:49 [Information] Initialized Scheduler Signaller of type: Quartz.Core.SchedulerSignalerImpl
+2026-02-26 19:29:49 [Information] Quartz Scheduler created
+2026-02-26 19:29:49 [Information] JobFactory set to: Quartz.Simpl.MicrosoftDependencyInjectionJobFactory
+2026-02-26 19:29:49 [Information] RAMJobStore initialized.
+2026-02-26 19:29:49 [Information] Quartz Scheduler 3.15.1.0 - 'QuartzScheduler' with instanceId 'NON_CLUSTERED' initialized
+2026-02-26 19:29:49 [Information] Using thread pool 'Quartz.Simpl.DefaultThreadPool', size: 10
+2026-02-26 19:29:49 [Information] Using job store 'Quartz.Simpl.RAMJobStore', supports persistence: False, clustered: False
+2026-02-26 19:29:49 [Information] Adding 1 jobs, 1 triggers.
+2026-02-26 19:29:49 [Information] Adding job: DEFAULT.WeeklyJob
+2026-02-26 19:29:50 [Information] Scheduler QuartzScheduler_$_NON_CLUSTERED started.
+2026-02-26 19:29:50 [Information] ["GET"] "/notification/count" - Request received
+2026-02-26 19:29:50 [Information] ["GET"] "/job/hr/created" - Request received
+2026-02-26 19:29:50 [Information] Unread notification count for UserId 3: 0
+2026-02-26 19:29:50 [Information] ["GET"] "/notification/count" - Fetched notification count 0 for user 3 successfully
+2026-02-26 19:29:50 [Information] Starting Daily Celebration Job at 02/26/2026 19:29:50
+2026-02-26 19:29:50 [Information] Found 1 birthday users for today
+2026-02-26 19:29:50 [Information] Found 1 work anniversary users for today
+2026-02-26 19:29:50 [Information] Fetched system user with Id 4
+2026-02-26 19:29:50 [Information] Celebration exists check for UserId 9, EventType Birthday: True
+2026-02-26 19:29:50 [Information] Skipping birthday celebration for user 9 because it already exists
+2026-02-26 19:29:50 [Information] Celebration exists check for UserId 9, EventType WorkAnniversary: True
+2026-02-26 19:29:50 [Information] Skipping anniversary celebration for user 9 because it already exists
+2026-02-26 19:29:50 [Information] Cache Updated for Daily Celebrations at 02/26/2026 19:29:50
+2026-02-26 19:29:50 [Information] Retrieved jobs created by HR with Id 3 from repository and cached with version 1
+2026-02-26 19:29:50 [Information] Total jobs retrieved for HR with Id 3: 3
+2026-02-26 19:29:50 [Information] ["GET"] "/job/hr/created" - Fetched jobs created by HR 3 successfully
+2026-02-26 19:29:54 [Information] ["GET"] "/travel/all-expense" - Request received
+2026-02-26 19:29:55 [Information] Fetched 5 expenses for UserId 3, page 1
+2026-02-26 19:29:55 [Information] ["GET"] "/travel/all-expense" - Fetched all expenses for HR 3 successfully
+2026-02-26 19:30:04 [Information] ["GET"] "/user/search/all" - Request received
+2026-02-26 19:30:04 [Information] Fetching all users, total: 9, page 1
+2026-02-26 19:30:04 [Information] ["GET"] "/user/search/all" - Fetched all users successfully
+2026-02-26 19:30:08 [Information] ["GET"] "/user/9/organization-chart" - Request received
+2026-02-26 19:30:08 [Information] ["GET"] "/user/9/organization-chart" - Fetched organization chart for user 9 successfully
+2026-02-26 19:30:12 [Information] ["GET"] "/user/search/all" - Request received
+2026-02-26 19:30:12 [Information] Fetching all users, total: 9, page 1
+2026-02-26 19:30:12 [Information] ["GET"] "/user/search/all" - Fetched all users successfully
+2026-02-26 19:30:13 [Information] ["GET"] "/user/9" - Request received
+2026-02-26 19:30:13 [Information] ["GET"] "/user/9" - Fetched profile for user 9 successfully
+2026-02-26 19:30:16 [Information] ["GET"] "/user/search/all" - Request received
+2026-02-26 19:30:16 [Information] Fetching all users, total: 9, page 1
+2026-02-26 19:30:16 [Information] ["GET"] "/user/search/all" - Fetched all users successfully
+2026-02-26 19:30:17 [Information] ["GET"] "/notification" - Request received
+2026-02-26 19:30:17 [Information] Fetching notifications for UserId 3, total: 12, page 1
+2026-02-26 19:30:17 [Information] ["GET"] "/notification" - Fetched notifications for user 3 successfully
+2026-02-26 19:30:26 [Information] ["GET"] "/notification" - Request received
+2026-02-26 19:30:26 [Information] Fetching notifications for UserId 3, total: 12, page 2
+2026-02-26 19:30:26 [Information] ["GET"] "/notification" - Fetched notifications for user 3 successfully
+2026-02-26 19:30:30 [Information] ["GET"] "/notification" - Request received
+2026-02-26 19:30:30 [Information] Fetching notifications for UserId 3, total: 12, page 1
+2026-02-26 19:30:30 [Information] ["GET"] "/notification" - Fetched notifications for user 3 successfully
+2026-02-26 19:30:35 [Information] Scheduler "QuartzScheduler_$_NON_CLUSTERED" shutting down.
+2026-02-26 19:30:35 [Information] Scheduler QuartzScheduler_$_NON_CLUSTERED paused.
+2026-02-26 19:30:35 [Information] Scheduler QuartzScheduler_$_NON_CLUSTERED Shutdown complete.

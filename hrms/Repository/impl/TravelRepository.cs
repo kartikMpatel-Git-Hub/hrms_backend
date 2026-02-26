@@ -10,16 +10,19 @@ namespace hrms.Repository.impl
     public class TravelRepository : ITravelRepository
     {
         private readonly ApplicationDbContext _db;
+        private readonly ILogger<TravelRepository> _logger;
 
-        public TravelRepository(ApplicationDbContext db)
+        public TravelRepository(ApplicationDbContext db, ILogger<TravelRepository> logger)
         {
             _db = db;
+            _logger = logger;
         }
 
         public async Task<TravelDocument> AddTravelDocument(TravelDocument document)
         {
             var AddedEntity = await _db.TravelDocuments.AddAsync(document);
             await _db.SaveChangesAsync();
+            _logger.LogInformation("Added TravelDocument with Id {Id} for TravelId {TravelId}", AddedEntity.Entity.Id, document.TravelId);
             return AddedEntity.Entity;
         }
 
@@ -38,6 +41,7 @@ namespace hrms.Repository.impl
 
             await _db.Notifications.AddAsync(notification);
             await _db.SaveChangesAsync();
+            _logger.LogInformation("Added Traveler with Id {Id} to TravelId {TravelId}", AddedEntity.Entity.Id, traveler.TravelId);
             return AddedEntity.Entity;
         }
 
@@ -46,6 +50,7 @@ namespace hrms.Repository.impl
             var AddedEntity = await _db.Travels.AddAsync(travel);
             await _db.SaveChangesAsync();
             var AddedTravel = AddedEntity.Entity;
+            _logger.LogInformation("Created Travel with Id {Id}", AddedTravel.Id);
             return AddedTravel;
         }
 
@@ -54,6 +59,7 @@ namespace hrms.Repository.impl
             Travel travel = await GetTravelById(TravelId);
             travel.is_deleted = true;
             await _db.SaveChangesAsync();
+            _logger.LogInformation("Soft-deleted Travel with Id {Id}", TravelId);
         }
 
         public async Task<PagedReponseOffSet<TravelDocument>> GetDocumentsByTravelIdAndTravelerId(int travelId, int travelerId, int pageSize, int pageNumber)
@@ -93,12 +99,12 @@ namespace hrms.Repository.impl
         {
             int TotalRecords = await _db.Expenses.Where(e => e.TravelId == travelId && e.TravelerId == travelerId).CountAsync();
             List<Expense> expenses = await _db.Expenses
+                .OrderByDescending(e => e.ExpenseDate)
+                .Skip((pageNumber - 1) * pageSize)
+                .Take(pageSize)
                 .Where(e => e.TravelId == travelId && e.TravelerId == travelerId)
                 .Include(e => e.Proofs)
                 .Include(e => e.Category)
-                .Skip((pageNumber - 1) * pageSize)
-                .Take(pageSize)
-                .OrderByDescending(e => e.ExpenseDate)
                 .ToListAsync();
             PagedReponseOffSet<Expense> Response = new PagedReponseOffSet<Expense>(expenses, pageNumber, pageSize, TotalRecords);
             return Response;
@@ -107,7 +113,10 @@ namespace hrms.Repository.impl
         public async Task<decimal> GetTodaysExpense(int travelId, int currentUserId,DateTime dateTime)
         {
             List<Expense> expenses = await _db.Expenses
-                .Where(e => e.TravelId == travelId && e.TravelerId == currentUserId && e.ExpenseDate.Date == dateTime.Date)
+                .Where(e => e.TravelId == travelId && 
+                e.TravelerId == currentUserId && 
+                e.Status != ExpenseStatus.REJECTED &&
+                e.ExpenseDate.Date == dateTime.Date)
                 .ToListAsync();
             decimal total = 0;
             foreach(var expense in expenses)
@@ -127,6 +136,7 @@ namespace hrms.Repository.impl
             if (travel == null) {
                 throw new NotFoundCustomException($"Travel With Id : {TravelId} Not Found !");
             }
+            _logger.LogInformation("Fetched Travel with Id {Id}", TravelId);
             Travel t = travel;
             return t;
         }
@@ -136,9 +146,9 @@ namespace hrms.Repository.impl
             var TotalRecords = await _db.Travels.Where(t => t.CreatedBy ==  HrId).CountAsync();
             List<Travel> Travels = await _db.Travels
                 .Where(t => t.CreatedBy ==  HrId)
+                .OrderByDescending(t => t.created_at)
                 .Skip((PageNumber - 1) * PageSize)
                 .Take(PageSize)
-                .OrderByDescending(t => t.created_at)
                 .ToListAsync();
             PagedReponseOffSet<Travel> Response = new PagedReponseOffSet<Travel>(Travels, PageNumber, PageSize, TotalRecords);
             return Response;
@@ -188,10 +198,10 @@ namespace hrms.Repository.impl
                 .CountAsync();
             List<Travel> Travels = await _db.Travels
                 .Where(t => !t.is_deleted && t.Travelers.Any(tr => tr.TravelerId == travelerId))
-                .Include(t => t.Travelers.Where(tr => tr.TravelerId == travelerId))
+                .OrderByDescending(t => t.created_at)
                 .Skip((pageNumber - 1) * pageSize)
                 .Take(pageSize)
-                .OrderByDescending(t => t.created_at)
+                .Include(t => t.Travelers.Where(tr => tr.TravelerId == travelerId))
                 .ToListAsync();
             PagedReponseOffSet<Travel> Response = new PagedReponseOffSet<Travel>(Travels, pageNumber, pageSize, TotalRecords);
             return Response;    
@@ -203,6 +213,7 @@ namespace hrms.Repository.impl
             var AddedEntity = _db.Travels.Update(travel);
             await _db.SaveChangesAsync();
             var AddedTravel = AddedEntity.Entity;
+            _logger.LogInformation("Updated Travel with Id {Id}", travel.Id);
             return AddedTravel;
         }
 

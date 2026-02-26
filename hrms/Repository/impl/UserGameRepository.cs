@@ -5,12 +5,13 @@ using Microsoft.EntityFrameworkCore;
 
 namespace hrms.Repository.impl
 {
-    public class UserGameRepository(ApplicationDbContext _db) : IUserGameRepository
+    public class UserGameRepository(ApplicationDbContext _db, ILogger<UserGameRepository> _logger) : IUserGameRepository
     {
         public async Task<UserGameInterest> CreateUserGameInterest(UserGameInterest userGameInterest)
         {
             var savedEntity = await _db.UserGameInterests.AddAsync(userGameInterest);
             await _db.SaveChangesAsync();
+            _logger.LogInformation("Created UserGameInterest for UserId {UserId}, GameId {GameId}", userGameInterest.UserId, userGameInterest.GameId);
             return savedEntity.Entity;
         }
 
@@ -18,6 +19,7 @@ namespace hrms.Repository.impl
         {
             var savedEntity = await _db.UserGameStates.AddAsync(userGameState);
             await _db.SaveChangesAsync();
+            _logger.LogInformation("Created UserGameState for UserId {UserId}, GameId {GameId}", userGameState.UserId, userGameState.GameId);
             return savedEntity.Entity;
         }
 
@@ -25,6 +27,7 @@ namespace hrms.Repository.impl
         {
             var savedEntity = _db.UserGameInterests.Update(userGameInterest);
             await _db.SaveChangesAsync();
+            _logger.LogInformation("Updated UserGameInterest for UserId {UserId}, GameId {GameId}", userGameInterest.UserId, userGameInterest.GameId);
             return savedEntity.Entity;
         }
 
@@ -32,6 +35,7 @@ namespace hrms.Repository.impl
         {
             var savedEntity = _db.UserGameStates.Update(userGameState);
             await _db.SaveChangesAsync();
+            _logger.LogInformation("Updated UserGameState for UserId {UserId}, GameId {GameId}", userGameState.UserId, userGameState.GameId);
             return savedEntity.Entity;
         }
 
@@ -205,6 +209,7 @@ namespace hrms.Repository.impl
             }
 
             await _db.SaveChangesAsync();
+            _logger.LogInformation("Toggled game interest for UserId {UserId}, GameId {GameId}, interested: {Status}", userId, gameId, interest.Status == InterestStatus.INTERESTED);
             return interest.Status == InterestStatus.INTERESTED;
         }
 
@@ -216,6 +221,7 @@ namespace hrms.Repository.impl
                 gameState.GamePlayed -= 1;
                 _db.UserGameStates.Update(gameState);
                 await _db.SaveChangesAsync();
+                _logger.LogInformation("Decremented GamePlayed for UserId {UserId}, GameId {GameId}", bookedById, gameId);
             }
         }
     }

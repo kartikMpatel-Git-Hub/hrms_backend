@@ -7,13 +7,15 @@ using Microsoft.EntityFrameworkCore;
 namespace hrms.Repository.impl
 {
     public class PostRepository(
-        ApplicationDbContext _db
+        ApplicationDbContext _db,
+        ILogger<PostRepository> _logger
     ) : IPostRepository
     {
         public async Task<PostTag> AddTagToPost(PostTag postTag)
         {
             var addedPostTag = await _db.PostTags.AddAsync(postTag);
             await _db.SaveChangesAsync();
+            _logger.LogInformation("Added Tag {TagId} to Post {PostId}", postTag.TagId, postTag.PostId);
             return addedPostTag.Entity;
         }
 
@@ -21,6 +23,7 @@ namespace hrms.Repository.impl
         {
             var addedComment = await _db.PostComments.AddAsync(comment);
             await _db.SaveChangesAsync();
+            _logger.LogInformation("Created Comment with Id {Id} on Post {PostId}", addedComment.Entity.Id, comment.PostId);
             return addedComment.Entity;
         }
 
@@ -28,6 +31,7 @@ namespace hrms.Repository.impl
         {
             var addedPost = await _db.Posts.AddAsync(post);
             await _db.SaveChangesAsync();
+            _logger.LogInformation("Created Post with Id {Id}", addedPost.Entity.Id);
             return addedPost.Entity;
         }
 
@@ -35,6 +39,7 @@ namespace hrms.Repository.impl
         {
             var addedTag = await _db.Tags.AddAsync(tag);
             await _db.SaveChangesAsync();
+            _logger.LogInformation("Created Tag with Id {Id}, Name {Name}", addedTag.Entity.Id, addedTag.Entity.TagName);
             return addedTag.Entity;
         }
 
@@ -44,6 +49,7 @@ namespace hrms.Repository.impl
             postComment.is_deleted = true;
             _db.PostComments.Update(postComment);
             await _db.SaveChangesAsync();
+            _logger.LogInformation("Soft-deleted Comment with Id {Id}", comment.Id);
         }
 
         public async Task DeletePost(int postId)
@@ -52,6 +58,7 @@ namespace hrms.Repository.impl
             post.is_deleted = true;
             _db.Posts.Update(post);
             await _db.SaveChangesAsync();
+            _logger.LogInformation("Soft-deleted Post with Id {Id}", postId);
         }
 
         public async Task DeleteTag(int tagId)
@@ -60,6 +67,7 @@ namespace hrms.Repository.impl
             tag.IsDeleted = true;
             _db.Tags.Update(tag);
             await _db.SaveChangesAsync();
+            _logger.LogInformation("Soft-deleted Tag with Id {Id}", tagId);
         }
 
         public async Task<PostComment> GetCommentById(int commentId)
@@ -70,6 +78,7 @@ namespace hrms.Repository.impl
                 .FirstOrDefaultAsync();
             if (comment == null)
                 throw new NotFoundCustomException($"Comment with Id : {commentId} not found !");
+            _logger.LogInformation("Fetched Comment with Id {Id}", commentId);
             return comment;
         }
 
@@ -82,17 +91,17 @@ namespace hrms.Repository.impl
             var comments = await _db.PostComments
                 .Where(c => c.PostId == postId && c.is_deleted == false)
                 .Include(c => c.CommentBy)
+                .OrderByDescending(c => c.created_at)
                 .Skip((pageNumber - 1) * pageSize)
                 .Take(pageSize)
-                .OrderByDescending(c => c.created_at)
                 .ToListAsync();
 
+            _logger.LogInformation("Fetched {Count} comments for Post {PostId}, page {Page}", comments.Count, postId, pageNumber);
             return new PagedReponseOffSet<PostComment>(comments, pageNumber, pageSize, total);
         }
 
         public async Task<PagedReponseOffSet<Post>> GetFeed(int pageNumber, int pageSize)
         {
-            System.Console.WriteLine($"Page Number : {pageNumber} , Page Size : {pageSize}");
             int total = await _db.Posts
                 .Where(p => p.is_deleted == false && p.IsPublic == true && p.InAppropriate == false)
                 .CountAsync();
@@ -102,11 +111,12 @@ namespace hrms.Repository.impl
                 .Include(p => p.PostByUser)
                 .Include(p => p.Comments.Where(c => c.is_deleted == false))
                 .Include(p => p.Likes.Where(l => l.IsDeleted == false))
+                .OrderByDescending(p => p.created_at)
                 .Skip((pageNumber - 1) * pageSize)
                 .Take(pageSize)
-                .OrderByDescending(p => p.created_at)
                 .ToListAsync();
 
+            _logger.LogInformation("Fetched {Count} feed posts, page {Page}", posts.Count, pageNumber);
             return new PagedReponseOffSet<Post>(posts, pageNumber, pageSize, total);
         }
 
@@ -118,14 +128,15 @@ namespace hrms.Repository.impl
 
             var posts = await _db.Posts
                 .Where(p => p.is_deleted == false && p.InAppropriate == true)
+                .OrderByDescending(p => p.created_at)
                 .Skip((page - 1) * pageSize)
+                .Take(pageSize)
                 .Include(p => p.PostByUser)
                 .Include(p => p.Comments.Where(c => c.is_deleted == false))
                 .Include(p => p.Likes.Where(l => l.IsDeleted == false))
-                .Take(pageSize)
-                .OrderByDescending(p => p.created_at)
                 .ToListAsync();
 
+            _logger.LogInformation("Fetched {Count} inappropriate posts, page {Page}", posts.Count, page);
             return new PagedReponseOffSet<Post>(posts, page, pageSize, total);
         }
 
@@ -137,14 +148,15 @@ namespace hrms.Repository.impl
 
             var posts = await _db.Posts
                 .Where(p => p.is_deleted == false && p.PostById == userId)
+                .OrderByDescending(p => p.created_at)
                 .Skip((page - 1) * pageSize)
+                .Take(pageSize)
                 .Include(p => p.PostByUser)
                 .Include(p => p.Comments.Where(c => c.is_deleted == false))
                 .Include(p => p.Likes.Where(l => l.IsDeleted == false))
-                .OrderByDescending(p => p.created_at)
-                .Take(pageSize)
                 .ToListAsync();
 
+            _logger.LogInformation("Fetched {Count} posts for UserId {UserId}, page {Page}", posts.Count, userId, page);
             return new PagedReponseOffSet<Post>(posts, page, pageSize, total);
         }
 
@@ -160,6 +172,7 @@ namespace hrms.Repository.impl
                 .FirstOrDefaultAsync();
             if (post == null)
                 throw new NotFoundCustomException($"Post with Id : {postId} not found !");
+            _logger.LogInformation("Fetched Post with Id {Id}", postId);
             return post;
         }
 
@@ -170,6 +183,7 @@ namespace hrms.Repository.impl
                 .FirstOrDefaultAsync();
             if (tag == null)
                 throw new NotFoundCustomException($"Tag with Id : {tagId} not found !");
+            _logger.LogInformation("Fetched Tag with Id {Id}", tagId);
             return tag;
         }
 
@@ -180,6 +194,7 @@ namespace hrms.Repository.impl
                     .FirstOrDefaultAsync();
             if (tag == null)
                 tag = await CreateTag(new Tag { TagName = tagName.Trim() });
+            _logger.LogInformation("Resolved Tag by Name {Name}, Id {Id}", tagName, tag.Id);
             return tag;
         }
 
@@ -195,6 +210,7 @@ namespace hrms.Repository.impl
                 .Take(pageSize)
                 .ToListAsync();
 
+            _logger.LogInformation("Fetched {Count} tags, page {Page}", tags.Count, pageNumber);
             return new PagedReponseOffSet<Tag>(tags, pageNumber, pageSize, total);
         }
 
@@ -210,6 +226,7 @@ namespace hrms.Repository.impl
                 .Take(pageSize)
                 .ToListAsync();
 
+            _logger.LogInformation("Fetched {Count} tags matching '{Query}', page {Page}", tags.Count, searchQuery, pageNumber);
             return new PagedReponseOffSet<Tag>(tags, pageNumber, pageSize, total);
         }
 
@@ -232,6 +249,7 @@ namespace hrms.Repository.impl
                 existingLike.IsDeleted = !existingLike.IsDeleted;
                 _db.PostLikes.Update(existingLike);
                 await _db.SaveChangesAsync();
+                _logger.LogInformation("Toggled like on Post {PostId} by User {UserId}, IsLiked: {IsLiked}", postId, userId, !existingLike.IsDeleted);
                 return !existingLike.IsDeleted;
             }
             else
@@ -244,6 +262,7 @@ namespace hrms.Repository.impl
                 };
                 await _db.PostLikes.AddAsync(newLike);
                 await _db.SaveChangesAsync();
+                _logger.LogInformation("Created new like on Post {PostId} by User {UserId}", postId, userId);
                 return true;
             }
         }
@@ -252,6 +271,7 @@ namespace hrms.Repository.impl
         {
             _db.Posts.Update(post);
             await _db.SaveChangesAsync();
+            _logger.LogInformation("Marked Post {Id} as InAppropriate: {InAppropriate}", post.Id, post.InAppropriate);
         }
 
         public async Task RemoveTagFromPost(int postId, int tagId) // check once
@@ -265,6 +285,7 @@ namespace hrms.Repository.impl
                 _db.PostTags.Update(pt);
             }
             await _db.SaveChangesAsync();
+            _logger.LogInformation("Removed Tag {TagId} from Post {PostId}", tagId, postId);
         }
 
         public async Task<PostComment> UpdateComment(PostComment comment)
@@ -272,6 +293,7 @@ namespace hrms.Repository.impl
             comment.updated_at = DateTime.Now;
             _db.PostComments.Update(comment);
             await _db.SaveChangesAsync();
+            _logger.LogInformation("Updated Comment with Id {Id}", comment.Id);
             return await GetCommentById(comment.Id);
         }
 
@@ -280,6 +302,7 @@ namespace hrms.Repository.impl
             updatedPost.updated_at = DateTime.Now;
             _db.Posts.Update(updatedPost);
             await _db.SaveChangesAsync();
+            _logger.LogInformation("Updated Post with Id {Id}", updatedPost.Id);
             return updatedPost;
         }
     }

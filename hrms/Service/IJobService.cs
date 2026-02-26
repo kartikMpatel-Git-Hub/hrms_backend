@@ -22,7 +22,9 @@ namespace hrms.Service
         Task<PagedReponseDto<ReferralResponseDto>> GetJobRefferalsByJobId(int jobId, int pageNumber, int pageSize);
         Task<ReferralResponseDto> GetJobRefferalsByRefId(int jobId, int refId);
         Task<PagedReponseDto<JobResponseDto>> GetJobsCreatedByHr(int hrId,int pageNumber,int pageSize);
+        Task<PagedReponseDto<JobResponseDto>> GetJobToReview(int reviewerId, int pageNumber, int pageSize);
         Task<PagedReponseDto<SharedJobResponseDto>> GetSharedJobByJobId(int jobId, int pageNumber, int pageSize);
         Task<JobResponseDto> UpdateJob(int jobId, int hrId, JobUpdateDto job);
+        Task<ReferralResponseDto> UpdateJobReferralStatus(int jobId, int refId, string status);
     }
 }

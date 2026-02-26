@@ -5,12 +5,13 @@ using Microsoft.EntityFrameworkCore;
 
 namespace hrms.Repository.impl
 {
-    public class GameBookingRepository(ApplicationDbContext _db) : IGameBookingRepository
+    public class GameBookingRepository(ApplicationDbContext _db, ILogger<GameBookingRepository> _logger) : IGameBookingRepository
     {
         public async Task<BookingSlot> BookSlot(BookingSlot createSlot)
         {
             BookingSlot slot = _db.BookingSlots.Update(createSlot).Entity;
             await _db.SaveChangesAsync();
+            _logger.LogInformation("Booked slot with Id {Id}", slot.Id);
             return slot;
         }
 
@@ -18,6 +19,7 @@ namespace hrms.Repository.impl
         {
             var addedEntity = await _db.BookingPlayers.AddAsync(bookingPlayer);
             await _db.SaveChangesAsync();
+            _logger.LogInformation("Added BookingPlayer with Id {Id}", addedEntity.Entity.Id);
             return addedEntity.Entity;
         }
 
@@ -27,6 +29,7 @@ namespace hrms.Repository.impl
                     Where(b => b.Id == bookingId).FirstOrDefaultAsync();
             if (booking == null)
                 throw new NotFoundCustomException($"Booking with Id : {bookingId} Not Found !");
+            _logger.LogInformation("Fetched BookingPlayer with Id {Id}", bookingId);
             return booking;
         }
 
@@ -36,12 +39,14 @@ namespace hrms.Repository.impl
             bookingPlayer.is_deleted = true;
             _db.BookingPlayers.Update(bookingPlayer);
             await _db.SaveChangesAsync();
+            _logger.LogInformation("Removed BookingPlayer with Id {Id}", bookingId);
         }
 
         public async Task<BookingSlot> ChangeStatus(BookingSlot updatedSlot)
         {
             BookingSlot slot = _db.BookingSlots.Update(updatedSlot).Entity;
             await _db.SaveChangesAsync();
+            _logger.LogInformation("Changed BookingSlot status for Id {Id}", slot.Id);
             return slot;
         }
 
@@ -49,7 +54,7 @@ namespace hrms.Repository.impl
         {
             var savedEntity = await _db.BookingSlots.AddAsync(slot);
             await _db.SaveChangesAsync();
-            Console.WriteLine("Slot Created !");
+            _logger.LogInformation("Created BookingSlot with Id {Id}", savedEntity.Entity.Id);
             return savedEntity.Entity;
         }
 
@@ -100,6 +105,7 @@ namespace hrms.Repository.impl
         {
             await _db.SlotOffers.AddAsync(offer);
             await _db.SaveChangesAsync();
+            _logger.LogInformation("Created SlotOffer for BookingSlotId {SlotId}", offer.BookingSlotId);
         }
 
         public Task<SlotOffere> GetSlotOffer(int offerId)
@@ -134,6 +140,7 @@ namespace hrms.Repository.impl
         {
             await _db.RequestedPlayers.AddAsync(requestedPlayer);
             await _db.SaveChangesAsync();
+            _logger.LogInformation("Added RequestedPlayer with Id {Id}", requestedPlayer.Id);
         }
     }
 }

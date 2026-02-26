@@ -6,6 +6,8 @@ using hrms.Dto.Response.Game;
 using hrms.Dto.Response.Other;
 using hrms.Model;
 using hrms.Repository;
+using hrms.Utility;
+using Microsoft.Extensions.Caching.Memory;
 
 namespace hrms.Service.impl
 {
@@ -13,6 +15,7 @@ namespace hrms.Service.impl
         IGameRepository _repository,
         IUserRepository _userRepository,
         IUserGameRepository _userGameRepository,
+        IMemoryCache _cache,
         IMapper _mapper) : IGameService
     {
         public async Task<GameSlotResponseDto> BookGameSlot(int gameId, int slotId, int userId, BookSlotRequestDto dto)
@@ -96,6 +99,8 @@ namespace hrms.Service.impl
             }
             slot.Status = GameSlotStatus.WAITING;
             GameSlot updatedSlot = await _repository.UpdateGameSlot(slot);
+            var cacheKey = CacheVersionKey.For(CacheDomains.DashboardUpcomingBookings);
+            _cache.Set(cacheKey, _cache.Get<int>(cacheKey) + 1);
             return _mapper.Map<GameSlotResponseDto>(updatedSlot);
         }
 
