@@ -213,12 +213,14 @@ namespace hrms.Utility
             {
                 case ReferralStatus.Pending:
                     return "Pending";
-                case ReferralStatus.Inreview:
-                    return "Inreview";
+                case ReferralStatus.Interview:
+                    return "Interview";
                 case ReferralStatus.Rejected:
                     return "Rejected";
                 case ReferralStatus.Hired:
                     return "Hired";
+                case ReferralStatus.Shortlisted:
+                    return "Shortlisted";
                 default:
                     return "Unknown";
             }

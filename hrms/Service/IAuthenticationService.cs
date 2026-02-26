@@ -8,5 +8,6 @@ namespace hrms.Service
     {
         public Task<UserResponseDto> RegisterNewUser(RegisterRequestDto dto);
         public Task<LoginResponseDto> Login(LoginRequestDto dto);
+        Task ForgetPassword(ForgetPasswordRequestDto dto);
     }
 }

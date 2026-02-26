@@ -1,7 +1,9 @@
 ﻿using hrms.Data;
 using hrms.Model;
 using hrms.Repository;
+using hrms.Utility;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.Caching.Memory;
 
 namespace hrms.Service.impl
 {
@@ -10,7 +12,8 @@ namespace hrms.Service.impl
         IGameRepository _repository,
         IUserGameRepository _userGameRpository,
         ApplicationDbContext _db,
-        IEmailService emailService
+        IEmailService emailService,
+        IMemoryCache _cache
         ) : ISlotBookingService
     {
         // public async Task AcceptOffer(int offerId, BookSlotRequestDto dto)
@@ -291,6 +294,8 @@ namespace hrms.Service.impl
             await tx.CommitAsync();
 
             await SendNotificationAndMail(slot, players);
+            var key = CacheVersionKey.For(CacheDomains.DashboardUpcomingBookings);
+            _cache.Set(key, _cache.Get<int>(key) + 1);
         }
 
         private async Task SendNotificationAndMail(GameSlot slot, GameSlotWaitingPlayer[] players)

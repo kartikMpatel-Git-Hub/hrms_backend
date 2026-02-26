@@ -10,5 +10,6 @@ namespace hrms.Repository
         Task<PagedReponseOffSet<JobReferral>> GetAllJobReferalByHrId(int hrId,int pageNumber,int pageSize);
         Task<PagedReponseOffSet<JobReferral>> GetAllJobReferalByJobId(int jobId,int pageNumber,int pageSize);
         Task<PagedReponseOffSet<JobReferral>> GetAllJobReferalByEmployeeId(int refId, int pageNumber, int pageSize);
+        Task<JobReferral> UpdateReferral(JobReferral referral);
     }
 }

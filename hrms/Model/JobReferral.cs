@@ -19,8 +19,9 @@
     public enum ReferralStatus
     {
         Pending,
-        Inreview,
+        Interview,
         Rejected,
-        Hired
+        Hired,
+        Shortlisted
     }
 }

@@ -7,7 +7,7 @@ using hrms.Model;
 using Microsoft.EntityFrameworkCore;
 namespace hrms.Repository.impl
 {
-    public class GameRepository(ApplicationDbContext _db) : IGameRepository
+    public class GameRepository(ApplicationDbContext _db, ILogger<GameRepository> _logger) : IGameRepository
     {
         public async Task<GameSlot> BookGameSlot(int gameId, int slotId, int userId, BookSlotRequestDto dto)
         {
@@ -36,6 +36,7 @@ namespace hrms.Repository.impl
             gameSlot.Status = GameSlotStatus.WAITING;
             _db.GameSlots.Update(gameSlot);
             await _db.SaveChangesAsync();
+            _logger.LogInformation("Booked GameSlot {SlotId} for GameId {GameId} by UserId {UserId}", slotId, gameId, userId);
             return gameSlot;
         }
 
@@ -43,6 +44,7 @@ namespace hrms.Repository.impl
         {
             var createdGame = await _db.Games.AddAsync(game);
             await _db.SaveChangesAsync();
+            _logger.LogInformation("Created Game with Id {Id}", createdGame.Entity.Id);
             return createdGame.Entity;
         }
 
@@ -50,6 +52,7 @@ namespace hrms.Repository.impl
         {
             var createdWindow = await _db.GameOperationWindows.AddAsync(window);
             await _db.SaveChangesAsync();
+            _logger.LogInformation("Created GameOperationWindow with Id {Id} for GameId {GameId}", createdWindow.Entity.Id, window.GameId);
             return createdWindow.Entity;
         }
 
@@ -58,6 +61,7 @@ namespace hrms.Repository.impl
             game.is_deleted = true;
             _db.Games.Update(game);
             await _db.SaveChangesAsync();
+            _logger.LogInformation("Soft-deleted Game with Id {Id}", game.Id);
         }
 
         public async Task DeleteGameOperationWindow(GameOperationWindow window)
@@ -65,6 +69,7 @@ namespace hrms.Repository.impl
             window.is_deleted = true;
             _db.GameOperationWindows.Update(window);
             await _db.SaveChangesAsync();
+            _logger.LogInformation("Soft-deleted GameOperationWindow with Id {Id}", window.Id);
         }
 
         public async Task<List<GameOperationWindow>> GetAllGameOperationWindows(int gameId)
@@ -104,6 +109,7 @@ namespace hrms.Repository.impl
             {
                 throw new NotFoundCustomException($"Game with ID {gameId} not found.");
             }
+            _logger.LogInformation("Fetched Game with Id {Id}", gameId);
             return game;
         }
 
@@ -114,6 +120,7 @@ namespace hrms.Repository.impl
             {
                 throw new NotFoundCustomException($"Game Operation Window with ID {windowId} not found.");
             }
+            _logger.LogInformation("Fetched GameOperationWindow with Id {Id}", windowId);
             return window;
         }
 
@@ -127,6 +134,7 @@ namespace hrms.Repository.impl
             {
                 throw new NotFoundCustomException($"Game Slot with ID {slotId} for Game ID {gameId} not found.");
             }
+            _logger.LogInformation("Fetched GameSlot {SlotId} for GameId {GameId}", slotId, gameId);
             return slot;
         }
 
@@ -148,6 +156,7 @@ namespace hrms.Repository.impl
             {
                 throw new NotFoundCustomException($"Game Slot Waiting Entry with ID {waitlistId} not found.");
             }
+            _logger.LogInformation("Fetched GameSlotWaiting with Id {Id}", waitlistId);
             return entry;
         }
 
@@ -173,6 +182,7 @@ namespace hrms.Repository.impl
                     upcomingSlots.Add(slots);
                 }
             }
+            _logger.LogInformation("Found {Count} upcoming booking slots for today", upcomingSlots.Count);
             return upcomingSlots;
         }
 
@@ -221,6 +231,7 @@ namespace hrms.Repository.impl
         {
             _db.Games.Update(updatedGame);
             await _db.SaveChangesAsync();
+            _logger.LogInformation("Updated Game with Id {Id}", updatedGame.Id);
             return updatedGame;
         }
 
@@ -228,6 +239,7 @@ namespace hrms.Repository.impl
         {
             _db.GameSlots.Update(slot);
             await _db.SaveChangesAsync();
+            _logger.LogInformation("Updated GameSlot with Id {Id}", slot.Id);
             return slot;
         }
 

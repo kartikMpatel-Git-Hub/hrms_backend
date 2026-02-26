@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "vB4xy9NdoLM=",
+  "dgSpecHash": "5NgmzqoSx7U=",
   "success": true,
   "projectFilePath": "C:\\Internship\\Codes\\DontNet\\Assignment-1\\hrms\\hrms\\hrms.csproj",
   "expectedPackageFiles": [
@@ -47,6 +47,15 @@
     "C:\\Users\\patelkar\\.nuget\\packages\\quartz\\3.15.1\\quartz.3.15.1.nupkg.sha512",
     "C:\\Users\\patelkar\\.nuget\\packages\\quartz.extensions.dependencyinjection\\3.15.1\\quartz.extensions.dependencyinjection.3.15.1.nupkg.sha512",
     "C:\\Users\\patelkar\\.nuget\\packages\\quartz.extensions.hosting\\3.15.1\\quartz.extensions.hosting.3.15.1.nupkg.sha512",
+    "C:\\Users\\patelkar\\.nuget\\packages\\serilog\\4.3.0\\serilog.4.3.0.nupkg.sha512",
+    "C:\\Users\\patelkar\\.nuget\\packages\\serilog.aspnetcore\\10.0.0\\serilog.aspnetcore.10.0.0.nupkg.sha512",
+    "C:\\Users\\patelkar\\.nuget\\packages\\serilog.extensions.hosting\\10.0.0\\serilog.extensions.hosting.10.0.0.nupkg.sha512",
+    "C:\\Users\\patelkar\\.nuget\\packages\\serilog.extensions.logging\\10.0.0\\serilog.extensions.logging.10.0.0.nupkg.sha512",
+    "C:\\Users\\patelkar\\.nuget\\packages\\serilog.formatting.compact\\3.0.0\\serilog.formatting.compact.3.0.0.nupkg.sha512",
+    "C:\\Users\\patelkar\\.nuget\\packages\\serilog.settings.configuration\\10.0.0\\serilog.settings.configuration.10.0.0.nupkg.sha512",
+    "C:\\Users\\patelkar\\.nuget\\packages\\serilog.sinks.console\\6.1.1\\serilog.sinks.console.6.1.1.nupkg.sha512",
+    "C:\\Users\\patelkar\\.nuget\\packages\\serilog.sinks.debug\\3.0.0\\serilog.sinks.debug.3.0.0.nupkg.sha512",
+    "C:\\Users\\patelkar\\.nuget\\packages\\serilog.sinks.file\\7.0.0\\serilog.sinks.file.7.0.0.nupkg.sha512",
     "C:\\Users\\patelkar\\.nuget\\packages\\swashbuckle.aspnetcore\\10.1.2\\swashbuckle.aspnetcore.10.1.2.nupkg.sha512",
     "C:\\Users\\patelkar\\.nuget\\packages\\swashbuckle.aspnetcore.swagger\\10.1.2\\swashbuckle.aspnetcore.swagger.10.1.2.nupkg.sha512",
     "C:\\Users\\patelkar\\.nuget\\packages\\swashbuckle.aspnetcore.swaggergen\\10.1.2\\swashbuckle.aspnetcore.swaggergen.10.1.2.nupkg.sha512",

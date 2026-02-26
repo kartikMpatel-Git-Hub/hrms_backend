@@ -4,12 +4,13 @@ using Microsoft.EntityFrameworkCore;
 
 namespace hrms.Repository.impl
 {
-    public class DailyCelebrationRepository(ApplicationDbContext _db) : IDailyCelebrationRepository
+    public class DailyCelebrationRepository(ApplicationDbContext _db, ILogger<DailyCelebrationRepository> _logger) : IDailyCelebrationRepository
     {
         public async Task<DailyCelebration> AddDailyCelebration(DailyCelebration dailyCelebration)
         {
             var result = await _db.DailyCelebrations.AddAsync(dailyCelebration);
             await _db.SaveChangesAsync();
+            _logger.LogInformation("Created DailyCelebration for UserId {UserId}, EventType {EventType}", dailyCelebration.UserId, dailyCelebration.EventType);
             return result.Entity;
         }
 
@@ -21,6 +22,7 @@ namespace hrms.Repository.impl
                 && u.DateOfBirth.Date.Day == today.Day
                 && u.is_deleted == false)
                 .ToListAsync();
+            _logger.LogInformation("Found {Count} birthday users for today", users.Count);
             return users;
         }
 
@@ -31,6 +33,7 @@ namespace hrms.Repository.impl
                         .Where(dc => dc.EventDate.Date == DateTime.Now.Date)
                         .Include(dc => dc.User)
                         .ToListAsync();
+            _logger.LogInformation("Found {Count} daily celebrations for today", celebrations.Count);
             return celebrations;
         }
 
@@ -48,6 +51,7 @@ namespace hrms.Repository.impl
                 await _db.Users.AddAsync(system);
                 await _db.SaveChangesAsync();
             }
+            _logger.LogInformation("Fetched system user with Id {Id}", system.Id);
             return system;
         }
 
@@ -60,6 +64,7 @@ namespace hrms.Repository.impl
                 u.DateOfJoin.Date.Day == today.Day && 
                 u.is_deleted == false)
                 .ToListAsync();
+            _logger.LogInformation("Found {Count} work anniversary users for today", users.Count);
             return users;
         }
 
@@ -67,6 +72,7 @@ namespace hrms.Repository.impl
         {
             bool exists = await _db.DailyCelebrations
                     .AnyAsync(dc => dc.UserId == id && dc.EventDate.Date == now.Date && dc.EventType == eventType);
+            _logger.LogInformation("Celebration exists check for UserId {UserId}, EventType {EventType}: {Exists}", id, eventType, exists);
             return exists;
         }
     }

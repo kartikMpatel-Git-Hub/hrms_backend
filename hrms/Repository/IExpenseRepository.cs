@@ -15,5 +15,6 @@ namespace hrms.Repository
         Task<Expense> GetExpenseById(int expenseId);
         Task<Expense> UpdateExpenseStatus(Expense expense);
         Task<PagedReponseOffSet<Expense>> GetAllExpenses(int pageNumber, int pageSize, int currentUserId);
+        Task<Expense> UpdateExpense(Expense updatedExpense);
     }
 }
