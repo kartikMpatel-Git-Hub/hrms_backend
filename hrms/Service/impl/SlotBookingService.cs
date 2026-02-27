@@ -13,7 +13,8 @@ namespace hrms.Service.impl
         IUserGameRepository _userGameRpository,
         ApplicationDbContext _db,
         IEmailService emailService,
-        IMemoryCache _cache
+        IMemoryCache _cache,
+        ILogger<SlotBookingService> _logger
         ) : ISlotBookingService
     {
         // public async Task AcceptOffer(int offerId, BookSlotRequestDto dto)
@@ -296,6 +297,7 @@ namespace hrms.Service.impl
             await SendNotificationAndMail(slot, players);
             var key = CacheVersionKey.For(CacheDomains.DashboardUpcomingBookings);
             _cache.Set(key, _cache.Get<int>(key) + 1);
+            IncreateCacheVersion(CacheVersionKey.ForGameSlots(slot.GameId));
         }
 
         private async Task SendNotificationAndMail(GameSlot slot, GameSlotWaitingPlayer[] players)
@@ -313,6 +315,10 @@ namespace hrms.Service.impl
             };
             await _db.Notifications.AddAsync(notification);
             await _db.SaveChangesAsync();
+
+            IncreateCacheVersion(CacheVersionKey.ForUserNotifications(u.Id));
+            _logger.LogInformation("Notification created for user {UserId} for game slot booking", u.Id);
+
             await emailService.SendEmailAsync(
                 u.Email,
                 "Slot Booked",
@@ -336,8 +342,16 @@ namespace hrms.Service.impl
                     };
                     await _db.Notifications.AddAsync(no);
                     await _db.SaveChangesAsync();
+                    IncreateCacheVersion(CacheVersionKey.ForUserNotifications(user.Id));
+                    _logger.LogInformation("Notification created for user {UserId} for game slot booking", user.Id);
                 }
             }
+        }
+
+        private void IncreateCacheVersion(string v)
+        {
+            var current = _cache.Get<int>(v);
+            _cache.Set(v, current + 1);
         }
 
         private async Task UpdateUserGameState(int playerId, int gameId)

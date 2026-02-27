@@ -1,6 +1,22 @@
 [
   {
     "ContainingType": "hrms.Controllers.AuthenticationController",
+    "Method": "ForgetPassword",
+    "RelativePath": "Authentication/forget-password",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "dto",
+        "Type": "hrms.Dto.Request.Authentication.ForgetPasswordRequestDto",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "hrms.Controllers.AuthenticationController",
     "Method": "Login",
     "RelativePath": "Authentication/login",
     "HttpMethod": "POST",
@@ -491,6 +507,27 @@
   },
   {
     "ContainingType": "hrms.Controllers.GameController",
+    "Method": "DeleteGameSlot",
+    "RelativePath": "Game/{gameId}/slots/{slotId}/cancel-slot",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "gameId",
+        "Type": "System.Nullable\u00601[[System.Int32, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]",
+        "IsRequired": true
+      },
+      {
+        "Name": "slotId",
+        "Type": "System.Nullable\u00601[[System.Int32, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "hrms.Controllers.GameController",
     "Method": "GetGameSlot",
     "RelativePath": "Game/{gameId}/slots/{slotId}/details",
     "HttpMethod": "GET",
@@ -836,6 +873,32 @@
   },
   {
     "ContainingType": "hrms.Controllers.JobController",
+    "Method": "UpdateJobReferralStatus",
+    "RelativePath": "Job/{jobId}/referred/{refId}",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "jobId",
+        "Type": "System.Nullable\u00601[[System.Int32, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]",
+        "IsRequired": true
+      },
+      {
+        "Name": "refId",
+        "Type": "System.Nullable\u00601[[System.Int32, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]",
+        "IsRequired": true
+      },
+      {
+        "Name": "dto",
+        "Type": "hrms.Dto.Request.Job.ReferralStatusChangeDto",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "hrms.Controllers.JobController",
     "Method": "GetJobsReviewers",
     "RelativePath": "Job/{jobId}/reviewers",
     "HttpMethod": "GET",
@@ -943,6 +1006,27 @@
     "ContainingType": "hrms.Controllers.JobController",
     "Method": "GetReferredJobByHr",
     "RelativePath": "Job/referred/hr",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "pageNumber",
+        "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
+        "Name": "pageSize",
+        "Type": "System.Int32",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "hrms.Controllers.JobController",
+    "Method": "GetJobToReview",
+    "RelativePath": "Job/review",
     "HttpMethod": "GET",
     "IsController": true,
     "Order": 0,
@@ -1320,7 +1404,7 @@
     "Order": 0,
     "Parameters": [
       {
-        "Name": "page",
+        "Name": "pageNumber",
         "Type": "System.Int32",
         "IsRequired": false
       },
@@ -1516,6 +1600,42 @@
       {
         "Name": "TravelId",
         "Type": "System.Nullable\u00601[[System.Int32, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]",
+        "IsRequired": true
+      },
+      {
+        "Name": "pageNumber",
+        "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
+        "Name": "pageSize",
+        "Type": "System.Int32",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "hrms.Controllers.ExpenseController",
+    "Method": "UpdateExpense",
+    "RelativePath": "travel/{TravelId}/expense/{ExpenseId}",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "TravelId",
+        "Type": "System.Nullable\u00601[[System.Int32, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]",
+        "IsRequired": true
+      },
+      {
+        "Name": "ExpenseId",
+        "Type": "System.Nullable\u00601[[System.Int32, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]",
+        "IsRequired": true
+      },
+      {
+        "Name": "dto",
+        "Type": "hrms.dto.request.Expense.ExpenseUpdateDto",
         "IsRequired": true
       }
     ],

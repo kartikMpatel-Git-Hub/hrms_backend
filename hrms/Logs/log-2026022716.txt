@@ -1,0 +1,1080 @@
+2026-02-27 16:00:43 [Information] Updated GameSlot with Id 221
+2026-02-27 16:00:43 [Information] Updated GameSlot with Id 249
+2026-02-27 16:00:43 [Information] Updated GameSlot with Id 291
+2026-02-27 16:00:44 [Information] ["GET"] "/notification/count" - Request received
+2026-02-27 16:00:44 [Information] ["GET"] "/job" - Request received
+2026-02-27 16:00:44 [Information] ["GET"] "/notification/count" - Fetched notification count 0 for user 7 successfully
+2026-02-27 16:00:44 [Information] ["GET"] "/job" - Fetched all jobs successfully
+2026-02-27 16:00:49 [Information] ["GET"] "/notification/count" - Request received
+2026-02-27 16:00:49 [Information] ["GET"] "/job" - Request received
+2026-02-27 16:00:49 [Information] ["GET"] "/job" - Fetched all jobs successfully
+2026-02-27 16:00:49 [Information] ["GET"] "/notification/count" - Fetched notification count 0 for user 7 successfully
+2026-02-27 16:01:01 [Information] ["GET"] "/notification/count" - Request received
+2026-02-27 16:01:01 [Information] ["GET"] "/notification/count" - Fetched notification count 0 for user 7 successfully
+2026-02-27 16:01:01 [Information] ["GET"] "/job" - Request received
+2026-02-27 16:01:01 [Information] ["GET"] "/job" - Fetched all jobs successfully
+2026-02-27 16:01:10 [Information] ["POST"] "/Authentication/login" - Request received
+2026-02-27 16:01:10 [Information] Fetched User by Email "kartik@gmail.com"
+2026-02-27 16:01:10 [Information] ["POST"] "/Authentication/login" - User logged in successfully
+2026-02-27 16:01:10 [Information] ["GET"] "/notification/count" - Request received
+2026-02-27 16:01:10 [Information] ["GET"] "/dashboard/daily-celebrations" - Request received
+2026-02-27 16:01:10 [Information] ["GET"] "/notification/count" - Fetched notification count 0 for user 5 successfully
+2026-02-27 16:01:10 [Information] ["GET"] "/dashboard/daily-celebrations" - Fetched 0 daily celebrations successfully
+2026-02-27 16:01:10 [Information] ["GET"] "/dashboard/upcoming-bookings" - Request received
+2026-02-27 16:01:10 [Information] ["GET"] "/dashboard/upcoming-bookings" - Fetched 0 upcoming booking slots successfully
+2026-02-27 16:01:15 [Information] ["GET"] "/job" - Request received
+2026-02-27 16:01:15 [Information] ["GET"] "/job" - Fetched all jobs successfully
+2026-02-27 16:01:16 [Information] ["GET"] "/user/my-team" - Request received
+2026-02-27 16:01:16 [Information] Fetching employees under ManagerId 5, total: 1
+2026-02-27 16:01:16 [Information] Retrieved employees under manager with version 0 and cached
+2026-02-27 16:01:16 [Information] ["GET"] "/user/my-team" - Fetched team members for manager 5 successfully
+2026-02-27 16:01:19 [Information] ["GET"] "/game" - Request received
+2026-02-27 16:01:19 [Information] Retrieved all games and cached with version 1
+2026-02-27 16:01:19 [Information] ["GET"] "/game" - Fetched 3 games successfully
+2026-02-27 16:01:20 [Information] ["GET"] "/job" - Request received
+2026-02-27 16:01:20 [Information] ["GET"] "/job" - Fetched all jobs successfully
+2026-02-27 16:01:22 [Information] ["GET"] "/job/review" - Request received
+2026-02-27 16:01:22 [Information] ["GET"] "/job/review" - Fetched jobs to review for reviewer 5 successfully
+2026-02-27 16:01:28 [Information] ["GET"] "/job/1/referred" - Request received
+2026-02-27 16:01:28 [Information] ["GET"] "/job/1/referred" - Fetched referrals for job 1 successfully
+2026-02-27 16:01:53 [Information] ["GET"] "/job/review" - Request received
+2026-02-27 16:01:53 [Information] ["GET"] "/job/review" - Fetched jobs to review for reviewer 5 successfully
+2026-02-27 16:01:57 [Information] ["GET"] "/job/review" - Request received
+2026-02-27 16:01:57 [Information] ["GET"] "/job/review" - Fetched jobs to review for reviewer 5 successfully
+2026-02-27 16:01:57 [Information] ["GET"] "/notification/count" - Request received
+2026-02-27 16:01:57 [Information] ["GET"] "/notification/count" - Fetched notification count 0 for user 5 successfully
+2026-02-27 16:01:58 [Information] ["GET"] "/notification/count" - Request received
+2026-02-27 16:01:58 [Information] ["GET"] "/notification/count" - Fetched notification count 0 for user 3 successfully
+2026-02-27 16:01:58 [Information] ["GET"] "/job/review" - Request received
+2026-02-27 16:01:58 [Information] ["GET"] "/job/review" - Fetched jobs to review for reviewer 3 successfully
+2026-02-27 16:02:00 [Information] ["GET"] "/job/hr/created" - Request received
+2026-02-27 16:02:00 [Information] ["GET"] "/job/hr/created" - Fetched jobs created by HR 3 successfully
+2026-02-27 16:02:01 [Information] ["GET"] "/job/3/reviewers" - Request received
+2026-02-27 16:02:01 [Information] Fetched Job with Id 3
+2026-02-27 16:02:01 [Information] Retrieved job detail with reviewers for job with Id 3 from repository and cached with version 0
+2026-02-27 16:02:01 [Information] ["GET"] "/job/3/reviewers" - Fetched reviewers for job 3 successfully
+2026-02-27 16:02:10 [Information] ["GET"] "/job/hr/created" - Request received
+2026-02-27 16:02:10 [Information] ["GET"] "/job/hr/created" - Fetched jobs created by HR 3 successfully
+2026-02-27 16:02:22 [Information] ["GET"] "/job/review" - Request received
+2026-02-27 16:02:22 [Information] ["GET"] "/job/review" - Fetched jobs to review for reviewer 3 successfully
+2026-02-27 16:02:28 [Information] ["GET"] "/job/3/referred" - Request received
+2026-02-27 16:02:28 [Information] ["GET"] "/job/3/referred" - Fetched referrals for job 3 successfully
+2026-02-27 16:02:35 [Information] ["GET"] "/job/hr/created" - Request received
+2026-02-27 16:02:35 [Information] ["GET"] "/job/hr/created" - Fetched jobs created by HR 3 successfully
+2026-02-27 16:02:38 [Information] ["GET"] "/game" - Request received
+2026-02-27 16:02:38 [Information] ["GET"] "/game" - Fetched 3 games successfully
+2026-02-27 16:02:40 [Information] ["GET"] "/game/1/toggle-interest" - Request received
+2026-02-27 16:02:40 [Information] ["GET"] "/game/1/slots" - Request received
+2026-02-27 16:02:40 [Information] ["GET"] "/game/1/toggle-interest" - Checked interest in game 1 for user 3 successfully
+2026-02-27 16:02:40 [Information] Retrieved game slots for game 1 and cached with version 1
+2026-02-27 16:02:40 [Information] ["GET"] "/game/1/slots" - Fetched 52 slots for game 1 successfully
+2026-02-27 16:02:54 [Information] ["GET"] "/job/review" - Request received
+2026-02-27 16:02:54 [Information] ["GET"] "/notification/count" - Request received
+2026-02-27 16:02:54 [Information] ["GET"] "/job/review" - Fetched jobs to review for reviewer 5 successfully
+2026-02-27 16:02:54 [Information] ["GET"] "/notification/count" - Fetched notification count 0 for user 5 successfully
+2026-02-27 16:02:54 [Information] ["GET"] "/notification/count" - Request received
+2026-02-27 16:02:54 [Information] ["GET"] "/notification/count" - Fetched notification count 0 for user 3 successfully
+2026-02-27 16:02:54 [Information] ["GET"] "/game/1/toggle-interest" - Request received
+2026-02-27 16:02:54 [Information] ["GET"] "/game/1/slots" - Request received
+2026-02-27 16:02:54 [Information] ["GET"] "/game/1/slots" - Fetched 52 slots for game 1 successfully
+2026-02-27 16:02:54 [Information] ["GET"] "/game/1/toggle-interest" - Checked interest in game 1 for user 3 successfully
+2026-02-27 16:03:23 [Information] ["GET"] "/notification/count" - Request received
+2026-02-27 16:03:23 [Information] ["GET"] "/game/1/toggle-interest" - Request received
+2026-02-27 16:03:23 [Information] ["GET"] "/notification/count" - Fetched notification count 0 for user 3 successfully
+2026-02-27 16:03:23 [Information] ["GET"] "/game/1/slots" - Request received
+2026-02-27 16:03:23 [Information] ["GET"] "/game/1/slots" - Fetched 52 slots for game 1 successfully
+2026-02-27 16:03:23 [Information] ["GET"] "/game/1/toggle-interest" - Checked interest in game 1 for user 3 successfully
+2026-02-27 16:03:27 [Information] ["GET"] "/notification/count" - Request received
+2026-02-27 16:03:27 [Information] ["GET"] "/game/1/slots" - Request received
+2026-02-27 16:03:27 [Information] ["GET"] "/notification/count" - Fetched notification count 0 for user 3 successfully
+2026-02-27 16:03:27 [Information] ["GET"] "/game/1/slots" - Fetched 52 slots for game 1 successfully
+2026-02-27 16:03:27 [Information] ["GET"] "/game/1/toggle-interest" - Request received
+2026-02-27 16:03:27 [Information] ["GET"] "/game/1/toggle-interest" - Checked interest in game 1 for user 3 successfully
+2026-02-27 16:03:31 [Information] ["GET"] "/notification/count" - Request received
+2026-02-27 16:03:31 [Information] ["GET"] "/game/1/toggle-interest" - Request received
+2026-02-27 16:03:31 [Information] ["GET"] "/notification/count" - Fetched notification count 0 for user 3 successfully
+2026-02-27 16:03:31 [Information] ["GET"] "/game/1/slots" - Request received
+2026-02-27 16:03:31 [Information] ["GET"] "/game/1/slots" - Fetched 52 slots for game 1 successfully
+2026-02-27 16:03:31 [Information] ["GET"] "/game/1/toggle-interest" - Checked interest in game 1 for user 3 successfully
+2026-02-27 16:03:38 [Information] ["GET"] "/game/1/toggle-interest" - Request received
+2026-02-27 16:03:38 [Information] ["GET"] "/game/1/slots" - Request received
+2026-02-27 16:03:38 [Information] ["GET"] "/notification/count" - Request received
+2026-02-27 16:03:38 [Information] ["GET"] "/game/1/slots" - Fetched 52 slots for game 1 successfully
+2026-02-27 16:03:38 [Information] ["GET"] "/notification/count" - Fetched notification count 0 for user 3 successfully
+2026-02-27 16:03:38 [Information] ["GET"] "/game/1/toggle-interest" - Checked interest in game 1 for user 3 successfully
+2026-02-27 16:04:10 [Information] ["GET"] "/notification/count" - Request received
+2026-02-27 16:04:10 [Information] ["GET"] "/game/1/toggle-interest" - Request received
+2026-02-27 16:04:10 [Information] ["GET"] "/notification/count" - Fetched notification count 0 for user 3 successfully
+2026-02-27 16:04:10 [Information] ["GET"] "/game/1/slots" - Request received
+2026-02-27 16:04:10 [Information] ["GET"] "/game/1/slots" - Fetched 52 slots for game 1 successfully
+2026-02-27 16:04:10 [Information] ["GET"] "/game/1/toggle-interest" - Checked interest in game 1 for user 3 successfully
+2026-02-27 16:04:20 [Information] ["GET"] "/notification/count" - Request received
+2026-02-27 16:04:20 [Information] ["GET"] "/game/1/slots" - Request received
+2026-02-27 16:04:20 [Information] ["GET"] "/notification/count" - Fetched notification count 0 for user 3 successfully
+2026-02-27 16:04:20 [Information] ["GET"] "/game/1/slots" - Fetched 52 slots for game 1 successfully
+2026-02-27 16:04:20 [Information] ["GET"] "/game/1/toggle-interest" - Request received
+2026-02-27 16:04:20 [Information] ["GET"] "/game/1/toggle-interest" - Checked interest in game 1 for user 3 successfully
+2026-02-27 16:04:24 [Information] ["GET"] "/notification/count" - Request received
+2026-02-27 16:04:24 [Information] ["GET"] "/game/1/toggle-interest" - Request received
+2026-02-27 16:04:24 [Information] ["GET"] "/notification/count" - Fetched notification count 0 for user 3 successfully
+2026-02-27 16:04:24 [Information] ["GET"] "/game/1/slots" - Request received
+2026-02-27 16:04:24 [Information] ["GET"] "/game/1/slots" - Fetched 52 slots for game 1 successfully
+2026-02-27 16:04:24 [Information] ["GET"] "/game/1/toggle-interest" - Checked interest in game 1 for user 3 successfully
+2026-02-27 16:04:30 [Information] ["GET"] "/notification/count" - Request received
+2026-02-27 16:04:30 [Information] ["GET"] "/game/1/toggle-interest" - Request received
+2026-02-27 16:04:30 [Information] ["GET"] "/notification/count" - Fetched notification count 0 for user 3 successfully
+2026-02-27 16:04:30 [Information] ["GET"] "/game/1/slots" - Request received
+2026-02-27 16:04:30 [Information] ["GET"] "/game/1/slots" - Fetched 52 slots for game 1 successfully
+2026-02-27 16:04:30 [Information] ["GET"] "/game/1/toggle-interest" - Checked interest in game 1 for user 3 successfully
+2026-02-27 16:04:36 [Information] ["GET"] "/notification/count" - Request received
+2026-02-27 16:04:36 [Information] ["GET"] "/game/1/toggle-interest" - Request received
+2026-02-27 16:04:36 [Information] ["GET"] "/notification/count" - Fetched notification count 0 for user 3 successfully
+2026-02-27 16:04:36 [Information] ["GET"] "/game/1/slots" - Request received
+2026-02-27 16:04:36 [Information] ["GET"] "/game/1/slots" - Fetched 52 slots for game 1 successfully
+2026-02-27 16:04:36 [Information] ["GET"] "/game/1/toggle-interest" - Checked interest in game 1 for user 3 successfully
+2026-02-27 16:04:45 [Information] ["GET"] "/notification/count" - Request received
+2026-02-27 16:04:45 [Information] ["GET"] "/game/1/slots" - Request received
+2026-02-27 16:04:45 [Information] ["GET"] "/notification/count" - Fetched notification count 0 for user 3 successfully
+2026-02-27 16:04:45 [Information] ["GET"] "/game/1/toggle-interest" - Request received
+2026-02-27 16:04:45 [Information] ["GET"] "/game/1/slots" - Fetched 52 slots for game 1 successfully
+2026-02-27 16:04:45 [Information] ["GET"] "/game/1/toggle-interest" - Checked interest in game 1 for user 3 successfully
+2026-02-27 16:04:49 [Information] ["GET"] "/notification/count" - Request received
+2026-02-27 16:04:49 [Information] ["GET"] "/game/1/toggle-interest" - Request received
+2026-02-27 16:04:49 [Information] ["GET"] "/notification/count" - Fetched notification count 0 for user 3 successfully
+2026-02-27 16:04:49 [Information] ["GET"] "/game/1/slots" - Request received
+2026-02-27 16:04:49 [Information] ["GET"] "/game/1/slots" - Fetched 52 slots for game 1 successfully
+2026-02-27 16:04:49 [Information] ["GET"] "/game/1/toggle-interest" - Checked interest in game 1 for user 3 successfully
+2026-02-27 16:04:52 [Information] ["GET"] "/notification/count" - Request received
+2026-02-27 16:04:52 [Information] ["GET"] "/game/1/toggle-interest" - Request received
+2026-02-27 16:04:52 [Information] ["GET"] "/notification/count" - Fetched notification count 0 for user 3 successfully
+2026-02-27 16:04:52 [Information] ["GET"] "/game/1/slots" - Request received
+2026-02-27 16:04:52 [Information] ["GET"] "/game/1/slots" - Fetched 52 slots for game 1 successfully
+2026-02-27 16:04:52 [Information] ["GET"] "/game/1/toggle-interest" - Checked interest in game 1 for user 3 successfully
+2026-02-27 16:05:35 [Information] ["GET"] "/notification/count" - Request received
+2026-02-27 16:05:35 [Information] ["GET"] "/game/1/slots" - Request received
+2026-02-27 16:05:35 [Information] ["GET"] "/game/1/toggle-interest" - Request received
+2026-02-27 16:05:35 [Information] ["GET"] "/game/1/slots" - Fetched 52 slots for game 1 successfully
+2026-02-27 16:05:35 [Information] ["GET"] "/notification/count" - Fetched notification count 0 for user 3 successfully
+2026-02-27 16:05:35 [Information] ["GET"] "/game/1/toggle-interest" - Checked interest in game 1 for user 3 successfully
+2026-02-27 16:05:43 [Information] ["GET"] "/notification/count" - Request received
+2026-02-27 16:05:43 [Information] ["GET"] "/game/1/toggle-interest" - Request received
+2026-02-27 16:05:43 [Information] ["GET"] "/notification/count" - Fetched notification count 0 for user 3 successfully
+2026-02-27 16:05:43 [Information] ["GET"] "/game/1/slots" - Request received
+2026-02-27 16:05:43 [Information] ["GET"] "/game/1/slots" - Fetched 52 slots for game 1 successfully
+2026-02-27 16:05:43 [Information] ["GET"] "/game/1/toggle-interest" - Checked interest in game 1 for user 3 successfully
+2026-02-27 16:05:47 [Information] ["GET"] "/game/1/booking/available-players" - Request received
+2026-02-27 16:05:47 [Information] ["GET"] "/game/1/booking/available-players" - Fetched available players for game 1 successfully
+2026-02-27 16:05:49 [Information] ["GET"] "/game/1/booking/available-players" - Request received
+2026-02-27 16:05:49 [Information] ["GET"] "/game/1/booking/available-players" - Fetched available players for game 1 successfully
+2026-02-27 16:05:58 [Information] ["GET"] "/game" - Request received
+2026-02-27 16:05:58 [Information] ["GET"] "/game" - Fetched 3 games successfully
+2026-02-27 16:06:01 [Information] ["GET"] "/game/3" - Request received
+2026-02-27 16:06:01 [Information] Fetched Game with Id 3
+2026-02-27 16:06:01 [Information] Retrieved game 3 and cached with version 0
+2026-02-27 16:06:01 [Information] ["GET"] "/game/3" - Fetched game with ID 3 successfully
+2026-02-27 16:06:09 [Information] ["PUT"] "/game/3" - Request received
+2026-02-27 16:06:09 [Information] Fetched Game with Id 3
+2026-02-27 16:06:09 [Information] Updated Game with Id 3
+2026-02-27 16:06:09 [Information] Game with Id 3 updated and cache versions incremented
+2026-02-27 16:06:09 [Information] ["PUT"] "/game/3" - Game with ID 3 updated successfully
+2026-02-27 16:06:09 [Information] ["GET"] "/game/3" - Request received
+2026-02-27 16:06:09 [Information] Fetched Game with Id 3
+2026-02-27 16:06:09 [Information] Retrieved game 3 and cached with version 1
+2026-02-27 16:06:09 [Information] ["GET"] "/game/3" - Fetched game with ID 3 successfully
+2026-02-27 16:07:38 [Information] ["GET"] "/notification/count" - Request received
+2026-02-27 16:07:38 [Information] ["GET"] "/game/3" - Request received
+2026-02-27 16:07:38 [Information] ["GET"] "/notification/count" - Fetched notification count 0 for user 3 successfully
+2026-02-27 16:07:38 [Information] ["GET"] "/game/3" - Fetched game with ID 3 successfully
+2026-02-27 16:07:59 [Information] ["GET"] "/game/3" - Request received
+2026-02-27 16:07:59 [Information] ["GET"] "/game/3" - Fetched game with ID 3 successfully
+2026-02-27 16:07:59 [Information] ["GET"] "/notification/count" - Request received
+2026-02-27 16:07:59 [Information] ["GET"] "/notification/count" - Fetched notification count 0 for user 3 successfully
+2026-02-27 16:10:12 [Information] Scheduler "QuartzScheduler_$_NON_CLUSTERED" shutting down.
+2026-02-27 16:10:12 [Information] Scheduler QuartzScheduler_$_NON_CLUSTERED paused.
+2026-02-27 16:10:12 [Information] Scheduler QuartzScheduler_$_NON_CLUSTERED Shutdown complete.
+2026-02-27 16:10:25 [Information] Initialized Scheduler Signaller of type: Quartz.Core.SchedulerSignalerImpl
+2026-02-27 16:10:25 [Information] Quartz Scheduler created
+2026-02-27 16:10:25 [Information] JobFactory set to: Quartz.Simpl.MicrosoftDependencyInjectionJobFactory
+2026-02-27 16:10:25 [Information] RAMJobStore initialized.
+2026-02-27 16:10:25 [Information] Quartz Scheduler 3.15.1.0 - 'QuartzScheduler' with instanceId 'NON_CLUSTERED' initialized
+2026-02-27 16:10:25 [Information] Using thread pool 'Quartz.Simpl.DefaultThreadPool', size: 10
+2026-02-27 16:10:25 [Information] Using job store 'Quartz.Simpl.RAMJobStore', supports persistence: False, clustered: False
+2026-02-27 16:10:25 [Information] Adding 1 jobs, 1 triggers.
+2026-02-27 16:10:25 [Information] Adding job: DEFAULT.WeeklyJob
+2026-02-27 16:10:25 [Information] Scheduler QuartzScheduler_$_NON_CLUSTERED started.
+2026-02-27 16:10:25 [Information] Starting Daily Celebration Job at 02/27/2026 16:10:25
+2026-02-27 16:10:25 [Information] Found 0 birthday users for today
+2026-02-27 16:10:25 [Information] Found 0 work anniversary users for today
+2026-02-27 16:10:25 [Information] Fetched system user with Id 4
+2026-02-27 16:10:25 [Information] Cache Updated for Daily Celebrations at 02/27/2026 16:10:25
+2026-02-27 16:10:51 [Information] ["GET"] "/notification/count" - Request received
+2026-02-27 16:10:51 [Information] ["GET"] "/job/review" - Request received
+2026-02-27 16:10:51 [Information] Unread notification count for UserId 5: 0
+2026-02-27 16:10:51 [Information] Retrieved notification count of user with Id 5 from repository and cached with version 0
+2026-02-27 16:10:51 [Information] ["GET"] "/notification/count" - Fetched notification count 0 for user 5 successfully
+2026-02-27 16:10:51 [Information] Fetched 1 jobs to review for ReviewerId 5, page 1
+2026-02-27 16:10:51 [Information] Retrieved jobs to review for reviewer with Id 5 from repository and cached with version 1
+2026-02-27 16:10:51 [Information] Total jobs to review retrieved for reviewer with Id 5: 1
+2026-02-27 16:10:51 [Information] ["GET"] "/job/review" - Fetched jobs to review for reviewer 5 successfully
+2026-02-27 16:10:52 [Information] ["GET"] "/game" - Request received
+2026-02-27 16:10:52 [Information] Retrieved all games and cached with version 1
+2026-02-27 16:10:52 [Information] ["GET"] "/game" - Fetched 3 games successfully
+2026-02-27 16:10:54 [Information] ["GET"] "/game/1/toggle-interest" - Request received
+2026-02-27 16:10:54 [Information] ["GET"] "/game/1/slots" - Request received
+2026-02-27 16:10:54 [Information] ["GET"] "/game/1/toggle-interest" - Checked interest in game 1 for user 5 successfully
+2026-02-27 16:10:54 [Information] Retrieved game slots for game 1 and cached with version 1
+2026-02-27 16:10:54 [Information] ["GET"] "/game/1/slots" - Fetched 52 slots for game 1 successfully
+2026-02-27 16:11:42 [Information] ["GET"] "/notification/count" - Request received
+2026-02-27 16:11:42 [Information] ["GET"] "/notification/count" - Fetched notification count 0 for user 5 successfully
+2026-02-27 16:11:42 [Information] ["GET"] "/game/1/toggle-interest" - Request received
+2026-02-27 16:11:42 [Information] ["GET"] "/game/1/slots" - Request received
+2026-02-27 16:11:42 [Information] ["GET"] "/game/1/slots" - Fetched 52 slots for game 1 successfully
+2026-02-27 16:11:42 [Information] ["GET"] "/game/1/toggle-interest" - Checked interest in game 1 for user 5 successfully
+2026-02-27 16:11:50 [Information] ["GET"] "/game/1/toggle-interest" - Request received
+2026-02-27 16:11:50 [Information] ["GET"] "/game/1/slots" - Request received
+2026-02-27 16:11:50 [Information] ["GET"] "/game/1/slots" - Fetched 52 slots for game 1 successfully
+2026-02-27 16:11:50 [Information] ["GET"] "/notification/count" - Request received
+2026-02-27 16:11:50 [Information] ["GET"] "/notification/count" - Fetched notification count 0 for user 5 successfully
+2026-02-27 16:11:50 [Information] ["GET"] "/game/1/toggle-interest" - Checked interest in game 1 for user 5 successfully
+2026-02-27 16:12:01 [Information] ["GET"] "/game/1/slots" - Request received
+2026-02-27 16:12:01 [Information] ["GET"] "/game/1/slots" - Fetched 52 slots for game 1 successfully
+2026-02-27 16:12:01 [Information] ["GET"] "/notification/count" - Request received
+2026-02-27 16:12:01 [Information] ["GET"] "/game/1/toggle-interest" - Request received
+2026-02-27 16:12:01 [Information] ["GET"] "/notification/count" - Fetched notification count 0 for user 5 successfully
+2026-02-27 16:12:01 [Information] ["GET"] "/game/1/toggle-interest" - Checked interest in game 1 for user 5 successfully
+2026-02-27 16:12:11 [Information] ["GET"] "/notification/count" - Request received
+2026-02-27 16:12:11 [Information] ["GET"] "/game/1/toggle-interest" - Request received
+2026-02-27 16:12:11 [Information] ["GET"] "/game/1/slots" - Request received
+2026-02-27 16:12:11 [Information] ["GET"] "/notification/count" - Fetched notification count 0 for user 5 successfully
+2026-02-27 16:12:11 [Information] ["GET"] "/game/1/slots" - Fetched 52 slots for game 1 successfully
+2026-02-27 16:12:11 [Information] ["GET"] "/game/1/toggle-interest" - Checked interest in game 1 for user 5 successfully
+2026-02-27 16:13:06 [Information] ["GET"] "/notification/count" - Request received
+2026-02-27 16:13:06 [Information] ["GET"] "/game/1/toggle-interest" - Request received
+2026-02-27 16:13:06 [Information] ["GET"] "/notification/count" - Fetched notification count 0 for user 5 successfully
+2026-02-27 16:13:06 [Information] ["GET"] "/game/1/slots" - Request received
+2026-02-27 16:13:06 [Information] ["GET"] "/game/1/slots" - Fetched 52 slots for game 1 successfully
+2026-02-27 16:13:06 [Information] ["GET"] "/game/1/toggle-interest" - Checked interest in game 1 for user 5 successfully
+2026-02-27 16:14:05 [Information] ["GET"] "/notification/count" - Request received
+2026-02-27 16:14:05 [Information] ["GET"] "/notification/count" - Fetched notification count 0 for user 5 successfully
+2026-02-27 16:14:05 [Information] ["GET"] "/game/1/toggle-interest" - Request received
+2026-02-27 16:14:05 [Information] ["GET"] "/game/1/slots" - Request received
+2026-02-27 16:14:05 [Information] ["GET"] "/game/1/slots" - Fetched 52 slots for game 1 successfully
+2026-02-27 16:14:05 [Information] ["GET"] "/game/1/toggle-interest" - Checked interest in game 1 for user 5 successfully
+2026-02-27 16:17:38 [Information] ["GET"] "/notification/count" - Request received
+2026-02-27 16:17:38 [Information] ["GET"] "/notification/count" - Fetched notification count 0 for user 5 successfully
+2026-02-27 16:17:38 [Information] ["GET"] "/game/1/toggle-interest" - Request received
+2026-02-27 16:17:38 [Information] ["GET"] "/game/1/slots" - Request received
+2026-02-27 16:17:38 [Information] ["GET"] "/game/1/slots" - Fetched 52 slots for game 1 successfully
+2026-02-27 16:17:38 [Information] ["GET"] "/game/1/toggle-interest" - Checked interest in game 1 for user 5 successfully
+2026-02-27 16:17:46 [Information] ["GET"] "/game/1/slots/216/details" - Request received
+2026-02-27 16:17:46 [Information] Fetched GameSlot 216 for GameId 1
+2026-02-27 16:17:46 [Information] Retrieved game slot 216 for game 1 and cached with version 1
+2026-02-27 16:17:46 [Information] ["GET"] "/game/1/slots/216/details" - Fetched slot 216 details for game 1 successfully
+2026-02-27 16:17:48 [Information] ["GET"] "/game/1/toggle-interest" - Request received
+2026-02-27 16:17:48 [Information] ["GET"] "/game/1/slots" - Request received
+2026-02-27 16:17:48 [Information] ["GET"] "/game/1/slots" - Fetched 52 slots for game 1 successfully
+2026-02-27 16:17:48 [Information] ["GET"] "/game/1/toggle-interest" - Checked interest in game 1 for user 5 successfully
+2026-02-27 16:18:28 [Information] Scheduler "QuartzScheduler_$_NON_CLUSTERED" shutting down.
+2026-02-27 16:18:28 [Information] Scheduler QuartzScheduler_$_NON_CLUSTERED paused.
+2026-02-27 16:18:28 [Information] Scheduler QuartzScheduler_$_NON_CLUSTERED Shutdown complete.
+2026-02-27 16:18:53 [Information] Initialized Scheduler Signaller of type: Quartz.Core.SchedulerSignalerImpl
+2026-02-27 16:18:53 [Information] Quartz Scheduler created
+2026-02-27 16:18:53 [Information] JobFactory set to: Quartz.Simpl.MicrosoftDependencyInjectionJobFactory
+2026-02-27 16:18:53 [Information] RAMJobStore initialized.
+2026-02-27 16:18:53 [Information] Quartz Scheduler 3.15.1.0 - 'QuartzScheduler' with instanceId 'NON_CLUSTERED' initialized
+2026-02-27 16:18:53 [Information] Using thread pool 'Quartz.Simpl.DefaultThreadPool', size: 10
+2026-02-27 16:18:53 [Information] Using job store 'Quartz.Simpl.RAMJobStore', supports persistence: False, clustered: False
+2026-02-27 16:18:53 [Information] Adding 1 jobs, 1 triggers.
+2026-02-27 16:18:53 [Information] Adding job: DEFAULT.WeeklyJob
+2026-02-27 16:18:53 [Information] Scheduler QuartzScheduler_$_NON_CLUSTERED started.
+2026-02-27 16:18:53 [Information] Starting Daily Celebration Job at 02/27/2026 16:18:53
+2026-02-27 16:18:53 [Information] Found 0 birthday users for today
+2026-02-27 16:18:53 [Information] Found 0 work anniversary users for today
+2026-02-27 16:18:53 [Information] Fetched system user with Id 4
+2026-02-27 16:18:53 [Information] Cache Updated for Daily Celebrations at 02/27/2026 16:18:53
+2026-02-27 16:18:59 [Information] ["GET"] "/notification/count" - Request received
+2026-02-27 16:18:59 [Information] ["GET"] "/game/1/toggle-interest" - Request received
+2026-02-27 16:18:59 [Information] ["GET"] "/game/1/slots" - Request received
+2026-02-27 16:18:59 [Information] Unread notification count for UserId 5: 0
+2026-02-27 16:18:59 [Information] Retrieved notification count of user with Id 5 from repository and cached with version 0
+2026-02-27 16:18:59 [Information] ["GET"] "/notification/count" - Fetched notification count 0 for user 5 successfully
+2026-02-27 16:18:59 [Information] ["GET"] "/game/1/toggle-interest" - Checked interest in game 1 for user 5 successfully
+2026-02-27 16:18:59 [Information] Retrieved game slots for game 1 and cached with version 1
+2026-02-27 16:18:59 [Information] ["GET"] "/game/1/slots" - Fetched 51 slots for game 1 successfully
+2026-02-27 16:19:04 [Information] ["GET"] "/notification/count" - Request received
+2026-02-27 16:19:04 [Information] ["GET"] "/notification/count" - Fetched notification count 0 for user 5 successfully
+2026-02-27 16:19:04 [Information] ["GET"] "/game/1/toggle-interest" - Request received
+2026-02-27 16:19:04 [Information] ["GET"] "/game/1/slots" - Request received
+2026-02-27 16:19:04 [Information] ["GET"] "/game/1/slots" - Fetched 51 slots for game 1 successfully
+2026-02-27 16:19:04 [Information] ["GET"] "/game/1/toggle-interest" - Checked interest in game 1 for user 5 successfully
+2026-02-27 16:19:06 [Information] ["GET"] "/game/1/toggle-interest" - Request received
+2026-02-27 16:19:06 [Information] ["GET"] "/game/1/slots" - Request received
+2026-02-27 16:19:06 [Information] ["GET"] "/game/1/slots" - Fetched 51 slots for game 1 successfully
+2026-02-27 16:19:06 [Information] ["GET"] "/notification/count" - Request received
+2026-02-27 16:19:06 [Information] ["GET"] "/notification/count" - Fetched notification count 0 for user 5 successfully
+2026-02-27 16:19:06 [Information] ["GET"] "/game/1/toggle-interest" - Checked interest in game 1 for user 5 successfully
+2026-02-27 16:19:07 [Information] ["GET"] "/notification/count" - Request received
+2026-02-27 16:19:07 [Information] Unread notification count for UserId 3: 0
+2026-02-27 16:19:07 [Information] Retrieved notification count of user with Id 3 from repository and cached with version 0
+2026-02-27 16:19:07 [Information] ["GET"] "/notification/count" - Fetched notification count 0 for user 3 successfully
+2026-02-27 16:19:07 [Information] ["GET"] "/game/3" - Request received
+2026-02-27 16:19:07 [Information] Fetched Game with Id 3
+2026-02-27 16:19:07 [Information] Retrieved game 3 and cached with version 0
+2026-02-27 16:19:07 [Information] ["GET"] "/game/3" - Fetched game with ID 3 successfully
+2026-02-27 16:19:08 [Information] ["GET"] "/game" - Request received
+2026-02-27 16:19:08 [Information] Retrieved all games and cached with version 1
+2026-02-27 16:19:08 [Information] ["GET"] "/game" - Fetched 3 games successfully
+2026-02-27 16:19:10 [Information] ["GET"] "/game/1/slots" - Request received
+2026-02-27 16:19:10 [Information] ["GET"] "/game/1/toggle-interest" - Request received
+2026-02-27 16:19:10 [Information] ["GET"] "/game/1/slots" - Fetched 51 slots for game 1 successfully
+2026-02-27 16:19:10 [Information] ["GET"] "/game/1/toggle-interest" - Checked interest in game 1 for user 3 successfully
+2026-02-27 16:19:11 [Information] ["GET"] "/notification/count" - Request received
+2026-02-27 16:19:11 [Information] ["GET"] "/game/1/slots" - Request received
+2026-02-27 16:19:11 [Information] ["GET"] "/game/1/toggle-interest" - Request received
+2026-02-27 16:19:11 [Information] ["GET"] "/notification/count" - Fetched notification count 0 for user 5 successfully
+2026-02-27 16:19:11 [Information] ["GET"] "/game/1/slots" - Fetched 51 slots for game 1 successfully
+2026-02-27 16:19:11 [Information] ["GET"] "/game/1/toggle-interest" - Checked interest in game 1 for user 5 successfully
+2026-02-27 16:19:12 [Information] ["GET"] "/notification/count" - Request received
+2026-02-27 16:19:12 [Information] ["GET"] "/game/1/toggle-interest" - Request received
+2026-02-27 16:19:12 [Information] ["GET"] "/game/1/slots" - Request received
+2026-02-27 16:19:12 [Information] ["GET"] "/notification/count" - Fetched notification count 0 for user 3 successfully
+2026-02-27 16:19:12 [Information] ["GET"] "/game/1/slots" - Fetched 51 slots for game 1 successfully
+2026-02-27 16:19:12 [Information] ["GET"] "/game/1/toggle-interest" - Checked interest in game 1 for user 3 successfully
+2026-02-27 16:19:24 [Information] ["GET"] "/notification/count" - Request received
+2026-02-27 16:19:24 [Information] ["GET"] "/game/1/toggle-interest" - Request received
+2026-02-27 16:19:24 [Information] ["GET"] "/notification/count" - Fetched notification count 0 for user 3 successfully
+2026-02-27 16:19:24 [Information] ["GET"] "/game/1/slots" - Request received
+2026-02-27 16:19:24 [Information] ["GET"] "/game/1/slots" - Fetched 51 slots for game 1 successfully
+2026-02-27 16:19:24 [Information] ["GET"] "/game/1/toggle-interest" - Checked interest in game 1 for user 3 successfully
+2026-02-27 16:19:26 [Information] ["GET"] "/notification/count" - Request received
+2026-02-27 16:19:26 [Information] ["GET"] "/game/1/toggle-interest" - Request received
+2026-02-27 16:19:26 [Information] ["GET"] "/game/1/slots" - Request received
+2026-02-27 16:19:26 [Information] ["GET"] "/notification/count" - Fetched notification count 0 for user 3 successfully
+2026-02-27 16:19:26 [Information] ["GET"] "/game/1/slots" - Fetched 51 slots for game 1 successfully
+2026-02-27 16:19:26 [Information] ["GET"] "/game/1/toggle-interest" - Checked interest in game 1 for user 3 successfully
+2026-02-27 16:19:29 [Information] ["GET"] "/notification/count" - Request received
+2026-02-27 16:19:29 [Information] ["GET"] "/notification/count" - Fetched notification count 0 for user 3 successfully
+2026-02-27 16:19:29 [Information] ["GET"] "/game/1/toggle-interest" - Request received
+2026-02-27 16:19:29 [Information] ["GET"] "/game/1/slots" - Request received
+2026-02-27 16:19:29 [Information] ["GET"] "/game/1/slots" - Fetched 51 slots for game 1 successfully
+2026-02-27 16:19:29 [Information] ["GET"] "/game/1/toggle-interest" - Checked interest in game 1 for user 3 successfully
+2026-02-27 16:19:31 [Information] ["GET"] "/game/1/toggle-interest" - Request received
+2026-02-27 16:19:31 [Information] ["GET"] "/notification/count" - Request received
+2026-02-27 16:19:31 [Information] ["GET"] "/game/1/slots" - Request received
+2026-02-27 16:19:31 [Information] ["GET"] "/notification/count" - Fetched notification count 0 for user 3 successfully
+2026-02-27 16:19:31 [Information] ["GET"] "/game/1/slots" - Fetched 51 slots for game 1 successfully
+2026-02-27 16:19:31 [Information] ["GET"] "/game/1/toggle-interest" - Checked interest in game 1 for user 3 successfully
+2026-02-27 16:20:57 [Information] ["GET"] "/notification/count" - Request received
+2026-02-27 16:20:57 [Information] ["GET"] "/notification/count" - Fetched notification count 0 for user 3 successfully
+2026-02-27 16:20:57 [Information] ["GET"] "/game/1/slots" - Request received
+2026-02-27 16:20:57 [Information] ["GET"] "/game/1/toggle-interest" - Request received
+2026-02-27 16:20:57 [Information] ["GET"] "/game/1/slots" - Fetched 51 slots for game 1 successfully
+2026-02-27 16:20:57 [Information] ["GET"] "/game/1/toggle-interest" - Checked interest in game 1 for user 3 successfully
+2026-02-27 16:21:02 [Information] ["GET"] "/notification/count" - Request received
+2026-02-27 16:21:02 [Information] ["GET"] "/game/1/toggle-interest" - Request received
+2026-02-27 16:21:02 [Information] ["GET"] "/game/1/slots" - Request received
+2026-02-27 16:21:02 [Information] ["GET"] "/notification/count" - Fetched notification count 0 for user 5 successfully
+2026-02-27 16:21:02 [Information] ["GET"] "/game/1/slots" - Fetched 51 slots for game 1 successfully
+2026-02-27 16:21:02 [Information] ["GET"] "/game/1/toggle-interest" - Checked interest in game 1 for user 5 successfully
+2026-02-27 16:21:03 [Information] ["GET"] "/notification/count" - Request received
+2026-02-27 16:21:03 [Information] ["GET"] "/notification/count" - Fetched notification count 0 for user 3 successfully
+2026-02-27 16:21:03 [Information] ["GET"] "/game/1/toggle-interest" - Request received
+2026-02-27 16:21:03 [Information] ["GET"] "/game/1/slots" - Request received
+2026-02-27 16:21:03 [Information] ["GET"] "/game/1/slots" - Fetched 51 slots for game 1 successfully
+2026-02-27 16:21:03 [Information] ["GET"] "/game/1/toggle-interest" - Checked interest in game 1 for user 3 successfully
+2026-02-27 16:21:04 [Information] ["GET"] "/notification/count" - Request received
+2026-02-27 16:21:04 [Information] ["GET"] "/notification/count" - Fetched notification count 0 for user 5 successfully
+2026-02-27 16:21:04 [Information] ["GET"] "/game/1/toggle-interest" - Request received
+2026-02-27 16:21:04 [Information] ["GET"] "/game/1/slots" - Request received
+2026-02-27 16:21:04 [Information] ["GET"] "/game/1/slots" - Fetched 51 slots for game 1 successfully
+2026-02-27 16:21:04 [Information] ["GET"] "/game/1/toggle-interest" - Checked interest in game 1 for user 5 successfully
+2026-02-27 16:21:04 [Information] ["GET"] "/notification/count" - Request received
+2026-02-27 16:21:04 [Information] ["GET"] "/game/1/toggle-interest" - Request received
+2026-02-27 16:21:04 [Information] ["GET"] "/game/1/slots" - Request received
+2026-02-27 16:21:04 [Information] ["GET"] "/game/1/slots" - Fetched 51 slots for game 1 successfully
+2026-02-27 16:21:04 [Information] ["GET"] "/notification/count" - Fetched notification count 0 for user 3 successfully
+2026-02-27 16:21:04 [Information] ["GET"] "/game/1/toggle-interest" - Checked interest in game 1 for user 3 successfully
+2026-02-27 16:21:05 [Information] ["GET"] "/notification/count" - Request received
+2026-02-27 16:21:05 [Information] ["GET"] "/notification/count" - Fetched notification count 0 for user 5 successfully
+2026-02-27 16:21:05 [Information] ["GET"] "/game/1/toggle-interest" - Request received
+2026-02-27 16:21:05 [Information] ["GET"] "/game/1/slots" - Request received
+2026-02-27 16:21:05 [Information] ["GET"] "/game/1/slots" - Fetched 51 slots for game 1 successfully
+2026-02-27 16:21:05 [Information] ["GET"] "/game/1/toggle-interest" - Checked interest in game 1 for user 5 successfully
+2026-02-27 16:21:05 [Information] ["GET"] "/notification/count" - Request received
+2026-02-27 16:21:05 [Information] ["GET"] "/game/1/toggle-interest" - Request received
+2026-02-27 16:21:05 [Information] ["GET"] "/game/1/slots" - Request received
+2026-02-27 16:21:05 [Information] ["GET"] "/notification/count" - Fetched notification count 0 for user 3 successfully
+2026-02-27 16:21:05 [Information] ["GET"] "/game/1/slots" - Fetched 51 slots for game 1 successfully
+2026-02-27 16:21:05 [Information] ["GET"] "/game/1/toggle-interest" - Checked interest in game 1 for user 3 successfully
+2026-02-27 16:21:05 [Information] ["GET"] "/notification/count" - Request received
+2026-02-27 16:21:05 [Information] ["GET"] "/game/1/toggle-interest" - Request received
+2026-02-27 16:21:05 [Information] ["GET"] "/notification/count" - Fetched notification count 0 for user 5 successfully
+2026-02-27 16:21:05 [Information] ["GET"] "/game/1/slots" - Request received
+2026-02-27 16:21:05 [Information] ["GET"] "/game/1/slots" - Fetched 51 slots for game 1 successfully
+2026-02-27 16:21:05 [Information] ["GET"] "/game/1/toggle-interest" - Checked interest in game 1 for user 5 successfully
+2026-02-27 16:21:06 [Information] ["GET"] "/notification/count" - Request received
+2026-02-27 16:21:06 [Information] ["GET"] "/game/1/toggle-interest" - Request received
+2026-02-27 16:21:06 [Information] ["GET"] "/notification/count" - Fetched notification count 0 for user 3 successfully
+2026-02-27 16:21:06 [Information] ["GET"] "/game/1/slots" - Request received
+2026-02-27 16:21:06 [Information] ["GET"] "/game/1/slots" - Fetched 51 slots for game 1 successfully
+2026-02-27 16:21:06 [Information] ["GET"] "/game/1/toggle-interest" - Checked interest in game 1 for user 3 successfully
+2026-02-27 16:21:06 [Information] ["GET"] "/notification/count" - Request received
+2026-02-27 16:21:06 [Information] ["GET"] "/game/1/toggle-interest" - Request received
+2026-02-27 16:21:06 [Information] ["GET"] "/notification/count" - Fetched notification count 0 for user 5 successfully
+2026-02-27 16:21:06 [Information] ["GET"] "/game/1/slots" - Request received
+2026-02-27 16:21:06 [Information] ["GET"] "/game/1/slots" - Fetched 51 slots for game 1 successfully
+2026-02-27 16:21:06 [Information] ["GET"] "/game/1/toggle-interest" - Checked interest in game 1 for user 5 successfully
+2026-02-27 16:21:07 [Information] ["GET"] "/notification/count" - Request received
+2026-02-27 16:21:07 [Information] ["GET"] "/notification/count" - Fetched notification count 0 for user 3 successfully
+2026-02-27 16:21:07 [Information] ["GET"] "/game/1/toggle-interest" - Request received
+2026-02-27 16:21:07 [Information] ["GET"] "/game/1/slots" - Request received
+2026-02-27 16:21:07 [Information] ["GET"] "/game/1/slots" - Fetched 51 slots for game 1 successfully
+2026-02-27 16:21:07 [Information] ["GET"] "/game/1/toggle-interest" - Checked interest in game 1 for user 3 successfully
+2026-02-27 16:21:08 [Information] ["GET"] "/notification/count" - Request received
+2026-02-27 16:21:08 [Information] ["GET"] "/game/1/slots" - Request received
+2026-02-27 16:21:08 [Information] ["GET"] "/game/1/toggle-interest" - Request received
+2026-02-27 16:21:08 [Information] ["GET"] "/game/1/slots" - Fetched 51 slots for game 1 successfully
+2026-02-27 16:21:08 [Information] ["GET"] "/notification/count" - Fetched notification count 0 for user 5 successfully
+2026-02-27 16:21:08 [Information] ["GET"] "/game/1/toggle-interest" - Checked interest in game 1 for user 5 successfully
+2026-02-27 16:21:08 [Information] ["GET"] "/notification/count" - Request received
+2026-02-27 16:21:08 [Information] ["GET"] "/game/1/slots" - Request received
+2026-02-27 16:21:08 [Information] ["GET"] "/notification/count" - Fetched notification count 0 for user 3 successfully
+2026-02-27 16:21:08 [Information] ["GET"] "/game/1/slots" - Fetched 51 slots for game 1 successfully
+2026-02-27 16:21:08 [Information] ["GET"] "/game/1/toggle-interest" - Request received
+2026-02-27 16:21:08 [Information] ["GET"] "/game/1/toggle-interest" - Checked interest in game 1 for user 3 successfully
+2026-02-27 16:21:18 [Information] ["GET"] "/notification/count" - Request received
+2026-02-27 16:21:18 [Information] ["GET"] "/game/1/toggle-interest" - Request received
+2026-02-27 16:21:18 [Information] ["GET"] "/game/1/slots" - Request received
+2026-02-27 16:21:18 [Information] ["GET"] "/notification/count" - Fetched notification count 0 for user 5 successfully
+2026-02-27 16:21:18 [Information] ["GET"] "/game/1/slots" - Fetched 51 slots for game 1 successfully
+2026-02-27 16:21:18 [Information] ["GET"] "/game/1/toggle-interest" - Checked interest in game 1 for user 5 successfully
+2026-02-27 16:21:18 [Information] ["GET"] "/notification/count" - Request received
+2026-02-27 16:21:18 [Information] ["GET"] "/game/1/toggle-interest" - Request received
+2026-02-27 16:21:18 [Information] ["GET"] "/game/1/slots" - Request received
+2026-02-27 16:21:18 [Information] ["GET"] "/notification/count" - Fetched notification count 0 for user 3 successfully
+2026-02-27 16:21:18 [Information] ["GET"] "/game/1/slots" - Fetched 51 slots for game 1 successfully
+2026-02-27 16:21:18 [Information] ["GET"] "/game/1/toggle-interest" - Checked interest in game 1 for user 3 successfully
+2026-02-27 16:21:19 [Information] ["GET"] "/notification/count" - Request received
+2026-02-27 16:21:19 [Information] ["GET"] "/game/1/slots" - Request received
+2026-02-27 16:21:19 [Information] ["GET"] "/game/1/toggle-interest" - Request received
+2026-02-27 16:21:19 [Information] ["GET"] "/game/1/slots" - Fetched 51 slots for game 1 successfully
+2026-02-27 16:21:19 [Information] ["GET"] "/notification/count" - Fetched notification count 0 for user 5 successfully
+2026-02-27 16:21:19 [Information] ["GET"] "/game/1/toggle-interest" - Checked interest in game 1 for user 5 successfully
+2026-02-27 16:21:20 [Information] ["GET"] "/notification/count" - Request received
+2026-02-27 16:21:20 [Information] ["GET"] "/game/1/toggle-interest" - Request received
+2026-02-27 16:21:20 [Information] ["GET"] "/game/1/slots" - Request received
+2026-02-27 16:21:20 [Information] ["GET"] "/notification/count" - Fetched notification count 0 for user 3 successfully
+2026-02-27 16:21:20 [Information] ["GET"] "/game/1/slots" - Fetched 51 slots for game 1 successfully
+2026-02-27 16:21:20 [Information] ["GET"] "/game/1/toggle-interest" - Checked interest in game 1 for user 3 successfully
+2026-02-27 16:21:20 [Information] ["GET"] "/game/1/slots" - Request received
+2026-02-27 16:21:20 [Information] ["GET"] "/game/1/slots" - Fetched 51 slots for game 1 successfully
+2026-02-27 16:21:20 [Information] ["GET"] "/game/1/toggle-interest" - Request received
+2026-02-27 16:21:20 [Information] ["GET"] "/game/1/toggle-interest" - Checked interest in game 1 for user 3 successfully
+2026-02-27 16:21:21 [Information] ["GET"] "/game/1/slots" - Request received
+2026-02-27 16:21:21 [Information] ["GET"] "/game/1/toggle-interest" - Request received
+2026-02-27 16:21:21 [Information] ["GET"] "/game/1/slots" - Fetched 51 slots for game 1 successfully
+2026-02-27 16:21:21 [Information] ["GET"] "/game/1/toggle-interest" - Checked interest in game 1 for user 5 successfully
+2026-02-27 16:21:23 [Information] ["GET"] "/notification/count" - Request received
+2026-02-27 16:21:23 [Information] ["GET"] "/game/1/toggle-interest" - Request received
+2026-02-27 16:21:23 [Information] ["GET"] "/notification/count" - Fetched notification count 0 for user 3 successfully
+2026-02-27 16:21:23 [Information] ["GET"] "/game/1/slots" - Request received
+2026-02-27 16:21:23 [Information] ["GET"] "/game/1/slots" - Fetched 51 slots for game 1 successfully
+2026-02-27 16:21:23 [Information] ["GET"] "/game/1/toggle-interest" - Checked interest in game 1 for user 3 successfully
+2026-02-27 16:21:25 [Information] ["GET"] "/notification/count" - Request received
+2026-02-27 16:21:25 [Information] ["GET"] "/notification/count" - Fetched notification count 0 for user 5 successfully
+2026-02-27 16:21:25 [Information] ["GET"] "/game/1/slots" - Request received
+2026-02-27 16:21:25 [Information] ["GET"] "/game/1/toggle-interest" - Request received
+2026-02-27 16:21:25 [Information] ["GET"] "/game/1/slots" - Fetched 51 slots for game 1 successfully
+2026-02-27 16:21:25 [Information] ["GET"] "/game/1/toggle-interest" - Checked interest in game 1 for user 5 successfully
+2026-02-27 16:21:52 [Information] ["GET"] "/notification/count" - Request received
+2026-02-27 16:21:52 [Information] ["GET"] "/game/1/toggle-interest" - Request received
+2026-02-27 16:21:52 [Information] ["GET"] "/notification/count" - Fetched notification count 0 for user 5 successfully
+2026-02-27 16:21:52 [Information] ["GET"] "/game/1/slots" - Request received
+2026-02-27 16:21:52 [Information] ["GET"] "/game/1/slots" - Fetched 51 slots for game 1 successfully
+2026-02-27 16:21:52 [Information] ["GET"] "/game/1/toggle-interest" - Checked interest in game 1 for user 5 successfully
+2026-02-27 16:22:58 [Information] ["GET"] "/game/1/toggle-interest" - Request received
+2026-02-27 16:22:58 [Information] ["GET"] "/game/1/slots" - Request received
+2026-02-27 16:22:58 [Information] ["GET"] "/game/1/slots" - Fetched 51 slots for game 1 successfully
+2026-02-27 16:22:58 [Information] ["GET"] "/game/1/toggle-interest" - Checked interest in game 1 for user 5 successfully
+2026-02-27 16:22:58 [Information] ["GET"] "/game/1/toggle-interest" - Request received
+2026-02-27 16:22:58 [Information] ["GET"] "/game/1/slots" - Request received
+2026-02-27 16:22:58 [Information] ["GET"] "/game/1/slots" - Fetched 51 slots for game 1 successfully
+2026-02-27 16:22:58 [Information] ["GET"] "/game/1/toggle-interest" - Checked interest in game 1 for user 3 successfully
+2026-02-27 16:23:49 [Information] ["GET"] "/notification/count" - Request received
+2026-02-27 16:23:49 [Information] ["GET"] "/game/1/slots" - Request received
+2026-02-27 16:23:49 [Information] ["GET"] "/notification/count" - Fetched notification count 0 for user 3 successfully
+2026-02-27 16:23:49 [Information] ["GET"] "/game/1/toggle-interest" - Request received
+2026-02-27 16:23:49 [Information] ["GET"] "/game/1/slots" - Fetched 51 slots for game 1 successfully
+2026-02-27 16:23:49 [Information] ["GET"] "/game/1/toggle-interest" - Checked interest in game 1 for user 3 successfully
+2026-02-27 16:24:06 [Information] ["GET"] "/game/1/toggle-interest" - Request received
+2026-02-27 16:24:06 [Information] ["GET"] "/game/1/slots" - Request received
+2026-02-27 16:24:06 [Information] ["GET"] "/game/1/slots" - Fetched 51 slots for game 1 successfully
+2026-02-27 16:24:06 [Information] ["GET"] "/notification/count" - Request received
+2026-02-27 16:24:06 [Information] ["GET"] "/notification/count" - Fetched notification count 0 for user 3 successfully
+2026-02-27 16:24:06 [Information] ["GET"] "/game/1/toggle-interest" - Checked interest in game 1 for user 3 successfully
+2026-02-27 16:25:01 [Information] ["GET"] "/notification/count" - Request received
+2026-02-27 16:25:01 [Information] ["GET"] "/game/1/toggle-interest" - Request received
+2026-02-27 16:25:01 [Information] ["GET"] "/game/1/slots" - Request received
+2026-02-27 16:25:01 [Information] ["GET"] "/game/1/slots" - Fetched 51 slots for game 1 successfully
+2026-02-27 16:25:01 [Information] ["GET"] "/notification/count" - Fetched notification count 0 for user 3 successfully
+2026-02-27 16:25:01 [Information] ["GET"] "/game/1/toggle-interest" - Checked interest in game 1 for user 3 successfully
+2026-02-27 16:26:13 [Information] ["GET"] "/game/1/slots" - Request received
+2026-02-27 16:26:13 [Information] ["GET"] "/game/1/toggle-interest" - Request received
+2026-02-27 16:26:13 [Information] ["GET"] "/game/1/slots" - Fetched 51 slots for game 1 successfully
+2026-02-27 16:26:13 [Information] ["GET"] "/game/1/toggle-interest" - Checked interest in game 1 for user 5 successfully
+2026-02-27 16:26:13 [Information] ["GET"] "/notification/count" - Request received
+2026-02-27 16:26:13 [Information] ["GET"] "/game/1/toggle-interest" - Request received
+2026-02-27 16:26:13 [Information] ["GET"] "/notification/count" - Fetched notification count 0 for user 3 successfully
+2026-02-27 16:26:13 [Information] ["GET"] "/game/1/slots" - Request received
+2026-02-27 16:26:13 [Information] ["GET"] "/game/1/slots" - Fetched 51 slots for game 1 successfully
+2026-02-27 16:26:13 [Information] ["GET"] "/game/1/toggle-interest" - Checked interest in game 1 for user 3 successfully
+2026-02-27 16:26:14 [Information] ["GET"] "/game/1/slots" - Request received
+2026-02-27 16:26:14 [Information] ["GET"] "/game/1/toggle-interest" - Request received
+2026-02-27 16:26:14 [Information] ["GET"] "/game/1/slots" - Fetched 51 slots for game 1 successfully
+2026-02-27 16:26:14 [Information] ["GET"] "/game/1/toggle-interest" - Checked interest in game 1 for user 5 successfully
+2026-02-27 16:26:14 [Information] ["GET"] "/notification/count" - Request received
+2026-02-27 16:26:14 [Information] ["GET"] "/game/1/toggle-interest" - Request received
+2026-02-27 16:26:14 [Information] ["GET"] "/notification/count" - Fetched notification count 0 for user 3 successfully
+2026-02-27 16:26:14 [Information] ["GET"] "/game/1/slots" - Request received
+2026-02-27 16:26:14 [Information] ["GET"] "/game/1/slots" - Fetched 51 slots for game 1 successfully
+2026-02-27 16:26:14 [Information] ["GET"] "/game/1/toggle-interest" - Checked interest in game 1 for user 3 successfully
+2026-02-27 16:26:18 [Information] ["GET"] "/game/1/toggle-interest" - Request received
+2026-02-27 16:26:18 [Information] ["GET"] "/game/1/slots" - Request received
+2026-02-27 16:26:18 [Information] ["GET"] "/game/1/slots" - Fetched 51 slots for game 1 successfully
+2026-02-27 16:26:18 [Information] ["GET"] "/game/1/toggle-interest" - Checked interest in game 1 for user 5 successfully
+2026-02-27 16:26:18 [Information] ["GET"] "/notification/count" - Request received
+2026-02-27 16:26:18 [Information] ["GET"] "/game/1/slots" - Request received
+2026-02-27 16:26:18 [Information] ["GET"] "/notification/count" - Fetched notification count 0 for user 3 successfully
+2026-02-27 16:26:18 [Information] ["GET"] "/game/1/slots" - Fetched 51 slots for game 1 successfully
+2026-02-27 16:26:18 [Information] ["GET"] "/game/1/toggle-interest" - Request received
+2026-02-27 16:26:18 [Information] ["GET"] "/game/1/toggle-interest" - Checked interest in game 1 for user 3 successfully
+2026-02-27 16:26:20 [Information] ["GET"] "/game/1/slots" - Request received
+2026-02-27 16:26:20 [Information] ["GET"] "/game/1/toggle-interest" - Request received
+2026-02-27 16:26:20 [Information] ["GET"] "/game/1/slots" - Fetched 51 slots for game 1 successfully
+2026-02-27 16:26:20 [Information] ["GET"] "/game/1/toggle-interest" - Checked interest in game 1 for user 5 successfully
+2026-02-27 16:26:20 [Information] ["GET"] "/notification/count" - Request received
+2026-02-27 16:26:20 [Information] ["GET"] "/game/1/slots" - Request received
+2026-02-27 16:26:20 [Information] ["GET"] "/notification/count" - Fetched notification count 0 for user 3 successfully
+2026-02-27 16:26:20 [Information] ["GET"] "/game/1/slots" - Fetched 51 slots for game 1 successfully
+2026-02-27 16:26:20 [Information] ["GET"] "/game/1/toggle-interest" - Request received
+2026-02-27 16:26:20 [Information] ["GET"] "/game/1/toggle-interest" - Checked interest in game 1 for user 3 successfully
+2026-02-27 16:26:23 [Information] ["GET"] "/game/1/toggle-interest" - Request received
+2026-02-27 16:26:23 [Information] ["GET"] "/game/1/slots" - Request received
+2026-02-27 16:26:23 [Information] ["GET"] "/game/1/slots" - Fetched 51 slots for game 1 successfully
+2026-02-27 16:26:23 [Information] ["GET"] "/game/1/toggle-interest" - Checked interest in game 1 for user 5 successfully
+2026-02-27 16:26:23 [Information] ["GET"] "/notification/count" - Request received
+2026-02-27 16:26:23 [Information] ["GET"] "/notification/count" - Fetched notification count 0 for user 3 successfully
+2026-02-27 16:26:23 [Information] ["GET"] "/game/1/toggle-interest" - Request received
+2026-02-27 16:26:23 [Information] ["GET"] "/game/1/slots" - Request received
+2026-02-27 16:26:23 [Information] ["GET"] "/game/1/slots" - Fetched 51 slots for game 1 successfully
+2026-02-27 16:26:23 [Information] ["GET"] "/game/1/toggle-interest" - Checked interest in game 1 for user 3 successfully
+2026-02-27 16:26:33 [Information] ["GET"] "/game/1/toggle-interest" - Request received
+2026-02-27 16:26:33 [Information] ["GET"] "/game/1/slots" - Request received
+2026-02-27 16:26:33 [Information] ["GET"] "/game/1/slots" - Fetched 51 slots for game 1 successfully
+2026-02-27 16:26:33 [Information] ["GET"] "/game/1/toggle-interest" - Checked interest in game 1 for user 5 successfully
+2026-02-27 16:26:33 [Information] ["GET"] "/notification/count" - Request received
+2026-02-27 16:26:33 [Information] ["GET"] "/game/1/toggle-interest" - Request received
+2026-02-27 16:26:33 [Information] ["GET"] "/notification/count" - Fetched notification count 0 for user 3 successfully
+2026-02-27 16:26:33 [Information] ["GET"] "/game/1/slots" - Request received
+2026-02-27 16:26:33 [Information] ["GET"] "/game/1/slots" - Fetched 51 slots for game 1 successfully
+2026-02-27 16:26:33 [Information] ["GET"] "/game/1/toggle-interest" - Checked interest in game 1 for user 3 successfully
+2026-02-27 16:27:00 [Information] ["GET"] "/notification/count" - Request received
+2026-02-27 16:27:00 [Information] ["GET"] "/notification/count" - Fetched notification count 0 for user 3 successfully
+2026-02-27 16:27:00 [Information] ["GET"] "/game/1/slots" - Request received
+2026-02-27 16:27:00 [Information] ["GET"] "/game/1/slots" - Fetched 51 slots for game 1 successfully
+2026-02-27 16:27:00 [Information] ["GET"] "/game/1/toggle-interest" - Request received
+2026-02-27 16:27:00 [Information] ["GET"] "/game/1/toggle-interest" - Checked interest in game 1 for user 3 successfully
+2026-02-27 16:27:32 [Information] ["DELETE"] "/game/1/slots/221/delete" - Request received
+2026-02-27 16:27:32 [Information] Fetched GameSlot 221 for GameId 1
+2026-02-27 16:27:32 [Information] Game slot 221 deleted for game 1 and cache version incremented
+2026-02-27 16:27:32 [Information] ["DELETE"] "/game/1/slots/221/delete" - Slot 221 of game 1 deleted successfully
+2026-02-27 16:27:32 [Information] ["GET"] "/game/1/slots" - Request received
+2026-02-27 16:27:32 [Information] Retrieved game slots for game 1 and cached with version 2
+2026-02-27 16:27:32 [Information] ["GET"] "/game/1/slots" - Fetched 50 slots for game 1 successfully
+2026-02-27 16:27:46 [Information] ["DELETE"] "/game/1/slots/222/delete" - Request received
+2026-02-27 16:27:46 [Information] Fetched GameSlot 222 for GameId 1
+2026-02-27 16:27:46 [Information] Game slot 222 deleted for game 1 and cache version incremented
+2026-02-27 16:27:46 [Information] ["DELETE"] "/game/1/slots/222/delete" - Slot 222 of game 1 deleted successfully
+2026-02-27 16:27:46 [Information] ["GET"] "/game/1/slots" - Request received
+2026-02-27 16:27:46 [Information] Retrieved game slots for game 1 and cached with version 3
+2026-02-27 16:27:46 [Information] ["GET"] "/game/1/slots" - Fetched 49 slots for game 1 successfully
+2026-02-27 16:28:05 [Information] ["DELETE"] "/game/1/slots/218/delete" - Request received
+2026-02-27 16:28:05 [Information] Fetched GameSlot 218 for GameId 1
+2026-02-27 16:28:05 [Information] Game slot 218 deleted for game 1 and cache version incremented
+2026-02-27 16:28:05 [Information] ["DELETE"] "/game/1/slots/218/delete" - Slot 218 of game 1 deleted successfully
+2026-02-27 16:28:05 [Information] ["GET"] "/game/1/slots" - Request received
+2026-02-27 16:28:05 [Information] Retrieved game slots for game 1 and cached with version 4
+2026-02-27 16:28:05 [Information] ["GET"] "/game/1/slots" - Fetched 48 slots for game 1 successfully
+2026-02-27 16:28:06 [Information] ["DELETE"] "/game/1/slots/219/delete" - Request received
+2026-02-27 16:28:06 [Information] Fetched GameSlot 219 for GameId 1
+2026-02-27 16:28:06 [Information] Game slot 219 deleted for game 1 and cache version incremented
+2026-02-27 16:28:06 [Information] ["DELETE"] "/game/1/slots/219/delete" - Slot 219 of game 1 deleted successfully
+2026-02-27 16:28:06 [Information] ["GET"] "/game/1/slots" - Request received
+2026-02-27 16:28:06 [Information] Retrieved game slots for game 1 and cached with version 5
+2026-02-27 16:28:06 [Information] ["GET"] "/game/1/slots" - Fetched 47 slots for game 1 successfully
+2026-02-27 16:28:07 [Information] ["DELETE"] "/game/1/slots/220/delete" - Request received
+2026-02-27 16:28:07 [Information] Fetched GameSlot 220 for GameId 1
+2026-02-27 16:28:07 [Information] Game slot 220 deleted for game 1 and cache version incremented
+2026-02-27 16:28:07 [Information] ["DELETE"] "/game/1/slots/220/delete" - Slot 220 of game 1 deleted successfully
+2026-02-27 16:28:07 [Information] ["GET"] "/game/1/slots" - Request received
+2026-02-27 16:28:07 [Information] Retrieved game slots for game 1 and cached with version 6
+2026-02-27 16:28:07 [Information] ["GET"] "/game/1/slots" - Fetched 46 slots for game 1 successfully
+2026-02-27 16:28:10 [Information] ["GET"] "/game" - Request received
+2026-02-27 16:28:10 [Information] ["GET"] "/game" - Fetched 3 games successfully
+2026-02-27 16:28:12 [Information] ["GET"] "/game/1/slots" - Request received
+2026-02-27 16:28:12 [Information] ["GET"] "/game/1/toggle-interest" - Request received
+2026-02-27 16:28:12 [Information] ["GET"] "/game/1/slots" - Fetched 46 slots for game 1 successfully
+2026-02-27 16:28:12 [Information] ["GET"] "/game/1/toggle-interest" - Checked interest in game 1 for user 3 successfully
+2026-02-27 16:28:25 [Information] ["GET"] "/game/1/booking/available-players" - Request received
+2026-02-27 16:28:25 [Information] ["GET"] "/game/1/booking/available-players" - Fetched available players for game 1 successfully
+2026-02-27 16:28:27 [Information] ["POST"] "/game/1/slots/223" - Request received
+2026-02-27 16:28:27 [Information] Fetched GameSlot 223 for GameId 1
+2026-02-27 16:28:27 [Information] Fetched Game with Id 1
+2026-02-27 16:28:27 [Information] Fetched GameSlot 223 for GameId 1
+2026-02-27 16:28:28 [Information] Booked GameSlot 223 for GameId 1 by UserId 3
+2026-02-27 16:28:28 [Information] ["POST"] "/game/1/slots/223" - Slot 223 of game 1 booked by user 3 successfully
+2026-02-27 16:28:28 [Information] ["GET"] "/game/1/slots" - Request received
+2026-02-27 16:28:28 [Information] Retrieved game slots for game 1 and cached with version 7
+2026-02-27 16:28:28 [Information] ["GET"] "/game/1/slots" - Fetched 46 slots for game 1 successfully
+2026-02-27 16:28:54 [Information] Notification created for user 3 for game slot booking
+2026-02-27 16:29:08 [Information] Notification created for user 5 for game slot booking
+2026-02-27 16:29:23 [Information] ["GET"] "/notification/count" - Request received
+2026-02-27 16:29:23 [Information] ["GET"] "/game/1/slots" - Request received
+2026-02-27 16:29:23 [Information] ["GET"] "/game/1/toggle-interest" - Request received
+2026-02-27 16:29:23 [Information] Unread notification count for UserId 3: 1
+2026-02-27 16:29:23 [Information] Retrieved notification count of user with Id 3 from repository and cached with version 1
+2026-02-27 16:29:23 [Information] ["GET"] "/notification/count" - Fetched notification count 1 for user 3 successfully
+2026-02-27 16:29:23 [Information] ["GET"] "/game/1/toggle-interest" - Checked interest in game 1 for user 3 successfully
+2026-02-27 16:29:23 [Information] Retrieved game slots for game 1 and cached with version 8
+2026-02-27 16:29:23 [Information] ["GET"] "/game/1/slots" - Fetched 46 slots for game 1 successfully
+2026-02-27 16:29:29 [Information] ["GET"] "/game/1/slots/223/details" - Request received
+2026-02-27 16:29:29 [Information] Fetched GameSlot 223 for GameId 1
+2026-02-27 16:29:29 [Information] Retrieved game slot 223 for game 1 and cached with version 8
+2026-02-27 16:29:29 [Information] ["GET"] "/game/1/slots/223/details" - Fetched slot 223 details for game 1 successfully
+2026-02-27 16:29:31 [Information] ["GET"] "/dashboard/upcoming-bookings" - Request received
+2026-02-27 16:29:31 [Information] ["GET"] "/dashboard/daily-celebrations" - Request received
+2026-02-27 16:29:31 [Information] Found 0 daily celebrations for today
+2026-02-27 16:29:31 [Information] Retrieved 0 daily celebrations from repository
+2026-02-27 16:29:31 [Information] ["GET"] "/dashboard/daily-celebrations" - Fetched 0 daily celebrations successfully
+2026-02-27 16:29:31 [Information] Found 1 upcoming booking slots for today
+2026-02-27 16:29:31 [Information] Retrieved 1 upcoming booking slots from repository
+2026-02-27 16:29:31 [Information] ["GET"] "/dashboard/upcoming-bookings" - Fetched 1 upcoming booking slots successfully
+2026-02-27 16:29:33 [Information] ["GET"] "/game/1/slots/223/details" - Request received
+2026-02-27 16:29:33 [Information] ["GET"] "/game/1/slots/223/details" - Fetched slot 223 details for game 1 successfully
+2026-02-27 16:29:56 [Information] ["GET"] "/game/1/slots/223/details" - Request received
+2026-02-27 16:29:56 [Information] ["GET"] "/game/1/slots/223/details" - Fetched slot 223 details for game 1 successfully
+2026-02-27 16:29:56 [Information] ["GET"] "/notification/count" - Request received
+2026-02-27 16:29:56 [Information] ["GET"] "/notification/count" - Fetched notification count 1 for user 3 successfully
+2026-02-27 16:30:02 [Information] ["GET"] "/notification/count" - Request received
+2026-02-27 16:30:02 [Information] ["GET"] "/game/1/slots/223/details" - Request received
+2026-02-27 16:30:02 [Information] ["GET"] "/notification/count" - Fetched notification count 1 for user 3 successfully
+2026-02-27 16:30:02 [Information] ["GET"] "/game/1/slots/223/details" - Fetched slot 223 details for game 1 successfully
+2026-02-27 16:30:03 [Information] ["GET"] "/dashboard/upcoming-bookings" - Request received
+2026-02-27 16:30:03 [Information] ["GET"] "/dashboard/daily-celebrations" - Request received
+2026-02-27 16:30:03 [Information] ["GET"] "/dashboard/daily-celebrations" - Fetched 0 daily celebrations successfully
+2026-02-27 16:30:03 [Information] ["GET"] "/dashboard/upcoming-bookings" - Fetched 1 upcoming booking slots successfully
+2026-02-27 16:30:04 [Information] ["GET"] "/game/1/slots/223/details" - Request received
+2026-02-27 16:30:04 [Information] ["GET"] "/game/1/slots/223/details" - Fetched slot 223 details for game 1 successfully
+2026-02-27 16:30:06 [Information] ["GET"] "/post/feed" - Request received
+2026-02-27 16:30:06 [Information] Fetched 5 feed posts, page 1
+2026-02-27 16:30:06 [Information] Retrieved feed for user 3 and cached with version 1
+2026-02-27 16:30:06 [Information] ["GET"] "/post/feed" - Fetched feed for user 3 successfully
+2026-02-27 16:30:07 [Information] ["GET"] "/game" - Request received
+2026-02-27 16:30:07 [Information] ["GET"] "/game" - Fetched 3 games successfully
+2026-02-27 16:30:08 [Information] Updated GameSlot with Id 250
+2026-02-27 16:30:08 [Information] Updated GameSlot with Id 292
+2026-02-27 16:30:10 [Information] ["GET"] "/game/2/slots" - Request received
+2026-02-27 16:30:10 [Information] ["GET"] "/game/2/toggle-interest" - Request received
+2026-02-27 16:30:10 [Information] ["GET"] "/game/2/toggle-interest" - Checked interest in game 2 for user 3 successfully
+2026-02-27 16:30:10 [Information] Retrieved game slots for game 2 and cached with version 1
+2026-02-27 16:30:10 [Information] ["GET"] "/game/2/slots" - Fetched 14 slots for game 2 successfully
+2026-02-27 16:30:13 [Information] ["GET"] "/game" - Request received
+2026-02-27 16:30:13 [Information] ["GET"] "/game" - Fetched 3 games successfully
+2026-02-27 16:30:15 [Information] ["GET"] "/game/3/toggle-interest" - Request received
+2026-02-27 16:30:15 [Information] ["GET"] "/game/3/slots" - Request received
+2026-02-27 16:30:15 [Information] ["GET"] "/game/3/toggle-interest" - Checked interest in game 3 for user 3 successfully
+2026-02-27 16:30:15 [Information] Retrieved game slots for game 3 and cached with version 1
+2026-02-27 16:30:15 [Information] ["GET"] "/game/3/slots" - Fetched 20 slots for game 3 successfully
+2026-02-27 16:30:18 [Information] ["GET"] "/game/3/booking/available-players" - Request received
+2026-02-27 16:30:18 [Information] ["GET"] "/game/3/booking/available-players" - Fetched available players for game 3 successfully
+2026-02-27 16:30:21 [Information] ["POST"] "/game/3/slots/252" - Request received
+2026-02-27 16:30:21 [Information] Fetched GameSlot 252 for GameId 3
+2026-02-27 16:30:21 [Information] Fetched Game with Id 3
+2026-02-27 16:30:21 [Information] Fetched GameSlot 252 for GameId 3
+2026-02-27 16:30:21 [Information] Booked GameSlot 252 for GameId 3 by UserId 3
+2026-02-27 16:30:21 [Information] ["POST"] "/game/3/slots/252" - Slot 252 of game 3 booked by user 3 successfully
+2026-02-27 16:30:21 [Information] ["GET"] "/game/3/slots" - Request received
+2026-02-27 16:30:21 [Information] Retrieved game slots for game 3 and cached with version 2
+2026-02-27 16:30:21 [Information] ["GET"] "/game/3/slots" - Fetched 20 slots for game 3 successfully
+2026-02-27 16:31:08 [Information] Notification created for user 3 for game slot booking
+2026-02-27 16:31:23 [Information] ["GET"] "/notification/count" - Request received
+2026-02-27 16:31:23 [Information] ["GET"] "/game/3/slots" - Request received
+2026-02-27 16:31:23 [Information] ["GET"] "/game/3/slots" - Fetched 20 slots for game 3 successfully
+2026-02-27 16:31:23 [Information] ["GET"] "/game/3/toggle-interest" - Request received
+2026-02-27 16:31:23 [Information] ["GET"] "/game/3/toggle-interest" - Checked interest in game 3 for user 3 successfully
+2026-02-27 16:31:23 [Information] Unread notification count for UserId 3: 2
+2026-02-27 16:31:23 [Information] Retrieved notification count of user with Id 3 from repository and cached with version 2
+2026-02-27 16:31:23 [Information] ["GET"] "/notification/count" - Fetched notification count 2 for user 3 successfully
+2026-02-27 16:31:23 [Information] Notification created for user 6 for game slot booking
+2026-02-27 16:31:25 [Information] ["GET"] "/notification/count" - Request received
+2026-02-27 16:31:25 [Information] ["GET"] "/notification/count" - Fetched notification count 2 for user 3 successfully
+2026-02-27 16:31:25 [Information] ["GET"] "/game/3/slots" - Request received
+2026-02-27 16:31:25 [Information] ["GET"] "/game/3/toggle-interest" - Request received
+2026-02-27 16:31:25 [Information] ["GET"] "/game/3/toggle-interest" - Checked interest in game 3 for user 3 successfully
+2026-02-27 16:31:25 [Information] Retrieved game slots for game 3 and cached with version 3
+2026-02-27 16:31:25 [Information] ["GET"] "/game/3/slots" - Fetched 20 slots for game 3 successfully
+2026-02-27 16:31:27 [Information] ["GET"] "/game/3/slots/252/details" - Request received
+2026-02-27 16:31:27 [Information] Fetched GameSlot 252 for GameId 3
+2026-02-27 16:31:27 [Information] Retrieved game slot 252 for game 3 and cached with version 3
+2026-02-27 16:31:27 [Information] ["GET"] "/game/3/slots/252/details" - Fetched slot 252 details for game 3 successfully
+2026-02-27 16:31:30 [Information] ["GET"] "/game/3/slots/252/details" - Request received
+2026-02-27 16:31:30 [Information] ["GET"] "/game/3/slots/252/details" - Fetched slot 252 details for game 3 successfully
+2026-02-27 16:31:30 [Information] ["GET"] "/notification/count" - Request received
+2026-02-27 16:31:30 [Information] ["GET"] "/notification/count" - Fetched notification count 2 for user 3 successfully
+2026-02-27 16:31:35 [Information] ["GET"] "/notification/count" - Request received
+2026-02-27 16:31:35 [Information] ["GET"] "/game/3/slots/252/details" - Request received
+2026-02-27 16:31:35 [Information] ["GET"] "/game/3/slots/252/details" - Fetched slot 252 details for game 3 successfully
+2026-02-27 16:31:35 [Information] ["GET"] "/notification/count" - Fetched notification count 2 for user 3 successfully
+2026-02-27 16:31:37 [Information] ["GET"] "/notification/count" - Request received
+2026-02-27 16:31:37 [Information] ["GET"] "/game/3/slots/252/details" - Request received
+2026-02-27 16:31:37 [Information] ["GET"] "/game/3/slots/252/details" - Fetched slot 252 details for game 3 successfully
+2026-02-27 16:31:37 [Information] ["GET"] "/notification/count" - Fetched notification count 2 for user 3 successfully
+2026-02-27 16:31:40 [Information] ["GET"] "/notification/count" - Request received
+2026-02-27 16:31:40 [Information] ["GET"] "/game/3/slots/252/details" - Request received
+2026-02-27 16:31:40 [Information] ["GET"] "/notification/count" - Fetched notification count 2 for user 3 successfully
+2026-02-27 16:31:40 [Information] ["GET"] "/game/3/slots/252/details" - Fetched slot 252 details for game 3 successfully
+2026-02-27 16:31:43 [Information] ["DELETE"] "/game/3/slots/252" - Request received
+2026-02-27 16:31:43 [Information] Fetched GameSlot 252 for GameId 3
+2026-02-27 16:31:43 [Information] Decremented GamePlayed for UserId 3, GameId 3
+2026-02-27 16:31:43 [Information] Decremented GamePlayed for UserId 6, GameId 3
+2026-02-27 16:31:43 [Information] Updated GameSlot with Id 252
+2026-02-27 16:31:43 [Information] ["DELETE"] "/game/3/slots/252" - Slot 252 of game 3 cancelled successfully
+2026-02-27 16:31:43 [Information] ["GET"] "/game/3/slots/252/details" - Request received
+2026-02-27 16:31:43 [Information] Fetched GameSlot 252 for GameId 3
+2026-02-27 16:31:43 [Information] Retrieved game slot 252 for game 3 and cached with version 4
+2026-02-27 16:31:43 [Information] ["GET"] "/game/3/slots/252/details" - Fetched slot 252 details for game 3 successfully
+2026-02-27 16:31:43 [Information] ["GET"] "/game/3/slots" - Request received
+2026-02-27 16:31:43 [Information] ["GET"] "/game/3/toggle-interest" - Request received
+2026-02-27 16:31:43 [Information] ["GET"] "/game/3/toggle-interest" - Checked interest in game 3 for user 3 successfully
+2026-02-27 16:31:43 [Information] Retrieved game slots for game 3 and cached with version 4
+2026-02-27 16:31:43 [Information] ["GET"] "/game/3/slots" - Fetched 20 slots for game 3 successfully
+2026-02-27 16:31:45 [Information] ["GET"] "/game/3/slots/252/waitlist" - Request received
+2026-02-27 16:31:46 [Information] ["GET"] "/game/3/slots/252/waitlist" - Fetched 0 waitlist entries for slot 252 of game 3 successfully
+2026-02-27 16:31:46 [Information] ["GET"] "/game/3/slots" - Request received
+2026-02-27 16:31:46 [Information] ["GET"] "/game/3/toggle-interest" - Request received
+2026-02-27 16:31:46 [Information] ["GET"] "/game/3/slots" - Fetched 20 slots for game 3 successfully
+2026-02-27 16:31:46 [Information] ["GET"] "/game/3/toggle-interest" - Checked interest in game 3 for user 3 successfully
+2026-02-27 16:34:05 [Information] ["GET"] "/game/3/toggle-interest" - Request received
+2026-02-27 16:34:05 [Information] ["GET"] "/game/3/slots" - Request received
+2026-02-27 16:34:05 [Information] ["GET"] "/notification/count" - Request received
+2026-02-27 16:34:05 [Information] ["GET"] "/game/3/slots" - Fetched 20 slots for game 3 successfully
+2026-02-27 16:34:05 [Information] ["GET"] "/notification/count" - Fetched notification count 2 for user 3 successfully
+2026-02-27 16:34:05 [Information] ["GET"] "/game/3/toggle-interest" - Checked interest in game 3 for user 3 successfully
+2026-02-27 16:34:07 [Information] ["GET"] "/game/3/slots/252/waitlist" - Request received
+2026-02-27 16:34:07 [Information] ["GET"] "/game/3/slots/252/waitlist" - Fetched 0 waitlist entries for slot 252 of game 3 successfully
+2026-02-27 16:34:08 [Information] ["GET"] "/game/3/toggle-interest" - Request received
+2026-02-27 16:34:08 [Information] ["GET"] "/game/3/slots" - Request received
+2026-02-27 16:34:08 [Information] ["GET"] "/game/3/slots" - Fetched 20 slots for game 3 successfully
+2026-02-27 16:34:08 [Information] ["GET"] "/game/3/toggle-interest" - Checked interest in game 3 for user 3 successfully
+2026-02-27 16:34:48 [Information] ["GET"] "/notification/count" - Request received
+2026-02-27 16:34:48 [Information] ["GET"] "/notification/count" - Fetched notification count 2 for user 3 successfully
+2026-02-27 16:34:48 [Information] ["GET"] "/game/3/toggle-interest" - Request received
+2026-02-27 16:34:48 [Information] ["GET"] "/game/3/slots" - Request received
+2026-02-27 16:34:48 [Information] ["GET"] "/game/3/slots" - Fetched 20 slots for game 3 successfully
+2026-02-27 16:34:48 [Information] ["GET"] "/game/3/toggle-interest" - Checked interest in game 3 for user 3 successfully
+2026-02-27 16:34:50 [Information] ["GET"] "/game" - Request received
+2026-02-27 16:34:50 [Information] ["GET"] "/game" - Fetched 3 games successfully
+2026-02-27 16:35:01 [Information] ["GET"] "/notification/count" - Request received
+2026-02-27 16:35:01 [Information] ["GET"] "/game" - Request received
+2026-02-27 16:35:01 [Information] ["GET"] "/notification/count" - Fetched notification count 2 for user 3 successfully
+2026-02-27 16:35:01 [Information] ["GET"] "/game" - Fetched 3 games successfully
+2026-02-27 16:35:07 [Information] ["GET"] "/game/1/slots" - Request received
+2026-02-27 16:35:07 [Information] ["GET"] "/game/1/toggle-interest" - Request received
+2026-02-27 16:35:07 [Information] ["GET"] "/game/1/slots" - Fetched 46 slots for game 1 successfully
+2026-02-27 16:35:07 [Information] ["GET"] "/game/1/toggle-interest" - Checked interest in game 1 for user 3 successfully
+2026-02-27 16:35:07 [Information] ["GET"] "/game" - Request received
+2026-02-27 16:35:07 [Information] ["GET"] "/game" - Fetched 3 games successfully
+2026-02-27 16:35:09 [Information] ["GET"] "/game/2/slots" - Request received
+2026-02-27 16:35:09 [Information] ["GET"] "/game/2/toggle-interest" - Request received
+2026-02-27 16:35:09 [Information] ["GET"] "/game/2/slots" - Fetched 14 slots for game 2 successfully
+2026-02-27 16:35:09 [Information] ["GET"] "/game/2/toggle-interest" - Checked interest in game 2 for user 3 successfully
+2026-02-27 16:35:11 [Information] ["GET"] "/game" - Request received
+2026-02-27 16:35:11 [Information] ["GET"] "/game" - Fetched 3 games successfully
+2026-02-27 16:35:13 [Information] ["GET"] "/game/3/slots" - Request received
+2026-02-27 16:35:13 [Information] ["GET"] "/game/3/toggle-interest" - Request received
+2026-02-27 16:35:13 [Information] ["GET"] "/game/3/slots" - Fetched 20 slots for game 3 successfully
+2026-02-27 16:35:13 [Information] ["GET"] "/game/3/toggle-interest" - Checked interest in game 3 for user 3 successfully
+2026-02-27 16:35:16 [Information] ["GET"] "/game/3/booking/available-players" - Request received
+2026-02-27 16:35:16 [Information] ["GET"] "/game/3/booking/available-players" - Fetched available players for game 3 successfully
+2026-02-27 16:35:27 [Information] ["GET"] "/notification/count" - Request received
+2026-02-27 16:35:27 [Information] ["GET"] "/notification/count" - Fetched notification count 2 for user 3 successfully
+2026-02-27 16:35:27 [Information] ["GET"] "/game/3/slots" - Request received
+2026-02-27 16:35:27 [Information] ["GET"] "/game/3/slots" - Fetched 20 slots for game 3 successfully
+2026-02-27 16:35:27 [Information] ["GET"] "/game/3/toggle-interest" - Request received
+2026-02-27 16:35:27 [Information] ["GET"] "/game/3/booking/available-players" - Request received
+2026-02-27 16:35:27 [Information] ["GET"] "/game/3/toggle-interest" - Checked interest in game 3 for user 3 successfully
+2026-02-27 16:35:27 [Information] ["GET"] "/game/3/booking/available-players" - Fetched available players for game 3 successfully
+2026-02-27 16:35:31 [Information] ["GET"] "/game/3/slots" - Request received
+2026-02-27 16:35:31 [Information] ["GET"] "/notification/count" - Request received
+2026-02-27 16:35:31 [Information] ["GET"] "/game/3/toggle-interest" - Request received
+2026-02-27 16:35:31 [Information] ["GET"] "/game/3/slots" - Fetched 20 slots for game 3 successfully
+2026-02-27 16:35:31 [Information] ["GET"] "/game/3/booking/available-players" - Request received
+2026-02-27 16:35:31 [Information] ["GET"] "/notification/count" - Fetched notification count 2 for user 3 successfully
+2026-02-27 16:35:31 [Information] ["GET"] "/game/3/toggle-interest" - Checked interest in game 3 for user 3 successfully
+2026-02-27 16:35:31 [Information] ["GET"] "/game/3/booking/available-players" - Fetched available players for game 3 successfully
+2026-02-27 16:35:33 [Information] ["POST"] "/game/3/slots/252" - Request received
+2026-02-27 16:35:33 [Information] Fetched GameSlot 252 for GameId 3
+2026-02-27 16:35:33 [Information] Fetched Game with Id 3
+2026-02-27 16:35:33 [Information] Fetched GameSlot 252 for GameId 3
+2026-02-27 16:35:33 [Information] Booked GameSlot 252 for GameId 3 by UserId 3
+2026-02-27 16:35:33 [Information] ["POST"] "/game/3/slots/252" - Slot 252 of game 3 booked by user 3 successfully
+2026-02-27 16:35:33 [Information] ["GET"] "/game/3/slots" - Request received
+2026-02-27 16:35:33 [Information] Retrieved game slots for game 3 and cached with version 5
+2026-02-27 16:35:33 [Information] ["GET"] "/game/3/slots" - Fetched 20 slots for game 3 successfully
+2026-02-27 16:35:34 [Information] ["GET"] "/game/3/slots" - Request received
+2026-02-27 16:35:34 [Information] ["GET"] "/game/3/slots" - Fetched 20 slots for game 3 successfully
+2026-02-27 16:35:34 [Information] ["GET"] "/notification/count" - Request received
+2026-02-27 16:35:34 [Information] ["GET"] "/notification/count" - Fetched notification count 2 for user 3 successfully
+2026-02-27 16:35:34 [Information] ["GET"] "/game/3/toggle-interest" - Request received
+2026-02-27 16:35:34 [Information] ["GET"] "/game/3/toggle-interest" - Checked interest in game 3 for user 3 successfully
+2026-02-27 16:35:39 [Information] ["GET"] "/game/3/slots/252/waitlist" - Request received
+2026-02-27 16:35:39 [Information] ["GET"] "/game/3/slots/252/waitlist" - Fetched 1 waitlist entries for slot 252 of game 3 successfully
+2026-02-27 16:35:57 [Information] ["GET"] "/notification/count" - Request received
+2026-02-27 16:35:57 [Information] ["GET"] "/game/3/slots/252/waitlist" - Request received
+2026-02-27 16:35:57 [Information] ["GET"] "/notification/count" - Fetched notification count 2 for user 3 successfully
+2026-02-27 16:35:57 [Information] ["GET"] "/game/3/slots/252/waitlist" - Fetched 1 waitlist entries for slot 252 of game 3 successfully
+2026-02-27 16:36:09 [Information] ["GET"] "/notification/count" - Request received
+2026-02-27 16:36:09 [Information] ["GET"] "/notification/count" - Fetched notification count 2 for user 3 successfully
+2026-02-27 16:36:09 [Information] ["GET"] "/game/3/slots/252/waitlist" - Request received
+2026-02-27 16:36:09 [Information] ["GET"] "/game/3/slots/252/waitlist" - Fetched 1 waitlist entries for slot 252 of game 3 successfully
+2026-02-27 16:36:09 [Information] ["GET"] "/game/3/toggle-interest" - Request received
+2026-02-27 16:36:09 [Information] ["GET"] "/game/3/slots" - Request received
+2026-02-27 16:36:09 [Information] ["GET"] "/game/3/slots" - Fetched 20 slots for game 3 successfully
+2026-02-27 16:36:09 [Information] ["GET"] "/game/3/toggle-interest" - Checked interest in game 3 for user 3 successfully
+2026-02-27 16:36:19 [Information] ["GET"] "/game/3/slots" - Request received
+2026-02-27 16:36:19 [Information] ["GET"] "/game/3/toggle-interest" - Request received
+2026-02-27 16:36:19 [Information] ["GET"] "/game/3/slots" - Fetched 20 slots for game 3 successfully
+2026-02-27 16:36:19 [Information] ["GET"] "/notification/count" - Request received
+2026-02-27 16:36:19 [Information] ["GET"] "/notification/count" - Fetched notification count 2 for user 3 successfully
+2026-02-27 16:36:19 [Information] ["GET"] "/game/3/toggle-interest" - Checked interest in game 3 for user 3 successfully
+2026-02-27 16:36:20 [Information] ["GET"] "/game" - Request received
+2026-02-27 16:36:20 [Information] ["GET"] "/game" - Fetched 3 games successfully
+2026-02-27 16:36:23 [Information] ["GET"] "/game/3/slots" - Request received
+2026-02-27 16:36:23 [Information] ["GET"] "/game/3/toggle-interest" - Request received
+2026-02-27 16:36:23 [Information] ["GET"] "/game/3/slots" - Fetched 20 slots for game 3 successfully
+2026-02-27 16:36:23 [Information] ["GET"] "/game/3/toggle-interest" - Checked interest in game 3 for user 3 successfully
+2026-02-27 16:36:24 [Information] Notification created for user 3 for game slot booking
+2026-02-27 16:36:30 [Information] ["GET"] "/notification/count" - Request received
+2026-02-27 16:36:30 [Information] ["GET"] "/game/3/slots" - Request received
+2026-02-27 16:36:30 [Information] ["GET"] "/game/3/slots" - Fetched 20 slots for game 3 successfully
+2026-02-27 16:36:30 [Information] ["GET"] "/game/3/toggle-interest" - Request received
+2026-02-27 16:36:30 [Information] Unread notification count for UserId 3: 3
+2026-02-27 16:36:30 [Information] Retrieved notification count of user with Id 3 from repository and cached with version 3
+2026-02-27 16:36:30 [Information] ["GET"] "/game/3/toggle-interest" - Checked interest in game 3 for user 3 successfully
+2026-02-27 16:36:30 [Information] ["GET"] "/notification/count" - Fetched notification count 3 for user 3 successfully
+2026-02-27 16:36:30 [Information] ["GET"] "/notification/count" - Request received
+2026-02-27 16:36:30 [Information] ["GET"] "/notification/count" - Fetched notification count 3 for user 3 successfully
+2026-02-27 16:36:31 [Information] ["GET"] "/notification/count" - Request received
+2026-02-27 16:36:31 [Information] ["GET"] "/game/3/slots" - Request received
+2026-02-27 16:36:31 [Information] ["GET"] "/notification/count" - Fetched notification count 3 for user 3 successfully
+2026-02-27 16:36:31 [Information] ["GET"] "/game/3/slots" - Fetched 20 slots for game 3 successfully
+2026-02-27 16:36:31 [Information] ["GET"] "/game/3/toggle-interest" - Request received
+2026-02-27 16:36:31 [Information] ["GET"] "/game/3/toggle-interest" - Checked interest in game 3 for user 3 successfully
+2026-02-27 16:36:31 [Information] ["GET"] "/notification/count" - Request received
+2026-02-27 16:36:31 [Information] ["GET"] "/notification/count" - Fetched notification count 3 for user 3 successfully
+2026-02-27 16:36:32 [Information] ["GET"] "/notification/count" - Request received
+2026-02-27 16:36:32 [Information] ["GET"] "/game/3/toggle-interest" - Request received
+2026-02-27 16:36:32 [Information] ["GET"] "/notification/count" - Fetched notification count 3 for user 3 successfully
+2026-02-27 16:36:32 [Information] ["GET"] "/game/3/slots" - Request received
+2026-02-27 16:36:32 [Information] ["GET"] "/game/3/slots" - Fetched 20 slots for game 3 successfully
+2026-02-27 16:36:32 [Information] ["GET"] "/game/3/toggle-interest" - Checked interest in game 3 for user 3 successfully
+2026-02-27 16:36:32 [Information] ["GET"] "/notification/count" - Request received
+2026-02-27 16:36:32 [Information] ["GET"] "/notification/count" - Fetched notification count 3 for user 3 successfully
+2026-02-27 16:36:32 [Information] ["GET"] "/notification/count" - Request received
+2026-02-27 16:36:32 [Information] ["GET"] "/notification/count" - Fetched notification count 3 for user 3 successfully
+2026-02-27 16:36:32 [Information] ["GET"] "/game/3/slots" - Request received
+2026-02-27 16:36:32 [Information] ["GET"] "/game/3/toggle-interest" - Request received
+2026-02-27 16:36:32 [Information] ["GET"] "/game/3/slots" - Fetched 20 slots for game 3 successfully
+2026-02-27 16:36:32 [Information] ["GET"] "/game/3/toggle-interest" - Checked interest in game 3 for user 3 successfully
+2026-02-27 16:36:32 [Information] ["GET"] "/notification/count" - Request received
+2026-02-27 16:36:32 [Information] ["GET"] "/notification/count" - Fetched notification count 3 for user 3 successfully
+2026-02-27 16:36:33 [Information] ["GET"] "/notification/count" - Request received
+2026-02-27 16:36:33 [Information] ["GET"] "/game/3/slots" - Request received
+2026-02-27 16:36:33 [Information] ["GET"] "/notification/count" - Fetched notification count 3 for user 3 successfully
+2026-02-27 16:36:33 [Information] ["GET"] "/game/3/toggle-interest" - Request received
+2026-02-27 16:36:33 [Information] ["GET"] "/game/3/slots" - Fetched 20 slots for game 3 successfully
+2026-02-27 16:36:33 [Information] ["GET"] "/game/3/toggle-interest" - Checked interest in game 3 for user 3 successfully
+2026-02-27 16:36:33 [Information] ["GET"] "/notification/count" - Request received
+2026-02-27 16:36:33 [Information] ["GET"] "/notification/count" - Fetched notification count 3 for user 3 successfully
+2026-02-27 16:36:33 [Information] ["GET"] "/notification/count" - Request received
+2026-02-27 16:36:33 [Information] ["GET"] "/game/3/toggle-interest" - Request received
+2026-02-27 16:36:33 [Information] ["GET"] "/notification/count" - Fetched notification count 3 for user 3 successfully
+2026-02-27 16:36:33 [Information] ["GET"] "/game/3/slots" - Request received
+2026-02-27 16:36:33 [Information] ["GET"] "/game/3/slots" - Fetched 20 slots for game 3 successfully
+2026-02-27 16:36:33 [Information] ["GET"] "/game/3/toggle-interest" - Checked interest in game 3 for user 3 successfully
+2026-02-27 16:36:33 [Information] ["GET"] "/notification/count" - Request received
+2026-02-27 16:36:33 [Information] ["GET"] "/notification/count" - Fetched notification count 3 for user 3 successfully
+2026-02-27 16:36:33 [Information] Notification created for user 6 for game slot booking
+2026-02-27 16:36:33 [Information] ["GET"] "/notification/count" - Request received
+2026-02-27 16:36:33 [Information] ["GET"] "/game/3/slots" - Request received
+2026-02-27 16:36:33 [Information] ["GET"] "/notification/count" - Fetched notification count 3 for user 3 successfully
+2026-02-27 16:36:33 [Information] ["GET"] "/game/3/toggle-interest" - Request received
+2026-02-27 16:36:33 [Information] ["GET"] "/game/3/toggle-interest" - Checked interest in game 3 for user 3 successfully
+2026-02-27 16:36:33 [Information] Retrieved game slots for game 3 and cached with version 6
+2026-02-27 16:36:33 [Information] ["GET"] "/game/3/slots" - Fetched 20 slots for game 3 successfully
+2026-02-27 16:36:33 [Information] ["GET"] "/notification/count" - Request received
+2026-02-27 16:36:33 [Information] ["GET"] "/notification/count" - Fetched notification count 3 for user 3 successfully
+2026-02-27 16:36:34 [Information] ["GET"] "/notification/count" - Request received
+2026-02-27 16:36:34 [Information] ["GET"] "/game/3/toggle-interest" - Request received
+2026-02-27 16:36:34 [Information] ["GET"] "/game/3/slots" - Request received
+2026-02-27 16:36:34 [Information] ["GET"] "/notification/count" - Fetched notification count 3 for user 3 successfully
+2026-02-27 16:36:34 [Information] ["GET"] "/game/3/slots" - Fetched 20 slots for game 3 successfully
+2026-02-27 16:36:34 [Information] ["GET"] "/game/3/toggle-interest" - Checked interest in game 3 for user 3 successfully
+2026-02-27 16:36:34 [Information] ["GET"] "/notification/count" - Request received
+2026-02-27 16:36:34 [Information] ["GET"] "/notification/count" - Fetched notification count 3 for user 3 successfully
+2026-02-27 16:36:35 [Information] ["GET"] "/game/3/slots/252/details" - Request received
+2026-02-27 16:36:35 [Information] Fetched GameSlot 252 for GameId 3
+2026-02-27 16:36:35 [Information] Retrieved game slot 252 for game 3 and cached with version 6
+2026-02-27 16:36:35 [Information] ["GET"] "/game/3/slots/252/details" - Fetched slot 252 details for game 3 successfully
+2026-02-27 16:36:55 [Information] ["GET"] "/notification/count" - Request received
+2026-02-27 16:36:55 [Information] ["GET"] "/game/3/slots/252/details" - Request received
+2026-02-27 16:36:55 [Information] ["GET"] "/notification/count" - Fetched notification count 3 for user 3 successfully
+2026-02-27 16:36:55 [Information] ["GET"] "/game/3/slots/252/details" - Fetched slot 252 details for game 3 successfully
+2026-02-27 16:37:06 [Information] ["GET"] "/notification/count" - Request received
+2026-02-27 16:37:06 [Information] ["GET"] "/game/3/slots/252/details" - Request received
+2026-02-27 16:37:06 [Information] ["GET"] "/notification/count" - Fetched notification count 3 for user 3 successfully
+2026-02-27 16:37:06 [Information] ["GET"] "/game/3/slots/252/details" - Fetched slot 252 details for game 3 successfully
+2026-02-27 16:37:09 [Information] ["GET"] "/game/3/slots/252/details" - Request received
+2026-02-27 16:37:09 [Information] ["GET"] "/game/3/slots/252/details" - Fetched slot 252 details for game 3 successfully
+2026-02-27 16:37:09 [Information] ["GET"] "/notification/count" - Request received
+2026-02-27 16:37:09 [Information] ["GET"] "/notification/count" - Fetched notification count 3 for user 3 successfully
+2026-02-27 16:37:13 [Information] ["DELETE"] "/game/3/slots/252" - Request received
+2026-02-27 16:37:13 [Information] Fetched GameSlot 252 for GameId 3
+2026-02-27 16:37:13 [Information] Decremented GamePlayed for UserId 3, GameId 3
+2026-02-27 16:37:13 [Information] Decremented GamePlayed for UserId 6, GameId 3
+2026-02-27 16:37:13 [Information] Updated GameSlot with Id 252
+2026-02-27 16:37:13 [Information] ["DELETE"] "/game/3/slots/252" - Slot 252 of game 3 cancelled successfully
+2026-02-27 16:37:13 [Information] ["GET"] "/game/3/slots/252/details" - Request received
+2026-02-27 16:37:13 [Information] Fetched GameSlot 252 for GameId 3
+2026-02-27 16:37:13 [Information] Retrieved game slot 252 for game 3 and cached with version 7
+2026-02-27 16:37:13 [Information] ["GET"] "/game/3/slots/252/details" - Fetched slot 252 details for game 3 successfully
+2026-02-27 16:37:13 [Information] ["GET"] "/game/3/slots" - Request received
+2026-02-27 16:37:13 [Information] ["GET"] "/game/3/toggle-interest" - Request received
+2026-02-27 16:37:13 [Information] ["GET"] "/game/3/toggle-interest" - Checked interest in game 3 for user 3 successfully
+2026-02-27 16:37:13 [Information] Retrieved game slots for game 3 and cached with version 7
+2026-02-27 16:37:13 [Information] ["GET"] "/game/3/slots" - Fetched 20 slots for game 3 successfully
+2026-02-27 16:37:21 [Information] ["GET"] "/notification/count" - Request received
+2026-02-27 16:37:21 [Information] ["GET"] "/game/3/slots" - Request received
+2026-02-27 16:37:21 [Information] ["GET"] "/notification/count" - Fetched notification count 3 for user 3 successfully
+2026-02-27 16:37:21 [Information] ["GET"] "/game/3/slots" - Fetched 20 slots for game 3 successfully
+2026-02-27 16:37:21 [Information] ["GET"] "/game/3/toggle-interest" - Request received
+2026-02-27 16:37:21 [Information] ["GET"] "/game/3/toggle-interest" - Checked interest in game 3 for user 3 successfully
+2026-02-27 16:37:33 [Information] Notification created for user 3 for game slot booking
+2026-02-27 16:37:45 [Information] Notification created for user 6 for game slot booking
+2026-02-27 16:39:39 [Information] ["GET"] "/notification/count" - Request received
+2026-02-27 16:39:39 [Information] ["GET"] "/game/1/slots" - Request received
+2026-02-27 16:39:39 [Information] ["GET"] "/game/1/toggle-interest" - Request received
+2026-02-27 16:39:39 [Information] ["GET"] "/game/1/toggle-interest" - Checked interest in game 1 for user 5 successfully
+2026-02-27 16:39:39 [Information] Retrieved game slots for game 1 and cached with version 8
+2026-02-27 16:39:39 [Information] ["GET"] "/game/1/slots" - Fetched 46 slots for game 1 successfully
+2026-02-27 16:39:39 [Information] Unread notification count for UserId 5: 1
+2026-02-27 16:39:39 [Information] Retrieved notification count of user with Id 5 from repository and cached with version 1
+2026-02-27 16:39:39 [Information] ["GET"] "/notification/count" - Fetched notification count 1 for user 5 successfully
+2026-02-27 16:39:48 [Information] Scheduler "QuartzScheduler_$_NON_CLUSTERED" shutting down.
+2026-02-27 16:39:48 [Information] Scheduler QuartzScheduler_$_NON_CLUSTERED paused.
+2026-02-27 16:39:48 [Information] Scheduler QuartzScheduler_$_NON_CLUSTERED Shutdown complete.
+2026-02-27 16:53:12 [Information] Initialized Scheduler Signaller of type: Quartz.Core.SchedulerSignalerImpl
+2026-02-27 16:53:12 [Information] Quartz Scheduler created
+2026-02-27 16:53:12 [Information] JobFactory set to: Quartz.Simpl.MicrosoftDependencyInjectionJobFactory
+2026-02-27 16:53:12 [Information] RAMJobStore initialized.
+2026-02-27 16:53:12 [Information] Quartz Scheduler 3.15.1.0 - 'QuartzScheduler' with instanceId 'NON_CLUSTERED' initialized
+2026-02-27 16:53:12 [Information] Using thread pool 'Quartz.Simpl.DefaultThreadPool', size: 10
+2026-02-27 16:53:12 [Information] Using job store 'Quartz.Simpl.RAMJobStore', supports persistence: False, clustered: False
+2026-02-27 16:53:12 [Information] Adding 1 jobs, 1 triggers.
+2026-02-27 16:53:12 [Information] Adding job: DEFAULT.WeeklyJob
+2026-02-27 16:53:12 [Information] Scheduler QuartzScheduler_$_NON_CLUSTERED started.
+2026-02-27 16:53:12 [Information] Starting Daily Celebration Job at 02/27/2026 16:53:12
+2026-02-27 16:53:12 [Information] Found 0 birthday users for today
+2026-02-27 16:53:12 [Information] Found 0 work anniversary users for today
+2026-02-27 16:53:12 [Information] Fetched system user with Id 4
+2026-02-27 16:53:12 [Information] Cache Updated for Daily Celebrations at 02/27/2026 16:53:12
+2026-02-27 16:53:14 [Information] ["GET"] "/notification/count" - Request received
+2026-02-27 16:53:14 [Information] ["GET"] "/game" - Request received
+2026-02-27 16:53:14 [Information] Unread notification count for UserId 5: 1
+2026-02-27 16:53:14 [Information] Retrieved notification count of user with Id 5 from repository and cached with version 0
+2026-02-27 16:53:14 [Information] ["GET"] "/notification/count" - Fetched notification count 1 for user 5 successfully
+2026-02-27 16:53:14 [Information] ["GET"] "/notification/count" - Request received
+2026-02-27 16:53:14 [Information] ["GET"] "/notification/count" - Fetched notification count 1 for user 5 successfully
+2026-02-27 16:53:14 [Information] Retrieved all games and cached with version 1
+2026-02-27 16:53:14 [Information] ["GET"] "/game" - Fetched 3 games successfully
+2026-02-27 16:53:18 [Information] ["GET"] "/game/1/toggle-interest" - Request received
+2026-02-27 16:53:18 [Information] ["GET"] "/game/1/slots" - Request received
+2026-02-27 16:53:18 [Information] ["GET"] "/game/1/toggle-interest" - Checked interest in game 1 for user 5 successfully
+2026-02-27 16:53:18 [Information] Retrieved game slots for game 1 and cached with version 1
+2026-02-27 16:53:18 [Information] ["GET"] "/game/1/slots" - Fetched 46 slots for game 1 successfully
+2026-02-27 16:53:20 [Information] ["GET"] "/game/1/slots/211/details" - Request received
+2026-02-27 16:53:20 [Information] Fetched GameSlot 211 for GameId 1
+2026-02-27 16:53:20 [Information] Retrieved game slot 211 for game 1 and cached with version 1
+2026-02-27 16:53:20 [Information] ["GET"] "/game/1/slots/211/details" - Fetched slot 211 details for game 1 successfully
+2026-02-27 16:53:21 [Information] ["GET"] "/game/1/slots" - Request received
+2026-02-27 16:53:21 [Information] ["GET"] "/game/1/toggle-interest" - Request received
+2026-02-27 16:53:21 [Information] ["GET"] "/game/1/slots" - Fetched 46 slots for game 1 successfully
+2026-02-27 16:53:21 [Information] ["GET"] "/game/1/toggle-interest" - Checked interest in game 1 for user 5 successfully
+2026-02-27 16:53:23 [Information] ["GET"] "/game/1/slots/216/details" - Request received
+2026-02-27 16:53:23 [Information] Fetched GameSlot 216 for GameId 1
+2026-02-27 16:53:23 [Information] Retrieved game slot 216 for game 1 and cached with version 1
+2026-02-27 16:53:23 [Information] ["GET"] "/game/1/slots/216/details" - Fetched slot 216 details for game 1 successfully
+2026-02-27 16:53:23 [Information] ["GET"] "/game/1/toggle-interest" - Request received
+2026-02-27 16:53:23 [Information] ["GET"] "/game/1/slots" - Request received
+2026-02-27 16:53:23 [Information] ["GET"] "/game/1/slots" - Fetched 46 slots for game 1 successfully
+2026-02-27 16:53:23 [Information] ["GET"] "/game/1/toggle-interest" - Checked interest in game 1 for user 5 successfully
+2026-02-27 16:53:25 [Information] ["GET"] "/game/1/slots/223/details" - Request received
+2026-02-27 16:53:25 [Information] Fetched GameSlot 223 for GameId 1
+2026-02-27 16:53:25 [Information] Retrieved game slot 223 for game 1 and cached with version 1
+2026-02-27 16:53:25 [Information] ["GET"] "/game/1/slots/223/details" - Fetched slot 223 details for game 1 successfully
+2026-02-27 16:53:27 [Information] ["GET"] "/game/1/slots" - Request received
+2026-02-27 16:53:27 [Information] ["GET"] "/game/1/toggle-interest" - Request received
+2026-02-27 16:53:27 [Information] ["GET"] "/game/1/slots" - Fetched 46 slots for game 1 successfully
+2026-02-27 16:53:27 [Information] ["GET"] "/game/1/toggle-interest" - Checked interest in game 1 for user 5 successfully
+2026-02-27 16:53:35 [Information] ["GET"] "/game" - Request received
+2026-02-27 16:53:35 [Information] ["GET"] "/game" - Fetched 3 games successfully
+2026-02-27 16:53:36 [Information] ["GET"] "/game/2/toggle-interest" - Request received
+2026-02-27 16:53:36 [Information] ["GET"] "/game/2/slots" - Request received
+2026-02-27 16:53:36 [Information] ["GET"] "/game/2/toggle-interest" - Checked interest in game 2 for user 5 successfully
+2026-02-27 16:53:36 [Information] Retrieved game slots for game 2 and cached with version 1
+2026-02-27 16:53:36 [Information] ["GET"] "/game/2/slots" - Fetched 14 slots for game 2 successfully
+2026-02-27 16:53:39 [Information] ["GET"] "/game/2/booking/available-players" - Request received
+2026-02-27 16:53:39 [Information] ["GET"] "/game/2/booking/available-players" - Fetched available players for game 2 successfully
+2026-02-27 16:53:53 [Information] ["GET"] "/game" - Request received
+2026-02-27 16:53:53 [Information] ["GET"] "/game" - Fetched 3 games successfully
+2026-02-27 16:59:29 [Information] ["POST"] "/Authentication/login" - Request received
+2026-02-27 16:59:29 [Information] Fetched User by Email "hr@gmail.com"
+2026-02-27 16:59:29 [Information] ["POST"] "/Authentication/login" - User logged in successfully
+2026-02-27 16:59:29 [Information] ["GET"] "/notification/count" - Request received
+2026-02-27 16:59:29 [Information] Unread notification count for UserId 3: 4
+2026-02-27 16:59:29 [Information] Retrieved notification count of user with Id 3 from repository and cached with version 0
+2026-02-27 16:59:29 [Information] ["GET"] "/notification/count" - Fetched notification count 4 for user 3 successfully
+2026-02-27 16:59:29 [Information] ["GET"] "/dashboard/daily-celebrations" - Request received
+2026-02-27 16:59:29 [Information] ["GET"] "/dashboard/upcoming-bookings" - Request received
+2026-02-27 16:59:29 [Information] Found 0 daily celebrations for today
+2026-02-27 16:59:29 [Information] Retrieved 0 daily celebrations from repository
+2026-02-27 16:59:29 [Information] ["GET"] "/dashboard/daily-celebrations" - Fetched 0 daily celebrations successfully
+2026-02-27 16:59:29 [Information] Found 2 upcoming booking slots for today
+2026-02-27 16:59:29 [Information] Retrieved 2 upcoming booking slots from repository
+2026-02-27 16:59:29 [Information] ["GET"] "/dashboard/upcoming-bookings" - Fetched 2 upcoming booking slots successfully
+2026-02-27 16:59:32 [Information] ["GET"] "/game/1/slots/223/details" - Request received
+2026-02-27 16:59:32 [Information] ["GET"] "/game/1/slots/223/details" - Fetched slot 223 details for game 1 successfully
+2026-02-27 16:59:33 [Information] ["GET"] "/dashboard/upcoming-bookings" - Request received
+2026-02-27 16:59:33 [Information] ["GET"] "/dashboard/daily-celebrations" - Request received
+2026-02-27 16:59:33 [Information] ["GET"] "/dashboard/daily-celebrations" - Fetched 0 daily celebrations successfully
+2026-02-27 16:59:33 [Information] ["GET"] "/dashboard/upcoming-bookings" - Fetched 2 upcoming booking slots successfully
+2026-02-27 16:59:35 [Information] ["GET"] "/game/3/slots/252/details" - Request received
+2026-02-27 16:59:35 [Information] Fetched GameSlot 252 for GameId 3
+2026-02-27 16:59:35 [Information] Retrieved game slot 252 for game 3 and cached with version 1
+2026-02-27 16:59:35 [Information] ["GET"] "/game/3/slots/252/details" - Fetched slot 252 details for game 3 successfully
+2026-02-27 16:59:42 [Information] ["GET"] "/dashboard/upcoming-bookings" - Request received
+2026-02-27 16:59:42 [Information] ["GET"] "/dashboard/daily-celebrations" - Request received
+2026-02-27 16:59:42 [Information] ["GET"] "/dashboard/upcoming-bookings" - Fetched 2 upcoming booking slots successfully
+2026-02-27 16:59:42 [Information] ["GET"] "/dashboard/daily-celebrations" - Fetched 0 daily celebrations successfully
+2026-02-27 16:59:43 [Information] ["GET"] "/game/1/slots/223/details" - Request received
+2026-02-27 16:59:43 [Information] ["GET"] "/game/1/slots/223/details" - Fetched slot 223 details for game 1 successfully

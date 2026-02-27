@@ -68,6 +68,7 @@ namespace hrms.Service.impl
                 NotificationDate = DateTime.Now
             };
             await _notificationRepository.CreateNotification(notification);
+            IncrementCacheVersion(CacheVersionKey.ForUserNotifications(createdJob.ContactTo));
             _logger.LogInformation("Notification sent to contact HR with Id {ContactTo} for job creation with Id {JobId}", createdJob.ContactTo, createdJob.Id);
 
             foreach (var reviewer in createdJob.Reviewers)
@@ -81,6 +82,7 @@ namespace hrms.Service.impl
                     NotificationDate = DateTime.Now
                 };
                 await _notificationRepository.CreateNotification(notificationForReviewer);
+                IncrementCacheVersion(CacheVersionKey.ForUserNotifications(reviewer.ReviewerId));
                 _logger.LogInformation("Notification sent to reviewer with Id {ReviewerId} for job creation with Id {JobId}", reviewer.ReviewerId, createdJob.Id);
             }
         }
@@ -130,7 +132,7 @@ namespace hrms.Service.impl
 
         public async Task<JobResponseDto> GetJobById(int jobId)
         {
-            var version = _cache.Get<int>(CacheVersionKey.ForJobDetails(jobId));
+            var version = _cache.Get<int>(CacheVersionKey.ForJobInfo(jobId));
             var key = $"Job:{jobId}:version:{version}";
             if (_cache.TryGetValue(key, out JobResponseDto cachedJob))
             {
@@ -350,6 +352,7 @@ namespace hrms.Service.impl
             }
             IncrementCacheVersion(CacheVersionKey.For(CacheDomains.JobDetails));
             IncrementCacheVersion(CacheVersionKey.ForJobDetails(jobId));
+            IncrementCacheVersion(CacheVersionKey.ForJobInfo(jobId));
             _logger.LogInformation("Job with Id {JobId} updated successfully by HR with Id {HrId}", jobId, hrId);
             return _mappers.Map<JobResponseDto>(updatedJob);
         }
@@ -362,6 +365,7 @@ namespace hrms.Service.impl
             await _repository.DeleteJob(job);
             IncrementCacheVersion(CacheVersionKey.For(CacheDomains.JobDetails));
             IncrementCacheVersion(CacheVersionKey.ForJobDetails(jobId));
+            IncrementCacheVersion(CacheVersionKey.ForJobInfo(jobId));
             IncrementCacheVersion(CacheVersionKey.ForJobReferrals(jobId));
             IncrementCacheVersion(CacheVersionKey.For(CacheDomains.JobReferrals));
             IncrementCacheVersion(CacheVersionKey.ForJobShares(jobId));

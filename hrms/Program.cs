@@ -15,6 +15,8 @@ using Microsoft.IdentityModel.Tokens;
 using Quartz;
 using System.Text;
 using Serilog;
+using Microsoft.AspNetCore.ResponseCompression;
+using System.IO.Compression;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -31,8 +33,8 @@ Log.Logger = new LoggerConfiguration()
     .MinimumLevel.Override("Microsoft.EntityFrameworkCore", Serilog.Events.LogEventLevel.Fatal)
     .WriteTo.File(
         path: "Logs/log-.txt",
-        rollingInterval: RollingInterval.Day,
-        retainedFileCountLimit: 30,
+        rollingInterval: RollingInterval.Hour,
+        retainedFileCountLimit: 24,
         outputTemplate: "{Timestamp:yyyy-MM-dd HH:mm:ss} [{Level}] {Message}{NewLine}{Exception}"
     )
     .CreateLogger();
@@ -65,6 +67,27 @@ builder.Services.Configure<ApiBehaviorOptions>(option =>
         });
     };
 });
+
+builder.Services.AddResponseCompression(options =>
+{
+    options.EnableForHttps = true; 
+    options.Providers.Add<BrotliCompressionProvider>();
+    options.Providers.Add<GzipCompressionProvider>();
+    options.MimeTypes = ResponseCompressionDefaults.MimeTypes.Concat(
+        new[] { "application/json" }
+    );
+});
+
+builder.Services.Configure<BrotliCompressionProviderOptions>(options =>
+{
+    options.Level = CompressionLevel.Fastest;
+});
+
+builder.Services.Configure<GzipCompressionProviderOptions>(options =>
+{
+    options.Level = CompressionLevel.SmallestSize;
+});
+
 builder.Services.AddOpenApi();
 builder.Services.AddSwaggerGen();
 
@@ -185,6 +208,8 @@ builder.Services.AddAuthentication(options =>
     };
 });
 var app = builder.Build();
+
+app.UseResponseCompression(); 
 
 // Configure the HTTP request pipeline.
 if (app.Environment.IsDevelopment())

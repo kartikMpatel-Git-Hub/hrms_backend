@@ -202,6 +202,8 @@ namespace hrms.Utility
                     return "Available";
                 case GameSlotStatus.COMPLETED:
                     return "Completed";
+                case GameSlotStatus.CANCELLED:
+                    return "Cancelled";
                 default:
                     return "Unknown";
             }

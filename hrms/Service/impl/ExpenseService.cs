@@ -8,6 +8,8 @@ using hrms.Dto.Response.Expense.Category;
 using hrms.Dto.Response.Other;
 using hrms.Model;
 using hrms.Repository;
+using hrms.Utility;
+using Microsoft.Extensions.Caching.Memory;
 
 namespace hrms.Service.impl
 {
@@ -19,7 +21,9 @@ namespace hrms.Service.impl
         IMapper _mapper,
         IEmailService _email,
         ICloudinaryService _cloudinary,
-        INotificationRepository _notificationRepository
+        INotificationRepository _notificationRepository,
+        ILogger<ExpenseService> _logger,
+        IMemoryCache _cache
     ) : IExpenseService
     {
 
@@ -35,6 +39,8 @@ namespace hrms.Service.impl
                 is_deleted = false
             };
             ExpenseCategory response = await _repository.CreateCategory(expenseCategory);
+            IncrementCacheVersion(CacheVersionKey.For(CacheDomains.ExpenseCategories));
+            _logger.LogInformation("Expense category '{Category}' created and cache version incremented", dto.Category);
             return _mapper.Map<ExpenseCategoryResponseDto>(response);
         }
 
@@ -103,19 +109,50 @@ namespace hrms.Service.impl
             await _email.SendEmailAsync(hr.Email, "Expense Added", $"""
                 Employee with email {employee.Email} added expense of Amount : {expense.Amount}
                 """);
+            Notification notification = new Notification()
+            {
+                NotifiedTo = hr.Id,
+                Title = "Expense Added",
+                Description = $"Employee with email {employee.Email} added expense of Amount : {expense.Amount}",
+                IsViewed = false,
+                NotificationDate = DateTime.Now
+            };
+            await _notificationRepository.CreateNotification(notification);
+            IncrementCacheVersion(CacheVersionKey.ForTravelExpenses(travelId));
+            _logger.LogInformation("Expense added for travel {TravelId} by employee {EmployeeId}, amount {Amount}", travelId, currentUserId, dto.Amount);
             return _mapper.Map<ExpenseResponseDto>(AddedExpense);
         }
 
         public async Task<List<ExpenseCategoryResponseDto>> GetExpenseCategory()
         {
+            var version = _cache.Get<int>(CacheVersionKey.For(CacheDomains.ExpenseCategories));
+            var key = $"ExpenseCategories:version:{version}";
+            if (_cache.TryGetValue(key, out List<ExpenseCategoryResponseDto> cached))
+            {
+                _logger.LogDebug("Cache hit for expense categories (version {Version})", version);
+                return cached;
+            }
             List<ExpenseCategory> categories = await _repository.GetAllExpenseCategory();
-            return _mapper.Map<List<ExpenseCategoryResponseDto>>(categories);
+            var result = _mapper.Map<List<ExpenseCategoryResponseDto>>(categories);
+            _cache.Set(key, result, TimeSpan.FromMinutes(60));
+            _logger.LogInformation("Retrieved {Count} expense categories and cached with version {Version}", result.Count, version);
+            return result;
         }
 
         public async Task<List<ExpenseResponseDto>> GetTravelTravelerExpense(int travelId, int travelerId)
         {
+            var version = _cache.Get<int>(CacheVersionKey.ForTravelExpenses(travelId));
+            var key = $"TravelerExpenses:TravelId:{travelId}:TravelerId:{travelerId}:version:{version}";
+            if (_cache.TryGetValue(key, out List<ExpenseResponseDto> cached))
+            {
+                _logger.LogDebug("Cache hit for traveler expenses (version {Version})", version);
+                return cached;
+            }
             List<Expense> expenses = await _repository.GetAllTravelTravelerExpense(travelId, travelerId);
-            return _mapper.Map<List<ExpenseResponseDto>>(expenses);
+            var result = _mapper.Map<List<ExpenseResponseDto>>(expenses);
+            _cache.Set(key, result, TimeSpan.FromMinutes(30));
+            _logger.LogInformation("Retrieved expenses for travel {TravelId} traveler {TravelerId} and cached with version {Version}", travelId, travelerId, version);
+            return result;
         }
 
         public async Task<ExpenseResponseDto> ChangeExpenseStatus(int travelId, int travelerId, int expenseId, ExpenseStatusChangeDto dto)
@@ -137,6 +174,8 @@ namespace hrms.Service.impl
             }
             Expense e = await _repository.UpdateExpenseStatus(expense);
             await NotifiedUserForExpenseStatusChange(e);
+            IncrementCacheVersion(CacheVersionKey.ForTravelExpenses(travelId));
+            _logger.LogInformation("Expense {ExpenseId} status changed to {Status} for travel {TravelId}", expenseId, dto.Status, travelId);
             return _mapper.Map<ExpenseResponseDto>(e);
         }
 
@@ -155,6 +194,14 @@ namespace hrms.Service.impl
                 NotificationDate = DateTime.Now
             };
             await _notificationRepository.CreateNotification(notification);
+            _logger.LogInformation("Notification created for user {UserId} for expense status change", traveler.Id);
+            IncrementCacheVersion(CacheVersionKey.ForUserNotifications(e.TravelerId));
+        }
+
+        private void IncrementCacheVersion(string versionKey)
+        {
+            var current = _cache.Get<int>(versionKey);
+            _cache.Set(versionKey, current + 1);
         }
 
         private ExpenseStatus GetStatus(string status)
@@ -172,8 +219,18 @@ namespace hrms.Service.impl
 
         public async Task<PagedReponseDto<ExpenseResponseDto>> GetAllExpenses(int pageNumber, int pageSize, int currentUserId)
         {
+            var version = _cache.Get<int>(CacheVersionKey.ForTravelExpenses(currentUserId));
+            var key = $"AllExpenses:UserId:{currentUserId}:pageNumber:{pageNumber}:pageSize:{pageSize}:version:{version}";
+            if (_cache.TryGetValue(key, out PagedReponseDto<ExpenseResponseDto> cached))
+            {
+                _logger.LogDebug("Cache hit for all expenses (version {Version})", version);
+                return cached;
+            }
             PagedReponseOffSet<Expense> expenses = await _repository.GetAllExpenses(pageNumber, pageSize, currentUserId);
-            return _mapper.Map<PagedReponseDto<ExpenseResponseDto>>(expenses);
+            var result = _mapper.Map<PagedReponseDto<ExpenseResponseDto>>(expenses);
+            _cache.Set(key, result, TimeSpan.FromMinutes(30));
+            _logger.LogInformation("Retrieved all expenses for user {UserId} and cached with version {Version}", currentUserId, version);
+            return result;
         }
 
         public async Task<ExpenseResponseDto> UpdateExpense(int travelId, int expenseId, int currentUserId, ExpenseUpdateDto dto)
@@ -182,16 +239,16 @@ namespace hrms.Service.impl
             {
                 throw new InvalidOperationCustomException($"Traveler : {currentUserId}Not Found With Travel : {travelId}");
             }
-            if(dto.CategoryId != null)
+            if (dto.CategoryId != null)
             {
                 await _repository.GetCategoryById((int)dto.CategoryId);
             }
             Travel travel = await _travelRepository.GetTravelById(travelId);
             Expense expense = await _repository.GetExpenseById(expenseId);
-            if(dto.Amount != null)
+            if (dto.Amount != null)
             {
-                decimal todaysExpense = (decimal)dto.Amount + await _travelRepository.GetTodaysExpense(travelId, currentUserId,dto.ExpenseDate);
-                if(dto.ExpenseDate == expense.ExpenseDate)
+                decimal todaysExpense = (decimal)dto.Amount + await _travelRepository.GetTodaysExpense(travelId, currentUserId, dto.ExpenseDate);
+                if (dto.ExpenseDate == expense.ExpenseDate)
                 {
                     todaysExpense -= expense.Amount;
                 }
@@ -213,6 +270,24 @@ namespace hrms.Service.impl
 
             Expense updatedExpense = UpdateExpenseEntity(expense, dto);
             Expense e = await _repository.UpdateExpense(updatedExpense);
+            User hr = await _userRepository.GetById(travel.CreatedBy);
+            await _email.SendEmailAsync(hr.Email, "Expense Updated", $"""
+                    Employee with email {hr.Email} updated expense of Amount : {expense.Amount}
+                    """);
+            Notification notification = new Notification()
+            {
+                NotifiedTo = hr.Id,
+                Title = "Expense Updated",
+                Description = $"Employee with email {hr.Email} updated expense of Amount : {expense.Amount}",
+                IsViewed = false,
+                NotificationDate = DateTime.Now
+            };
+            await _notificationRepository.CreateNotification(notification);
+
+            IncrementCacheVersion(CacheVersionKey.ForTravelExpenses(travelId));
+            IncrementCacheVersion(CacheVersionKey.ForTravelExpenses(currentUserId));
+            _logger.LogInformation("Updated expense {ExpenseId} for travel {TravelId} by user {UserId}", expenseId, travelId, currentUserId);
+
             return _mapper.Map<ExpenseResponseDto>(e);
         }
 

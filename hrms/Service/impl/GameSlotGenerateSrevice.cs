@@ -1,11 +1,16 @@
 using hrms.Data;
 using hrms.Model;
 using hrms.Repository;
+using hrms.Utility;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.Caching.Memory;
 
 namespace hrms.Service.impl
 {
-    public class GameSlotGenerateService(ApplicationDbContext _db) : IGameSlotGenerateService
+    public class GameSlotGenerateService(
+        ApplicationDbContext _db,
+        IMemoryCache _cache
+        ) : IGameSlotGenerateService
     {
         public async Task GenerateGameSlotsForNextXDays(DateTime today)
         {
@@ -18,6 +23,12 @@ namespace hrms.Service.impl
                 for (int day = 0; day < game.SlotCreateForNextXDays; day++)
                 {
                     var date = today.Date.AddDays(day);
+                    
+                    bool anySlotsExist = await _db.GameSlots
+                        .AnyAsync(s => s.GameId == game.Id && s.Date == date);
+                    if (anySlotsExist) // this means slots are already generated for this date, so skip to next date
+                        continue;
+
                     foreach(var window in game.GameOperationWindows)
                     {
                         var start = window.OperationalStartTime;
@@ -26,10 +37,6 @@ namespace hrms.Service.impl
                         {
                             bool exists = await _db.GameSlots
                                         .AnyAsync(s => s.GameId == game.Id && s.Date == date && s.StartTime == start);
-                            //exists = await _db.GameSlots
-                            //            .AnyAsync(s => s.GameId == game.Id
-                            //            && s.Date == date
-                            //            && start > s.StartTime && start <= s.EndTime);
                             if (!exists)
                             {
                                 GameSlot slot = new GameSlot
@@ -47,7 +54,14 @@ namespace hrms.Service.impl
                     }
                 }
                 await _db.SaveChangesAsync();
+                IncrementCacheVersion(CacheVersionKey.ForGameSlots(game.Id));
             }
+        }
+
+        private void IncrementCacheVersion(string versionKey)
+        {
+            var current = _cache.Get<int>(versionKey);
+            _cache.Set(versionKey, current + 1);
         }
     }
 }

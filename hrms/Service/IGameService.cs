@@ -14,6 +14,7 @@ namespace hrms.Service
         Task<GameOperationWindowResponseDto> CreateGameOperationWindow(int gameId, GameOperationWindowCreateDto dto);
         Task<bool> DeleteGame(int gameId);
         Task<bool> DeleteGameOperationWindow(int gameId, int windowId);
+        Task DeleteGameSlot(int gameId, int slotId);
         Task<List<GameOperationWindowResponseDto>> GetAllGameOperationWindows(int gameId);
         Task<PagedReponseDto<GameResponseDto>> GetAllGames(int pageNumber, int pageSize);
         Task<List<GameSlotResponseDto>> GetAllGameSlots(int gameId, DateTime? startDate, DateTime? endDate);

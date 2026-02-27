@@ -1,0 +1,625 @@
+2026-02-27 14:00:00 [Information] ["GET"] "/notification/count" - Request received
+2026-02-27 14:00:00 [Information] ["GET"] "/post/feed" - Request received
+2026-02-27 14:00:00 [Information] Unread notification count for UserId 3: 0
+2026-02-27 14:00:00 [Information] Retrieved notification count of user with Id 3 from repository and cached with version 0
+2026-02-27 14:00:00 [Information] ["GET"] "/notification/count" - Fetched notification count 0 for user 3 successfully
+2026-02-27 14:00:00 [Information] Fetched 5 feed posts, page 1
+2026-02-27 14:00:00 [Information] Retrieved feed for user 3 and cached with version 1
+2026-02-27 14:00:00 [Information] ["GET"] "/post/feed" - Fetched feed for user 3 successfully
+2026-02-27 14:00:03 [Information] ["GET"] "/post" - Request received
+2026-02-27 14:00:03 [Information] Fetched 0 posts for UserId 3, page 1
+2026-02-27 14:00:03 [Information] Retrieved posts for user 3 and cached with version 0
+2026-02-27 14:00:03 [Information] ["GET"] "/post" - Fetched posts for user 3 successfully
+2026-02-27 14:00:04 [Information] ["GET"] "/post/feed" - Request received
+2026-02-27 14:00:04 [Information] ["GET"] "/post/feed" - Fetched feed for user 3 successfully
+2026-02-27 14:00:31 [Information] ["POST"] "/post" - Request received
+2026-02-27 14:00:31 [Information] Created Tag with Id 6, Name "roima"
+2026-02-27 14:00:31 [Information] Resolved Tag by Name "roima", Id 6
+2026-02-27 14:00:32 [Information] Created Tag with Id 7, Name "logo"
+2026-02-27 14:00:32 [Information] Resolved Tag by Name "logo", Id 7
+2026-02-27 14:00:33 [Information] ["GET"] "/post" - Request received
+2026-02-27 14:00:33 [Information] ["GET"] "/notification/count" - Request received
+2026-02-27 14:00:33 [Information] Unread notification count for UserId 6: 1
+2026-02-27 14:00:33 [Information] Retrieved notification count of user with Id 6 from repository and cached with version 0
+2026-02-27 14:00:33 [Information] ["GET"] "/notification/count" - Fetched notification count 1 for user 6 successfully
+2026-02-27 14:00:33 [Information] Fetched 2 posts for UserId 6, page 1
+2026-02-27 14:00:33 [Information] Retrieved posts for user 6 and cached with version 0
+2026-02-27 14:00:33 [Information] ["GET"] "/post" - Fetched posts for user 6 successfully
+2026-02-27 14:00:34 [Information] ["GET"] "/post/feed" - Request received
+2026-02-27 14:00:34 [Information] Fetched 6 feed posts, page 1
+2026-02-27 14:00:34 [Information] Retrieved feed for user 6 and cached with version 1
+2026-02-27 14:00:34 [Information] ["GET"] "/post/feed" - Fetched feed for user 6 successfully
+2026-02-27 14:00:35 [Information] Created Post with Id 11
+2026-02-27 14:00:35 [Information] Post created with Id 11, cache versions incremented
+2026-02-27 14:00:35 [Information] ["POST"] "/post" - Post created by user 3 successfully
+2026-02-27 14:00:36 [Information] ["GET"] "/post/feed" - Request received
+2026-02-27 14:00:36 [Information] ["GET"] "/notification/count" - Request received
+2026-02-27 14:00:36 [Information] Unread notification count for UserId 7: 0
+2026-02-27 14:00:36 [Information] Retrieved notification count of user with Id 7 from repository and cached with version 0
+2026-02-27 14:00:36 [Information] ["GET"] "/notification/count" - Fetched notification count 0 for user 7 successfully
+2026-02-27 14:00:36 [Information] Fetched 6 feed posts, page 1
+2026-02-27 14:00:36 [Information] Retrieved feed for user 7 and cached with version 2
+2026-02-27 14:00:36 [Information] ["GET"] "/post/feed" - Fetched feed for user 7 successfully
+2026-02-27 14:00:37 [Information] ["GET"] "/post/feed" - Request received
+2026-02-27 14:00:37 [Information] Fetched 5 feed posts, page 1
+2026-02-27 14:00:37 [Information] Retrieved feed for user 3 and cached with version 2
+2026-02-27 14:00:37 [Information] ["GET"] "/post/feed" - Fetched feed for user 3 successfully
+2026-02-27 14:00:38 [Information] ["GET"] "/post/feed" - Request received
+2026-02-27 14:00:38 [Information] ["GET"] "/notification/count" - Request received
+2026-02-27 14:00:38 [Information] ["GET"] "/notification/count" - Fetched notification count 1 for user 6 successfully
+2026-02-27 14:00:38 [Information] Fetched 6 feed posts, page 1
+2026-02-27 14:00:38 [Information] Retrieved feed for user 6 and cached with version 2
+2026-02-27 14:00:38 [Information] ["GET"] "/post/feed" - Fetched feed for user 6 successfully
+2026-02-27 14:00:40 [Information] ["GET"] "/post/11/comments" - Request received
+2026-02-27 14:00:40 [Information] ["GET"] "/post/11" - Request received
+2026-02-27 14:00:40 [Information] Fetched 0 comments for Post 11, page 1
+2026-02-27 14:00:40 [Information] Retrieved comments for post 11 and cached with version 0
+2026-02-27 14:00:40 [Information] ["GET"] "/post/11/comments" - Fetched comments for post 11 successfully
+2026-02-27 14:00:40 [Information] Fetched Post with Id 11
+2026-02-27 14:00:40 [Information] Retrieved post 11 detail and cached with version 0
+2026-02-27 14:00:40 [Information] ["GET"] "/post/11" - Fetched post 11 successfully
+2026-02-27 14:00:42 [Information] ["GET"] "/notification/count" - Request received
+2026-02-27 14:00:42 [Information] ["GET"] "/notification/count" - Fetched notification count 0 for user 7 successfully
+2026-02-27 14:00:42 [Information] ["GET"] "/post/feed" - Request received
+2026-02-27 14:00:42 [Information] ["GET"] "/post/feed" - Fetched feed for user 7 successfully
+2026-02-27 14:00:44 [Information] ["GET"] "/post/11" - Request received
+2026-02-27 14:00:44 [Information] ["GET"] "/post/11/comments" - Request received
+2026-02-27 14:00:44 [Information] ["GET"] "/post/11" - Fetched post 11 successfully
+2026-02-27 14:00:44 [Information] ["GET"] "/post/11/comments" - Fetched comments for post 11 successfully
+2026-02-27 14:00:44 [Information] ["GET"] "/notification/count" - Request received
+2026-02-27 14:00:44 [Information] ["GET"] "/notification/count" - Fetched notification count 1 for user 6 successfully
+2026-02-27 14:00:44 [Information] ["GET"] "/notification/count" - Request received
+2026-02-27 14:00:44 [Information] ["GET"] "/notification/count" - Fetched notification count 0 for user 3 successfully
+2026-02-27 14:00:44 [Information] ["GET"] "/post/feed" - Request received
+2026-02-27 14:00:44 [Information] ["GET"] "/post/feed" - Fetched feed for user 3 successfully
+2026-02-27 14:00:46 [Information] ["GET"] "/post" - Request received
+2026-02-27 14:00:46 [Information] Fetched 1 posts for UserId 3, page 1
+2026-02-27 14:00:46 [Information] Retrieved posts for user 3 and cached with version 1
+2026-02-27 14:00:46 [Information] ["GET"] "/post" - Fetched posts for user 3 successfully
+2026-02-27 14:00:48 [Information] ["GET"] "/notification/count" - Request received
+2026-02-27 14:00:48 [Information] ["GET"] "/notification/count" - Fetched notification count 1 for user 6 successfully
+2026-02-27 14:00:48 [Information] ["GET"] "/post/11/comments" - Request received
+2026-02-27 14:00:48 [Information] ["GET"] "/post/11/comments" - Fetched comments for post 11 successfully
+2026-02-27 14:00:48 [Information] ["GET"] "/post/11" - Request received
+2026-02-27 14:00:48 [Information] ["GET"] "/post/11" - Fetched post 11 successfully
+2026-02-27 14:00:49 [Information] ["GET"] "/notification/count" - Request received
+2026-02-27 14:00:49 [Information] ["GET"] "/notification/count" - Fetched notification count 0 for user 7 successfully
+2026-02-27 14:00:49 [Information] ["GET"] "/post/feed" - Request received
+2026-02-27 14:00:49 [Information] ["GET"] "/post/feed" - Fetched feed for user 7 successfully
+2026-02-27 14:00:51 [Information] ["GET"] "/post/11/comments" - Request received
+2026-02-27 14:00:51 [Information] ["GET"] "/post/11" - Request received
+2026-02-27 14:00:51 [Information] ["GET"] "/post/11/comments" - Fetched comments for post 11 successfully
+2026-02-27 14:00:51 [Information] ["GET"] "/post/11" - Fetched post 11 successfully
+2026-02-27 14:00:51 [Information] ["GET"] "/notification/count" - Request received
+2026-02-27 14:00:51 [Information] ["GET"] "/notification/count" - Fetched notification count 1 for user 6 successfully
+2026-02-27 14:00:52 [Information] ["GET"] "/notification/count" - Request received
+2026-02-27 14:00:52 [Information] ["GET"] "/post/feed" - Request received
+2026-02-27 14:00:52 [Information] ["GET"] "/notification/count" - Fetched notification count 0 for user 7 successfully
+2026-02-27 14:00:52 [Information] ["GET"] "/post/feed" - Fetched feed for user 7 successfully
+2026-02-27 14:00:52 [Information] ["GET"] "/notification/count" - Request received
+2026-02-27 14:00:52 [Information] ["GET"] "/notification/count" - Fetched notification count 1 for user 6 successfully
+2026-02-27 14:00:52 [Information] ["GET"] "/post/11/comments" - Request received
+2026-02-27 14:00:52 [Information] ["GET"] "/post/11" - Request received
+2026-02-27 14:00:52 [Information] ["GET"] "/post/11/comments" - Fetched comments for post 11 successfully
+2026-02-27 14:00:52 [Information] ["GET"] "/post/11" - Fetched post 11 successfully
+2026-02-27 14:00:53 [Information] ["GET"] "/notification/count" - Request received
+2026-02-27 14:00:53 [Information] ["GET"] "/post" - Request received
+2026-02-27 14:00:53 [Information] ["GET"] "/notification/count" - Fetched notification count 0 for user 3 successfully
+2026-02-27 14:00:53 [Information] ["GET"] "/post" - Fetched posts for user 3 successfully
+2026-02-27 14:00:54 [Information] ["GET"] "/post/feed" - Request received
+2026-02-27 14:00:54 [Information] ["GET"] "/post/feed" - Fetched feed for user 3 successfully
+2026-02-27 14:00:57 [Information] Updated GameSlot with Id 217
+2026-02-27 14:00:57 [Information] Updated GameSlot with Id 287
+2026-02-27 14:01:00 [Information] ["GET"] "/post/11" - Request received
+2026-02-27 14:01:00 [Information] ["GET"] "/post/11/comments" - Request received
+2026-02-27 14:01:00 [Information] ["GET"] "/post/11/comments" - Fetched comments for post 11 successfully
+2026-02-27 14:01:00 [Information] Fetched Post with Id 11
+2026-02-27 14:01:00 [Information] Retrieved post 11 detail and cached with version 0
+2026-02-27 14:01:00 [Information] ["GET"] "/post/11" - Fetched post 11 successfully
+2026-02-27 14:01:03 [Information] ["GET"] "/post/feed" - Request received
+2026-02-27 14:01:03 [Information] ["GET"] "/post/feed" - Fetched feed for user 3 successfully
+2026-02-27 14:01:04 [Information] ["GET"] "/post" - Request received
+2026-02-27 14:01:04 [Information] ["GET"] "/post" - Fetched posts for user 3 successfully
+2026-02-27 14:01:10 [Information] ["PUT"] "/post/11" - Request received
+2026-02-27 14:01:10 [Information] Fetched Post with Id 11
+2026-02-27 14:01:10 [Information] Updated Post with Id 11
+2026-02-27 14:01:10 [Information] Post 11 updated, cache versions incremented
+2026-02-27 14:01:10 [Information] ["PUT"] "/post/11" - Post 11 updated successfully
+2026-02-27 14:01:10 [Information] ["GET"] "/post" - Request received
+2026-02-27 14:01:10 [Information] ["GET"] "/post" - Fetched posts for user 3 successfully
+2026-02-27 14:01:11 [Information] ["GET"] "/notification/count" - Request received
+2026-02-27 14:01:11 [Information] ["GET"] "/notification/count" - Fetched notification count 1 for user 6 successfully
+2026-02-27 14:01:11 [Information] ["GET"] "/post/11/comments" - Request received
+2026-02-27 14:01:11 [Information] ["GET"] "/post/11/comments" - Fetched comments for post 11 successfully
+2026-02-27 14:01:11 [Information] ["GET"] "/post/11" - Request received
+2026-02-27 14:01:11 [Information] Fetched Post with Id 11
+2026-02-27 14:01:11 [Information] Retrieved post 11 detail and cached with version 1
+2026-02-27 14:01:11 [Information] ["GET"] "/post/11" - Fetched post 11 successfully
+2026-02-27 14:01:12 [Information] ["GET"] "/post/feed" - Request received
+2026-02-27 14:01:12 [Information] Fetched 6 feed posts, page 1
+2026-02-27 14:01:12 [Information] Retrieved feed for user 6 and cached with version 3
+2026-02-27 14:01:12 [Information] ["GET"] "/post/feed" - Fetched feed for user 6 successfully
+2026-02-27 14:01:15 [Information] ["GET"] "/notification/count" - Request received
+2026-02-27 14:01:15 [Information] ["GET"] "/post/feed" - Request received
+2026-02-27 14:01:15 [Information] ["GET"] "/notification/count" - Fetched notification count 0 for user 7 successfully
+2026-02-27 14:01:15 [Information] Fetched 6 feed posts, page 1
+2026-02-27 14:01:15 [Information] Retrieved feed for user 7 and cached with version 3
+2026-02-27 14:01:15 [Information] ["GET"] "/post/feed" - Fetched feed for user 7 successfully
+2026-02-27 14:01:19 [Information] ["GET"] "/post/feed" - Request received
+2026-02-27 14:01:19 [Information] Fetched 2 feed posts, page 2
+2026-02-27 14:01:19 [Information] Retrieved feed for user 7 and cached with version 3
+2026-02-27 14:01:19 [Information] ["GET"] "/post/feed" - Fetched feed for user 7 successfully
+2026-02-27 14:02:09 [Information] ["GET"] "/dashboard/upcoming-bookings" - Request received
+2026-02-27 14:02:09 [Information] ["GET"] "/dashboard/daily-celebrations" - Request received
+2026-02-27 14:02:09 [Information] Found 0 daily celebrations for today
+2026-02-27 14:02:09 [Information] Retrieved 0 daily celebrations from repository
+2026-02-27 14:02:09 [Information] ["GET"] "/dashboard/daily-celebrations" - Fetched 0 daily celebrations successfully
+2026-02-27 14:02:09 [Information] Found 0 upcoming booking slots for today
+2026-02-27 14:02:09 [Information] Retrieved 0 upcoming booking slots from repository
+2026-02-27 14:02:09 [Information] ["GET"] "/dashboard/upcoming-bookings" - Fetched 0 upcoming booking slots successfully
+2026-02-27 14:03:17 [Information] ["GET"] "/notification/count" - Request received
+2026-02-27 14:03:17 [Information] ["GET"] "/post/feed" - Request received
+2026-02-27 14:03:17 [Information] ["GET"] "/notification/count" - Fetched notification count 1 for user 6 successfully
+2026-02-27 14:03:17 [Information] ["GET"] "/post/feed" - Fetched feed for user 6 successfully
+2026-02-27 14:03:21 [Information] ["GET"] "/notification/count" - Request received
+2026-02-27 14:03:21 [Information] ["GET"] "/post/feed" - Request received
+2026-02-27 14:03:21 [Information] ["GET"] "/post/feed" - Fetched feed for user 6 successfully
+2026-02-27 14:03:21 [Information] ["GET"] "/notification/count" - Fetched notification count 1 for user 6 successfully
+2026-02-27 14:03:36 [Information] ["GET"] "/notification/count" - Request received
+2026-02-27 14:03:36 [Information] ["GET"] "/post/feed" - Request received
+2026-02-27 14:03:36 [Information] ["GET"] "/notification/count" - Fetched notification count 1 for user 6 successfully
+2026-02-27 14:03:36 [Information] ["GET"] "/post/feed" - Fetched feed for user 6 successfully
+2026-02-27 14:03:37 [Information] ["GET"] "/notification/count" - Request received
+2026-02-27 14:03:37 [Information] ["GET"] "/notification/count" - Fetched notification count 0 for user 7 successfully
+2026-02-27 14:03:37 [Information] ["GET"] "/dashboard/daily-celebrations" - Request received
+2026-02-27 14:03:37 [Information] ["GET"] "/dashboard/upcoming-bookings" - Request received
+2026-02-27 14:03:37 [Information] ["GET"] "/dashboard/upcoming-bookings" - Fetched 0 upcoming booking slots successfully
+2026-02-27 14:03:37 [Information] ["GET"] "/dashboard/daily-celebrations" - Fetched 0 daily celebrations successfully
+2026-02-27 14:03:55 [Information] ["GET"] "/notification/count" - Request received
+2026-02-27 14:03:55 [Information] ["GET"] "/notification/count" - Fetched notification count 0 for user 7 successfully
+2026-02-27 14:03:55 [Information] ["GET"] "/dashboard/upcoming-bookings" - Request received
+2026-02-27 14:03:55 [Information] ["GET"] "/dashboard/daily-celebrations" - Request received
+2026-02-27 14:03:55 [Information] ["GET"] "/dashboard/daily-celebrations" - Fetched 0 daily celebrations successfully
+2026-02-27 14:03:55 [Information] ["GET"] "/dashboard/upcoming-bookings" - Fetched 0 upcoming booking slots successfully
+2026-02-27 14:04:03 [Information] ["GET"] "/notification/count" - Request received
+2026-02-27 14:04:03 [Information] ["GET"] "/notification/count" - Fetched notification count 0 for user 7 successfully
+2026-02-27 14:04:03 [Information] ["GET"] "/dashboard/daily-celebrations" - Request received
+2026-02-27 14:04:03 [Information] ["GET"] "/dashboard/daily-celebrations" - Fetched 0 daily celebrations successfully
+2026-02-27 14:04:03 [Information] ["GET"] "/dashboard/upcoming-bookings" - Request received
+2026-02-27 14:04:03 [Information] ["GET"] "/dashboard/upcoming-bookings" - Fetched 0 upcoming booking slots successfully
+2026-02-27 14:04:12 [Information] ["GET"] "/notification/count" - Request received
+2026-02-27 14:04:12 [Information] ["GET"] "/post/feed" - Request received
+2026-02-27 14:04:12 [Information] ["GET"] "/notification/count" - Fetched notification count 1 for user 6 successfully
+2026-02-27 14:04:12 [Information] ["GET"] "/post/feed" - Fetched feed for user 6 successfully
+2026-02-27 14:04:21 [Information] ["GET"] "/post/feed" - Request received
+2026-02-27 14:04:21 [Information] Fetched 2 feed posts, page 2
+2026-02-27 14:04:21 [Information] Retrieved feed for user 6 and cached with version 3
+2026-02-27 14:04:21 [Information] ["GET"] "/post/feed" - Fetched feed for user 6 successfully
+2026-02-27 14:04:23 [Information] ["GET"] "/post/feed" - Request received
+2026-02-27 14:04:23 [Information] ["GET"] "/post/feed" - Fetched feed for user 6 successfully
+2026-02-27 14:05:03 [Information] ["GET"] "/dashboard/daily-celebrations" - Request received
+2026-02-27 14:05:03 [Information] ["GET"] "/dashboard/upcoming-bookings" - Request received
+2026-02-27 14:05:03 [Information] ["GET"] "/dashboard/daily-celebrations" - Fetched 0 daily celebrations successfully
+2026-02-27 14:05:03 [Information] ["GET"] "/dashboard/upcoming-bookings" - Fetched 0 upcoming booking slots successfully
+2026-02-27 14:05:12 [Information] ["GET"] "/travel/employee" - Request received
+2026-02-27 14:05:12 [Information] Retrieved employee 6 travels and cached with version 0
+2026-02-27 14:05:12 [Information] ["GET"] "/travel/employee" - Fetched travels for employee 6 successfully
+2026-02-27 14:05:15 [Information] ["GET"] "/job" - Request received
+2026-02-27 14:05:15 [Information] Fetched 1 active jobs, page 1
+2026-02-27 14:05:15 [Information] Retrieved jobs list from repository and cached with version 1
+2026-02-27 14:05:15 [Information] Total jobs retrieved: 1
+2026-02-27 14:05:15 [Information] ["GET"] "/job" - Fetched all jobs successfully
+2026-02-27 14:05:17 [Information] ["GET"] "/game" - Request received
+2026-02-27 14:05:17 [Information] Retrieved all games and cached with version 1
+2026-02-27 14:05:17 [Information] ["GET"] "/game" - Fetched 3 games successfully
+2026-02-27 14:05:19 [Information] ["GET"] "/job" - Request received
+2026-02-27 14:05:19 [Information] ["GET"] "/job" - Fetched all jobs successfully
+2026-02-27 14:05:27 [Information] ["GET"] "/notification" - Request received
+2026-02-27 14:05:27 [Information] Fetching notifications for UserId 6, total: 11, page 1
+2026-02-27 14:05:27 [Information] Retrieved notifications of user with Id 6 from repository and cached with version 0
+2026-02-27 14:05:27 [Information] Retrieved notifications of user with Id 6 from repository and cached with version 0
+2026-02-27 14:05:27 [Information] ["GET"] "/notification" - Fetched notifications for user 6 successfully
+2026-02-27 14:05:32 [Information] ["GET"] "/post/feed" - Request received
+2026-02-27 14:05:32 [Information] ["GET"] "/post/feed" - Fetched feed for user 6 successfully
+2026-02-27 14:05:38 [Information] ["GET"] "/notification/count" - Request received
+2026-02-27 14:05:38 [Information] ["GET"] "/post/feed" - Request received
+2026-02-27 14:05:38 [Information] ["GET"] "/post/feed" - Fetched feed for user 6 successfully
+2026-02-27 14:05:38 [Information] Unread notification count for UserId 6: 0
+2026-02-27 14:05:38 [Information] Retrieved notification count of user with Id 6 from repository and cached with version 1
+2026-02-27 14:05:38 [Information] ["GET"] "/notification/count" - Fetched notification count 0 for user 6 successfully
+2026-02-27 14:05:38 [Information] ["GET"] "/notification/count" - Request received
+2026-02-27 14:05:38 [Information] ["GET"] "/notification/count" - Fetched notification count 0 for user 6 successfully
+2026-02-27 14:05:38 [Information] ["GET"] "/notification/count" - Request received
+2026-02-27 14:05:38 [Information] ["GET"] "/notification/count" - Fetched notification count 0 for user 6 successfully
+2026-02-27 14:05:38 [Information] ["GET"] "/dashboard/daily-celebrations" - Request received
+2026-02-27 14:05:38 [Information] ["GET"] "/dashboard/upcoming-bookings" - Request received
+2026-02-27 14:05:38 [Information] ["GET"] "/dashboard/daily-celebrations" - Fetched 0 daily celebrations successfully
+2026-02-27 14:05:38 [Information] ["GET"] "/dashboard/upcoming-bookings" - Fetched 0 upcoming booking slots successfully
+2026-02-27 14:05:42 [Information] ["GET"] "/post/feed" - Request received
+2026-02-27 14:05:42 [Information] ["GET"] "/post/feed" - Fetched feed for user 6 successfully
+2026-02-27 14:05:46 [Information] ["GET"] "/game" - Request received
+2026-02-27 14:05:46 [Information] ["GET"] "/game" - Fetched 3 games successfully
+2026-02-27 14:05:51 [Information] ["GET"] "/user/search/all" - Request received
+2026-02-27 14:05:51 [Information] Fetching all users, total: 9, page 1
+2026-02-27 14:05:51 [Information] Retrieved all users with version 1 and cached
+2026-02-27 14:05:51 [Information] ["GET"] "/user/search/all" - Fetched all users successfully
+2026-02-27 14:05:53 [Information] ["GET"] "/user/6" - Request received
+2026-02-27 14:05:53 [Information] Retrieved user profile with id 6 and cached
+2026-02-27 14:05:53 [Information] ["GET"] "/user/6" - Fetched profile for user 6 successfully
+2026-02-27 14:06:02 [Information] ["GET"] "/notification/count" - Request received
+2026-02-27 14:06:02 [Information] ["GET"] "/post" - Request received
+2026-02-27 14:06:02 [Information] ["GET"] "/notification/count" - Fetched notification count 0 for user 3 successfully
+2026-02-27 14:06:02 [Information] ["GET"] "/post" - Fetched posts for user 3 successfully
+2026-02-27 14:06:09 [Information] ["GET"] "/dashboard/daily-celebrations" - Request received
+2026-02-27 14:06:09 [Information] ["GET"] "/notification/count" - Request received
+2026-02-27 14:06:09 [Information] ["GET"] "/dashboard/daily-celebrations" - Fetched 0 daily celebrations successfully
+2026-02-27 14:06:09 [Information] ["GET"] "/dashboard/upcoming-bookings" - Request received
+2026-02-27 14:06:09 [Information] ["GET"] "/notification/count" - Fetched notification count 0 for user 7 successfully
+2026-02-27 14:06:09 [Information] ["GET"] "/dashboard/upcoming-bookings" - Fetched 0 upcoming booking slots successfully
+2026-02-27 14:06:15 [Information] ["POST"] "/Authentication/login" - Request received
+2026-02-27 14:06:15 [Information] Fetched User by Email "kartik@gmail.com"
+2026-02-27 14:06:15 [Information] ["POST"] "/Authentication/login" - User logged in successfully
+2026-02-27 14:06:15 [Information] ["GET"] "/notification/count" - Request received
+2026-02-27 14:06:15 [Information] ["GET"] "/dashboard/upcoming-bookings" - Request received
+2026-02-27 14:06:15 [Information] ["GET"] "/dashboard/daily-celebrations" - Request received
+2026-02-27 14:06:15 [Information] ["GET"] "/dashboard/upcoming-bookings" - Fetched 0 upcoming booking slots successfully
+2026-02-27 14:06:15 [Information] ["GET"] "/dashboard/daily-celebrations" - Fetched 0 daily celebrations successfully
+2026-02-27 14:06:15 [Information] Unread notification count for UserId 5: 0
+2026-02-27 14:06:15 [Information] Retrieved notification count of user with Id 5 from repository and cached with version 0
+2026-02-27 14:06:15 [Information] ["GET"] "/notification/count" - Fetched notification count 0 for user 5 successfully
+2026-02-27 14:06:22 [Information] ["GET"] "/notification/count" - Request received
+2026-02-27 14:06:22 [Information] ["GET"] "/post" - Request received
+2026-02-27 14:06:22 [Information] ["GET"] "/post" - Fetched posts for user 3 successfully
+2026-02-27 14:06:22 [Information] ["GET"] "/notification/count" - Fetched notification count 0 for user 3 successfully
+2026-02-27 14:06:22 [Information] ["GET"] "/dashboard/daily-celebrations" - Request received
+2026-02-27 14:06:22 [Information] ["GET"] "/notification/count" - Request received
+2026-02-27 14:06:22 [Information] ["GET"] "/dashboard/daily-celebrations" - Fetched 0 daily celebrations successfully
+2026-02-27 14:06:22 [Information] ["GET"] "/notification/count" - Fetched notification count 0 for user 5 successfully
+2026-02-27 14:06:22 [Information] ["GET"] "/dashboard/upcoming-bookings" - Request received
+2026-02-27 14:06:22 [Information] ["GET"] "/dashboard/upcoming-bookings" - Fetched 0 upcoming booking slots successfully
+2026-02-27 14:06:24 [Information] ["GET"] "/notification/count" - Request received
+2026-02-27 14:06:24 [Information] ["GET"] "/post" - Request received
+2026-02-27 14:06:24 [Information] ["GET"] "/post" - Fetched posts for user 3 successfully
+2026-02-27 14:06:24 [Information] ["GET"] "/notification/count" - Fetched notification count 0 for user 3 successfully
+2026-02-27 14:06:27 [Information] ["GET"] "/notification/count" - Request received
+2026-02-27 14:06:27 [Information] ["GET"] "/notification/count" - Fetched notification count 0 for user 6 successfully
+2026-02-27 14:06:32 [Information] ["GET"] "/notification/count" - Request received
+2026-02-27 14:06:32 [Information] ["GET"] "/post" - Request received
+2026-02-27 14:06:32 [Information] ["GET"] "/notification/count" - Fetched notification count 0 for user 3 successfully
+2026-02-27 14:06:32 [Information] ["GET"] "/post" - Fetched posts for user 3 successfully
+2026-02-27 14:06:32 [Information] ["GET"] "/notification/count" - Request received
+2026-02-27 14:06:32 [Information] ["GET"] "/notification/count" - Fetched notification count 0 for user 6 successfully
+2026-02-27 14:06:33 [Information] ["GET"] "/notification/count" - Request received
+2026-02-27 14:06:33 [Information] ["GET"] "/notification/count" - Fetched notification count 0 for user 5 successfully
+2026-02-27 14:06:33 [Information] ["GET"] "/dashboard/daily-celebrations" - Request received
+2026-02-27 14:06:33 [Information] ["GET"] "/dashboard/daily-celebrations" - Fetched 0 daily celebrations successfully
+2026-02-27 14:06:33 [Information] ["GET"] "/dashboard/upcoming-bookings" - Request received
+2026-02-27 14:06:33 [Information] ["GET"] "/dashboard/upcoming-bookings" - Fetched 0 upcoming booking slots successfully
+2026-02-27 14:06:34 [Information] ["GET"] "/notification/count" - Request received
+2026-02-27 14:06:34 [Information] ["GET"] "/notification/count" - Fetched notification count 0 for user 6 successfully
+2026-02-27 14:07:01 [Information] ["GET"] "/notification/count" - Request received
+2026-02-27 14:07:01 [Information] ["GET"] "/notification/count" - Fetched notification count 0 for user 5 successfully
+2026-02-27 14:07:02 [Information] ["GET"] "/notification/count" - Request received
+2026-02-27 14:07:02 [Information] ["GET"] "/notification/count" - Fetched notification count 0 for user 6 successfully
+2026-02-27 14:07:05 [Information] ["GET"] "/notification/count" - Request received
+2026-02-27 14:07:05 [Information] ["GET"] "/notification/count" - Fetched notification count 0 for user 5 successfully
+2026-02-27 14:07:05 [Information] ["GET"] "/dashboard/daily-celebrations" - Request received
+2026-02-27 14:07:05 [Information] ["GET"] "/dashboard/daily-celebrations" - Fetched 0 daily celebrations successfully
+2026-02-27 14:07:05 [Information] ["GET"] "/dashboard/upcoming-bookings" - Request received
+2026-02-27 14:07:05 [Information] ["GET"] "/dashboard/upcoming-bookings" - Fetched 0 upcoming booking slots successfully
+2026-02-27 14:07:09 [Information] ["GET"] "/dashboard/upcoming-bookings" - Request received
+2026-02-27 14:07:09 [Information] ["GET"] "/dashboard/daily-celebrations" - Request received
+2026-02-27 14:07:09 [Information] ["GET"] "/notification/count" - Request received
+2026-02-27 14:07:09 [Information] ["GET"] "/notification/count" - Fetched notification count 0 for user 5 successfully
+2026-02-27 14:07:09 [Information] Found 0 daily celebrations for today
+2026-02-27 14:07:09 [Information] Retrieved 0 daily celebrations from repository
+2026-02-27 14:07:09 [Information] ["GET"] "/dashboard/daily-celebrations" - Fetched 0 daily celebrations successfully
+2026-02-27 14:07:10 [Information] Found 0 upcoming booking slots for today
+2026-02-27 14:07:10 [Information] Retrieved 0 upcoming booking slots from repository
+2026-02-27 14:07:10 [Information] ["GET"] "/dashboard/upcoming-bookings" - Fetched 0 upcoming booking slots successfully
+2026-02-27 14:07:12 [Information] ["GET"] "/notification/count" - Request received
+2026-02-27 14:07:12 [Information] ["GET"] "/notification/count" - Fetched notification count 0 for user 5 successfully
+2026-02-27 14:07:12 [Information] ["GET"] "/dashboard/upcoming-bookings" - Request received
+2026-02-27 14:07:12 [Information] ["GET"] "/dashboard/daily-celebrations" - Request received
+2026-02-27 14:07:12 [Information] ["GET"] "/dashboard/upcoming-bookings" - Fetched 0 upcoming booking slots successfully
+2026-02-27 14:07:12 [Information] ["GET"] "/dashboard/daily-celebrations" - Fetched 0 daily celebrations successfully
+2026-02-27 14:07:17 [Information] ["GET"] "/dashboard/daily-celebrations" - Request received
+2026-02-27 14:07:17 [Information] ["GET"] "/dashboard/upcoming-bookings" - Request received
+2026-02-27 14:07:17 [Information] ["GET"] "/notification/count" - Request received
+2026-02-27 14:07:17 [Information] ["GET"] "/dashboard/daily-celebrations" - Fetched 0 daily celebrations successfully
+2026-02-27 14:07:17 [Information] ["GET"] "/notification/count" - Fetched notification count 0 for user 5 successfully
+2026-02-27 14:07:17 [Information] ["GET"] "/dashboard/upcoming-bookings" - Fetched 0 upcoming booking slots successfully
+2026-02-27 14:07:21 [Information] ["GET"] "/dashboard/daily-celebrations" - Request received
+2026-02-27 14:07:21 [Information] ["GET"] "/notification/count" - Request received
+2026-02-27 14:07:21 [Information] ["GET"] "/dashboard/daily-celebrations" - Fetched 0 daily celebrations successfully
+2026-02-27 14:07:21 [Information] ["GET"] "/notification/count" - Fetched notification count 0 for user 5 successfully
+2026-02-27 14:07:21 [Information] ["GET"] "/dashboard/upcoming-bookings" - Request received
+2026-02-27 14:07:21 [Information] ["GET"] "/dashboard/upcoming-bookings" - Fetched 0 upcoming booking slots successfully
+2026-02-27 14:07:24 [Information] ["GET"] "/dashboard/upcoming-bookings" - Request received
+2026-02-27 14:07:24 [Information] ["GET"] "/dashboard/daily-celebrations" - Request received
+2026-02-27 14:07:24 [Information] ["GET"] "/dashboard/upcoming-bookings" - Fetched 0 upcoming booking slots successfully
+2026-02-27 14:07:24 [Information] ["GET"] "/notification/count" - Request received
+2026-02-27 14:07:24 [Information] ["GET"] "/dashboard/daily-celebrations" - Fetched 0 daily celebrations successfully
+2026-02-27 14:07:24 [Information] ["GET"] "/notification/count" - Fetched notification count 0 for user 5 successfully
+2026-02-27 14:07:32 [Information] ["GET"] "/notification/count" - Request received
+2026-02-27 14:07:32 [Information] ["GET"] "/notification/count" - Fetched notification count 0 for user 5 successfully
+2026-02-27 14:07:32 [Information] ["GET"] "/dashboard/daily-celebrations" - Request received
+2026-02-27 14:07:32 [Information] ["GET"] "/dashboard/daily-celebrations" - Fetched 0 daily celebrations successfully
+2026-02-27 14:07:32 [Information] ["GET"] "/dashboard/upcoming-bookings" - Request received
+2026-02-27 14:07:32 [Information] ["GET"] "/dashboard/upcoming-bookings" - Fetched 0 upcoming booking slots successfully
+2026-02-27 14:07:39 [Information] ["GET"] "/notification/count" - Request received
+2026-02-27 14:07:39 [Information] ["GET"] "/notification/count" - Fetched notification count 0 for user 5 successfully
+2026-02-27 14:07:39 [Information] ["GET"] "/dashboard/upcoming-bookings" - Request received
+2026-02-27 14:07:39 [Information] ["GET"] "/dashboard/daily-celebrations" - Request received
+2026-02-27 14:07:39 [Information] ["GET"] "/dashboard/upcoming-bookings" - Fetched 0 upcoming booking slots successfully
+2026-02-27 14:07:39 [Information] ["GET"] "/dashboard/daily-celebrations" - Fetched 0 daily celebrations successfully
+2026-02-27 14:07:42 [Information] ["GET"] "/dashboard/daily-celebrations" - Request received
+2026-02-27 14:07:42 [Information] ["GET"] "/notification/count" - Request received
+2026-02-27 14:07:42 [Information] ["GET"] "/dashboard/daily-celebrations" - Fetched 0 daily celebrations successfully
+2026-02-27 14:07:42 [Information] ["GET"] "/dashboard/upcoming-bookings" - Request received
+2026-02-27 14:07:42 [Information] ["GET"] "/notification/count" - Fetched notification count 0 for user 5 successfully
+2026-02-27 14:07:42 [Information] ["GET"] "/dashboard/upcoming-bookings" - Fetched 0 upcoming booking slots successfully
+2026-02-27 14:07:46 [Information] ["GET"] "/notification/count" - Request received
+2026-02-27 14:07:46 [Information] ["GET"] "/notification/count" - Fetched notification count 0 for user 5 successfully
+2026-02-27 14:07:46 [Information] ["GET"] "/notification/count" - Request received
+2026-02-27 14:07:46 [Information] ["GET"] "/notification/count" - Fetched notification count 0 for user 5 successfully
+2026-02-27 14:07:46 [Information] ["GET"] "/dashboard/upcoming-bookings" - Request received
+2026-02-27 14:07:46 [Information] ["GET"] "/dashboard/daily-celebrations" - Request received
+2026-02-27 14:07:46 [Information] ["GET"] "/dashboard/daily-celebrations" - Fetched 0 daily celebrations successfully
+2026-02-27 14:07:46 [Information] ["GET"] "/dashboard/upcoming-bookings" - Fetched 0 upcoming booking slots successfully
+2026-02-27 14:07:51 [Information] ["GET"] "/dashboard/upcoming-bookings" - Request received
+2026-02-27 14:07:51 [Information] ["GET"] "/dashboard/daily-celebrations" - Request received
+2026-02-27 14:07:51 [Information] ["GET"] "/dashboard/upcoming-bookings" - Fetched 0 upcoming booking slots successfully
+2026-02-27 14:07:51 [Information] ["GET"] "/notification/count" - Request received
+2026-02-27 14:07:51 [Information] ["GET"] "/notification/count" - Fetched notification count 0 for user 5 successfully
+2026-02-27 14:07:51 [Information] ["GET"] "/dashboard/daily-celebrations" - Fetched 0 daily celebrations successfully
+2026-02-27 14:07:57 [Information] ["GET"] "/dashboard/upcoming-bookings" - Request received
+2026-02-27 14:07:57 [Information] ["GET"] "/dashboard/upcoming-bookings" - Fetched 0 upcoming booking slots successfully
+2026-02-27 14:07:57 [Information] ["GET"] "/dashboard/daily-celebrations" - Request received
+2026-02-27 14:07:57 [Information] ["GET"] "/notification/count" - Request received
+2026-02-27 14:07:57 [Information] ["GET"] "/dashboard/daily-celebrations" - Fetched 0 daily celebrations successfully
+2026-02-27 14:07:57 [Information] ["GET"] "/notification/count" - Fetched notification count 0 for user 5 successfully
+2026-02-27 14:07:58 [Information] ["GET"] "/notification/count" - Request received
+2026-02-27 14:07:58 [Information] ["GET"] "/notification/count" - Fetched notification count 0 for user 6 successfully
+2026-02-27 14:08:04 [Information] ["GET"] "/notification/count" - Request received
+2026-02-27 14:08:04 [Information] ["GET"] "/notification/count" - Fetched notification count 0 for user 6 successfully
+2026-02-27 14:08:05 [Information] ["GET"] "/notification/count" - Request received
+2026-02-27 14:08:05 [Information] ["GET"] "/notification/count" - Fetched notification count 0 for user 6 successfully
+2026-02-27 14:08:13 [Information] ["GET"] "/notification/count" - Request received
+2026-02-27 14:08:13 [Information] ["GET"] "/notification/count" - Fetched notification count 0 for user 6 successfully
+2026-02-27 14:08:19 [Information] ["GET"] "/notification/count" - Request received
+2026-02-27 14:08:19 [Information] ["GET"] "/notification/count" - Fetched notification count 0 for user 6 successfully
+2026-02-27 14:08:28 [Information] ["GET"] "/notification/count" - Request received
+2026-02-27 14:08:28 [Information] ["GET"] "/post" - Request received
+2026-02-27 14:08:28 [Information] ["GET"] "/notification/count" - Fetched notification count 0 for user 3 successfully
+2026-02-27 14:08:28 [Information] ["GET"] "/post" - Fetched posts for user 3 successfully
+2026-02-27 14:08:35 [Information] ["GET"] "/notification/count" - Request received
+2026-02-27 14:08:35 [Information] ["GET"] "/post" - Request received
+2026-02-27 14:08:35 [Information] ["GET"] "/post" - Fetched posts for user 3 successfully
+2026-02-27 14:08:35 [Information] ["GET"] "/notification/count" - Fetched notification count 0 for user 3 successfully
+2026-02-27 14:09:08 [Information] ["GET"] "/notification/count" - Request received
+2026-02-27 14:09:08 [Information] ["GET"] "/notification/count" - Fetched notification count 0 for user 3 successfully
+2026-02-27 14:09:08 [Information] ["GET"] "/notification/count" - Request received
+2026-02-27 14:09:08 [Information] ["GET"] "/notification/count" - Fetched notification count 0 for user 3 successfully
+2026-02-27 14:09:08 [Information] ["GET"] "/post" - Request received
+2026-02-27 14:09:08 [Information] ["GET"] "/post" - Fetched posts for user 3 successfully
+2026-02-27 14:09:11 [Information] ["GET"] "/notification" - Request received
+2026-02-27 14:09:11 [Information] Fetching notifications for UserId 3, total: 14, page 1
+2026-02-27 14:09:11 [Information] Retrieved notifications of user with Id 3 from repository and cached with version 0
+2026-02-27 14:09:11 [Information] Retrieved notifications of user with Id 3 from repository and cached with version 0
+2026-02-27 14:09:11 [Information] ["GET"] "/notification" - Fetched notifications for user 3 successfully
+2026-02-27 14:09:13 [Information] ["GET"] "/user/user-hr" - Request received
+2026-02-27 14:09:13 [Information] Fetching users for HR, total: 4, page 1
+2026-02-27 14:09:13 [Information] Retrieved all users for hr with version 1 and cached
+2026-02-27 14:09:13 [Information] ["GET"] "/user/user-hr" - Fetched HR users successfully
+2026-02-27 14:09:14 [Information] ["GET"] "/post/feed" - Request received
+2026-02-27 14:09:14 [Information] Fetched 5 feed posts, page 1
+2026-02-27 14:09:14 [Information] Retrieved feed for user 3 and cached with version 3
+2026-02-27 14:09:14 [Information] ["GET"] "/post/feed" - Fetched feed for user 3 successfully
+2026-02-27 14:09:16 [Information] ["GET"] "/game" - Request received
+2026-02-27 14:09:16 [Information] ["GET"] "/game" - Fetched 3 games successfully
+2026-02-27 14:09:19 [Information] ["GET"] "/game/1/toggle-interest" - Request received
+2026-02-27 14:09:19 [Information] ["GET"] "/game/1/slots" - Request received
+2026-02-27 14:09:19 [Information] Retrieved game slots for game 1 and cached with version 1
+2026-02-27 14:09:19 [Information] ["GET"] "/game/1/slots" - Fetched 52 slots for game 1 successfully
+2026-02-27 14:09:19 [Information] ["GET"] "/game/1/toggle-interest" - Checked interest in game 1 for user 3 successfully
+2026-02-27 14:10:05 [Information] ["GET"] "/notification/count" - Request received
+2026-02-27 14:10:05 [Information] ["GET"] "/game/1/toggle-interest" - Request received
+2026-02-27 14:10:05 [Information] ["GET"] "/game/1/slots" - Request received
+2026-02-27 14:10:05 [Information] ["GET"] "/game/1/slots" - Fetched 52 slots for game 1 successfully
+2026-02-27 14:10:05 [Information] Unread notification count for UserId 3: 0
+2026-02-27 14:10:05 [Information] Retrieved notification count of user with Id 3 from repository and cached with version 1
+2026-02-27 14:10:05 [Information] ["GET"] "/notification/count" - Fetched notification count 0 for user 3 successfully
+2026-02-27 14:10:05 [Information] ["GET"] "/game/1/toggle-interest" - Checked interest in game 1 for user 3 successfully
+2026-02-27 14:10:11 [Information] ["GET"] "/dashboard/upcoming-bookings" - Request received
+2026-02-27 14:10:11 [Information] ["GET"] "/dashboard/daily-celebrations" - Request received
+2026-02-27 14:10:11 [Information] ["GET"] "/dashboard/upcoming-bookings" - Fetched 0 upcoming booking slots successfully
+2026-02-27 14:10:11 [Information] ["GET"] "/dashboard/daily-celebrations" - Fetched 0 daily celebrations successfully
+2026-02-27 14:10:22 [Information] ["GET"] "/dashboard/daily-celebrations" - Request received
+2026-02-27 14:10:22 [Information] ["GET"] "/notification/count" - Request received
+2026-02-27 14:10:22 [Information] ["GET"] "/dashboard/daily-celebrations" - Fetched 0 daily celebrations successfully
+2026-02-27 14:10:22 [Information] ["GET"] "/notification/count" - Fetched notification count 0 for user 5 successfully
+2026-02-27 14:10:22 [Information] ["GET"] "/dashboard/upcoming-bookings" - Request received
+2026-02-27 14:10:22 [Information] ["GET"] "/dashboard/upcoming-bookings" - Fetched 0 upcoming booking slots successfully
+2026-02-27 14:13:01 [Information] ["GET"] "/notification/count" - Request received
+2026-02-27 14:13:01 [Information] ["GET"] "/notification/count" - Fetched notification count 0 for user 6 successfully
+2026-02-27 14:13:04 [Information] ["GET"] "/dashboard/upcoming-bookings" - Request received
+2026-02-27 14:13:04 [Information] ["GET"] "/dashboard/daily-celebrations" - Request received
+2026-02-27 14:13:04 [Information] ["GET"] "/notification/count" - Request received
+2026-02-27 14:13:04 [Information] ["GET"] "/notification/count" - Fetched notification count 0 for user 3 successfully
+2026-02-27 14:13:04 [Information] Found 0 daily celebrations for today
+2026-02-27 14:13:04 [Information] Retrieved 0 daily celebrations from repository
+2026-02-27 14:13:04 [Information] ["GET"] "/dashboard/daily-celebrations" - Fetched 0 daily celebrations successfully
+2026-02-27 14:13:04 [Information] Found 0 upcoming booking slots for today
+2026-02-27 14:13:04 [Information] Retrieved 0 upcoming booking slots from repository
+2026-02-27 14:13:04 [Information] ["GET"] "/dashboard/upcoming-bookings" - Fetched 0 upcoming booking slots successfully
+2026-02-27 14:13:09 [Information] ["GET"] "/travel/hr" - Request received
+2026-02-27 14:13:09 [Information] Retrieved HR 3 created travels and cached with version 1
+2026-02-27 14:13:09 [Information] ["GET"] "/travel/hr" - Fetched travels for HR 3 successfully
+2026-02-27 14:13:11 [Information] ["GET"] "/department" - Request received
+2026-02-27 14:13:11 [Information] Fetched 7 departments
+2026-02-27 14:13:11 [Information] Retrieved 7 departments from repository and cached with version 1
+2026-02-27 14:13:11 [Information] ["GET"] "/department" - Fetched all departments successfully
+2026-02-27 14:13:14 [Information] ["GET"] "/travel/all-expense" - Request received
+2026-02-27 14:13:14 [Information] Fetched 5 expenses for UserId 3, page 1
+2026-02-27 14:13:14 [Information] Retrieved all expenses for user 3 and cached with version 0
+2026-02-27 14:13:14 [Information] ["GET"] "/travel/all-expense" - Fetched all expenses for HR 3 successfully
+2026-02-27 14:13:16 [Information] ["GET"] "/job/hr/created" - Request received
+2026-02-27 14:13:16 [Information] Retrieved jobs created by HR with Id 3 from repository and cached with version 1
+2026-02-27 14:13:16 [Information] Total jobs retrieved for HR with Id 3: 3
+2026-02-27 14:13:16 [Information] ["GET"] "/job/hr/created" - Fetched jobs created by HR 3 successfully
+2026-02-27 14:13:18 [Information] ["GET"] "/game" - Request received
+2026-02-27 14:13:18 [Information] ["GET"] "/game" - Fetched 3 games successfully
+2026-02-27 14:13:20 [Information] ["GET"] "/post/feed" - Request received
+2026-02-27 14:13:20 [Information] ["GET"] "/post/feed" - Fetched feed for user 3 successfully
+2026-02-27 14:13:23 [Information] ["GET"] "/user/user-hr" - Request received
+2026-02-27 14:13:23 [Information] ["GET"] "/user/user-hr" - Fetched HR users successfully
+2026-02-27 14:14:15 [Information] ["GET"] "/notification/count" - Request received
+2026-02-27 14:14:15 [Information] ["GET"] "/user/user-hr" - Request received
+2026-02-27 14:14:15 [Information] ["GET"] "/user/user-hr" - Fetched HR users successfully
+2026-02-27 14:14:15 [Information] ["GET"] "/notification/count" - Fetched notification count 0 for user 3 successfully
+2026-02-27 14:14:17 [Information] ["GET"] "/notification/count" - Request received
+2026-02-27 14:14:17 [Information] ["GET"] "/notification/count" - Fetched notification count 0 for user 6 successfully
+2026-02-27 14:14:20 [Information] ["GET"] "/notification/count" - Request received
+2026-02-27 14:14:20 [Information] ["GET"] "/notification/count" - Fetched notification count 0 for user 3 successfully
+2026-02-27 14:14:20 [Information] ["GET"] "/user/user-hr" - Request received
+2026-02-27 14:14:20 [Information] ["GET"] "/user/user-hr" - Fetched HR users successfully
+2026-02-27 14:14:25 [Information] ["GET"] "/dashboard/upcoming-bookings" - Request received
+2026-02-27 14:14:25 [Information] ["GET"] "/notification/count" - Request received
+2026-02-27 14:14:25 [Information] ["GET"] "/dashboard/upcoming-bookings" - Fetched 0 upcoming booking slots successfully
+2026-02-27 14:14:25 [Information] ["GET"] "/notification/count" - Fetched notification count 0 for user 5 successfully
+2026-02-27 14:14:25 [Information] ["GET"] "/dashboard/daily-celebrations" - Request received
+2026-02-27 14:14:25 [Information] ["GET"] "/dashboard/daily-celebrations" - Fetched 0 daily celebrations successfully
+2026-02-27 14:25:25 [Information] ["POST"] "/Authentication/login" - Request received
+2026-02-27 14:25:25 [Information] Fetched User by Email "kartik@gmail.com"
+2026-02-27 14:25:25 [Information] ["POST"] "/Authentication/login" - User logged in successfully
+2026-02-27 14:25:25 [Information] ["GET"] "/notification/count" - Request received
+2026-02-27 14:25:25 [Information] ["GET"] "/notification/count" - Fetched notification count 0 for user 5 successfully
+2026-02-27 14:25:25 [Information] ["GET"] "/dashboard/daily-celebrations" - Request received
+2026-02-27 14:25:25 [Information] ["GET"] "/dashboard/upcoming-bookings" - Request received
+2026-02-27 14:25:25 [Information] Found 0 daily celebrations for today
+2026-02-27 14:25:25 [Information] Retrieved 0 daily celebrations from repository
+2026-02-27 14:25:25 [Information] ["GET"] "/dashboard/daily-celebrations" - Fetched 0 daily celebrations successfully
+2026-02-27 14:25:25 [Information] Found 0 upcoming booking slots for today
+2026-02-27 14:25:25 [Information] Retrieved 0 upcoming booking slots from repository
+2026-02-27 14:25:25 [Information] ["GET"] "/dashboard/upcoming-bookings" - Fetched 0 upcoming booking slots successfully
+2026-02-27 14:25:28 [Information] ["GET"] "/job" - Request received
+2026-02-27 14:25:28 [Information] ["GET"] "/job" - Fetched all jobs successfully
+2026-02-27 14:25:30 [Information] ["GET"] "/user/my-team" - Request received
+2026-02-27 14:25:30 [Information] Fetching employees under ManagerId 5, total: 1
+2026-02-27 14:25:30 [Information] Retrieved employees under manager with version 0 and cached
+2026-02-27 14:25:30 [Information] ["GET"] "/user/my-team" - Fetched team members for manager 5 successfully
+2026-02-27 14:25:32 [Information] ["GET"] "/job" - Request received
+2026-02-27 14:25:32 [Information] ["GET"] "/job" - Fetched all jobs successfully
+2026-02-27 14:25:33 [Information] ["GET"] "/dashboard/upcoming-bookings" - Request received
+2026-02-27 14:25:33 [Information] ["GET"] "/dashboard/daily-celebrations" - Request received
+2026-02-27 14:25:33 [Information] ["GET"] "/dashboard/daily-celebrations" - Fetched 0 daily celebrations successfully
+2026-02-27 14:25:33 [Information] ["GET"] "/dashboard/upcoming-bookings" - Fetched 0 upcoming booking slots successfully
+2026-02-27 14:25:40 [Information] ["POST"] "/Authentication/login" - Request received
+2026-02-27 14:25:40 [Information] Fetched User by Email "ronak@gmail.com"
+2026-02-27 14:25:40 [Information] ["POST"] "/Authentication/login" - User logged in successfully
+2026-02-27 14:25:40 [Information] ["GET"] "/dashboard/upcoming-bookings" - Request received
+2026-02-27 14:25:40 [Information] ["GET"] "/dashboard/daily-celebrations" - Request received
+2026-02-27 14:25:40 [Information] ["GET"] "/dashboard/upcoming-bookings" - Fetched 0 upcoming booking slots successfully
+2026-02-27 14:25:40 [Information] ["GET"] "/notification/count" - Request received
+2026-02-27 14:25:40 [Information] ["GET"] "/dashboard/daily-celebrations" - Fetched 0 daily celebrations successfully
+2026-02-27 14:25:40 [Information] ["GET"] "/notification/count" - Fetched notification count 0 for user 7 successfully
+2026-02-27 14:25:43 [Information] ["GET"] "/travel/employee" - Request received
+2026-02-27 14:25:43 [Information] Retrieved employee 7 travels and cached with version 0
+2026-02-27 14:25:43 [Information] ["GET"] "/travel/employee" - Fetched travels for employee 7 successfully
+2026-02-27 14:25:45 [Information] ["GET"] "/travel/3/travelers" - Request received
+2026-02-27 14:25:45 [Information] Fetched Travel with Id 3
+2026-02-27 14:25:45 [Information] Retrieved travelers for travel 3 and cached with version 0
+2026-02-27 14:25:45 [Information] ["GET"] "/travel/3/travelers" - Fetched travelers for travel 3 successfully
+2026-02-27 14:25:46 [Information] ["GET"] "/travel/employee" - Request received
+2026-02-27 14:25:46 [Information] ["GET"] "/travel/employee" - Fetched travels for employee 7 successfully
+2026-02-27 14:25:47 [Information] ["GET"] "/job" - Request received
+2026-02-27 14:25:47 [Information] ["GET"] "/job" - Fetched all jobs successfully
+2026-02-27 14:27:41 [Information] ["GET"] "/notification/count" - Request received
+2026-02-27 14:27:41 [Information] ["GET"] "/job" - Request received
+2026-02-27 14:27:41 [Information] ["GET"] "/notification/count" - Fetched notification count 0 for user 7 successfully
+2026-02-27 14:27:41 [Information] ["GET"] "/job" - Fetched all jobs successfully
+2026-02-27 14:28:28 [Information] ["GET"] "/notification/count" - Request received
+2026-02-27 14:28:28 [Information] ["GET"] "/notification/count" - Fetched notification count 0 for user 7 successfully
+2026-02-27 14:28:28 [Information] ["GET"] "/job" - Request received
+2026-02-27 14:28:28 [Information] ["GET"] "/job" - Fetched all jobs successfully
+2026-02-27 14:29:32 [Information] ["GET"] "/notification/count" - Request received
+2026-02-27 14:29:32 [Information] ["GET"] "/job" - Request received
+2026-02-27 14:29:32 [Information] ["GET"] "/notification/count" - Fetched notification count 0 for user 7 successfully
+2026-02-27 14:29:32 [Information] ["GET"] "/job" - Fetched all jobs successfully
+2026-02-27 14:29:56 [Information] ["GET"] "/notification/count" - Request received
+2026-02-27 14:29:56 [Information] ["GET"] "/job" - Request received
+2026-02-27 14:29:56 [Information] ["GET"] "/notification/count" - Fetched notification count 0 for user 7 successfully
+2026-02-27 14:29:56 [Information] ["GET"] "/job" - Fetched all jobs successfully
+2026-02-27 14:30:06 [Information] ["GET"] "/notification/count" - Request received
+2026-02-27 14:30:06 [Information] ["GET"] "/job" - Request received
+2026-02-27 14:30:06 [Information] ["GET"] "/notification/count" - Fetched notification count 0 for user 7 successfully
+2026-02-27 14:30:06 [Information] ["GET"] "/job" - Fetched all jobs successfully
+2026-02-27 14:30:10 [Information] ["GET"] "/job" - Request received
+2026-02-27 14:30:10 [Information] ["GET"] "/job" - Fetched all jobs successfully
+2026-02-27 14:30:10 [Information] ["GET"] "/notification/count" - Request received
+2026-02-27 14:30:10 [Information] ["GET"] "/notification/count" - Fetched notification count 0 for user 7 successfully
+2026-02-27 14:30:18 [Information] ["GET"] "/notification/count" - Request received
+2026-02-27 14:30:18 [Information] ["GET"] "/notification/count" - Fetched notification count 0 for user 7 successfully
+2026-02-27 14:30:18 [Information] ["GET"] "/job" - Request received
+2026-02-27 14:30:18 [Information] ["GET"] "/job" - Fetched all jobs successfully
+2026-02-27 14:30:23 [Information] ["GET"] "/notification/count" - Request received
+2026-02-27 14:30:23 [Information] ["GET"] "/job" - Request received
+2026-02-27 14:30:23 [Information] ["GET"] "/notification/count" - Fetched notification count 0 for user 7 successfully
+2026-02-27 14:30:23 [Information] ["GET"] "/job" - Fetched all jobs successfully
+2026-02-27 14:30:59 [Information] Updated GameSlot with Id 218
+2026-02-27 14:30:59 [Information] Updated GameSlot with Id 288
+2026-02-27 14:32:07 [Information] ["GET"] "/notification/count" - Request received
+2026-02-27 14:32:07 [Information] ["GET"] "/job" - Request received
+2026-02-27 14:32:07 [Information] ["GET"] "/notification/count" - Fetched notification count 0 for user 7 successfully
+2026-02-27 14:32:07 [Information] ["GET"] "/job" - Fetched all jobs successfully
+2026-02-27 14:32:12 [Information] ["GET"] "/travel/employee" - Request received
+2026-02-27 14:32:12 [Information] ["GET"] "/travel/employee" - Fetched travels for employee 7 successfully
+2026-02-27 14:32:17 [Information] ["GET"] "/travel/3/travelers" - Request received
+2026-02-27 14:32:17 [Information] ["GET"] "/travel/3/travelers" - Fetched travelers for travel 3 successfully
+2026-02-27 14:32:20 [Information] ["GET"] "/travel/employee" - Request received
+2026-02-27 14:32:20 [Information] ["GET"] "/travel/employee" - Fetched travels for employee 7 successfully
+2026-02-27 14:32:23 [Information] ["GET"] "/travel/3/travelers" - Request received
+2026-02-27 14:32:23 [Information] ["GET"] "/travel/3/travelers" - Fetched travelers for travel 3 successfully
+2026-02-27 14:32:25 [Information] ["GET"] "/travel/employee" - Request received
+2026-02-27 14:32:25 [Information] ["GET"] "/travel/employee" - Fetched travels for employee 7 successfully
+2026-02-27 14:32:27 [Information] ["GET"] "/travel/3/expense" - Request received
+2026-02-27 14:32:27 [Information] Retrieved expenses for travel 3 traveler 7 and cached with version 0
+2026-02-27 14:32:27 [Information] ["GET"] "/travel/3/expense" - Fetched expenses for employee 7 in travel 3 successfully
+2026-02-27 14:32:38 [Information] ["GET"] "/travel/employee" - Request received
+2026-02-27 14:32:38 [Information] ["GET"] "/travel/employee" - Fetched travels for employee 7 successfully
+2026-02-27 14:32:39 [Information] ["GET"] "/travel/3/traveler/7/documents" - Request received
+2026-02-27 14:32:39 [Information] Retrieved documents for travel 3 traveler 7 and cached with version 0
+2026-02-27 14:32:39 [Information] ["GET"] "/travel/3/traveler/7/documents" - Fetched documents for travel 3 and traveler 7 successfully
+2026-02-27 14:32:57 [Information] ["GET"] "/travel/3/traveler/7/documents" - Request received
+2026-02-27 14:32:57 [Information] ["GET"] "/travel/3/traveler/7/documents" - Fetched documents for travel 3 and traveler 7 successfully
+2026-02-27 14:32:58 [Information] ["GET"] "/travel/3/traveler/7/documents" - Request received
+2026-02-27 14:32:58 [Information] ["GET"] "/travel/3/traveler/7/documents" - Fetched documents for travel 3 and traveler 7 successfully
+2026-02-27 14:32:58 [Information] ["GET"] "/notification/count" - Request received
+2026-02-27 14:32:58 [Information] ["GET"] "/notification/count" - Fetched notification count 0 for user 7 successfully
+2026-02-27 14:33:03 [Information] ["GET"] "/notification/count" - Request received
+2026-02-27 14:33:03 [Information] ["GET"] "/notification/count" - Fetched notification count 0 for user 7 successfully
+2026-02-27 14:33:03 [Information] ["GET"] "/travel/3/traveler/7/documents" - Request received
+2026-02-27 14:33:03 [Information] ["GET"] "/travel/3/traveler/7/documents" - Fetched documents for travel 3 and traveler 7 successfully
+2026-02-27 14:33:05 [Information] ["GET"] "/travel/employee" - Request received
+2026-02-27 14:33:05 [Information] ["GET"] "/travel/employee" - Fetched travels for employee 7 successfully
+2026-02-27 14:33:06 [Information] ["GET"] "/travel/3/expense" - Request received
+2026-02-27 14:33:06 [Information] ["GET"] "/travel/3/expense" - Fetched expenses for employee 7 in travel 3 successfully
+2026-02-27 14:33:52 [Information] ["GET"] "/notification/count" - Request received
+2026-02-27 14:33:52 [Information] ["GET"] "/notification/count" - Fetched notification count 0 for user 7 successfully
+2026-02-27 14:33:52 [Information] ["GET"] "/travel/3/expense" - Request received
+2026-02-27 14:33:52 [Information] ["GET"] "/travel/3/expense" - Fetched expenses for employee 7 in travel 3 successfully
+2026-02-27 14:43:55 [Information] ["GET"] "/notification/count" - Request received
+2026-02-27 14:43:55 [Information] ["GET"] "/travel/3/expense" - Request received
+2026-02-27 14:43:55 [Information] ["GET"] "/notification/count" - Fetched notification count 0 for user 7 successfully
+2026-02-27 14:43:55 [Information] ["GET"] "/travel/3/expense" - Fetched expenses for employee 7 in travel 3 successfully
+2026-02-27 14:43:57 [Information] ["GET"] "/travel/employee" - Request received
+2026-02-27 14:43:57 [Information] ["GET"] "/travel/employee" - Fetched travels for employee 7 successfully
+2026-02-27 14:45:34 [Information] ["GET"] "/notification/count" - Request received
+2026-02-27 14:45:34 [Information] ["GET"] "/notification/count" - Fetched notification count 0 for user 7 successfully
+2026-02-27 14:45:34 [Information] ["GET"] "/travel/employee" - Request received
+2026-02-27 14:45:34 [Information] ["GET"] "/travel/employee" - Fetched travels for employee 7 successfully
+2026-02-27 14:49:48 [Information] ["GET"] "/notification/count" - Request received
+2026-02-27 14:49:48 [Information] ["GET"] "/travel/employee" - Request received
+2026-02-27 14:49:48 [Information] ["GET"] "/notification/count" - Fetched notification count 0 for user 7 successfully
+2026-02-27 14:49:48 [Information] ["GET"] "/travel/employee" - Fetched travels for employee 7 successfully

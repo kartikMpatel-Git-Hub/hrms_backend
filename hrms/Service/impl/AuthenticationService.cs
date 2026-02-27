@@ -6,6 +6,7 @@ using hrms.Dto.Response.User;
 using hrms.Model;
 using hrms.Repository;
 using hrms.Utility;
+using Microsoft.Extensions.Caching.Memory;
 using Microsoft.IdentityModel.Tokens;
 using System.IdentityModel.Tokens.Jwt;
 using System.Security.Claims;
@@ -13,25 +14,17 @@ using System.Text;
 
 namespace hrms.Service.impl
 {
-    public class AuthenticationService : IAuthenticationService
+    public class AuthenticationService(
+        IMapper _mapper,
+        IUserRepository _repo, 
+        IConfiguration _config,
+        IEmailService _email,
+        ICloudinaryService _cloudinary, 
+        IDepartmentRepository _departmentRepo,
+        ILogger<AuthenticationService> _logger,
+        IMemoryCache _cache
+        ) : IAuthenticationService
     {
-
-        public readonly IUserRepository _repo;
-        private readonly IConfiguration _config;
-        private readonly IEmailService _email;
-        private readonly IMapper _mapper;
-        private readonly ICloudinaryService _cloudinary;
-        private readonly IDepartmentRepository _departmentRepo;
-
-        public AuthenticationService(IMapper mapper,IUserRepository repo, IConfiguration config,IEmailService email,ICloudinaryService cloudinary, IDepartmentRepository departmentRepo)
-        {
-            _mapper = mapper;
-            _repo = repo;
-            _config = config;
-            _email = email;
-            _cloudinary = cloudinary;
-            _departmentRepo = departmentRepo;
-        }
 
         public async Task ForgetPassword(ForgetPasswordRequestDto dto)
         {
@@ -93,7 +86,7 @@ namespace hrms.Service.impl
             if (await _repo.ExistsByEmailAsync(dto.Email))
                 throw new ExistsCustomException($"User Exists With Email {dto.Email}");
 
-            User user = CreateUser(dto).Result;
+            User user = await CreateUser(dto);
             User response = await _repo.AddAsync(user);
             await _email.SendEmailAsync(dto.Email, "registration Confirmation", "<h1>Congratulations, Your have successfully complete Registration !</h1>");
             return _mapper.Map<UserResponseDto>(response);
@@ -152,9 +145,19 @@ namespace hrms.Service.impl
                 user.Department = department;
                 user.DepartmentId = department.Id;
             }
-
             user.HashPassword = PasswordHelper.HashPassword(dto.Password);
+            IncreaseCacheVersion(CacheVersionKey.For(CacheDomains.UserDetails));
+            IncreaseCacheVersion(CacheVersionKey.ForHrInfo());
+            IncreaseCacheVersion(CacheVersionKey.ForManagerInfo());
+            IncreaseCacheVersion(CacheVersionKey.ForEmployeeInfo());
+            IncreaseCacheVersion(CacheVersionKey.ForManagerTeam());
             return user;
+        }
+
+        private void IncreaseCacheVersion(string v)
+        {
+            var current = _cache.Get<int>(v);
+            _cache.Set(v, current + 1);
         }
     }
 }

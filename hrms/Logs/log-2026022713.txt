@@ -1,0 +1,526 @@
+2026-02-27 13:35:43 [Information] Initialized Scheduler Signaller of type: Quartz.Core.SchedulerSignalerImpl
+2026-02-27 13:35:43 [Information] Quartz Scheduler created
+2026-02-27 13:35:43 [Information] JobFactory set to: Quartz.Simpl.MicrosoftDependencyInjectionJobFactory
+2026-02-27 13:35:43 [Information] RAMJobStore initialized.
+2026-02-27 13:35:43 [Information] Quartz Scheduler 3.15.1.0 - 'QuartzScheduler' with instanceId 'NON_CLUSTERED' initialized
+2026-02-27 13:35:43 [Information] Using thread pool 'Quartz.Simpl.DefaultThreadPool', size: 10
+2026-02-27 13:35:43 [Information] Using job store 'Quartz.Simpl.RAMJobStore', supports persistence: False, clustered: False
+2026-02-27 13:35:43 [Information] Adding 1 jobs, 1 triggers.
+2026-02-27 13:35:43 [Information] Adding job: DEFAULT.WeeklyJob
+2026-02-27 13:35:43 [Information] Scheduler QuartzScheduler_$_NON_CLUSTERED started.
+2026-02-27 13:35:43 [Information] Updated GameSlot with Id 215
+2026-02-27 13:35:43 [Information] Starting Daily Celebration Job at 02/27/2026 13:35:43
+2026-02-27 13:35:43 [Information] Found 0 birthday users for today
+2026-02-27 13:35:43 [Information] Found 0 work anniversary users for today
+2026-02-27 13:35:43 [Information] Fetched system user with Id 4
+2026-02-27 13:35:43 [Information] Cache Updated for Daily Celebrations at 02/27/2026 13:35:43
+2026-02-27 13:35:43 [Information] Updated GameSlot with Id 285
+2026-02-27 13:35:43 [Information] Updated GameSlot with Id 286
+2026-02-27 13:36:44 [Information] ["GET"] "/notification/count" - Request received
+2026-02-27 13:36:44 [Information] ["GET"] "/dashboard/daily-celebrations" - Request received
+2026-02-27 13:36:44 [Information] ["GET"] "/dashboard/upcoming-bookings" - Request received
+2026-02-27 13:36:44 [Information] Unread notification count for UserId 7: 0
+2026-02-27 13:36:44 [Information] Retrieved notification count of user with Id 7 from repository and cached with version 0
+2026-02-27 13:36:44 [Information] ["GET"] "/notification/count" - Fetched notification count 0 for user 7 successfully
+2026-02-27 13:36:44 [Information] Found 0 daily celebrations for today
+2026-02-27 13:36:44 [Information] Retrieved 0 daily celebrations from repository
+2026-02-27 13:36:44 [Information] ["GET"] "/dashboard/daily-celebrations" - Fetched 0 daily celebrations successfully
+2026-02-27 13:36:44 [Information] Found 0 upcoming booking slots for today
+2026-02-27 13:36:44 [Information] Retrieved 0 upcoming booking slots from repository
+2026-02-27 13:36:44 [Information] ["GET"] "/dashboard/upcoming-bookings" - Fetched 0 upcoming booking slots successfully
+2026-02-27 13:36:46 [Information] ["GET"] "/travel/employee" - Request received
+2026-02-27 13:36:46 [Information] Retrieved employee 7 travels and cached with version 0
+2026-02-27 13:36:46 [Information] ["GET"] "/travel/employee" - Fetched travels for employee 7 successfully
+2026-02-27 13:36:47 [Information] ["GET"] "/job" - Request received
+2026-02-27 13:36:47 [Information] Fetched 1 active jobs, page 1
+2026-02-27 13:36:47 [Information] Retrieved jobs list from repository and cached with version 1
+2026-02-27 13:36:47 [Information] Total jobs retrieved: 1
+2026-02-27 13:36:47 [Information] ["GET"] "/job" - Fetched all jobs successfully
+2026-02-27 13:36:49 [Information] ["GET"] "/game" - Request received
+2026-02-27 13:36:49 [Information] Retrieved all games and cached with version 1
+2026-02-27 13:36:49 [Information] ["GET"] "/game" - Fetched 3 games successfully
+2026-02-27 13:36:53 [Information] ["GET"] "/post/feed" - Request received
+2026-02-27 13:36:53 [Information] Fetched 6 feed posts, page 1
+2026-02-27 13:36:53 [Information] ["GET"] "/post/feed" - Fetched feed for user 7 successfully
+2026-02-27 13:36:58 [Information] ["GET"] "/notification/count" - Request received
+2026-02-27 13:36:58 [Information] ["GET"] "/post/feed" - Request received
+2026-02-27 13:36:58 [Information] ["GET"] "/notification/count" - Fetched notification count 0 for user 7 successfully
+2026-02-27 13:36:58 [Information] Fetched 6 feed posts, page 1
+2026-02-27 13:36:58 [Information] ["GET"] "/post/feed" - Fetched feed for user 7 successfully
+2026-02-27 13:37:05 [Information] ["GET"] "/notification/count" - Request received
+2026-02-27 13:37:05 [Information] Unread notification count for UserId 8: 0
+2026-02-27 13:37:05 [Information] Retrieved notification count of user with Id 8 from repository and cached with version 0
+2026-02-27 13:37:05 [Information] ["GET"] "/notification/count" - Fetched notification count 0 for user 8 successfully
+2026-02-27 13:37:05 [Information] ["GET"] "/dashboard/upcoming-bookings" - Request received
+2026-02-27 13:37:05 [Information] ["GET"] "/dashboard/daily-celebrations" - Request received
+2026-02-27 13:37:05 [Information] ["GET"] "/dashboard/upcoming-bookings" - Fetched 0 upcoming booking slots successfully
+2026-02-27 13:37:05 [Information] ["GET"] "/dashboard/daily-celebrations" - Fetched 0 daily celebrations successfully
+2026-02-27 13:37:21 [Information] ["GET"] "/dashboard/daily-celebrations" - Request received
+2026-02-27 13:37:21 [Information] ["GET"] "/dashboard/upcoming-bookings" - Request received
+2026-02-27 13:37:21 [Information] ["GET"] "/dashboard/daily-celebrations" - Fetched 0 daily celebrations successfully
+2026-02-27 13:37:21 [Information] ["GET"] "/dashboard/upcoming-bookings" - Fetched 0 upcoming booking slots successfully
+2026-02-27 13:37:21 [Information] ["GET"] "/notification/count" - Request received
+2026-02-27 13:37:21 [Information] ["GET"] "/notification/count" - Fetched notification count 0 for user 8 successfully
+2026-02-27 13:37:21 [Information] ["GET"] "/notification/count" - Request received
+2026-02-27 13:37:21 [Information] ["GET"] "/notification/count" - Fetched notification count 0 for user 8 successfully
+2026-02-27 13:37:27 [Information] ["POST"] "/Authentication/login" - Request received
+2026-02-27 13:37:27 [Information] Fetched User by Email "hr@gmail.com"
+2026-02-27 13:37:27 [Information] ["POST"] "/Authentication/login" - User logged in successfully
+2026-02-27 13:37:27 [Information] ["GET"] "/dashboard/upcoming-bookings" - Request received
+2026-02-27 13:37:27 [Information] ["GET"] "/notification/count" - Request received
+2026-02-27 13:37:27 [Information] ["GET"] "/dashboard/upcoming-bookings" - Fetched 0 upcoming booking slots successfully
+2026-02-27 13:37:27 [Information] ["GET"] "/dashboard/daily-celebrations" - Request received
+2026-02-27 13:37:27 [Information] ["GET"] "/dashboard/daily-celebrations" - Fetched 0 daily celebrations successfully
+2026-02-27 13:37:27 [Information] Unread notification count for UserId 3: 0
+2026-02-27 13:37:27 [Information] Retrieved notification count of user with Id 3 from repository and cached with version 0
+2026-02-27 13:37:27 [Information] ["GET"] "/notification/count" - Fetched notification count 0 for user 3 successfully
+2026-02-27 13:37:30 [Information] ["GET"] "/travel/hr" - Request received
+2026-02-27 13:37:30 [Information] Retrieved HR 3 created travels and cached with version 1
+2026-02-27 13:37:30 [Information] ["GET"] "/travel/hr" - Fetched travels for HR 3 successfully
+2026-02-27 13:37:31 [Information] ["GET"] "/department" - Request received
+2026-02-27 13:37:31 [Information] Fetched 7 departments
+2026-02-27 13:37:31 [Information] Retrieved 7 departments from repository and cached with version 1
+2026-02-27 13:37:31 [Information] ["GET"] "/department" - Fetched all departments successfully
+2026-02-27 13:37:32 [Information] ["GET"] "/travel/all-expense" - Request received
+2026-02-27 13:37:32 [Information] Fetched 5 expenses for UserId 3, page 1
+2026-02-27 13:37:32 [Information] Retrieved all expenses for user 3 and cached with version 0
+2026-02-27 13:37:32 [Information] ["GET"] "/travel/all-expense" - Fetched all expenses for HR 3 successfully
+2026-02-27 13:37:37 [Information] ["GET"] "/notification/count" - Request received
+2026-02-27 13:37:37 [Information] ["GET"] "/notification/count" - Fetched notification count 0 for user 7 successfully
+2026-02-27 13:37:37 [Information] ["GET"] "/post/feed" - Request received
+2026-02-27 13:37:37 [Information] Fetched 6 feed posts, page 1
+2026-02-27 13:37:37 [Information] ["GET"] "/post/feed" - Fetched feed for user 7 successfully
+2026-02-27 13:38:18 [Information] ["GET"] "/notification/count" - Request received
+2026-02-27 13:38:18 [Information] ["GET"] "/notification/count" - Fetched notification count 0 for user 7 successfully
+2026-02-27 13:38:18 [Information] ["GET"] "/post/feed" - Request received
+2026-02-27 13:38:18 [Information] Fetched 6 feed posts, page 1
+2026-02-27 13:38:18 [Information] ["GET"] "/post/feed" - Fetched feed for user 7 successfully
+2026-02-27 13:38:19 [Information] ["GET"] "/notification/count" - Request received
+2026-02-27 13:38:19 [Information] ["GET"] "/notification/count" - Fetched notification count 0 for user 3 successfully
+2026-02-27 13:38:19 [Information] ["GET"] "/travel/all-expense" - Request received
+2026-02-27 13:38:19 [Information] ["GET"] "/travel/all-expense" - Fetched all expenses for HR 3 successfully
+2026-02-27 13:38:22 [Information] ["GET"] "/job/hr/created" - Request received
+2026-02-27 13:38:22 [Information] Retrieved jobs created by HR with Id 3 from repository and cached with version 1
+2026-02-27 13:38:22 [Information] Total jobs retrieved for HR with Id 3: 3
+2026-02-27 13:38:22 [Information] ["GET"] "/job/hr/created" - Fetched jobs created by HR 3 successfully
+2026-02-27 13:38:24 [Information] ["GET"] "/game" - Request received
+2026-02-27 13:38:24 [Information] ["GET"] "/game" - Fetched 3 games successfully
+2026-02-27 13:38:25 [Information] ["GET"] "/post/feed" - Request received
+2026-02-27 13:38:25 [Information] Fetched 5 feed posts, page 1
+2026-02-27 13:38:25 [Information] ["GET"] "/post/feed" - Fetched feed for user 3 successfully
+2026-02-27 13:38:32 [Information] ["GET"] "/notification/count" - Request received
+2026-02-27 13:38:32 [Information] ["GET"] "/notification/count" - Fetched notification count 0 for user 7 successfully
+2026-02-27 13:38:32 [Information] ["GET"] "/post/feed" - Request received
+2026-02-27 13:38:32 [Information] Fetched 6 feed posts, page 1
+2026-02-27 13:38:32 [Information] ["GET"] "/post/feed" - Fetched feed for user 7 successfully
+2026-02-27 13:41:49 [Information] ["GET"] "/notification/count" - Request received
+2026-02-27 13:41:49 [Information] ["GET"] "/notification/count" - Fetched notification count 0 for user 7 successfully
+2026-02-27 13:41:49 [Information] ["GET"] "/post/feed" - Request received
+2026-02-27 13:41:49 [Information] Fetched 6 feed posts, page 1
+2026-02-27 13:41:49 [Information] ["GET"] "/post/feed" - Fetched feed for user 7 successfully
+2026-02-27 13:51:31 [Information] ["POST"] "/Authentication/login" - Request received
+2026-02-27 13:51:31 [Information] Fetched User by Email "ronak@gmail.com"
+2026-02-27 13:51:31 [Information] ["POST"] "/Authentication/login" - User logged in successfully
+2026-02-27 13:51:31 [Information] ["GET"] "/notification/count" - Request received
+2026-02-27 13:51:31 [Information] ["GET"] "/dashboard/daily-celebrations" - Request received
+2026-02-27 13:51:31 [Information] ["GET"] "/notification/count" - Fetched notification count 0 for user 7 successfully
+2026-02-27 13:51:31 [Information] ["GET"] "/dashboard/upcoming-bookings" - Request received
+2026-02-27 13:51:31 [Information] Found 0 daily celebrations for today
+2026-02-27 13:51:31 [Information] Retrieved 0 daily celebrations from repository
+2026-02-27 13:51:31 [Information] ["GET"] "/dashboard/daily-celebrations" - Fetched 0 daily celebrations successfully
+2026-02-27 13:51:31 [Information] Found 0 upcoming booking slots for today
+2026-02-27 13:51:31 [Information] Retrieved 0 upcoming booking slots from repository
+2026-02-27 13:51:31 [Information] ["GET"] "/dashboard/upcoming-bookings" - Fetched 0 upcoming booking slots successfully
+2026-02-27 13:51:35 [Information] ["GET"] "/post/feed" - Request received
+2026-02-27 13:51:35 [Information] Fetched 6 feed posts, page 1
+2026-02-27 13:51:35 [Information] Retrieved feed for user 7 and cached with version 0
+2026-02-27 13:51:35 [Information] ["GET"] "/post/feed" - Fetched feed for user 7 successfully
+2026-02-27 13:51:39 [Information] ["GET"] "/notification/count" - Request received
+2026-02-27 13:51:39 [Information] ["GET"] "/notification/count" - Fetched notification count 0 for user 3 successfully
+2026-02-27 13:51:39 [Information] ["GET"] "/post/feed" - Request received
+2026-02-27 13:51:39 [Information] Fetched 5 feed posts, page 1
+2026-02-27 13:51:39 [Information] Retrieved feed for user 3 and cached with version 0
+2026-02-27 13:51:39 [Information] ["GET"] "/post/feed" - Fetched feed for user 3 successfully
+2026-02-27 13:51:42 [Information] ["GET"] "/notification/count" - Request received
+2026-02-27 13:51:42 [Information] ["GET"] "/notification/count" - Fetched notification count 0 for user 7 successfully
+2026-02-27 13:51:42 [Information] ["GET"] "/post/feed" - Request received
+2026-02-27 13:51:42 [Information] ["GET"] "/post/feed" - Fetched feed for user 7 successfully
+2026-02-27 13:51:44 [Information] ["GET"] "/notification/count" - Request received
+2026-02-27 13:51:44 [Information] ["GET"] "/post/feed" - Request received
+2026-02-27 13:51:44 [Information] ["GET"] "/notification/count" - Fetched notification count 0 for user 3 successfully
+2026-02-27 13:51:44 [Information] ["GET"] "/post/feed" - Fetched feed for user 3 successfully
+2026-02-27 13:51:46 [Information] ["GET"] "/post/10/comments" - Request received
+2026-02-27 13:51:46 [Information] ["GET"] "/post/10" - Request received
+2026-02-27 13:51:46 [Information] Fetched 0 comments for Post 10, page 1
+2026-02-27 13:51:46 [Information] Retrieved comments for post 10 and cached with version 0
+2026-02-27 13:51:46 [Information] ["GET"] "/post/10/comments" - Fetched comments for post 10 successfully
+2026-02-27 13:51:46 [Information] Fetched Post with Id 10
+2026-02-27 13:51:46 [Information] Retrieved post 10 detail and cached with version 0
+2026-02-27 13:51:46 [Information] ["GET"] "/post/10" - Fetched post 10 successfully
+2026-02-27 13:51:49 [Information] ["PATCH"] "/post/10/like" - Request received
+2026-02-27 13:51:49 [Information] Created new like on Post 10 by User 3
+2026-02-27 13:51:49 [Information] Post 10 like toggled by user 3, cache versions incremented
+2026-02-27 13:51:49 [Information] ["PATCH"] "/post/10/like" - Post 10 "liked" by user 3 successfully
+2026-02-27 13:51:49 [Information] ["GET"] "/notification/count" - Request received
+2026-02-27 13:51:49 [Information] ["GET"] "/notification/count" - Fetched notification count 0 for user 7 successfully
+2026-02-27 13:51:49 [Information] ["GET"] "/post/feed" - Request received
+2026-02-27 13:51:49 [Information] Fetched 6 feed posts, page 1
+2026-02-27 13:51:49 [Information] Retrieved feed for user 7 and cached with version 1
+2026-02-27 13:51:49 [Information] ["GET"] "/post/feed" - Fetched feed for user 7 successfully
+2026-02-27 13:51:51 [Information] ["GET"] "/post/10/comments" - Request received
+2026-02-27 13:51:51 [Information] ["GET"] "/post/10/comments" - Fetched comments for post 10 successfully
+2026-02-27 13:51:51 [Information] ["GET"] "/post/10" - Request received
+2026-02-27 13:51:51 [Information] Fetched Post with Id 10
+2026-02-27 13:51:51 [Information] Retrieved post 10 detail and cached with version 1
+2026-02-27 13:51:51 [Information] ["GET"] "/post/10" - Fetched post 10 successfully
+2026-02-27 13:51:52 [Information] ["GET"] "/notification/count" - Request received
+2026-02-27 13:51:52 [Information] ["GET"] "/notification/count" - Fetched notification count 0 for user 3 successfully
+2026-02-27 13:51:52 [Information] ["GET"] "/post/10/comments" - Request received
+2026-02-27 13:51:52 [Information] ["GET"] "/post/10/comments" - Fetched comments for post 10 successfully
+2026-02-27 13:51:52 [Information] ["GET"] "/post/10" - Request received
+2026-02-27 13:51:52 [Information] Fetched Post with Id 10
+2026-02-27 13:51:52 [Information] Retrieved post 10 detail and cached with version 1
+2026-02-27 13:51:52 [Information] ["GET"] "/post/10" - Fetched post 10 successfully
+2026-02-27 13:51:53 [Information] ["GET"] "/notification/count" - Request received
+2026-02-27 13:51:53 [Information] ["GET"] "/post/10" - Request received
+2026-02-27 13:51:53 [Information] ["GET"] "/notification/count" - Fetched notification count 0 for user 7 successfully
+2026-02-27 13:51:53 [Information] ["GET"] "/post/10/comments" - Request received
+2026-02-27 13:51:53 [Information] ["GET"] "/post/10/comments" - Fetched comments for post 10 successfully
+2026-02-27 13:51:53 [Information] ["GET"] "/post/10" - Fetched post 10 successfully
+2026-02-27 13:51:54 [Information] ["GET"] "/notification/count" - Request received
+2026-02-27 13:51:54 [Information] ["GET"] "/post/10/comments" - Request received
+2026-02-27 13:51:54 [Information] ["GET"] "/notification/count" - Fetched notification count 0 for user 3 successfully
+2026-02-27 13:51:54 [Information] ["GET"] "/post/10/comments" - Fetched comments for post 10 successfully
+2026-02-27 13:51:54 [Information] ["GET"] "/post/10" - Request received
+2026-02-27 13:51:54 [Information] ["GET"] "/post/10" - Fetched post 10 successfully
+2026-02-27 13:51:55 [Information] ["GET"] "/notification/count" - Request received
+2026-02-27 13:51:55 [Information] ["GET"] "/notification/count" - Fetched notification count 0 for user 7 successfully
+2026-02-27 13:51:55 [Information] ["GET"] "/post/10" - Request received
+2026-02-27 13:51:55 [Information] ["GET"] "/post/10/comments" - Request received
+2026-02-27 13:51:55 [Information] ["GET"] "/post/10" - Fetched post 10 successfully
+2026-02-27 13:51:55 [Information] ["GET"] "/post/10/comments" - Fetched comments for post 10 successfully
+2026-02-27 13:51:56 [Information] ["PATCH"] "/post/10/like" - Request received
+2026-02-27 13:51:56 [Information] Created new like on Post 10 by User 7
+2026-02-27 13:51:56 [Information] Post 10 like toggled by user 7, cache versions incremented
+2026-02-27 13:51:56 [Information] ["PATCH"] "/post/10/like" - Post 10 "liked" by user 7 successfully
+2026-02-27 13:51:56 [Information] ["GET"] "/notification/count" - Request received
+2026-02-27 13:51:56 [Information] ["GET"] "/post/10" - Request received
+2026-02-27 13:51:56 [Information] ["GET"] "/notification/count" - Fetched notification count 0 for user 3 successfully
+2026-02-27 13:51:56 [Information] ["GET"] "/post/10/comments" - Request received
+2026-02-27 13:51:56 [Information] ["GET"] "/post/10/comments" - Fetched comments for post 10 successfully
+2026-02-27 13:51:56 [Information] Fetched Post with Id 10
+2026-02-27 13:51:56 [Information] Retrieved post 10 detail and cached with version 2
+2026-02-27 13:51:56 [Information] ["GET"] "/post/10" - Fetched post 10 successfully
+2026-02-27 13:51:57 [Information] ["GET"] "/notification/count" - Request received
+2026-02-27 13:51:57 [Information] ["GET"] "/notification/count" - Fetched notification count 0 for user 7 successfully
+2026-02-27 13:51:57 [Information] ["GET"] "/post/10" - Request received
+2026-02-27 13:51:57 [Information] ["GET"] "/post/10/comments" - Request received
+2026-02-27 13:51:57 [Information] ["GET"] "/post/10/comments" - Fetched comments for post 10 successfully
+2026-02-27 13:51:57 [Information] Fetched Post with Id 10
+2026-02-27 13:51:57 [Information] Retrieved post 10 detail and cached with version 2
+2026-02-27 13:51:57 [Information] ["GET"] "/post/10" - Fetched post 10 successfully
+2026-02-27 13:52:11 [Information] ["POST"] "/post/10/comments" - Request received
+2026-02-27 13:52:11 [Information] Fetched Post with Id 10
+2026-02-27 13:52:11 [Information] Created Comment with Id 14 on Post 10
+2026-02-27 13:52:11 [Information] Comment created on post 10 by user 7, cache version incremented
+2026-02-27 13:52:11 [Information] ["POST"] "/post/10/comments" - Comment added to post 10 by user 7 successfully
+2026-02-27 13:52:11 [Information] ["GET"] "/post/10/comments" - Request received
+2026-02-27 13:52:11 [Information] Fetched 1 comments for Post 10, page 1
+2026-02-27 13:52:11 [Information] Retrieved comments for post 10 and cached with version 1
+2026-02-27 13:52:11 [Information] ["GET"] "/post/10/comments" - Fetched comments for post 10 successfully
+2026-02-27 13:52:11 [Information] ["GET"] "/notification/count" - Request received
+2026-02-27 13:52:11 [Information] ["GET"] "/post/10" - Request received
+2026-02-27 13:52:11 [Information] ["GET"] "/post/10/comments" - Request received
+2026-02-27 13:52:11 [Information] ["GET"] "/notification/count" - Fetched notification count 0 for user 3 successfully
+2026-02-27 13:52:11 [Information] ["GET"] "/post/10/comments" - Fetched comments for post 10 successfully
+2026-02-27 13:52:11 [Information] ["GET"] "/post/10" - Fetched post 10 successfully
+2026-02-27 13:52:13 [Information] ["GET"] "/notification/count" - Request received
+2026-02-27 13:52:13 [Information] ["GET"] "/post/10" - Request received
+2026-02-27 13:52:13 [Information] ["GET"] "/post/10/comments" - Request received
+2026-02-27 13:52:13 [Information] ["GET"] "/notification/count" - Fetched notification count 0 for user 7 successfully
+2026-02-27 13:52:13 [Information] ["GET"] "/post/10/comments" - Fetched comments for post 10 successfully
+2026-02-27 13:52:13 [Information] ["GET"] "/post/10" - Fetched post 10 successfully
+2026-02-27 13:52:16 [Information] ["GET"] "/notification/count" - Request received
+2026-02-27 13:52:16 [Information] ["GET"] "/post/10" - Request received
+2026-02-27 13:52:16 [Information] ["GET"] "/notification/count" - Fetched notification count 0 for user 3 successfully
+2026-02-27 13:52:16 [Information] ["GET"] "/post/10" - Fetched post 10 successfully
+2026-02-27 13:52:16 [Information] ["GET"] "/post/10/comments" - Request received
+2026-02-27 13:52:16 [Information] ["GET"] "/post/10/comments" - Fetched comments for post 10 successfully
+2026-02-27 13:52:21 [Information] ["GET"] "/post/feed" - Request received
+2026-02-27 13:52:21 [Information] Fetched 5 feed posts, page 1
+2026-02-27 13:52:21 [Information] Retrieved feed for user 3 and cached with version 2
+2026-02-27 13:52:21 [Information] ["GET"] "/post/feed" - Fetched feed for user 3 successfully
+2026-02-27 13:52:23 [Information] ["GET"] "/notification/count" - Request received
+2026-02-27 13:52:23 [Information] ["GET"] "/post/10" - Request received
+2026-02-27 13:52:23 [Information] ["GET"] "/notification/count" - Fetched notification count 0 for user 7 successfully
+2026-02-27 13:52:23 [Information] ["GET"] "/post/10/comments" - Request received
+2026-02-27 13:52:23 [Information] ["GET"] "/post/10" - Fetched post 10 successfully
+2026-02-27 13:52:23 [Information] ["GET"] "/post/10/comments" - Fetched comments for post 10 successfully
+2026-02-27 13:52:23 [Information] ["GET"] "/post/feed" - Request received
+2026-02-27 13:52:23 [Information] Fetched 6 feed posts, page 1
+2026-02-27 13:52:23 [Information] Retrieved feed for user 7 and cached with version 2
+2026-02-27 13:52:23 [Information] ["GET"] "/post/feed" - Fetched feed for user 7 successfully
+2026-02-27 13:52:25 [Information] ["GET"] "/post/feed" - Request received
+2026-02-27 13:52:25 [Information] ["GET"] "/post/feed" - Fetched feed for user 3 successfully
+2026-02-27 13:52:25 [Information] ["GET"] "/notification/count" - Request received
+2026-02-27 13:52:25 [Information] ["GET"] "/notification/count" - Fetched notification count 0 for user 3 successfully
+2026-02-27 13:52:26 [Information] ["GET"] "/notification/count" - Request received
+2026-02-27 13:52:26 [Information] ["GET"] "/post/feed" - Request received
+2026-02-27 13:52:26 [Information] ["GET"] "/notification/count" - Fetched notification count 0 for user 7 successfully
+2026-02-27 13:52:26 [Information] ["GET"] "/post/feed" - Fetched feed for user 7 successfully
+2026-02-27 13:52:26 [Information] ["GET"] "/dashboard/daily-celebrations" - Request received
+2026-02-27 13:52:26 [Information] ["GET"] "/dashboard/upcoming-bookings" - Request received
+2026-02-27 13:52:26 [Information] ["GET"] "/dashboard/upcoming-bookings" - Fetched 0 upcoming booking slots successfully
+2026-02-27 13:52:26 [Information] ["GET"] "/dashboard/daily-celebrations" - Fetched 0 daily celebrations successfully
+2026-02-27 13:52:27 [Information] ["GET"] "/post/feed" - Request received
+2026-02-27 13:52:27 [Information] ["GET"] "/post/feed" - Fetched feed for user 7 successfully
+2026-02-27 13:52:31 [Information] ["GET"] "/post/7/comments" - Request received
+2026-02-27 13:52:31 [Information] ["GET"] "/post/7" - Request received
+2026-02-27 13:52:31 [Information] Fetched 3 comments for Post 7, page 1
+2026-02-27 13:52:31 [Information] Retrieved comments for post 7 and cached with version 0
+2026-02-27 13:52:31 [Information] ["GET"] "/post/7/comments" - Fetched comments for post 7 successfully
+2026-02-27 13:52:31 [Information] Fetched Post with Id 7
+2026-02-27 13:52:31 [Information] Retrieved post 7 detail and cached with version 0
+2026-02-27 13:52:31 [Information] ["GET"] "/post/7" - Fetched post 7 successfully
+2026-02-27 13:52:32 [Information] ["GET"] "/post/feed" - Request received
+2026-02-27 13:52:32 [Information] ["GET"] "/post/feed" - Fetched feed for user 7 successfully
+2026-02-27 13:52:32 [Information] ["GET"] "/notification/count" - Request received
+2026-02-27 13:52:32 [Information] ["GET"] "/post/feed" - Request received
+2026-02-27 13:52:32 [Information] ["GET"] "/post/feed" - Fetched feed for user 3 successfully
+2026-02-27 13:52:32 [Information] ["GET"] "/notification/count" - Fetched notification count 0 for user 3 successfully
+2026-02-27 13:52:33 [Information] ["GET"] "/post/feed" - Request received
+2026-02-27 13:52:33 [Information] ["GET"] "/notification/count" - Request received
+2026-02-27 13:52:33 [Information] ["GET"] "/post/feed" - Fetched feed for user 7 successfully
+2026-02-27 13:52:33 [Information] ["GET"] "/notification/count" - Fetched notification count 0 for user 7 successfully
+2026-02-27 13:52:34 [Information] ["GET"] "/notification/count" - Request received
+2026-02-27 13:52:34 [Information] ["GET"] "/notification/count" - Fetched notification count 0 for user 3 successfully
+2026-02-27 13:52:34 [Information] ["GET"] "/post/feed" - Request received
+2026-02-27 13:52:34 [Information] ["GET"] "/post/feed" - Fetched feed for user 3 successfully
+2026-02-27 13:52:36 [Information] ["GET"] "/post/7/comments" - Request received
+2026-02-27 13:52:36 [Information] ["GET"] "/post/7/comments" - Fetched comments for post 7 successfully
+2026-02-27 13:52:36 [Information] ["GET"] "/post/7" - Request received
+2026-02-27 13:52:36 [Information] Fetched Post with Id 7
+2026-02-27 13:52:36 [Information] Retrieved post 7 detail and cached with version 0
+2026-02-27 13:52:36 [Information] ["GET"] "/post/7" - Fetched post 7 successfully
+2026-02-27 13:52:40 [Information] ["GET"] "/post/feed" - Request received
+2026-02-27 13:52:40 [Information] ["GET"] "/post/feed" - Fetched feed for user 3 successfully
+2026-02-27 13:52:44 [Information] ["GET"] "/notification/count" - Request received
+2026-02-27 13:52:44 [Information] ["GET"] "/post/feed" - Request received
+2026-02-27 13:52:44 [Information] ["GET"] "/notification/count" - Fetched notification count 0 for user 7 successfully
+2026-02-27 13:52:44 [Information] ["GET"] "/post/feed" - Fetched feed for user 7 successfully
+2026-02-27 13:53:00 [Information] ["GET"] "/notification/count" - Request received
+2026-02-27 13:53:00 [Information] ["GET"] "/post/feed" - Request received
+2026-02-27 13:53:00 [Information] ["GET"] "/notification/count" - Fetched notification count 0 for user 3 successfully
+2026-02-27 13:53:00 [Information] ["GET"] "/post/feed" - Fetched feed for user 3 successfully
+2026-02-27 13:53:07 [Information] ["GET"] "/post/feed" - Request received
+2026-02-27 13:53:07 [Information] ["GET"] "/post/feed" - Fetched feed for user 7 successfully
+2026-02-27 13:53:07 [Information] ["GET"] "/notification/count" - Request received
+2026-02-27 13:53:07 [Information] ["GET"] "/notification/count" - Fetched notification count 0 for user 7 successfully
+2026-02-27 13:53:18 [Information] ["GET"] "/notification/count" - Request received
+2026-02-27 13:53:18 [Information] ["GET"] "/post/feed" - Request received
+2026-02-27 13:53:18 [Information] ["GET"] "/post/feed" - Fetched feed for user 7 successfully
+2026-02-27 13:53:18 [Information] ["GET"] "/notification/count" - Fetched notification count 0 for user 7 successfully
+2026-02-27 13:53:24 [Information] ["POST"] "/Authentication/login" - Request received
+2026-02-27 13:53:24 [Information] Fetched User by Email "manav@gmail.com"
+2026-02-27 13:53:24 [Information] ["POST"] "/Authentication/login" - User logged in successfully
+2026-02-27 13:53:24 [Information] ["GET"] "/dashboard/daily-celebrations" - Request received
+2026-02-27 13:53:24 [Information] ["GET"] "/notification/count" - Request received
+2026-02-27 13:53:24 [Information] ["GET"] "/dashboard/daily-celebrations" - Fetched 0 daily celebrations successfully
+2026-02-27 13:53:24 [Information] ["GET"] "/dashboard/upcoming-bookings" - Request received
+2026-02-27 13:53:24 [Information] ["GET"] "/dashboard/upcoming-bookings" - Fetched 0 upcoming booking slots successfully
+2026-02-27 13:53:24 [Information] Unread notification count for UserId 6: 1
+2026-02-27 13:53:24 [Information] Retrieved notification count of user with Id 6 from repository and cached with version 0
+2026-02-27 13:53:24 [Information] ["GET"] "/notification/count" - Fetched notification count 1 for user 6 successfully
+2026-02-27 13:53:26 [Information] ["GET"] "/post/feed" - Request received
+2026-02-27 13:53:26 [Information] ["GET"] "/post/feed" - Fetched feed for user 7 successfully
+2026-02-27 13:53:26 [Information] ["GET"] "/notification/count" - Request received
+2026-02-27 13:53:26 [Information] ["GET"] "/notification/count" - Fetched notification count 0 for user 7 successfully
+2026-02-27 13:53:27 [Information] ["GET"] "/notification/count" - Request received
+2026-02-27 13:53:27 [Information] ["GET"] "/dashboard/upcoming-bookings" - Request received
+2026-02-27 13:53:27 [Information] ["GET"] "/dashboard/daily-celebrations" - Request received
+2026-02-27 13:53:27 [Information] ["GET"] "/dashboard/upcoming-bookings" - Fetched 0 upcoming booking slots successfully
+2026-02-27 13:53:27 [Information] ["GET"] "/notification/count" - Fetched notification count 1 for user 6 successfully
+2026-02-27 13:53:27 [Information] ["GET"] "/dashboard/daily-celebrations" - Fetched 0 daily celebrations successfully
+2026-02-27 13:53:27 [Information] ["GET"] "/notification/count" - Request received
+2026-02-27 13:53:27 [Information] ["GET"] "/post/feed" - Request received
+2026-02-27 13:53:27 [Information] ["GET"] "/notification/count" - Fetched notification count 0 for user 7 successfully
+2026-02-27 13:53:27 [Information] ["GET"] "/post/feed" - Fetched feed for user 7 successfully
+2026-02-27 13:53:28 [Information] ["GET"] "/notification/count" - Request received
+2026-02-27 13:53:28 [Information] ["GET"] "/notification/count" - Fetched notification count 1 for user 6 successfully
+2026-02-27 13:53:28 [Information] ["GET"] "/dashboard/daily-celebrations" - Request received
+2026-02-27 13:53:28 [Information] ["GET"] "/dashboard/upcoming-bookings" - Request received
+2026-02-27 13:53:28 [Information] ["GET"] "/dashboard/daily-celebrations" - Fetched 0 daily celebrations successfully
+2026-02-27 13:53:28 [Information] ["GET"] "/dashboard/upcoming-bookings" - Fetched 0 upcoming booking slots successfully
+2026-02-27 13:53:28 [Information] ["GET"] "/notification/count" - Request received
+2026-02-27 13:53:28 [Information] ["GET"] "/notification/count" - Fetched notification count 0 for user 7 successfully
+2026-02-27 13:53:28 [Information] ["GET"] "/post/feed" - Request received
+2026-02-27 13:53:28 [Information] ["GET"] "/post/feed" - Fetched feed for user 7 successfully
+2026-02-27 13:53:29 [Information] ["GET"] "/notification/count" - Request received
+2026-02-27 13:53:29 [Information] ["GET"] "/notification/count" - Fetched notification count 1 for user 6 successfully
+2026-02-27 13:53:29 [Information] ["GET"] "/dashboard/daily-celebrations" - Request received
+2026-02-27 13:53:29 [Information] ["GET"] "/dashboard/daily-celebrations" - Fetched 0 daily celebrations successfully
+2026-02-27 13:53:29 [Information] ["GET"] "/dashboard/upcoming-bookings" - Request received
+2026-02-27 13:53:29 [Information] ["GET"] "/dashboard/upcoming-bookings" - Fetched 0 upcoming booking slots successfully
+2026-02-27 13:53:30 [Information] ["GET"] "/job" - Request received
+2026-02-27 13:53:30 [Information] ["GET"] "/job" - Fetched all jobs successfully
+2026-02-27 13:53:32 [Information] ["GET"] "/post/feed" - Request received
+2026-02-27 13:53:32 [Information] Fetched 6 feed posts, page 1
+2026-02-27 13:53:32 [Information] Retrieved feed for user 6 and cached with version 2
+2026-02-27 13:53:32 [Information] ["GET"] "/post/feed" - Fetched feed for user 6 successfully
+2026-02-27 13:53:33 [Information] ["GET"] "/notification" - Request received
+2026-02-27 13:53:33 [Information] Fetching notifications for UserId 6, total: 10, page 1
+2026-02-27 13:53:33 [Information] Retrieved notifications of user with Id 6 from repository and cached with version 0
+2026-02-27 13:53:33 [Information] Retrieved notifications of user with Id 6 from repository and cached with version 0
+2026-02-27 13:53:33 [Information] ["GET"] "/notification" - Fetched notifications for user 6 successfully
+2026-02-27 13:53:36 [Information] ["GET"] "/post/feed" - Request received
+2026-02-27 13:53:36 [Information] ["GET"] "/post/feed" - Fetched feed for user 6 successfully
+2026-02-27 13:53:41 [Information] ["GET"] "/post" - Request received
+2026-02-27 13:53:41 [Information] Fetched 2 posts for UserId 6, page 1
+2026-02-27 13:53:41 [Information] Retrieved posts for user 6 and cached with version 0
+2026-02-27 13:53:41 [Information] ["GET"] "/post" - Fetched posts for user 6 successfully
+2026-02-27 13:53:46 [Information] ["GET"] "/notification/count" - Request received
+2026-02-27 13:53:46 [Information] ["GET"] "/post/feed" - Request received
+2026-02-27 13:53:46 [Information] ["GET"] "/notification/count" - Fetched notification count 0 for user 7 successfully
+2026-02-27 13:53:46 [Information] ["GET"] "/post/feed" - Fetched feed for user 7 successfully
+2026-02-27 13:53:47 [Information] ["GET"] "/notification/count" - Request received
+2026-02-27 13:53:47 [Information] ["GET"] "/post/feed" - Request received
+2026-02-27 13:53:47 [Information] ["GET"] "/notification/count" - Fetched notification count 0 for user 3 successfully
+2026-02-27 13:53:47 [Information] ["GET"] "/post/feed" - Fetched feed for user 3 successfully
+2026-02-27 13:54:02 [Information] ["PATCH"] "/post/7/inappropriate" - Request received
+2026-02-27 13:54:02 [Information] Fetched Post with Id 7
+2026-02-27 13:54:08 [Information] Created Notification with Id 39 for UserId 6
+2026-02-27 13:54:08 [Information] Notification sent to user with Id 6 for inappropriate post with Id 7
+2026-02-27 13:54:08 [Information] Marked Post 7 as InAppropriate: True
+2026-02-27 13:54:08 [Information] Post 7 inappropriate status toggled, cache versions incremented
+2026-02-27 13:54:08 [Information] ["PATCH"] "/post/7/inappropriate" - Post 7 marked as inappropriate successfully
+2026-02-27 13:54:09 [Information] ["GET"] "/notification/count" - Request received
+2026-02-27 13:54:09 [Information] ["GET"] "/notification/count" - Fetched notification count 0 for user 7 successfully
+2026-02-27 13:54:09 [Information] ["GET"] "/post/feed" - Request received
+2026-02-27 13:54:09 [Information] Fetched 6 feed posts, page 1
+2026-02-27 13:54:09 [Information] Retrieved feed for user 7 and cached with version 3
+2026-02-27 13:54:09 [Information] ["GET"] "/post/feed" - Fetched feed for user 7 successfully
+2026-02-27 13:54:11 [Information] ["GET"] "/notification/count" - Request received
+2026-02-27 13:54:11 [Information] ["GET"] "/post" - Request received
+2026-02-27 13:54:11 [Information] ["GET"] "/post" - Fetched posts for user 6 successfully
+2026-02-27 13:54:11 [Information] Unread notification count for UserId 6: 1
+2026-02-27 13:54:11 [Information] Retrieved notification count of user with Id 6 from repository and cached with version 2
+2026-02-27 13:54:11 [Information] ["GET"] "/notification/count" - Fetched notification count 1 for user 6 successfully
+2026-02-27 13:54:15 [Information] ["GET"] "/notification/count" - Request received
+2026-02-27 13:54:15 [Information] ["GET"] "/post/feed" - Request received
+2026-02-27 13:54:15 [Information] ["GET"] "/notification/count" - Fetched notification count 0 for user 7 successfully
+2026-02-27 13:54:15 [Information] ["GET"] "/post/feed" - Fetched feed for user 7 successfully
+2026-02-27 13:54:16 [Information] ["GET"] "/notification/count" - Request received
+2026-02-27 13:54:16 [Information] ["GET"] "/notification/count" - Fetched notification count 1 for user 6 successfully
+2026-02-27 13:54:16 [Information] ["GET"] "/post" - Request received
+2026-02-27 13:54:16 [Information] ["GET"] "/post" - Fetched posts for user 6 successfully
+2026-02-27 13:54:21 [Information] ["GET"] "/post/7/comments" - Request received
+2026-02-27 13:54:21 [Information] ["GET"] "/post/7" - Request received
+2026-02-27 13:54:21 [Information] ["GET"] "/post/7/comments" - Fetched comments for post 7 successfully
+2026-02-27 13:54:21 [Information] Fetched Post with Id 7
+2026-02-27 13:54:21 [Information] Retrieved post 7 detail and cached with version 1
+2026-02-27 13:54:21 [Information] ["GET"] "/post/7" - Fetched post 7 successfully
+2026-02-27 13:54:23 [Information] ["GET"] "/post" - Request received
+2026-02-27 13:54:23 [Information] ["GET"] "/post" - Fetched posts for user 6 successfully
+2026-02-27 13:55:32 [Information] Scheduler "QuartzScheduler_$_NON_CLUSTERED" shutting down.
+2026-02-27 13:55:32 [Information] Scheduler QuartzScheduler_$_NON_CLUSTERED paused.
+2026-02-27 13:55:32 [Information] Scheduler QuartzScheduler_$_NON_CLUSTERED Shutdown complete.
+2026-02-27 13:55:45 [Information] Initialized Scheduler Signaller of type: Quartz.Core.SchedulerSignalerImpl
+2026-02-27 13:55:45 [Information] Quartz Scheduler created
+2026-02-27 13:55:45 [Information] JobFactory set to: Quartz.Simpl.MicrosoftDependencyInjectionJobFactory
+2026-02-27 13:55:45 [Information] RAMJobStore initialized.
+2026-02-27 13:55:45 [Information] Quartz Scheduler 3.15.1.0 - 'QuartzScheduler' with instanceId 'NON_CLUSTERED' initialized
+2026-02-27 13:55:45 [Information] Using thread pool 'Quartz.Simpl.DefaultThreadPool', size: 10
+2026-02-27 13:55:45 [Information] Using job store 'Quartz.Simpl.RAMJobStore', supports persistence: False, clustered: False
+2026-02-27 13:55:45 [Information] Adding 1 jobs, 1 triggers.
+2026-02-27 13:55:45 [Information] Adding job: DEFAULT.WeeklyJob
+2026-02-27 13:55:45 [Information] Scheduler QuartzScheduler_$_NON_CLUSTERED started.
+2026-02-27 13:55:46 [Information] ["GET"] "/notification/count" - Request received
+2026-02-27 13:55:46 [Information] ["GET"] "/post" - Request received
+2026-02-27 13:55:46 [Information] Starting Daily Celebration Job at 02/27/2026 13:55:46
+2026-02-27 13:55:46 [Information] Found 0 birthday users for today
+2026-02-27 13:55:46 [Information] Found 0 work anniversary users for today
+2026-02-27 13:55:46 [Information] Fetched system user with Id 4
+2026-02-27 13:55:46 [Information] Cache Updated for Daily Celebrations at 02/27/2026 13:55:46
+2026-02-27 13:55:46 [Information] Unread notification count for UserId 6: 1
+2026-02-27 13:55:46 [Information] Retrieved notification count of user with Id 6 from repository and cached with version 0
+2026-02-27 13:55:46 [Information] ["GET"] "/notification/count" - Fetched notification count 1 for user 6 successfully
+2026-02-27 13:55:46 [Information] Fetched 2 posts for UserId 6, page 1
+2026-02-27 13:55:46 [Information] Retrieved posts for user 6 and cached with version 0
+2026-02-27 13:55:46 [Information] ["GET"] "/post" - Fetched posts for user 6 successfully
+2026-02-27 13:55:51 [Information] ["GET"] "/notification/count" - Request received
+2026-02-27 13:55:51 [Information] Unread notification count for UserId 3: 0
+2026-02-27 13:55:51 [Information] Retrieved notification count of user with Id 3 from repository and cached with version 0
+2026-02-27 13:55:51 [Information] ["GET"] "/notification/count" - Fetched notification count 0 for user 3 successfully
+2026-02-27 13:55:51 [Information] ["GET"] "/post/feed" - Request received
+2026-02-27 13:55:51 [Information] Fetched 5 feed posts, page 1
+2026-02-27 13:55:51 [Information] Retrieved feed for user 3 and cached with version 1
+2026-02-27 13:55:51 [Information] ["GET"] "/post/feed" - Fetched feed for user 3 successfully
+2026-02-27 13:55:54 [Information] ["GET"] "/post/inappropriate" - Request received
+2026-02-27 13:55:54 [Information] Fetched 3 inappropriate posts, page 1
+2026-02-27 13:55:54 [Information] Retrieved inappropriate posts and cached with version 1
+2026-02-27 13:55:54 [Information] ["GET"] "/post/inappropriate" - Fetched inappropriate posts successfully
+2026-02-27 13:55:56 [Information] ["GET"] "/post" - Request received
+2026-02-27 13:55:56 [Information] ["GET"] "/post" - Fetched posts for user 6 successfully
+2026-02-27 13:55:56 [Information] ["GET"] "/notification/count" - Request received
+2026-02-27 13:55:56 [Information] ["GET"] "/notification/count" - Fetched notification count 1 for user 6 successfully
+2026-02-27 13:55:57 [Information] ["GET"] "/post/inappropriate" - Request received
+2026-02-27 13:55:57 [Information] ["GET"] "/post/inappropriate" - Fetched inappropriate posts successfully
+2026-02-27 13:55:57 [Information] ["GET"] "/notification/count" - Request received
+2026-02-27 13:55:57 [Information] ["GET"] "/notification/count" - Fetched notification count 0 for user 3 successfully
+2026-02-27 13:56:01 [Information] ["PATCH"] "/post/7/inappropriate" - Request received
+2026-02-27 13:56:01 [Information] Fetched Post with Id 7
+2026-02-27 13:56:01 [Information] Marked Post 7 as InAppropriate: False
+2026-02-27 13:56:01 [Information] Post 7 inappropriate status toggled, cache versions incremented
+2026-02-27 13:56:01 [Information] ["PATCH"] "/post/7/inappropriate" - Post 7 marked as inappropriate successfully
+2026-02-27 13:56:03 [Information] ["GET"] "/notification/count" - Request received
+2026-02-27 13:56:03 [Information] ["GET"] "/post" - Request received
+2026-02-27 13:56:03 [Information] ["GET"] "/notification/count" - Fetched notification count 1 for user 6 successfully
+2026-02-27 13:56:03 [Information] Fetched 2 posts for UserId 6, page 1
+2026-02-27 13:56:03 [Information] Retrieved posts for user 6 and cached with version 1
+2026-02-27 13:56:03 [Information] ["GET"] "/post" - Fetched posts for user 6 successfully
+2026-02-27 13:56:05 [Information] ["GET"] "/notification/count" - Request received
+2026-02-27 13:56:05 [Information] ["GET"] "/post/feed" - Request received
+2026-02-27 13:56:05 [Information] Unread notification count for UserId 7: 0
+2026-02-27 13:56:05 [Information] Retrieved notification count of user with Id 7 from repository and cached with version 0
+2026-02-27 13:56:05 [Information] ["GET"] "/notification/count" - Fetched notification count 0 for user 7 successfully
+2026-02-27 13:56:05 [Information] Fetched 6 feed posts, page 1
+2026-02-27 13:56:05 [Information] Retrieved feed for user 7 and cached with version 2
+2026-02-27 13:56:05 [Information] ["GET"] "/post/feed" - Fetched feed for user 7 successfully
+2026-02-27 13:56:06 [Information] ["GET"] "/notification/count" - Request received
+2026-02-27 13:56:06 [Information] ["GET"] "/post" - Request received
+2026-02-27 13:56:06 [Information] ["GET"] "/notification/count" - Fetched notification count 1 for user 6 successfully
+2026-02-27 13:56:06 [Information] ["GET"] "/post" - Fetched posts for user 6 successfully
+2026-02-27 13:56:07 [Information] ["GET"] "/notification/count" - Request received
+2026-02-27 13:56:07 [Information] ["GET"] "/notification/count" - Fetched notification count 0 for user 3 successfully
+2026-02-27 13:56:07 [Information] ["GET"] "/post/inappropriate" - Request received
+2026-02-27 13:56:07 [Information] Fetched 2 inappropriate posts, page 1
+2026-02-27 13:56:07 [Information] Retrieved inappropriate posts and cached with version 2
+2026-02-27 13:56:07 [Information] ["GET"] "/post/inappropriate" - Fetched inappropriate posts successfully
+2026-02-27 13:56:09 [Information] ["GET"] "/post/feed" - Request received
+2026-02-27 13:56:09 [Information] Fetched 5 feed posts, page 1
+2026-02-27 13:56:09 [Information] Retrieved feed for user 3 and cached with version 2
+2026-02-27 13:56:09 [Information] ["GET"] "/post/feed" - Fetched feed for user 3 successfully
+2026-02-27 13:56:35 [Information] ["GET"] "/post/feed" - Request received
+2026-02-27 13:56:35 [Information] ["GET"] "/post/feed" - Fetched feed for user 3 successfully
+2026-02-27 13:58:16 [Information] ["GET"] "/notification/count" - Request received
+2026-02-27 13:58:16 [Information] ["GET"] "/notification/count" - Fetched notification count 0 for user 3 successfully
+2026-02-27 13:58:16 [Information] ["GET"] "/post/feed" - Request received
+2026-02-27 13:58:16 [Information] ["GET"] "/post/feed" - Fetched feed for user 3 successfully
+2026-02-27 13:58:47 [Information] Scheduler "QuartzScheduler_$_NON_CLUSTERED" shutting down.
+2026-02-27 13:58:47 [Information] Scheduler QuartzScheduler_$_NON_CLUSTERED paused.
+2026-02-27 13:58:47 [Information] Scheduler QuartzScheduler_$_NON_CLUSTERED Shutdown complete.
+2026-02-27 13:58:57 [Information] Initialized Scheduler Signaller of type: Quartz.Core.SchedulerSignalerImpl
+2026-02-27 13:58:57 [Information] Quartz Scheduler created
+2026-02-27 13:58:57 [Information] JobFactory set to: Quartz.Simpl.MicrosoftDependencyInjectionJobFactory
+2026-02-27 13:58:57 [Information] RAMJobStore initialized.
+2026-02-27 13:58:57 [Information] Quartz Scheduler 3.15.1.0 - 'QuartzScheduler' with instanceId 'NON_CLUSTERED' initialized
+2026-02-27 13:58:57 [Information] Using thread pool 'Quartz.Simpl.DefaultThreadPool', size: 10
+2026-02-27 13:58:57 [Information] Using job store 'Quartz.Simpl.RAMJobStore', supports persistence: False, clustered: False
+2026-02-27 13:58:57 [Information] Adding 1 jobs, 1 triggers.
+2026-02-27 13:58:57 [Information] Adding job: DEFAULT.WeeklyJob
+2026-02-27 13:58:57 [Information] Scheduler QuartzScheduler_$_NON_CLUSTERED started.
+2026-02-27 13:58:57 [Information] Starting Daily Celebration Job at 02/27/2026 13:58:57
+2026-02-27 13:58:57 [Information] Found 0 birthday users for today
+2026-02-27 13:58:57 [Information] Found 0 work anniversary users for today
+2026-02-27 13:58:57 [Information] Fetched system user with Id 4
+2026-02-27 13:58:57 [Information] Cache Updated for Daily Celebrations at 02/27/2026 13:58:57
