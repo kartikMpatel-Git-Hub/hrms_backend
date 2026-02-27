@@ -233,6 +233,18 @@ namespace hrms.Controllers
             _logger.LogInformation("[{Method}] {Url} - Slot {SlotId} of game {GameId} cancelled successfully", Request.Method, Request.Path, slotId, gameId);
             return Ok(response);
         }
+        [HttpDelete("{gameId}/slots/{slotId}/delete")]
+        public async Task<IActionResult> DeleteGameSlot(int? gameId, int? slotId)
+        {
+            _logger.LogInformation("[{Method}] {Url} - Request received", Request.Method, Request.Path);
+            if (gameId == null || gameId <= 0 || slotId == null || slotId <= 0)
+            {
+                return BadRequest("Invalid game ID or slot ID.");
+            }
+            await _service.DeleteGameSlot((int)gameId, (int)slotId);
+            _logger.LogInformation("[{Method}] {Url} - Slot {SlotId} of game {GameId} deleted successfully", Request.Method, Request.Path, slotId, gameId);
+            return Ok(new { message = "Game slot deleted successfully." });
+        }
 
         [HttpPatch("{gameId}/toggle-interest")]
         public async Task<IActionResult> ToggleGameInterest(int? gameId)

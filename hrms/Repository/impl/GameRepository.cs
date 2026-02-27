@@ -72,6 +72,12 @@ namespace hrms.Repository.impl
             _logger.LogInformation("Soft-deleted GameOperationWindow with Id {Id}", window.Id);
         }
 
+        public async Task DeleteGameSlot(GameSlot slot)
+        {
+            _db.GameSlots.Remove(slot);
+            await _db.SaveChangesAsync();
+        }
+
         public async Task<List<GameOperationWindow>> GetAllGameOperationWindows(int gameId)
         {
             return await _db.GameOperationWindows

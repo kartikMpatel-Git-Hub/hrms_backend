@@ -24,6 +24,7 @@
         AVAILABLE,
         BOOKED,
         WAITING,
-        COMPLETED
+        COMPLETED,
+        CANCELLED
     }
 }

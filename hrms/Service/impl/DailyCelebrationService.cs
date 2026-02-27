@@ -68,7 +68,15 @@ namespace hrms.Service.impl
                 var key = CacheVersionKey.For(CacheDomains.DashboardCelebrations);
                 _cache.Set(key, _cache.Get<int>(key) + 1);
             }
+            IncrementCacheVersion(CacheVersionKey.For(CacheDomains.PostDetails));
             _logger.LogInformation("Cache Updated for Daily Celebrations at {Time}", DateTime.Now);
+        }
+
+        private void IncrementCacheVersion(string v)
+        {
+            var key = CacheVersionKey.For(v);
+            _cache.Set(key, _cache.Get<int>(key) + 1);
+            _logger.LogDebug("Cache version incremented for {CacheKey}, new version: {Version}", v, _cache.Get<int>(key));
         }
 
         private async Task createPostForCelebration(User system, User user, string v)

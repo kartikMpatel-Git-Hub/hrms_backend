@@ -8,6 +8,8 @@ using hrms.Dto.Response.Other;
 using hrms.Dto.Response.User;
 using hrms.Model;
 using hrms.Repository;
+using hrms.Utility;
+using Microsoft.Extensions.Caching.Memory;
 
 namespace hrms.Service.impl
 {
@@ -19,20 +21,23 @@ namespace hrms.Service.impl
             IUserGameRepository _userGameRpository,
             IMapper _mapper,
             IEmailService _emailService,
-            INotificationRepository _notificationRepository
+            INotificationRepository _notificationRepository,
+            IMemoryCache _cache,
+            ILogger<GameSlotService> _logger
         )
         : IGameSlotService
     {
         public async Task<BookingSlotResponseDto> BookSlot(int bookingSlotId, int currentUserId, BookSlotRequestDto dto)
         {
-            User user = await _userRepository.GetByIdAsync( currentUserId );
-            BookingSlot slot = await _repository.GetSlot( bookingSlotId );
-            await CheckValidations(user,slot,dto);
+            User user = await _userRepository.GetByIdAsync(currentUserId);
+            BookingSlot slot = await _repository.GetSlot(bookingSlotId);
+            await CheckValidations(user, slot, dto);
             List<User> availablePlayers = await AvailablePlayers(dto.Players);
             slot.BookedBy = user.Id;
             slot.Booked = user;
             slot.Status = GameSlotStatus.BOOKED;
-            foreach (var player in availablePlayers) {
+            foreach (var player in availablePlayers)
+            {
                 BookingPlayer bookingPlayer = new BookingPlayer()
                 {
                     SlotId = slot.Id,
@@ -40,11 +45,13 @@ namespace hrms.Service.impl
                     Slot = slot,
                     Player = player
                 };
-                slot.Players.Add( bookingPlayer );
+                slot.Players.Add(bookingPlayer);
             }
             BookingSlot bookedSlot = await _repository.BookSlot(slot);
             await SendEmailAndNotification(user);
             await UpdateUserGameState(slot);
+            IncrementCacheVersion(CacheVersionKey.For(CacheDomains.DashboardUpcomingBookings));
+            IncrementCacheVersion(CacheVersionKey.ForGameSlots(slot.GameId));
             return _mapper.Map<BookingSlotResponseDto>(bookedSlot);
         }
 
@@ -54,15 +61,15 @@ namespace hrms.Service.impl
             {
                 throw new InvalidOperationCustomException($"Number of Players should be between {slot.Game.MinPlayer} and {slot.Game.MaxPlayer} !");
             }
-            if(slot.Status != GameSlotStatus.AVAILABLE)
+            if (slot.Status != GameSlotStatus.AVAILABLE)
             {
                 throw new InvalidOperationCustomException($"Slot is Already Booked !");
             }
-            if(!await _userGameRpository.IsUserInterestedInGame(user.Id, slot.GameId))
+            if (!await _userGameRpository.IsUserInterestedInGame(user.Id, slot.GameId))
             {
                 throw new InvalidOperationCustomException($"You are not interested in this game !");
             }
-            if (!await IsBookingPossible(user,slot))
+            if (!await IsBookingPossible(user, slot))
             {
                 throw new InvalidOperationCustomException($"You can not Book Slot Until your next Cycle start !");
             }
@@ -91,13 +98,21 @@ namespace hrms.Service.impl
                 IsViewed = false,
                 NotificationDate = DateTime.Now
             };
-            await _notificationRepository.CreateNotification(notification); 
+            await _notificationRepository.CreateNotification(notification);
+            IncrementCacheVersion(CacheVersionKey.ForUserNotifications(to.Id));
+            _logger.LogInformation("Notification created for user {UserId} for game slot booking", to.Id);
+        }
+
+        private void IncrementCacheVersion(string versionKey)
+        {
+            var current = _cache.Get<int>(versionKey);
+            _cache.Set(versionKey, current + 1);
         }
 
         private async Task<bool> IsBookingPossible(User user, BookingSlot slot)
         {
 
-            
+
 
             List<UserGameInterest> interested =
                     await _userGameRpository.GetInterestedPlayers(slot.GameId);
@@ -107,7 +122,7 @@ namespace hrms.Service.impl
 
             List<UserGameState> states =
                 await _userGameRpository.GetUsersGameStates(slot.GameId);
-            
+
             foreach (var intUser in interested)
             {
                 var existing = states.FirstOrDefault(s => s.UserId == intUser.UserId);
@@ -156,6 +171,8 @@ namespace hrms.Service.impl
             Game game = await _gameRepository.GetGameById(dto.GameId);
             newSlot.Game = game;
             BookingSlot bookingSlot = await _repository.CreateSlot(newSlot);
+            IncrementCacheVersion(CacheVersionKey.ForGameSlots(dto.GameId));
+            _logger.LogInformation("Booking slot created for game {GameId} and cache version incremented", dto.GameId);
             return _mapper.Map<BookingSlotResponseDto>(bookingSlot);
         }
 
@@ -164,10 +181,20 @@ namespace hrms.Service.impl
             throw new NotImplementedException();
         }
 
-        public async Task<List<BookingSlotResponseDto>> GetBookingSlots(int gameId,DateTime from, DateTime to)
+        public async Task<List<BookingSlotResponseDto>> GetBookingSlots(int gameId, DateTime from, DateTime to)
         {
-            List<BookingSlot> slots =  await _repository.GetSlots(gameId, from, to);
-            return _mapper.Map<List<BookingSlotResponseDto>>(slots);
+            var version = _cache.Get<int>(CacheVersionKey.ForGameSlots(gameId));
+            var key = $"BookingSlots:GameId:{gameId}:from:{from}:to:{to}:version:{version}";
+            if (_cache.TryGetValue(key, out List<BookingSlotResponseDto> cached))
+            {
+                _logger.LogDebug("Cache hit for booking slots of game {GameId} (version {Version})", gameId, version);
+                return cached;
+            }
+            List<BookingSlot> slots = await _repository.GetSlots(gameId, from, to);
+            var response = _mapper.Map<List<BookingSlotResponseDto>>(slots);
+            _cache.Set(key, response, TimeSpan.FromMinutes(10));
+            _logger.LogInformation("Retrieved booking slots for game {GameId} and cached with version {Version}", gameId, version);
+            return response;
         }
 
         public async Task<BookingSlotWithPlayerResponseDto> GetSlot(int slotId)

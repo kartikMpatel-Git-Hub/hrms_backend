@@ -1,0 +1,805 @@
+2026-02-27 12:21:18 [Information] Initialized Scheduler Signaller of type: Quartz.Core.SchedulerSignalerImpl
+2026-02-27 12:21:18 [Information] Quartz Scheduler created
+2026-02-27 12:21:18 [Information] JobFactory set to: Quartz.Simpl.MicrosoftDependencyInjectionJobFactory
+2026-02-27 12:21:18 [Information] RAMJobStore initialized.
+2026-02-27 12:21:18 [Information] Quartz Scheduler 3.15.1.0 - 'QuartzScheduler' with instanceId 'NON_CLUSTERED' initialized
+2026-02-27 12:21:18 [Information] Using thread pool 'Quartz.Simpl.DefaultThreadPool', size: 10
+2026-02-27 12:21:18 [Information] Using job store 'Quartz.Simpl.RAMJobStore', supports persistence: False, clustered: False
+2026-02-27 12:21:18 [Information] Adding 1 jobs, 1 triggers.
+2026-02-27 12:21:18 [Information] Adding job: DEFAULT.WeeklyJob
+2026-02-27 12:21:18 [Information] Scheduler QuartzScheduler_$_NON_CLUSTERED started.
+2026-02-27 12:21:19 [Information] Starting Daily Celebration Job at 02/27/2026 12:21:19
+2026-02-27 12:21:19 [Information] Found 0 birthday users for today
+2026-02-27 12:21:19 [Information] Found 0 work anniversary users for today
+2026-02-27 12:21:19 [Information] Fetched system user with Id 4
+2026-02-27 12:21:19 [Information] Cache Updated for Daily Celebrations at 02/27/2026 12:21:19
+2026-02-27 12:21:34 [Information] ["POST"] "/Authentication/login" - Request received
+2026-02-27 12:21:34 [Information] Fetched User by Email "keval@gmail.com"
+2026-02-27 12:21:34 [Error] An unhandled exception occurred: "Invalid Password !"
+hrms.CustomException.InvalidOperationCustomException: Invalid Password !
+   at hrms.Service.impl.AuthenticationService.Login(LoginRequestDto dto) in C:\Internship\Codes\DontNet\Assignment-1\hrms\hrms\Service\impl\AuthenticationService.cs:line 47
+   at hrms.Controllers.AuthenticationController.Login(LoginRequestDto dto) in C:\Internship\Codes\DontNet\Assignment-1\hrms\hrms\Controllers\AuthenticationContoller.cs:line 40
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.TaskOfIActionResultExecutor.Execute(ActionContext actionContext, IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeInnerFilterAsync>g__Awaited|13_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeNextExceptionFilterAsync>g__Awaited|26_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+2026-02-27 12:21:39 [Information] ["GET"] "/notification/count" - Request received
+2026-02-27 12:21:39 [Information] ["GET"] "/user/my-team" - Request received
+2026-02-27 12:21:39 [Information] Unread notification count for UserId 8: 0
+2026-02-27 12:21:39 [Information] Retrieved notification count of user with Id 8 from repository and cached with version 0
+2026-02-27 12:21:39 [Information] ["GET"] "/notification/count" - Fetched notification count 0 for user 8 successfully
+2026-02-27 12:21:39 [Information] Fetching employees under ManagerId 8, total: 2
+2026-02-27 12:21:39 [Information] Retrieved employees under manager with version 0 and cached
+2026-02-27 12:21:39 [Information] ["GET"] "/user/my-team" - Fetched team members for manager 8 successfully
+2026-02-27 12:21:41 [Information] ["GET"] "/notification" - Request received
+2026-02-27 12:21:41 [Information] Fetching notifications for UserId 8, total: 3, page 1
+2026-02-27 12:21:41 [Information] Retrieved notifications of user with Id 8 from repository and cached with version 0
+2026-02-27 12:21:41 [Information] Retrieved notifications of user with Id 8 from repository and cached with version 0
+2026-02-27 12:21:41 [Information] ["GET"] "/notification" - Fetched notifications for user 8 successfully
+2026-02-27 12:23:01 [Information] ["GET"] "/notification/count" - Request received
+2026-02-27 12:23:01 [Information] ["GET"] "/notification" - Request received
+2026-02-27 12:23:01 [Information] Fetching notifications for UserId 8, total: 3, page 1
+2026-02-27 12:23:01 [Information] Unread notification count for UserId 8: 0
+2026-02-27 12:23:01 [Information] Retrieved notification count of user with Id 8 from repository and cached with version 1
+2026-02-27 12:23:01 [Information] ["GET"] "/notification/count" - Fetched notification count 0 for user 8 successfully
+2026-02-27 12:23:01 [Information] Retrieved notifications of user with Id 8 from repository and cached with version 1
+2026-02-27 12:23:01 [Information] Retrieved notifications of user with Id 8 from repository and cached with version 1
+2026-02-27 12:23:01 [Information] ["GET"] "/notification" - Fetched notifications for user 8 successfully
+2026-02-27 12:23:14 [Information] ["GET"] "/game" - Request received
+2026-02-27 12:23:14 [Information] Retrieved all games and cached with version 1
+2026-02-27 12:23:14 [Information] ["GET"] "/game" - Fetched 3 games successfully
+2026-02-27 12:23:31 [Information] ["POST"] "/Authentication/login" - Request received
+2026-02-27 12:23:31 [Information] Fetched User by Email "hr@gmail.com"
+2026-02-27 12:23:31 [Information] ["POST"] "/Authentication/login" - User logged in successfully
+2026-02-27 12:23:32 [Information] ["GET"] "/notification/count" - Request received
+2026-02-27 12:23:32 [Information] Unread notification count for UserId 3: 0
+2026-02-27 12:23:32 [Information] Retrieved notification count of user with Id 3 from repository and cached with version 0
+2026-02-27 12:23:32 [Information] ["GET"] "/notification/count" - Fetched notification count 0 for user 3 successfully
+2026-02-27 12:23:32 [Information] ["GET"] "/dashboard/daily-celebrations" - Request received
+2026-02-27 12:23:32 [Information] ["GET"] "/dashboard/upcoming-bookings" - Request received
+2026-02-27 12:23:32 [Information] Found 0 daily celebrations for today
+2026-02-27 12:23:32 [Information] Retrieved 0 daily celebrations from repository
+2026-02-27 12:23:32 [Information] ["GET"] "/dashboard/daily-celebrations" - Fetched 0 daily celebrations successfully
+2026-02-27 12:23:32 [Information] Found 0 upcoming booking slots for today
+2026-02-27 12:23:32 [Information] Retrieved 0 upcoming booking slots from repository
+2026-02-27 12:23:32 [Information] ["GET"] "/dashboard/upcoming-bookings" - Fetched 0 upcoming booking slots successfully
+2026-02-27 12:23:34 [Information] ["GET"] "/notification/count" - Request received
+2026-02-27 12:23:34 [Information] ["GET"] "/game" - Request received
+2026-02-27 12:23:34 [Information] ["GET"] "/game" - Fetched 3 games successfully
+2026-02-27 12:23:34 [Information] Unread notification count for UserId 8: 0
+2026-02-27 12:23:34 [Information] Retrieved notification count of user with Id 8 from repository and cached with version 2
+2026-02-27 12:23:34 [Information] ["GET"] "/notification/count" - Fetched notification count 0 for user 8 successfully
+2026-02-27 12:23:40 [Information] ["GET"] "/notification/count" - Request received
+2026-02-27 12:23:40 [Information] ["GET"] "/notification/count" - Fetched notification count 0 for user 3 successfully
+2026-02-27 12:23:40 [Information] ["GET"] "/dashboard/upcoming-bookings" - Request received
+2026-02-27 12:23:40 [Information] ["GET"] "/dashboard/daily-celebrations" - Request received
+2026-02-27 12:23:40 [Information] ["GET"] "/dashboard/upcoming-bookings" - Fetched 0 upcoming booking slots successfully
+2026-02-27 12:23:40 [Information] ["GET"] "/dashboard/daily-celebrations" - Fetched 0 daily celebrations successfully
+2026-02-27 12:23:42 [Information] ["GET"] "/game" - Request received
+2026-02-27 12:23:42 [Information] ["GET"] "/game" - Fetched 3 games successfully
+2026-02-27 12:23:52 [Information] ["GET"] "/game/1/toggle-interest" - Request received
+2026-02-27 12:23:52 [Information] ["GET"] "/game/1/slots" - Request received
+2026-02-27 12:23:52 [Information] ["GET"] "/game/1/toggle-interest" - Checked interest in game 1 for user 3 successfully
+2026-02-27 12:23:52 [Information] Retrieved game slots for game 1 and cached with version 1
+2026-02-27 12:23:52 [Information] ["GET"] "/game/1/slots" - Fetched 52 slots for game 1 successfully
+2026-02-27 12:23:58 [Information] ["GET"] "/game/1/booking/available-players" - Request received
+2026-02-27 12:23:58 [Information] ["GET"] "/game/1/booking/available-players" - Fetched available players for game 1 successfully
+2026-02-27 12:24:03 [Information] ["GET"] "/notification/count" - Request received
+2026-02-27 12:24:03 [Information] ["GET"] "/notification/count" - Fetched notification count 0 for user 3 successfully
+2026-02-27 12:24:03 [Information] ["GET"] "/game/1/slots" - Request received
+2026-02-27 12:24:03 [Information] ["GET"] "/game/1/toggle-interest" - Request received
+2026-02-27 12:24:03 [Information] ["GET"] "/game/1/slots" - Fetched 52 slots for game 1 successfully
+2026-02-27 12:24:03 [Information] ["GET"] "/game/1/toggle-interest" - Checked interest in game 1 for user 3 successfully
+2026-02-27 12:24:04 [Information] ["GET"] "/game/1/booking/available-players" - Request received
+2026-02-27 12:24:04 [Information] ["GET"] "/game/1/booking/available-players" - Fetched available players for game 1 successfully
+2026-02-27 12:24:07 [Information] ["POST"] "/game/1/slots/216" - Request received
+2026-02-27 12:24:07 [Information] Fetched GameSlot 216 for GameId 1
+2026-02-27 12:24:07 [Information] Fetched Game with Id 1
+2026-02-27 12:24:07 [Information] Fetched GameSlot 216 for GameId 1
+2026-02-27 12:24:07 [Information] Booked GameSlot 216 for GameId 1 by UserId 3
+2026-02-27 12:24:07 [Information] ["POST"] "/game/1/slots/216" - Slot 216 of game 1 booked by user 3 successfully
+2026-02-27 12:24:07 [Information] ["GET"] "/game/1/slots" - Request received
+2026-02-27 12:24:07 [Information] Retrieved game slots for game 1 and cached with version 2
+2026-02-27 12:24:07 [Information] ["GET"] "/game/1/slots" - Fetched 52 slots for game 1 successfully
+2026-02-27 12:24:09 [Information] ["GET"] "/notification/count" - Request received
+2026-02-27 12:24:09 [Information] ["GET"] "/notification/count" - Fetched notification count 0 for user 8 successfully
+2026-02-27 12:24:09 [Information] ["GET"] "/game" - Request received
+2026-02-27 12:24:09 [Information] ["GET"] "/game" - Fetched 3 games successfully
+2026-02-27 12:24:12 [Information] ["GET"] "/job" - Request received
+2026-02-27 12:24:12 [Information] Fetched 1 active jobs, page 1
+2026-02-27 12:24:12 [Information] Retrieved jobs list from repository and cached with version 1
+2026-02-27 12:24:12 [Information] Total jobs retrieved: 1
+2026-02-27 12:24:12 [Information] ["GET"] "/job" - Fetched all jobs successfully
+2026-02-27 12:24:12 [Information] ["GET"] "/game" - Request received
+2026-02-27 12:24:12 [Information] ["GET"] "/game" - Fetched 3 games successfully
+2026-02-27 12:24:15 [Information] ["GET"] "/game/1/toggle-interest" - Request received
+2026-02-27 12:24:15 [Information] ["GET"] "/game/1/slots" - Request received
+2026-02-27 12:24:15 [Information] ["GET"] "/game/1/slots" - Fetched 52 slots for game 1 successfully
+2026-02-27 12:24:15 [Information] ["GET"] "/game/1/toggle-interest" - Checked interest in game 1 for user 8 successfully
+2026-02-27 12:24:16 [Information] ["GET"] "/game/1/slots/216/waitlist" - Request received
+2026-02-27 12:24:16 [Information] ["GET"] "/game/1/slots/216/waitlist" - Fetched 1 waitlist entries for slot 216 of game 1 successfully
+2026-02-27 12:24:18 [Information] ["GET"] "/game/1/toggle-interest" - Request received
+2026-02-27 12:24:18 [Information] ["GET"] "/game/1/slots" - Request received
+2026-02-27 12:24:18 [Information] ["GET"] "/game/1/slots" - Fetched 52 slots for game 1 successfully
+2026-02-27 12:24:18 [Information] ["GET"] "/game/1/toggle-interest" - Checked interest in game 1 for user 8 successfully
+2026-02-27 12:24:19 [Information] ["GET"] "/game/1/booking/available-players" - Request received
+2026-02-27 12:24:19 [Information] ["GET"] "/game/1/booking/available-players" - Fetched available players for game 1 successfully
+2026-02-27 12:24:23 [Information] ["POST"] "/game/1/slots/216" - Request received
+2026-02-27 12:24:23 [Information] Fetched GameSlot 216 for GameId 1
+2026-02-27 12:24:23 [Information] Fetched Game with Id 1
+2026-02-27 12:24:23 [Information] Fetched GameSlot 216 for GameId 1
+2026-02-27 12:24:23 [Information] Booked GameSlot 216 for GameId 1 by UserId 8
+2026-02-27 12:24:23 [Information] ["POST"] "/game/1/slots/216" - Slot 216 of game 1 booked by user 8 successfully
+2026-02-27 12:24:23 [Information] ["GET"] "/game/1/slots" - Request received
+2026-02-27 12:24:23 [Information] Retrieved game slots for game 1 and cached with version 3
+2026-02-27 12:24:23 [Information] ["GET"] "/game/1/slots" - Fetched 52 slots for game 1 successfully
+2026-02-27 12:24:27 [Information] ["GET"] "/game/1/booking/available-players" - Request received
+2026-02-27 12:24:27 [Information] ["GET"] "/game/1/booking/available-players" - Fetched available players for game 1 successfully
+2026-02-27 12:26:14 [Information] ["GET"] "/notification/count" - Request received
+2026-02-27 12:26:14 [Information] ["GET"] "/game/1/toggle-interest" - Request received
+2026-02-27 12:26:14 [Information] ["GET"] "/notification/count" - Fetched notification count 0 for user 8 successfully
+2026-02-27 12:26:14 [Information] ["GET"] "/game/1/slots" - Request received
+2026-02-27 12:26:14 [Information] ["GET"] "/game/1/slots" - Fetched 52 slots for game 1 successfully
+2026-02-27 12:26:15 [Information] ["GET"] "/game/1/toggle-interest" - Checked interest in game 1 for user 8 successfully
+2026-02-27 12:26:55 [Information] ["GET"] "/notification/count" - Request received
+2026-02-27 12:26:55 [Information] ["GET"] "/notification/count" - Fetched notification count 0 for user 8 successfully
+2026-02-27 12:26:55 [Information] ["GET"] "/game/1/slots" - Request received
+2026-02-27 12:26:55 [Information] ["GET"] "/game/1/slots" - Fetched 52 slots for game 1 successfully
+2026-02-27 12:26:55 [Information] ["GET"] "/game/1/toggle-interest" - Request received
+2026-02-27 12:26:55 [Information] ["GET"] "/game/1/toggle-interest" - Checked interest in game 1 for user 8 successfully
+2026-02-27 12:28:05 [Information] ["GET"] "/game/1/toggle-interest" - Request received
+2026-02-27 12:28:05 [Information] ["GET"] "/game/1/slots" - Request received
+2026-02-27 12:28:05 [Information] ["GET"] "/notification/count" - Request received
+2026-02-27 12:28:05 [Information] ["GET"] "/game/1/slots" - Fetched 52 slots for game 1 successfully
+2026-02-27 12:28:05 [Information] ["GET"] "/notification/count" - Fetched notification count 0 for user 8 successfully
+2026-02-27 12:28:05 [Information] ["GET"] "/game/1/toggle-interest" - Checked interest in game 1 for user 8 successfully
+2026-02-27 12:28:10 [Information] ["GET"] "/game" - Request received
+2026-02-27 12:28:10 [Information] ["GET"] "/game" - Fetched 3 games successfully
+2026-02-27 12:28:12 [Information] ["GET"] "/game/1/slots" - Request received
+2026-02-27 12:28:12 [Information] ["GET"] "/game/1/toggle-interest" - Request received
+2026-02-27 12:28:12 [Information] ["GET"] "/game/1/slots" - Fetched 52 slots for game 1 successfully
+2026-02-27 12:28:12 [Information] ["GET"] "/game/1/toggle-interest" - Checked interest in game 1 for user 8 successfully
+2026-02-27 12:28:14 [Information] ["GET"] "/notification/count" - Request received
+2026-02-27 12:28:14 [Information] ["GET"] "/game/1/slots" - Request received
+2026-02-27 12:28:14 [Information] ["GET"] "/notification/count" - Fetched notification count 0 for user 3 successfully
+2026-02-27 12:28:14 [Information] ["GET"] "/game/1/slots" - Fetched 52 slots for game 1 successfully
+2026-02-27 12:28:14 [Information] ["GET"] "/game/1/toggle-interest" - Request received
+2026-02-27 12:28:14 [Information] ["GET"] "/game/1/toggle-interest" - Checked interest in game 1 for user 3 successfully
+2026-02-27 12:28:16 [Information] ["GET"] "/game" - Request received
+2026-02-27 12:28:16 [Information] ["GET"] "/game" - Fetched 3 games successfully
+2026-02-27 12:28:18 [Information] ["GET"] "/game/1" - Request received
+2026-02-27 12:28:18 [Information] Fetched Game with Id 1
+2026-02-27 12:28:18 [Information] Retrieved game 1 and cached with version 0
+2026-02-27 12:28:18 [Information] ["GET"] "/game/1" - Fetched game with ID 1 successfully
+2026-02-27 12:28:39 [Information] ["PUT"] "/game/1" - Request received
+2026-02-27 12:28:39 [Information] Fetched Game with Id 1
+2026-02-27 12:28:39 [Information] Updated Game with Id 1
+2026-02-27 12:28:39 [Information] Game with Id 1 updated and cache versions incremented
+2026-02-27 12:28:39 [Information] ["PUT"] "/game/1" - Game with ID 1 updated successfully
+2026-02-27 12:28:39 [Information] ["GET"] "/game/1" - Request received
+2026-02-27 12:28:39 [Information] Fetched Game with Id 1
+2026-02-27 12:28:39 [Information] Retrieved game 1 and cached with version 1
+2026-02-27 12:28:39 [Information] ["GET"] "/game/1" - Fetched game with ID 1 successfully
+2026-02-27 12:28:49 [Information] ["GET"] "/notification/count" - Request received
+2026-02-27 12:28:49 [Information] ["GET"] "/notification/count" - Fetched notification count 0 for user 3 successfully
+2026-02-27 12:28:49 [Information] ["GET"] "/game/1" - Request received
+2026-02-27 12:28:49 [Information] ["GET"] "/game/1" - Fetched game with ID 1 successfully
+2026-02-27 12:28:50 [Information] ["GET"] "/notification/count" - Request received
+2026-02-27 12:28:50 [Information] ["GET"] "/game/1/slots" - Request received
+2026-02-27 12:28:50 [Information] ["GET"] "/notification/count" - Fetched notification count 0 for user 8 successfully
+2026-02-27 12:28:50 [Information] ["GET"] "/game/1/slots" - Fetched 52 slots for game 1 successfully
+2026-02-27 12:28:50 [Information] ["GET"] "/game/1/toggle-interest" - Request received
+2026-02-27 12:28:50 [Information] ["GET"] "/game/1/toggle-interest" - Checked interest in game 1 for user 8 successfully
+2026-02-27 12:29:19 [Information] Notification created for user 8 for game slot booking
+2026-02-27 12:29:29 [Information] Notification created for user 6 for game slot booking
+2026-02-27 12:29:31 [Information] ["GET"] "/game/1/slots" - Request received
+2026-02-27 12:29:31 [Information] ["GET"] "/notification/count" - Request received
+2026-02-27 12:29:31 [Information] ["GET"] "/game/1/toggle-interest" - Request received
+2026-02-27 12:29:31 [Information] Retrieved game slots for game 1 and cached with version 4
+2026-02-27 12:29:31 [Information] ["GET"] "/game/1/slots" - Fetched 52 slots for game 1 successfully
+2026-02-27 12:29:31 [Information] Unread notification count for UserId 8: 1
+2026-02-27 12:29:31 [Information] Retrieved notification count of user with Id 8 from repository and cached with version 3
+2026-02-27 12:29:31 [Information] ["GET"] "/notification/count" - Fetched notification count 1 for user 8 successfully
+2026-02-27 12:29:31 [Information] ["GET"] "/game/1/toggle-interest" - Checked interest in game 1 for user 8 successfully
+2026-02-27 12:29:36 [Information] ["GET"] "/game/1/toggle-interest" - Request received
+2026-02-27 12:29:36 [Information] ["GET"] "/game/1/slots" - Request received
+2026-02-27 12:29:36 [Information] ["GET"] "/notification/count" - Request received
+2026-02-27 12:29:36 [Information] ["GET"] "/game/1/slots" - Fetched 52 slots for game 1 successfully
+2026-02-27 12:29:36 [Information] ["GET"] "/notification/count" - Fetched notification count 1 for user 8 successfully
+2026-02-27 12:29:36 [Information] ["GET"] "/game/1/toggle-interest" - Checked interest in game 1 for user 8 successfully
+2026-02-27 12:29:39 [Information] ["GET"] "/game/1/slots/216/details" - Request received
+2026-02-27 12:29:39 [Information] Fetched GameSlot 216 for GameId 1
+2026-02-27 12:29:39 [Information] Retrieved game slot 216 for game 1 and cached with version 4
+2026-02-27 12:29:39 [Information] ["GET"] "/game/1/slots/216/details" - Fetched slot 216 details for game 1 successfully
+2026-02-27 12:30:08 [Information] ["DELETE"] "/game/1/slots/216" - Request received
+2026-02-27 12:30:08 [Information] Fetched GameSlot 216 for GameId 1
+2026-02-27 12:30:08 [Information] Decremented GamePlayed for UserId 8, GameId 1
+2026-02-27 12:30:08 [Information] Decremented GamePlayed for UserId 6, GameId 1
+2026-02-27 12:30:08 [Information] Updated GameSlot with Id 216
+2026-02-27 12:30:08 [Information] ["DELETE"] "/game/1/slots/216" - Slot 216 of game 1 cancelled successfully
+2026-02-27 12:30:08 [Information] ["GET"] "/game/1/slots/216/details" - Request received
+2026-02-27 12:30:08 [Information] Fetched GameSlot 216 for GameId 1
+2026-02-27 12:30:08 [Information] Retrieved game slot 216 for game 1 and cached with version 5
+2026-02-27 12:30:08 [Information] ["GET"] "/game/1/slots/216/details" - Fetched slot 216 details for game 1 successfully
+2026-02-27 12:30:08 [Information] ["GET"] "/game/1/slots" - Request received
+2026-02-27 12:30:08 [Information] ["GET"] "/game/1/toggle-interest" - Request received
+2026-02-27 12:30:08 [Information] ["GET"] "/game/1/toggle-interest" - Checked interest in game 1 for user 8 successfully
+2026-02-27 12:30:08 [Information] Retrieved game slots for game 1 and cached with version 5
+2026-02-27 12:30:08 [Information] ["GET"] "/game/1/slots" - Fetched 52 slots for game 1 successfully
+2026-02-27 12:30:11 [Information] ["GET"] "/game/1/slots/216/waitlist" - Request received
+2026-02-27 12:30:11 [Information] ["GET"] "/game/1/slots/216/waitlist" - Fetched 1 waitlist entries for slot 216 of game 1 successfully
+2026-02-27 12:30:16 [Information] ["GET"] "/game/1/slots/216/waitlist" - Request received
+2026-02-27 12:30:16 [Information] ["GET"] "/notification/count" - Request received
+2026-02-27 12:30:16 [Information] ["GET"] "/notification/count" - Fetched notification count 1 for user 8 successfully
+2026-02-27 12:30:16 [Information] ["GET"] "/game/1/slots/216/waitlist" - Fetched 1 waitlist entries for slot 216 of game 1 successfully
+2026-02-27 12:30:19 [Information] ["GET"] "/notification" - Request received
+2026-02-27 12:30:19 [Information] Fetching notifications for UserId 8, total: 4, page 1
+2026-02-27 12:30:19 [Information] Retrieved notifications of user with Id 8 from repository and cached with version 3
+2026-02-27 12:30:19 [Information] Retrieved notifications of user with Id 8 from repository and cached with version 3
+2026-02-27 12:30:19 [Information] ["GET"] "/notification" - Fetched notifications for user 8 successfully
+2026-02-27 12:30:22 [Information] ["GET"] "/game" - Request received
+2026-02-27 12:30:22 [Information] Retrieved all games and cached with version 2
+2026-02-27 12:30:22 [Information] ["GET"] "/game" - Fetched 3 games successfully
+2026-02-27 12:30:27 [Information] ["GET"] "/notification/count" - Request received
+2026-02-27 12:30:27 [Information] ["GET"] "/game/1" - Request received
+2026-02-27 12:30:27 [Information] ["GET"] "/notification/count" - Fetched notification count 0 for user 3 successfully
+2026-02-27 12:30:27 [Information] ["GET"] "/game/1" - Fetched game with ID 1 successfully
+2026-02-27 12:30:29 [Information] Updated GameSlot with Id 214
+2026-02-27 12:30:29 [Information] Notification created for user 3 for game slot booking
+2026-02-27 12:30:30 [Information] ["GET"] "/game" - Request received
+2026-02-27 12:30:30 [Information] ["GET"] "/game" - Fetched 3 games successfully
+2026-02-27 12:30:32 [Information] ["GET"] "/game/1/slots" - Request received
+2026-02-27 12:30:32 [Information] ["GET"] "/game/1/toggle-interest" - Request received
+2026-02-27 12:30:32 [Information] ["GET"] "/game/1/slots" - Fetched 52 slots for game 1 successfully
+2026-02-27 12:30:32 [Information] ["GET"] "/game/1/toggle-interest" - Checked interest in game 1 for user 3 successfully
+2026-02-27 12:30:34 [Information] ["GET"] "/game/1/slots/216/waitlist" - Request received
+2026-02-27 12:30:34 [Information] ["GET"] "/game/1/slots/216/waitlist" - Fetched 1 waitlist entries for slot 216 of game 1 successfully
+2026-02-27 12:30:35 [Information] ["GET"] "/game/1/slots" - Request received
+2026-02-27 12:30:35 [Information] ["GET"] "/game/1/toggle-interest" - Request received
+2026-02-27 12:30:35 [Information] ["GET"] "/game/1/slots" - Fetched 52 slots for game 1 successfully
+2026-02-27 12:30:35 [Information] ["GET"] "/game/1/toggle-interest" - Checked interest in game 1 for user 3 successfully
+2026-02-27 12:30:39 [Information] Notification created for user 5 for game slot booking
+2026-02-27 12:30:39 [Information] Updated GameSlot with Id 284
+2026-02-27 12:30:44 [Information] ["GET"] "/notification/count" - Request received
+2026-02-27 12:30:44 [Information] ["GET"] "/game/1/toggle-interest" - Request received
+2026-02-27 12:30:44 [Information] ["GET"] "/game/1/slots" - Request received
+2026-02-27 12:30:44 [Information] ["GET"] "/game/1/toggle-interest" - Checked interest in game 1 for user 3 successfully
+2026-02-27 12:30:44 [Information] Retrieved game slots for game 1 and cached with version 6
+2026-02-27 12:30:44 [Information] ["GET"] "/game/1/slots" - Fetched 52 slots for game 1 successfully
+2026-02-27 12:30:45 [Information] Unread notification count for UserId 3: 1
+2026-02-27 12:30:45 [Information] Retrieved notification count of user with Id 3 from repository and cached with version 1
+2026-02-27 12:30:45 [Information] ["GET"] "/notification/count" - Fetched notification count 1 for user 3 successfully
+2026-02-27 12:30:49 [Information] ["GET"] "/game/1/slots/216/details" - Request received
+2026-02-27 12:30:49 [Information] Fetched GameSlot 216 for GameId 1
+2026-02-27 12:30:49 [Information] Retrieved game slot 216 for game 1 and cached with version 6
+2026-02-27 12:30:49 [Information] ["GET"] "/game/1/slots/216/details" - Fetched slot 216 details for game 1 successfully
+2026-02-27 12:30:54 [Information] ["GET"] "/notification/count" - Request received
+2026-02-27 12:30:54 [Information] ["GET"] "/game" - Request received
+2026-02-27 12:30:54 [Information] ["GET"] "/game" - Fetched 3 games successfully
+2026-02-27 12:30:54 [Information] Unread notification count for UserId 8: 0
+2026-02-27 12:30:54 [Information] Retrieved notification count of user with Id 8 from repository and cached with version 4
+2026-02-27 12:30:54 [Information] ["GET"] "/notification/count" - Fetched notification count 0 for user 8 successfully
+2026-02-27 12:30:59 [Information] ["POST"] "/Authentication/login" - Request received
+2026-02-27 12:30:59 [Information] Fetched User by Email "kartik@gmail.com"
+2026-02-27 12:30:59 [Information] ["POST"] "/Authentication/login" - User logged in successfully
+2026-02-27 12:30:59 [Information] ["GET"] "/dashboard/upcoming-bookings" - Request received
+2026-02-27 12:30:59 [Information] ["GET"] "/notification/count" - Request received
+2026-02-27 12:30:59 [Information] ["GET"] "/dashboard/daily-celebrations" - Request received
+2026-02-27 12:30:59 [Information] Unread notification count for UserId 5: 1
+2026-02-27 12:30:59 [Information] Retrieved notification count of user with Id 5 from repository and cached with version 1
+2026-02-27 12:30:59 [Information] ["GET"] "/notification/count" - Fetched notification count 1 for user 5 successfully
+2026-02-27 12:30:59 [Information] Found 0 daily celebrations for today
+2026-02-27 12:30:59 [Information] Retrieved 0 daily celebrations from repository
+2026-02-27 12:30:59 [Information] ["GET"] "/dashboard/daily-celebrations" - Fetched 0 daily celebrations successfully
+2026-02-27 12:30:59 [Information] Found 1 upcoming booking slots for today
+2026-02-27 12:30:59 [Information] Retrieved 1 upcoming booking slots from repository
+2026-02-27 12:30:59 [Information] ["GET"] "/dashboard/upcoming-bookings" - Fetched 1 upcoming booking slots successfully
+2026-02-27 12:31:01 [Information] ["GET"] "/notification" - Request received
+2026-02-27 12:31:01 [Information] Fetching notifications for UserId 5, total: 2, page 1
+2026-02-27 12:31:01 [Information] Retrieved notifications of user with Id 5 from repository and cached with version 1
+2026-02-27 12:31:01 [Information] Retrieved notifications of user with Id 5 from repository and cached with version 1
+2026-02-27 12:31:01 [Information] ["GET"] "/notification" - Fetched notifications for user 5 successfully
+2026-02-27 12:31:04 [Information] ["GET"] "/game" - Request received
+2026-02-27 12:31:04 [Information] ["GET"] "/game" - Fetched 3 games successfully
+2026-02-27 12:31:07 [Information] ["GET"] "/dashboard/upcoming-bookings" - Request received
+2026-02-27 12:31:07 [Information] ["GET"] "/dashboard/daily-celebrations" - Request received
+2026-02-27 12:31:07 [Information] ["GET"] "/dashboard/upcoming-bookings" - Fetched 1 upcoming booking slots successfully
+2026-02-27 12:31:07 [Information] ["GET"] "/dashboard/daily-celebrations" - Fetched 0 daily celebrations successfully
+2026-02-27 12:31:09 [Information] ["GET"] "/game/1/slots/216/details" - Request received
+2026-02-27 12:31:09 [Information] ["GET"] "/game/1/slots/216/details" - Fetched slot 216 details for game 1 successfully
+2026-02-27 12:31:52 [Information] ["GET"] "/notification/count" - Request received
+2026-02-27 12:31:52 [Information] ["GET"] "/game/1/slots/216/details" - Request received
+2026-02-27 12:31:52 [Information] ["GET"] "/game/1/slots/216/details" - Fetched slot 216 details for game 1 successfully
+2026-02-27 12:31:52 [Information] Unread notification count for UserId 5: 0
+2026-02-27 12:31:52 [Information] Retrieved notification count of user with Id 5 from repository and cached with version 2
+2026-02-27 12:31:52 [Information] ["GET"] "/notification/count" - Fetched notification count 0 for user 5 successfully
+2026-02-27 12:31:56 [Information] ["GET"] "/notification/count" - Request received
+2026-02-27 12:31:56 [Information] ["GET"] "/notification/count" - Fetched notification count 1 for user 3 successfully
+2026-02-27 12:31:56 [Information] ["GET"] "/game/1/slots/216/details" - Request received
+2026-02-27 12:31:56 [Information] ["GET"] "/game/1/slots/216/details" - Fetched slot 216 details for game 1 successfully
+2026-02-27 12:31:58 [Information] ["GET"] "/notification" - Request received
+2026-02-27 12:31:58 [Information] Fetching notifications for UserId 3, total: 14, page 1
+2026-02-27 12:31:58 [Information] Retrieved notifications of user with Id 3 from repository and cached with version 1
+2026-02-27 12:31:58 [Information] Retrieved notifications of user with Id 3 from repository and cached with version 1
+2026-02-27 12:31:58 [Information] ["GET"] "/notification" - Fetched notifications for user 3 successfully
+2026-02-27 12:32:03 [Information] ["GET"] "/game" - Request received
+2026-02-27 12:32:03 [Information] ["GET"] "/game" - Fetched 3 games successfully
+2026-02-27 12:32:04 [Information] ["GET"] "/game/1/slots/216/details" - Request received
+2026-02-27 12:32:04 [Information] ["GET"] "/notification/count" - Request received
+2026-02-27 12:32:04 [Information] ["GET"] "/game/1/slots/216/details" - Fetched slot 216 details for game 1 successfully
+2026-02-27 12:32:04 [Information] ["GET"] "/notification/count" - Fetched notification count 0 for user 5 successfully
+2026-02-27 12:32:04 [Information] ["GET"] "/notification/count" - Request received
+2026-02-27 12:32:04 [Information] ["GET"] "/game" - Request received
+2026-02-27 12:32:04 [Information] ["GET"] "/game" - Fetched 3 games successfully
+2026-02-27 12:32:04 [Information] Unread notification count for UserId 3: 0
+2026-02-27 12:32:04 [Information] Retrieved notification count of user with Id 3 from repository and cached with version 2
+2026-02-27 12:32:04 [Information] ["GET"] "/notification/count" - Fetched notification count 0 for user 3 successfully
+2026-02-27 12:32:05 [Information] ["GET"] "/game/1/slots/216/details" - Request received
+2026-02-27 12:32:05 [Information] ["GET"] "/game/1/slots/216/details" - Fetched slot 216 details for game 1 successfully
+2026-02-27 12:32:05 [Information] ["GET"] "/notification/count" - Request received
+2026-02-27 12:32:05 [Information] ["GET"] "/notification/count" - Fetched notification count 0 for user 5 successfully
+2026-02-27 12:34:11 [Information] ["GET"] "/notification/count" - Request received
+2026-02-27 12:34:11 [Information] ["GET"] "/notification/count" - Fetched notification count 0 for user 5 successfully
+2026-02-27 12:34:11 [Information] ["GET"] "/game/1/slots/216/details" - Request received
+2026-02-27 12:34:11 [Information] ["GET"] "/game/1/slots/216/details" - Fetched slot 216 details for game 1 successfully
+2026-02-27 12:34:13 [Information] ["GET"] "/user/my-team" - Request received
+2026-02-27 12:34:13 [Information] Fetching employees under ManagerId 5, total: 1
+2026-02-27 12:34:13 [Information] Retrieved employees under manager with version 0 and cached
+2026-02-27 12:34:13 [Information] ["GET"] "/user/my-team" - Fetched team members for manager 5 successfully
+2026-02-27 12:34:14 [Information] ["GET"] "/notification/count" - Request received
+2026-02-27 12:34:14 [Information] ["GET"] "/game" - Request received
+2026-02-27 12:34:14 [Information] ["GET"] "/notification/count" - Fetched notification count 0 for user 3 successfully
+2026-02-27 12:34:14 [Information] ["GET"] "/game" - Fetched 3 games successfully
+2026-02-27 12:34:16 [Information] ["GET"] "/notification/count" - Request received
+2026-02-27 12:34:16 [Information] ["GET"] "/notification/count" - Fetched notification count 0 for user 5 successfully
+2026-02-27 12:34:16 [Information] ["GET"] "/user/my-team" - Request received
+2026-02-27 12:34:16 [Information] ["GET"] "/user/my-team" - Fetched team members for manager 5 successfully
+2026-02-27 12:34:18 [Information] ["GET"] "/travel/traveler/8" - Request received
+2026-02-27 12:34:18 [Information] Retrieved travels for traveler 8 and cached with version 0
+2026-02-27 12:34:18 [Information] ["GET"] "/travel/traveler/8" - Fetched travels for traveler 8 successfully
+2026-02-27 12:34:20 [Information] ["GET"] "/user/my-team" - Request received
+2026-02-27 12:34:20 [Information] ["GET"] "/user/my-team" - Fetched team members for manager 5 successfully
+2026-02-27 12:34:31 [Information] ["POST"] "/Authentication/login" - Request received
+2026-02-27 12:34:31 [Information] Fetched User by Email "ronak@gmail.com"
+2026-02-27 12:34:31 [Information] ["POST"] "/Authentication/login" - User logged in successfully
+2026-02-27 12:34:32 [Information] ["GET"] "/dashboard/daily-celebrations" - Request received
+2026-02-27 12:34:32 [Information] ["GET"] "/dashboard/daily-celebrations" - Fetched 0 daily celebrations successfully
+2026-02-27 12:34:32 [Information] ["GET"] "/notification/count" - Request received
+2026-02-27 12:34:32 [Information] ["GET"] "/dashboard/upcoming-bookings" - Request received
+2026-02-27 12:34:32 [Information] ["GET"] "/dashboard/upcoming-bookings" - Fetched 1 upcoming booking slots successfully
+2026-02-27 12:34:32 [Information] Unread notification count for UserId 7: 1
+2026-02-27 12:34:32 [Information] Retrieved notification count of user with Id 7 from repository and cached with version 0
+2026-02-27 12:34:32 [Information] ["GET"] "/notification/count" - Fetched notification count 1 for user 7 successfully
+2026-02-27 12:34:34 [Information] ["GET"] "/travel/employee" - Request received
+2026-02-27 12:34:35 [Information] Retrieved employee 7 travels and cached with version 0
+2026-02-27 12:34:35 [Information] ["GET"] "/travel/employee" - Fetched travels for employee 7 successfully
+2026-02-27 12:34:37 [Information] ["GET"] "/job" - Request received
+2026-02-27 12:34:37 [Information] ["GET"] "/job" - Fetched all jobs successfully
+2026-02-27 12:34:39 [Information] ["GET"] "/game" - Request received
+2026-02-27 12:34:39 [Information] ["GET"] "/game" - Fetched 3 games successfully
+2026-02-27 12:34:40 [Information] ["GET"] "/travel/employee" - Request received
+2026-02-27 12:34:40 [Information] ["GET"] "/travel/employee" - Fetched travels for employee 7 successfully
+2026-02-27 12:34:42 [Information] ["GET"] "/game" - Request received
+2026-02-27 12:34:42 [Information] ["GET"] "/notification/count" - Request received
+2026-02-27 12:34:42 [Information] ["GET"] "/game" - Fetched 3 games successfully
+2026-02-27 12:34:42 [Information] ["GET"] "/notification/count" - Fetched notification count 0 for user 3 successfully
+2026-02-27 12:34:43 [Information] ["GET"] "/travel/employee" - Request received
+2026-02-27 12:34:43 [Information] ["GET"] "/notification/count" - Request received
+2026-02-27 12:34:43 [Information] ["GET"] "/notification/count" - Fetched notification count 1 for user 7 successfully
+2026-02-27 12:34:43 [Information] ["GET"] "/travel/employee" - Fetched travels for employee 7 successfully
+2026-02-27 12:34:44 [Information] ["GET"] "/travel/3" - Request received
+2026-02-27 12:34:44 [Information] Fetched Travel with Id 3
+2026-02-27 12:34:44 [Information] Retrieved travel 3 and cached with version 0
+2026-02-27 12:34:44 [Information] ["GET"] "/travel/3" - Fetched travel 3 successfully
+2026-02-27 12:34:45 [Information] ["GET"] "/game" - Request received
+2026-02-27 12:34:45 [Information] ["GET"] "/notification/count" - Request received
+2026-02-27 12:34:45 [Information] ["GET"] "/game" - Fetched 3 games successfully
+2026-02-27 12:34:45 [Information] ["GET"] "/notification/count" - Fetched notification count 0 for user 3 successfully
+2026-02-27 12:34:57 [Information] ["GET"] "/travel/3" - Request received
+2026-02-27 12:34:57 [Information] ["GET"] "/travel/3" - Fetched travel 3 successfully
+2026-02-27 12:35:11 [Information] ["GET"] "/notification/count" - Request received
+2026-02-27 12:35:11 [Information] ["GET"] "/game" - Request received
+2026-02-27 12:35:11 [Information] ["GET"] "/notification/count" - Fetched notification count 0 for user 3 successfully
+2026-02-27 12:35:11 [Information] ["GET"] "/game" - Fetched 3 games successfully
+2026-02-27 12:35:22 [Information] ["GET"] "/game" - Request received
+2026-02-27 12:35:22 [Information] ["GET"] "/notification/count" - Request received
+2026-02-27 12:35:22 [Information] ["GET"] "/game" - Fetched 3 games successfully
+2026-02-27 12:35:22 [Information] ["GET"] "/notification/count" - Fetched notification count 0 for user 3 successfully
+2026-02-27 12:35:45 [Information] ["GET"] "/game" - Request received
+2026-02-27 12:35:45 [Information] ["GET"] "/notification/count" - Request received
+2026-02-27 12:35:45 [Information] ["GET"] "/game" - Fetched 3 games successfully
+2026-02-27 12:35:45 [Information] ["GET"] "/notification/count" - Fetched notification count 0 for user 3 successfully
+2026-02-27 12:35:48 [Information] ["GET"] "/notification/count" - Request received
+2026-02-27 12:35:48 [Information] ["GET"] "/notification/count" - Fetched notification count 1 for user 7 successfully
+2026-02-27 12:35:48 [Information] ["GET"] "/travel/3/travelers" - Request received
+2026-02-27 12:35:48 [Information] Fetched Travel with Id 3
+2026-02-27 12:35:48 [Information] Retrieved travelers for travel 3 and cached with version 0
+2026-02-27 12:35:48 [Information] ["GET"] "/travel/3/travelers" - Fetched travelers for travel 3 successfully
+2026-02-27 12:36:00 [Information] ["GET"] "/travel/employee" - Request received
+2026-02-27 12:36:00 [Information] ["GET"] "/travel/employee" - Fetched travels for employee 7 successfully
+2026-02-27 12:36:03 [Information] ["GET"] "/travel/1/travelers" - Request received
+2026-02-27 12:36:03 [Information] Fetched Travel with Id 1
+2026-02-27 12:36:03 [Information] Retrieved travelers for travel 1 and cached with version 0
+2026-02-27 12:36:03 [Information] ["GET"] "/travel/1/travelers" - Fetched travelers for travel 1 successfully
+2026-02-27 12:36:04 [Information] ["GET"] "/travel/employee" - Request received
+2026-02-27 12:36:04 [Information] ["GET"] "/travel/employee" - Fetched travels for employee 7 successfully
+2026-02-27 12:36:06 [Information] ["GET"] "/travel/3/travelers" - Request received
+2026-02-27 12:36:06 [Information] ["GET"] "/travel/3/travelers" - Fetched travelers for travel 3 successfully
+2026-02-27 12:36:07 [Information] ["GET"] "/travel/employee" - Request received
+2026-02-27 12:36:07 [Information] ["GET"] "/travel/employee" - Fetched travels for employee 7 successfully
+2026-02-27 12:36:08 [Information] ["GET"] "/travel/2/travelers" - Request received
+2026-02-27 12:36:08 [Information] Fetched Travel with Id 2
+2026-02-27 12:36:08 [Information] Retrieved travelers for travel 2 and cached with version 0
+2026-02-27 12:36:08 [Information] ["GET"] "/travel/2/travelers" - Fetched travelers for travel 2 successfully
+2026-02-27 12:36:09 [Information] ["GET"] "/travel/employee" - Request received
+2026-02-27 12:36:09 [Information] ["GET"] "/travel/employee" - Fetched travels for employee 7 successfully
+2026-02-27 12:36:12 [Information] ["GET"] "/notification/count" - Request received
+2026-02-27 12:36:12 [Information] ["GET"] "/notification/count" - Fetched notification count 0 for user 3 successfully
+2026-02-27 12:36:12 [Information] ["GET"] "/game" - Request received
+2026-02-27 12:36:12 [Information] ["GET"] "/game" - Fetched 3 games successfully
+2026-02-27 12:36:14 [Information] ["GET"] "/notification/count" - Request received
+2026-02-27 12:36:14 [Information] ["GET"] "/travel/employee" - Request received
+2026-02-27 12:36:14 [Information] ["GET"] "/notification/count" - Fetched notification count 1 for user 7 successfully
+2026-02-27 12:36:14 [Information] ["GET"] "/travel/employee" - Fetched travels for employee 7 successfully
+2026-02-27 12:36:44 [Information] ["GET"] "/notification/count" - Request received
+2026-02-27 12:36:44 [Information] ["GET"] "/notification/count" - Fetched notification count 1 for user 7 successfully
+2026-02-27 12:36:44 [Information] ["GET"] "/travel/employee" - Request received
+2026-02-27 12:36:44 [Information] ["GET"] "/travel/employee" - Fetched travels for employee 7 successfully
+2026-02-27 12:36:53 [Information] ["GET"] "/notification/count" - Request received
+2026-02-27 12:36:53 [Information] ["GET"] "/notification/count" - Fetched notification count 1 for user 7 successfully
+2026-02-27 12:36:53 [Information] ["GET"] "/travel/employee" - Request received
+2026-02-27 12:36:53 [Information] ["GET"] "/travel/employee" - Fetched travels for employee 7 successfully
+2026-02-27 12:36:55 [Information] ["GET"] "/travel/3/travelers" - Request received
+2026-02-27 12:36:55 [Information] ["GET"] "/travel/3/travelers" - Fetched travelers for travel 3 successfully
+2026-02-27 12:37:01 [Information] ["GET"] "/travel/employee" - Request received
+2026-02-27 12:37:01 [Information] ["GET"] "/travel/employee" - Fetched travels for employee 7 successfully
+2026-02-27 12:37:06 [Information] ["GET"] "/travel/2/travelers" - Request received
+2026-02-27 12:37:06 [Information] ["GET"] "/travel/2/travelers" - Fetched travelers for travel 2 successfully
+2026-02-27 12:37:20 [Information] ["GET"] "/game" - Request received
+2026-02-27 12:37:20 [Information] ["GET"] "/notification/count" - Request received
+2026-02-27 12:37:20 [Information] ["GET"] "/game" - Fetched 3 games successfully
+2026-02-27 12:37:20 [Information] ["GET"] "/notification/count" - Fetched notification count 0 for user 3 successfully
+2026-02-27 12:37:24 [Information] ["GET"] "/notification/count" - Request received
+2026-02-27 12:37:24 [Information] ["GET"] "/travel/2/travelers" - Request received
+2026-02-27 12:37:24 [Information] ["GET"] "/travel/2/travelers" - Fetched travelers for travel 2 successfully
+2026-02-27 12:37:24 [Information] ["GET"] "/notification/count" - Fetched notification count 1 for user 7 successfully
+2026-02-27 12:37:30 [Information] ["POST"] "/Authentication/login" - Request received
+2026-02-27 12:37:30 [Information] Fetched User by Email "kartik@gmail.com"
+2026-02-27 12:37:30 [Information] ["POST"] "/Authentication/login" - User logged in successfully
+2026-02-27 12:37:30 [Information] ["GET"] "/dashboard/upcoming-bookings" - Request received
+2026-02-27 12:37:30 [Information] ["GET"] "/dashboard/daily-celebrations" - Request received
+2026-02-27 12:37:30 [Information] ["GET"] "/notification/count" - Request received
+2026-02-27 12:37:30 [Information] ["GET"] "/notification/count" - Fetched notification count 0 for user 5 successfully
+2026-02-27 12:37:30 [Information] Found 0 daily celebrations for today
+2026-02-27 12:37:30 [Information] Retrieved 0 daily celebrations from repository
+2026-02-27 12:37:30 [Information] ["GET"] "/dashboard/daily-celebrations" - Fetched 0 daily celebrations successfully
+2026-02-27 12:37:30 [Information] Found 1 upcoming booking slots for today
+2026-02-27 12:37:30 [Information] Retrieved 1 upcoming booking slots from repository
+2026-02-27 12:37:30 [Information] ["GET"] "/dashboard/upcoming-bookings" - Fetched 1 upcoming booking slots successfully
+2026-02-27 12:37:31 [Information] ["GET"] "/user/my-team" - Request received
+2026-02-27 12:37:31 [Information] ["GET"] "/user/my-team" - Fetched team members for manager 5 successfully
+2026-02-27 12:37:35 [Information] ["GET"] "/dashboard/daily-celebrations" - Request received
+2026-02-27 12:37:35 [Information] ["GET"] "/dashboard/upcoming-bookings" - Request received
+2026-02-27 12:37:35 [Information] ["GET"] "/dashboard/upcoming-bookings" - Fetched 1 upcoming booking slots successfully
+2026-02-27 12:37:35 [Information] ["GET"] "/dashboard/daily-celebrations" - Fetched 0 daily celebrations successfully
+2026-02-27 12:37:46 [Information] ["POST"] "/Authentication/login" - Request received
+2026-02-27 12:37:46 [Information] Fetched User by Email "ronak@gmail.com"
+2026-02-27 12:37:46 [Error] An unhandled exception occurred: "Invalid Password !"
+hrms.CustomException.InvalidOperationCustomException: Invalid Password !
+   at hrms.Service.impl.AuthenticationService.Login(LoginRequestDto dto) in C:\Internship\Codes\DontNet\Assignment-1\hrms\hrms\Service\impl\AuthenticationService.cs:line 47
+   at hrms.Controllers.AuthenticationController.Login(LoginRequestDto dto) in C:\Internship\Codes\DontNet\Assignment-1\hrms\hrms\Controllers\AuthenticationContoller.cs:line 40
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.TaskOfIActionResultExecutor.Execute(ActionContext actionContext, IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeInnerFilterAsync>g__Awaited|13_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeNextExceptionFilterAsync>g__Awaited|26_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+2026-02-27 12:37:50 [Information] ["GET"] "/game" - Request received
+2026-02-27 12:37:50 [Information] ["GET"] "/game" - Fetched 3 games successfully
+2026-02-27 12:37:50 [Information] ["GET"] "/notification/count" - Request received
+2026-02-27 12:37:50 [Information] ["GET"] "/notification/count" - Fetched notification count 0 for user 3 successfully
+2026-02-27 12:37:54 [Information] ["POST"] "/Authentication/login" - Request received
+2026-02-27 12:37:54 [Information] Fetched User by Email "ronak@gmail.com"
+2026-02-27 12:37:54 [Information] ["POST"] "/Authentication/login" - User logged in successfully
+2026-02-27 12:37:54 [Information] ["GET"] "/notification/count" - Request received
+2026-02-27 12:37:54 [Information] ["GET"] "/notification/count" - Fetched notification count 1 for user 7 successfully
+2026-02-27 12:37:54 [Information] ["GET"] "/dashboard/upcoming-bookings" - Request received
+2026-02-27 12:37:54 [Information] ["GET"] "/dashboard/daily-celebrations" - Request received
+2026-02-27 12:37:54 [Information] ["GET"] "/dashboard/daily-celebrations" - Fetched 0 daily celebrations successfully
+2026-02-27 12:37:54 [Information] ["GET"] "/dashboard/upcoming-bookings" - Fetched 1 upcoming booking slots successfully
+2026-02-27 12:37:59 [Information] ["GET"] "/travel/employee" - Request received
+2026-02-27 12:37:59 [Information] ["GET"] "/travel/employee" - Fetched travels for employee 7 successfully
+2026-02-27 12:38:01 [Information] ["GET"] "/travel/1/travelers" - Request received
+2026-02-27 12:38:01 [Information] ["GET"] "/travel/1/travelers" - Fetched travelers for travel 1 successfully
+2026-02-27 12:38:02 [Information] ["GET"] "/travel/employee" - Request received
+2026-02-27 12:38:02 [Information] ["GET"] "/travel/employee" - Fetched travels for employee 7 successfully
+2026-02-27 12:38:03 [Information] ["GET"] "/travel/2/travelers" - Request received
+2026-02-27 12:38:03 [Information] ["GET"] "/travel/2/travelers" - Fetched travelers for travel 2 successfully
+2026-02-27 12:38:05 [Information] ["GET"] "/travel/employee" - Request received
+2026-02-27 12:38:05 [Information] ["GET"] "/travel/employee" - Fetched travels for employee 7 successfully
+2026-02-27 12:38:26 [Information] ["GET"] "/travel/3/expense" - Request received
+2026-02-27 12:38:26 [Information] Retrieved expenses for travel 3 traveler 7 and cached with version 0
+2026-02-27 12:38:26 [Information] ["GET"] "/travel/3/expense" - Fetched expenses for employee 7 in travel 3 successfully
+2026-02-27 12:38:27 [Information] ["GET"] "/travel/employee" - Request received
+2026-02-27 12:38:27 [Information] ["GET"] "/travel/employee" - Fetched travels for employee 7 successfully
+2026-02-27 12:38:29 [Information] ["GET"] "/travel/2/expense" - Request received
+2026-02-27 12:38:29 [Information] Retrieved expenses for travel 2 traveler 7 and cached with version 0
+2026-02-27 12:38:29 [Information] ["GET"] "/travel/2/expense" - Fetched expenses for employee 7 in travel 2 successfully
+2026-02-27 12:38:30 [Information] ["GET"] "/travel/employee" - Request received
+2026-02-27 12:38:30 [Information] ["GET"] "/travel/employee" - Fetched travels for employee 7 successfully
+2026-02-27 12:38:32 [Information] ["GET"] "/travel/1/expense" - Request received
+2026-02-27 12:38:32 [Information] Retrieved expenses for travel 1 traveler 7 and cached with version 0
+2026-02-27 12:38:32 [Information] ["GET"] "/travel/1/expense" - Fetched expenses for employee 7 in travel 1 successfully
+2026-02-27 12:38:32 [Information] ["GET"] "/travel/expense/category" - Request received
+2026-02-27 12:38:32 [Information] Fetched 8 expense categories
+2026-02-27 12:38:32 [Information] Retrieved 8 expense categories and cached with version 1
+2026-02-27 12:38:32 [Information] ["GET"] "/travel/expense/category" - Fetched 8 expense categories successfully
+2026-02-27 12:38:33 [Information] ["GET"] "/travel/employee" - Request received
+2026-02-27 12:38:33 [Information] ["GET"] "/travel/employee" - Fetched travels for employee 7 successfully
+2026-02-27 12:38:35 [Information] ["GET"] "/travel/1/expense" - Request received
+2026-02-27 12:38:35 [Information] ["GET"] "/travel/1/expense" - Fetched expenses for employee 7 in travel 1 successfully
+2026-02-27 12:38:35 [Information] ["GET"] "/travel/expense/category" - Request received
+2026-02-27 12:38:35 [Information] ["GET"] "/travel/expense/category" - Fetched 8 expense categories successfully
+2026-02-27 12:38:36 [Information] ["GET"] "/travel/employee" - Request received
+2026-02-27 12:38:36 [Information] ["GET"] "/travel/employee" - Fetched travels for employee 7 successfully
+2026-02-27 12:38:38 [Information] ["GET"] "/travel/1/travelers" - Request received
+2026-02-27 12:38:38 [Information] ["GET"] "/travel/1/travelers" - Fetched travelers for travel 1 successfully
+2026-02-27 12:38:40 [Information] ["GET"] "/travel/employee" - Request received
+2026-02-27 12:38:40 [Information] ["GET"] "/travel/employee" - Fetched travels for employee 7 successfully
+2026-02-27 12:38:42 [Information] ["GET"] "/travel/2/travelers" - Request received
+2026-02-27 12:38:42 [Information] ["GET"] "/travel/2/travelers" - Fetched travelers for travel 2 successfully
+2026-02-27 12:38:48 [Information] ["GET"] "/notification" - Request received
+2026-02-27 12:38:48 [Information] Fetching notifications for UserId 7, total: 8, page 1
+2026-02-27 12:38:48 [Information] Retrieved notifications of user with Id 7 from repository and cached with version 0
+2026-02-27 12:38:48 [Information] Retrieved notifications of user with Id 7 from repository and cached with version 0
+2026-02-27 12:38:48 [Information] ["GET"] "/notification" - Fetched notifications for user 7 successfully
+2026-02-27 12:38:55 [Information] ["GET"] "/notification/count" - Request received
+2026-02-27 12:38:55 [Information] ["GET"] "/notification" - Request received
+2026-02-27 12:38:55 [Information] Fetching notifications for UserId 7, total: 8, page 1
+2026-02-27 12:38:55 [Information] Unread notification count for UserId 7: 0
+2026-02-27 12:38:55 [Information] Retrieved notification count of user with Id 7 from repository and cached with version 1
+2026-02-27 12:38:55 [Information] ["GET"] "/notification/count" - Fetched notification count 0 for user 7 successfully
+2026-02-27 12:38:55 [Information] Retrieved notifications of user with Id 7 from repository and cached with version 1
+2026-02-27 12:38:55 [Information] Retrieved notifications of user with Id 7 from repository and cached with version 1
+2026-02-27 12:38:55 [Information] ["GET"] "/notification" - Fetched notifications for user 7 successfully
+2026-02-27 12:38:56 [Information] ["GET"] "/travel/2/travelers" - Request received
+2026-02-27 12:38:56 [Information] ["GET"] "/travel/2/travelers" - Fetched travelers for travel 2 successfully
+2026-02-27 12:39:12 [Information] ["POST"] "/Authentication/login" - Request received
+2026-02-27 12:39:12 [Information] Fetched User by Email "keval@gmail.com"
+2026-02-27 12:39:12 [Information] ["POST"] "/Authentication/login" - User logged in successfully
+2026-02-27 12:39:12 [Information] ["GET"] "/dashboard/upcoming-bookings" - Request received
+2026-02-27 12:39:12 [Information] ["GET"] "/notification/count" - Request received
+2026-02-27 12:39:12 [Information] ["GET"] "/dashboard/upcoming-bookings" - Fetched 1 upcoming booking slots successfully
+2026-02-27 12:39:12 [Information] ["GET"] "/dashboard/daily-celebrations" - Request received
+2026-02-27 12:39:12 [Information] ["GET"] "/notification/count" - Fetched notification count 0 for user 8 successfully
+2026-02-27 12:39:12 [Information] ["GET"] "/dashboard/daily-celebrations" - Fetched 0 daily celebrations successfully
+2026-02-27 12:39:14 [Information] ["GET"] "/user/my-team" - Request received
+2026-02-27 12:39:14 [Information] ["GET"] "/user/my-team" - Fetched team members for manager 8 successfully
+2026-02-27 12:39:17 [Information] ["GET"] "/travel/traveler/7" - Request received
+2026-02-27 12:39:17 [Information] Retrieved travels for traveler 7 and cached with version 0
+2026-02-27 12:39:17 [Information] ["GET"] "/travel/traveler/7" - Fetched travels for traveler 7 successfully
+2026-02-27 12:39:26 [Information] ["GET"] "/notification/count" - Request received
+2026-02-27 12:39:26 [Information] ["GET"] "/travel/2/travelers" - Request received
+2026-02-27 12:39:26 [Information] ["GET"] "/travel/2/travelers" - Fetched travelers for travel 2 successfully
+2026-02-27 12:39:26 [Information] Unread notification count for UserId 7: 0
+2026-02-27 12:39:26 [Information] Retrieved notification count of user with Id 7 from repository and cached with version 2
+2026-02-27 12:39:26 [Information] ["GET"] "/notification/count" - Fetched notification count 0 for user 7 successfully
+2026-02-27 12:39:27 [Information] ["GET"] "/notification/count" - Request received
+2026-02-27 12:39:27 [Information] ["GET"] "/travel/traveler/7" - Request received
+2026-02-27 12:39:27 [Information] ["GET"] "/notification/count" - Fetched notification count 0 for user 8 successfully
+2026-02-27 12:39:27 [Information] ["GET"] "/travel/traveler/7" - Fetched travels for traveler 7 successfully
+2026-02-27 12:39:29 [Information] ["GET"] "/job" - Request received
+2026-02-27 12:39:29 [Information] ["GET"] "/job" - Fetched all jobs successfully
+2026-02-27 12:39:38 [Information] ["GET"] "/notification/count" - Request received
+2026-02-27 12:39:38 [Information] ["GET"] "/notification/count" - Fetched notification count 0 for user 7 successfully
+2026-02-27 12:39:38 [Information] ["GET"] "/travel/2/travelers" - Request received
+2026-02-27 12:39:38 [Information] ["GET"] "/travel/2/travelers" - Fetched travelers for travel 2 successfully
+2026-02-27 12:39:39 [Information] ["GET"] "/job" - Request received
+2026-02-27 12:39:39 [Information] ["GET"] "/job" - Fetched all jobs successfully
+2026-02-27 12:39:41 [Information] ["GET"] "/notification/count" - Request received
+2026-02-27 12:39:41 [Information] ["GET"] "/notification/count" - Fetched notification count 0 for user 8 successfully
+2026-02-27 12:39:41 [Information] ["GET"] "/job" - Request received
+2026-02-27 12:39:41 [Information] ["GET"] "/job" - Fetched all jobs successfully
+2026-02-27 12:39:42 [Information] ["GET"] "/notification/count" - Request received
+2026-02-27 12:39:42 [Information] ["GET"] "/job" - Request received
+2026-02-27 12:39:42 [Information] ["GET"] "/notification/count" - Fetched notification count 0 for user 7 successfully
+2026-02-27 12:39:42 [Information] ["GET"] "/job" - Fetched all jobs successfully
+2026-02-27 12:39:43 [Information] ["GET"] "/notification/count" - Request received
+2026-02-27 12:39:43 [Information] ["GET"] "/job" - Request received
+2026-02-27 12:39:43 [Information] ["GET"] "/job" - Fetched all jobs successfully
+2026-02-27 12:39:43 [Information] ["GET"] "/notification/count" - Fetched notification count 0 for user 8 successfully
+2026-02-27 12:39:44 [Information] ["GET"] "/job" - Request received
+2026-02-27 12:39:44 [Information] ["GET"] "/job" - Fetched all jobs successfully
+2026-02-27 12:39:44 [Information] ["GET"] "/notification/count" - Request received
+2026-02-27 12:39:44 [Information] ["GET"] "/notification/count" - Fetched notification count 0 for user 7 successfully
+2026-02-27 12:39:44 [Information] ["GET"] "/notification/count" - Request received
+2026-02-27 12:39:44 [Information] ["GET"] "/job" - Request received
+2026-02-27 12:39:44 [Information] ["GET"] "/notification/count" - Fetched notification count 0 for user 8 successfully
+2026-02-27 12:39:44 [Information] ["GET"] "/job" - Fetched all jobs successfully
+2026-02-27 12:39:45 [Information] ["GET"] "/notification/count" - Request received
+2026-02-27 12:39:45 [Information] ["GET"] "/notification/count" - Fetched notification count 0 for user 7 successfully
+2026-02-27 12:39:45 [Information] ["GET"] "/job" - Request received
+2026-02-27 12:39:45 [Information] ["GET"] "/job" - Fetched all jobs successfully
+2026-02-27 12:39:45 [Information] ["GET"] "/notification/count" - Request received
+2026-02-27 12:39:45 [Information] ["GET"] "/job" - Request received
+2026-02-27 12:39:45 [Information] ["GET"] "/notification/count" - Fetched notification count 0 for user 8 successfully
+2026-02-27 12:39:45 [Information] ["GET"] "/job" - Fetched all jobs successfully
+2026-02-27 12:39:46 [Information] ["GET"] "/notification/count" - Request received
+2026-02-27 12:39:46 [Information] ["GET"] "/job" - Request received
+2026-02-27 12:39:46 [Information] ["GET"] "/notification/count" - Fetched notification count 0 for user 7 successfully
+2026-02-27 12:39:46 [Information] ["GET"] "/job" - Fetched all jobs successfully
+2026-02-27 12:39:47 [Information] ["GET"] "/job" - Request received
+2026-02-27 12:39:47 [Information] ["GET"] "/job" - Fetched all jobs successfully
+2026-02-27 12:39:47 [Information] ["GET"] "/notification/count" - Request received
+2026-02-27 12:39:47 [Information] ["GET"] "/notification/count" - Fetched notification count 0 for user 8 successfully
+2026-02-27 12:39:48 [Information] ["GET"] "/notification/count" - Request received
+2026-02-27 12:39:48 [Information] ["GET"] "/job" - Request received
+2026-02-27 12:39:48 [Information] ["GET"] "/job" - Fetched all jobs successfully
+2026-02-27 12:39:48 [Information] ["GET"] "/notification/count" - Fetched notification count 0 for user 7 successfully
+2026-02-27 12:39:49 [Information] ["GET"] "/notification/count" - Request received
+2026-02-27 12:39:49 [Information] ["GET"] "/job" - Request received
+2026-02-27 12:39:49 [Information] ["GET"] "/notification/count" - Fetched notification count 0 for user 8 successfully
+2026-02-27 12:39:49 [Information] ["GET"] "/job" - Fetched all jobs successfully
+2026-02-27 12:40:06 [Information] ["GET"] "/notification/count" - Request received
+2026-02-27 12:40:06 [Information] ["GET"] "/job" - Request received
+2026-02-27 12:40:06 [Information] ["GET"] "/job" - Fetched all jobs successfully
+2026-02-27 12:40:06 [Information] ["GET"] "/notification/count" - Fetched notification count 0 for user 8 successfully
+2026-02-27 12:40:08 [Information] ["GET"] "/notification/count" - Request received
+2026-02-27 12:40:08 [Information] ["GET"] "/job" - Request received
+2026-02-27 12:40:08 [Information] ["GET"] "/notification/count" - Fetched notification count 0 for user 8 successfully
+2026-02-27 12:40:08 [Information] ["GET"] "/job" - Fetched all jobs successfully
+2026-02-27 12:40:09 [Information] ["GET"] "/notification/count" - Request received
+2026-02-27 12:40:09 [Information] ["GET"] "/job" - Request received
+2026-02-27 12:40:09 [Information] ["GET"] "/job" - Fetched all jobs successfully
+2026-02-27 12:40:09 [Information] ["GET"] "/notification/count" - Fetched notification count 0 for user 7 successfully
+2026-02-27 12:40:09 [Information] ["GET"] "/notification/count" - Request received
+2026-02-27 12:40:09 [Information] ["GET"] "/job" - Request received
+2026-02-27 12:40:09 [Information] ["GET"] "/notification/count" - Fetched notification count 0 for user 8 successfully
+2026-02-27 12:40:09 [Information] ["GET"] "/job" - Fetched all jobs successfully
+2026-02-27 12:40:10 [Information] ["GET"] "/notification/count" - Request received
+2026-02-27 12:40:10 [Information] ["GET"] "/notification/count" - Fetched notification count 0 for user 7 successfully
+2026-02-27 12:40:10 [Information] ["GET"] "/job" - Request received
+2026-02-27 12:40:10 [Information] ["GET"] "/job" - Fetched all jobs successfully
+2026-02-27 12:40:12 [Information] ["GET"] "/job" - Request received
+2026-02-27 12:40:12 [Information] ["GET"] "/notification/count" - Request received
+2026-02-27 12:40:12 [Information] ["GET"] "/notification/count" - Fetched notification count 0 for user 8 successfully
+2026-02-27 12:40:12 [Information] ["GET"] "/job" - Fetched all jobs successfully
+2026-02-27 12:40:14 [Information] ["GET"] "/notification/count" - Request received
+2026-02-27 12:40:14 [Information] ["GET"] "/notification/count" - Fetched notification count 0 for user 7 successfully
+2026-02-27 12:40:14 [Information] ["GET"] "/job" - Request received
+2026-02-27 12:40:14 [Information] ["GET"] "/job" - Fetched all jobs successfully
+2026-02-27 12:40:15 [Information] ["GET"] "/notification/count" - Request received
+2026-02-27 12:40:15 [Information] ["GET"] "/job" - Request received
+2026-02-27 12:40:15 [Information] ["GET"] "/notification/count" - Fetched notification count 0 for user 8 successfully
+2026-02-27 12:40:15 [Information] ["GET"] "/job" - Fetched all jobs successfully
+2026-02-27 12:40:17 [Information] ["GET"] "/notification/count" - Request received
+2026-02-27 12:40:17 [Information] ["GET"] "/job" - Request received
+2026-02-27 12:40:17 [Information] ["GET"] "/notification/count" - Fetched notification count 0 for user 7 successfully
+2026-02-27 12:40:17 [Information] ["GET"] "/job" - Fetched all jobs successfully
+2026-02-27 12:40:38 [Information] ["GET"] "/notification/count" - Request received
+2026-02-27 12:40:38 [Information] ["GET"] "/job" - Request received
+2026-02-27 12:40:38 [Information] ["GET"] "/notification/count" - Fetched notification count 0 for user 7 successfully
+2026-02-27 12:40:38 [Information] ["GET"] "/job" - Fetched all jobs successfully
+2026-02-27 12:40:40 [Information] ["GET"] "/notification/count" - Request received
+2026-02-27 12:40:40 [Information] ["GET"] "/notification/count" - Fetched notification count 0 for user 7 successfully
+2026-02-27 12:40:40 [Information] ["GET"] "/job" - Request received
+2026-02-27 12:40:40 [Information] ["GET"] "/job" - Fetched all jobs successfully
+2026-02-27 12:40:42 [Information] ["GET"] "/notification/count" - Request received
+2026-02-27 12:40:42 [Information] ["GET"] "/job" - Request received
+2026-02-27 12:40:42 [Information] ["GET"] "/notification/count" - Fetched notification count 0 for user 7 successfully
+2026-02-27 12:40:42 [Information] ["GET"] "/job" - Fetched all jobs successfully
+2026-02-27 12:40:43 [Information] ["GET"] "/notification/count" - Request received
+2026-02-27 12:40:43 [Information] ["GET"] "/notification/count" - Fetched notification count 0 for user 8 successfully
+2026-02-27 12:40:43 [Information] ["GET"] "/job" - Request received
+2026-02-27 12:40:43 [Information] ["GET"] "/job" - Fetched all jobs successfully
+2026-02-27 12:40:43 [Information] ["GET"] "/notification/count" - Request received
+2026-02-27 12:40:43 [Information] ["GET"] "/job" - Request received
+2026-02-27 12:40:43 [Information] ["GET"] "/notification/count" - Fetched notification count 0 for user 7 successfully
+2026-02-27 12:40:43 [Information] ["GET"] "/job" - Fetched all jobs successfully
+2026-02-27 12:40:44 [Information] ["GET"] "/notification/count" - Request received
+2026-02-27 12:40:44 [Information] ["GET"] "/job" - Request received
+2026-02-27 12:40:44 [Information] ["GET"] "/notification/count" - Fetched notification count 0 for user 8 successfully
+2026-02-27 12:40:44 [Information] ["GET"] "/job" - Fetched all jobs successfully
+2026-02-27 12:40:44 [Information] ["GET"] "/notification/count" - Request received
+2026-02-27 12:40:44 [Information] ["GET"] "/job" - Request received
+2026-02-27 12:40:44 [Information] ["GET"] "/notification/count" - Fetched notification count 0 for user 7 successfully
+2026-02-27 12:40:44 [Information] ["GET"] "/job" - Fetched all jobs successfully
+2026-02-27 12:40:45 [Information] ["GET"] "/notification/count" - Request received
+2026-02-27 12:40:45 [Information] ["GET"] "/job" - Request received
+2026-02-27 12:40:45 [Information] ["GET"] "/notification/count" - Fetched notification count 0 for user 8 successfully
+2026-02-27 12:40:45 [Information] ["GET"] "/job" - Fetched all jobs successfully
+2026-02-27 12:40:47 [Information] ["GET"] "/notification/count" - Request received
+2026-02-27 12:40:47 [Information] ["GET"] "/job" - Request received
+2026-02-27 12:40:47 [Information] ["GET"] "/notification/count" - Fetched notification count 0 for user 7 successfully
+2026-02-27 12:40:47 [Information] ["GET"] "/job" - Fetched all jobs successfully
+2026-02-27 12:40:47 [Information] ["GET"] "/notification/count" - Request received
+2026-02-27 12:40:47 [Information] ["GET"] "/job" - Request received
+2026-02-27 12:40:47 [Information] ["GET"] "/notification/count" - Fetched notification count 0 for user 8 successfully
+2026-02-27 12:40:47 [Information] ["GET"] "/job" - Fetched all jobs successfully
+2026-02-27 12:40:49 [Information] ["GET"] "/notification/count" - Request received
+2026-02-27 12:40:49 [Information] ["GET"] "/job" - Request received
+2026-02-27 12:40:49 [Information] ["GET"] "/notification/count" - Fetched notification count 0 for user 7 successfully
+2026-02-27 12:40:49 [Information] ["GET"] "/job" - Fetched all jobs successfully
+2026-02-27 12:40:55 [Information] ["GET"] "/job" - Request received
+2026-02-27 12:40:55 [Information] ["GET"] "/job" - Fetched all jobs successfully
+2026-02-27 12:40:55 [Information] ["GET"] "/notification/count" - Request received
+2026-02-27 12:40:55 [Information] ["GET"] "/job" - Request received
+2026-02-27 12:40:55 [Information] ["GET"] "/notification/count" - Fetched notification count 0 for user 7 successfully
+2026-02-27 12:40:55 [Information] ["GET"] "/job" - Fetched all jobs successfully
+2026-02-27 12:40:56 [Information] ["GET"] "/notification/count" - Request received
+2026-02-27 12:40:56 [Information] ["GET"] "/notification/count" - Fetched notification count 0 for user 8 successfully
+2026-02-27 12:40:56 [Information] ["GET"] "/job" - Request received
+2026-02-27 12:40:56 [Information] ["GET"] "/job" - Fetched all jobs successfully
+2026-02-27 12:40:56 [Information] ["GET"] "/notification/count" - Request received
+2026-02-27 12:40:56 [Information] ["GET"] "/job" - Request received
+2026-02-27 12:40:56 [Information] ["GET"] "/notification/count" - Fetched notification count 0 for user 7 successfully
+2026-02-27 12:40:56 [Information] ["GET"] "/job" - Fetched all jobs successfully
+2026-02-27 12:40:57 [Information] ["GET"] "/notification/count" - Request received
+2026-02-27 12:40:57 [Information] ["GET"] "/job" - Request received
+2026-02-27 12:40:57 [Information] ["GET"] "/notification/count" - Fetched notification count 0 for user 8 successfully
+2026-02-27 12:40:57 [Information] ["GET"] "/job" - Fetched all jobs successfully
+2026-02-27 12:40:58 [Information] ["GET"] "/notification/count" - Request received
+2026-02-27 12:40:58 [Information] ["GET"] "/job" - Request received
+2026-02-27 12:40:58 [Information] ["GET"] "/notification/count" - Fetched notification count 0 for user 7 successfully
+2026-02-27 12:40:58 [Information] ["GET"] "/job" - Fetched all jobs successfully
+2026-02-27 12:40:59 [Information] ["GET"] "/notification/count" - Request received
+2026-02-27 12:40:59 [Information] ["GET"] "/job" - Request received
+2026-02-27 12:40:59 [Information] ["GET"] "/job" - Fetched all jobs successfully
+2026-02-27 12:40:59 [Information] ["GET"] "/notification/count" - Fetched notification count 0 for user 8 successfully
+2026-02-27 12:40:59 [Information] ["GET"] "/notification/count" - Request received
+2026-02-27 12:40:59 [Information] ["GET"] "/notification/count" - Fetched notification count 0 for user 7 successfully
+2026-02-27 12:40:59 [Information] ["GET"] "/job" - Request received
+2026-02-27 12:40:59 [Information] ["GET"] "/job" - Fetched all jobs successfully
+2026-02-27 12:41:01 [Information] ["GET"] "/notification/count" - Request received
+2026-02-27 12:41:01 [Information] ["GET"] "/job" - Request received
+2026-02-27 12:41:01 [Information] ["GET"] "/notification/count" - Fetched notification count 0 for user 8 successfully
+2026-02-27 12:41:01 [Information] ["GET"] "/job" - Fetched all jobs successfully
+2026-02-27 12:41:02 [Information] ["GET"] "/job" - Request received
+2026-02-27 12:41:02 [Information] ["GET"] "/notification/count" - Request received
+2026-02-27 12:41:02 [Information] ["GET"] "/job" - Fetched all jobs successfully
+2026-02-27 12:41:02 [Information] ["GET"] "/notification/count" - Fetched notification count 0 for user 7 successfully
+2026-02-27 12:41:03 [Information] ["GET"] "/notification/count" - Request received
+2026-02-27 12:41:03 [Information] ["GET"] "/job" - Request received
+2026-02-27 12:41:03 [Information] ["GET"] "/notification/count" - Fetched notification count 0 for user 8 successfully
+2026-02-27 12:41:03 [Information] ["GET"] "/job" - Fetched all jobs successfully
+2026-02-27 12:41:03 [Information] ["GET"] "/notification/count" - Request received
+2026-02-27 12:41:03 [Information] ["GET"] "/notification/count" - Fetched notification count 0 for user 7 successfully
+2026-02-27 12:41:03 [Information] ["GET"] "/job" - Request received
+2026-02-27 12:41:03 [Information] ["GET"] "/job" - Fetched all jobs successfully
+2026-02-27 12:41:05 [Information] ["GET"] "/notification/count" - Request received
+2026-02-27 12:41:05 [Information] ["GET"] "/job" - Request received
+2026-02-27 12:41:05 [Information] ["GET"] "/notification/count" - Fetched notification count 0 for user 8 successfully
+2026-02-27 12:41:05 [Information] ["GET"] "/job" - Fetched all jobs successfully
+2026-02-27 12:41:12 [Information] ["GET"] "/job" - Request received
+2026-02-27 12:41:12 [Information] ["GET"] "/notification/count" - Request received
+2026-02-27 12:41:12 [Information] ["GET"] "/notification/count" - Fetched notification count 0 for user 8 successfully
+2026-02-27 12:41:12 [Information] ["GET"] "/job" - Fetched all jobs successfully
+2026-02-27 12:41:12 [Information] ["GET"] "/notification/count" - Request received
+2026-02-27 12:41:12 [Information] ["GET"] "/notification/count" - Fetched notification count 0 for user 7 successfully
+2026-02-27 12:41:12 [Information] ["GET"] "/job" - Request received
+2026-02-27 12:41:12 [Information] ["GET"] "/job" - Fetched all jobs successfully
+2026-02-27 12:41:13 [Information] ["GET"] "/notification/count" - Request received
+2026-02-27 12:41:13 [Information] ["GET"] "/job" - Request received
+2026-02-27 12:41:13 [Information] ["GET"] "/notification/count" - Fetched notification count 0 for user 8 successfully
+2026-02-27 12:41:13 [Information] ["GET"] "/job" - Fetched all jobs successfully
+2026-02-27 12:41:39 [Information] ["GET"] "/job" - Request received
+2026-02-27 12:41:39 [Information] ["GET"] "/job" - Fetched all jobs successfully
+2026-02-27 12:41:39 [Information] ["GET"] "/job" - Request received
+2026-02-27 12:41:39 [Information] ["GET"] "/job" - Fetched all jobs successfully
+2026-02-27 12:41:39 [Information] ["GET"] "/notification/count" - Request received
+2026-02-27 12:41:39 [Information] ["GET"] "/notification/count" - Fetched notification count 0 for user 8 successfully
+2026-02-27 12:43:18 [Information] ["GET"] "/notification/count" - Request received
+2026-02-27 12:43:18 [Information] ["GET"] "/job" - Request received
+2026-02-27 12:43:18 [Information] ["GET"] "/notification/count" - Fetched notification count 0 for user 7 successfully
+2026-02-27 12:43:18 [Information] ["GET"] "/job" - Fetched all jobs successfully
+2026-02-27 12:43:22 [Information] ["GET"] "/notification/count" - Request received
+2026-02-27 12:43:22 [Information] ["GET"] "/notification/count" - Fetched notification count 0 for user 7 successfully
+2026-02-27 12:43:22 [Information] ["GET"] "/job" - Request received
+2026-02-27 12:43:22 [Information] ["GET"] "/job" - Fetched all jobs successfully
+2026-02-27 12:43:42 [Information] Scheduler "QuartzScheduler_$_NON_CLUSTERED" shutting down.
+2026-02-27 12:43:42 [Information] Scheduler QuartzScheduler_$_NON_CLUSTERED paused.
+2026-02-27 12:43:42 [Information] Scheduler QuartzScheduler_$_NON_CLUSTERED Shutdown complete.

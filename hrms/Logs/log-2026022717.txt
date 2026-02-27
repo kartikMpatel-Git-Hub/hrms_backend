@@ -1,0 +1,281 @@
+2026-02-27 17:00:13 [Information] Updated GameSlot with Id 251
+2026-02-27 17:00:13 [Information] Updated GameSlot with Id 293
+2026-02-27 17:02:54 [Information] ["GET"] "/notification/count" - Request received
+2026-02-27 17:02:54 [Information] ["GET"] "/game" - Request received
+2026-02-27 17:02:54 [Information] ["GET"] "/notification/count" - Fetched notification count 1 for user 5 successfully
+2026-02-27 17:02:54 [Information] ["GET"] "/game" - Fetched 3 games successfully
+2026-02-27 17:02:56 [Information] ["GET"] "/notification" - Request received
+2026-02-27 17:02:56 [Information] Fetching notifications for UserId 5, total: 3, page 1
+2026-02-27 17:02:56 [Information] Retrieved notifications of user with Id 5 from repository and cached with version 0
+2026-02-27 17:02:56 [Information] Retrieved notifications of user with Id 5 from repository and cached with version 0
+2026-02-27 17:02:56 [Information] ["GET"] "/notification" - Fetched notifications for user 5 successfully
+2026-02-27 17:03:07 [Information] ["GET"] "/notification/count" - Request received
+2026-02-27 17:03:07 [Information] ["GET"] "/notification" - Request received
+2026-02-27 17:03:07 [Information] Unread notification count for UserId 5: 0
+2026-02-27 17:03:07 [Information] Retrieved notification count of user with Id 5 from repository and cached with version 1
+2026-02-27 17:03:07 [Information] ["GET"] "/notification/count" - Fetched notification count 0 for user 5 successfully
+2026-02-27 17:03:07 [Information] Fetching notifications for UserId 5, total: 3, page 1
+2026-02-27 17:03:07 [Information] Retrieved notifications of user with Id 5 from repository and cached with version 1
+2026-02-27 17:03:07 [Information] Retrieved notifications of user with Id 5 from repository and cached with version 1
+2026-02-27 17:03:07 [Information] ["GET"] "/notification" - Fetched notifications for user 5 successfully
+2026-02-27 17:03:34 [Information] ["GET"] "/notification/count" - Request received
+2026-02-27 17:03:34 [Information] ["GET"] "/notification" - Request received
+2026-02-27 17:03:34 [Information] Fetching notifications for UserId 5, total: 3, page 1
+2026-02-27 17:03:34 [Information] Unread notification count for UserId 5: 0
+2026-02-27 17:03:34 [Information] Retrieved notification count of user with Id 5 from repository and cached with version 2
+2026-02-27 17:03:34 [Information] ["GET"] "/notification/count" - Fetched notification count 0 for user 5 successfully
+2026-02-27 17:03:34 [Information] Retrieved notifications of user with Id 5 from repository and cached with version 2
+2026-02-27 17:03:34 [Information] Retrieved notifications of user with Id 5 from repository and cached with version 2
+2026-02-27 17:03:34 [Information] ["GET"] "/notification" - Fetched notifications for user 5 successfully
+2026-02-27 17:03:51 [Information] ["GET"] "/notification/count" - Request received
+2026-02-27 17:03:51 [Information] ["GET"] "/notification" - Request received
+2026-02-27 17:03:51 [Information] Fetching notifications for UserId 5, total: 3, page 1
+2026-02-27 17:03:51 [Information] Unread notification count for UserId 5: 0
+2026-02-27 17:03:51 [Information] Retrieved notification count of user with Id 5 from repository and cached with version 3
+2026-02-27 17:03:51 [Information] ["GET"] "/notification/count" - Fetched notification count 0 for user 5 successfully
+2026-02-27 17:03:51 [Information] Retrieved notifications of user with Id 5 from repository and cached with version 3
+2026-02-27 17:03:51 [Information] Retrieved notifications of user with Id 5 from repository and cached with version 3
+2026-02-27 17:03:51 [Information] ["GET"] "/notification" - Fetched notifications for user 5 successfully
+2026-02-27 17:03:57 [Information] ["GET"] "/notification/count" - Request received
+2026-02-27 17:03:57 [Information] Unread notification count for UserId 5: 0
+2026-02-27 17:03:57 [Information] Retrieved notification count of user with Id 5 from repository and cached with version 4
+2026-02-27 17:03:57 [Information] ["GET"] "/notification/count" - Fetched notification count 0 for user 5 successfully
+2026-02-27 17:03:57 [Information] ["GET"] "/notification" - Request received
+2026-02-27 17:03:57 [Information] Fetching notifications for UserId 5, total: 3, page 1
+2026-02-27 17:03:57 [Information] Retrieved notifications of user with Id 5 from repository and cached with version 4
+2026-02-27 17:03:57 [Information] Retrieved notifications of user with Id 5 from repository and cached with version 4
+2026-02-27 17:03:57 [Information] ["GET"] "/notification" - Fetched notifications for user 5 successfully
+2026-02-27 17:04:03 [Information] ["GET"] "/notification/count" - Request received
+2026-02-27 17:04:03 [Information] ["GET"] "/notification" - Request received
+2026-02-27 17:04:03 [Information] Unread notification count for UserId 5: 0
+2026-02-27 17:04:03 [Information] Retrieved notification count of user with Id 5 from repository and cached with version 5
+2026-02-27 17:04:03 [Information] ["GET"] "/notification/count" - Fetched notification count 0 for user 5 successfully
+2026-02-27 17:04:03 [Information] Fetching notifications for UserId 5, total: 3, page 1
+2026-02-27 17:04:03 [Information] Retrieved notifications of user with Id 5 from repository and cached with version 5
+2026-02-27 17:04:03 [Information] Retrieved notifications of user with Id 5 from repository and cached with version 5
+2026-02-27 17:04:03 [Information] ["GET"] "/notification" - Fetched notifications for user 5 successfully
+2026-02-27 17:04:52 [Information] ["GET"] "/notification/count" - Request received
+2026-02-27 17:04:52 [Information] ["GET"] "/notification" - Request received
+2026-02-27 17:04:52 [Information] Fetching notifications for UserId 5, total: 3, page 1
+2026-02-27 17:04:52 [Information] Unread notification count for UserId 5: 0
+2026-02-27 17:04:52 [Information] Retrieved notification count of user with Id 5 from repository and cached with version 6
+2026-02-27 17:04:52 [Information] ["GET"] "/notification/count" - Fetched notification count 0 for user 5 successfully
+2026-02-27 17:04:52 [Information] Retrieved notifications of user with Id 5 from repository and cached with version 6
+2026-02-27 17:04:52 [Information] Retrieved notifications of user with Id 5 from repository and cached with version 6
+2026-02-27 17:04:52 [Information] ["GET"] "/notification" - Fetched notifications for user 5 successfully
+2026-02-27 17:05:15 [Information] ["GET"] "/notification/count" - Request received
+2026-02-27 17:05:15 [Information] ["GET"] "/notification" - Request received
+2026-02-27 17:05:15 [Information] Fetching notifications for UserId 5, total: 3, page 1
+2026-02-27 17:05:15 [Information] Unread notification count for UserId 5: 0
+2026-02-27 17:05:15 [Information] Retrieved notification count of user with Id 5 from repository and cached with version 7
+2026-02-27 17:05:15 [Information] ["GET"] "/notification/count" - Fetched notification count 0 for user 5 successfully
+2026-02-27 17:05:15 [Information] Retrieved notifications of user with Id 5 from repository and cached with version 7
+2026-02-27 17:05:15 [Information] Retrieved notifications of user with Id 5 from repository and cached with version 7
+2026-02-27 17:05:15 [Information] ["GET"] "/notification" - Fetched notifications for user 5 successfully
+2026-02-27 17:10:29 [Information] Scheduler "QuartzScheduler_$_NON_CLUSTERED" shutting down.
+2026-02-27 17:10:29 [Information] Scheduler QuartzScheduler_$_NON_CLUSTERED paused.
+2026-02-27 17:10:29 [Information] Scheduler QuartzScheduler_$_NON_CLUSTERED Shutdown complete.
+2026-02-27 17:30:11 [Information] Initialized Scheduler Signaller of type: Quartz.Core.SchedulerSignalerImpl
+2026-02-27 17:30:11 [Information] Quartz Scheduler created
+2026-02-27 17:30:11 [Information] JobFactory set to: Quartz.Simpl.MicrosoftDependencyInjectionJobFactory
+2026-02-27 17:30:11 [Information] RAMJobStore initialized.
+2026-02-27 17:30:11 [Information] Quartz Scheduler 3.15.1.0 - 'QuartzScheduler' with instanceId 'NON_CLUSTERED' initialized
+2026-02-27 17:30:11 [Information] Using thread pool 'Quartz.Simpl.DefaultThreadPool', size: 10
+2026-02-27 17:30:11 [Information] Using job store 'Quartz.Simpl.RAMJobStore', supports persistence: False, clustered: False
+2026-02-27 17:30:11 [Information] Adding 1 jobs, 1 triggers.
+2026-02-27 17:30:11 [Information] Adding job: DEFAULT.WeeklyJob
+2026-02-27 17:30:11 [Information] Scheduler QuartzScheduler_$_NON_CLUSTERED started.
+2026-02-27 17:30:11 [Error] BackgroundService failed
+Microsoft.Data.SqlClient.SqlException (0x80131904): Invalid column name 'remarks'.
+   at Microsoft.Data.SqlClient.SqlCommand.<>c.<ExecuteDbDataReaderAsync>b__195_0(Task`1 result)
+   at System.Threading.Tasks.ContinuationResultTaskFromResultTask`2.InnerInvoke()
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+--- End of stack trace from previous location ---
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+   at System.Threading.Tasks.Task.ExecuteWithThreadLocal(Task& currentTaskSlot, Thread threadPoolThread)
+--- End of stack trace from previous location ---
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.InitializeReaderAsync(AsyncEnumerator enumerator, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.MoveNextAsync()
+   at Microsoft.EntityFrameworkCore.EntityFrameworkQueryableExtensions.ToListAsync[TSource](IQueryable`1 source, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.EntityFrameworkQueryableExtensions.ToListAsync[TSource](IQueryable`1 source, CancellationToken cancellationToken)
+   at hrms.Service.impl.SlotBookingService.ProcessSlotsAsync() in C:\Internship\Codes\DontNet\Assignment-1\hrms\hrms\Service\impl\SlotBookingService.cs:line 169
+   at hrms.Utility.SlotAssignedCronJob.ExecuteAsync(CancellationToken stoppingToken) in C:\Internship\Codes\DontNet\Assignment-1\hrms\hrms\Utility\SlotAssigedCronJob.cs:line 14
+   at Microsoft.Extensions.Hosting.Internal.Host.TryExecuteBackgroundServiceAsync(BackgroundService backgroundService)
+ClientConnectionId:39edbf99-8121-42c3-882b-679d4bfa8bdf
+Error Number:207,State:1,Class:16
+2026-02-27 17:30:11 [Fatal] The HostOptions.BackgroundServiceExceptionBehavior is configured to StopHost. A BackgroundService has thrown an unhandled exception, and the IHost instance is stopping. To avoid this behavior, configure this to Ignore; however the BackgroundService will not be restarted.
+Microsoft.Data.SqlClient.SqlException (0x80131904): Invalid column name 'remarks'.
+   at Microsoft.Data.SqlClient.SqlCommand.<>c.<ExecuteDbDataReaderAsync>b__195_0(Task`1 result)
+   at System.Threading.Tasks.ContinuationResultTaskFromResultTask`2.InnerInvoke()
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+--- End of stack trace from previous location ---
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+   at System.Threading.Tasks.Task.ExecuteWithThreadLocal(Task& currentTaskSlot, Thread threadPoolThread)
+--- End of stack trace from previous location ---
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.InitializeReaderAsync(AsyncEnumerator enumerator, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.MoveNextAsync()
+   at Microsoft.EntityFrameworkCore.EntityFrameworkQueryableExtensions.ToListAsync[TSource](IQueryable`1 source, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.EntityFrameworkQueryableExtensions.ToListAsync[TSource](IQueryable`1 source, CancellationToken cancellationToken)
+   at hrms.Service.impl.SlotBookingService.ProcessSlotsAsync() in C:\Internship\Codes\DontNet\Assignment-1\hrms\hrms\Service\impl\SlotBookingService.cs:line 169
+   at hrms.Utility.SlotAssignedCronJob.ExecuteAsync(CancellationToken stoppingToken) in C:\Internship\Codes\DontNet\Assignment-1\hrms\hrms\Utility\SlotAssigedCronJob.cs:line 14
+   at Microsoft.Extensions.Hosting.Internal.Host.TryExecuteBackgroundServiceAsync(BackgroundService backgroundService)
+ClientConnectionId:39edbf99-8121-42c3-882b-679d4bfa8bdf
+Error Number:207,State:1,Class:16
+2026-02-27 17:30:11 [Information] Scheduler "QuartzScheduler_$_NON_CLUSTERED" shutting down.
+2026-02-27 17:30:11 [Information] Scheduler QuartzScheduler_$_NON_CLUSTERED paused.
+2026-02-27 17:30:12 [Information] Starting Daily Celebration Job at 02/27/2026 17:30:12
+2026-02-27 17:30:12 [Information] Found 0 birthday users for today
+2026-02-27 17:30:12 [Information] Found 0 work anniversary users for today
+2026-02-27 17:30:12 [Information] Fetched system user with Id 4
+2026-02-27 17:30:12 [Information] Cache Updated for Daily Celebrations at 02/27/2026 17:30:12
+2026-02-27 17:30:12 [Information] Scheduler QuartzScheduler_$_NON_CLUSTERED Shutdown complete.
+2026-02-27 17:30:36 [Information] Initialized Scheduler Signaller of type: Quartz.Core.SchedulerSignalerImpl
+2026-02-27 17:30:36 [Information] Quartz Scheduler created
+2026-02-27 17:30:36 [Information] JobFactory set to: Quartz.Simpl.MicrosoftDependencyInjectionJobFactory
+2026-02-27 17:30:36 [Information] RAMJobStore initialized.
+2026-02-27 17:30:36 [Information] Quartz Scheduler 3.15.1.0 - 'QuartzScheduler' with instanceId 'NON_CLUSTERED' initialized
+2026-02-27 17:30:36 [Information] Using thread pool 'Quartz.Simpl.DefaultThreadPool', size: 10
+2026-02-27 17:30:36 [Information] Using job store 'Quartz.Simpl.RAMJobStore', supports persistence: False, clustered: False
+2026-02-27 17:30:36 [Information] Adding 1 jobs, 1 triggers.
+2026-02-27 17:30:36 [Information] Adding job: DEFAULT.WeeklyJob
+2026-02-27 17:33:43 [Information] Initialized Scheduler Signaller of type: Quartz.Core.SchedulerSignalerImpl
+2026-02-27 17:33:43 [Information] Quartz Scheduler created
+2026-02-27 17:33:43 [Information] JobFactory set to: Quartz.Simpl.MicrosoftDependencyInjectionJobFactory
+2026-02-27 17:33:43 [Information] RAMJobStore initialized.
+2026-02-27 17:33:43 [Information] Quartz Scheduler 3.15.1.0 - 'QuartzScheduler' with instanceId 'NON_CLUSTERED' initialized
+2026-02-27 17:33:43 [Information] Using thread pool 'Quartz.Simpl.DefaultThreadPool', size: 10
+2026-02-27 17:33:43 [Information] Using job store 'Quartz.Simpl.RAMJobStore', supports persistence: False, clustered: False
+2026-02-27 17:33:43 [Information] Adding 1 jobs, 1 triggers.
+2026-02-27 17:33:43 [Information] Adding job: DEFAULT.WeeklyJob
+2026-02-27 17:33:43 [Information] Scheduler QuartzScheduler_$_NON_CLUSTERED started.
+2026-02-27 17:33:43 [Information] Updated GameSlot with Id 224
+2026-02-27 17:33:44 [Information] Starting Daily Celebration Job at 02/27/2026 17:33:44
+2026-02-27 17:33:44 [Information] Found 0 birthday users for today
+2026-02-27 17:33:44 [Information] Found 0 work anniversary users for today
+2026-02-27 17:33:44 [Information] Fetched system user with Id 4
+2026-02-27 17:33:44 [Information] Cache Updated for Daily Celebrations at 02/27/2026 17:33:44
+2026-02-27 17:34:34 [Information] Initialized Scheduler Signaller of type: Quartz.Core.SchedulerSignalerImpl
+2026-02-27 17:34:34 [Information] Quartz Scheduler created
+2026-02-27 17:34:34 [Information] JobFactory set to: Quartz.Simpl.MicrosoftDependencyInjectionJobFactory
+2026-02-27 17:34:34 [Information] RAMJobStore initialized.
+2026-02-27 17:34:34 [Information] Quartz Scheduler 3.15.1.0 - 'QuartzScheduler' with instanceId 'NON_CLUSTERED' initialized
+2026-02-27 17:34:34 [Information] Using thread pool 'Quartz.Simpl.DefaultThreadPool', size: 10
+2026-02-27 17:34:34 [Information] Using job store 'Quartz.Simpl.RAMJobStore', supports persistence: False, clustered: False
+2026-02-27 17:34:34 [Information] Adding 1 jobs, 1 triggers.
+2026-02-27 17:34:34 [Information] Adding job: DEFAULT.WeeklyJob
+2026-02-27 17:34:34 [Information] Scheduler QuartzScheduler_$_NON_CLUSTERED started.
+2026-02-27 17:34:34 [Information] Starting Daily Celebration Job at 02/27/2026 17:34:34
+2026-02-27 17:34:34 [Information] Found 0 birthday users for today
+2026-02-27 17:34:34 [Information] Found 0 work anniversary users for today
+2026-02-27 17:34:34 [Information] Fetched system user with Id 4
+2026-02-27 17:34:34 [Information] Cache Updated for Daily Celebrations at 02/27/2026 17:34:34
+2026-02-27 17:34:57 [Information] ["GET"] "/notification/count" - Request received
+2026-02-27 17:34:57 [Information] ["GET"] "/game/1/slots/223/details" - Request received
+2026-02-27 17:34:57 [Information] Unread notification count for UserId 3: 4
+2026-02-27 17:34:57 [Information] Retrieved notification count of user with Id 3 from repository and cached with version 0
+2026-02-27 17:34:57 [Information] ["GET"] "/notification/count" - Fetched notification count 4 for user 3 successfully
+2026-02-27 17:34:57 [Information] Fetched GameSlot 223 for GameId 1
+2026-02-27 17:34:57 [Information] Retrieved game slot 223 for game 1 and cached with version 1
+2026-02-27 17:34:57 [Information] ["GET"] "/game/1/slots/223/details" - Fetched slot 223 details for game 1 successfully
+2026-02-27 17:34:58 [Information] ["GET"] "/notification/count" - Request received
+2026-02-27 17:34:58 [Information] ["GET"] "/notification/count" - Fetched notification count 4 for user 3 successfully
+2026-02-27 17:34:58 [Information] ["GET"] "/game/1/slots/223/details" - Request received
+2026-02-27 17:34:58 [Information] ["GET"] "/game/1/slots/223/details" - Fetched slot 223 details for game 1 successfully
+2026-02-27 17:34:58 [Information] ["GET"] "/notification/count" - Request received
+2026-02-27 17:34:58 [Information] ["GET"] "/notification/count" - Fetched notification count 4 for user 3 successfully
+2026-02-27 17:35:00 [Information] ["GET"] "/dashboard/daily-celebrations" - Request received
+2026-02-27 17:35:00 [Information] ["GET"] "/dashboard/upcoming-bookings" - Request received
+2026-02-27 17:35:00 [Information] Found 0 daily celebrations for today
+2026-02-27 17:35:00 [Information] Retrieved 0 daily celebrations from repository
+2026-02-27 17:35:00 [Information] ["GET"] "/dashboard/daily-celebrations" - Fetched 0 daily celebrations successfully
+2026-02-27 17:35:00 [Information] Found 0 upcoming booking slots for today
+2026-02-27 17:35:00 [Information] Retrieved 0 upcoming booking slots from repository
+2026-02-27 17:35:00 [Information] ["GET"] "/dashboard/upcoming-bookings" - Fetched 0 upcoming booking slots successfully
+2026-02-27 17:35:02 [Information] ["GET"] "/notification" - Request received
+2026-02-27 17:35:02 [Information] Fetching notifications for UserId 3, total: 19, page 1
+2026-02-27 17:35:03 [Information] Retrieved notifications of user with Id 3 from repository and cached with version 0
+2026-02-27 17:35:03 [Information] Retrieved notifications of user with Id 3 from repository and cached with version 0
+2026-02-27 17:35:03 [Information] ["GET"] "/notification" - Fetched notifications for user 3 successfully
+2026-02-27 17:35:38 [Information] ["GET"] "/notification/count" - Request received
+2026-02-27 17:35:38 [Information] ["GET"] "/notification" - Request received
+2026-02-27 17:35:38 [Information] Unread notification count for UserId 3: 0
+2026-02-27 17:35:38 [Information] Retrieved notification count of user with Id 3 from repository and cached with version 1
+2026-02-27 17:35:38 [Information] ["GET"] "/notification/count" - Fetched notification count 0 for user 3 successfully
+2026-02-27 17:35:38 [Information] Fetching notifications for UserId 3, total: 19, page 1
+2026-02-27 17:35:38 [Information] Retrieved notifications of user with Id 3 from repository and cached with version 1
+2026-02-27 17:35:38 [Information] Retrieved notifications of user with Id 3 from repository and cached with version 1
+2026-02-27 17:35:38 [Information] ["GET"] "/notification" - Fetched notifications for user 3 successfully
+2026-02-27 17:35:40 [Information] ["GET"] "/user/user-hr" - Request received
+2026-02-27 17:35:41 [Information] Fetching users for HR, total: 4, page 1
+2026-02-27 17:35:41 [Information] Retrieved all users for hr with version 1 and cached
+2026-02-27 17:35:41 [Information] ["GET"] "/user/user-hr" - Fetched HR users successfully
+2026-02-27 17:35:42 [Information] ["GET"] "/game" - Request received
+2026-02-27 17:35:42 [Information] Retrieved all games and cached with version 1
+2026-02-27 17:35:42 [Information] ["GET"] "/game" - Fetched 3 games successfully
+2026-02-27 17:35:44 [Information] ["GET"] "/game/3/toggle-interest" - Request received
+2026-02-27 17:35:44 [Information] ["GET"] "/game/3/slots" - Request received
+2026-02-27 17:35:44 [Information] ["GET"] "/game/3/toggle-interest" - Checked interest in game 3 for user 3 successfully
+2026-02-27 17:35:44 [Information] Retrieved game slots for game 3 and cached with version 1
+2026-02-27 17:35:44 [Information] ["GET"] "/game/3/slots" - Fetched 20 slots for game 3 successfully
+2026-02-27 17:36:14 [Information] Scheduler "QuartzScheduler_$_NON_CLUSTERED" shutting down.
+2026-02-27 17:36:14 [Information] Scheduler QuartzScheduler_$_NON_CLUSTERED paused.
+2026-02-27 17:36:14 [Information] Scheduler QuartzScheduler_$_NON_CLUSTERED Shutdown complete.
+2026-02-27 17:36:22 [Information] Initialized Scheduler Signaller of type: Quartz.Core.SchedulerSignalerImpl
+2026-02-27 17:36:22 [Information] Quartz Scheduler created
+2026-02-27 17:36:22 [Information] JobFactory set to: Quartz.Simpl.MicrosoftDependencyInjectionJobFactory
+2026-02-27 17:36:22 [Information] RAMJobStore initialized.
+2026-02-27 17:36:22 [Information] Quartz Scheduler 3.15.1.0 - 'QuartzScheduler' with instanceId 'NON_CLUSTERED' initialized
+2026-02-27 17:36:22 [Information] Using thread pool 'Quartz.Simpl.DefaultThreadPool', size: 10
+2026-02-27 17:36:22 [Information] Using job store 'Quartz.Simpl.RAMJobStore', supports persistence: False, clustered: False
+2026-02-27 17:36:22 [Information] Adding 1 jobs, 1 triggers.
+2026-02-27 17:36:22 [Information] Adding job: DEFAULT.WeeklyJob
+2026-02-27 17:36:22 [Information] Scheduler QuartzScheduler_$_NON_CLUSTERED started.
+2026-02-27 17:36:23 [Information] ["GET"] "/notification/count" - Request received
+2026-02-27 17:36:23 [Information] Starting Daily Celebration Job at 02/27/2026 17:36:23
+2026-02-27 17:36:23 [Information] ["DELETE"] "/game/3/slots/251/delete" - Request received
+2026-02-27 17:36:23 [Information] ["GET"] "/game/3/toggle-interest" - Request received
+2026-02-27 17:36:23 [Information] ["GET"] "/game/3/slots" - Request received
+2026-02-27 17:36:23 [Information] Unread notification count for UserId 3: 0
+2026-02-27 17:36:23 [Information] Retrieved notification count of user with Id 3 from repository and cached with version 0
+2026-02-27 17:36:23 [Information] ["GET"] "/notification/count" - Fetched notification count 0 for user 3 successfully
+2026-02-27 17:36:23 [Information] ["GET"] "/game/3/toggle-interest" - Checked interest in game 3 for user 3 successfully
+2026-02-27 17:36:23 [Information] Fetched GameSlot 251 for GameId 3
+2026-02-27 17:36:23 [Information] Game slot 251 deleted for game 3 and cache version incremented
+2026-02-27 17:36:23 [Information] ["DELETE"] "/game/3/slots/251/delete" - Slot 251 of game 3 deleted successfully
+2026-02-27 17:36:23 [Information] Found 0 birthday users for today
+2026-02-27 17:36:23 [Information] Found 0 work anniversary users for today
+2026-02-27 17:36:23 [Information] Retrieved game slots for game 3 and cached with version 1
+2026-02-27 17:36:23 [Information] ["GET"] "/game/3/slots" - Fetched 19 slots for game 3 successfully
+2026-02-27 17:36:23 [Information] Fetched system user with Id 4
+2026-02-27 17:36:23 [Information] Cache Updated for Daily Celebrations at 02/27/2026 17:36:23
+2026-02-27 17:36:23 [Information] ["GET"] "/game/3/slots" - Request received
+2026-02-27 17:36:23 [Information] Retrieved game slots for game 3 and cached with version 2
+2026-02-27 17:36:23 [Information] ["GET"] "/game/3/slots" - Fetched 19 slots for game 3 successfully
+2026-02-27 17:36:26 [Information] ["GET"] "/game" - Request received
+2026-02-27 17:36:26 [Information] Retrieved all games and cached with version 1
+2026-02-27 17:36:26 [Information] ["GET"] "/game" - Fetched 3 games successfully
+2026-02-27 17:36:27 [Information] ["GET"] "/game/3/slots" - Request received
+2026-02-27 17:36:27 [Information] ["GET"] "/game/3/toggle-interest" - Request received
+2026-02-27 17:36:27 [Information] ["GET"] "/game/3/slots" - Fetched 19 slots for game 3 successfully
+2026-02-27 17:36:27 [Information] ["GET"] "/game/3/toggle-interest" - Checked interest in game 3 for user 3 successfully
+2026-02-27 17:36:58 [Information] ["GET"] "/game/3/toggle-interest" - Request received
+2026-02-27 17:36:58 [Information] ["GET"] "/game/3/slots" - Request received
+2026-02-27 17:36:58 [Information] ["GET"] "/game/3/slots" - Fetched 19 slots for game 3 successfully
+2026-02-27 17:36:58 [Information] ["GET"] "/notification/count" - Request received
+2026-02-27 17:36:58 [Information] ["GET"] "/notification/count" - Fetched notification count 0 for user 3 successfully
+2026-02-27 17:36:58 [Information] ["GET"] "/game/3/toggle-interest" - Checked interest in game 3 for user 3 successfully
+2026-02-27 17:41:45 [Information] ["GET"] "/game/3/toggle-interest" - Request received
+2026-02-27 17:41:45 [Information] ["GET"] "/game/3/slots" - Request received
+2026-02-27 17:41:45 [Information] ["GET"] "/game/3/slots" - Fetched 19 slots for game 3 successfully
+2026-02-27 17:41:46 [Information] ["GET"] "/notification/count" - Request received
+2026-02-27 17:41:46 [Information] ["GET"] "/notification/count" - Fetched notification count 0 for user 3 successfully
+2026-02-27 17:41:46 [Information] ["GET"] "/game/3/toggle-interest" - Checked interest in game 3 for user 3 successfully
+2026-02-27 17:41:51 [Information] Scheduler "QuartzScheduler_$_NON_CLUSTERED" shutting down.
+2026-02-27 17:41:51 [Information] Scheduler QuartzScheduler_$_NON_CLUSTERED paused.
+2026-02-27 17:41:51 [Information] Scheduler QuartzScheduler_$_NON_CLUSTERED Shutdown complete.

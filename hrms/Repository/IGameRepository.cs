@@ -12,6 +12,7 @@ namespace hrms.Repository
         Task<GameOperationWindow> CreateGameOperationWindow(GameOperationWindow window);
         Task DeleteGame(Game game);
         Task DeleteGameOperationWindow(GameOperationWindow window);
+        Task DeleteGameSlot(GameSlot slot);
         Task<List<GameOperationWindow>> GetAllGameOperationWindows(int gameId);
         Task<PagedReponseOffSet<Game>> GetAllGames(int pageNumber, int pageSize);
         Task<List<GameSlot>> GetAllGameSlots(int gameId, DateTime startDate, DateTime endDate);
