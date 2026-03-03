@@ -34,7 +34,7 @@ Log.Logger = new LoggerConfiguration()
     .WriteTo.File(
         path: "Logs/log-.txt",
         rollingInterval: RollingInterval.Hour,
-        retainedFileCountLimit: 24,
+        retainedFileCountLimit: 4,
         outputTemplate: "{Timestamp:yyyy-MM-dd HH:mm:ss} [{Level}] {Message}{NewLine}{Exception}"
     )
     .CreateLogger();
@@ -128,6 +128,7 @@ builder.Services.AddScoped<IGameBookingRepository, GameBookingRepository>();
 builder.Services.AddScoped<IUserGameRepository, UserGameRepository>();
 builder.Services.AddScoped<IPostRepository, PostRepository>();
 builder.Services.AddScoped<IDailyCelebrationRepository, DailyCelebrationRepository>();
+builder.Services.AddScoped<ISystemSettingsRepository, SystemSettingsRepository>();
 
 builder.Services.AddScoped<IAuthenticationService, AuthenticationService>();
 builder.Services.AddScoped<IUserService, UserService>();
@@ -145,6 +146,7 @@ builder.Services.AddScoped<ISlotBookingService, SlotBookingService>();
 builder.Services.AddScoped<IPostService, PostService>();
 builder.Services.AddScoped<IGameSlotGenerateService, GameSlotGenerateService>();
 builder.Services.AddScoped<IDailyCelebrationService, DailyCelebrationService>();
+builder.Services.AddScoped<ISystemSettingsService, SystemSettingsService>();
 
 builder.Services.AddHostedService<SlotAssignedCronJob>();
 

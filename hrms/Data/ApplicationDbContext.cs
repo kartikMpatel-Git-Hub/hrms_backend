@@ -41,6 +41,8 @@ namespace hrms.Data
         public DbSet<PostLike> PostLikes { get; set; }
         public DbSet<DailyCelebration> DailyCelebrations { get; set; }
 
+        public DbSet<SystemSettings> SystemSettings { get; set; }
+
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             base.OnModelCreating(modelBuilder);
@@ -1269,6 +1271,51 @@ namespace hrms.Data
                      .HasConstraintName("fk_daily_celebration_user_id")
                      .OnDelete(DeleteBehavior.Restrict);
              });
+            
+            modelBuilder.Entity<SystemSettings>(entity =>
+            {
+                entity.ToTable("system_settings");
+
+                entity.HasKey(ss => ss.Id);
+
+                entity
+                    .Property(ss => ss.Id)
+                    .HasColumnName("pk_system_settings_id");
+
+                entity
+                    .Property(ss => ss.BirthdayImageUrl)
+                    .HasColumnName("birthday_image_url")
+                    .HasMaxLength(500);
+
+                entity
+                    .Property(ss => ss.AnniversaryImageUrl)
+                    .HasColumnName("anniversary_image_url")
+                    .HasMaxLength(500);
+
+                entity
+                    .Property(ss => ss.DefaultProfileImageUrl)
+                    .HasColumnName("default_profile_image_url")
+                    .HasMaxLength(500);
+
+                entity
+                     .HasOne(ss => ss.DefaultHr)
+                     .WithMany()
+                     .HasForeignKey(ss => ss.DefaultHrId)
+                     .HasConstraintName("fk_system_settings_default_hr_id")
+                     .OnDelete(DeleteBehavior.Restrict);
+                
+                entity
+                    .Property(ss => ss.UpdatedAt)
+                    .HasColumnName("updated_at")
+                    .HasDefaultValueSql("GETUTCDATE()");
+                
+                entity
+                    .HasOne(ss => ss.UpdatedBy)
+                    .WithMany()
+                    .HasForeignKey(ss => ss.UpdatedById)
+                    .HasConstraintName("fk_system_settings_updated_by_id")
+                    .OnDelete(DeleteBehavior.Restrict);
+            });
         }
     }
 }

@@ -63,13 +63,14 @@ namespace hrms.Service.impl
             }
             if (await _repository.IsUserAlreadyBookedInSlot(gameId, slotId, userId))
             {
-                throw new InvalidOperationCustomException("You Have already booked this slot.");
+                throw new InvalidOperationCustomException("You are already in waiting list of this slot.");
             }
             foreach (var player in dto.Players)
             {
                 if (await _repository.IsUserAlreadyBookedInSlot(gameId, slotId, player))
                 {
-                    throw new InvalidOperationCustomException($"one or more Players has already booked this slot.");
+                    var p = await _userRepository.GetById(player);
+                    throw new InvalidOperationCustomException($"{p.FullName} is already in booking queue with other group of this slot.");
                 }
             }
         }
@@ -147,6 +148,7 @@ namespace hrms.Service.impl
             IncrementCacheVersion(CacheVersionKey.ForGameInfo(gameId));
             IncrementCacheVersion(CacheVersionKey.ForGameSlots(gameId));
             IncrementCacheVersion(CacheVersionKey.ForGameOperationWindows(gameId));
+            IncrementCacheVersion(CacheVersionKey.For(CacheDomains.DashboardUpcomingBookings));
             _logger.LogInformation("Game with Id {GameId} deleted and cache versions incremented", gameId);
             return true;
         }

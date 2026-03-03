@@ -1,4 +1,5 @@
 ﻿using AutoMapper;
+using hrms.dto.response.System;
 using hrms.Dto.Request.BookingSlot;
 using hrms.Dto.Request.Game;
 using hrms.Dto.Request.Post;
@@ -46,7 +47,7 @@ namespace hrms.Utility
                 .ForMember(
                 dest => dest.Role,
                 opt => opt.MapFrom(src => GetRoleName(src.Role)));
-            
+
             CreateMap<Travel, TravelResponseDto>()
                 .ForMember(
                 dest => dest.Description,
@@ -171,6 +172,7 @@ namespace hrms.Utility
                 opt => opt.MapFrom(src => GetStatus(src.Status)));
 
             CreateMap(typeof(PagedReponseOffSet<>), typeof(PagedReponseDto<>));
+            CreateMap<SystemSettings, SystemSettingsResponseDto>();
         }
 
         private object GetStatus(SlotOfferStatus status)

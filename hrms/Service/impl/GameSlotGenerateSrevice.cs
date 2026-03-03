@@ -26,8 +26,8 @@ namespace hrms.Service.impl
                     
                     bool anySlotsExist = await _db.GameSlots
                         .AnyAsync(s => s.GameId == game.Id && s.Date == date);
-                    if (anySlotsExist) // this means slots are already generated for this date, so skip to next date
-                        continue;
+                    //if (anySlotsExist) // this means slots are already generated for this date, so skip to next date
+                    //    continue;
 
                     foreach(var window in game.GameOperationWindows)
                     {

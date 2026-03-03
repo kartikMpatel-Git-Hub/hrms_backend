@@ -72,7 +72,7 @@ namespace hrms.Repository.impl
                 .Include(e => e.Category)
                 .Include(e => e.Proofs)
                 .Where(e => e.Travel.CreatedBy == currentUserId)
-                .OrderByDescending(e => e.ExpenseDate)
+                .OrderByDescending(e => e.created_at)
                 .Skip((pageNumber - 1) * pageSize)
                 .Take(pageSize)
                 .ToList();

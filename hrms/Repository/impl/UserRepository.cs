@@ -221,11 +221,11 @@ namespace hrms.Repository.impl
 
         public Task<PagedReponseOffSet<User>> GetAllUserForHr(int pageSize, int pageNumber)
         {
-            var TotalRecords = _context.Users.Where(u => !u.is_deleted && (u.Role == UserRole.EMPLOYEE || u.Role == UserRole.MANAGER)).Count();
+            var TotalRecords = _context.Users.Where(u => !u.is_deleted && (u.Role != UserRole.ADMIN)).Count();
             _logger.LogInformation("Fetching users for HR, total: {Total}, page {Page}", TotalRecords, pageNumber);
             List<User> users = _context.Users
                 .OrderByDescending(u => u.created_at)
-                .Where(u => !u.is_deleted && (u.Role == UserRole.EMPLOYEE || u.Role == UserRole.MANAGER))
+                .Where(u => !u.is_deleted && (u.Role != UserRole.ADMIN))
                 .Include(u => u.Department)
                 .Skip((pageNumber - 1) * pageSize)
                 .Take(pageSize)
