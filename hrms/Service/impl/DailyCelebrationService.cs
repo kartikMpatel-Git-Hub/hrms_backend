@@ -1,6 +1,7 @@
 using AutoMapper;
 using hrms.Dto.Response.DailyCelebration;
 using hrms.Dto.Response.Game;
+using hrms.Migrations;
 using hrms.Model;
 using hrms.Repository;
 using hrms.Utility;
@@ -10,6 +11,7 @@ namespace hrms.Service.impl
 {
     public class DailyCelebrationService(
         IDailyCelebrationRepository _repository,
+        ISystemSettingsRepository _systemSettingsRepository,
         IPostRepository _postRepository,
         IGameRepository _gameRepository,
         IMapper _mapper,
@@ -81,9 +83,11 @@ namespace hrms.Service.impl
 
         private async Task createPostForCelebration(User system, User user, string v)
         {
+            
+            SystemSettings systemSettings = await _systemSettingsRepository.GetSystemSettingsAsync();
             Post post = new Post()
             {
-                PostUrl = v == "Birthday" ? "https://res.cloudinary.com/dcpvyecl2/image/upload/v1771783750/uploads/fwm4hoo23cse8kkwahbc.jpg" : "https://res.cloudinary.com/dcpvyecl2/image/upload/v1771779505/uploads/mvieaeol0gzhhys440hn.jpg",
+                PostUrl = v == "Birthday" ? systemSettings.BirthdayImageUrl : systemSettings.AnniversaryImageUrl,
                 Title = v == "Birthday" ? "Happy Birthday!" : "Work Anniversary Celebration!",
                 Description = v == "Birthday" ? $"Wishing {user.FullName} a very Happy Birthday! May your day be filled with joy and laughter." : $"Congratulations to {user.FullName} on their Work Anniversary! Thank you for being an invaluable part of our team.",
                 PostById = system.Id,

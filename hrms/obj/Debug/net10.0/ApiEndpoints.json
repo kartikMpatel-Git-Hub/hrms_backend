@@ -508,7 +508,7 @@
   {
     "ContainingType": "hrms.Controllers.GameController",
     "Method": "DeleteGameSlot",
-    "RelativePath": "Game/{gameId}/slots/{slotId}/cancel-slot",
+    "RelativePath": "Game/{gameId}/slots/{slotId}/delete",
     "HttpMethod": "DELETE",
     "IsController": true,
     "Order": 0,

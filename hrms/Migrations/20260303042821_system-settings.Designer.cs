@@ -3,6 +3,7 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using hrms.Data;
 
@@ -11,9 +12,11 @@ using hrms.Data;
 namespace hrms.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    partial class ApplicationDbContextModelSnapshot : ModelSnapshot
+    [Migration("20260303042821_system-settings")]
+    partial class systemsettings
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -1019,20 +1022,9 @@ namespace hrms.Migrations
                         .HasColumnType("nvarchar(500)")
                         .HasColumnName("default_profile_image_url");
 
-                    b.Property<DateTime?>("UpdatedAt")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("datetime2")
-                        .HasColumnName("updated_at")
-                        .HasDefaultValueSql("GETUTCDATE()");
-
-                    b.Property<int?>("UpdatedById")
-                        .HasColumnType("int");
-
                     b.HasKey("Id");
 
                     b.HasIndex("DefaultHrId");
-
-                    b.HasIndex("UpdatedById");
 
                     b.ToTable("system_settings", (string)null);
                 });
@@ -1769,15 +1761,7 @@ namespace hrms.Migrations
                         .OnDelete(DeleteBehavior.Restrict)
                         .HasConstraintName("fk_system_settings_default_hr_id");
 
-                    b.HasOne("hrms.Model.User", "UpdatedBy")
-                        .WithMany()
-                        .HasForeignKey("UpdatedById")
-                        .OnDelete(DeleteBehavior.Restrict)
-                        .HasConstraintName("fk_system_settings_updated_by_id");
-
                     b.Navigation("DefaultHr");
-
-                    b.Navigation("UpdatedBy");
                 });
 
             modelBuilder.Entity("hrms.Model.Travel", b =>

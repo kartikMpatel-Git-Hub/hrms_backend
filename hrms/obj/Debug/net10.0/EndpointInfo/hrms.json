@@ -1338,7 +1338,7 @@
         }
       }
     },
-    "/Game/{gameId}/slots/{slotId}/cancel-slot": {
+    "/Game/{gameId}/slots/{slotId}/delete": {
       "delete": {
         "tags": [
           "Game"

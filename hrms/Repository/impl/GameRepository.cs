@@ -219,7 +219,7 @@ namespace hrms.Repository.impl
             bool isBooked = _db.GameSlotWaitings
                             .Include(w => w.WaitingPlayers)
                             .Where(w => !w.IsCancelled)
-                            .Any(w => w.GameSlotId == slotId && w.WaitingPlayers.Any(p => p.PlayerId == userId));
+                            .Any(w => w.GameSlotId == slotId && (w.WaitingPlayers.Any(p => p.PlayerId == userId) || w.RequestedById == userId));
             return Task.FromResult(isBooked);
         }
 

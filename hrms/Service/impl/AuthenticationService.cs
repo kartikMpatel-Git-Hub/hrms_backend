@@ -16,12 +16,13 @@ namespace hrms.Service.impl
 {
     public class AuthenticationService(
         IMapper _mapper,
-        IUserRepository _repo, 
+        IUserRepository _repo,
         IConfiguration _config,
         IEmailService _email,
-        ICloudinaryService _cloudinary, 
+        ICloudinaryService _cloudinary,
         IDepartmentRepository _departmentRepo,
         ILogger<AuthenticationService> _logger,
+            ISystemSettingsRepository _systemSettingsRepository,
         IMemoryCache _cache
         ) : IAuthenticationService
     {
@@ -80,7 +81,7 @@ namespace hrms.Service.impl
             return response;
         }
 
-        
+
         public async Task<UserResponseDto> RegisterNewUser(RegisterRequestDto dto)
         {
             if (await _repo.ExistsByEmailAsync(dto.Email))
@@ -94,21 +95,22 @@ namespace hrms.Service.impl
 
         private async Task<User> CreateUser(RegisterRequestDto dto)
         {
+            SystemSettings systemSettings = await _systemSettingsRepository.GetSystemSettingsAsync();
             var user = new User
             {
                 FullName = dto.FullName,
                 Email = dto.Email,
-                Image = dto.Image != null ? await _cloudinary.UploadAsync(dto.Image) : "",
-                DateOfBirth= dto.DateOfBirth,
+                Image = dto.Image != null ? await _cloudinary.UploadAsync(dto.Image) : systemSettings.DefaultProfileImageUrl,
+                DateOfBirth = dto.DateOfBirth,
                 DateOfJoin = dto.DateOfJoin,
                 is_deleted = false,
                 Designation = dto.Designation,
                 created_at = DateTime.Now,
                 updated_at = DateTime.Now
             };
-            if(dto.Role != "ADMIN" && 
-                dto.Role != "MANAGER" && 
-                dto.Role != "EMPLOYEE" && 
+            if (dto.Role != "ADMIN" &&
+                dto.Role != "MANAGER" &&
+                dto.Role != "EMPLOYEE" &&
                 dto.Role != "HR")
             {
                 throw new NotFoundCustomException($"User Role {dto.Role} Not Exists !");
