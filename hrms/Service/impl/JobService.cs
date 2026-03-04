@@ -426,5 +426,22 @@ namespace hrms.Service.impl
             var current = _cache.Get<int>(versionKey);
             _cache.Set(versionKey, current + 1);
         }
+
+        public async Task<PagedReponseDto<JobResponseDto>> GetAllJobsForAdmin(int pageNumber, int pageSize)
+        {
+            var version = _cache.Get<int>(CacheVersionKey.For(CacheDomains.JobDetails));
+            var key = $"Jobs-admin:pageNumber:{pageNumber}:pageSize:{pageSize}:version:{version}";
+            if (_cache.TryGetValue(key, out PagedReponseDto<JobResponseDto> cachedJobs))
+            {
+                _logger.LogDebug("Cache hit for jobs list (version {Version})", version);
+                return cachedJobs;
+            }
+            PagedReponseOffSet<Job> jobs = await _repository.GetAllJobsForAdmin(pageNumber, pageSize);
+            PagedReponseDto<JobResponseDto> response = _mappers.Map<PagedReponseDto<JobResponseDto>>(jobs);
+            _cache.Set(key, response, TimeSpan.FromMinutes(60));
+            _logger.LogInformation("Retrieved jobs list from repository and cached with version {Version}", version);
+            _logger.LogInformation("Total jobs retrieved: {Count}", response.Data.Count);
+            return response;
+        }
     }
 }

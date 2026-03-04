@@ -49,6 +49,21 @@ namespace hrms.Repository.impl
             return new PagedReponseOffSet<Job>(jobs, pageNumber, pageSize, totalCount);
         }
 
+        public async Task<PagedReponseOffSet<Job>> GetAllJobsForAdmin(int pageNumber, int pageSize)
+        {
+            int totalCount = await _db.Jobs
+                .Where(j => j.is_deleted == false)
+                .CountAsync();
+            List<Job> jobs = await _db.Jobs
+                .Where(j => j.is_deleted == false)
+                .OrderByDescending(j => j.created_at)
+                .Skip((pageNumber - 1) * pageSize)
+                .Take(pageSize)
+                .ToListAsync();
+            _logger.LogInformation("Fetched {Count} jobs for admin, page {Page}", jobs.Count, pageNumber);
+            return new PagedReponseOffSet<Job>(jobs, pageNumber, pageSize, totalCount);
+        }
+
         public async Task<Job> GetJobById(int jobId)
         {
             Job job = await _db.Jobs

@@ -46,7 +46,7 @@ namespace hrms.Controllers
         }
 
         [HttpPost("{TravelId}/travelers")]
-        [Authorize(Roles = "HR")]
+        [Authorize(Roles = "HR,ADMIN")]
         public async Task<IActionResult> AddTravelers(int? TravelId, TravelerAddDto Dto)
         {
             _logger.LogInformation("[{Method}] {Url} - Request received", Request.Method, Request.Path);
@@ -61,7 +61,7 @@ namespace hrms.Controllers
         }
 
         [HttpPost("{TravelId}/travelers/{TravelerId}")]
-        [Authorize(Roles = "HR")]
+        [Authorize(Roles = "HR,ADMIN")]
         public async Task<IActionResult> AddTraveler(int? TravelId,int? TravelerId )
         {
             _logger.LogInformation("[{Method}] {Url} - Request received", Request.Method, Request.Path);
@@ -78,7 +78,7 @@ namespace hrms.Controllers
         }
 
         [HttpPut("{TravelId}")]
-        [Authorize(Roles = "HR")]
+        [Authorize(Roles = "HR,ADMIN")]
         public async Task<IActionResult> UpdateTravel(int? TravelId, TravelUpdateDto dto)
         {
             _logger.LogInformation("[{Method}] {Url} - Request received", Request.Method, Request.Path);
@@ -133,6 +133,21 @@ namespace hrms.Controllers
             int CurrentUserId = Int32.Parse(CurrentUser.FindFirst(ClaimTypes.PrimarySid)?.Value);
             PagedReponseDto<TravelResponseDto> response = await _service.GetHrCreatedTravels(CurrentUserId, PageSize, PageNumber);
             _logger.LogInformation("[{Method}] {Url} - Fetched travels for HR {UserId} successfully", Request.Method, Request.Path, CurrentUserId);
+            return Ok(response);
+        }
+
+        [HttpGet]
+        [Authorize(Roles = "ADMIN")]
+        public async Task<IActionResult> GetAllTravels(int PageSize = 10, int PageNumber = 1)
+        {
+            _logger.LogInformation("[{Method}] {Url} - Request received", Request.Method, Request.Path);
+            if (PageNumber <= 0 || PageSize <= 0)
+                throw new InvalidOperationCustomException($"{nameof(PageNumber)} and {nameof(PageSize)} size must be greater than 0.");
+            var CurrentUser = User;
+            if (CurrentUser == null)
+                throw new UnauthorizedCustomException($"Unauthorized Access !");
+            PagedReponseDto<TravelResponseDto> response = await _service.GetAllTravels(PageSize, PageNumber);
+            _logger.LogInformation("[{Method}] {Url} - Fetched travels successfully", Request.Method, Request.Path);
             return Ok(response);
         }
 

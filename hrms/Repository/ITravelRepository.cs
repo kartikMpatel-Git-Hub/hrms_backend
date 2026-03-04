@@ -21,5 +21,6 @@ namespace hrms.Repository
         Task<PagedReponseOffSet<Travel>> GetTravelsByTravelerId(int travelerId, int pageSize, int pageNumber);
         Task<PagedReponseOffSet<Expense>> GetExpensesByTravelIdAndTravelerId(int travelId, int travelerId, int pageSize, int pageNumber);
         Task<PagedReponseOffSet<TravelDocument>> GetDocumentsByTravelIdAndTravelerId(int travelId, int travelerId, int pageSize, int pageNumber);
+        Task<PagedReponseOffSet<Travel>> GetAllTravels(int pageSize, int pageNumber);
     }
 }

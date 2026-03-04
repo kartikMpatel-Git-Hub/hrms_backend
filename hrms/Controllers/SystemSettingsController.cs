@@ -9,7 +9,7 @@ namespace hrms.Controllers
 {
     [Route("system-settings")]
     [ApiController]
-    [Authorize(Roles = "Admin, HR")]
+    [Authorize(Roles = "ADMIN, HR")]
     [EnableCors("MyAllowSpecificOrigins")]
     public class SystemSettingsController(ISystemSettingsService _systemSettingsService) : ControllerBase
     {

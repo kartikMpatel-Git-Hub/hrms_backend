@@ -315,5 +315,21 @@ namespace hrms.Service.impl
             var current = _cache.Get<int>(versionKey);
             _cache.Set(versionKey, current + 1);
         }
+
+        public async Task<PagedReponseDto<TravelResponseDto>> GetAllTravels(int pageSize, int pageNumber)
+        {
+            var version = _cache.Get<int>(CacheVersionKey.For(CacheDomains.TravelDetails));
+            var key = $"HrTravels:PageSize:{pageSize}:PageNumber:{pageNumber}:version:{version}";
+            if (_cache.TryGetValue(key, out PagedReponseDto<TravelResponseDto> cached))
+            {
+                _logger.LogDebug("Cache hit for HR created travels (version {Version})", version);
+                return cached;
+            }
+            PagedReponseOffSet<Travel> PageTravels = await _repository.GetAllTravels(pageSize, pageNumber);
+            var Response = _mapper.Map<PagedReponseDto<TravelResponseDto>>(PageTravels);
+            _cache.Set(key, Response, TimeSpan.FromMinutes(30));
+            _logger.LogInformation("Retrieved All travels and cached with version {Version}",version);
+            return Response;
+        }
     }
 }

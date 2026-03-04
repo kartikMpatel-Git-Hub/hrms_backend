@@ -26,6 +26,14 @@ namespace hrms.Service.impl
         IMemoryCache _cache
         ) : IAuthenticationService
     {
+        public async Task ChangePassword(ChangePasswordRequestDto dto)
+        {
+            User user = await _repo.GetByEmailAsync(dto.Email);
+            if (!PasswordHelper.Verify(dto.CurrentPassword, user.HashPassword))
+                throw new InvalidOperationCustomException("Current Password is incorrect !");
+            user.HashPassword = PasswordHelper.HashPassword(dto.NewPassword);
+            await _repo.UpdateAsync(user);
+        }
 
         public async Task ForgetPassword(ForgetPasswordRequestDto dto)
         {

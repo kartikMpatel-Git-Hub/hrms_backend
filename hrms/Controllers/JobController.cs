@@ -86,9 +86,18 @@ namespace hrms.Controllers
             _logger.LogInformation("[{Method}] {Url} - Fetched all jobs successfully", Request.Method, Request.Path);
             return Ok(jobs);
         }
+        [HttpGet("all")]
+        [Authorize(Roles = "ADMIN")]
+        public async Task<IActionResult> GetAllJobsForAdmin(int pageNumber = 1, int pageSize = 10)
+        {
+            _logger.LogInformation("[{Method}] {Url} - Request received", Request.Method, Request.Path);
+            PagedReponseDto<JobResponseDto> jobs = await _service.GetAllJobsForAdmin(pageNumber, pageSize);
+            _logger.LogInformation("[{Method}] {Url} - Fetched all jobs successfully", Request.Method, Request.Path);
+            return Ok(jobs);
+        }
 
         [HttpGet("{jobId}/reviewers")]
-        [Authorize(Roles = "HR")]
+        [Authorize(Roles = "HR,ADMIN")]
         public async Task<IActionResult> GetJobsReviewers(
             int? jobId)
         {
@@ -115,7 +124,7 @@ namespace hrms.Controllers
         }
 
         [HttpPost("{jobId}/referre")]
-        [Authorize(Roles = "EMPLOYEE,MANAGER,HR")]
+        [Authorize]
         public async Task<IActionResult> ReferedJob(
             int? jobId, ReferralCreateDto? dto)
         {
@@ -211,7 +220,7 @@ namespace hrms.Controllers
         }
 
         [HttpPost("{jobId}/share")]
-        [Authorize(Roles = "EMPLOYEE,MANAGER,HR")]
+        [Authorize]
         public async Task<IActionResult> ShareJob(
             int? jobId, ShareCreateDto? dto)
         {

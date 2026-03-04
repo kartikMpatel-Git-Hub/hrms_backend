@@ -45,6 +45,7 @@ namespace hrms.Controllers
         }
 
         [HttpPost]
+        [Authorize(Roles = "ADMIN, HR")]
         public async Task<IActionResult> CreateDepartment(DepartmentCreateDto? dto)
         {
             _logger.LogInformation("[{Method}] {Url} - Request received", Request.Method, Request.Path);
