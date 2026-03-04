@@ -67,5 +67,14 @@ namespace hrms.Controllers
             return Ok(new { message = "New Password is set and sent to your email." });
         }
 
+        [HttpPut("change-password")]
+        public async Task<IActionResult> ChangePassword(ChangePasswordRequestDto dto)
+        {
+            _logger.LogInformation("[{Method}] {Url} - Request received", Request.Method, Request.Path);
+            await _service.ChangePassword(dto);
+            _logger.LogInformation("[{Method}] {Url} - Password changed successfully", Request.Method, Request.Path);
+            return Ok(new { message = "Password changed successfully." });
+        }
+
     }
 }

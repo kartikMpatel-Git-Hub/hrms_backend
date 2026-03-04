@@ -227,7 +227,22 @@ namespace hrms.Service.impl
             if (dto.Email != null) user.Email = dto.Email;
             if (dto.DateOfBirth != null) user.DateOfBirth = (DateTime)dto.DateOfBirth;
             if (dto.DateOfJoin != null) user.DateOfJoin = (DateTime)dto.DateOfJoin;
-            if (dto.ReportTo != null) user.ReportTo = dto.ReportTo;
+            if (dto.ReportTo != null)
+            {
+                var u = await _repository.GetById((int)dto.ReportTo);
+                if (u.Id == user.Id)
+                    throw new InvalidOperationCustomException($"{u.Email} cannot report to themselves.");
+
+                while (u.ReportTo != null)
+                {
+                    u = await _repository.GetById((int)u.ReportTo);
+                    if(u.Id == user.Id)
+                    {
+                        throw new InvalidOperationCustomException($"selected user will not able to become manager for {user.Email} !");
+                    }
+                }
+                user.ReportTo = dto.ReportTo;
+            }
             if (dto.DepartmentId != null) user.DepartmentId = dto.DepartmentId;
             if (dto.Designation != null) user.Designation = dto.Designation;
             if (dto.Image != null)

@@ -24,5 +24,6 @@ namespace hrms.Service
         Task<PagedReponseDto<TravelResponseDto>> GetTravelsByTravelerId(int travelerId, int pageSize, int pageNumber);
         Task<PagedReponseDto<ExpenseResponseDto>> GetExpensesByTravelIdAndTravelerId(int travelId, int travelerId, int pageSize, int pageNumber);
         Task<PagedReponseDto<TravelDocumentResponseDto>> GetDocumentsByTravelIdAndTravelerId(int travelId, int travelerId, int pageSize, int pageNumber);
+        Task<PagedReponseDto<TravelResponseDto>> GetAllTravels(int pageSize, int pageNumber);
     }
 }

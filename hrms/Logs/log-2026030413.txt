@@ -1,0 +1,71 @@
+2026-03-04 13:50:12 [Information] Initialized Scheduler Signaller of type: Quartz.Core.SchedulerSignalerImpl
+2026-03-04 13:50:12 [Information] Quartz Scheduler created
+2026-03-04 13:50:12 [Information] JobFactory set to: Quartz.Simpl.MicrosoftDependencyInjectionJobFactory
+2026-03-04 13:50:12 [Information] RAMJobStore initialized.
+2026-03-04 13:50:12 [Information] Quartz Scheduler 3.15.1.0 - 'QuartzScheduler' with instanceId 'NON_CLUSTERED' initialized
+2026-03-04 13:50:12 [Information] Using thread pool 'Quartz.Simpl.DefaultThreadPool', size: 10
+2026-03-04 13:50:12 [Information] Using job store 'Quartz.Simpl.RAMJobStore', supports persistence: False, clustered: False
+2026-03-04 13:50:12 [Information] Adding 1 jobs, 1 triggers.
+2026-03-04 13:50:12 [Information] Adding job: DEFAULT.WeeklyJob
+2026-03-04 13:50:12 [Information] Scheduler QuartzScheduler_$_NON_CLUSTERED started.
+2026-03-04 13:50:12 [Information] Updated GameSlot with Id 454
+2026-03-04 13:50:12 [Information] Updated GameSlot with Id 455
+2026-03-04 13:50:12 [Information] Updated GameSlot with Id 456
+2026-03-04 13:50:12 [Information] Updated GameSlot with Id 524
+2026-03-04 13:50:12 [Information] Updated GameSlot with Id 525
+2026-03-04 13:50:12 [Information] Updated GameSlot with Id 526
+2026-03-04 13:50:12 [Information] Starting Daily Celebration Job at 03/04/2026 13:50:12
+2026-03-04 13:50:12 [Information] Found 1 birthday users for today
+2026-03-04 13:50:12 [Information] Found 0 work anniversary users for today
+2026-03-04 13:50:12 [Information] Fetched system user with Id 4
+2026-03-04 13:50:12 [Information] Celebration exists check for UserId 2, EventType Birthday: True
+2026-03-04 13:50:12 [Information] Skipping birthday celebration for user 2 because it already exists
+2026-03-04 13:50:12 [Information] Cache Updated for Daily Celebrations at 03/04/2026 13:50:12
+2026-03-04 13:54:23 [Information] Scheduler "QuartzScheduler_$_NON_CLUSTERED" shutting down.
+2026-03-04 13:54:23 [Information] Scheduler QuartzScheduler_$_NON_CLUSTERED paused.
+2026-03-04 13:54:24 [Information] Scheduler QuartzScheduler_$_NON_CLUSTERED Shutdown complete.
+2026-03-04 13:54:34 [Information] Initialized Scheduler Signaller of type: Quartz.Core.SchedulerSignalerImpl
+2026-03-04 13:54:34 [Information] Quartz Scheduler created
+2026-03-04 13:54:34 [Information] JobFactory set to: Quartz.Simpl.MicrosoftDependencyInjectionJobFactory
+2026-03-04 13:54:34 [Information] RAMJobStore initialized.
+2026-03-04 13:54:34 [Information] Quartz Scheduler 3.15.1.0 - 'QuartzScheduler' with instanceId 'NON_CLUSTERED' initialized
+2026-03-04 13:54:34 [Information] Using thread pool 'Quartz.Simpl.DefaultThreadPool', size: 10
+2026-03-04 13:54:34 [Information] Using job store 'Quartz.Simpl.RAMJobStore', supports persistence: False, clustered: False
+2026-03-04 13:54:34 [Information] Adding 1 jobs, 1 triggers.
+2026-03-04 13:54:34 [Information] Adding job: DEFAULT.WeeklyJob
+2026-03-04 13:54:34 [Information] Scheduler QuartzScheduler_$_NON_CLUSTERED started.
+2026-03-04 13:54:34 [Information] Starting Daily Celebration Job at 03/04/2026 13:54:34
+2026-03-04 13:54:34 [Information] Found 1 birthday users for today
+2026-03-04 13:54:34 [Information] Found 0 work anniversary users for today
+2026-03-04 13:54:34 [Information] Fetched system user with Id 4
+2026-03-04 13:54:34 [Information] Celebration exists check for UserId 2, EventType Birthday: True
+2026-03-04 13:54:34 [Information] Skipping birthday celebration for user 2 because it already exists
+2026-03-04 13:54:34 [Information] Cache Updated for Daily Celebrations at 03/04/2026 13:54:34
+2026-03-04 13:56:07 [Information] ["POST"] "/Authentication/login" - Request received
+2026-03-04 13:56:07 [Information] Fetched User by Email "hr@gmail.com"
+2026-03-04 13:56:07 [Information] ["POST"] "/Authentication/login" - User logged in successfully
+2026-03-04 13:56:07 [Information] ["GET"] "/notification/count" - Request received
+2026-03-04 13:56:07 [Information] ["GET"] "/dashboard/daily-celebrations" - Request received
+2026-03-04 13:56:07 [Information] ["GET"] "/dashboard/upcoming-bookings" - Request received
+2026-03-04 13:56:07 [Information] Unread notification count for UserId 3: 0
+2026-03-04 13:56:07 [Information] Retrieved notification count of user with Id 3 from repository and cached with version 0
+2026-03-04 13:56:07 [Information] ["GET"] "/notification/count" - Fetched notification count 0 for user 3 successfully
+2026-03-04 13:56:07 [Information] Found 1 daily celebrations for today
+2026-03-04 13:56:07 [Information] Retrieved 1 daily celebrations from repository
+2026-03-04 13:56:07 [Information] ["GET"] "/dashboard/daily-celebrations" - Fetched 1 daily celebrations successfully
+2026-03-04 13:56:07 [Information] Found 0 upcoming booking slots for today
+2026-03-04 13:56:07 [Information] Retrieved 0 upcoming booking slots from repository
+2026-03-04 13:56:07 [Information] ["GET"] "/dashboard/upcoming-bookings" - Fetched 0 upcoming booking slots successfully
+2026-03-04 13:58:26 [Information] ["PUT"] "/authentication/change-password" - Request received
+2026-03-04 13:58:26 [Information] Fetched User by Email "hr@gmail.com"
+2026-03-04 13:58:26 [Information] Updated User with Id 3
+2026-03-04 13:58:26 [Information] ["PUT"] "/authentication/change-password" - Password changed successfully
+2026-03-04 13:58:30 [Information] ["POST"] "/Authentication/login" - Request received
+2026-03-04 13:58:30 [Information] Fetched User by Email "hr@gmail.com"
+2026-03-04 13:58:30 [Information] ["POST"] "/Authentication/login" - User logged in successfully
+2026-03-04 13:58:30 [Information] ["GET"] "/notification/count" - Request received
+2026-03-04 13:58:30 [Information] ["GET"] "/notification/count" - Fetched notification count 0 for user 3 successfully
+2026-03-04 13:58:30 [Information] ["GET"] "/dashboard/daily-celebrations" - Request received
+2026-03-04 13:58:30 [Information] ["GET"] "/dashboard/upcoming-bookings" - Request received
+2026-03-04 13:58:30 [Information] ["GET"] "/dashboard/daily-celebrations" - Fetched 1 daily celebrations successfully
+2026-03-04 13:58:30 [Information] ["GET"] "/dashboard/upcoming-bookings" - Fetched 0 upcoming booking slots successfully

@@ -1,0 +1,293 @@
+2026-03-04 14:00:34 [Information] Updated GameSlot with Id 457
+2026-03-04 14:00:35 [Information] Updated GameSlot with Id 527
+2026-03-04 14:06:50 [Information] ["GET"] "/dashboard/daily-celebrations" - Request received
+2026-03-04 14:06:50 [Information] ["GET"] "/dashboard/upcoming-bookings" - Request received
+2026-03-04 14:06:50 [Information] ["GET"] "/notification/count" - Request received
+2026-03-04 14:06:50 [Information] ["GET"] "/notification/count" - Fetched notification count 0 for user 3 successfully
+2026-03-04 14:06:50 [Information] Found 1 daily celebrations for today
+2026-03-04 14:06:50 [Information] Retrieved 1 daily celebrations from repository
+2026-03-04 14:06:50 [Information] ["GET"] "/dashboard/daily-celebrations" - Fetched 1 daily celebrations successfully
+2026-03-04 14:06:50 [Information] Found 0 upcoming booking slots for today
+2026-03-04 14:06:50 [Information] Retrieved 0 upcoming booking slots from repository
+2026-03-04 14:06:50 [Information] ["GET"] "/dashboard/upcoming-bookings" - Fetched 0 upcoming booking slots successfully
+2026-03-04 14:06:52 [Information] ["GET"] "/notification" - Request received
+2026-03-04 14:06:52 [Information] Fetching notifications for UserId 3, total: 28, page 1
+2026-03-04 14:06:52 [Information] Retrieved notifications of user with Id 3 from repository and cached with version 0
+2026-03-04 14:06:52 [Information] Retrieved notifications of user with Id 3 from repository and cached with version 0
+2026-03-04 14:06:52 [Information] ["GET"] "/notification" - Fetched notifications for user 3 successfully
+2026-03-04 14:07:04 [Information] ["GET"] "/notification" - Request received
+2026-03-04 14:07:04 [Information] Fetching notifications for UserId 3, total: 28, page 2
+2026-03-04 14:07:04 [Information] Retrieved notifications of user with Id 3 from repository and cached with version 1
+2026-03-04 14:07:04 [Information] Retrieved notifications of user with Id 3 from repository and cached with version 1
+2026-03-04 14:07:04 [Information] ["GET"] "/notification" - Fetched notifications for user 3 successfully
+2026-03-04 14:07:15 [Information] ["GET"] "/notification" - Request received
+2026-03-04 14:07:15 [Information] Fetching notifications for UserId 3, total: 28, page 3
+2026-03-04 14:07:15 [Information] Retrieved notifications of user with Id 3 from repository and cached with version 2
+2026-03-04 14:07:15 [Information] Retrieved notifications of user with Id 3 from repository and cached with version 2
+2026-03-04 14:07:15 [Information] ["GET"] "/notification" - Fetched notifications for user 3 successfully
+2026-03-04 14:07:16 [Information] ["GET"] "/notification" - Request received
+2026-03-04 14:07:16 [Information] Fetching notifications for UserId 3, total: 28, page 2
+2026-03-04 14:07:16 [Information] Retrieved notifications of user with Id 3 from repository and cached with version 3
+2026-03-04 14:07:16 [Information] Retrieved notifications of user with Id 3 from repository and cached with version 3
+2026-03-04 14:07:16 [Information] ["GET"] "/notification" - Fetched notifications for user 3 successfully
+2026-03-04 14:07:19 [Information] ["GET"] "/notification" - Request received
+2026-03-04 14:07:19 [Information] Fetching notifications for UserId 3, total: 28, page 1
+2026-03-04 14:07:19 [Information] Retrieved notifications of user with Id 3 from repository and cached with version 4
+2026-03-04 14:07:19 [Information] Retrieved notifications of user with Id 3 from repository and cached with version 4
+2026-03-04 14:07:19 [Information] ["GET"] "/notification" - Fetched notifications for user 3 successfully
+2026-03-04 14:07:46 [Information] ["GET"] "/notification" - Request received
+2026-03-04 14:07:46 [Information] Fetching notifications for UserId 3, total: 28, page 2
+2026-03-04 14:07:46 [Information] Retrieved notifications of user with Id 3 from repository and cached with version 5
+2026-03-04 14:07:46 [Information] Retrieved notifications of user with Id 3 from repository and cached with version 5
+2026-03-04 14:07:46 [Information] ["GET"] "/notification" - Fetched notifications for user 3 successfully
+2026-03-04 14:07:47 [Information] ["GET"] "/notification" - Request received
+2026-03-04 14:07:47 [Information] Fetching notifications for UserId 3, total: 28, page 3
+2026-03-04 14:07:47 [Information] Retrieved notifications of user with Id 3 from repository and cached with version 6
+2026-03-04 14:07:47 [Information] Retrieved notifications of user with Id 3 from repository and cached with version 6
+2026-03-04 14:07:47 [Information] ["GET"] "/notification" - Fetched notifications for user 3 successfully
+2026-03-04 14:07:49 [Information] ["GET"] "/notification" - Request received
+2026-03-04 14:07:49 [Information] Fetching notifications for UserId 3, total: 28, page 2
+2026-03-04 14:07:49 [Information] Retrieved notifications of user with Id 3 from repository and cached with version 7
+2026-03-04 14:07:49 [Information] Retrieved notifications of user with Id 3 from repository and cached with version 7
+2026-03-04 14:07:49 [Information] ["GET"] "/notification" - Fetched notifications for user 3 successfully
+2026-03-04 14:08:14 [Information] ["GET"] "/notification/count" - Request received
+2026-03-04 14:08:14 [Information] ["GET"] "/notification" - Request received
+2026-03-04 14:08:14 [Information] Fetching notifications for UserId 3, total: 28, page 2
+2026-03-04 14:08:14 [Information] Unread notification count for UserId 3: 0
+2026-03-04 14:08:14 [Information] Retrieved notification count of user with Id 3 from repository and cached with version 8
+2026-03-04 14:08:14 [Information] ["GET"] "/notification/count" - Fetched notification count 0 for user 3 successfully
+2026-03-04 14:08:14 [Information] Retrieved notifications of user with Id 3 from repository and cached with version 8
+2026-03-04 14:08:14 [Information] Retrieved notifications of user with Id 3 from repository and cached with version 8
+2026-03-04 14:08:14 [Information] ["GET"] "/notification" - Fetched notifications for user 3 successfully
+2026-03-04 14:19:45 [Information] ["GET"] "/notification/count" - Request received
+2026-03-04 14:19:45 [Information] ["GET"] "/notification" - Request received
+2026-03-04 14:19:45 [Information] Unread notification count for UserId 3: 0
+2026-03-04 14:19:45 [Information] Retrieved notification count of user with Id 3 from repository and cached with version 9
+2026-03-04 14:19:45 [Information] ["GET"] "/notification/count" - Fetched notification count 0 for user 3 successfully
+2026-03-04 14:19:45 [Information] Fetching notifications for UserId 3, total: 28, page 2
+2026-03-04 14:19:45 [Information] Retrieved notifications of user with Id 3 from repository and cached with version 9
+2026-03-04 14:19:45 [Information] Retrieved notifications of user with Id 3 from repository and cached with version 9
+2026-03-04 14:19:45 [Information] ["GET"] "/notification" - Fetched notifications for user 3 successfully
+2026-03-04 14:29:10 [Information] ["GET"] "/notification/count" - Request received
+2026-03-04 14:29:10 [Information] ["GET"] "/notification" - Request received
+2026-03-04 14:29:10 [Information] Unread notification count for UserId 3: 0
+2026-03-04 14:29:10 [Information] Retrieved notification count of user with Id 3 from repository and cached with version 10
+2026-03-04 14:29:10 [Information] ["GET"] "/notification/count" - Fetched notification count 0 for user 3 successfully
+2026-03-04 14:29:10 [Information] Fetching notifications for UserId 3, total: 28, page 2
+2026-03-04 14:29:10 [Information] Retrieved notifications of user with Id 3 from repository and cached with version 10
+2026-03-04 14:29:10 [Information] Retrieved notifications of user with Id 3 from repository and cached with version 10
+2026-03-04 14:29:10 [Information] ["GET"] "/notification" - Fetched notifications for user 3 successfully
+2026-03-04 14:29:17 [Information] ["GET"] "/notification/count" - Request received
+2026-03-04 14:29:17 [Information] ["GET"] "/notification" - Request received
+2026-03-04 14:29:17 [Information] Fetching notifications for UserId 3, total: 28, page 2
+2026-03-04 14:29:17 [Information] Unread notification count for UserId 3: 0
+2026-03-04 14:29:17 [Information] Retrieved notification count of user with Id 3 from repository and cached with version 11
+2026-03-04 14:29:17 [Information] ["GET"] "/notification/count" - Fetched notification count 0 for user 3 successfully
+2026-03-04 14:29:17 [Information] Retrieved notifications of user with Id 3 from repository and cached with version 11
+2026-03-04 14:29:17 [Information] Retrieved notifications of user with Id 3 from repository and cached with version 11
+2026-03-04 14:29:17 [Information] ["GET"] "/notification" - Fetched notifications for user 3 successfully
+2026-03-04 14:29:18 [Information] ["GET"] "/notification/count" - Request received
+2026-03-04 14:29:18 [Information] ["GET"] "/notification" - Request received
+2026-03-04 14:29:18 [Information] Fetching notifications for UserId 3, total: 28, page 2
+2026-03-04 14:29:18 [Information] Unread notification count for UserId 3: 0
+2026-03-04 14:29:18 [Information] Retrieved notification count of user with Id 3 from repository and cached with version 12
+2026-03-04 14:29:18 [Information] ["GET"] "/notification/count" - Fetched notification count 0 for user 3 successfully
+2026-03-04 14:29:18 [Information] Retrieved notifications of user with Id 3 from repository and cached with version 12
+2026-03-04 14:29:18 [Information] Retrieved notifications of user with Id 3 from repository and cached with version 12
+2026-03-04 14:29:18 [Information] ["GET"] "/notification" - Fetched notifications for user 3 successfully
+2026-03-04 14:29:51 [Information] ["GET"] "/notification/count" - Request received
+2026-03-04 14:29:51 [Information] ["GET"] "/notification" - Request received
+2026-03-04 14:29:51 [Information] Fetching notifications for UserId 3, total: 28, page 2
+2026-03-04 14:29:51 [Information] Unread notification count for UserId 3: 0
+2026-03-04 14:29:51 [Information] Retrieved notification count of user with Id 3 from repository and cached with version 13
+2026-03-04 14:29:51 [Information] ["GET"] "/notification/count" - Fetched notification count 0 for user 3 successfully
+2026-03-04 14:29:51 [Information] Retrieved notifications of user with Id 3 from repository and cached with version 13
+2026-03-04 14:29:51 [Information] Retrieved notifications of user with Id 3 from repository and cached with version 13
+2026-03-04 14:29:51 [Information] ["GET"] "/notification" - Fetched notifications for user 3 successfully
+2026-03-04 14:30:29 [Information] ["POST"] "/Authentication/login" - Request received
+2026-03-04 14:30:29 [Information] Fetched User by Email "ceo@gmail.com"
+2026-03-04 14:30:29 [Information] ["POST"] "/Authentication/login" - User logged in successfully
+2026-03-04 14:30:29 [Information] ["GET"] "/dashboard/upcoming-bookings" - Request received
+2026-03-04 14:30:29 [Information] ["GET"] "/dashboard/daily-celebrations" - Request received
+2026-03-04 14:30:29 [Information] Found 1 daily celebrations for today
+2026-03-04 14:30:29 [Information] Retrieved 1 daily celebrations from repository
+2026-03-04 14:30:29 [Information] ["GET"] "/dashboard/daily-celebrations" - Fetched 1 daily celebrations successfully
+2026-03-04 14:30:29 [Information] Found 0 upcoming booking slots for today
+2026-03-04 14:30:29 [Information] Retrieved 0 upcoming booking slots from repository
+2026-03-04 14:30:29 [Information] ["GET"] "/dashboard/upcoming-bookings" - Fetched 0 upcoming booking slots successfully
+2026-03-04 14:30:32 [Information] ["GET"] "/post/feed" - Request received
+2026-03-04 14:30:32 [Information] Fetched 6 feed posts, page 1
+2026-03-04 14:30:32 [Information] Retrieved feed for user 1 and cached with version 1
+2026-03-04 14:30:32 [Information] ["GET"] "/post/feed" - Fetched feed for user 1 successfully
+2026-03-04 14:30:34 [Information] ["GET"] "/user" - Request received
+2026-03-04 14:30:34 [Information] Fetching all users, total: 9, page 1
+2026-03-04 14:30:34 [Information] Retrieved all users with version 1 and cached
+2026-03-04 14:30:34 [Information] ["GET"] "/user" - Fetched all users successfully
+2026-03-04 14:30:36 [Information] ["GET"] "/post/feed" - Request received
+2026-03-04 14:30:36 [Information] ["GET"] "/post/feed" - Fetched feed for user 1 successfully
+2026-03-04 14:30:36 [Information] Updated GameSlot with Id 458
+2026-03-04 14:30:36 [Information] Updated GameSlot with Id 528
+2026-03-04 14:30:38 [Information] ["GET"] "/user" - Request received
+2026-03-04 14:30:38 [Information] ["GET"] "/user" - Fetched all users successfully
+2026-03-04 14:30:41 [Information] ["GET"] "/user" - Request received
+2026-03-04 14:30:41 [Information] Fetching all users, total: 9, page 2
+2026-03-04 14:30:41 [Information] Retrieved all users with version 1 and cached
+2026-03-04 14:30:41 [Information] ["GET"] "/user" - Fetched all users successfully
+2026-03-04 14:30:43 [Information] ["GET"] "/user" - Request received
+2026-03-04 14:30:43 [Information] ["GET"] "/user" - Fetched all users successfully
+2026-03-04 14:32:15 [Information] ["GET"] "/user" - Request received
+2026-03-04 14:32:15 [Information] ["GET"] "/user" - Fetched all users successfully
+2026-03-04 14:32:17 [Information] ["GET"] "/user/managers" - Request received
+2026-03-04 14:32:17 [Information] ["GET"] "/department" - Request received
+2026-03-04 14:32:17 [Information] Fetching all managers, total: 5, page 1
+2026-03-04 14:32:17 [Information] Fetched 8 departments
+2026-03-04 14:32:17 [Information] Retrieved 8 departments from repository and cached with version 1
+2026-03-04 14:32:17 [Information] ["GET"] "/department" - Fetched all departments successfully
+2026-03-04 14:32:17 [Information] Retrieved all managers with version 0 and cached
+2026-03-04 14:32:17 [Information] ["GET"] "/user/managers" - Fetched managers successfully
+2026-03-04 14:32:28 [Information] ["PUT"] "/user/1" - Request received
+2026-03-04 14:32:31 [Information] Updated User with Id 1
+2026-03-04 14:32:31 [Information] Updated user with id 1 and increased cache version
+2026-03-04 14:32:31 [Information] ["PUT"] "/user/1" - User 1 updated successfully
+2026-03-04 14:32:31 [Information] ["GET"] "/user" - Request received
+2026-03-04 14:32:31 [Information] Fetching all users, total: 9, page 1
+2026-03-04 14:32:31 [Information] Retrieved all users with version 2 and cached
+2026-03-04 14:32:31 [Information] ["GET"] "/user" - Fetched all users successfully
+2026-03-04 14:32:42 [Information] ["GET"] "/user" - Request received
+2026-03-04 14:32:42 [Information] Fetching all users, total: 9, page 2
+2026-03-04 14:32:42 [Information] Retrieved all users with version 2 and cached
+2026-03-04 14:32:42 [Information] ["GET"] "/user" - Fetched all users successfully
+2026-03-04 14:32:46 [Information] ["GET"] "/user" - Request received
+2026-03-04 14:32:46 [Information] ["GET"] "/user" - Fetched all users successfully
+2026-03-04 14:32:52 [Information] ["GET"] "/user/1" - Request received
+2026-03-04 14:32:52 [Information] Retrieved user profile with id 1 and cached
+2026-03-04 14:32:52 [Information] ["GET"] "/user/1" - Fetched profile for user 1 successfully
+2026-03-04 14:32:55 [Information] ["GET"] "/user/1" - Request received
+2026-03-04 14:32:55 [Information] ["GET"] "/user/1" - Fetched profile for user 1 successfully
+2026-03-04 14:32:58 [Information] ["POST"] "/Authentication/login" - Request received
+2026-03-04 14:32:58 [Information] Fetched User by Email "ceo@gmail.com"
+2026-03-04 14:32:58 [Information] ["POST"] "/Authentication/login" - User logged in successfully
+2026-03-04 14:32:58 [Information] ["GET"] "/dashboard/upcoming-bookings" - Request received
+2026-03-04 14:32:58 [Information] ["GET"] "/dashboard/daily-celebrations" - Request received
+2026-03-04 14:32:58 [Information] ["GET"] "/dashboard/upcoming-bookings" - Fetched 0 upcoming booking slots successfully
+2026-03-04 14:32:58 [Information] ["GET"] "/dashboard/daily-celebrations" - Fetched 1 daily celebrations successfully
+2026-03-04 14:33:02 [Information] ["GET"] "/travel" - Request received
+2026-03-04 14:33:02 [Information] Retrieved All travels and cached with version 1
+2026-03-04 14:33:02 [Information] ["GET"] "/travel" - Fetched travels successfully
+2026-03-04 14:33:24 [Information] ["GET"] "/department" - Request received
+2026-03-04 14:33:24 [Information] ["GET"] "/department" - Fetched all departments successfully
+2026-03-04 14:34:46 [Information] ["GET"] "/department" - Request received
+2026-03-04 14:34:46 [Information] ["GET"] "/department" - Fetched all departments successfully
+2026-03-04 14:34:48 [Information] ["GET"] "/user" - Request received
+2026-03-04 14:34:48 [Information] ["GET"] "/user" - Fetched all users successfully
+2026-03-04 14:35:09 [Information] ["GET"] "/department" - Request received
+2026-03-04 14:35:09 [Information] ["GET"] "/department" - Fetched all departments successfully
+2026-03-04 14:35:10 [Information] ["GET"] "/job/all" - Request received
+2026-03-04 14:35:10 [Information] Fetched 3 jobs for admin, page 1
+2026-03-04 14:35:10 [Information] Retrieved jobs list from repository and cached with version 1
+2026-03-04 14:35:10 [Information] Total jobs retrieved: 3
+2026-03-04 14:35:10 [Information] ["GET"] "/job/all" - Fetched all jobs successfully
+2026-03-04 14:35:14 [Information] ["GET"] "/job/3/reviewers" - Request received
+2026-03-04 14:35:14 [Information] Fetched Job with Id 3
+2026-03-04 14:35:14 [Information] Retrieved job detail with reviewers for job with Id 3 from repository and cached with version 0
+2026-03-04 14:35:14 [Information] ["GET"] "/job/3/reviewers" - Fetched reviewers for job 3 successfully
+2026-03-04 14:35:16 [Information] ["GET"] "/job/all" - Request received
+2026-03-04 14:35:16 [Information] ["GET"] "/job/all" - Fetched all jobs successfully
+2026-03-04 14:36:55 [Information] ["GET"] "/job/all" - Request received
+2026-03-04 14:36:55 [Information] ["GET"] "/job/all" - Fetched all jobs successfully
+2026-03-04 14:37:10 [Information] ["PUT"] "/authentication/change-password" - Request received
+2026-03-04 14:37:10 [Error] An unhandled exception occurred: "User With Email : c@gmail.com not found"
+hrms.CustomException.NotFoundCustomException: User With Email : c@gmail.com not found
+   at hrms.Repository.impl.UserRepository.GetByEmailAsync(String email) in C:\Internship\Codes\DontNet\Assignment-1\hrms\hrms\Repository\impl\UserRepository.cs:line 84
+   at hrms.Service.impl.AuthenticationService.ChangePassword(ChangePasswordRequestDto dto) in C:\Internship\Codes\DontNet\Assignment-1\hrms\hrms\Service\impl\AuthenticationService.cs:line 31
+   at hrms.Controllers.AuthenticationController.ChangePassword(ChangePasswordRequestDto dto) in C:\Internship\Codes\DontNet\Assignment-1\hrms\hrms\Controllers\AuthenticationContoller.cs:line 74
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.TaskOfIActionResultExecutor.Execute(ActionContext actionContext, IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeInnerFilterAsync>g__Awaited|13_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeNextExceptionFilterAsync>g__Awaited|26_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+2026-03-04 14:37:22 [Information] ["PUT"] "/authentication/change-password" - Request received
+2026-03-04 14:37:22 [Error] An unhandled exception occurred: "User With Email : c@gmail.com not found"
+hrms.CustomException.NotFoundCustomException: User With Email : c@gmail.com not found
+   at hrms.Repository.impl.UserRepository.GetByEmailAsync(String email) in C:\Internship\Codes\DontNet\Assignment-1\hrms\hrms\Repository\impl\UserRepository.cs:line 84
+   at hrms.Service.impl.AuthenticationService.ChangePassword(ChangePasswordRequestDto dto) in C:\Internship\Codes\DontNet\Assignment-1\hrms\hrms\Service\impl\AuthenticationService.cs:line 31
+   at hrms.Controllers.AuthenticationController.ChangePassword(ChangePasswordRequestDto dto) in C:\Internship\Codes\DontNet\Assignment-1\hrms\hrms\Controllers\AuthenticationContoller.cs:line 74
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.TaskOfIActionResultExecutor.Execute(ActionContext actionContext, IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeInnerFilterAsync>g__Awaited|13_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeNextExceptionFilterAsync>g__Awaited|26_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+2026-03-04 14:37:52 [Information] ["PUT"] "/authentication/change-password" - Request received
+2026-03-04 14:37:52 [Information] Fetched User by Email "ceo@gmail.com"
+2026-03-04 14:37:52 [Error] An unhandled exception occurred: "Current Password is incorrect !"
+hrms.CustomException.InvalidOperationCustomException: Current Password is incorrect !
+   at hrms.Service.impl.AuthenticationService.ChangePassword(ChangePasswordRequestDto dto) in C:\Internship\Codes\DontNet\Assignment-1\hrms\hrms\Service\impl\AuthenticationService.cs:line 33
+   at hrms.Controllers.AuthenticationController.ChangePassword(ChangePasswordRequestDto dto) in C:\Internship\Codes\DontNet\Assignment-1\hrms\hrms\Controllers\AuthenticationContoller.cs:line 74
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.TaskOfIActionResultExecutor.Execute(ActionContext actionContext, IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeInnerFilterAsync>g__Awaited|13_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeNextExceptionFilterAsync>g__Awaited|26_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+2026-03-04 14:38:15 [Information] ["PUT"] "/authentication/change-password" - Request received
+2026-03-04 14:38:15 [Information] Fetched User by Email "ceo@gmail.com"
+2026-03-04 14:38:15 [Error] An unhandled exception occurred: "Current Password is incorrect !"
+hrms.CustomException.InvalidOperationCustomException: Current Password is incorrect !
+   at hrms.Service.impl.AuthenticationService.ChangePassword(ChangePasswordRequestDto dto) in C:\Internship\Codes\DontNet\Assignment-1\hrms\hrms\Service\impl\AuthenticationService.cs:line 33
+   at hrms.Controllers.AuthenticationController.ChangePassword(ChangePasswordRequestDto dto) in C:\Internship\Codes\DontNet\Assignment-1\hrms\hrms\Controllers\AuthenticationContoller.cs:line 74
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.TaskOfIActionResultExecutor.Execute(ActionContext actionContext, IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeInnerFilterAsync>g__Awaited|13_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeNextExceptionFilterAsync>g__Awaited|26_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+2026-03-04 14:38:20 [Information] ["PUT"] "/authentication/change-password" - Request received
+2026-03-04 14:38:20 [Error] An unhandled exception occurred: "User With Email : co@gmail.com not found"
+hrms.CustomException.NotFoundCustomException: User With Email : co@gmail.com not found
+   at hrms.Repository.impl.UserRepository.GetByEmailAsync(String email) in C:\Internship\Codes\DontNet\Assignment-1\hrms\hrms\Repository\impl\UserRepository.cs:line 84
+   at hrms.Service.impl.AuthenticationService.ChangePassword(ChangePasswordRequestDto dto) in C:\Internship\Codes\DontNet\Assignment-1\hrms\hrms\Service\impl\AuthenticationService.cs:line 31
+   at hrms.Controllers.AuthenticationController.ChangePassword(ChangePasswordRequestDto dto) in C:\Internship\Codes\DontNet\Assignment-1\hrms\hrms\Controllers\AuthenticationContoller.cs:line 74
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.TaskOfIActionResultExecutor.Execute(ActionContext actionContext, IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeInnerFilterAsync>g__Awaited|13_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeNextExceptionFilterAsync>g__Awaited|26_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+2026-03-04 14:38:32 [Information] ["POST"] "/Authentication/login" - Request received
+2026-03-04 14:38:32 [Information] Fetched User by Email "ceo@gmail.com"
+2026-03-04 14:38:32 [Information] ["POST"] "/Authentication/login" - User logged in successfully
+2026-03-04 14:38:32 [Information] ["GET"] "/dashboard/upcoming-bookings" - Request received
+2026-03-04 14:38:32 [Information] ["GET"] "/dashboard/daily-celebrations" - Request received
+2026-03-04 14:38:32 [Information] Found 0 upcoming booking slots for today
+2026-03-04 14:38:32 [Information] Retrieved 0 upcoming booking slots from repository
+2026-03-04 14:38:32 [Information] ["GET"] "/dashboard/upcoming-bookings" - Fetched 0 upcoming booking slots successfully
+2026-03-04 14:38:32 [Information] Found 1 daily celebrations for today
+2026-03-04 14:38:32 [Information] Retrieved 1 daily celebrations from repository
+2026-03-04 14:38:32 [Information] ["GET"] "/dashboard/daily-celebrations" - Fetched 1 daily celebrations successfully
+2026-03-04 14:39:04 [Information] ["GET"] "/dashboard/upcoming-bookings" - Request received
+2026-03-04 14:39:04 [Information] ["GET"] "/dashboard/daily-celebrations" - Request received
+2026-03-04 14:39:04 [Information] ["GET"] "/dashboard/daily-celebrations" - Fetched 1 daily celebrations successfully
+2026-03-04 14:39:04 [Information] ["GET"] "/dashboard/upcoming-bookings" - Fetched 0 upcoming booking slots successfully
+2026-03-04 14:45:08 [Information] ["GET"] "/dashboard/daily-celebrations" - Request received
+2026-03-04 14:45:08 [Information] ["GET"] "/dashboard/upcoming-bookings" - Request received
+2026-03-04 14:45:08 [Information] Found 1 daily celebrations for today
+2026-03-04 14:45:08 [Information] Retrieved 1 daily celebrations from repository
+2026-03-04 14:45:08 [Information] ["GET"] "/dashboard/daily-celebrations" - Fetched 1 daily celebrations successfully
+2026-03-04 14:45:09 [Information] Found 0 upcoming booking slots for today
+2026-03-04 14:45:09 [Information] Retrieved 0 upcoming booking slots from repository
+2026-03-04 14:45:09 [Information] ["GET"] "/dashboard/upcoming-bookings" - Fetched 0 upcoming booking slots successfully
+2026-03-04 14:57:37 [Information] ["GET"] "/dashboard/daily-celebrations" - Request received
+2026-03-04 14:57:37 [Information] ["GET"] "/dashboard/upcoming-bookings" - Request received
+2026-03-04 14:57:37 [Information] Found 1 daily celebrations for today
+2026-03-04 14:57:37 [Information] Retrieved 1 daily celebrations from repository
+2026-03-04 14:57:37 [Information] ["GET"] "/dashboard/daily-celebrations" - Fetched 1 daily celebrations successfully
+2026-03-04 14:57:37 [Information] Found 0 upcoming booking slots for today
+2026-03-04 14:57:37 [Information] Retrieved 0 upcoming booking slots from repository
+2026-03-04 14:57:37 [Information] ["GET"] "/dashboard/upcoming-bookings" - Fetched 0 upcoming booking slots successfully

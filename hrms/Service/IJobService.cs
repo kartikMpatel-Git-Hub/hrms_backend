@@ -15,6 +15,7 @@ namespace hrms.Service
         Task<SharedJobResponseDto> CreateJobShare(int jobId, int referedBy, ShareCreateDto dto);
         Task DeleteJob(int jobId, int hrId);
         Task<PagedReponseDto<JobResponseDto>> GetAllJobs(int pageNumber, int pageSize);
+        Task<PagedReponseDto<JobResponseDto>> GetAllJobsForAdmin(int pageNumber, int pageSize);
         Task<JobResponseDto> GetJobById(int jobId);
         Task<JobResponseWithReviewersDto> GetJobDetail(int jobId);
         Task<PagedReponseDto<ReferralResponseDto>> GetJobRefferalsByEmployeeId(int employeeId, int pageNumber, int pageSize);

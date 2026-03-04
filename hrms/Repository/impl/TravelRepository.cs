@@ -62,6 +62,19 @@ namespace hrms.Repository.impl
             _logger.LogInformation("Soft-deleted Travel with Id {Id}", TravelId);
         }
 
+        public async Task<PagedReponseOffSet<Travel>> GetAllTravels(int pageSize, int pageNumber)
+        {
+            var TotalRecords = await _db.Travels.Where(t => t.is_deleted == false).CountAsync();
+            List<Travel> Travels = await _db.Travels
+                .Where(t => t.is_deleted == false)
+                .OrderByDescending(t => t.created_at)
+                .Skip((pageNumber - 1) * pageSize)
+                .Take(pageSize)
+                .ToListAsync();
+            PagedReponseOffSet<Travel> Response = new PagedReponseOffSet<Travel>(Travels, pageNumber, pageSize, TotalRecords);
+            return Response;
+        }
+
         public async Task<PagedReponseOffSet<TravelDocument>> GetDocumentsByTravelIdAndTravelerId(int travelId, int travelerId, int pageSize, int pageNumber)
         {
             int TotalRecords = await _db.TravelDocuments.Where(td => td.TravelId == travelId && td.TravelerId == travelerId).CountAsync();

@@ -75,6 +75,7 @@ namespace hrms.Controllers
         }
 
         [HttpPut("{UserId}")]
+        [Authorize(Roles = "ADMIN,HR")]
         public async Task<IActionResult> UpdateUser(int? UserId, UserUpdateRequestDto userUpdateRequestDto)
         {
             _logger.LogInformation("[{Method}] {Url} - Request received", Request.Method, Request.Path);

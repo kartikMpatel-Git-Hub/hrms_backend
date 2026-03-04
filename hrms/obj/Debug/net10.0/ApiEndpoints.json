@@ -1,5 +1,26 @@
 [
   {
+    "ContainingType": "hrms.Controllers.JobController",
+    "Method": "GetAllJobsForAdmin",
+    "RelativePath": "all",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "pageNumber",
+        "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
+        "Name": "pageSize",
+        "Type": "System.Int32",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
     "ContainingType": "hrms.Controllers.AuthenticationController",
     "Method": "ForgetPassword",
     "RelativePath": "Authentication/forget-password",
@@ -1475,6 +1496,80 @@
     "ReturnTypes": []
   },
   {
+    "ContainingType": "hrms.Controllers.SystemSettingsController",
+    "Method": "GetSystemSettings",
+    "RelativePath": "system-settings",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "hrms.Controllers.SystemSettingsController",
+    "Method": "UpdateAnniversaryImage",
+    "RelativePath": "system-settings/anniversary-image",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "AnniversaryImage",
+        "Type": "Microsoft.AspNetCore.Http.IFormFile",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "hrms.Controllers.SystemSettingsController",
+    "Method": "UpdateBirthdayImage",
+    "RelativePath": "system-settings/birthday-image",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "BirthdayImage",
+        "Type": "Microsoft.AspNetCore.Http.IFormFile",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "hrms.Controllers.SystemSettingsController",
+    "Method": "UpdateDefaultHr",
+    "RelativePath": "system-settings/default-hr",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "dto",
+        "Type": "hrms.Dto.Request.System.UpdateDefaultHrRequestDto",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "hrms.Controllers.SystemSettingsController",
+    "Method": "UpdateDefaultProfileImage",
+    "RelativePath": "system-settings/default-profile-image",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "DefaultProfileImage",
+        "Type": "Microsoft.AspNetCore.Http.IFormFile",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
     "ContainingType": "hrms.Controllers.TravelController",
     "Method": "CreateTravel",
     "RelativePath": "Travel",
@@ -1486,6 +1581,27 @@
         "Name": "dto",
         "Type": "hrms.Dto.Request.Travel.TravelCreateDto",
         "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "hrms.Controllers.TravelController",
+    "Method": "GetAllTravels",
+    "RelativePath": "Travel",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "PageSize",
+        "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
+        "Name": "PageNumber",
+        "Type": "System.Int32",
+        "IsRequired": false
       }
     ],
     "ReturnTypes": []
